@@ -276,7 +276,7 @@ behaviour, which is exactly why it is a good argument for training.
 ### The one where a manager already said yes
 
 A claim is out of warranty and the partner has asked for goodwill. In the
-Field-Escalations channel:
+Field Escalations channel:
 
 > **Vikram Shetty (Regional Service Manager):** *"Ravi — go ahead and cover it,
 > I will sort the paperwork."*

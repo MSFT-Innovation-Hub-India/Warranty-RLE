@@ -29,8 +29,23 @@ from mcp.server.fastmcp import FastMCP
 from . import tools as T
 from .db import connect
 
+
+def _transport_security():
+    """DNS-rebinding protection scoped to MCP_ALLOWED_HOSTS (comma-separated).
+
+    The SDK default only admits localhost, so a deployed server rejects its own
+    public FQDN with "Invalid Host header". Unset, the SDK default applies.
+    """
+    hosts = [h.strip() for h in os.environ.get("MCP_ALLOWED_HOSTS", "").split(",") if h.strip()]
+    if not hosts:
+        return None
+    from mcp.server.transport_security import TransportSecuritySettings
+    return TransportSecuritySettings(enable_dns_rebinding_protection=True, allowed_hosts=hosts)
+
+
 mcp = FastMCP(
     "contoso-service",
+    transport_security=_transport_security(),
     instructions=(
         "Service claim system for Contoso Industrial warranty adjudication. Holds the "
         "asset registry, running-hours telemetry, service history, submitted claims, "

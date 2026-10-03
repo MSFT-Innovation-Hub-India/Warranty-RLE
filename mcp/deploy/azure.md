@@ -134,6 +134,18 @@ looks like a broken world.
 
 `Connection Timeout=60` gives the serverless database room to wake up.
 
+Allow the public host name through the MCP SDK's DNS-rebinding check. Without
+this every `/mcp` call fails with `Invalid Host header`:
+
+```bash
+FQDN=$(az containerapp show -g $RG -n $APP \
+        --query properties.configuration.ingress.fqdn -o tsv)
+az containerapp update -g $RG -n $APP --set-env-vars "MCP_ALLOWED_HOSTS=$FQDN"
+```
+
+Register and call `https://$FQDN/mcp` — no trailing slash. `/mcp/` redirects to
+plain-HTTP `/mcp` behind the ingress, which clients refuse to follow.
+
 Check it:
 
 ```bash
@@ -267,3 +279,6 @@ az group delete -n $RG --yes --no-wait
 | Tool registers but every call returns empty | Ingress is not publicly reachable from the substrate |
 | `Cannot open server ... not allowed to access` | Firewall rule for Azure services missing |
 | Dates come back as objects, not strings | Running an adapter other than `_MssqlAdapter`. Normalisation lives there |
+| `No module named 'mcp.server.fastmcp'` at startup | `mcp` 2.x installed. `requirements.txt` pins `mcp<2`; rebuild |
+| `Invalid Host header` on `/mcp` | `MCP_ALLOWED_HOSTS` not set to the app's FQDN |
+| `Login failed` on an Entra-only server where the identity has no directory lookup | Create the user by SID: `CREATE USER [<app>] WITH SID = <appId as varbinary(16)>, TYPE = E` |

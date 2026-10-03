@@ -4,7 +4,7 @@ Output is JSON — one object per message, in post order, with the thread it
 belongs to. A separate loader posts these into a real team; keeping them as data
 means the corpus can be reviewed and regenerated without touching the tenant.
 
-The load-bearing thread is the verbal goodwill approval in Field-Escalations.
+The load-bearing thread is the verbal goodwill approval in Field Escalations.
 Everything else is noise of the kind a real channel carries, which is the point:
 retrieval has to find one message among fifty that look similar.
 
@@ -32,11 +32,11 @@ def thread(channel: str, subject: str, messages: list[tuple[str, str, str]],
 
 
 # ---------------------------------------------------------------------------
-# Field-Escalations
+# Field Escalations
 # ---------------------------------------------------------------------------
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "C-2026-04141 — Litware Pune, hydraulic pump, labour over flat rate",
     [
         ("2026-06-24T09:12:00", "Ravi Menon (Fabrikam Service Partners)",
@@ -64,7 +64,7 @@ thread(
 )
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "4000-series hydraulic failures — anyone else seeing this?",
     [
         ("2026-01-08T08:40:00", "Sunil Bhat (Field Engineer, Fabrikam Service Partners)",
@@ -86,7 +86,7 @@ thread(
 )
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "Commissioning certificates missing on a few Relecloud units",
     [
         ("2026-05-04T10:22:00", "Priya Nair (Northwind Field Services)",
@@ -104,7 +104,7 @@ thread(
 )
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "Tailwind — EUR settlement query",
     [
         ("2026-04-02T13:15:00", "Elena Fischer (Tailwind Equipment Services)",
@@ -117,7 +117,7 @@ thread(
 )
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "Valve plate claims on 2200-series — which bulletin applies?",
     [
         ("2026-03-11T09:05:00", "Ravi Menon (Fabrikam Service Partners)",
@@ -136,7 +136,7 @@ thread(
 )
 
 thread(
-    "Field-Escalations",
+    "Field Escalations",
     "Claim system showing a serial as out of range",
     [
         ("2026-07-06T14:20:00", "Priya Nair (Northwind Field Services)",
@@ -153,17 +153,17 @@ thread(
 )
 
 # ---------------------------------------------------------------------------
-# Warranty-Policy-Updates
+# Warranty Policy Updates
 # ---------------------------------------------------------------------------
 
-thread("Warranty-Policy-Updates", "FY26 labour rates effective 1 April 2026",
+thread("Warranty Policy Updates", "FY26 labour rates effective 1 April 2026",
        [("2026-03-20T09:00:00", "Anjali Rao (Warranty Operations Head)",
          "FY26 rate card is published. India moves to INR 1,450 per hour from 1 April. "
          "Reminder that the rate applied is the one in force on the DATE OF REPAIR, not "
          "the date of submission — a March repair submitted in April is still FY25.")],
        carries="trap-9.")
 
-thread("Warranty-Policy-Updates", "TSB-C-0043 published",
+thread("Warranty Policy Updates", "TSB-C-0043 published",
        [("2025-11-12T10:15:00", "Anjali Rao (Warranty Operations Head)",
          "TSB-C-0043 is live. Where an inspection report attributes hydraulic "
          "contamination to the filter housing defect, the 5.2 exclusion does not apply. "
@@ -171,14 +171,14 @@ thread("Warranty-Policy-Updates", "TSB-C-0043 published",
          "report decides it, so make sure partners are attaching them.")],
        carries="Exclusion-reversal reserve trap.")
 
-thread("Warranty-Policy-Updates", "TSB-P-0112 supersedes TSB-P-0107",
+thread("Warranty Policy Updates", "TSB-P-0112 supersedes TSB-P-0107",
        [("2026-02-09T11:00:00", "Anjali Rao (Warranty Operations Head)",
          "TSB-P-0112 is published and supersedes TSB-P-0107. Note the covered serial "
          "range is NARROWER than before — 00400 to 00750, down from 00900. Units between "
          "00751 and 00900 that were covered under 0107 are no longer covered.")],
        carries="trap-5.")
 
-thread("Warranty-Policy-Updates", "Reminder — goodwill authority",
+thread("Warranty Policy Updates", "Reminder — goodwill authority",
        [("2026-05-18T09:30:00", "Daniel Okafor (Director, Aftermarket)",
          "We are seeing goodwill approvals given in chat and never recorded against the "
          "claim. Policy 7.1 is not optional. If it is not in the claim system at the "
@@ -186,7 +186,7 @@ thread("Warranty-Policy-Updates", "Reminder — goodwill authority",
          "Matrix.")],
        carries="trap-11, reinforced from the top.")
 
-thread("Warranty-Policy-Updates", "Q3 warranty review deck published",
+thread("Warranty Policy Updates", "Q3 warranty review deck published",
        [("2026-04-16T16:45:00", "Anjali Rao (Warranty Operations Head)",
          "FY26 Q3 review is in the Reviews folder. It includes the current coverage "
          "position by instrument. Please use it in preference to the Q2 deck, which "
@@ -195,17 +195,17 @@ thread("Warranty-Policy-Updates", "Q3 warranty review deck published",
                "everything it needs to distrust Q2.")
 
 # ---------------------------------------------------------------------------
-# Partner-Fabrikam
+# Partner Fabrikam
 # ---------------------------------------------------------------------------
 
-thread("Partner-Fabrikam", "Weekly claim status",
+thread("Partner Fabrikam", "Weekly claim status",
        [("2026-06-22T09:00:00", "Ravi Menon (Fabrikam Service Partners)",
          "14 claims open with you this week, 3 awaiting inspection reports our end."),
         ("2026-06-22T09:40:00", "Meera Krishnan (Service Supervisor, West)",
          "Thanks. The three without reports are held, not declined.")],
        carries=None)
 
-thread("Partner-Fabrikam", "Parts supersession — P-44120",
+thread("Partner Fabrikam", "Parts supersession — P-44120",
        [("2026-05-30T11:10:00", "Ravi Menon (Fabrikam Service Partners)",
          "Ordered P-44120 and received P-44120-A. Do I claim against what I ordered or "
          "what I fitted?"),
@@ -214,7 +214,7 @@ thread("Partner-Fabrikam", "Parts supersession — P-44120",
          "applies. Put P-44120-A on the claim.")],
        carries="trap-7.")
 
-thread("Partner-Fabrikam", "Site access at Woodgrove Nashik",
+thread("Partner Fabrikam", "Site access at Woodgrove Nashik",
        [("2026-07-14T08:20:00", "Sunil Bhat (Field Engineer, Fabrikam Service Partners)",
          "Woodgrove want 48 hours notice for site access now. Adding it to job planning."),
         ("2026-07-14T08:35:00", "Ravi Menon (Fabrikam Service Partners)", "Noted.")],
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     total = 0
     for channel, threads in CHANNELS.items():
         payload = {"channel": channel, "threads": threads}
-        (OUT / f"{channel}.json").write_text(
+        (OUT / f"{channel.replace(' ', '-')}.json").write_text(
             json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
         msgs = sum(len(t["messages"]) for t in threads)
         total += msgs

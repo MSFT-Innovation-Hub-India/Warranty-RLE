@@ -732,6 +732,19 @@ real work, not so much that curation becomes the project.
 
 **~35 documents.** Enough that search has to work.
 
+**Provisioned 2026-10-03** 🖥️ — one library, not seven: `Warranty Operations`
+on the team site `https://microsoftapc.sharepoint.com/teams/ContosoFieldService`
+(drive `b!btFf7qjNiU-QygGw0VS1so4ix19FHqNChv72tIlM04CvSo4n6A1NQLAFuB7fhxAE`).
+Files are uploaded by browser drag-and-drop of the seven `out/sharepoint/`
+folders: WorkIQ cannot carry file bytes, and Graph PowerShell sign-in needs
+admin consent on this tenant.
+
+**Upload verified 2026-10-03** 🖥️ — 39 / 39 files present, names exact.
+Uploaded sizes are larger than local by an almost fixed amount per type
+(`.docx` +8.9 KB, `.pptx` +8.5 KB, `.xlsx` +7.5 KB) 💭 consistent with
+SharePoint writing its own metadata into the file, not with corruption.
+TSB-C-0051 downloaded and compared: text identical to the local copy.
+
 ### Teams — team `Contoso Field Service`
 
 | Channel | Threads | Carries |
@@ -739,6 +752,18 @@ real work, not so much that curation becomes the project.
 | `Field-Escalations` | ~25 messages across 6 threads | **Trap 11** — the verbal goodwill promise. Plus partner escalations and 4000-series failure chatter |
 | `Warranty-Policy-Updates` | ~10 messages | Bulletin announcements, rate-card effective dates. Announcement ≠ controlled document |
 | `Partner-Fabrikam` | ~12 messages | Noise and one legitimate evidence thread |
+
+**Provisioned 2026-10-03** 🖥️ — team `Contoso Field Service` (public), group
+`1d67f268-f548-46ec-b5d0-ce84dc68e032`. All three channels are **standard**.
+Two were first created as *shared* and deleted; Teams holds a deleted channel's
+name for ~30 days 🔬, so the channels use spaced names. JSON filenames in
+`out/teams/` keep the hyphens.
+
+| Channel | Channel id |
+| --- | --- |
+| `Field Escalations` | `19:pa0gYhAXW0BXkOG7tu7BNf7CcITOssLeL63nB7uhoRM1@thread.tacv2` |
+| `Warranty Policy Updates` | `19:2b6fa5f0482b434da9bced8da3a0c1e7@thread.tacv2` |
+| `Partner Fabrikam` | `19:a8344ee1fb54414d98aef124ae27627e@thread.tacv2` |
 
 ### Database
 
@@ -754,6 +779,30 @@ Azure SQL Database, reached only through the MCP server.
 | `Dealers` | 4 | **uplift_pct (trap 8)**, region, agreement_ref |
 | `GoodwillAuthority` | 4 | tier, max_amount, approver_role, region |
 | `TsbApplicability` | 12 | **Deliberately stale for TSB-C-0051 — trap 1** |
+
+**Provisioned 2026-10-03** 🖥️ — database `contoso-warranty` on the shared
+server `az-sqldb-common.database.windows.net` (rg `az-sqldb-common-rg`, Sweden
+Central). Serverless `GP_S_Gen5_1`, 0.5–1 vCore, auto-pause 60 min. The server
+is **Entra-only** — no SQL logins — so the SQL-auth steps in
+`mcp/deploy/azure.md` do not apply here. Loaded from `out/db/seed.azuresql.sql`
+with an Entra token. Row counts match `out/db/contoso.db` exactly:
+
+| Table | Rows |
+| --- | --- |
+| `Assets` | 117 (3 NULL commissioning — trap 12 ✅) |
+| `AssetTelemetry` | 2,989 |
+| `Claims` | 90 |
+| `ServiceHistory` | 89 |
+| `Parts` | 14 |
+| `Dealers` · `GoodwillAuthority` · `TsbApplicability` | 4 each (TSB-C-0051 `serial_to = 1500` — trap 1 ✅) |
+| `ClaimAdjudicationDraft` · `EvidenceRequest` · `GoodwillEscalation` | 0 — written by the action tools |
+
+The table above is the design target; these are the generated counts.
+
+⚠️ Pending: once the Container App exists, create a database user for its
+managed identity (`CREATE USER [<app>] FROM EXTERNAL PROVIDER`). Grant read on
+all tables and write on the three action tables, and run the app with
+`AZURE_SQL_USE_MANAGED_IDENTITY=true`.
 
 ### MCP server — `contoso-service-mcp`
 
@@ -790,6 +839,39 @@ draft. Nothing in this world can send, pay, or notify.
 📄 `tools mocktools` lets skills and rubrics be built against these contracts
 **before the server exists** — which removes the hosting dependency from the
 critical path.
+
+**Deployed 2026-10-03** 🖥️ — Container App `contoso-service-mcp` in environment
+`pcdotai-agent` (rg `pcdotai-agent`, South India). The image is built with
+`az acr build` into `pcdotaiagentd10b5a`: `contoso-service-mcp:v3-1c30b85-hosts`.
+
+| | |
+| --- | --- |
+| Endpoint | `https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/mcp` |
+| Identity | System-assigned, appId `7fc1bdfd-95af-4c4b-bbeb-82203b1300b1`. Also used for ACR pull |
+| Database access | User `[contoso-service-mcp]` in `contoso-warranty`, created by SID (`TYPE = E`). `db_datareader` + `db_datawriter`. Resolves the pending item under *Database* |
+| Sizing | 0.5 vCPU / 1 GiB, 1–3 replicas |
+| Verified | `/healthz` → `{"status":"ok","assets":117}`. `tools/list` → 12 tools. `get_tsb_index` over MCP returns `serial_to = 1500` with its authority warning |
+
+**Full MCP call test, 2026-10-03** 🖥️ — all 12 tools were called over `/mcp` with
+real inputs. All returned `isError=false`, and an unknown claim returns a typed
+not-found. The three action tools wrote 1 draft, 1 evidence request and 1
+escalation, and set C-2026-04114 to `Held`, all confirmed in Azure SQL. That
+proves the identity's write access. Those 3 rows were then deleted and the claim
+reset to `Submitted`. The action tables are back to 0 rows, and all 90 claims are
+`Submitted`. Latency is ~0.6 s warm and 1–3 s on the first call or a write.
+
+Two defects surfaced on first deploy and are fixed in `mcp/`:
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| Container crash-looped | `mcp>=1.2.0` resolved to 2.x, which removed `FastMCP` | Pinned `mcp>=1.2.0,<2` (runs 1.30.0) |
+| `Invalid Host header` on every `/mcp` call | SDK DNS-rebinding check admits only localhost | `MCP_ALLOWED_HOSTS` env var, set to the FQDN |
+
+⚠️ **The endpoint is unauthenticated.** `auth.py` exists but `server.py` never
+calls it, so setting `ENTRA_TENANT_ID` / `API_AUDIENCE` changes nothing. Anyone
+with the URL can call the three write tools. The data is synthetic, but a stray
+draft row would contaminate the action tables between runs. Wire `auth.py` in
+and register the Entra app (deploy guide § 5) before `tools create`.
 
 ### Ground truth
 
