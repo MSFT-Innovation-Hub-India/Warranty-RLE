@@ -44,7 +44,9 @@ contoso-warranty-rle/
 │   ├── gen_docs.py            34 Word documents
 │   ├── gen_sheets.py          3 Excel workbooks
 │   ├── gen_decks.py           2 PowerPoint decks
-│   └── gen_teams.py           3 Teams channels
+│   ├── gen_teams.py           3 Teams channels
+│   ├── gen_db.py              schema + seed in two SQL dialects
+│   └── gen_samples.py         eval / train / smoke JSONL
 ├── mcp/                       the MCP server - 9 read + 3 action tools, ACA deploy
 └── out/                       generated artefacts (committed, reproducible from spec/)
     ├── data/                  assets.json, telemetry.json, claims.json
@@ -62,10 +64,10 @@ contoso-warranty-rle/
 | 1. Canonical spec | `spec/*.json` | ✅ Authored |
 | 2. Ground-truth engine | `build/adjudicate.py` | ✅ **14/14 self-test checks pass** — guide 03 § 8 reproduces at ₹199,175 |
 | 3. Trap validation | `build/test_traps.py` | ✅ **31/31 checks pass** across all 12 traps |
-| 4. Asset + claim population | `out/data/` — 120 assets, 3,101 telemetry rows, 86 claims | ✅ **Design conformance OK** — 30 eval / 56 train, all four decision types |
-| 5. `GROUND-TRUTH.md` | `out/GROUND-TRUTH.md` — 990 lines, full working per eval claim | ✅ Generated |
-| 6. Word documents | `out/sharepoint/` — **34 documents** across 6 folders | ✅ Generated |
-| 7. Excel workbooks | `out/sharepoint/03-RateCards/` — 3 workbooks, 54 parts | ✅ Generated |
+| 4. Asset + claim population | `out/data/` — 120 assets, 2,989 telemetry rows, 90 claims | ✅ **Design conformance OK** — 30 eval / 60 train, all four decision types |
+| 5. `GROUND-TRUTH.md` | `out/GROUND-TRUTH.md` — 993 lines, full working per eval claim | ✅ Generated |
+| 6. Word documents | `out/sharepoint/` — **34 documents** across 7 folders | ✅ Generated |
+| 7. Excel workbooks | `out/sharepoint/03-RateCards/` — 3 workbooks, 14 parts, 10 operations | ✅ Generated |
 | 8. PowerPoint decks | `out/sharepoint/05-Reviews/` — Q2 (stale) and Q3, 6 slides each | ✅ Generated |
 | 9. Teams threads | `out/teams/` — 3 channels, 14 threads, 31 messages | ✅ Generated |
 | 10. Database seed | `out/db/` — 11 tables in **two dialects**: SQLite + Azure SQL T-SQL | ✅ **trap 1 armed** — index says 1500, document says 1850 |
@@ -113,7 +115,7 @@ Three things it buys, none of which are obvious until they are missing:
 | | |
 | --- | --- |
 | **The traps are proven buildable** | A trap that cannot be expressed as a passing assertion is not a trap, it is an ambiguity. Two candidates were cut at this stage rather than discovered later as unanswerable samples |
-| **Ground truth is free** | 75 claims in, 75 expected adjudications out — with the governing instrument, the payable amount and the traps each one exercises. Hand-computing those is where a week disappears |
+| **Ground truth is free** | 90 claims in, 90 expected adjudications out — with the governing instrument, the payable amount and the traps each one exercises. Hand-computing those is where a week disappears |
 | **The corpus can be checked against itself** | Documents are rendered from the same clause text the engine reasons over, so a rate card and a policy cannot drift |
 
 ## Design notes worth knowing before reviewing `spec/`
