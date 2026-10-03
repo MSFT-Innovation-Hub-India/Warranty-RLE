@@ -1,0 +1,199 @@
+{
+  "_comment": "Canonical coverage instruments. Every Word document in 01-Policy/ and 02-Bulletins/ is generated FROM this file, so the prose and the ground-truth engine cannot diverge. See docs/03-scenario-design.md sections 5-8.",
+
+  "precedence_levels": {
+    "bulletin": 1,
+    "addendum": 2,
+    "policy": 3,
+    "_note": "Lower number wins. Stated once, in POL-WAR-4.2 clause 1.4."
+  },
+
+  "policy": {
+    "id": "POL-WAR-4.2",
+    "kind": "policy",
+    "title": "Contoso Industrial Global Warranty Policy",
+    "version": "4.2",
+    "effective_from": "2025-04-01",
+    "owner": "Warranty Operations",
+    "applies_to": "all",
+    "terms": { "months": 24, "hours": 6000 },
+    "clauses": {
+      "1.4": {
+        "heading": "Precedence between instruments",
+        "text": "Where two or more instruments address the same asset, the order of precedence is: (a) a Technical Service Bulletin that names the serial range of the asset; (b) the Regional Addendum for the region in which the asset is installed; (c) this policy. A Bulletin that has been superseded has no effect, whether or not it remains published. Where the Bulletin document and the service system applicability index disagree, the Bulletin document governs; the index is maintained for reporting and is informational only.",
+        "_traps": ["trap-1", "trap-2", "trap-5"]
+      },
+      "2.1": {
+        "heading": "Standard coverage period",
+        "text": "Unless extended or varied by an instrument of higher precedence, an asset is covered for twenty-four (24) months from the date of commissioning, or six thousand (6,000) running hours, whichever occurs first.",
+        "_traps": ["trap-3"]
+      },
+      "2.3": {
+        "heading": "Assets with no commissioning record",
+        "text": "Where the commissioning record for an asset is absent from the asset registry, coverage cannot be determined. The claim is to be held and the commissioning certificate requested from the installing partner. The date of despatch or the date of installation must not be substituted for the date of commissioning.",
+        "_traps": ["trap-12"]
+      },
+      "4.1": {
+        "heading": "Labour",
+        "text": "Labour is payable at the flat-rate allowance published for the operation code in the current Flat Rate Labour schedule, or at the hours actually claimed, whichever is the lesser. The rate applied is the regional labour rate in force on the date of repair.",
+        "_traps": ["trap-9", "trap-10"]
+      },
+      "4.2": {
+        "heading": "Parts",
+        "text": "Parts are payable at the published list price for the region, for the part actually fitted. Where a part has been superseded, the price of the superseding part applies.",
+        "_traps": ["trap-7"]
+      },
+      "4.3": {
+        "heading": "Handling",
+        "text": "A handling uplift on parts is payable only where the partner's Service Partner Agreement expressly grants one, at the percentage stated in that agreement.",
+        "_traps": ["trap-8"]
+      },
+      "5.1": { "heading": "Exclusion - misuse and overload", "text": "Damage arising from operation outside the published duty envelope, including sustained overload, is excluded." },
+      "5.2": {
+        "heading": "Exclusion - fluid contamination",
+        "text": "Damage arising from hydraulic fluid contamination above ISO 4406 class 18/16/13 is excluded, save where a Technical Service Bulletin provides otherwise.",
+        "_traps": ["trap-exclusion-reversal"]
+      },
+      "5.3": { "heading": "Exclusion - unauthorised modification", "text": "Damage arising from modification not authorised in writing by Contoso Industrial is excluded." },
+      "5.4": { "heading": "Exclusion - consumables", "text": "Filters, fluids, belts, seals fitted as routine maintenance, and other consumables are excluded." },
+      "6.1": {
+        "heading": "Repair warranty",
+        "text": "A component replaced under warranty carries a further ninety (90) days of coverage from the date the repair was completed. A claim arising within that period is adjudicated under this clause and carries funding code RW, whether or not the underlying asset remains within its coverage period.",
+        "_traps": ["trap-prior-claim"]
+      },
+      "7.1": {
+        "heading": "Goodwill authority",
+        "text": "An amount payable outside coverage may be authorised as goodwill only by a person holding the tier of authority set out in the Goodwill and Authority Matrix for that amount, and only where the authority is recorded in the claim system. An approval given in conversation, in a channel message, or by telephone does not constitute authority for the purposes of this clause.",
+        "_traps": ["trap-11"]
+      }
+    }
+  },
+
+  "addenda": [
+    {
+      "id": "ADD-IN-2.1",
+      "kind": "addendum",
+      "title": "Regional Addendum - India",
+      "version": "2.1",
+      "effective_from": "2025-04-01",
+      "region": "India",
+      "currency": "INR",
+      "terms": { "months": 18, "hours": 5000 },
+      "clauses": {
+        "A1": {
+          "heading": "Varied coverage period",
+          "text": "For assets installed in India, the standard coverage period at clause 2.1 of the Global Warranty Policy is varied to eighteen (18) months from the date of commissioning, or five thousand (5,000) running hours, whichever occurs first.",
+          "_traps": ["trap-2"],
+          "_design_note": "Deliberately SHORTER than base. A model that assumes a regional variation is always more generous, or that takes the first instrument it retrieves, fails here."
+        },
+        "A3": {
+          "heading": "Coastal and monsoon exclusion",
+          "text": "Corrosion damage at a coastal installation arising between 1 June and 30 September is excluded, save where a Technical Service Bulletin provides otherwise."
+        }
+      }
+    },
+    {
+      "id": "ADD-EM-1.3",
+      "kind": "addendum",
+      "title": "Regional Addendum - EMEA",
+      "version": "1.3",
+      "effective_from": "2024-10-01",
+      "region": "EMEA",
+      "currency": "EUR",
+      "terms": { "months": 24, "hours": 6000 },
+      "clauses": {
+        "A1": { "heading": "Coverage period", "text": "The standard coverage period at clause 2.1 of the Global Warranty Policy applies without variation." },
+        "A2": { "heading": "Currency", "text": "Amounts are payable in euro at the published EMEA rates." }
+      },
+      "_design_note": "Distractor. Retrieves alongside the India addendum on any query about regional variation."
+    },
+    {
+      "id": "ADD-AP-1.1",
+      "kind": "addendum",
+      "title": "Regional Addendum - APAC",
+      "version": "1.1",
+      "effective_from": "2025-04-01",
+      "region": "APAC",
+      "currency": "SGD",
+      "terms": { "months": 24, "hours": 6000 },
+      "clauses": {
+        "A1": { "heading": "Coverage period", "text": "The standard coverage period at clause 2.1 of the Global Warranty Policy applies without variation." }
+      },
+      "_design_note": "Second distractor."
+    }
+  ],
+
+  "bulletins": [
+    {
+      "id": "TSB-C-0051",
+      "kind": "bulletin",
+      "title": "Extended coverage - 4000-series hydraulic circuit and compressor",
+      "effective_from": "2026-01-15",
+      "families": ["4000-CH"],
+      "serial_from": 1200,
+      "serial_to": 1850,
+      "components": ["hydraulic", "compressor"],
+      "terms": { "months": 36, "hours": 8000 },
+      "superseded_by": null,
+      "index_serial_to": 1500,
+      "_traps": ["trap-1", "trap-4"],
+      "_design_note": "THE flagship trap. The DB applicability index records serial_to=1500 and is stale; the bulletin document says 1850. Policy 1.4 makes the document govern. Boundary samples sit at 1199/1200/1850/1851, and the index/document gap is exercised at 1501-1850."
+    },
+    {
+      "id": "TSB-C-0043",
+      "kind": "bulletin",
+      "title": "Filter housing defect - reversal of fluid contamination exclusion",
+      "effective_from": "2025-11-12",
+      "families": ["4000-CH"],
+      "serial_from": null,
+      "serial_to": null,
+      "components": ["hydraulic"],
+      "terms": null,
+      "reverses_exclusion": "5.2",
+      "reversal_condition": "contamination_attributable_to_filter_housing",
+      "superseded_by": null,
+      "index_serial_to": null,
+      "_traps": ["trap-exclusion-reversal"],
+      "_design_note": "Does not extend the coverage period - only reverses an exclusion. A model that treats every bulletin as a coverage extension gets the term wrong; one that ignores it declines a valid claim. Chains with TSB-C-0051."
+    },
+    {
+      "id": "TSB-P-0107",
+      "kind": "bulletin",
+      "title": "Extended coverage - 2200-series valve plate",
+      "effective_from": "2025-06-03",
+      "families": ["2200-AC"],
+      "serial_from": 400,
+      "serial_to": 900,
+      "components": ["valve_plate"],
+      "terms": { "months": 30, "hours": null },
+      "superseded_by": "TSB-P-0112",
+      "index_serial_to": 900,
+      "_traps": ["trap-5"],
+      "_design_note": "Superseded, still published and still retrievable. Has no effect."
+    },
+    {
+      "id": "TSB-P-0112",
+      "kind": "bulletin",
+      "title": "Extended coverage - 2200-series valve plate (supersedes TSB-P-0107)",
+      "effective_from": "2026-02-09",
+      "families": ["2200-AC"],
+      "serial_from": 400,
+      "serial_to": 750,
+      "components": ["valve_plate"],
+      "terms": { "months": 30, "hours": 7000 },
+      "supersedes": "TSB-P-0107",
+      "superseded_by": null,
+      "index_serial_to": 750,
+      "_traps": ["trap-5"],
+      "_design_note": "The superseding bulletin NARROWS the range from 900 to 750 and adds an hours limit. Assets at 751-900 were covered under 0107 and are not covered under 0112. A model that reads only the older bulletin, or that merges both, is wrong in opposite directions."
+    },
+    { "id": "TSB-C-0038", "kind": "bulletin", "title": "Control board firmware revision - advisory", "effective_from": "2025-08-20", "families": ["4000-CH"], "serial_from": null, "serial_to": null, "components": ["controls"], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise. Advisory, no coverage effect." },
+    { "id": "TSB-C-0047", "kind": "bulletin", "title": "Condenser fan balancing procedure", "effective_from": "2025-12-04", "families": ["4000-CH"], "serial_from": null, "serial_to": null, "components": ["structure"], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise." },
+    { "id": "TSB-C-0055", "kind": "bulletin", "title": "Revised torque specification - compressor mounting", "effective_from": "2026-03-18", "families": ["4000-CH"], "serial_from": null, "serial_to": null, "components": ["compressor"], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise, and a near-miss: names the compressor component but grants nothing." },
+    { "id": "TSB-P-0098", "kind": "bulletin", "title": "Drive coupling inspection interval", "effective_from": "2025-03-11", "families": ["2200-AC"], "serial_from": null, "serial_to": null, "components": ["drive"], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise." },
+    { "id": "TSB-P-0103", "kind": "bulletin", "title": "Seal kit part number change", "effective_from": "2025-05-22", "families": ["2200-AC"], "serial_from": null, "serial_to": null, "components": ["seals"], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise." },
+    { "id": "TSB-P-0115", "kind": "bulletin", "title": "Extended coverage - 2200-series drive motor, EMEA only", "effective_from": "2026-04-02", "families": ["2200-AC"], "serial_from": 300, "serial_to": 1100, "components": ["drive"], "region": "EMEA", "terms": { "months": 30, "hours": null }, "superseded_by": null, "index_serial_to": 1100, "_design_note": "Region-scoped bulletin. A model that ignores the region clause extends coverage to Indian assets that do not have it." },
+    { "id": "TSB-G-0021", "kind": "bulletin", "title": "Packaging and returns - revised process", "effective_from": "2025-07-09", "families": ["4000-CH", "2200-AC"], "serial_from": null, "serial_to": null, "components": [], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise, both families." },
+    { "id": "TSB-G-0029", "kind": "bulletin", "title": "Claim documentation requirements - reminder", "effective_from": "2026-01-28", "families": ["4000-CH", "2200-AC"], "serial_from": null, "serial_to": null, "components": [], "terms": null, "superseded_by": null, "advisory_only": true, "_design_note": "Noise, and retrieves on almost any claim query. Tests retrieval precision." }
+  ]
+}

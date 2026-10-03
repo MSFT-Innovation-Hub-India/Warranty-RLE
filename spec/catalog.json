@@ -1,0 +1,52 @@
+{
+  "_comment": "Canonical operations, labour rates and parts. Source of truth for 03-RateCards/*.xlsx and the Parts table in the database. See docs/03-scenario-design.md section 13.",
+
+  "operations": [
+    { "op_code": "HYD-PUMP-RR", "description": "Hydraulic pump - remove and replace", "family": "4000-CH", "component": "hydraulic", "flat_hours": 5.5 },
+    { "op_code": "FILT-HSG-RR", "description": "Filter housing - remove and replace", "family": "4000-CH", "component": "hydraulic", "flat_hours": 2.5 },
+    { "op_code": "COMP-RR", "description": "Compressor module - remove and replace", "family": "4000-CH", "component": "compressor", "flat_hours": 9.0 },
+    { "op_code": "CTRL-BD-RR", "description": "Control board - replace", "family": "4000-CH", "component": "controls", "flat_hours": 1.5 },
+    { "op_code": "COND-FAN-RR", "description": "Condenser fan assembly - replace", "family": "4000-CH", "component": "structure", "flat_hours": 3.5 },
+    { "op_code": "VALVE-PLT-RR", "description": "Valve plate kit - replace", "family": "2200-AC", "component": "valve_plate", "flat_hours": 4.0 },
+    { "op_code": "MOTOR-RR", "description": "Drive motor - replace", "family": "2200-AC", "component": "drive", "flat_hours": 7.5 },
+    { "op_code": "BEARING-RR", "description": "Main bearing set - replace", "family": "2200-AC", "component": "drive", "flat_hours": 6.0 },
+    { "op_code": "SEAL-KIT-RR", "description": "Seal kit - replace", "family": "2200-AC", "component": "seals", "flat_hours": 3.0 },
+    { "op_code": "DIAG-FIELD", "description": "Field diagnostic visit", "family": "any", "component": "any", "flat_hours": 2.0 }
+  ],
+
+  "labour_rates": [
+    { "region": "India", "currency": "INR", "rate": 1320, "effective_from": "2025-04-01", "effective_to": "2026-03-31" },
+    { "region": "India", "currency": "INR", "rate": 1450, "effective_from": "2026-04-01", "effective_to": "2027-03-31" },
+    { "region": "EMEA", "currency": "EUR", "rate": 78, "effective_from": "2025-04-01", "effective_to": "2026-03-31" },
+    { "region": "EMEA", "currency": "EUR", "rate": 84, "effective_from": "2026-04-01", "effective_to": "2027-03-31" },
+    { "region": "APAC", "currency": "SGD", "rate": 96, "effective_from": "2025-04-01", "effective_to": "2026-03-31" },
+    { "region": "APAC", "currency": "SGD", "rate": 102, "effective_from": "2026-04-01", "effective_to": "2027-03-31" }
+  ],
+  "_labour_rate_note": "trap-9. The FY26 band starts 1 Apr 2026. Samples sit either side of it, and the rate is selected by REPAIR date - not submission date, not today.",
+
+  "parts": [
+    { "part_no": "P-44120",   "description": "Hydraulic pump assembly",          "family": "4000-CH", "component": "hydraulic",   "supersedes": null,       "superseded_by": "P-44120-A", "price": { "INR": 186400, "EUR": 2060, "SGD": 2980 } },
+    { "part_no": "P-44120-A", "description": "Hydraulic pump assembly, rev A",   "family": "4000-CH", "component": "hydraulic",   "supersedes": "P-44120",  "superseded_by": null,        "price": { "INR": 191200, "EUR": 2115, "SGD": 3060 }, "_traps": ["trap-7"] },
+    { "part_no": "P-44080",   "description": "Filter housing",                   "family": "4000-CH", "component": "hydraulic",   "supersedes": null,       "superseded_by": "P-44080-B", "price": { "INR": 24600,  "EUR": 272,  "SGD": 394 } },
+    { "part_no": "P-44080-B", "description": "Filter housing, rev B",            "family": "4000-CH", "component": "hydraulic",   "supersedes": "P-44080",  "superseded_by": null,        "price": { "INR": 26100,  "EUR": 289,  "SGD": 418 }, "_traps": ["trap-7"] },
+    { "part_no": "P-44310",   "description": "Compressor module",                "family": "4000-CH", "component": "compressor",  "supersedes": null,       "superseded_by": null,        "price": { "INR": 742000, "EUR": 8200, "SGD": 11870 } },
+    { "part_no": "P-44900",   "description": "Control board",                    "family": "4000-CH", "component": "controls",    "supersedes": null,       "superseded_by": null,        "price": { "INR": 67400,  "EUR": 745,  "SGD": 1078 } },
+    { "part_no": "P-44520",   "description": "Condenser fan assembly",           "family": "4000-CH", "component": "structure",   "supersedes": null,       "superseded_by": null,        "price": { "INR": 43800,  "EUR": 484,  "SGD": 701 } },
+    { "part_no": "P-44210",   "description": "Hydraulic hose set",               "family": "4000-CH", "component": "hydraulic",   "supersedes": null,       "superseded_by": null,        "price": { "INR": 18900,  "EUR": 209,  "SGD": 302 } },
+    { "part_no": "P-22450",   "description": "Valve plate kit",                  "family": "2200-AC", "component": "valve_plate", "supersedes": null,       "superseded_by": "P-22450-C", "price": { "INR": 58900,  "EUR": 651,  "SGD": 942 } },
+    { "part_no": "P-22450-C", "description": "Valve plate kit, rev C",           "family": "2200-AC", "component": "valve_plate", "supersedes": "P-22450",  "superseded_by": null,        "price": { "INR": 61700,  "EUR": 682,  "SGD": 987 }, "_traps": ["trap-7"] },
+    { "part_no": "P-22610",   "description": "Drive motor",                      "family": "2200-AC", "component": "drive",       "supersedes": null,       "superseded_by": null,        "price": { "INR": 213500, "EUR": 2360, "SGD": 3416 } },
+    { "part_no": "P-22200",   "description": "Main bearing set",                 "family": "2200-AC", "component": "drive",       "supersedes": null,       "superseded_by": null,        "price": { "INR": 96300,  "EUR": 1064, "SGD": 1541 } },
+    { "part_no": "P-22120",   "description": "Seal kit",                         "family": "2200-AC", "component": "seals",       "supersedes": null,       "superseded_by": null,        "price": { "INR": 14800,  "EUR": 164,  "SGD": 237 } },
+    { "part_no": "P-22330",   "description": "Drive coupling",                   "family": "2200-AC", "component": "drive",       "supersedes": null,       "superseded_by": null,        "price": { "INR": 31200,  "EUR": 345,  "SGD": 499 } }
+  ],
+  "_parts_note": "14 load-bearing parts. The generator pads this to ~60 with family-consistent noise parts that no sample references, so that a parts lookup is real work.",
+
+  "funding_codes": [
+    { "code": "STD", "description": "Standard warranty, global policy or regional addendum" },
+    { "code": "TSB", "description": "Coverage granted by a Technical Service Bulletin - the bulletin reference is recorded against the claim" },
+    { "code": "RW",  "description": "Repair warranty under policy clause 6.1" },
+    { "code": "GW",  "description": "Goodwill, authorised under policy clause 7.1" },
+    { "code": "NC",  "description": "Not covered - no payment" }
+  ]
+}

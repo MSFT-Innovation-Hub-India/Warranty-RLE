@@ -1,0 +1,4213 @@
+[
+  {
+    "split": "eval",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04101",
+      "serial": "CIE-4000-CH-01050",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-10",
+      "submitted_date": "2026-05-16",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 2400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04101",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-03-15) expiring 2026-09-15, limit 5000 h; repair 2026-05-10 at 2400 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-09-15",
+        "hours_limit": 5000,
+        "hours_at_repair": 2400,
+        "commissioning_date": "2025-03-15"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 0.0,
+      "total_payable": 69575.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "part_priced": "P-44900"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04102",
+      "serial": "CIE-4000-CH-01052",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-02-18",
+      "submitted_date": "2026-02-24",
+      "op_code": "COND-FAN-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44520",
+      "part_fitted": "P-44520",
+      "hours_at_repair": 1900,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04102",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-01-08) expiring 2026-07-08, limit 5000 h; repair 2026-02-18 at 1900 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-07-08",
+        "hours_limit": 5000,
+        "hours_at_repair": 1900,
+        "commissioning_date": "2025-01-08"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 4620.0,
+      "payable_parts": 43800.0,
+      "payable_uplift": 0.0,
+      "total_payable": 48420.0,
+      "labour_rate_used": 1320,
+      "labour_hours_paid": 3.5,
+      "part_priced": "P-44520"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04103",
+      "serial": "CIE-2200-AC-00320",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-04-22",
+      "submitted_date": "2026-04-28",
+      "op_code": "SEAL-KIT-RR",
+      "claimed_hours": 3.0,
+      "claimed_part": "P-22120",
+      "part_fitted": "P-22120",
+      "hours_at_repair": 2750,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04103",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-05-02) expiring 2026-11-02, limit 5000 h; repair 2026-04-22 at 2750 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-11-02",
+        "hours_limit": 5000,
+        "hours_at_repair": 2750,
+        "commissioning_date": "2025-05-02"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 4350.0,
+      "payable_parts": 14800.0,
+      "payable_uplift": 0.0,
+      "total_payable": 19150.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 3.0,
+      "part_priced": "P-22120"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04104",
+      "serial": "CIE-4000-CH-01054",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-30",
+      "submitted_date": "2026-07-06",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44080",
+      "part_fitted": "P-44080",
+      "hours_at_repair": 3100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04104",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-02-11) expiring 2026-08-11, limit 5000 h; repair 2026-06-30 at 3100 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-08-11",
+        "hours_limit": 5000,
+        "hours_at_repair": 3100,
+        "commissioning_date": "2025-02-11"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 3625.0,
+      "payable_parts": 26100.0,
+      "payable_uplift": 0.0,
+      "total_payable": 29725.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.5,
+      "part_priced": "P-44080-B",
+      "notes": [
+        "P-44080 is superseded by P-44080-B; priced at the superseding part (policy 4.2).",
+        "Partner claimed P-44080; service history records P-44080 fitted."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04105",
+      "serial": "CIE-2200-AC-00322",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-01-15",
+      "submitted_date": "2026-01-21",
+      "op_code": "BEARING-RR",
+      "claimed_hours": 6.0,
+      "claimed_part": "P-22200",
+      "part_fitted": "P-22200",
+      "hours_at_repair": 2200,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04105",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-04-19) expiring 2026-10-19, limit 5000 h; repair 2026-01-15 at 2200 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-10-19",
+        "hours_limit": 5000,
+        "hours_at_repair": 2200,
+        "commissioning_date": "2025-04-19"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 7920.0,
+      "payable_parts": 96300.0,
+      "payable_uplift": 0.0,
+      "total_payable": 104220.0,
+      "labour_rate_used": 1320,
+      "labour_hours_paid": 6.0,
+      "part_priced": "P-22200"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04106",
+      "serial": "CIE-4000-CH-01056",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-08",
+      "submitted_date": "2026-07-14",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44210",
+      "part_fitted": "P-44210",
+      "hours_at_repair": 2600,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04106",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-06-01) expiring 2026-12-01, limit 5000 h; repair 2026-07-08 at 2600 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-12-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 2600,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 18900.0,
+      "payable_uplift": 0.0,
+      "total_payable": 26875.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44210"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04107",
+      "serial": "CIE-2200-AC-00324",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-30",
+      "submitted_date": "2026-06-05",
+      "op_code": "MOTOR-RR",
+      "claimed_hours": 7.5,
+      "claimed_part": "P-22610",
+      "part_fitted": "P-22610",
+      "hours_at_repair": 3050,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04107",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-03-27) expiring 2026-09-27, limit 5000 h; repair 2026-05-30 at 3050 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-09-27",
+        "hours_limit": 5000,
+        "hours_at_repair": 3050,
+        "commissioning_date": "2025-03-27"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 10875.0,
+      "payable_parts": 213500.0,
+      "payable_uplift": 0.0,
+      "total_payable": 224375.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 7.5,
+      "part_priced": "P-22610"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "covered-simple",
+    "claim": {
+      "claim_id": "C-2026-04108",
+      "serial": "CIE-4000-CH-01058",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-08-05",
+      "submitted_date": "2026-08-11",
+      "op_code": "DIAG-FIELD",
+      "claimed_hours": 2.0,
+      "claimed_part": null,
+      "part_fitted": null,
+      "hours_at_repair": 1450,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04108",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-07-14) expiring 2027-01-14, limit 5000 h; repair 2026-08-05 at 1450 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2027-01-14",
+        "hours_limit": 5000,
+        "hours_at_repair": 1450,
+        "commissioning_date": "2025-07-14"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 2900.0,
+      "payable_parts": 0.0,
+      "payable_uplift": 0.0,
+      "total_payable": 2900.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.0
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "declined-simple",
+    "claim": {
+      "claim_id": "C-2026-04109",
+      "serial": "CIE-4000-CH-01900",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-10",
+      "submitted_date": "2026-05-16",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 5200,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04109",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: both the time and running-hours limits is exceeded (expiry 2024-12-01 / 5000 h; repair 2026-05-10 at 5200 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2024-12-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 5200,
+        "commissioning_date": "2023-06-01"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "declined-simple",
+    "claim": {
+      "claim_id": "C-2026-04110",
+      "serial": "CIE-2200-AC-00330",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-03-03",
+      "submitted_date": "2026-03-09",
+      "op_code": "SEAL-KIT-RR",
+      "claimed_hours": 3.0,
+      "claimed_part": "P-22120",
+      "part_fitted": "P-22120",
+      "hours_at_repair": 6100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04110",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: both the time and running-hours limits is exceeded (expiry 2024-08-14 / 5000 h; repair 2026-03-03 at 6100 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2024-08-14",
+        "hours_limit": 5000,
+        "hours_at_repair": 6100,
+        "commissioning_date": "2023-02-14"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "declined-simple",
+    "claim": {
+      "claim_id": "C-2026-04111",
+      "serial": "CIE-4000-CH-01902",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-12",
+      "submitted_date": "2026-06-18",
+      "op_code": "COND-FAN-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44520",
+      "part_fitted": "P-44520",
+      "hours_at_repair": 7400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04111",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: both the time and running-hours limits is exceeded (expiry 2024-05-20 / 5000 h; repair 2026-06-12 at 7400 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2024-05-20",
+        "hours_limit": 5000,
+        "hours_at_repair": 7400,
+        "commissioning_date": "2022-11-20"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "declined-simple",
+    "claim": {
+      "claim_id": "C-2026-04112",
+      "serial": "CIE-2200-AC-00332",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-04-27",
+      "submitted_date": "2026-05-03",
+      "op_code": "BEARING-RR",
+      "claimed_hours": 6.0,
+      "claimed_part": "P-22200",
+      "part_fitted": "P-22200",
+      "hours_at_repair": 5800,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04112",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: both the time and running-hours limits is exceeded (expiry 2025-02-09 / 5000 h; repair 2026-04-27 at 5800 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-02-09",
+        "hours_limit": 5000,
+        "hours_at_repair": 5800,
+        "commissioning_date": "2023-08-09"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "declined-simple",
+    "claim": {
+      "claim_id": "C-2026-04113",
+      "serial": "CIE-4000-CH-01904",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-19",
+      "submitted_date": "2026-07-25",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44080",
+      "part_fitted": "P-44080",
+      "hours_at_repair": 6600,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04113",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: both the time and running-hours limits is exceeded (expiry 2024-10-05 / 5000 h; repair 2026-07-19 at 6600 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2024-10-05",
+        "hours_limit": 5000,
+        "hours_at_repair": 6600,
+        "commissioning_date": "2023-04-05"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04114",
+      "serial": "CIE-4000-CH-01700",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04114",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04115",
+      "serial": "CIE-4000-CH-01640",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-02",
+      "submitted_date": "2026-07-08",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 4400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04115",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-07-02 at 4400 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4400,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04116",
+      "serial": "CIE-4000-CH-01950",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04116",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04117",
+      "serial": "CIE-2200-AC-00800",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04117",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-09-01 / 5000 h; repair 2026-06-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-09-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04118",
+      "serial": "CIE-2200-AC-00600",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04118",
+      "decision": "approve",
+      "reason": "Covered under TSB-P-0112: 30 months from commissioning (2024-03-01) expiring 2026-09-01, limit 7000 h; repair 2026-06-01 at 3000 h.",
+      "governing_instrument": "TSB-P-0112",
+      "considered_instruments": [
+        "TSB-P-0112",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 30,
+        "expiry_date": "2026-09-01",
+        "hours_limit": 7000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 61700.0,
+      "payable_uplift": 0.0,
+      "total_payable": 67500.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-22450-C",
+      "notes": [
+        "TSB-P-0112 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04119",
+      "serial": "CIE-4000-CH-01701",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04119",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04120",
+      "serial": "CIE-4000-CH-01641",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-02",
+      "submitted_date": "2026-07-08",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 4400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04120",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-07-02 at 4400 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4400,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04121",
+      "serial": "CIE-4000-CH-01951",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04121",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04122",
+      "serial": "CIE-2200-AC-00801",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04122",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-09-01 / 5000 h; repair 2026-06-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-09-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04123",
+      "serial": "CIE-2200-AC-00601",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04123",
+      "decision": "approve",
+      "reason": "Covered under TSB-P-0112: 30 months from commissioning (2024-03-01) expiring 2026-09-01, limit 7000 h; repair 2026-06-01 at 3000 h.",
+      "governing_instrument": "TSB-P-0112",
+      "considered_instruments": [
+        "TSB-P-0112",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 30,
+        "expiry_date": "2026-09-01",
+        "hours_limit": 7000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 61700.0,
+      "payable_uplift": 0.0,
+      "total_payable": 67500.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-22450-C",
+      "notes": [
+        "TSB-P-0112 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04124",
+      "serial": "CIE-4000-CH-01702",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04124",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04125",
+      "serial": "CIE-4000-CH-01642",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-02",
+      "submitted_date": "2026-07-08",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 4400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04125",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-07-02 at 4400 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4400,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04126",
+      "serial": "CIE-4000-CH-01952",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04126",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04127",
+      "serial": "CIE-2200-AC-00802",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04127",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-09-01 / 5000 h; repair 2026-06-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-09-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "precedence",
+    "claim": {
+      "claim_id": "C-2026-04128",
+      "serial": "CIE-2200-AC-00602",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "VALVE-PLT-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-22450-C",
+      "part_fitted": "P-22450-C",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04128",
+      "decision": "approve",
+      "reason": "Covered under TSB-P-0112: 30 months from commissioning (2024-03-01) expiring 2026-09-01, limit 7000 h; repair 2026-06-01 at 3000 h.",
+      "governing_instrument": "TSB-P-0112",
+      "considered_instruments": [
+        "TSB-P-0112",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 30,
+        "expiry_date": "2026-09-01",
+        "hours_limit": 7000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-03-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 61700.0,
+      "payable_uplift": 0.0,
+      "total_payable": 67500.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-22450-C",
+      "notes": [
+        "TSB-P-0112 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "TSB-P-0107 names this asset but has been superseded and has no effect (policy 1.4)."
+      ],
+      "traps": [
+        "trap-5"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04129",
+      "serial": "CIE-4000-CH-01199",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04129",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-10-04 / 5000 h; repair 2026-06-18 at 4120 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-10-04",
+        "hours_limit": 5000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04130",
+      "serial": "CIE-4000-CH-01200",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04130",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7250.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 198450.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04131",
+      "serial": "CIE-4000-CH-01850",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04131",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7250.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 198450.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04132",
+      "serial": "CIE-4000-CH-01851",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04132",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-10-04 / 5000 h; repair 2026-06-18 at 4120 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-10-04",
+        "hours_limit": 5000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04133",
+      "serial": "CIE-4000-CH-01199",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04133",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-10-04 / 5000 h; repair 2026-06-18 at 4120 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-10-04",
+        "hours_limit": 5000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04134",
+      "serial": "CIE-4000-CH-01200",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04134",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7250.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 198450.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04135",
+      "serial": "CIE-4000-CH-01849",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04135",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7250.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 198450.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04136",
+      "serial": "CIE-4000-CH-01850",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04136",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-04-04) expiring 2027-04-04, limit 8000 h; repair 2026-06-18 at 4120 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-04-04",
+        "hours_limit": 8000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7250.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 198450.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "The service system applicability index records TSB-C-0051 as ending at serial 1500; the bulletin document states 1850. The document governs (policy 1.4).",
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-1"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04137",
+      "serial": "CIE-4000-CH-01851",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04137",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-10-04 / 5000 h; repair 2026-06-18 at 4120 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-10-04",
+        "hours_limit": 5000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "train",
+    "slice": "serial-boundary",
+    "claim": {
+      "claim_id": "C-2026-04138",
+      "serial": "CIE-4000-CH-01852",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 4120,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04138",
+      "decision": "decline",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2025-10-04 / 5000 h; repair 2026-06-18 at 4120 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2025-10-04",
+        "hours_limit": 5000,
+        "hours_at_repair": 4120,
+        "commissioning_date": "2024-04-04"
+      },
+      "funding_code": "NC"
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04139",
+      "serial": "CIE-4000-CH-01400",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 8400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04139",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the running-hours limit is exceeded (expiry 2028-06-01 / 8000 h; repair 2026-06-01 at 8400 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-06-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 8400,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-3"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04140",
+      "serial": "CIE-4000-CH-01410",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 2100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04140",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the time limit is exceeded (expiry 2026-02-01 / 8000 h; repair 2026-06-01 at 2100 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-02-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 2100,
+        "commissioning_date": "2023-02-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04141",
+      "serial": "CIE-4000-CH-01420",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-20",
+      "submitted_date": "2026-06-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 7900,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04141",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2023-07-01) expiring 2026-07-01, limit 8000 h; repair 2026-06-20 at 7900 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-07-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 7900,
+        "commissioning_date": "2023-07-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04142",
+      "serial": "CIE-4000-CH-01403",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 8400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04142",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the running-hours limit is exceeded (expiry 2028-06-01 / 8000 h; repair 2026-06-01 at 8400 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-06-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 8400,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-3"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04143",
+      "serial": "CIE-4000-CH-01413",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 2100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04143",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the time limit is exceeded (expiry 2026-02-01 / 8000 h; repair 2026-06-01 at 2100 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-02-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 2100,
+        "commissioning_date": "2023-02-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04144",
+      "serial": "CIE-4000-CH-01423",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-20",
+      "submitted_date": "2026-06-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 7900,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04144",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2023-07-01) expiring 2026-07-01, limit 8000 h; repair 2026-06-20 at 7900 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-07-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 7900,
+        "commissioning_date": "2023-07-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04145",
+      "serial": "CIE-4000-CH-01406",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 8400,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04145",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the running-hours limit is exceeded (expiry 2028-06-01 / 8000 h; repair 2026-06-01 at 8400 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-06-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 8400,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ],
+      "traps": [
+        "trap-3"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04146",
+      "serial": "CIE-4000-CH-01416",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 2100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04146",
+      "decision": "decline",
+      "reason": "Outside coverage under TSB-C-0051: the time limit is exceeded (expiry 2026-02-01 / 8000 h; repair 2026-06-01 at 2100 h).",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-02-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 2100,
+        "commissioning_date": "2023-02-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "dual-limit",
+    "claim": {
+      "claim_id": "C-2026-04147",
+      "serial": "CIE-4000-CH-01426",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-20",
+      "submitted_date": "2026-06-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 7900,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04147",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2023-07-01) expiring 2026-07-01, limit 8000 h; repair 2026-06-20 at 7900 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2026-07-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 7900,
+        "commissioning_date": "2023-07-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04148",
+      "serial": "CIE-4000-CH-01440",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 8.0,
+      "claimed_part": "P-44120",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04148",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-06-18 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 9560.0,
+      "total_payable": 208735.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "hours_variance": 2.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "Partner claimed P-44120; service history records P-44120-A fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "2.5 h claimed above the 5.5 h flat-rate allowance for HYD-PUMP-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04149",
+      "serial": "CIE-4000-CH-01442",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-03-31",
+      "submitted_date": "2026-04-06",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04149",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-03-31 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 11880.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 753880.0,
+      "labour_rate_used": 1320,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04150",
+      "serial": "CIE-4000-CH-01444",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-04-01",
+      "submitted_date": "2026-04-07",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04150",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-04-01 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04151",
+      "serial": "CIE-4000-CH-01446",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44080",
+      "part_fitted": "P-44080",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04151",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 3625.0,
+      "payable_parts": 26100.0,
+      "payable_uplift": 1305.0,
+      "total_payable": 31030.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44080-B",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "P-44080 is superseded by P-44080-B; priced at the superseding part (policy 4.2).",
+        "Partner claimed P-44080; service history records P-44080 fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 2.5 h flat-rate allowance for FILT-HSG-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04152",
+      "serial": "CIE-4000-CH-01448",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04152",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 197000.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04153",
+      "serial": "CIE-4000-CH-01450",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-05",
+      "submitted_date": "2026-06-11",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04153",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-02-01) expiring 2026-08-01, limit 5000 h; repair 2026-06-05 at 3000 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-08-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-02-01"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 3370.0,
+      "total_payable": 72945.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44900",
+      "notes": [
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 1.5 h flat-rate allowance for CTRL-BD-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04154",
+      "serial": "CIE-4000-CH-01452",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 8.0,
+      "claimed_part": "P-44120",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04154",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-06-18 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 9560.0,
+      "total_payable": 208735.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "hours_variance": 2.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "Partner claimed P-44120; service history records P-44120-A fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "2.5 h claimed above the 5.5 h flat-rate allowance for HYD-PUMP-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04155",
+      "serial": "CIE-4000-CH-01454",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-03-31",
+      "submitted_date": "2026-04-06",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04155",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-03-31 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 11880.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 753880.0,
+      "labour_rate_used": 1320,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04156",
+      "serial": "CIE-4000-CH-01456",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-04-01",
+      "submitted_date": "2026-04-07",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04156",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-04-01 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04157",
+      "serial": "CIE-4000-CH-01458",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44080",
+      "part_fitted": "P-44080",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04157",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 3625.0,
+      "payable_parts": 26100.0,
+      "payable_uplift": 1305.0,
+      "total_payable": 31030.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44080-B",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "P-44080 is superseded by P-44080-B; priced at the superseding part (policy 4.2).",
+        "Partner claimed P-44080; service history records P-44080 fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 2.5 h flat-rate allowance for FILT-HSG-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04158",
+      "serial": "CIE-4000-CH-01460",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04158",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 197000.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04159",
+      "serial": "CIE-4000-CH-01462",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-05",
+      "submitted_date": "2026-06-11",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04159",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-02-01) expiring 2026-08-01, limit 5000 h; repair 2026-06-05 at 3000 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-08-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-02-01"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 3370.0,
+      "total_payable": 72945.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44900",
+      "notes": [
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 1.5 h flat-rate allowance for CTRL-BD-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04160",
+      "serial": "CIE-4000-CH-01464",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 8.0,
+      "claimed_part": "P-44120",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04160",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-06-18 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 9560.0,
+      "total_payable": 208735.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "hours_variance": 2.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "Partner claimed P-44120; service history records P-44120-A fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "2.5 h claimed above the 5.5 h flat-rate allowance for HYD-PUMP-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04161",
+      "serial": "CIE-4000-CH-01466",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-03-31",
+      "submitted_date": "2026-04-06",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04161",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-03-31 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 11880.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 753880.0,
+      "labour_rate_used": 1320,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04162",
+      "serial": "CIE-4000-CH-01468",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-04-01",
+      "submitted_date": "2026-04-07",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04162",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-10-01) expiring 2027-10-01, limit 8000 h; repair 2026-04-01 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-10-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04163",
+      "serial": "CIE-4000-CH-01470",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44080",
+      "part_fitted": "P-44080",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04163",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 3625.0,
+      "payable_parts": 26100.0,
+      "payable_uplift": 1305.0,
+      "total_payable": 31030.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44080-B",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "P-44080 is superseded by P-44080-B; priced at the superseding part (policy 4.2).",
+        "Partner claimed P-44080; service history records P-44080 fitted.",
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 2.5 h flat-rate allowance for FILT-HSG-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04164",
+      "serial": "CIE-4000-CH-01472",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-20",
+      "submitted_date": "2026-05-26",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 4.0,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04164",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-01-10) expiring 2028-01-10, limit 8000 h; repair 2026-05-20 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-01-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-01-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 5800.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 197000.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 4.0,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "valuation",
+    "claim": {
+      "claim_id": "C-2026-04165",
+      "serial": "CIE-4000-CH-01474",
+      "dealer_id": "D-IN-02",
+      "repair_date": "2026-06-05",
+      "submitted_date": "2026-06-11",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04165",
+      "decision": "approve",
+      "reason": "Covered under ADD-IN-2.1: 18 months from commissioning (2025-02-01) expiring 2026-08-01, limit 5000 h; repair 2026-06-05 at 3000 h.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-08-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-02-01"
+      },
+      "funding_code": "STD",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 3370.0,
+      "total_payable": 72945.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "hours_variance": 1.0,
+      "part_priced": "P-44900",
+      "notes": [
+        "5.0% handling uplift granted by SPA-2024-NWD-IN (policy 4.3).",
+        "1.0 h claimed above the 1.5 h flat-rate allowance for CTRL-BD-RR is not payable (policy 4.1)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "stale-deck",
+    "claim": {
+      "claim_id": "C-2026-04166",
+      "serial": "CIE-4000-CH-01300",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-08-12",
+      "submitted_date": "2026-08-18",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 5300,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04166",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-02-20) expiring 2027-02-20, limit 8000 h; repair 2026-08-12 at 5300 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-02-20",
+        "hours_limit": 8000,
+        "hours_at_repair": 5300,
+        "commissioning_date": "2024-02-20"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "stale-deck",
+    "claim": {
+      "claim_id": "C-2026-04167",
+      "serial": "CIE-4000-CH-01302",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-09-01",
+      "submitted_date": "2026-09-07",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 4700,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04167",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-05-06) expiring 2027-05-06, limit 8000 h; repair 2026-09-01 at 4700 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-05-06",
+        "hours_limit": 8000,
+        "hours_at_repair": 4700,
+        "commissioning_date": "2024-05-06"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "stale-deck",
+    "claim": {
+      "claim_id": "C-2026-04168",
+      "serial": "CIE-4000-CH-01304",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-07-24",
+      "submitted_date": "2026-07-30",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 5900,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04168",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-03-18) expiring 2027-03-18, limit 8000 h; repair 2026-07-24 at 5900 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-03-18",
+        "hours_limit": 8000,
+        "hours_at_repair": 5900,
+        "commissioning_date": "2024-03-18"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "stale-deck",
+    "claim": {
+      "claim_id": "C-2026-04169",
+      "serial": "CIE-4000-CH-01306",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-08-29",
+      "submitted_date": "2026-09-04",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 4100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04169",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-06-11) expiring 2027-06-11, limit 8000 h; repair 2026-08-29 at 4100 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-06-11",
+        "hours_limit": 8000,
+        "hours_at_repair": 4100,
+        "commissioning_date": "2024-06-11"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 13050.0,
+      "payable_parts": 742000.0,
+      "payable_uplift": 0.0,
+      "total_payable": 755050.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 9.0,
+      "part_priced": "P-44310",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "stale-deck",
+    "claim": {
+      "claim_id": "C-2026-04170",
+      "serial": "CIE-4000-CH-01308",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-09-14",
+      "submitted_date": "2026-09-20",
+      "op_code": "FILT-HSG-RR",
+      "claimed_hours": 2.5,
+      "claimed_part": "P-44080-B",
+      "part_fitted": "P-44080-B",
+      "hours_at_repair": 6200,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04170",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2024-01-30) expiring 2027-01-30, limit 8000 h; repair 2026-09-14 at 6200 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2027-01-30",
+        "hours_limit": 8000,
+        "hours_at_repair": 6200,
+        "commissioning_date": "2024-01-30"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 3625.0,
+      "payable_parts": 26100.0,
+      "payable_uplift": 0.0,
+      "total_payable": 29725.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 2.5,
+      "part_priced": "P-44080-B",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "authority",
+    "claim": {
+      "claim_id": "C-2026-04171",
+      "serial": "CIE-4000-CH-01960",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": 67400
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04171",
+      "decision": "escalate",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "GW",
+      "approver_role": "Regional Service Manager",
+      "notes": [
+        "Goodwill of 67,400 requires tier 2 authority (Regional Service Manager) recorded in the claim system (policy 7.1). An approval given in a channel message does not constitute authority."
+      ],
+      "traps": [
+        "trap-11"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "authority",
+    "claim": {
+      "claim_id": "C-2026-04172",
+      "serial": "CIE-4000-CH-01962",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": 312000
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04172",
+      "decision": "escalate",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "GW",
+      "approver_role": "Warranty Operations Head",
+      "notes": [
+        "Goodwill of 312,000 requires tier 3 authority (Warranty Operations Head) recorded in the claim system (policy 7.1). An approval given in a channel message does not constitute authority."
+      ],
+      "traps": [
+        "trap-11"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "authority",
+    "claim": {
+      "claim_id": "C-2026-04173",
+      "serial": "CIE-4000-CH-01964",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": 18400
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04173",
+      "decision": "escalate",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "GW",
+      "approver_role": "Service Supervisor",
+      "notes": [
+        "Goodwill of 18,400 requires tier 1 authority (Service Supervisor) recorded in the claim system (policy 7.1). An approval given in a channel message does not constitute authority."
+      ],
+      "traps": [
+        "trap-11"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "authority",
+    "claim": {
+      "claim_id": "C-2026-04174",
+      "serial": "CIE-4000-CH-01966",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "COMP-RR",
+      "claimed_hours": 9.0,
+      "claimed_part": "P-44310",
+      "part_fitted": "P-44310",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": 742000
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04174",
+      "decision": "escalate",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "GW",
+      "approver_role": "Director, Aftermarket",
+      "notes": [
+        "Goodwill of 742,000 requires tier 4 authority (Director, Aftermarket) recorded in the claim system (policy 7.1). An approval given in a channel message does not constitute authority."
+      ],
+      "traps": [
+        "trap-11"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "authority",
+    "claim": {
+      "claim_id": "C-2026-04175",
+      "serial": "CIE-4000-CH-01968",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-05-01",
+      "submitted_date": "2026-05-07",
+      "op_code": "COND-FAN-RR",
+      "claimed_hours": 3.5,
+      "claimed_part": "P-44520",
+      "part_fitted": "P-44520",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": 43800
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04175",
+      "decision": "escalate",
+      "reason": "Outside coverage under ADD-IN-2.1: the time limit is exceeded (expiry 2026-03-01 / 5000 h; repair 2026-05-01 at 3000 h).",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-03-01",
+        "hours_limit": 5000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2024-09-01"
+      },
+      "funding_code": "GW",
+      "approver_role": "Regional Service Manager",
+      "notes": [
+        "Goodwill of 43,800 requires tier 2 authority (Regional Service Manager) recorded in the claim system (policy 7.1). An approval given in a channel message does not constitute authority."
+      ],
+      "traps": [
+        "trap-11"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04176",
+      "serial": "CIE-4000-CH-02100",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04176",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: the commissioning record is absent from the asset registry (policy 2.3). The installation date must not be substituted.",
+      "funding_code": "NC",
+      "missing_field": "commissioning_date",
+      "required_record": "commissioning certificate from the installing partner",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04177",
+      "serial": "CIE-4000-CH-09990",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04177",
+      "decision": "request_evidence",
+      "reason": "Serial CIE-4000-CH-09990 is not present in the asset registry.",
+      "funding_code": "NC",
+      "missing_field": "asset record",
+      "required_record": "asset registration / proof of supply",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "eval",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04178",
+      "serial": "CIE-4000-CH-02110",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": null,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04178",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: ADD-IN-2.1 sets a limit of 5000 running hours and the asset registry holds no telemetry reading for CIE-4000-CH-02110 at the date of repair.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-04-01",
+        "hours_limit": 5000,
+        "hours_at_repair": null,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "NC",
+      "missing_field": "running_hours",
+      "required_record": "running-hours reading at or before the date of repair",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04179",
+      "serial": "CIE-4000-CH-02101",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04179",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: the commissioning record is absent from the asset registry (policy 2.3). The installation date must not be substituted.",
+      "funding_code": "NC",
+      "missing_field": "commissioning_date",
+      "required_record": "commissioning certificate from the installing partner",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04180",
+      "serial": "CIE-4000-CH-09991",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04180",
+      "decision": "request_evidence",
+      "reason": "Serial CIE-4000-CH-09991 is not present in the asset registry.",
+      "funding_code": "NC",
+      "missing_field": "asset record",
+      "required_record": "asset registration / proof of supply",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04181",
+      "serial": "CIE-4000-CH-02111",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": null,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04181",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: ADD-IN-2.1 sets a limit of 5000 running hours and the asset registry holds no telemetry reading for CIE-4000-CH-02111 at the date of repair.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-04-01",
+        "hours_limit": 5000,
+        "hours_at_repair": null,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "NC",
+      "missing_field": "running_hours",
+      "required_record": "running-hours reading at or before the date of repair",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04182",
+      "serial": "CIE-4000-CH-02102",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04182",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: the commissioning record is absent from the asset registry (policy 2.3). The installation date must not be substituted.",
+      "funding_code": "NC",
+      "missing_field": "commissioning_date",
+      "required_record": "commissioning certificate from the installing partner",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04183",
+      "serial": "CIE-4000-CH-09992",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04183",
+      "decision": "request_evidence",
+      "reason": "Serial CIE-4000-CH-09992 is not present in the asset registry.",
+      "funding_code": "NC",
+      "missing_field": "asset record",
+      "required_record": "asset registration / proof of supply",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "abstention",
+    "claim": {
+      "claim_id": "C-2026-04184",
+      "serial": "CIE-4000-CH-02112",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-18",
+      "submitted_date": "2026-06-24",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": null,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04184",
+      "decision": "request_evidence",
+      "reason": "Coverage cannot be determined: ADD-IN-2.1 sets a limit of 5000 running hours and the asset registry holds no telemetry reading for CIE-4000-CH-02112 at the date of repair.",
+      "governing_instrument": "ADD-IN-2.1",
+      "considered_instruments": [
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 18,
+        "expiry_date": "2026-04-01",
+        "hours_limit": 5000,
+        "hours_at_repair": null,
+        "commissioning_date": "2024-10-01"
+      },
+      "funding_code": "NC",
+      "missing_field": "running_hours",
+      "required_record": "running-hours reading at or before the date of repair",
+      "traps": [
+        "trap-12"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "exclusion",
+    "claim": {
+      "claim_id": "C-2026-04185",
+      "serial": "CIE-4000-CH-01360",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [
+        "5.2"
+      ],
+      "contamination_from_filter_housing": true,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04185",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-06-01) expiring 2028-06-01, limit 8000 h; repair 2026-06-01 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-06-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "Exclusion 5.2 is reversed by TSB-C-0043 where the contamination is attributable to the filter housing defect."
+      ],
+      "traps": [
+        "trap-exclusion-reversal"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "exclusion",
+    "claim": {
+      "claim_id": "C-2026-04186",
+      "serial": "CIE-4000-CH-01362",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [
+        "5.2"
+      ],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04186",
+      "decision": "decline",
+      "reason": "Excluded under policy 5.2 - Exclusion - fluid contamination.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-06-01",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-06-01"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "exclusion",
+    "claim": {
+      "claim_id": "C-2026-04187",
+      "serial": "CIE-4000-CH-01364",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [
+        "5.2"
+      ],
+      "contamination_from_filter_housing": true,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04187",
+      "decision": "approve",
+      "reason": "Covered under TSB-C-0051: 36 months from commissioning (2025-04-10) expiring 2028-04-10, limit 8000 h; repair 2026-06-01 at 3000 h.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-04-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-04-10"
+      },
+      "funding_code": "TSB",
+      "currency": "INR",
+      "payable_labour": 7975.0,
+      "payable_parts": 191200.0,
+      "payable_uplift": 0.0,
+      "total_payable": 199175.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 5.5,
+      "part_priced": "P-44120-A",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4).",
+        "Exclusion 5.2 is reversed by TSB-C-0043 where the contamination is attributable to the filter housing defect."
+      ],
+      "traps": [
+        "trap-exclusion-reversal"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "exclusion",
+    "claim": {
+      "claim_id": "C-2026-04188",
+      "serial": "CIE-4000-CH-01366",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "HYD-PUMP-RR",
+      "claimed_hours": 5.5,
+      "claimed_part": "P-44120-A",
+      "part_fitted": "P-44120-A",
+      "hours_at_repair": 3000,
+      "exclusion_flags": [
+        "5.2"
+      ],
+      "contamination_from_filter_housing": false,
+      "prior_claim": null,
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04188",
+      "decision": "decline",
+      "reason": "Excluded under policy 5.2 - Exclusion - fluid contamination.",
+      "governing_instrument": "TSB-C-0051",
+      "considered_instruments": [
+        "TSB-C-0051",
+        "TSB-C-0043",
+        "ADD-IN-2.1",
+        "POL-WAR-4.2"
+      ],
+      "expiry_basis": {
+        "months": 36,
+        "expiry_date": "2028-04-10",
+        "hours_limit": 8000,
+        "hours_at_repair": 3000,
+        "commissioning_date": "2025-04-10"
+      },
+      "funding_code": "NC",
+      "notes": [
+        "TSB-C-0051 names this serial range and takes precedence over ADD-IN-2.1 and POL-WAR-4.2 (policy 1.4)."
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "repair-warranty",
+    "claim": {
+      "claim_id": "C-2026-04189",
+      "serial": "CIE-4000-CH-01980",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 6100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": {
+        "claim_id": "C-2026-03110",
+        "completed_date": "2026-04-20",
+        "component": "controls"
+      },
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04189",
+      "decision": "approve",
+      "reason": "Within the 90-day repair warranty on claim C-2026-03110 (repair completed 2026-04-20, 42 days before this repair).",
+      "governing_instrument": "POL-WAR-4.2 6.1",
+      "considered_instruments": [
+        "POL-WAR-4.2"
+      ],
+      "funding_code": "RW",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 0.0,
+      "total_payable": 69575.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "part_priced": "P-44900",
+      "traps": [
+        "trap-prior-claim"
+      ]
+    }
+  },
+  {
+    "split": "train",
+    "slice": "repair-warranty",
+    "claim": {
+      "claim_id": "C-2026-04190",
+      "serial": "CIE-4000-CH-01981",
+      "dealer_id": "D-IN-01",
+      "repair_date": "2026-06-01",
+      "submitted_date": "2026-06-07",
+      "op_code": "CTRL-BD-RR",
+      "claimed_hours": 1.5,
+      "claimed_part": "P-44900",
+      "part_fitted": "P-44900",
+      "hours_at_repair": 6100,
+      "exclusion_flags": [],
+      "contamination_from_filter_housing": false,
+      "prior_claim": {
+        "claim_id": "C-2026-03110",
+        "completed_date": "2026-04-20",
+        "component": "controls"
+      },
+      "goodwill_requested": null
+    },
+    "adjudication": {
+      "claim_id": "C-2026-04190",
+      "decision": "approve",
+      "reason": "Within the 90-day repair warranty on claim C-2026-03110 (repair completed 2026-04-20, 42 days before this repair).",
+      "governing_instrument": "POL-WAR-4.2 6.1",
+      "considered_instruments": [
+        "POL-WAR-4.2"
+      ],
+      "funding_code": "RW",
+      "currency": "INR",
+      "payable_labour": 2175.0,
+      "payable_parts": 67400.0,
+      "payable_uplift": 0.0,
+      "total_payable": 69575.0,
+      "labour_rate_used": 1450,
+      "labour_hours_paid": 1.5,
+      "part_priced": "P-44900",
+      "traps": [
+        "trap-prior-claim"
+      ]
+    }
+  }
+]

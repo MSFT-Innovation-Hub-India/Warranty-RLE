@@ -1,0 +1,93 @@
+{
+  "_comment": "Canonical entity spec for the Contoso Industrial warranty adjudication world. All entities are fictional. See docs/03-scenario-design.md section 5.",
+  "manufacturer": {
+    "name": "Contoso Industrial Equipment",
+    "short": "Contoso Industrial",
+    "abbrev": "CIE",
+    "hq": "Pune, India"
+  },
+  "families": [
+    {
+      "code": "4000-CH",
+      "name": "4000-series industrial chiller",
+      "serial_prefix": "CIE-4000-CH-",
+      "serial_range": [1000, 2200],
+      "components": ["compressor", "hydraulic", "controls", "structure"]
+    },
+    {
+      "code": "2200-AC",
+      "name": "2200-series air compressor",
+      "serial_prefix": "CIE-2200-AC-",
+      "serial_range": [300, 1100],
+      "components": ["valve_plate", "drive", "seals", "controls"]
+    }
+  ],
+  "dealers": [
+    {
+      "dealer_id": "D-IN-01",
+      "name": "Fabrikam Service Partners",
+      "region": "India",
+      "currency": "INR",
+      "uplift_pct": 0.0,
+      "agreement_ref": "SPA-2023-FAB-IN",
+      "submission_sla_days": 30,
+      "_trap": "trap-8 control: no uplift. The partner most samples use."
+    },
+    {
+      "dealer_id": "D-IN-02",
+      "name": "Northwind Field Services",
+      "region": "India",
+      "currency": "INR",
+      "uplift_pct": 5.0,
+      "agreement_ref": "SPA-2024-NWD-IN",
+      "submission_sla_days": 30,
+      "_trap": "trap-8: negotiated 5% handling uplift on parts, granted in SPA-2024-NWD-IN clause 6.2 only."
+    },
+    {
+      "dealer_id": "D-EM-01",
+      "name": "Tailwind Equipment Services",
+      "region": "EMEA",
+      "currency": "EUR",
+      "uplift_pct": 2.5,
+      "agreement_ref": "SPA-2022-TWD-EM",
+      "submission_sla_days": 45,
+      "_trap": "currency distractor. Pulls a model that ignores region onto the wrong rate card row."
+    },
+    {
+      "dealer_id": "D-AP-01",
+      "name": "Proseware Technical Services",
+      "region": "APAC",
+      "currency": "SGD",
+      "uplift_pct": 0.0,
+      "agreement_ref": "SPA-2024-PRO-AP",
+      "submission_sla_days": 45,
+      "_trap": "second currency distractor."
+    }
+  ],
+  "customers": [
+    { "customer_id": "C-LIT", "name": "Litware Manufacturing", "site": "Pune", "region": "India", "coastal": false },
+    { "customer_id": "C-WGF", "name": "Woodgrove Foods", "site": "Nashik", "region": "India", "coastal": false },
+    { "customer_id": "C-RLC", "name": "Relecloud Data Centres", "site": "Hyderabad", "region": "India", "coastal": false },
+    { "customer_id": "C-RLC2", "name": "Relecloud Data Centres", "site": "Chennai", "region": "India", "coastal": true },
+    { "customer_id": "C-ADV", "name": "Adventure Works Brewing", "site": "Bengaluru", "region": "India", "coastal": false },
+    { "customer_id": "C-VNS", "name": "VanArsdel Chemicals", "site": "Mumbai", "region": "India", "coastal": true },
+    { "customer_id": "C-WWI", "name": "Wide World Importers", "site": "Amsterdam", "region": "EMEA", "coastal": true },
+    { "customer_id": "C-TRY", "name": "Trey Research", "site": "Singapore", "region": "APAC", "coastal": true }
+  ],
+  "people": [
+    { "name": "Anjali Rao", "role": "Warranty Operations Head", "org": "Contoso Industrial", "authority_tier": 3 },
+    { "name": "Vikram Shetty", "role": "Regional Service Manager, India", "org": "Contoso Industrial", "authority_tier": 2 },
+    { "name": "Meera Krishnan", "role": "Service Supervisor, West", "org": "Contoso Industrial", "authority_tier": 1 },
+    { "name": "Daniel Okafor", "role": "Director, Aftermarket", "org": "Contoso Industrial", "authority_tier": 4 },
+    { "name": "Ravi Menon", "role": "Service Lead", "org": "Fabrikam Service Partners", "authority_tier": 0 },
+    { "name": "Priya Nair", "role": "Claims Coordinator", "org": "Northwind Field Services", "authority_tier": 0 },
+    { "name": "Sunil Bhat", "role": "Field Engineer", "org": "Fabrikam Service Partners", "authority_tier": 0 },
+    { "name": "Elena Fischer", "role": "Service Manager, EMEA", "org": "Tailwind Equipment Services", "authority_tier": 0 }
+  ],
+  "goodwill_authority": [
+    { "tier": 1, "max_amount_inr": 25000, "approver_role": "Service Supervisor" },
+    { "tier": 2, "max_amount_inr": 100000, "approver_role": "Regional Service Manager" },
+    { "tier": 3, "max_amount_inr": 400000, "approver_role": "Warranty Operations Head" },
+    { "tier": 4, "max_amount_inr": null, "approver_role": "Director, Aftermarket" }
+  ]
+}

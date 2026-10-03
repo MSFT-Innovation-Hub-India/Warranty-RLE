@@ -1,0 +1,6 @@
+mcp>=1.2.0
+starlette>=0.37.0
+uvicorn[standard]>=0.30.0
+pyodbc>=5.2.0
+azure-identity>=1.19.0
+PyJWT[crypto]>=2.9.0

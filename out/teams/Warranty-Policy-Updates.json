@@ -1,0 +1,60 @@
+{
+  "channel": "Warranty-Policy-Updates",
+  "threads": [
+    {
+      "subject": "FY26 labour rates effective 1 April 2026",
+      "carries": "trap-9.",
+      "messages": [
+        {
+          "timestamp": "2026-03-20T09:00:00",
+          "from": "Anjali Rao (Warranty Operations Head)",
+          "text": "FY26 rate card is published. India moves to INR 1,450 per hour from 1 April. Reminder that the rate applied is the one in force on the DATE OF REPAIR, not the date of submission — a March repair submitted in April is still FY25."
+        }
+      ]
+    },
+    {
+      "subject": "TSB-C-0043 published",
+      "carries": "Exclusion-reversal reserve trap.",
+      "messages": [
+        {
+          "timestamp": "2025-11-12T10:15:00",
+          "from": "Anjali Rao (Warranty Operations Head)",
+          "text": "TSB-C-0043 is live. Where an inspection report attributes hydraulic contamination to the filter housing defect, the 5.2 exclusion does not apply. Where it attributes it to anything else, 5.2 still applies. The inspection report decides it, so make sure partners are attaching them."
+        }
+      ]
+    },
+    {
+      "subject": "TSB-P-0112 supersedes TSB-P-0107",
+      "carries": "trap-5.",
+      "messages": [
+        {
+          "timestamp": "2026-02-09T11:00:00",
+          "from": "Anjali Rao (Warranty Operations Head)",
+          "text": "TSB-P-0112 is published and supersedes TSB-P-0107. Note the covered serial range is NARROWER than before — 00400 to 00750, down from 00900. Units between 00751 and 00900 that were covered under 0107 are no longer covered."
+        }
+      ]
+    },
+    {
+      "subject": "Reminder — goodwill authority",
+      "carries": "trap-11, reinforced from the top.",
+      "messages": [
+        {
+          "timestamp": "2026-05-18T09:30:00",
+          "from": "Daniel Okafor (Director, Aftermarket)",
+          "text": "We are seeing goodwill approvals given in chat and never recorded against the claim. Policy 7.1 is not optional. If it is not in the claim system at the right tier, it is not an approval. Tiers are in the Goodwill and Authority Matrix."
+        }
+      ]
+    },
+    {
+      "subject": "Q3 warranty review deck published",
+      "carries": "trap-6: the corpus itself flags the stale deck. A careful model has everything it needs to distrust Q2.",
+      "messages": [
+        {
+          "timestamp": "2026-04-16T16:45:00",
+          "from": "Anjali Rao (Warranty Operations Head)",
+          "text": "FY26 Q3 review is in the Reviews folder. It includes the current coverage position by instrument. Please use it in preference to the Q2 deck, which predates the bulletins and is out of date on coverage."
+        }
+      ]
+    }
+  ]
+}

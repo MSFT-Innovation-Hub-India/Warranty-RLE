@@ -1,0 +1,53 @@
+{
+  "channel": "Partner-Fabrikam",
+  "threads": [
+    {
+      "subject": "Weekly claim status",
+      "carries": null,
+      "messages": [
+        {
+          "timestamp": "2026-06-22T09:00:00",
+          "from": "Ravi Menon (Fabrikam Service Partners)",
+          "text": "14 claims open with you this week, 3 awaiting inspection reports our end."
+        },
+        {
+          "timestamp": "2026-06-22T09:40:00",
+          "from": "Meera Krishnan (Service Supervisor, West)",
+          "text": "Thanks. The three without reports are held, not declined."
+        }
+      ]
+    },
+    {
+      "subject": "Parts supersession — P-44120",
+      "carries": "trap-7.",
+      "messages": [
+        {
+          "timestamp": "2026-05-30T11:10:00",
+          "from": "Ravi Menon (Fabrikam Service Partners)",
+          "text": "Ordered P-44120 and received P-44120-A. Do I claim against what I ordered or what I fitted?"
+        },
+        {
+          "timestamp": "2026-05-30T11:52:00",
+          "from": "Meera Krishnan (Service Supervisor, West)",
+          "text": "What you fitted. 4.2 — where a part is superseded, the superseding part's price applies. Put P-44120-A on the claim."
+        }
+      ]
+    },
+    {
+      "subject": "Site access at Woodgrove Nashik",
+      "carries": null,
+      "messages": [
+        {
+          "timestamp": "2026-07-14T08:20:00",
+          "from": "Sunil Bhat (Field Engineer, Fabrikam Service Partners)",
+          "text": "Woodgrove want 48 hours notice for site access now. Adding it to job planning."
+        },
+        {
+          "timestamp": "2026-07-14T08:35:00",
+          "from": "Ravi Menon (Fabrikam Service Partners)",
+          "text": "Noted."
+        }
+      ]
+    }
+  ]
+}
