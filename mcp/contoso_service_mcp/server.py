@@ -46,6 +46,9 @@ def _transport_security():
 mcp = FastMCP(
     "contoso-service",
     transport_security=_transport_security(),
+    # Stateless: Container Apps runs several replicas, and an in-memory MCP
+    # session started on one is unknown to the others (404, "failed to connect").
+    stateless_http=True,
     instructions=(
         "Service claim system for Contoso Industrial warranty adjudication. Holds the "
         "asset registry, running-hours telemetry, service history, submitted claims, "

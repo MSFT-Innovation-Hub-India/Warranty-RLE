@@ -281,4 +281,5 @@ az group delete -n $RG --yes --no-wait
 | Dates come back as objects, not strings | Running an adapter other than `_MssqlAdapter`. Normalisation lives there |
 | `No module named 'mcp.server.fastmcp'` at startup | `mcp` 2.x installed. `requirements.txt` pins `mcp<2`; rebuild |
 | `Invalid Host header` on `/mcp` | `MCP_ALLOWED_HOSTS` not set to the app's FQDN |
+| `tools create` fails with `ER05017 Failed to connect`, server logs show `GET /mcp 404`; or the agent never calls the tools | More than one replica with a **stateful** MCP server: the session lives on one replica. `server.py` sets `stateless_http=True`; rebuild |
 | `Login failed` on an Entra-only server where the identity has no directory lookup | Create the user by SID: `CREATE USER [<app>] WITH SID = <appId as varbinary(16)>, TYPE = E` |

@@ -866,12 +866,31 @@ Two defects surfaced on first deploy and are fixed in `mcp/`:
 | --- | --- | --- |
 | Container crash-looped | `mcp>=1.2.0` resolved to 2.x, which removed `FastMCP` | Pinned `mcp>=1.2.0,<2` (runs 1.30.0) |
 | `Invalid Host header` on every `/mcp` call | SDK DNS-rebinding check admits only localhost | `MCP_ALLOWED_HOSTS` env var, set to the FQDN |
+| Registration `ER05017` on the second world; agent offered no tools (found in P8, `docs/JOURNEY.md`) | Stateful MCP sessions across 2 replicas → `404` | `stateless_http=True`, image `v4-1c30b85-stateless` |
 
 ⚠️ **The endpoint is unauthenticated.** `auth.py` exists but `server.py` never
 calls it, so setting `ENTRA_TENANT_ID` / `API_AUDIENCE` changes nothing. Anyone
 with the URL can call the three write tools. The data is synthetic, but a stray
 draft row would contaminate the action tables between runs. Wire `auth.py` in
 and register the Entra app (deploy guide § 5) before `tools create`.
+
+**TODO — deferred 2026-10-03** (tracked as § 16 item 6):
+
+- [ ] Wire `auth.validate()` into `server.py` as middleware on `/mcp`. Leave `/healthz` open for the probe
+- [ ] Register the Entra app and set `api://<appId>` (`mcp/deploy/azure.md` § 5)
+- [ ] `az containerapp update -g pcdotai-agent -n contoso-service-mcp --set-env-vars ENTRA_TENANT_ID=<tenant> API_AUDIENCE=api://<appId>`
+- [ ] Verify: no token → 401; valid token → `tools/list` returns 12 tools
+- [ ] Switch both registrations to Entra auth in place: `frontier-tuning tools upsert` on main `1c171d49-…` and dev `34d14238-…` with `--auth-scheme AzureAD --aud api://<appId>`. They were registered `NoAuth` on 2026-10-03 (JOURNEY P8)
+- [ ] Optional: narrow the identity from `db_datawriter` to INSERT on the 3 action tables + UPDATE on `Claims`
+
+Until this is done, confirm a clean baseline before every evaluation run (all four counts should be 0):
+
+```sql
+SELECT (SELECT COUNT(*) FROM ClaimAdjudicationDraft) drafts,
+       (SELECT COUNT(*) FROM EvidenceRequest) evidence,
+       (SELECT COUNT(*) FROM GoodwillEscalation) escalations,
+       (SELECT COUNT(*) FROM Claims WHERE status <> 'Submitted') non_submitted;
+```
 
 ### Ground truth
 
@@ -946,6 +965,7 @@ Rough, and worth agreeing before starting.
 | --- | --- | --- |
 | 4 | Is the showcase audience **technical or business**? | Decides whether the artefact is a guide, a deck, or both — and how much of § 12's caveat surfaces |
 | 5 | Is there an existing SharePoint site and Teams team, or is one being created? | Determines when content can be loaded. Does not block curation |
+| 6 | **TODO — protect the MCP endpoint** (deferred 2026-10-03). Checklist under *MCP server* in § 13 | Endpoint is public and unauthenticated; anyone can call the 3 write tools and contaminate a stage's baseline. Registered `NoAuth` in P8, so **switch to AzureAD via `tools upsert` before stage 1**, when the tools are first enabled in main |
 
 ---
 

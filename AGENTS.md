@@ -86,6 +86,46 @@ I am keeping a build log, not producing marketing. Specifically:
 
 ---
 
+## Journey log — keep it current
+
+Two documents, two audiences. Update both **as work happens**, every session.
+
+| Document | Reader | Holds |
+| --- | --- | --- |
+| `docs/JOURNEY.md` | A human catching up | The readable story: scenario → setup recipe → climb → findings |
+| `docs/evidence/` | An auditor | Every command exactly as run, full verbatim output, raw execution JSON, dead ends |
+
+**`JOURNEY.md` — written for someone new to the scenario.**
+
+- **Keep its shape.** Where we are → 1 Scenario → 2 Setup (P#) → 3 Climb
+  (stages) → 4 What we've learned → 5 Side experiments → Appendix (helper
+  snippets).
+- **"Where we are" is always true.** Status · Next · Blockers · IDs.
+- **Each step reads as a recipe:** **Why** (one line) · **Do** (the commands
+  that matter, cleanly) · **You should see** (a collapsed excerpt of the real
+  output) · **Watch out** (gotchas) · ✅ **Result** (one line).
+- **Gotchas are one line each: symptom → what to do.** No debugging narratives.
+  The investigation belongs in the evidence record. *Example:* "Run the MCP
+  server stateless, or with more than one replica registration fails with
+  `ER05017`."
+- **Stages close with a short result**: score, what moved, gate passed or not.
+  Don't start the next stage until it's written.
+- Put long helper scripts in the Appendix (H1, H2 …) and reference them from
+  steps. Say plainly whether each is *exactly as run* or simplified.
+- Excerpts are fine in `JOURNEY.md`. Never invent output or present an excerpt
+  as the full output.
+
+**`docs/evidence/` — the verbatim record.**
+
+- Commands **exactly as run**, including variables and pipes. Outputs
+  **verbatim**, marked *(trimmed)* only when lines are cut.
+- Raw JSON (executions, probes) under `docs/evidence/<step>/`.
+- Dead ends and failed attempts are logged here, one line each.
+- Start a dated record file per working session (e.g.
+  `journey-record-2026-10-03.md`) and link it from `JOURNEY.md`.
+
+---
+
 ## Layout
 
 | Path | What it holds |
@@ -94,6 +134,7 @@ I am keeping a build log, not producing marketing. Specifically:
 | `build/` | Ground-truth engine, trap tests, corpus generators |
 | `out/` | Generated corpus, database, samples, `GROUND-TRUTH.md` |
 | `mcp/` | The MCP server — 9 read + 3 action tools, ACA + Azure SQL deploy |
+| `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
 | `docs/` | Design, walkthrough, runbook, cross-cutting references |
 
 Run order matters: `adjudicate` → `test_traps` → `populate` → `ground_truth` →
@@ -120,6 +161,12 @@ first.
 Stages 0–4 are **designed, not executed**. Every score in
 `docs/05-hill-climb-runbook.md` is a prediction. Nothing has been measured on a
 tenant yet.
+
+**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md).** As of 2026-10-03,
+prerequisites P0–P5 and P7 are done: corpus loaded, MCP server deployed, and
+worlds `wce-dev` and `wce-main` provisioned, with retrieval proven on dev.
+Next is P9 (stage-0 skill and samples). P6 (endpoint auth) is still open; the
+MCP server is registered as `NoAuth` (P8).
 
 ⚠️ `docs/05-hill-climb-runbook.md` does not yet encode goals 3 and 4 above —
 no platform optimisation command appears in it, and headroom measurement is
