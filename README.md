@@ -96,6 +96,7 @@ cd build
 ..\.venv\Scripts\python.exe gen_sheets.py      # 3 Excel workbooks
 ..\.venv\Scripts\python.exe gen_decks.py       # 2 PowerPoint decks
 ..\.venv\Scripts\python.exe gen_teams.py       # 3 Teams channels
+..\.venv\Scripts\python.exe test_score_ground_truth.py   # ground-truth scorer, 18 checks
 ```
 
 Run in that order — the document generators read `out/data/`, so the population

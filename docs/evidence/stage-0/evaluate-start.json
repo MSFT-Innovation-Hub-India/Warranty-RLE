@@ -1,0 +1,35 @@
+{
+  "JobId": "555d5dd2-f9c3-4008-8846-02e9ceca44d3",
+  "JobTaskType": null,
+  "JobType": "Evaluation",
+  "FinetuningType": null,
+  "Status": "Running",
+  "ErrorCode": null,
+  "ErrorMessage": "",
+  "BaseModelName": "prod-gpt-56-reasoning-sol",
+  "BaseModelNames": [
+    "prod-gpt-56-reasoning-sol"
+  ],
+  "BaseModelDisplayName": "prod-gpt-56-reasoning-sol",
+  "NewModelName": "",
+  "CreatedAt": "2026-10-04T08:42:34.8459396+00:00",
+  "UpdatedAt": "2026-10-04T08:42:34.8712755+00:00",
+  "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "LastModifiedByObjectId": null,
+  "EvaluationMetadata": null,
+  "WorkspaceSnapshotMetadata": {
+    "Id": "555d5dd2-f9c3-4008-8846-02e9ceca44d3",
+    "SkillsCount": 1,
+    "ToolsCount": 3,
+    "SamplePromptsCount": 8,
+    "KnowledgeSourcesCount": 4
+  },
+  "DebugContext": {
+    "Logs": []
+  },
+  "continuesServerSide": true,
+  "statusCommand": "frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate status 555d5dd2-f9c3-4008-8846-02e9ceca44d3",
+  "pollAfterSeconds": 60,
+  "cancelOnlyOnExplicitUserRequest": true,
+  "operationId": "555d5dd2-f9c3-4008-8846-02e9ceca44d3"
+}

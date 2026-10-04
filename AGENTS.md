@@ -55,6 +55,12 @@ regenerate. Tag each closed stage in git (`stage-0`, `stage-1`, …). The goal:
 someone can replay and demonstrate the whole climb from the beginning, not just
 see the final artefacts.
 
+**Two numbers per stage.** The platform's rubric score is never reported on its
+own. Every stage also runs `build/score_ground_truth.py`, which checks decision,
+governing instrument and payable against `out/data/claims.json`. A rubric score
+that rises while correctness doesn't means the rubrics reward the wrong thing.
+Fix that before tuning, because during RFT the rubric score *is* the reward.
+
 **Measure before changing.** Never edit rubrics, samples or instructions without
 a baseline to compare against. A change you cannot measure is a change you
 cannot defend.
@@ -144,6 +150,7 @@ Two documents, two audiences. Update both **as work happens**, every session.
 | `mcp/` | The MCP server — 9 read + 3 action tools, ACA + Azure SQL deploy |
 | `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
 | `stages/` | One folder per climb stage: the exact skills, pinned rubrics, prompts, commands and results that stage used. Never overwritten |
+| `scripts/` | Reusable helpers: `sql-run.ps1` (run SQL with your Entra sign-in), and the database baseline, snapshot and reset scripts |
 | `docs/` | Design, walkthrough, runbook, cross-cutting references |
 
 Run order matters: `adjudicate` → `test_traps` → `populate` → `ground_truth` →
@@ -167,15 +174,16 @@ first.
 
 ## Status
 
-Stages 0–4 are **designed, not executed**. Every score in
-`docs/05-hill-climb-runbook.md` is a prediction. Nothing has been measured on a
-tenant yet.
+Stages 0 and 1 are **measured** (2026-10-04); stages 2–4 are designed, not
+executed. Scores in `docs/05-hill-climb-runbook.md` for stages 2–4 are still
+predictions.
 
-**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md).** As of 2026-10-03,
-prerequisites P0–P5 and P7 are done: corpus loaded, MCP server deployed, and
-worlds `wce-dev` and `wce-main` provisioned, with retrieval proven on dev.
-Next is P9 (stage-0 skill and samples). P6 (endpoint auth) is still open; the
-MCP server is registered as `NoAuth` (P8).
+**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md).** As of 2026-10-04,
+the world is at **v2**: the inspection-report rule in the documents was corrected
+to agree with the ground truth. On v2, stage 0 scored rubric 0.535 · correct 0/8,
+and stage 1 scored rubric 0.991 · correct 7/8. **Stage 1 is saturated on the 8
+easy prompts**, so stage 2 needs prompts with headroom. P6 (endpoint auth) and
+P11 (runbook) are deferred; the MCP server is registered as `NoAuth`.
 
 ⚠️ `docs/05-hill-climb-runbook.md` does not yet encode goals 3 and 4 above —
 no platform optimisation command appears in it, and headroom measurement is

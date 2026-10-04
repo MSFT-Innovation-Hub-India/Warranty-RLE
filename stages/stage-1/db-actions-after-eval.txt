@@ -1,0 +1,25 @@
+
+kind     id             claim_id     detail                                                                                                                                                                                                         created_at                 
+----     --             --------     ------                                                                                                                                                                                                         ----------                 
+draft    ADJ-4AC1CB7AD9 C-2026-04101 approve | payable=69575.00 INR | refs=["ADD-IN-2.1 A1", "POL-WAR-4.2 1.4", "POL-WAR-4.2 4.1", "POL-WAR-4.2 4.2", "POL-WAR-4.2 4.3", "Flat-Rate-Labour-FY26", "Labour-Rates-By-Region-FY26", "SPA-2023-FAB-IN"] 10/4/2026 9:43:57 AM +00:00
+draft    ADJ-D7577A487B C-2026-04102 request_evidence | payable=- INR | refs=["POL-WAR-4.2 clauses 1.4, 4.1, 4.2, 4.3", "ADD-IN-2.1 clause A1", "TSB-G-0029", "TSB-C-0047", "SPA-2023-FAB-IN"]                                                      10/4/2026 9:39:44 AM +00:00
+evidence EVR-9CE1A69F53 C-2026-04102 field=running_hours_at_repair                                                                                                                                                                                  10/4/2026 9:39:28 AM +00:00
+evidence EVR-E0C1F52796 C-2026-04102 field=inspection_report                                                                                                                                                                                        10/4/2026 9:39:16 AM +00:00
+evidence EVR-4C51A24CF8 C-2026-04103 field=inspection_report                                                                                                                                                                                        10/4/2026 9:38:36 AM +00:00
+evidence EVR-4E56BDE0F3 C-2026-04103 field=running_hours_at_repair                                                                                                                                                                                  10/4/2026 9:38:36 AM +00:00
+draft    ADJ-3D2BEBB5EE C-2026-04110 decline | payable=0.00 INR | refs=["ADD-IN-2.1 A1", "POL-WAR-4.2 1.4", "POL-WAR-4.2 6.1", "TSB-P-0112", "TSB-P-0115"]                                                                                          10/4/2026 9:38:10 AM +00:00
+draft    ADJ-D7ECDCFE3A C-2026-04118 request_evidence | payable=- INR | refs=["TSB-P-0112", "POL-WAR-4.2 clauses 1.4, 4.1-4.3", "SPA-2023-FAB-IN clauses 2, 3 and 6", "Flat-Rate-Labour-FY26", "Labour-Rates-By-Region-FY26"]                       10/4/2026 9:38:42 AM +00:00
+evidence EVR-41EC6DB4A6 C-2026-04118 field=inspection_report                                                                                                                                                                                        10/4/2026 9:38:42 AM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04102 Held  
+C-2026-04103 Held  
+C-2026-04118 Held  
+
+
+
+OK: 1 batch(es) executed

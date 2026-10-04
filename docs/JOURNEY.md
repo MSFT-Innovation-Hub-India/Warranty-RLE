@@ -16,7 +16,8 @@ Legend: ✅ done · ⏳ in progress · ⬜ not started · 🖥️ measured here 
 📄 upstream guidance · 🔬 unverified · 💭 reasoning
 
 The full verbatim command record, including every dead end, is in
-[evidence/journey-record-2026-10-03.md](evidence/journey-record-2026-10-03.md).
+[evidence/journey-record-2026-10-03.md](evidence/journey-record-2026-10-03.md) and
+[evidence/journey-record-2026-10-04.md](evidence/journey-record-2026-10-04.md).
 
 ---
 
@@ -24,15 +25,15 @@ The full verbatim command record, including every dead end, is in
 
 | | |
 | --- | --- |
-| **Status** | World built and wired up. **No stage run yet** |
-| **Next** | **P9b**: the 8 stage-0 prompts (`stage0.jsonl`), then run stage 0 |
-| **Before stage 1** | **P6**: put Entra auth on the MCP endpoint (now open to anyone with the URL) |
+| **Status** | World v2 (inspection-report rule corrected). **Stage 0 v2** rubric 0.535 · correct 0/8. **Stage 1 v2** rubric **0.991** · correct **7/8**, with all 8 runs getting the tools. ⚠️ **0.991 is saturated** (AGENTS.md: harden above ~0.95) |
+| **Next** | **Decision needed before stage 2:** (1) whether to make 04103 unambiguous (seal kit vs clause 5.4 routine-maintenance exclusion, [stage-1-v2](../stages/stage-1-v2/README.md#results--2026-10-04--job-95f7d234-df64-4e71-aa82-2d3db8d51b11)); (2) **harden the samples**: the 8 easy prompts are now saturated, so headroom has to come from the hard slices (stage 3's 30 prompts) |
+| **Deferred** | **P6**: Entra auth on the MCP endpoint (open to anyone with the URL). **P11**: runbook fixes |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4`: the climb, CLI default · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc`: scratch |
-| **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` (**off** for stage 0) · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` (on) |
+| **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` (**on** since stage 1 v2) · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` (on). ACA pinned at **3 replicas** (min = max = 3) since 10-04 |
 | **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44` · 5 pinned rubrics |
 | **Stage artefacts** | One folder per stage in [stages/](../stages/): exact skill, rubrics, prompts, commands and results. Never overwritten |
 | **Stage 4 plan** | **4a GPT-5.4-Mini** (run `dev-ct-gpt-54-mini-mp`, tune `gpt-54-mini`: likely the same model, so a clean before/after) · then **4b MAI** (run `dev-ct-mai-code-mp`, tune `mai-code-1-flash`) as a repeat |
-| **Before every run** | Check that the 4 baseline counts are 0 ([H2](#h2-baseline-check--are-the-action-tables-clean)) |
+| **Before every run** | Check that the 4 baseline counts are 0: `.\scripts\sql-run.ps1 -File scripts\db-baseline.sql`. From stage 1, snapshot and reset after every run (`db-actions-snapshot.sql`, `db-reset-actions.sql`) |
 
 ---
 
@@ -135,8 +136,8 @@ then asks whether a small, tuned model can match it.
 | [P6](#p6--protect-the-mcp-endpoint) | Protect the MCP endpoint | ⬜ before stage 1 |
 | [P7](#p7--create-the-worlds) | Create the worlds | ✅ |
 | [P8](#p8--connect-the-mcp-server-to-the-worlds) | Connect the MCP server to the worlds | ✅ |
-| [P9](#p9--stage-0-skill-and-prompts) | Stage-0 skill and prompts | ✅ skill · ⬜ **prompts next** |
-| [P10](#p10--prove-every-source-is-reachable) | Prove every source is reachable | ✅ on dev |
+| [P9](#p9--stage-0-skill-and-prompts) | Stage-0 skill and prompts | ✅ |
+| [P10](#p10--prove-every-source-is-reachable) | Prove every source is reachable | ✅ dev · ✅ main (stage-0 probe) |
 | [P11](#p11--update-the-runbook) | Update the runbook | ⬜ before stage 1 |
 
 > P1 (running the generators) is folded into P0. Outputs below are
@@ -438,8 +439,7 @@ The ⚠️ gaps are intentional headroom: stage 2's hand-written rubrics close t
 - From stage 1, the agent records drafts, so run the baseline check ([H2](#h2-baseline-check--are-the-action-tables-clean)) and clean up between runs.
 
 ✅ **Skill done:** `warranty-assistant` on main `cf00d339-5217-4cd1-b390-cc0d911735da` and dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`, with identical pinned rubrics.
-⬜ **Still to do:** the 8 easiest eval prompts (covered-simple, declined-simple, precedence) as `stage0.jsonl`. See the runbook's
-[Stage 0](05-hill-climb-runbook.md#stage-0--the-naive-build).
+✅ **Prompts done:** 8 eval prompts in [stages/stage-0/stage0.jsonl](../stages/stage-0/stage0.jsonl): 3 covered-simple, 2 declined-simple, and 3 precedence (04114, 04116, 04118).
 
 ### P10 — Prove every source is reachable
 
@@ -487,7 +487,28 @@ and the platform tools are measured against them.
 at stage 2 too. Every version is kept in its stage folder
 ([stages/](../stages/)), so the progression can be replayed and shown later.
 
-*No stage has run yet.*
+**Two numbers per stage.** Each stage reports the platform's **rubric score**
+*and* **ground-truth correctness**: decision, governing instrument and payable,
+checked automatically against the answer key by
+[`build/score_ground_truth.py`](#h5-score-answers-against-the-ground-truth). The
+rubric score is also the RFT reward, so if it climbs while correctness doesn't,
+the rubrics are fixed before any tuning.
+
+### Results so far
+
+| Stage | Date | Rubric score | Fully correct (ground truth) | What happened | Gate |
+| --- | --- | --- | --- | --- | --- |
+| **0** | 10-04 | **0.630** | **1/8** (12%) | With the claim system off, the agent **held 7 of 8 claims** for missing facts (policy 2.3) instead of guessing. It still found the right rules and the contingent amounts. Every rubric delivered as predicted; *Draft Execution* was 0.0, as expected | ✅ proceed |
+| **1** | 10-04 | **0.905** (+0.275) | **3/8** (38%) | MCP calls first, then documents, then a recorded draft. In the 6 runs that got the tools: 3 correct, and 3 **held for an inspection report** that the partner agreement requires but the ground truth doesn't (**world defect**). 2 runs got **no MCP tools** (scale-out during the burst; **environment defect**) | ⚠️ passed on paper; fix and re-run |
+| *World v2* | 10-04 | | | TSB-G-0029, SPA clause 2 (3 agreements) and one Teams reply corrected to match the ground truth. MCP replicas pinned at 3. The v1 rows above stay as the record | |
+| **0 v2** | 10-04 | **0.535** | **0/8** | Same behaviour as v1: no claim facts, so holds. The agent quoted the *new* TSB-G-0029 wording. 💭 0.630 → 0.535 with almost nothing relevant changed, so treat ~0.1 at 8 samples as noise | ✅ proceed |
+| **1 v2** | 10-04 | **0.991** (+0.456) | **7/8** (88%) | All 8 runs used the MCP tools (8–10 calls each). The only miss, 04103, is a **second world ambiguity**: a seal kit, where policy 5.4 excludes seals "fitted as routine maintenance" and nothing the agent can see says which this was. The agent held it, and the rubrics gave that miss **1.0** | ✅ plumbing proven · ⚠️ **saturated** |
+
+Details: [stage-0](../stages/stage-0/README.md#results--2026-10-04--job-555d5dd2-f9c3-4008-8846-02e9ceca44d3) · [stage-1](../stages/stage-1/README.md) · [stage-0-v2](../stages/stage-0-v2/README.md) · [stage-1-v2](../stages/stage-1-v2/README.md).
+
+*Stage 0's gap (0.63 vs 12%) is mostly **missing data**, not bad reasoning: a hold
+is the honest answer when the system of record is unreachable. Stage 1 is the
+real test of whether the rubrics overrate the agent.*
 
 ---
 
@@ -502,6 +523,18 @@ at stage 2 too. Every version is kept in its stage folder
 | 10-03 | `--strategy simple` is accepted. Whether strategies actually change behaviour is still untested (stage 3) | 🔬 |
 | 10-03 | **Rubric generation isn't repeatable.** The same skill gave 5, 1 and 5 (different) rubrics across three generations, so we pin one set. The generated set covers task structure well but misses precedence reasoning and approval authority | 🖥️ |
 | 10-03 | **Generated rubrics restate the skill.** All 28 checklist items trace back to a sentence in the skill; none states a trap's rule. They add useful judging precision (pass/fail conditions, "when relevant" applicability, 2 checks on what the agent actually did), but have no reference answers: an answer that's wrong but consistent and well sourced can pass. Item 18 even *rewards* consulting the review decks, stale Q2 included. **For stage 0: also score each answer's decision against `GROUND-TRUTH.md`**, so the rubric score and actual correctness can be compared | 🖥️ text · 💭 mapping |
+| 10-04 | **World defect: inspection reports.** The partner agreements (SPA clause 2) and TSB-G-0029 say a claim *must carry* the inspection report and a repair-date hours reading. The ground truth requires neither, and only 12 of 90 claims have a report. With tools available, the agent held every approval that lacked a report. The corpus and the ground truth disagree, so this must be fixed before results can be trusted | 🖥️ |
+| 10-04 | **Environment defect: tools missing under a burst.** The 8 evaluation runs start within about 18 s; the app scaled to 3 replicas mid-burst, and 2 runs got no MCP tools. 🔬 Likely cause: tool discovery failing during scale-out. Fix: pre-warm replicas before evaluations | 🖥️ · 🔬 |
+| 10-04 | **Stage 1: plumbing was worth +0.275.** Same skill, rubrics, samples and model; only the MCP server switched on | 🖥️ |
+| 10-04 | `chat --skill-id` returns **API error 500** in both worlds. Leave it out: normal routing picks the skill (confirmed: it was routed and graded on the pinned rubrics) | 🖥️ |
+| 10-04 | **World v2 fix confirmed.** After the corrected documents were uploaded, the agent's search served the new text within about 10 min. In stage 1 v2, no claim was held for a missing report | 🖥️ |
+| 10-04 | **Pinning ACA at 3 replicas fixed the missing-tools defect**: 8/8 runs used the MCP tools, against 6/8 in v1. Evaluations also ran faster (26 and 22 min, against 52) | 🖥️ (speed cause 🔬) |
+| 10-04 | **Run-to-run noise is about ±0.1 at 8 samples.** Stage 0 v1 → v2 moved 0.630 → 0.535 with only document wording changed, which the agent couldn't use without claim facts | 💭 |
+| 10-04 | **Stage 1 v2 saturated: 0.991, 7/8.** On the 3 easy slices, GPT-5.6-Sol with tools makes no reasoning errors. Headroom must come from the hard slices (dual-limit, valuation, abstention, authority, exclusion, stale-deck), not from these 8 prompts | 🖥️ |
+| 10-04 | **The rubrics gave a wrong answer full marks.** 04103 (expected approve ₹19,150; the agent held for evidence) scored 1.0 on all 5 rubrics. This is the first clean evidence the generated rubrics don't check correctness, which is why stage 2 writes rubrics by hand | 🖥️ |
+| 10-04 | **Second world ambiguity: seals vs routine maintenance.** POL-WAR-4.2 clause 5.4 excludes *"seals fitted as routine maintenance"*. The claim record carries only op code `SEAL-KIT-RR`, with no failure description, and the engine excludes only on `exclusion_flags`. A held seal-kit claim is therefore defensible but marked wrong. Not fixed yet: a decision for the world owner | 🖥️ |
+| 10-04 | `evaluate results <job> -o json` is only the summary (3 KB). Per-answer detail needs `--samples` (3.6 MB here). In it, `Response` is a list of parts, not plain text | 🖥️ |
+| 10-04 | **Stage 0, without the claim system: the agent abstained instead of inventing.** 7/8 answers held the claim, citing policy 2.3; no commissioning date was made up. The rubric *Requested Outcome Delivery* gave 1.0 to every hold | 🖥️ |
 | 10-04 | **There's no field for an expected answer.** A sample is a `Prompt` plus optional file `References`; `samples create/update/upload` document nothing else. During tuning, the **only** training signal is the grader's rubric score, so ground truth must reach the reward **through the rubrics**. 🔬 Untested: samples hold a snapshot of the rubrics, and skills have a `SupplementaryGraderConfig` field; either *might* allow answers per sample | 🖥️ · 🔬 |
 | 10-03 | **Our MCP tool descriptions carry trap answers.** `get_tsb_index` says *"THE BULLETIN DOCUMENT GOVERNS"* (trap 1); `get_asset` says the install date *"must not be substituted"* (trap 12). The agent reads these word for word. That was intended for trap 1 (03 § 13), but it eases traps 1 and 12 from stage 1 on, and likely explains why both models aced trap 1. **Decide before the stage-1 baseline:** keep it, or make the descriptions factual only | 🖥️ |
 
@@ -602,3 +635,23 @@ ALTER ROLE db_datawriter ADD MEMBER [contoso-service-mcp];
 ```
 
 App ID: `az ad sp show --id <principalId> --query appId -o tsv`.
+
+### H5 Score answers against the ground truth
+
+`build/score_ground_truth.py` compares each answer's **decision**, **governing
+instrument** and **total payable** (approvals, ±₹1) with `out/data/claims.json`,
+the source of `GROUND-TRUTH.md`. Extraction is pattern-based and repeatable,
+with no model involved. Anything it can't read confidently is marked ❓ for a
+human to check. It reads evaluation results, single executions, or folders of
+either.
+
+```powershell
+frontier-tuning evaluate results <job-id> --samples --env-id <world-id> -o json > stages\stage-N\eval-results-samples.json
+.\.venv\Scripts\python.exe build\score_ground_truth.py stages\stage-N\eval-results-samples.json --out stages\stage-N
+cd build; ..\.venv\Scripts\python.exe test_score_ground_truth.py     # 18 extraction checks
+```
+
+Writes `ground-truth-check.md` (summary, by slice, per answer, alongside each
+answer's rubric score) and `.csv`. 🖥️ Confirmed on stage 0: `--samples` is
+required, since without it the file is only the summary. Answers are under
+`Submissions[*].Execution`, with `Response` as a list of parts, which the scorer joins.

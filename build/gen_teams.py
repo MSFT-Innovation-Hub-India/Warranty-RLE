@@ -202,7 +202,8 @@ thread("Partner Fabrikam", "Weekly claim status",
        [("2026-06-22T09:00:00", "Ravi Menon (Fabrikam Service Partners)",
          "14 claims open with you this week, 3 awaiting inspection reports our end."),
         ("2026-06-22T09:40:00", "Meera Krishnan (Service Supervisor, West)",
-         "Thanks. The three without reports are held, not declined.")],
+         "Thanks. Send them when you have them. We adjudicate from the claim-system record, so "
+         "they only hold things up where an exclusion turns on the report.")],
        carries=None)
 
 thread("Partner Fabrikam", "Parts supersession — P-44120",

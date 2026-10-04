@@ -239,10 +239,13 @@ ADVISORY_TEXT = {
                   "of any asset.",
     "TSB-G-0021": "The packaging and returns process for warranty parts is revised. This "
                   "bulletin is advisory and does not vary the warranty position of any asset.",
-    "TSB-G-0029": "Partners are reminded that a claim must carry the inspection report, the "
-                  "running-hours reading at the date of repair, and the part number actually "
-                  "fitted. This bulletin is advisory and does not vary the warranty position "
-                  "of any asset.",
+    "TSB-G-0029": "Partners are reminded that a claim must give the part number actually "
+                  "fitted, and should attach the inspection report where one was raised. "
+                  "Claims are adjudicated from the claim-system record: running hours are taken "
+                  "from the latest reading held at or before the date of repair. An inspection "
+                  "report matters where an exclusion depends on it; a missing report does not of "
+                  "itself hold a claim. This bulletin is advisory and does not vary the warranty "
+                  "position of any asset.",
 }
 
 
@@ -361,8 +364,11 @@ def partner_agreements() -> None:
         doc.add_heading("2. Claim submission", level=1)
         doc.add_paragraph(
             f"A claim is submitted within {dealer['submission_sla_days']} days of the date of "
-            f"repair, carrying the inspection report, the running-hours reading at the date of "
-            f"repair, and the part number actually fitted."
+            f"repair, giving the part number actually fitted and attaching the inspection report "
+            f"where one was raised. {MFR} adjudicates the claim from the claim-system record, "
+            f"taking running hours from the latest reading held at or before the date of repair. "
+            f"An inspection report matters where an exclusion depends on it; a missing report "
+            f"does not of itself hold a claim."
         )
         doc.add_heading("3. Labour", level=1)
         doc.add_paragraph(
