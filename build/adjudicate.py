@@ -340,8 +340,10 @@ def adjudicate(claim: Claim, asset: Asset) -> Adjudication:
     # --- no telemetry reading: the hours limit cannot be tested --------
     # The governing instrument sets a running-hours limit and the registry has
     # no reading for this asset, so one half of a two-part test is unavailable.
-    # Policy 2.3 reasoning applies: report the gap rather than assume.
-    if hours_limit is not None and claim.hours_at_repair is None:
+    # Policy 2.3 reasoning applies: report the gap rather than assume. But the
+    # limits apply whichever occurs first: if time has already run out, the
+    # missing reading cannot change the outcome, so fall through to decline.
+    if hours_limit is not None and claim.hours_at_repair is None and repair <= expiry_date:
         adj.decision = "request_evidence"
         adj.reason = (
             f"Coverage cannot be determined: {instrument['id']} sets a limit of "

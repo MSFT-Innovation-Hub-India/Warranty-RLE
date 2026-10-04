@@ -4480,6 +4480,441 @@
     "running_hours": 4437
   },
   {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-04-04",
+    "running_hours": 0
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-05-04",
+    "running_hours": 158
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-06-04",
+    "running_hours": 317
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-07-04",
+    "running_hours": 475
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-08-04",
+    "running_hours": 634
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-09-04",
+    "running_hours": 792
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-10-04",
+    "running_hours": 951
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-11-04",
+    "running_hours": 1109
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2024-12-04",
+    "running_hours": 1268
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-01-04",
+    "running_hours": 1426
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-02-04",
+    "running_hours": 1585
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-03-04",
+    "running_hours": 1743
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-04-04",
+    "running_hours": 1902
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-05-04",
+    "running_hours": 2060
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-06-04",
+    "running_hours": 2218
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-07-04",
+    "running_hours": 2377
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-08-04",
+    "running_hours": 2535
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-09-04",
+    "running_hours": 2694
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-10-04",
+    "running_hours": 2852
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-11-04",
+    "running_hours": 3011
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2025-12-04",
+    "running_hours": 3169
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-01-04",
+    "running_hours": 3328
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-02-04",
+    "running_hours": 3486
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-03-04",
+    "running_hours": 3645
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-04-04",
+    "running_hours": 3803
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-05-04",
+    "running_hours": 3962
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-06-04",
+    "running_hours": 4120
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-07-04",
+    "running_hours": 4278
+  },
+  {
+    "serial": "CIE-4000-CH-01198",
+    "as_of_date": "2026-08-04",
+    "running_hours": 4437
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-04-04",
+    "running_hours": 0
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-05-04",
+    "running_hours": 158
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-06-04",
+    "running_hours": 317
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-07-04",
+    "running_hours": 475
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-08-04",
+    "running_hours": 634
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-09-04",
+    "running_hours": 792
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-10-04",
+    "running_hours": 951
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-11-04",
+    "running_hours": 1109
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2024-12-04",
+    "running_hours": 1268
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-01-04",
+    "running_hours": 1426
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-02-04",
+    "running_hours": 1585
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-03-04",
+    "running_hours": 1743
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-04-04",
+    "running_hours": 1902
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-05-04",
+    "running_hours": 2060
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-06-04",
+    "running_hours": 2218
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-07-04",
+    "running_hours": 2377
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-08-04",
+    "running_hours": 2535
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-09-04",
+    "running_hours": 2694
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-10-04",
+    "running_hours": 2852
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-11-04",
+    "running_hours": 3011
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2025-12-04",
+    "running_hours": 3169
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-01-04",
+    "running_hours": 3328
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-02-04",
+    "running_hours": 3486
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-03-04",
+    "running_hours": 3645
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-04-04",
+    "running_hours": 3803
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-05-04",
+    "running_hours": 3962
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-06-04",
+    "running_hours": 4120
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-07-04",
+    "running_hours": 4278
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "as_of_date": "2026-08-04",
+    "running_hours": 4437
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-04-04",
+    "running_hours": 0
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-05-04",
+    "running_hours": 158
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-06-04",
+    "running_hours": 317
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-07-04",
+    "running_hours": 475
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-08-04",
+    "running_hours": 634
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-09-04",
+    "running_hours": 792
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-10-04",
+    "running_hours": 951
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-11-04",
+    "running_hours": 1109
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2024-12-04",
+    "running_hours": 1268
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-01-04",
+    "running_hours": 1426
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-02-04",
+    "running_hours": 1585
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-03-04",
+    "running_hours": 1743
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-04-04",
+    "running_hours": 1902
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-05-04",
+    "running_hours": 2060
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-06-04",
+    "running_hours": 2218
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-07-04",
+    "running_hours": 2377
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-08-04",
+    "running_hours": 2535
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-09-04",
+    "running_hours": 2694
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-10-04",
+    "running_hours": 2852
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-11-04",
+    "running_hours": 3011
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2025-12-04",
+    "running_hours": 3169
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-01-04",
+    "running_hours": 3328
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-02-04",
+    "running_hours": 3486
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-03-04",
+    "running_hours": 3645
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-04-04",
+    "running_hours": 3803
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-05-04",
+    "running_hours": 3962
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-06-04",
+    "running_hours": 4120
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-07-04",
+    "running_hours": 4278
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "as_of_date": "2026-08-04",
+    "running_hours": 4437
+  },
+  {
     "serial": "CIE-4000-CH-01849",
     "as_of_date": "2024-04-04",
     "running_hours": 0
@@ -4766,6 +5201,151 @@
   },
   {
     "serial": "CIE-4000-CH-01852",
+    "as_of_date": "2026-08-04",
+    "running_hours": 4437
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-04-04",
+    "running_hours": 0
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-05-04",
+    "running_hours": 158
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-06-04",
+    "running_hours": 317
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-07-04",
+    "running_hours": 475
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-08-04",
+    "running_hours": 634
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-09-04",
+    "running_hours": 792
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-10-04",
+    "running_hours": 951
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-11-04",
+    "running_hours": 1109
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2024-12-04",
+    "running_hours": 1268
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-01-04",
+    "running_hours": 1426
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-02-04",
+    "running_hours": 1585
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-03-04",
+    "running_hours": 1743
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-04-04",
+    "running_hours": 1902
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-05-04",
+    "running_hours": 2060
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-06-04",
+    "running_hours": 2218
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-07-04",
+    "running_hours": 2377
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-08-04",
+    "running_hours": 2535
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-09-04",
+    "running_hours": 2694
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-10-04",
+    "running_hours": 2852
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-11-04",
+    "running_hours": 3011
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2025-12-04",
+    "running_hours": 3169
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-01-04",
+    "running_hours": 3328
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-02-04",
+    "running_hours": 3486
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-03-04",
+    "running_hours": 3645
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-04-04",
+    "running_hours": 3803
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-05-04",
+    "running_hours": 3962
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-06-04",
+    "running_hours": 4120
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
+    "as_of_date": "2026-07-04",
+    "running_hours": 4278
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
     "as_of_date": "2026-08-04",
     "running_hours": 4437
   },
@@ -14453,495 +15033,5 @@
     "serial": "CIE-2200-AC-00929",
     "as_of_date": "2026-08-03",
     "running_hours": 4680
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-07-04",
-    "running_hours": 0
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-08-04",
-    "running_hours": 180
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-09-04",
-    "running_hours": 360
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-10-04",
-    "running_hours": 540
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-11-04",
-    "running_hours": 720
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2024-12-04",
-    "running_hours": 900
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-01-04",
-    "running_hours": 1080
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-02-04",
-    "running_hours": 1260
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-03-04",
-    "running_hours": 1440
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-04-04",
-    "running_hours": 1620
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-05-04",
-    "running_hours": 1800
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-06-04",
-    "running_hours": 1980
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-07-04",
-    "running_hours": 2160
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-08-04",
-    "running_hours": 2340
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-09-04",
-    "running_hours": 2520
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-10-04",
-    "running_hours": 2700
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-11-04",
-    "running_hours": 2880
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2025-12-04",
-    "running_hours": 3060
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-01-04",
-    "running_hours": 3240
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-02-04",
-    "running_hours": 3420
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-03-04",
-    "running_hours": 3600
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-04-04",
-    "running_hours": 3780
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-05-04",
-    "running_hours": 3960
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-06-04",
-    "running_hours": 4140
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-07-04",
-    "running_hours": 4320
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "as_of_date": "2026-08-04",
-    "running_hours": 4500
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2024-08-05",
-    "running_hours": 0
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2024-09-05",
-    "running_hours": 180
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2024-10-05",
-    "running_hours": 360
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2024-11-05",
-    "running_hours": 540
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2024-12-05",
-    "running_hours": 720
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-01-05",
-    "running_hours": 900
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-02-05",
-    "running_hours": 1080
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-03-05",
-    "running_hours": 1260
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-04-05",
-    "running_hours": 1440
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-05-05",
-    "running_hours": 1620
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-06-05",
-    "running_hours": 1800
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-07-05",
-    "running_hours": 1980
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-08-05",
-    "running_hours": 2160
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-09-05",
-    "running_hours": 2340
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-10-05",
-    "running_hours": 2520
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-11-05",
-    "running_hours": 2700
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2025-12-05",
-    "running_hours": 2880
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-01-05",
-    "running_hours": 3060
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-02-05",
-    "running_hours": 3240
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-03-05",
-    "running_hours": 3420
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-04-05",
-    "running_hours": 3600
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-05-05",
-    "running_hours": 3780
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-06-05",
-    "running_hours": 3960
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-07-05",
-    "running_hours": 4140
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "as_of_date": "2026-08-05",
-    "running_hours": 4320
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2024-09-06",
-    "running_hours": 0
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2024-10-06",
-    "running_hours": 180
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2024-11-06",
-    "running_hours": 360
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2024-12-06",
-    "running_hours": 540
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-01-06",
-    "running_hours": 720
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-02-06",
-    "running_hours": 900
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-03-06",
-    "running_hours": 1080
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-04-06",
-    "running_hours": 1260
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-05-06",
-    "running_hours": 1440
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-06-06",
-    "running_hours": 1620
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-07-06",
-    "running_hours": 1800
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-08-06",
-    "running_hours": 1980
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-09-06",
-    "running_hours": 2160
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-10-06",
-    "running_hours": 2340
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-11-06",
-    "running_hours": 2520
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2025-12-06",
-    "running_hours": 2700
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-01-06",
-    "running_hours": 2880
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-02-06",
-    "running_hours": 3060
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-03-06",
-    "running_hours": 3240
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-04-06",
-    "running_hours": 3420
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-05-06",
-    "running_hours": 3600
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-06-06",
-    "running_hours": 3780
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-07-06",
-    "running_hours": 3960
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "as_of_date": "2026-08-06",
-    "running_hours": 4140
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2024-10-07",
-    "running_hours": 0
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2024-11-07",
-    "running_hours": 180
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2024-12-07",
-    "running_hours": 360
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-01-07",
-    "running_hours": 540
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-02-07",
-    "running_hours": 720
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-03-07",
-    "running_hours": 900
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-04-07",
-    "running_hours": 1080
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-05-07",
-    "running_hours": 1260
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-06-07",
-    "running_hours": 1440
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-07-07",
-    "running_hours": 1620
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-08-07",
-    "running_hours": 1800
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-09-07",
-    "running_hours": 1980
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-10-07",
-    "running_hours": 2160
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-11-07",
-    "running_hours": 2340
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2025-12-07",
-    "running_hours": 2520
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-01-07",
-    "running_hours": 2700
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-02-07",
-    "running_hours": 2880
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-03-07",
-    "running_hours": 3060
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-04-07",
-    "running_hours": 3240
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-05-07",
-    "running_hours": 3420
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-06-07",
-    "running_hours": 3600
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-07-07",
-    "running_hours": 3780
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "as_of_date": "2026-08-07",
-    "running_hours": 3960
   }
 ]

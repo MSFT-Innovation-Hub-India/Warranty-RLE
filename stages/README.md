@@ -11,7 +11,9 @@ what any stage changed, compare its folder with the one before.
 | [stage-1](stage-1/) | Tools | MCP server switched on | ⚠️ **rubric 0.905 · correct 3/8**, two defects found, re-run advised |
 | [stage-0-v2](stage-0-v2/) | Baseline, world v2 | — (the world corrected: inspection reports no longer required) | ✅ **rubric 0.535 · correct 0/8** (v1 → v2 move ≈ run-to-run noise) |
 | [stage-1-v2](stage-1-v2/) | Tools, world v2 | MCP server switched on (replicas pre-warmed) | ✅ **rubric 0.991 · correct 7/8** · ⚠️ saturated; 04103 is a world ambiguity |
-| `stage-2` | Inner loop | Hand-written rubrics first, then 3 thin skills | ⬜ |
+| [stage-2-base](stage-2-base/) | Honest prompts | 8 → all 30 eval prompts (stage 1's setup) | ✅ **rubric 0.978 · correct 27/30** (29/30 by the world's rules) · ⚠️ saturated; 2 world defects |
+| `stage-2a` | Hand-written rubrics | rubrics only | ⬜ |
+| `stage-2b` | Thin skills | 3 skills, `warranty-assistant` disabled | ⬜ |
 | `stage-3` | Honest set | All 30 eval prompts · Simple vs BestOfN | ⬜ |
 | `stage-4a-gpt54mini` | RFT | Small model GPT-5.4-Mini: before → tune → after | ⬜ |
 | `stage-4b-mai` | RFT, repeated | The same with the MAI pair | ⬜ |

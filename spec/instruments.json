@@ -55,7 +55,7 @@
         "_traps": ["trap-exclusion-reversal"]
       },
       "5.3": { "heading": "Exclusion - unauthorised modification", "text": "Damage arising from modification not authorised in writing by Contoso Industrial is excluded." },
-      "5.4": { "heading": "Exclusion - consumables", "text": "Filters, fluids, belts, seals fitted as routine maintenance, and other consumables are excluded." },
+      "5.4": { "heading": "Exclusion - consumables", "text": "Filters, fluids, belts, seals and other consumables are excluded when replaced as scheduled maintenance. Scheduled maintenance is not claimable under warranty and has no warranty operation code, so a consumable claimed under a warranty repair operation code is treated as a corrective repair and is covered, unless an inspection report records the replacement as routine." },
       "6.1": {
         "heading": "Repair warranty",
         "text": "A component replaced under warranty carries a further ninety (90) days of coverage from the date the repair was completed. A claim arising within that period is adjudicated under this clause and carries funding code RW, whether or not the underlying asset remains within its coverage period.",

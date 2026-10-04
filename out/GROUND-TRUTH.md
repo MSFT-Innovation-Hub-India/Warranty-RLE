@@ -3,7 +3,7 @@
 **Generated. Do not edit by hand.**  
 `.venv/Scripts/python.exe build/ground_truth.py`
 
-Produced 2026-10-03 from `scenario/spec/` via `build/adjudicate.py`. Every row is computed by the same engine that the corpus documents are rendered from, so the expected answer and the text a model will read cannot disagree.
+Produced 2026-10-04 from `scenario/spec/` via `build/adjudicate.py`. Every row is computed by the same engine that the corpus documents are rendered from, so the expected answer and the text a model will read cannot disagree.
 
 | Split | Claims |
 | --- | --- |
@@ -72,12 +72,12 @@ Outcome mix: **approve** 52, **decline** 24, **escalate** 5, **request_evidence*
 | `C-2026-04126` | precedence | 1, 2, 5 | `CIE-4000-CH-01952` | **decline** | ADD-IN-2.1 | - | NC |
 | `C-2026-04127` | precedence | 1, 2, 5 | `CIE-2200-AC-00802` | **decline** | ADD-IN-2.1 | - | NC |
 | `C-2026-04128` | precedence | 1, 2, 5 | `CIE-2200-AC-00602` | **approve** | TSB-P-0112 | ₹67,500 | TSB |
-| `C-2026-04133` | serial-boundary | 4 | `CIE-4000-CH-01199` | **decline** | ADD-IN-2.1 | - | NC |
-| `C-2026-04134` | serial-boundary | 4 | `CIE-4000-CH-01200` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
-| `C-2026-04135` | serial-boundary | 4 | `CIE-4000-CH-01849` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
-| `C-2026-04136` | serial-boundary | 4 | `CIE-4000-CH-01850` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
-| `C-2026-04137` | serial-boundary | 4 | `CIE-4000-CH-01851` | **decline** | ADD-IN-2.1 | - | NC |
-| `C-2026-04138` | serial-boundary | 4 | `CIE-4000-CH-01852` | **decline** | ADD-IN-2.1 | - | NC |
+| `C-2026-04133` | serial-boundary | 4 | `CIE-4000-CH-01198` | **decline** | ADD-IN-2.1 | - | NC |
+| `C-2026-04134` | serial-boundary | 4 | `CIE-4000-CH-01201` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
+| `C-2026-04135` | serial-boundary | 4 | `CIE-4000-CH-01848` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
+| `C-2026-04136` | serial-boundary | 4 | `CIE-4000-CH-01849` | **approve** | TSB-C-0051 | ₹198,450 | TSB |
+| `C-2026-04137` | serial-boundary | 4 | `CIE-4000-CH-01852` | **decline** | ADD-IN-2.1 | - | NC |
+| `C-2026-04138` | serial-boundary | 4 | `CIE-4000-CH-01853` | **decline** | ADD-IN-2.1 | - | NC |
 | `C-2026-04142` | dual-limit | 3 | `CIE-4000-CH-01403` | **decline** | TSB-C-0051 | - | NC |
 | `C-2026-04143` | dual-limit | 3 | `CIE-4000-CH-01413` | **decline** | TSB-C-0051 | - | NC |
 | `C-2026-04144` | dual-limit | 3 | `CIE-4000-CH-01423` | **approve** | TSB-C-0051 | ₹199,175 | TSB |
@@ -975,7 +975,7 @@ One block per evaluation claim, so a reviewer can check any answer by hand in un
 | | |
 | --- | --- |
 | Serial | `CIE-4000-CH-02110` (4000-CH, India) |
-| Commissioned | 2024-10-01 |
+| Commissioned | 2025-10-01 |
 | Partner | D-IN-01 |
 | Operation | `HYD-PUMP-RR` |
 | Repair date | 2026-06-18 |
@@ -985,7 +985,7 @@ One block per evaluation claim, so a reviewer can check any answer by hand in un
 
 **Reason.** Coverage cannot be determined: ADD-IN-2.1 sets a limit of 5000 running hours and the asset registry holds no telemetry reading for CIE-4000-CH-02110 at the date of repair.
 
-**Expiry basis.** 18 months from 2024-10-01 → 2026-04-01; limit 5000 h.
+**Expiry basis.** 18 months from 2025-10-01 → 2027-04-01; limit 5000 h.
 
 **Instruments considered.** `TSB-C-0043`, `ADD-IN-2.1` ← governs, `POL-WAR-4.2`.
 

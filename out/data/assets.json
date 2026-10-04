@@ -352,6 +352,39 @@
     "known": true
   },
   {
+    "serial": "CIE-4000-CH-01198",
+    "family": "4000-CH",
+    "dealer_id": "D-IN-01",
+    "customer_id": "C-LIT",
+    "region": "India",
+    "install_date": "2024-03-12",
+    "commissioning_date": "2024-04-04",
+    "coastal": false,
+    "known": true
+  },
+  {
+    "serial": "CIE-4000-CH-01201",
+    "family": "4000-CH",
+    "dealer_id": "D-IN-01",
+    "customer_id": "C-LIT",
+    "region": "India",
+    "install_date": "2024-03-12",
+    "commissioning_date": "2024-04-04",
+    "coastal": false,
+    "known": true
+  },
+  {
+    "serial": "CIE-4000-CH-01848",
+    "family": "4000-CH",
+    "dealer_id": "D-IN-01",
+    "customer_id": "C-LIT",
+    "region": "India",
+    "install_date": "2024-03-12",
+    "commissioning_date": "2024-04-04",
+    "coastal": false,
+    "known": true
+  },
+  {
     "serial": "CIE-4000-CH-01849",
     "family": "4000-CH",
     "dealer_id": "D-IN-01",
@@ -364,6 +397,17 @@
   },
   {
     "serial": "CIE-4000-CH-01852",
+    "family": "4000-CH",
+    "dealer_id": "D-IN-01",
+    "customer_id": "C-LIT",
+    "region": "India",
+    "install_date": "2024-03-12",
+    "commissioning_date": "2024-04-04",
+    "coastal": false,
+    "known": true
+  },
+  {
+    "serial": "CIE-4000-CH-01853",
     "family": "4000-CH",
     "dealer_id": "D-IN-01",
     "customer_id": "C-LIT",
@@ -808,8 +852,8 @@
     "dealer_id": "D-IN-01",
     "customer_id": "C-LIT",
     "region": "India",
-    "install_date": "2024-09-08",
-    "commissioning_date": "2024-10-01",
+    "install_date": "2025-09-08",
+    "commissioning_date": "2025-10-01",
     "coastal": false,
     "known": true
   },
@@ -841,8 +885,8 @@
     "dealer_id": "D-IN-01",
     "customer_id": "C-LIT",
     "region": "India",
-    "install_date": "2024-09-08",
-    "commissioning_date": "2024-10-01",
+    "install_date": "2025-09-08",
+    "commissioning_date": "2025-10-01",
     "coastal": false,
     "known": true
   },
@@ -874,8 +918,8 @@
     "dealer_id": "D-IN-01",
     "customer_id": "C-LIT",
     "region": "India",
-    "install_date": "2024-09-08",
-    "commissioning_date": "2024-10-01",
+    "install_date": "2025-09-08",
+    "commissioning_date": "2025-10-01",
     "coastal": false,
     "known": true
   },
@@ -1272,50 +1316,6 @@
     "region": "India",
     "install_date": "2024-05-11",
     "commissioning_date": "2024-06-03",
-    "coastal": false,
-    "known": true
-  },
-  {
-    "serial": "CIE-4000-CH-01630",
-    "family": "4000-CH",
-    "dealer_id": "D-EM-01",
-    "customer_id": "C-WWI",
-    "region": "EMEA",
-    "install_date": "2024-06-11",
-    "commissioning_date": "2024-07-04",
-    "coastal": false,
-    "known": true
-  },
-  {
-    "serial": "CIE-2200-AC-00931",
-    "family": "2200-AC",
-    "dealer_id": "D-AP-01",
-    "customer_id": "C-TRY",
-    "region": "APAC",
-    "install_date": "2024-07-13",
-    "commissioning_date": "2024-08-05",
-    "coastal": false,
-    "known": true
-  },
-  {
-    "serial": "CIE-4000-CH-01632",
-    "family": "4000-CH",
-    "dealer_id": "D-IN-01",
-    "customer_id": "C-LIT",
-    "region": "India",
-    "install_date": "2024-08-14",
-    "commissioning_date": "2024-09-06",
-    "coastal": false,
-    "known": true
-  },
-  {
-    "serial": "CIE-2200-AC-00933",
-    "family": "2200-AC",
-    "dealer_id": "D-IN-02",
-    "customer_id": "C-WGF",
-    "region": "India",
-    "install_date": "2024-09-14",
-    "commissioning_date": "2024-10-07",
     "coastal": false,
     "known": true
   }

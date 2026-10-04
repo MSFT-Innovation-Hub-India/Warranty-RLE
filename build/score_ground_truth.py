@@ -161,12 +161,20 @@ NEGATION_RE = re.compile(r"\b(?:no|not|without|nor|never|no need to|doesn't need
 # "no draft adjudication, evidence request, or escalation was created": the negation
 # reaches the last item of a list, however far away it is.
 LIST_NEGATION_RE = re.compile(r"\b(?:no|not|neither)\b[^.;:\n]{0,100},?\s+(?:or|nor)\s+$", re.I)
+# ...and to a middle item: "No draft adjudication, evidence request, goodwill escalation, or other change".
+# Needs at least one earlier list item, and no clause break ("so", "but", "then") before the match.
+LIST_ITEM_NEGATION_RE = re.compile(
+    r"\b(?:no|neither|without)\b[^.;:,\n]{1,60}(?:,[^.;:,\n]{1,40})+,\s*(?:(?:or|nor)\s+)?"
+    r"(?:(?!(?:so|but|then|therefore|thus|hence|and|which)\b)\w+\s+){0,2}$", re.I)
 
 
 def _first_unnegated(pat: re.Pattern, text: str) -> int | None:
     for m in pat.finditer(text):
-        before = text[max(0, m.start() - 120):m.start()]
-        if not NEGATION_RE.search(before[-40:]) and not LIST_NEGATION_RE.search(before):
+        before = text[max(0, m.start() - 160):m.start()]
+        neg = NEGATION_RE.search(before[-40:])
+        if neg and re.search(r",\s*(?:but|so|then|and)\b", neg.group(0), re.I):
+            neg = None  # "not covered, but escalate": the negation belongs to the earlier clause
+        if not (neg or LIST_NEGATION_RE.search(before[-120:]) or LIST_ITEM_NEGATION_RE.search(before)):
             return m.start()
     return None
 
@@ -195,13 +203,27 @@ def extract_decision(response: str) -> str | None:
     return found[0][1]
 
 
+def _instrument_negated(s: str, m: re.Match) -> bool:
+    after = s[m.end():m.end() + 45]
+    before = s[max(0, m.start() - 30):m.start()]
+    if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?(?:does not|doesn't|did not|is not|isn't|cannot|would not|no longer)\b", after, re.I):
+        return True
+    if re.search(r"(?:\bnot (?:under|covered by|by)|rather than|instead of|\bnot)\W*$", before, re.I):
+        return True
+    # "POL-WAR-4.2 clause 1.4" is the precedence rule being cited, not the governing instrument
+    return bool(re.match(r"\W*(?:clauses?\s+)?1\.4\b", after))
+
+
+GOVERNING_CUE = r"govern|applies|applicable instrument|covered (?:under|by)|under\b"
+
+
 def extract_governing(response: str) -> str | None:
     sentences = re.split(r"(?<=[.!?\n])\s+", response)
     for s in sentences:
-        if re.search(r"govern|applies|applicable instrument|covered under|under\b", s, re.I):
-            m = INSTRUMENT_RE.search(s)
-            if m:
-                return m.group(1)
+        if re.search(GOVERNING_CUE, s, re.I):
+            for m in INSTRUMENT_RE.finditer(s):
+                if not _instrument_negated(s, m):
+                    return m.group(1)
     m = INSTRUMENT_RE.search(response)
     return m.group(1) if m else None
 

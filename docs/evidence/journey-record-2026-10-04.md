@@ -668,3 +668,116 @@ First scorer pass: 6/8. 04109 was read as `escalate`, but the answer says *"Clai
 DB writes (`db-actions-after-eval.txt`): drafts ADJ-8E1088E707 (04101 approve 69575) · ADJ-E40E29E578 (04102 approve 48420) · ADJ-B5F41EE4C6 (04103 request_evidence) · ADJ-944250B564 (04110 decline) · ADJ-52BBD071CD (04114 approve 199175) · ADJ-96937208C5 (04118 approve 67500); evidence EVR-CAA13AFF92 (04103); 04103 status Held. Then `db-reset-actions.sql` → baseline `0 0 0 0`.
 
 ACA left at min = max = 3 replicas (revision `--0000005`).
+
+---
+
+## World v2.1 — clause 5.4 made unambiguous (19:45 IST)
+
+User decision: *"if in real life you would manually correct that in a way for the right interpretation, then let's update the policy so that there is no ambiguity."* I chose option (b), a policy wording change.
+
+`spec/instruments.json`, POL-WAR-4.2 clause 5.4 "Exclusion - consumables":
+- OLD: *"Filters, fluids, belts, seals fitted as routine maintenance, and other consumables are excluded."*
+- NEW: *"Filters, fluids, belts, seals and other consumables are excluded when replaced as scheduled maintenance. Scheduled maintenance is not claimable under warranty and has no warranty operation code, so a consumable claimed under a warranty repair operation code is treated as a corrective repair and is covered, unless an inspection report records the replacement as routine."*
+
+Why the ground truth can't move: the engine applies only exclusion 5.2 (`adjudicate.py` line ~409, `exclusion_flags`). 5.4 is never applied. Only 2 claims are seal kits: 04103 (eval, approve) and 04110 (eval, decline on time and hours).
+
+```text
+adjudicate.py   → All 14 checks passed - guide 03 section 8 reproduces.
+test_traps.py   → 31/31 checks passed.
+populate.py     → Design conformance: OK
+ground_truth.py → wrote out/GROUND-TRUTH.md (993 lines); diff = the "Produced <date>" line only
+gen_docs.py     → 34 Word documents; text changed vs HEAD 52fcc0f: POL-WAR-4.2 only
+gen_teams.py    → 31 messages; no content change
+```
+
+Timestamp-only docx and Teams files were restored. To upload: `01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx`.
+
+Stages 0 v2 and 1 v2 were measured on v2, before this. Not re-run: the change affects one claim (04103), and stage 2 moves to a new prompt set.
+
+### V2.1 upload check
+
+POL-WAR-4.2 item `01DRFRACQDMPIPW4LWQ5E37EZ4PCKCCLWD`: version 2, `lastModifiedDateTime` 2026-10-04T14:16:39Z (19:46 IST). Live text == local text: True; "corrective repair" present: True.
+
+## Stage 2-base — stage 1's setup on all 30 eval prompts (20:00 IST)
+
+User: *"for stage 2, yes we could use the difficult scenarios"*, then *"lets proceed now with stage 2 base"*. Also: *"when you reach stage 2b and determine that the skill needs to be improved, i think it is important i understand how we make the changes, and not let the skill echo what is in the rubric at the same time."* Recorded as a 2b commitment in JOURNEY.
+
+### S2b.1 Samples 8 → 30
+
+```text
+frontier-tuning samples delete-by-skill --skill-id cf00d339-…   → Error: No such option '--skill-id'.
+frontier-tuning samples upload stages\stage-2-base\samples.jsonl --skill-id cf00d339-… --type Evaluation
+  → Uploaded: 30 | Failed: 0          (now 38 Evaluation; the delete had failed)
+frontier-tuning samples delete <id> --yes   × 8 old ids (from samples-before-delete.json) → 8 × "deleted successfully"
+samples list → 30 samples; every prompt matched to a title (titles are cut at ~50 chars)
+```
+
+Files: `docs/evidence/stage-2-base/samples-before-delete.json`, `samples-upload.txt`, `samples-after.json`.
+
+### S2b.2 Capacity and pre-flight
+
+ACA: 0.5 vCPU / 1 GiB per replica. SQL `GP_S_Gen5_1` (serverless, min 0.5, auto-pause 60 min).
+
+```text
+az containerapp update … --min-replicas 5 --max-replicas 5 → rev contoso-service-mcp--0000006, 5 replicas Running
+healthz → {"status":"ok","assets":117}
+db-baseline → 0 0 0 0
+tools available → 88 (first read) · then 137 ×4: 1c171=12 lumina_sandbox=9 m365=5 mcp_OneDriveRemoteServer=18
+                  mcp_SharePointRemoteServer=31 polymer_atomic=17 teams=43 workspace_health=2
+platform rubrics == pinned: True
+```
+
+### S2b.3 Evaluate
+
+```text
+"JobId": "9f4ad313-9629-4571-8f58-13a7bba63c97", "Status": "Running", "CreatedAt": "2026-10-04T14:36:56Z"
+SkillsCount 1 · ToolsCount 4 · SamplePromptsCount 30 · KnowledgeSourcesCount 4
+```
+
+### S2b.4 Results
+
+Poll: `20:50 TERMINAL "StatusMessage": "Evaluation completed (overall=0.978): 30 graded."` (43 min).
+
+Rubrics: Requested Outcome Delivery 0.994 (30) · Claim Determination Requirements 0.960 (30) · Internal Record Use and Grounding 0.997 (30) · Adjudicator-Ready Presentation and Traceability 0.982 (30) · Claim-System Draft Execution 0.958 (24).
+
+First scorer pass: 24/30 correct, 1 ❓. All 6 were read by hand:
+
+| Claim | Evidence | Verdict |
+| --- | --- | --- |
+| 04140 | *"Decision: decline under warranty. … No draft adjudication, evidence request, goodwill escalation, or other claim-system change was made."* | scorer misread |
+| 04150 | *"The repair is covered by **TSB-C-0051**"*; first cue sentence hit was "Under … POL-WAR-4.2 clause 1.4" | scorer misread |
+| 04153 | *"**TSB-C-0051 does not govern this repair.** … Because TSB-C-0051 does not cover controls, **ADD-IN-2.1 A1** … governs"* | scorer misread |
+| 04131 | *"the claim system contains a second apparently identical submitted claim, C-2026-04136"*; `claims.json`: 04131 (eval) == 04136 (train) in every field except id. Identical pairs: 04129/04133, 04130/04134, 04131/04136, 04132/04137 | world defect |
+| 04178 | Key: *"Coverage cannot be determined: ADD-IN-2.1 sets a limit of 5000 running hours and the asset registry holds no telemetry reading…"* with `expiry_date 2026-04-01`, repair 2026-06-18. Agent: *"DECLINE … expired on the time limb on 1 April 2026"*. `adjudicate.py` lines 340–354 test the missing reading before the time limit | answer-key defect |
+| 04172 | *"Recommended claim action: … either (a) decline the warranty element, or (b) … route the INR 312,000 request to the Warranty Operations Head"*; *"No adjudication, evidence request, or goodwill escalation has been recorded"*. Called `get_goodwill_authority(312000, India)` | genuine miss; rubric 1.0 |
+
+Scorer changes: `LIST_ITEM_NEGATION_RE`; a ", but/so/then/and" clause break cancels a negation; `_instrument_negated()` (does not / is not / cannot … after; "not under / rather than" before; "clause 1.4" after); cue adds "covered by". A first attempt with tiered cues ("govern" first) regressed 04114 and 04166, so it was reverted to a single pass in sentence order. Tests 29/29. Re-score vs the previous CSVs: stage-0 none · stage-1 none · stage-0-v2 04116 governing POL→TSB (held answer, correctness unchanged) · stage-1-v2 04103 governing POL→ADD-IN-2.1 (unchanged) · stage-2-base 04140, 04150, 04153 → correct. **27/30.**
+
+DB: 23 drafts · 4 evidence (04131 duplicate_claim_resolution; 04177 ×2; 04178 running_hours_at_repair) · 1 escalation (GWE-1CC95816E4, 04171, ₹67,400 → Regional Service Manager). Reset → 0 0 0 0.
+
+---
+
+## World v2.2 — two defects found by stage 2-base (21:15 IST)
+
+The user was asked to choose the direction (frontier headroom gone) and was unavailable. Fixing these two defects is needed under every option, so they were fixed. The direction is still open.
+
+| Defect | Fix |
+| --- | --- |
+| Answer key tested the missing hours reading before the time limit (04178) | `adjudicate.py`: the missing-reading branch runs only if `repair <= expiry_date`; otherwise it falls through to decline ("whichever occurs first") |
+| …which would have left eval abstention at 2, not 3 | `populate.py`: the no-reading assets (2110–2112) are commissioned **2025-10-01** (was 2024-10-01), so the time limit hasn't run out and the missing reading really decides |
+| 4 eval claims had identical training twins (serial-boundary) | `populate.py`: training serials `[1198, 1201, 1848, 1849, 1852, 1853]` (were `[1199, 1200, 1849, 1850, 1851, 1852]`, which reused the eval serials and therefore the eval assets) |
+| Guard | `populate.py` now fails on any two claims identical apart from id/submitted date, and on an abstention claim that doesn't decide `request_evidence` |
+
+```text
+adjudicate.py → All 14 checks passed · test_traps.py → 31/31 · populate.py → Design conformance: OK
+claims 90 (eval 30 / train 60) · decisions approve 52, decline 24, escalate 5, request_evidence 9
+answer-key diff vs before: only 6 TRAIN claims changed serial (04133–04138); no expected decision, instrument or payable changed
+04178 now: request_evidence, expiry 2027-04-01, commissioning 2025-10-01
+engine on the OLD asset (commissioned 2024-10-01) → decline   (the engine fix alone)
+```
+
+Regenerated: ground truth, DB seeds, decks, docs, samples, sheets, Teams. A content diff vs HEAD (docx text, xlsx cells, pptx text) showed only POL-WAR-4.2 changed (the v2.1 clause 5.4, already uploaded). The other 38 rewrites were timestamp-only and were restored. **No SharePoint or Teams upload needed.** `out/samples/warranty-adjudication.train.jsonl` changed (serials in training prompts); the eval prompts are unchanged.
+
+Azure SQL reload with `load-sql.ps1` (Entra token): `OK: 8 batches executed`. Assets 117 (local 120; the 3 registry-unknown abstention assets aren't loaded, as before) · claims 90 · telemetry 3007. Spot checks: 04136 → CIE-4000-CH-01849; 02110 commissioned 2025-10-01 with 0 readings. healthz ok; baseline 0 0 0 0.
+
+Not re-run: stage 2-base (job `9f4ad313`) stays the record on v2.1. 04178 and 04131 are documented as defects there.

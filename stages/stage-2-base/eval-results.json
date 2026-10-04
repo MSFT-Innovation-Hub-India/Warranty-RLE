@@ -1,0 +1,97 @@
+{
+  "PauseReason": null,
+  "ReasonMessage": null,
+  "Stages": [
+    {
+      "Name": "StandaloneEvaluation",
+      "DisplayName": "Evaluation",
+      "Status": "Succeeded",
+      "Errors": []
+    }
+  ],
+  "Evaluations": [
+    {
+      "Id": "9f4ad313-9629-4571-8f58-13a7bba63c97",
+      "EvalType": "StandaloneEvaluation",
+      "Name": "Evaluation",
+      "OverallScore": 0.9783333539962769,
+      "SkillAggregateResults": [
+        {
+          "SkillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+          "SkillName": "warranty-assistant",
+          "Rubrics": [
+            {
+              "RubricId": "03ff334c-8fe1-4cc6-a230-1bf0c1d7744d",
+              "RubricName": "Requested Outcome Delivery",
+              "AvgScore": 0.9944444444444444,
+              "SampleCount": 30
+            },
+            {
+              "RubricId": "9829f57f-608f-467f-8a91-7a24a905bed4",
+              "RubricName": "Claim Determination Requirements",
+              "AvgScore": 0.9600000000000002,
+              "SampleCount": 30
+            },
+            {
+              "RubricId": "c546b2c0-d23f-4c2b-8698-a71debca58c7",
+              "RubricName": "Internal Record Use and Grounding",
+              "AvgScore": 0.9966666666666666,
+              "SampleCount": 30
+            },
+            {
+              "RubricId": "e629745b-6aa8-4783-87fa-300b0c002b5b",
+              "RubricName": "Adjudicator-Ready Presentation and Traceability",
+              "AvgScore": 0.9822222222222223,
+              "SampleCount": 30
+            },
+            {
+              "RubricId": "e87148d2-d4ca-4024-983b-69e72122ce12",
+              "RubricName": "Claim-System Draft Execution",
+              "AvgScore": 0.9583333333333334,
+              "SampleCount": 24
+            }
+          ],
+          "SkillOverallScore": 0.9783333333333333,
+          "SampleCount": 30
+        }
+      ],
+      "EvaluationCompletionDate": "2026-10-04T15:19:53.449017+00:00",
+      "LastUpdatedDate": "2026-10-04T15:19:53.4703062+00:00",
+      "Status": "Succeeded",
+      "StatusMessage": "Evaluation completed (overall=0.978): 30 graded.",
+      "Strategy": "Simple",
+      "StrategyBody": null
+    }
+  ],
+  "IndexInstanceId": null,
+  "JobId": "9f4ad313-9629-4571-8f58-13a7bba63c97",
+  "JobTaskType": null,
+  "JobType": "Evaluation",
+  "FinetuningType": null,
+  "Status": "Succeeded",
+  "ErrorCode": null,
+  "ErrorMessage": "",
+  "BaseModelName": "prod-gpt-56-reasoning-sol",
+  "BaseModelNames": [
+    "prod-gpt-56-reasoning-sol"
+  ],
+  "BaseModelDisplayName": "prod-gpt-56-reasoning-sol",
+  "NewModelName": "",
+  "CreatedAt": "2026-10-04T14:36:56.8004793+00:00",
+  "UpdatedAt": "2026-10-04T15:19:58.4908776+00:00",
+  "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "LastModifiedByObjectId": null,
+  "EvaluationMetadata": {
+    "OverallScore": 0.9783333539962769
+  },
+  "WorkspaceSnapshotMetadata": {
+    "Id": "9f4ad313-9629-4571-8f58-13a7bba63c97",
+    "SkillsCount": 1,
+    "ToolsCount": 4,
+    "SamplePromptsCount": 30,
+    "KnowledgeSourcesCount": 4
+  },
+  "DebugContext": {
+    "Logs": []
+  }
+}

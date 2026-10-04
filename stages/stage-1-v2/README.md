@@ -71,6 +71,8 @@ depends on it"). Options:
 (c) leave it, and accept one ambiguous eval claim.
 **Not changed: your decision.**
 
+> **Note, 2026-10-04 19:45:** resolved by option (b), world **v2.1**. Clause 5.4 now says that a consumable claimed under a warranty repair operation code is a corrective repair, and is covered unless an inspection report records it as routine. The answer key is unchanged. This stage was not re-run. See the [evidence record](../../docs/evidence/journey-record-2026-10-04.md#world-v21--clause-54-made-unambiguous-1945-ist).
+
 **Scorer fix.** 04109 says *"no draft adjudication, evidence request, or escalation was created"*. The
 negation window (25 characters) didn't reach "escalation", so the scorer read it as an escalation.
 Added a list-negation rule and 2 tests (25/25). Re-scoring changed no earlier stage's result.

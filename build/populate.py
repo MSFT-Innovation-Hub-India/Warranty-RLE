@@ -129,8 +129,11 @@ def build_slices() -> None:
                       OPERATIONS[op]["flat_hours"], part, part, hrs)
 
     # --- serial boundary: trap 4 -------------------------------------
+    # Training serials must differ from the eval ones: the same serial gives the
+    # same asset, and the same repair then gives a claim identical to the eval
+    # claim in every field, which leaks eval answers into training.
     for split, serials in (("eval", [1199, 1200, 1850, 1851]),
-                           ("train", [1199, 1200, 1849, 1850, 1851, 1852])):
+                           ("train", [1198, 1201, 1848, 1849, 1852, 1853])):
         for sn in serials:
             a = asset(sn, "4000-CH", "2024-04-04")
             claim(split, "serial-boundary", cid(), a, "HYD-PUMP-RR",
@@ -216,7 +219,9 @@ def build_slices() -> None:
             claim(split, "abstention", cid(), a, "HYD-PUMP-RR", "2026-06-18",
                   5.5, "P-44120-A", "P-44120-A", 3000)
 
-            a = asset(2110 + rep, "4000-CH", "2024-10-01")
+            # commissioned recently enough that the time limit has NOT run out:
+            # only then does the missing hours reading decide the outcome
+            a = asset(2110 + rep, "4000-CH", "2025-10-01")
             claim(split, "abstention", cid(), a, "HYD-PUMP-RR", "2026-06-18",
                   5.5, "P-44120-A", "P-44120-A", None)
 
@@ -334,6 +339,19 @@ def main() -> None:
     dupes = [k for k, v in Counter(r["claim"]["claim_id"] for r in records).items() if v > 1]
     if dupes:
         problems.append(f"duplicate claim ids: {dupes[:5]}")
+
+    def _fingerprint(c: dict) -> str:
+        return json.dumps({k: v for k, v in c.items() if k not in ("claim_id", "submitted_date")},
+                          sort_keys=True)
+    twins = Counter(_fingerprint(r["claim"]) for r in records)
+    twin_ids = [r["claim"]["claim_id"] for r in records if twins[_fingerprint(r["claim"])] > 1]
+    if twin_ids:
+        problems.append(f"claims identical apart from id (eval/train leakage): {twin_ids[:8]}")
+
+    for r in records:
+        a, c = r["adjudication"], r["claim"]
+        if r["slice"] == "abstention" and a["decision"] != "request_evidence":
+            problems.append(f"abstention claim {c['claim_id']} decides {a['decision']}, not request_evidence")
 
     tele = telemetry()
     (DATA / "assets.json").write_text(

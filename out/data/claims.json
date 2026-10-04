@@ -1487,7 +1487,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04133",
-      "serial": "CIE-4000-CH-01199",
+      "serial": "CIE-4000-CH-01198",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -1526,7 +1526,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04134",
-      "serial": "CIE-4000-CH-01200",
+      "serial": "CIE-4000-CH-01201",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -1577,7 +1577,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04135",
-      "serial": "CIE-4000-CH-01849",
+      "serial": "CIE-4000-CH-01848",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -1632,7 +1632,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04136",
-      "serial": "CIE-4000-CH-01850",
+      "serial": "CIE-4000-CH-01849",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -1687,7 +1687,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04137",
-      "serial": "CIE-4000-CH-01851",
+      "serial": "CIE-4000-CH-01852",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -1726,7 +1726,7 @@
     "slice": "serial-boundary",
     "claim": {
       "claim_id": "C-2026-04138",
-      "serial": "CIE-4000-CH-01852",
+      "serial": "CIE-4000-CH-01853",
       "dealer_id": "D-IN-01",
       "repair_date": "2026-06-18",
       "submitted_date": "2026-06-24",
@@ -3691,10 +3691,10 @@
       ],
       "expiry_basis": {
         "months": 18,
-        "expiry_date": "2026-04-01",
+        "expiry_date": "2027-04-01",
         "hours_limit": 5000,
         "hours_at_repair": null,
-        "commissioning_date": "2024-10-01"
+        "commissioning_date": "2025-10-01"
       },
       "funding_code": "NC",
       "missing_field": "running_hours",
@@ -3797,10 +3797,10 @@
       ],
       "expiry_basis": {
         "months": 18,
-        "expiry_date": "2026-04-01",
+        "expiry_date": "2027-04-01",
         "hours_limit": 5000,
         "hours_at_repair": null,
-        "commissioning_date": "2024-10-01"
+        "commissioning_date": "2025-10-01"
       },
       "funding_code": "NC",
       "missing_field": "running_hours",
@@ -3903,10 +3903,10 @@
       ],
       "expiry_basis": {
         "months": 18,
-        "expiry_date": "2026-04-01",
+        "expiry_date": "2027-04-01",
         "hours_limit": 5000,
         "hours_at_repair": null,
-        "commissioning_date": "2024-10-01"
+        "commissioning_date": "2025-10-01"
       },
       "funding_code": "NC",
       "missing_field": "running_hours",

@@ -6,7 +6,7 @@ Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the sour
 | --- | --- |
 | Answers scored | 8 |
 | Decision correct | 7/8 (88%) |
-| Governing instrument correct | 7/8 (88%) |
+| Governing instrument correct | 8/8 (100%) |
 | Payable correct (approvals) | 4/5 (80%) |
 | **Fully correct** | **7/8 (88%)** |
 | Needs human review | 1 |
@@ -26,7 +26,7 @@ Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the sour
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `C-2026-04101` | covered-simple | approve → approve ✅ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | ₹69,575 → ₹69,575 ✅ | 1.0 | ✅ |  |
 | `C-2026-04102` | covered-simple | approve → approve ✅ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | ₹48,420 → ₹48,420 ✅ | 0.927 | ✅ |  |
-| `C-2026-04103` | covered-simple | approve → request_evidence ❌ | ADD-IN-2.1 → POL-WAR-4.2 ❌ | ₹19,150 → ₹19,150 ❌ | 1.0 | ❌ | request evidence given, so payable not assessed |
+| `C-2026-04103` | covered-simple | approve → request_evidence ❌ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | ₹19,150 → ₹19,150 ❌ | 1.0 | ❌ | request evidence given, so payable not assessed |
 | `C-2026-04109` | declined-simple | decline → decline ✅ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | — → — ✅ | 1.0 | ✅ |  |
 | `C-2026-04110` | declined-simple | decline → decline ✅ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | — → — ✅ | 1.0 | ✅ |  |
 | `C-2026-04114` | precedence | approve → approve ✅ | TSB-C-0051 → TSB-C-0051 ✅ | ₹199,175 → ₹199,175 ✅ | 1.0 | ✅ |  |
