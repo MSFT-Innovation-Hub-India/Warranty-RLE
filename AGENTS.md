@@ -47,6 +47,14 @@ numbers, money. No customer or private content, ever.
 **One variable per stage.** The frontier model is held constant from stage 0 to
 stage 3. Change the model mid-climb and the delta becomes uninterpretable.
 
+**Every stage stays replayable.** Each stage has its own folder under
+`stages/` with the exact skills, pinned rubrics, prompts, commands and results
+it used. A new stage starts as a copy of the previous one and changes one
+thing. A closed stage is never edited. Rubrics are pinned files, never left to
+regenerate. Tag each closed stage in git (`stage-0`, `stage-1`, …). The goal:
+someone can replay and demonstrate the whole climb from the beginning, not just
+see the final artefacts.
+
 **Measure before changing.** Never edit rubrics, samples or instructions without
 a baseline to compare against. A change you cannot measure is a change you
 cannot defend.
@@ -135,6 +143,7 @@ Two documents, two audiences. Update both **as work happens**, every session.
 | `out/` | Generated corpus, database, samples, `GROUND-TRUTH.md` |
 | `mcp/` | The MCP server — 9 read + 3 action tools, ACA + Azure SQL deploy |
 | `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
+| `stages/` | One folder per climb stage: the exact skills, pinned rubrics, prompts, commands and results that stage used. Never overwritten |
 | `docs/` | Design, walkthrough, runbook, cross-cutting references |
 
 Run order matters: `adjudicate` → `test_traps` → `populate` → `ground_truth` →

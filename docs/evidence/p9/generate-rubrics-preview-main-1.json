@@ -1,0 +1,146 @@
+{
+  "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+  "mode": "replace",
+  "changed": true,
+  "applied": false,
+  "generated_count": 5,
+  "generation_was_empty": false,
+  "before_count": 1,
+  "after_count": 5,
+  "added": [
+    "Warranty Decision Requirement Set",
+    "Requested Result Delivery",
+    "Warranty Adjudication Accuracy and Grounding",
+    "Decision Coherence and Actionability",
+    "Professional and Proportionate Communication"
+  ],
+  "removed": [
+    "Warranty adjudication answer requirements"
+  ],
+  "rubrics": [
+    {
+      "Id": "2b1377df-3116-42a3-95c7-f76ee5efff2a",
+      "RubricName": "Warranty Decision Requirement Set",
+      "ChecklistItems": [
+        "When the input presents a repair claim, the response gives a definite covered, not covered, or partially covered determination to the extent the supplied facts permit; if a final determination is impossible, it identifies the exact unresolved condition rather than pretending to adjudicate.",
+        "When the input presents a repair claim, the response identifies which warranty instrument governs to the specificity supported by the input, or explicitly states what instrument information is missing.",
+        "When the input presents a repair claim, the response states what is payable to the precision supported by the input, such as an amount, covered cost categories, allocation, limits, deductible, or a clearly explained reason payment cannot yet be calculated.",
+        "When the input presents a repair claim, the response states what happens next through concrete next steps supported by the input, such as required evidence, authorization, routing, repair action, payment action, or responsible party.",
+        "When the user asks about an asset's warranty position, a service partner, or a part, the response directly answers every requested aspect that the supplied information supports and identifies any material fact needed for an unsupported aspect."
+      ],
+      "PearlCategory": "primary",
+      "Description": "Consolidated checklist of every in-scope warranty adjudication and warranty-question requirement, applied conditionally to the user’s actual request and supplied information.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "auto_generated",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "17a1e858-926d-4bdf-9351-ef825f73b249",
+      "RubricName": "Requested Result Delivery",
+      "ChecklistItems": [
+        "For every claim-adjudication result the user requests, the response presents a genuine result or a definitively established inability to determine it from specified missing information; an unverified hedge such as \"couldn't determine\" without identifying the unresolved basis fails.",
+        "For every requested question about an asset's warranty position, a service partner, or a part, the response supplies the answer or definitively establishes why the answer is unavailable; merely promising to check later or saying nothing was found without a substantiated basis fails."
+      ],
+      "PearlCategory": "primary",
+      "Description": "Checks that the final response actually delivers every warranty result requested by the user rather than merely offering to investigate or reporting unverified non-completion.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "auto_generated",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "e7f2d40a-df48-4f2b-8f6f-519ab089322e",
+      "RubricName": "Warranty Adjudication Accuracy and Grounding",
+      "ChecklistItems": [
+        "Each coverage conclusion is consistent with the supplied asset, failure, repair, timing, eligibility, and exclusion facts that materially bear on coverage.",
+        "The named governing instrument matches the supplied warranty documents, hierarchy, dates, asset or part applicability, and other controlling terms.",
+        "Each payable amount or cost category follows the supplied coverage terms, limits, deductibles, exclusions, and allocation rules, with arithmetic correct where calculation is possible.",
+        "The response distinguishes supplied facts from assumptions and does not invent warranty instruments, coverage terms, monetary amounts, dates, authorization status, service-partner status, or part eligibility.",
+        "When material information is absent or conflicting, the response identifies the specific gap or conflict and limits its conclusion accordingly."
+      ],
+      "PearlCategory": "primary",
+      "Description": "Evaluates whether conclusions faithfully follow the facts and warranty terms available in the user’s input without unsupported invention.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "auto_generated",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "eff85f12-2e94-4b67-a4c9-4c8642e40d34",
+      "RubricName": "Decision Coherence and Actionability",
+      "ChecklistItems": [
+        "The response visibly separates or clearly labels the coverage decision, governing instrument, payable outcome, and next steps when those elements are requested.",
+        "The explanation connects material claim facts and applicable warranty terms to the resulting determination.",
+        "Payment details use clear units, currency, scope, and responsibility allocation to the extent the input supplies them.",
+        "Next steps identify concrete actions and responsible parties to the extent supported by the input.",
+        "Qualifications and missing-information requests are placed next to the conclusion they limit."
+      ],
+      "PearlCategory": "extended",
+      "Description": "Measures how clearly the response connects the governing terms and facts to the decision, payment outcome, and next steps.",
+      "ScoringScale": {
+        "Min": 1,
+        "Max": 5,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {
+        "1": "The response is difficult to follow, leaves major requested warranty outcomes disconnected or ambiguous, or gives next steps that are not actionable despite supporting information in the input.",
+        "3": "The response communicates the main outcome and some rationale, but one or more supported elements—governing terms, payable scope, responsibility, or next steps—remain weakly connected or imprecise.",
+        "5": "The response presents the clearest and most actionable form the input supports, explicitly connecting relevant facts and governing terms to coverage, payment, and next steps while preserving genuine uncertainty."
+      },
+      "RedFlags": [],
+      "MeasurementMethod": "scale",
+      "Importance": "high",
+      "Source": "auto_generated",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "9a4c1639-3e51-444b-acda-7a41dc16f968",
+      "RubricName": "Professional and Proportionate Communication",
+      "ChecklistItems": [
+        "The response leads with the answer or current determination rather than burying it beneath generic background.",
+        "Technical warranty language is explained sufficiently for the apparent audience without replacing necessary instrument or part terminology.",
+        "The amount of detail is proportionate to the claim or question and avoids irrelevant warranty boilerplate.",
+        "The tone remains neutral and professional when denying coverage, limiting payment, or requesting further evidence."
+      ],
+      "PearlCategory": "alternative",
+      "Description": "Evaluates whether the response is concise, direct, and appropriately calibrated for warranty operations.",
+      "ScoringScale": {
+        "Min": 1,
+        "Max": 5,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {
+        "1": "The response is materially confusing, evasive, excessively verbose, or unprofessional in ways that obstruct the warranty outcome supported by the input.",
+        "3": "The response is understandable and professional but contains avoidable verbosity, jargon, weak prioritization, or minor ambiguity.",
+        "5": "The response is direct, concise, professionally neutral, and tailored to the user’s warranty question while retaining all detail the input makes necessary."
+      },
+      "RedFlags": [],
+      "MeasurementMethod": "scale",
+      "Importance": "medium",
+      "Source": "auto_generated",
+      "RubricType": "user_facing"
+    }
+  ]
+}

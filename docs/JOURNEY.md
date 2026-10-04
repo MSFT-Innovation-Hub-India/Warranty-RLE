@@ -5,7 +5,7 @@ to bottom the first time; after that, **Where we are** is all you need.
 
 | Part | What it gives you |
 | --- | --- |
-| [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard |
+| [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard, and [how it reasons through a claim](#how-the-agent-reasons-through-a-claim) |
 | [2. Setting up the world](#2-setting-up-the-world) | A step-by-step recipe, with what you should see at each step |
 | [3. The climb](#3-the-climb) | The five stages, what each must prove, how to tell |
 | [4. What we've learned](#4-what-weve-learned) | Findings so far, in one table |
@@ -25,10 +25,13 @@ The full verbatim command record, including every dead end, is in
 | | |
 | --- | --- |
 | **Status** | World built and wired up. **No stage run yet** |
-| **Next** | **P9**: write the stage-0 skill and its 8 prompts, then run stage 0 |
+| **Next** | **P9b**: the 8 stage-0 prompts (`stage0.jsonl`), then run stage 0 |
 | **Before stage 1** | **P6**: put Entra auth on the MCP endpoint (now open to anyone with the URL) |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4`: the climb, CLI default · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc`: scratch |
 | **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` (**off** for stage 0) · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` (on) |
+| **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44` · 5 pinned rubrics |
+| **Stage artefacts** | One folder per stage in [stages/](../stages/): exact skill, rubrics, prompts, commands and results. Never overwritten |
+| **Stage 4 plan** | **4a GPT-5.4-Mini** (run `dev-ct-gpt-54-mini-mp`, tune `gpt-54-mini`: likely the same model, so a clean before/after) · then **4b MAI** (run `dev-ct-mai-code-mp`, tune `mai-code-1-flash`) as a repeat |
 | **Before every run** | Check that the 4 baseline counts are 0 ([H2](#h2-baseline-check--are-the-action-tables-clean)) |
 
 ---
@@ -61,6 +64,58 @@ Every answer is a decision plus a number, and can be checked against
 
 All 12 are in [03 § 7](03-scenario-design.md).
 
+### How the agent reasons through a claim
+
+There's no fixed reading list. **Which documents matter depends on facts found
+along the way**, so the agent works in steps: each result decides the next lookup.
+
+```
+get_claim ─► get_asset ─┬─ commissioning missing? ──► STOP: request evidence            (abstention)
+                        │
+                        ├─ region ──► regional addendum (India 18 mo / EMEA …)
+                        ├─ family + serial ──► a bulletin naming this serial?           (precedence, serial boundary)
+                        │         └─ superseded? use the newer one; DB index disagrees? the document wins
+                        ├─ repair date + running hours ──► within months AND hours?     (dual limit)
+                        │
+                        ├─ covered ──► flat-rate (op code) · labour rate (region, repair date)
+                        │              · part fitted + supersession · partner agreement (uplift)   (valuation)
+                        └─ not covered + goodwill asked ──► authority matrix · Teams thread ──► escalate  (authority)
+```
+
+**Who tells the agent this?** Not the skill. The **policy document**, POL-WAR-4.2 in `01-Policy`, does, just as a human adjudicator works from the manual. Finding and applying it is the competence being measured.
+
+| Policy clause | So the agent must… |
+| --- | --- |
+| 1.4: a bulletin naming the serial range beats the regional addendum, which beats the policy; superseded bulletins have no effect; the document beats the DB index | Check the serial against the bulletins, *then* the region's addendum |
+| 2.3: no commissioning record → coverage can't be determined; hold the claim; don't substitute the install date | **Stop** and request the record |
+| Labour: flat-rate allowance or hours claimed, whichever is less, at the rate in force on the **repair date** | Read the flat-rate schedule *and* the rate card, choosing the row by repair date |
+| 4.2: price the part *fitted*; a superseded part takes the new part's price | Check service history and the parts list |
+| 7.1: approval needs recorded authority at the right tier | Use the authority matrix; a Teams "cover it" isn't approval |
+
+**Paths by type of claim** (the slices in [GROUND-TRUTH.md](../out/GROUND-TRUTH.md)):
+
+| Slice | Path, roughly | Typical hops |
+| --- | --- | --- |
+| covered-simple | claim → asset → hours → India addendum → flat-rate, rate card, parts, partner agreement | ~8–10 |
+| precedence / serial-boundary | as above, **plus** find the bulletin by serial and follow the document over the DB index | ~10–12 |
+| dual-limit | months *and* hours: telemetry at the repair date decides | ~8–10 |
+| valuation | full money path: cap, rate by repair date, supersession, uplift | ~10–14 |
+| stale-deck | as precedence, **discounting** the Q2 deck's "24 months" if search surfaces it | ~10 |
+| authority | out of cover, goodwill asked → matrix → Teams → **escalate**, don't approve | ~6–8 |
+| abstention | commissioning missing → policy 2.3 → **request evidence** and stop | ~4 |
+
+🖥️ The coverage-only comparison question took **8 hops in sequence**: claim → asset → hours → history → prior claims → bulletin index → bulletin → policy. A full adjudication adds the money lookups. At 3–11 s per hop, that's why a run takes 1.5–3 minutes.
+
+**Why it's built this way.** A single search can't answer a claim: the right
+bulletin is only findable *after* the serial comes back, the right rate row
+needs the repair date, and the distractors (stale deck, stale index, Teams
+"approval") surface mid-research and must be discounted. Choosing the next step,
+knowing when to stop and deciding which source wins are the habits the climb
+measures and RFT reinforces.
+
+For one claim walked end to end, step by step, see
+[04-walkthrough.md](04-walkthrough.md) and [03 § 8](03-scenario-design.md#8-a-worked-example-end-to-end).
+
 **The point of the exercise.** Start with an honestly weak agent and improve it
 in stages, **changing one thing at a time**, so each gain can be attributed.
 The frontier model (GPT-5.6-Sol) stays the same through stages 0–3. Stage 4
@@ -80,7 +135,7 @@ then asks whether a small, tuned model can match it.
 | [P6](#p6--protect-the-mcp-endpoint) | Protect the MCP endpoint | ⬜ before stage 1 |
 | [P7](#p7--create-the-worlds) | Create the worlds | ✅ |
 | [P8](#p8--connect-the-mcp-server-to-the-worlds) | Connect the MCP server to the worlds | ✅ |
-| [P9](#p9--stage-0-skill-and-prompts) | Stage-0 skill and prompts | ⬜ **next** |
+| [P9](#p9--stage-0-skill-and-prompts) | Stage-0 skill and prompts | ✅ skill · ⬜ **prompts next** |
 | [P10](#p10--prove-every-source-is-reachable) | Prove every source is reachable | ✅ on dev |
 | [P11](#p11--update-the-runbook) | Update the runbook | ⬜ before stage 1 |
 
@@ -329,17 +384,61 @@ main available total: 125            (dev: 137 = 125 + our 12)
 
 **Watch out.**
 - The agent sees our tools as `<first 5 chars of server id>__<tool>` (e.g. `34d14__get_asset`), not `contoso-service__…`.
-- `tools list` doesn't show custom tools. Use `tools available`.
+- `tools list` shows only the **first 50** tools by default, which hides ours. Use `tools list --limit 500` or `tools available`.
 - `NoAuth` is temporary. P6 switches it to `AzureAD`.
 
 ✅ **Result:** connected in both worlds. Dev is on; main is **off**, which is stage 0's condition.
 
 ### P9 — Stage-0 skill and prompts
 
-⬜ **Next.** Write `skills/warranty-assistant.md`: one broad skill with
-`generateRubrics: true`, so the platform writes the rubrics. That's deliberately
-naive. Pick the **8 easiest** eval prompts (covered-simple, declined-simple,
-precedence) into `stage0.jsonl`. See the runbook's
+**Why.** Stage 0 needs one broad skill, with rubrics written by the platform
+rather than by us. That's the naive baseline the climb starts from.
+
+**Do.**
+1. Write [stages/stage-0/warranty-assistant.md](../stages/stage-0/warranty-assistant.md). It describes the business job: who the agent serves, what an adjudication must establish, which sources exist, and how to write for an adjudicator. It deliberately leaves out the rules that solve the traps (which instrument wins, document over index, no install-date substitute, flat-rate cap, rate by repair date, written authority). The agent has to find those in the policy documents.
+2. Create it on dev with `generateRubrics: true`, and review what the platform generates.
+3. Pin the generated set in [warranty-assistant.rubrics.json](../stages/stage-0/warranty-assistant.rubrics.json) and apply it to main, so both worlds are scored against identical rubrics.
+
+```powershell
+frontier-tuning skills create --file stages\stage-0\warranty-assistant.md --env-id 6bec3bf9-0222-4285-8a5b-214867ac42cc -o json   # dev: generates rubrics
+frontier-tuning skills create --file stages\stage-0\warranty-assistant.md --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json   # main
+frontier-tuning skills update cf00d339-5217-4cd1-b390-cc0d911735da --file <main skill JSON with pinned Rubrics> --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+```
+
+<details><summary><strong>You should see</strong> — the pinned rubrics on both worlds</summary>
+
+```text
+Requested Outcome Delivery                        (critical, user_facing,          6 items)
+Claim Determination Requirements                  (critical, user_facing,          5 items)
+Internal Record Use and Grounding                 (critical, trajectory_non_tool, 10 items)
+Adjudicator-Ready Presentation and Traceability   (high,     user_facing,          6 items)
+Claim-System Draft Execution                      (critical, trajectory_non_tool,  1 items)
+identical to pinned (name, importance, type, items): True
+```
+
+</details>
+
+How the generated rubrics map onto the rubrics we designed in 03 § 9.2:
+
+| Designed rubric | Generated set covers it? |
+| --- | --- |
+| Coverage determination | ✅ |
+| Evidence grounding | ✅ strongly: 10 source checks plus per-fact attribution |
+| Valuation accuracy | ✅ structure and arithmetic, but not the trap rules |
+| Evidence closure | ✅ unestablished facts, conflicting sources |
+| Precedence discipline | ⚠️ names the instrument, but not why it beats the others |
+| Authority and action | ⚠️ checks drafts are recorded, but not approval authority |
+
+The ⚠️ gaps are intentional headroom: stage 2's hand-written rubrics close them.
+
+**Watch out.**
+- **Rubric generation isn't repeatable.** The same file gave 5 rubrics on dev, 1 rubric (14 items) on main, and a different 5 on a preview regeneration. Pin one set, or stages can't be compared.
+- `skills create` updates in place by name. With `generateRubrics: true` it would silently replace the pinned rubrics, so the file is now `false`.
+- `Claim-System Draft Execution` will fail at stage 0, where the MCP server is off. That's expected, and part of the diagnosable gap.
+- From stage 1, the agent records drafts, so run the baseline check ([H2](#h2-baseline-check--are-the-action-tables-clean)) and clean up between runs.
+
+✅ **Skill done:** `warranty-assistant` on main `cf00d339-5217-4cd1-b390-cc0d911735da` and dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`, with identical pinned rubrics.
+⬜ **Still to do:** the 8 easiest eval prompts (covered-simple, declined-simple, precedence) as `stage0.jsonl`. See the runbook's
 [Stage 0](05-hill-climb-runbook.md#stage-0--the-naive-build).
 
 ### P10 — Prove every source is reachable
@@ -359,9 +458,10 @@ specifically, and the same on main. The stage-0 probe on main covers the last.
 
 ### P11 — Update the runbook
 
-⬜ **Before stage 1.** Two gaps in [runbook 05](05-hill-climb-runbook.md):
+⬜ **Before stage 1.** Three updates to [runbook 05](05-hill-climb-runbook.md):
 - Add AGENTS goals 3 (use the platform's own tools) and 4 (Simple vs BestOfN headroom).
 - Correct the tool names to the `<id prefix>__<tool>` form.
+- Stage 4: GPT-5.4-Mini first (4a), then repeat with MAI (4b). The runbook currently plans MAI only.
 
 ---
 
@@ -375,12 +475,17 @@ specifically, and the same on main. The stage-0 probe on main covers the last.
 | **1** | MCP server switched on | 0.62–0.70 | How much was just plumbing | Score up ≥ 0.10 **and** DB tools in the trace |
 | **2** | Hand-written rubrics first, then 3 thin skills | 0.76–0.84 | Rubric and skill design is the biggest lever | The 3 skills score differently per rubric |
 | **3** | All 30 honest prompts | 0.72–0.80 (may drop) | Where the agent is truly weak | 0.60–0.75 · Simple vs BestOfN gap measured |
-| **4** | Swap to a small model, then tune it | 0.50–0.60 → 0.76–0.82 | A tuned small model can match the frontier | Within 0.05 of frontier, still abstains correctly |
+| **4** | Swap to a small model, then tune it: **4a GPT-5.4-Mini**, then **4b MAI** as a repeat | 0.50–0.60 → 0.76–0.82 | A tuned small model can match the frontier | Within 0.05 of frontier, still abstains correctly |
 
 **Skills vs rubrics.** Stage 0 lets the platform write the rubrics on purpose:
 that's the naive baseline. From stage 2, rubrics are written by hand
 **before** the skills ([drafts in 03 § 9.2](03-scenario-design.md#92-rubrics-for-the-flagship-skill--written-before-the-skill-exists)),
 and the platform tools are measured against them.
+
+**Will the skill change?** Yes, at stage 2: the one broad skill is
+**disabled, not edited**, and three narrow skills replace it. Rubrics change
+at stage 2 too. Every version is kept in its stage folder
+([stages/](../stages/)), so the progression can be replayed and shown later.
 
 *No stage has run yet.*
 
@@ -395,6 +500,10 @@ and the platform tools are measured against them.
 | 10-03 | The run response **doesn't name the model** that served it, and its tool-call count in `billingSummary` doesn't always match the trace | 🖥️ |
 | 10-03 | The GPT-5.4-Mini pair (run vs tune) share a base-model name; the MAI pair don't. That matters for a clean before/after in stage 4 | 🔬 |
 | 10-03 | `--strategy simple` is accepted. Whether strategies actually change behaviour is still untested (stage 3) | 🔬 |
+| 10-03 | **Rubric generation isn't repeatable.** The same skill gave 5, 1 and 5 (different) rubrics across three generations, so we pin one set. The generated set covers task structure well but misses precedence reasoning and approval authority | 🖥️ |
+| 10-03 | **Generated rubrics restate the skill.** All 28 checklist items trace back to a sentence in the skill; none states a trap's rule. They add useful judging precision (pass/fail conditions, "when relevant" applicability, 2 checks on what the agent actually did), but have no reference answers: an answer that's wrong but consistent and well sourced can pass. Item 18 even *rewards* consulting the review decks, stale Q2 included. **For stage 0: also score each answer's decision against `GROUND-TRUTH.md`**, so the rubric score and actual correctness can be compared | 🖥️ text · 💭 mapping |
+| 10-04 | **There's no field for an expected answer.** A sample is a `Prompt` plus optional file `References`; `samples create/update/upload` document nothing else. During tuning, the **only** training signal is the grader's rubric score, so ground truth must reach the reward **through the rubrics**. 🔬 Untested: samples hold a snapshot of the rubrics, and skills have a `SupplementaryGraderConfig` field; either *might* allow answers per sample | 🖥️ · 🔬 |
+| 10-03 | **Our MCP tool descriptions carry trap answers.** `get_tsb_index` says *"THE BULLETIN DOCUMENT GOVERNS"* (trap 1); `get_asset` says the install date *"must not be substituted"* (trap 12). The agent reads these word for word. That was intended for trap 1 (03 § 13), but it eases traps 1 and 12 from stage 1 on, and likely explains why both models aced trap 1. **Decide before the stage-1 baseline:** keep it, or make the descriptions factual only | 🖥️ |
 
 ---
 

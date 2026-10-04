@@ -1489,3 +1489,158 @@ drafts=0 evidence=0 escalations=0 non_submitted=0
 | Discovered | Inferred | Gate |
 | --- | --- | --- |
 | **First single run that used documents and the DB together.** Both models chose the same 6 MCP calls in the same order. MAI ran fine through `chat` and was 24 s slower | 💭 One easy question can't show a gap between the models — this is the *covered / precedence* slice, the easiest. 🔬 The response doesn't say which model served the call, so the comparison rests on the `--model` flag. 💭 The different token and tool patterns suggest two genuinely different models | n/a — ad hoc, not a prerequisite or stage |
+
+---
+
+### P9 — Stage-0 skill (verbatim) · 2026-10-03
+
+**9.1 Template and help**
+
+```powershell
+frontier-tuning skills --help 2>&1 | Select-Object -Skip 0 -First 40; "-----"; frontier-tuning skills create --help 2>&1; "-----"; frontier-tuning skills generate-rubrics --help 2>&1
+$f = "$env:TEMP\ft-skill-template.md"; frontier-tuning skills init-md --help 2>&1 | Select-Object -First 12; frontier-tuning skills init-md --output $f 2>&1; Get-Content $f
+$f = "$env:TEMP\ft-skill-template.md"; frontier-tuning skills init-md --out-file $f --force 2>&1; Get-Content $f
+```
+
+The second line failed: `Error: No such option '--output'.` The correct flag is `--out-file`. Key help text: `generate-rubrics` *"Generate evaluation rubrics for a skill from its instructions"*; `create` is *"Idempotent by name … re-running create … with a name that already exists … updates that skill in place"*.
+
+**9.2 Create on dev (rubrics generated)**
+
+```powershell
+New-Item -ItemType Directory -Force -Path docs\evidence\p9 | Out-Null
+frontier-tuning skills create --file skills\warranty-assistant.md --env-id 6bec3bf9-0222-4285-8a5b-214867ac42cc -o json 2>&1 | Tee-Object -FilePath docs\evidence\p9\skill-create-dev.json
+```
+
+Raw: [p9/skill-create-dev.json](p9/skill-create-dev.json). Skill file at that point: `generateRubrics: true`.
+
+```powershell
+$j = Get-Content docs\evidence\p9\skill-create-dev.json -Raw | ConvertFrom-Json
+"skill: $($j.Name)  id=$($j.Id)  rubrics=$(@($j.Rubrics).Count)"
+```
+
+```text
+skill: warranty-assistant  id=8e9d12a2-b0a5-4683-95f1-b225ed9ade44  rubrics=5
+```
+
+**9.3 Create on main**
+
+```powershell
+frontier-tuning skills create --file skills\warranty-assistant.md --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json 2>&1 | Set-Content docs\evidence\p9\skill-create-main.json -Encoding utf8
+"exit=$LASTEXITCODE"
+$j = Get-Content docs\evidence\p9\skill-create-main.json -Raw | ConvertFrom-Json
+"skill: $($j.Name)  id=$($j.Id)  enabled=$($j.Enabled)  version=$($j.Version)  rubrics=$(@($j.Rubrics).Count)  items=$(($j.Rubrics | ForEach-Object { @($_.ChecklistItems).Count } | Measure-Object -Sum).Sum)"
+$i = 0; foreach ($r in $j.Rubrics) { $i++; "[$i] $($r.RubricName)  (importance=$($r.Importance), type=$($r.RubricType), items=$(@($r.ChecklistItems).Count))" }
+```
+
+```text
+exit=0
+skill: warranty-assistant  id=cf00d339-5217-4cd1-b390-cc0d911735da  enabled=True  version=1  rubrics=1  items=14
+[1] Warranty adjudication answer requirements  (importance=critical, type=user_facing, items=14)
+```
+
+Raw: [p9/skill-create-main.json](p9/skill-create-main.json).
+
+**9.4 Preview a regeneration on main (not applied)**
+
+```powershell
+frontier-tuning skills generate-rubrics cf00d339-5217-4cd1-b390-cc0d911735da --mode replace --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json 2>&1 | Set-Content docs\evidence\p9\generate-rubrics-preview-main-1.json -Encoding utf8
+```
+
+```text
+exit=0
+top-level: id, mode, changed, applied, generated_count, generation_was_empty, before_count, after_count, added, removed, rubrics
+generated rubrics: 5
+  - Warranty Decision Requirement Set  items=5
+  - Requested Result Delivery  items=2
+  - Warranty Adjudication Accuracy and Grounding  items=5
+  - Decision Coherence and Actionability  items=5
+  - Professional and Proportionate Communication  items=4
+```
+
+Raw: [p9/generate-rubrics-preview-main-1.json](p9/generate-rubrics-preview-main-1.json).
+
+**9.5 Pin dev's set and apply it to main**
+
+```powershell
+$dev = Get-Content docs\evidence\p9\skill-create-dev.json -Raw | ConvertFrom-Json
+$dev.Rubrics | ConvertTo-Json -Depth 10 | Set-Content skills\warranty-assistant.rubrics.json -Encoding utf8
+$raw = frontier-tuning skills get cf00d339-5217-4cd1-b390-cc0d911735da --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json 2>&1 | Out-String
+$main = $raw.Substring($raw.IndexOf('{')) | ConvertFrom-Json; $main.Rubrics = $dev.Rubrics
+$main | ConvertTo-Json -Depth 12 | Set-Content "$env:TEMP\main-skill-payload.json" -Encoding utf8
+frontier-tuning skills update cf00d339-5217-4cd1-b390-cc0d911735da --file "$env:TEMP\main-skill-payload.json" --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json 2>&1 | Set-Content docs\evidence\p9\skill-update-main.json -Encoding utf8
+```
+
+```text
+pinned rubrics: 5  items=28
+main get fields: Id, TaskTemplateId, Name, Description, FormattedDescription, ShortDescription, Type, Rubrics, Prompt, Enabled, IsSkillSuggested, IsSkillEnriched, Knowledge, DebugContext
+payload rubrics: 5
+exit=0
+main rubrics now: 5  items=28
+identical to pinned (name, importance, type, items): True
+  - Requested Outcome Delivery  (critical, user_facing, 6 items)
+  - Claim Determination Requirements  (critical, user_facing, 5 items)
+  - Internal Record Use and Grounding  (critical, trajectory_non_tool, 10 items)
+  - Adjudicator-Ready Presentation and Traceability  (high, user_facing, 6 items)
+  - Claim-System Draft Execution  (critical, trajectory_non_tool, 1 items)
+prompt unchanged: True
+```
+
+Correction: an earlier chat message said 29 items. The count is 28.
+
+**9.6 Final state**
+
+```powershell
+foreach ($e in '598fd1b0-36f1-402f-ba36-aa00c8a67cc4','6bec3bf9-0222-4285-8a5b-214867ac42cc') { "== $e"; frontier-tuning skills list --env-id $e -o json 2>&1 | ConvertFrom-Json | ForEach-Object { if ($_.value) { $_.value } else { $_ } } | ForEach-Object { "  {0} | {1} | enabled={2} | rubrics={3}" -f $_.Id, $_.Name, $_.Enabled, @($_.Rubrics).Count } }
+```
+
+```text
+== 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+  cf00d339-5217-4cd1-b390-cc0d911735da | warranty-assistant | enabled=True | rubrics=5
+== 6bec3bf9-0222-4285-8a5b-214867ac42cc
+  8e9d12a2-b0a5-4683-95f1-b225ed9ade44 | warranty-assistant | enabled=True | rubrics=5
+```
+
+The skill file was then switched to `generateRubrics: false`, with a comment pointing to the pinned JSON.
+
+---
+
+### Correction · 2026-10-03 21:10 — `tools list` is paged, not filtered
+
+P8 step 8.2 said *"`tools list` doesn't show them at all (50 built-ins only)"*. **That was wrong.** `tools list` defaults to 50 results.
+
+```powershell
+$m = '598fd1b0-36f1-402f-ba36-aa00c8a67cc4'
+foreach ($cmd in 'list','available') {
+  $raw = frontier-tuning tools $cmd --env-id $m -o json 2>&1 | Out-String
+  $names = [regex]::Matches($raw, '"Name":\s*"([^"]+)"') | ForEach-Object { $_.Groups[1].Value }
+  "tools $cmd -> $($names.Count) tools: " + (($names | ForEach-Object { ($_ -split '__')[0] } | Group-Object | Sort-Object Name | ForEach-Object { "$($_.Name)=$($_.Count)" }) -join '  ')
+  "   has m365__search_enterprise_files: $([bool]($names -contains 'm365__search_enterprise_files'))   has teams__SearchTeamsMessages: $([bool]($names -contains 'teams__SearchTeamsMessages'))"
+}
+$raw = frontier-tuning tools list --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 --limit 500 -o json 2>&1 | Out-String
+$raw = frontier-tuning tools list --env-id 6bec3bf9-0222-4285-8a5b-214867ac42cc --limit 500 -o json 2>&1 | Out-String
+```
+
+```text
+tools list -> 50 tools: mcp_OneDriveRemoteServer=18  mcp_SharePointRemoteServer=31  teams=1
+   has m365__search_enterprise_files: False   has teams__SearchTeamsMessages: False
+tools available -> 125 tools: lumina_sandbox=9  m365=5  mcp_OneDriveRemoteServer=18  mcp_SharePointRemoteServer=31  polymer_atomic=17  teams=43  workspace_health=2
+   has m365__search_enterprise_files: True   has teams__SearchTeamsMessages: True
+tools list --limit 500 -> 125 tools: lumina_sandbox=9  m365=5  mcp_OneDriveRemoteServer=18  mcp_SharePointRemoteServer=31  polymer_atomic=17  teams=43  workspace_health=2
+has m365__search_enterprise_files: True
+dev: tools list --limit 500 -> 137 tools; our MCP tools (34d14__*): 12
+```
+
+---
+
+### Note · 2026-10-04 — skill files moved to `stages/stage-0/`
+
+`skills/warranty-assistant.md` and `skills/warranty-assistant.rubrics.json` were moved, unchanged, to `stages/stage-0/` so that every stage keeps its own artefacts. The commands above show the paths as they were run.
+
+```powershell
+New-Item -ItemType Directory -Force -Path stages\stage-0 | Out-Null
+Move-Item skills\warranty-assistant.md stages\stage-0\warranty-assistant.md
+Move-Item skills\warranty-assistant.rubrics.json stages\stage-0\warranty-assistant.rubrics.json
+if (-not (Get-ChildItem skills -Force)) { Remove-Item skills }
+```
+
+Separately, `frontier-tuning versions skill list cf00d339-5217-4cd1-b390-cc0d911735da --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4` returned `Skill 'cf00d339-5217-4cd1-b390-cc0d911735da' was not found in this workspace.` The platform's skill version history doesn't cover this skill (🔬 why), so history is kept in the repo.
