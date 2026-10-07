@@ -1,5 +1,7 @@
 # Guide 05 — The hill climb, stage by stage
 
+> ⚠️ **Superseded as the plan (2026-10-06).** This is the original design. The stages as actually run, and the current plan, are in [stages/README.md](../stages/README.md).
+
 **An operational runbook.** Guide 04 tells the story; this tells you what to
 run, in what order, and how to read what comes back.
 

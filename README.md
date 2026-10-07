@@ -31,7 +31,9 @@ it is why the engine was built before a single document.
 
 ```text
 contoso-warranty-rle/
-├── docs/                      design, walkthrough, runbook, cross-cutting references
+├── docs/                      journey, design, walkthrough, runbook, evidence, references
+├── stages/                    one folder per climb stage (latest configuration)
+├── archive/                   superseded runs, experiments, the full chronological journey
 ├── spec/                      the source of truth - hand-authored, reviewed
 │   ├── entities.json          manufacturer, families, partners, customers, people, authority tiers
 │   ├── instruments.json       policy clauses, regional addenda, 12 bulletins

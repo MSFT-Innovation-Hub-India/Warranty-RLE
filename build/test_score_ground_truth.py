@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import sys
 
-from score_ground_truth import extract_decision, extract_governing, extract_total, load_expected
+from score_ground_truth import delivery_mismatch, extract_decision, extract_governing, extract_total, load_expected
 
 CASES = [
     ("decision", "**Yes — the repair is covered under TSB-C-0051.**", "approve"),
@@ -37,14 +37,36 @@ CASES = [
     ("total", "Total payable: ₹1,99,175 (labour ₹7,975 + parts ₹1,91,200)", 199175.0),
     ("total", "Amount payable EUR 2,341.50", 2341.50),
     ("total", "No amount is payable.", None),
+    ("delivery", "The fuller attempted messages were rejected by the finish tool and were not successfully delivered.", True),
+    ("delivery", "The only successfully delivered finish message states that the agent was \u201cnot able to complete\u201d.", True),
+    ("delivery", "The successful finish only states that the assessment could not be completed.", True),
+    ("delivery", "The remaining elements appear only in finish calls rejected by the formatter.", True),
+    ("delivery", "The successful final response only says it is \u201cunable to finalize\u201d.", True),
+    ("delivery", "The accepted hand-in is an inability statement; the investigation reached a covered conclusion in its attempted hand-ins.", True),
+    ("delivery", "The successful hand-in is abbreviated and begins with a tool-formatting disclaimer before the result.", True),
+    ("delivery", "It gives useful facts and dates, but the successful submission has no inline citations.", False),
+    ("delivery", "The final hand-in begins with inability to calculate rather than directly leading with the covered decision.", True),
+    ("delivery", "The successful hand-in gives a definite covered decision, identifies TSB-C-0051, and calculates INR 755,050.", False),
+    ("delivery", "It omits the material inability to locate claim-specific inspection evidence from the successful final response.", False),
+    ("delivery", "The response leads with \u201cDecision: Covered\u201d and the payable total, then presents dated facts.", False),
+    ("delivery", "The final message documents dates and the recorded draft, and finishes with the next action.", False),
 ]
 
-FUNCS = {"decision": extract_decision, "governing": extract_governing, "total": extract_total}
+FUNCS = {"decision": extract_decision, "governing": extract_governing, "total": extract_total,
+         "delivery": delivery_mismatch}
 
 
 def _parts_check() -> bool:
     from score_ground_truth import _text
     return _text([{"Content": "Line one"}, {"Content": "**Total payable: ₹199,175**"}]).endswith("₹199,175**")
+
+
+def _delivered_check() -> bool:
+    from score_ground_truth import delivered_decision
+    a = delivered_decision("The final successful finish definitively says the claim \u201ccannot yet be conclusively decided,\u201d and explains why.")
+    b = delivered_decision("The successfully delivered finish message gives a definite approval and total, but omits the instrument.")
+    c = delivered_decision("The response uses claim-system records throughout.")
+    return a == "request_evidence" and b == "approve" and c is None
 
 
 def main() -> int:
@@ -61,7 +83,10 @@ def main() -> int:
     ok = _parts_check()
     failed += not ok
     print(f"  {'PASS' if ok else 'FAIL'}  response given as a list of parts is joined to text")
-    print(f"\n{len(CASES) + 2 - failed}/{len(CASES) + 2} checks passed.")
+    ok = _delivered_check()
+    failed += not ok
+    print(f"  {'PASS' if ok else 'FAIL'}  delivered decision read from the grader's description")
+    print(f"\n{len(CASES) + 3 - failed}/{len(CASES) + 3} checks passed.")
     return 1 if failed else 0
 
 

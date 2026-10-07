@@ -45,15 +45,18 @@ numbers, money. No customer or private content, ever.
 ## Rules that are not negotiable
 
 **One variable per stage.** The frontier model is held constant from stage 0 to
-stage 3. Change the model mid-climb and the delta becomes uninterpretable.
+stage 2, where it saturated. Stage 3 moves to the small model, which is then held
+constant through tuning. When two things must change together (stage 3: model +
+skill split), say so plainly in the stage README.
 
 **Every stage stays replayable.** Each stage has its own folder under
 `stages/` with the exact skills, pinned rubrics, prompts, commands and results
-it used. A new stage starts as a copy of the previous one and changes one
-thing. A closed stage is never edited. Rubrics are pinned files, never left to
-regenerate. Tag each closed stage in git (`stage-0`, `stage-1`, …). The goal:
-someone can replay and demonstrate the whole climb from the beginning, not just
-see the final artefacts.
+of its **latest** configuration. A new stage starts as a copy of the previous one
+and changes one thing. If a stage is re-run after a fix, the superseded run moves
+to `archive/` and the fix becomes one line in the stage's Findings (decided
+2026-10-06). Rubrics are pinned files, never left to regenerate. Tag each closed
+stage in git (`stage-0`, `stage-1`, …). The goal: someone can replay and
+demonstrate the whole climb from the beginning, not just see the final artefacts.
 
 **Two numbers per stage.** The platform's rubric score is never reported on its
 own. Every stage also runs `build/score_ground_truth.py`, which checks decision,
@@ -87,8 +90,11 @@ only in the rubric, which the grader sees and the model does not.
 
 I am keeping a build log, not producing marketing. Specifically:
 
-- **Chronological.** Do not insert a later finding into an earlier section. The
-  document records what was known at the time.
+- **Consolidated, not chronological** (decided 2026-10-06). `JOURNEY.md` and the
+  stage READMEs hold the current state and the lessons, each as *issue → what we
+  did*, one line, with a sample response only where it explains the behaviour.
+  No blow-by-blow narratives. The chronology lives in `docs/evidence/` and
+  `archive/`.
 - **Label the source.** 🖥️ measured on this tenant · 📄 upstream guidance ·
   🔬 unverified · 💭 reasoning. Never present an inference as a measurement.
 - **Upstream results are not our results.** Their numbers may guide the process;
@@ -112,8 +118,8 @@ Two documents, two audiences. Update both **as work happens**, every session.
 **`JOURNEY.md` — written for someone new to the scenario.**
 
 - **Keep its shape.** Where we are → 1 Scenario → 2 Setup (P#) → 3 Climb
-  (stages) → 4 What we've learned → 5 Side experiments → Appendix (helper
-  snippets).
+  (one line per stage) → 4 What we've learned (issue → what we did) → 5 Side
+  experiments → Appendix (helper snippets).
 - **"Where we are" is always true.** Status · Next · Blockers · IDs.
 - **Each step reads as a recipe:** **Why** (one line) · **Do** (the commands
   that matter, cleanly) · **You should see** (a collapsed excerpt of the real
@@ -149,7 +155,8 @@ Two documents, two audiences. Update both **as work happens**, every session.
 | `out/` | Generated corpus, database, samples, `GROUND-TRUTH.md` |
 | `mcp/` | The MCP server — 9 read + 3 action tools, ACA + Azure SQL deploy |
 | `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
-| `stages/` | One folder per climb stage: the exact skills, pinned rubrics, prompts, commands and results that stage used. Never overwritten |
+| `stages/` | One folder per climb stage, holding its latest configuration: skills, pinned rubrics, prompts, commands, result, findings |
+| `archive/` | Superseded stage runs, experiments and the full chronological journey, kept unedited |
 | `scripts/` | Reusable helpers: `sql-run.ps1` (run SQL with your Entra sign-in), and the database baseline, snapshot and reset scripts |
 | `docs/` | Design, walkthrough, runbook, cross-cutting references |
 
@@ -174,17 +181,14 @@ first.
 
 ## Status
 
-Stages 0 and 1 are **measured** (2026-10-04); stages 2–4 are designed, not
-executed. Scores in `docs/05-hill-climb-runbook.md` for stages 2–4 are still
-predictions.
+Stages 0–2 are **measured** on GPT-5.6-Sol (0.535 · 0/8 → 0.991 · 7/8 → 0.978 ·
+27/30); the frontier model saturates the world. **Stage 3** (MAI-CODE-5b,
+research split into its own skill, folder-scoped search) is ready to run in
+wce-main. The world is at **v2.3**.
 
-**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md).** As of 2026-10-04,
-the world is at **v2**: the inspection-report rule in the documents was corrected
-to agree with the ground truth. On v2, stage 0 scored rubric 0.535 · correct 0/8,
-and stage 1 scored rubric 0.991 · correct 7/8. **Stage 1 is saturated on the 8
-easy prompts**, so stage 2 needs prompts with headroom. P6 (endpoint auth) and
-P11 (runbook) are deferred; the MCP server is registered as `NoAuth`.
+**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md)** and
+[`stages/README.md`](stages/README.md). P6 (endpoint auth) and P11 (runbook) are
+deferred; the MCP server is registered as `NoAuth`.
 
-⚠️ `docs/05-hill-climb-runbook.md` does not yet encode goals 3 and 4 above —
-no platform optimisation command appears in it, and headroom measurement is
-mentioned only in passing. That gap needs closing before stage 2 begins.
+⚠️ `docs/05-hill-climb-runbook.md` is the original plan and is out of date;
+`stages/README.md` holds the current stage plan.

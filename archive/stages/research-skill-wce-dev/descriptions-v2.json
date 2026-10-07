@@ -1,0 +1,4 @@
+{
+  "warranty-assistant.description.v2": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next. Expects the facts it needs from the Warranty Operations library to be gathered first with library-research and passed in with the request; it reads the service claim system itself. Also answers questions about an asset's warranty position, a service partner or a part.",
+  "library-research.description.v2": "Use this first when a warranty claim needs facts from Contoso Industrial's Warranty Operations library. Looks up specific facts (policy and addendum clauses, technical service bulletins, labour and parts rate cards, service partner agreements, quarterly review decks, inspection reports) and returns only the passages, figures and table rows asked for, each with the document and clause or row it came from."
+}

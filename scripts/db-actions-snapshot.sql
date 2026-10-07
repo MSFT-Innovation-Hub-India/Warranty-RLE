@@ -9,4 +9,4 @@ SELECT 'evidence', request_id, claim_id, CONCAT('field=', field_name), created_a
 UNION ALL
 SELECT 'escalation', escalation_id, claim_id, CONCAT('amount=', CONVERT(NVARCHAR(40), amount), ' | role=', approver_role), created_at FROM GoodwillEscalation
 ORDER BY claim_id, kind;
-SELECT claim_id, status FROM Claims WHERE status <> 'Submitted' ORDER BY claim_id;
+SELECT claim_id, status FROM Claims WHERE status <> CASE WHEN claim_id LIKE 'C-2026-03%' THEN 'Paid' ELSE 'Submitted' END ORDER BY claim_id;

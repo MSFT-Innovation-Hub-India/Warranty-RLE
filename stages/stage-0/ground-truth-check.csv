@@ -1,9 +1,9 @@
-claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,note
-C-2026-04118,precedence,approve,request_evidence,TSB-P-0112,POL-WAR-4.2,67500.0,,0.56,4885ce5f-6195-44f3-a7d2-8b9b6b5df23d,eval-results-samples.json,False,False,False,False,"request evidence given, so payable not assessed"
-C-2026-04116,precedence,decline,review,ADD-IN-2.1,TSB-C-0051,,1450.0,0.44,eddc4141-1ce8-42a1-9fbc-6a3773d44aa8,eval-results-samples.json,,False,True,,decision unclear
-C-2026-04114,precedence,approve,request_evidence,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.68,3e45ef3d-28e8-477e-9730-44676dc810d2,eval-results-samples.json,False,True,False,False,"request evidence given, so payable not assessed"
-C-2026-04110,declined-simple,decline,request_evidence,ADD-IN-2.1,TSB-G-0029,,,0.65,17894341-92ae-4c7d-b1fa-e855a582bce6,eval-results-samples.json,False,False,True,False,
-C-2026-04109,declined-simple,decline,decline,ADD-IN-2.1,TSB-C-0038,,0.0,0.75,3a26bbaa-431c-4565-b5cb-8c873f0df4e4,eval-results-samples.json,True,False,True,False,
-C-2026-04103,covered-simple,approve,review,ADD-IN-2.1,POL-WAR-4.2,19150.0,,0.325,868d405a-fefb-40bc-9add-c4f5ced44ae5,eval-results-samples.json,,False,,,decision unclear; no amount stated
-C-2026-04102,covered-simple,approve,request_evidence,ADD-IN-2.1,TSB-C-0051,48420.0,0.0,0.56,8e4027ca-c696-4143-8cdf-d22af03c5c62,eval-results-samples.json,False,False,False,False,"request evidence given, so payable not assessed"
-C-2026-04101,covered-simple,approve,request_evidence,ADD-IN-2.1,ADD-IN-2.1,69575.0,69575.0,0.66,464979b3-2c8f-4652-8df6-bd33940f1b09,eval-results-samples.json,False,True,False,False,"request evidence given, so payable not assessed"
+claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,delivery_mismatch,note
+C-2026-04118,precedence,approve,request_evidence,TSB-P-0112,POL-WAR-4.2,67500.0,,0.56,4885ce5f-6195-44f3-a7d2-8b9b6b5df23d,eval-results-samples.json,False,False,False,False,False,"request evidence given, so payable not assessed"
+C-2026-04116,precedence,decline,review,ADD-IN-2.1,TSB-C-0051,,1450.0,0.44,eddc4141-1ce8-42a1-9fbc-6a3773d44aa8,eval-results-samples.json,,False,True,,False,decision unclear
+C-2026-04114,precedence,approve,request_evidence,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.68,3e45ef3d-28e8-477e-9730-44676dc810d2,eval-results-samples.json,False,True,False,False,False,"request evidence given, so payable not assessed"
+C-2026-04110,declined-simple,decline,request_evidence,ADD-IN-2.1,TSB-G-0029,,,0.65,17894341-92ae-4c7d-b1fa-e855a582bce6,eval-results-samples.json,False,False,True,False,False,
+C-2026-04109,declined-simple,decline,decline,ADD-IN-2.1,TSB-C-0038,,0.0,0.75,3a26bbaa-431c-4565-b5cb-8c873f0df4e4,eval-results-samples.json,True,False,True,False,False,
+C-2026-04103,covered-simple,approve,review,ADD-IN-2.1,POL-WAR-4.2,19150.0,,0.325,868d405a-fefb-40bc-9add-c4f5ced44ae5,eval-results-samples.json,,False,,,False,decision unclear; no amount stated
+C-2026-04102,covered-simple,approve,request_evidence,ADD-IN-2.1,TSB-C-0051,48420.0,0.0,0.56,8e4027ca-c696-4143-8cdf-d22af03c5c62,eval-results-samples.json,False,False,False,False,False,"request evidence given, so payable not assessed"
+C-2026-04101,covered-simple,approve,request_evidence,ADD-IN-2.1,ADD-IN-2.1,69575.0,69575.0,0.66,464979b3-2c8f-4652-8df6-bd33940f1b09,eval-results-samples.json,False,True,False,False,False,"request evidence given, so payable not assessed"

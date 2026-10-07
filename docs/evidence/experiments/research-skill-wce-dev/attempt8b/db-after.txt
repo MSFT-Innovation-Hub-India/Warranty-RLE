@@ -1,0 +1,12 @@
+
+kind  id             claim_id     detail                                                                                                                      created_at                 
+----  --             --------     ------                                                                                                                      ----------                 
+draft ADJ-B7D7019A2E C-2026-04185 approve | payable=199175.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2", "SPA-2023-FAB-IN"]                                     10/6/2026 2:43:58 AM +00:00
+draft ADJ-C192A674F3 C-2026-04185 approve | payable=199175.00 INR | refs=["TSB-C-0051", "SPA-2023-FAB-IN", "FY26 India labour rate 2026-04-01 to 2027-03-31"] 10/6/2026 2:41:11 AM +00:00
+draft ADJ-C79B9E4C19 C-2026-04185 approve | payable=194375.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2", "SPA-2023-FAB-IN"]                                     10/6/2026 2:40:02 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+

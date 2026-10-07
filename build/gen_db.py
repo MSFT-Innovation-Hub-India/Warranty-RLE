@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from datetime import date, timedelta
 from pathlib import Path
 
 from adjudicate import ENTITIES, INSTRUMENTS, CATALOG
@@ -296,11 +297,31 @@ def build() -> tuple[str, dict[str, int]]:
              r["claim"]["claimed_hours"], r["claim"].get("goodwill_requested"),
              "Submitted"]
             for r in records]
+    # Earlier warranty claims that a repair-warranty claim (policy 6.1) rests on.
+    # They are settled history, not claims to adjudicate, so they are seeded as
+    # Paid and are not in claims.json. Their ids are C-2026-03xxx; the reset
+    # scripts in scripts/ rely on that prefix to restore the seeded status.
+    seen = {row[0] for row in rows}
+    for r in records:
+        c, prior = r["claim"], r["claim"].get("prior_claim")
+        if not prior:
+            continue
+        if prior["claim_id"] in seen:
+            raise ValueError(f"prior claim {prior['claim_id']} is cited twice or "
+                             f"collides with a live claim")
+        if not prior["claim_id"].startswith("C-2026-03"):
+            raise ValueError(f"prior claim {prior['claim_id']} must use the C-2026-03xxx range")
+        seen.add(prior["claim_id"])
+        done = date.fromisoformat(prior["completed_date"])
+        rows.append([prior["claim_id"], c["serial"], c["dealer_id"],
+                     (done + timedelta(days=6)).isoformat(), prior["completed_date"],
+                     c["op_code"], c["part_fitted"], c["claimed_hours"], None, "Paid"])
     sql.append(insert("Claims",
                       ["claim_id", "serial", "dealer_id", "submitted_date", "repair_date",
                        "operation_code", "claimed_part", "claimed_labour_hours",
                        "goodwill_requested", "status"], rows))
     counts["Claims"] = len(rows)
+    claim_ids = {row[0] for row in rows}
 
     # --- ServiceHistory ----------------------------------------------
     # The repair itself, carrying the part ACTUALLY FITTED. This is the only
@@ -322,6 +343,11 @@ def build() -> tuple[str, dict[str, int]]:
             rows.append([f"J-{n:05d}", c["serial"], prior["completed_date"],
                          c["op_code"], prior["component"], c["part_fitted"],
                          c["claimed_hours"], prior["claim_id"], prior["completed_date"]])
+    # Every claim a service job cites must exist in the claim system, or the
+    # ground truth rests on a record the agent is told does not exist.
+    dangling = sorted({row[7] for row in rows if row[7] not in claim_ids})
+    if dangling:
+        raise ValueError(f"service jobs cite claims missing from Claims: {dangling}")
     sql.append(insert("ServiceHistory",
                       ["job_id", "serial", "job_date", "operation_code", "component",
                        "part_fitted", "labour_hours", "claim_id", "completed_date"], rows))

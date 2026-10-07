@@ -9,6 +9,7 @@ Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the sour
 | Governing instrument correct | 3/8 (38%) |
 | Payable correct (approvals) | 0/5 (0%) |
 | **Fully correct** | **1/8 (12%)** |
+| Delivered ≠ stored (not verifiable; finish rejected) | 0 |
 | Needs human review | 5 |
 | Mean rubric score (platform) | 0.63 |
 

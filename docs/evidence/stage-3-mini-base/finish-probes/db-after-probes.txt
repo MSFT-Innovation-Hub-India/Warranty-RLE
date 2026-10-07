@@ -1,0 +1,12 @@
+
+kind  id             claim_id     detail                                                                                                                                                                                              created_at                 
+----  --             --------     ------                                                                                                                                                                                              ----------                 
+draft ADJ-101EA04112 C-2026-04103 approve | payable=19150.00 INR | refs=["ADD-IN-2.1", "POL-WAR-4.2 5.4", "POL-WAR-4.2 4.2", "POL-WAR-4.2 4.3", "TSB-P-0103"]                                                                         10/5/2026 3:41:01 AM +00:00
+draft ADJ-62DB35A7CF C-2026-04103 request_evidence | payable=- INR | refs=["Global Warranty Policy 1.4", "Global Warranty Policy 4.2", "Global Warranty Policy 4.3", "Global Warranty Policy 6.1"]                                    10/5/2026 3:38:21 AM +00:00
+draft ADJ-A50B2C878E C-2026-04150 request_evidence | payable=- INR | refs=["POL-WAR-?", "Claim C-2026-04150", "Asset registry CIE-4000-CH-01444"]                                                                                     10/5/2026 3:33:27 AM +00:00
+draft ADJ-D0D83CA33B C-2026-04150 approve | payable=755050.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2 clauses 1.4, 4.1, 4.2, 4.3", "Flat-Rate-Labour-FY26", "Labour-Rates-By-Region-FY26", "Parts-Price-List-FY26", "SPA-2023-FAB-IN"] 10/5/2026 3:36:36 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed

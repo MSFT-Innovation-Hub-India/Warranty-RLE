@@ -1,0 +1,56 @@
+{
+  "PauseReason": null,
+  "ReasonMessage": null,
+  "Stages": [
+    {
+      "Name": "StandaloneEvaluation",
+      "DisplayName": "Evaluation",
+      "Status": "Paused",
+      "Errors": []
+    }
+  ],
+  "Evaluations": [
+    {
+      "Id": "73fa5456-45f6-411c-92e1-b553931acab8",
+      "EvalType": "StandaloneEvaluation",
+      "Name": "Evaluation",
+      "OverallScore": null,
+      "SkillAggregateResults": null,
+      "EvaluationCompletionDate": "0001-01-01T00:00:00+00:00",
+      "LastUpdatedDate": "2026-10-04T17:21:20.6745047+00:00",
+      "Status": "Running",
+      "StatusMessage": null,
+      "Strategy": "Simple",
+      "StrategyBody": null
+    }
+  ],
+  "IndexInstanceId": null,
+  "JobId": "73fa5456-45f6-411c-92e1-b553931acab8",
+  "JobTaskType": null,
+  "JobType": "Evaluation",
+  "FinetuningType": null,
+  "Status": "Cancelled",
+  "ErrorCode": null,
+  "ErrorMessage": "",
+  "BaseModelName": "dev-ct-gpt-54-mini-mp",
+  "BaseModelNames": [
+    "dev-ct-gpt-54-mini-mp"
+  ],
+  "BaseModelDisplayName": "dev-ct-gpt-54-mini-mp",
+  "NewModelName": "",
+  "CreatedAt": "2026-10-04T15:50:40.7108296+00:00",
+  "UpdatedAt": "2026-10-04T17:22:54.5469658+00:00",
+  "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "LastModifiedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "EvaluationMetadata": null,
+  "WorkspaceSnapshotMetadata": {
+    "Id": "73fa5456-45f6-411c-92e1-b553931acab8",
+    "SkillsCount": 1,
+    "ToolsCount": 4,
+    "SamplePromptsCount": 30,
+    "KnowledgeSourcesCount": 4
+  },
+  "DebugContext": {
+    "Logs": []
+  }
+}

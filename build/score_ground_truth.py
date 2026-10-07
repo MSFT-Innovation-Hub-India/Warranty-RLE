@@ -42,7 +42,7 @@ LEAD_CHARS = 600
 # bare word "covered", so "not covered" never reads as an approval.
 DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("request_evidence", re.compile(
-        r"cannot (?:yet )?(?:be )?(?:finally )?(?:decided|determined)|can't (?:yet )?be (?:finally )?(?:decided|determined)|"
+        r"cannot (?:yet )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
         r"cannot yet decide|not yet be decided|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
         r"\bhold\b[^.\n]{0,20}\b(?:evidence|request)|hold the claim|claim (?:is|should be|has been) (?:placed on )?held|"
         r"request(?:ing|ed)? (?:the )?(?:missing|commissioning|evidence|certificate|inspection)|"
@@ -117,6 +117,51 @@ def _rubric_score(execution: dict) -> float | None:
     return round(sum(scores) / len(scores), 3) if scores else None
 
 
+def _grader_notes(execution: dict) -> str:
+    notes = []
+    for skill in _get(execution, "Skills", "skills") or []:
+        for rr in _get(skill, "RubricResults", "rubricResults") or []:
+            notes.append(_get(rr, "Reasoning", "reasoning") or "")
+    for rr in _get(execution, "RubricResults", "rubricResults") or []:
+        notes.append(_get(rr, "Reasoning", "reasoning") or "")
+    return " ".join(n for n in notes if isinstance(n, str))
+
+
+# The stored Response is the agent's last *attempted* message. When the platform's
+# finish tool rejected it, the user received something else, which only the grader saw.
+DELIVERY_MISMATCH_RE = re.compile(
+    r"rejected by the (?:finish tool|formatter)|completion-tool failure|failed finish|"
+    r"rejected finish|finish (?:calls?|attempts?|payloads?) (?:were |was )?rejected|"
+    r"(?:attempted|detailed|fuller)[^.]{0,40}(?:finish|handoff|message|payload)s?[^.]{0,40}"
+    r"(?:rejected|not (?:successfully )?delivered)|"
+    r"earlier (?:detailed )?finish(?: attempt| message| payload)?s?|"
+    r"attempted hand-?ins?|tool-formatting|rejected tool call|"
+    # "successful …" alone is not evidence (MAI's graders use it for full answers too);
+    # only when the delivered message is described as a non-answer or an error
+    r"success(?:ful|fully delivered) (?:final )?(?:finish|output|response|handoff|hand-?in|completion|submission)"
+    r"[^.]{0,60}(?:only (?:says|states)|inability|error|unable|not able|could not|cannot responsibly|abbreviated|failure notice)|"
+    r"accepted hand-?in is (?:an? )?(?:inability|error|failure)|"
+    r"(?:inability|error[-/ ](?:oriented|style|status)|failure notice|status message) (?:statement|summary|message|notice)?[^.]{0,40}rather than", re.I)
+
+
+def delivery_mismatch(grader_notes: str) -> bool:
+    return bool(DELIVERY_MISMATCH_RE.search(grader_notes or ""))
+
+
+DELIVERED_SENTENCE_RE = re.compile(
+    r"[^.]*\b(?:success(?:ful|fully delivered)|accepted|handed-in|delivered)\b[^.]*\b(?:finish|output|response|handoff|hand-?in|completion|submission|message)\b[^.]*\.",
+    re.I)
+
+
+def delivered_decision(grader_notes: str) -> str | None:
+    """The decision the grader says was actually delivered, where it describes one."""
+    for m in DELIVERED_SENTENCE_RE.finditer(grader_notes or ""):
+        d = extract_decision(m.group(0))
+        if d:
+            return d
+    return None
+
+
 def _as_execution(obj: dict) -> dict | None:
     if not isinstance(obj, dict):
         return None
@@ -148,6 +193,8 @@ def read_executions(path: Path) -> list[dict]:
             "prompt": prompt,
             "response": _text(_get(ex, "Response", "response")),
             "rubric": _rubric_score(ex),
+            "delivery_mismatch": delivery_mismatch(_grader_notes(ex)),
+            "_notes": _grader_notes(ex),
             "source": path.name,
         })
     return out
@@ -281,8 +328,15 @@ def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
         elif tot_ok is None:
             notes.append("no amount stated")
         correct = None if (dec_ok is None) else (dec_ok and gov_ok and tot_ok is True)
+        mismatch = bool(r.get("delivery_mismatch"))
+        said = delivered_decision(r.get("_notes", ""))
+        if not mismatch and said and got_dec and said != got_dec:
+            mismatch = True  # the grader describes a different decision from the stored answer
+        if mismatch:
+            notes.insert(0, "NOT VERIFIABLE: grader says the delivered answer differs from the stored one (finish rejected)")
+            correct = None
         row.update(decision_ok=dec_ok, governing_ok=gov_ok, total_ok=tot_ok, correct=correct,
-                   note="; ".join(notes))
+                   delivery_mismatch=mismatch, note="; ".join(notes))
         out.append(row)
     return out
 
@@ -307,6 +361,7 @@ def report(rows: list[dict], label: str) -> str:
              f"| Governing instrument correct | {_pct(sum(1 for r in rows if r['governing_ok'] is True), n)} |",
              f"| Payable correct (approvals) | {_pct(sum(1 for r in rows if r['exp_decision'] == 'approve' and r['total_ok'] is True), sum(1 for r in rows if r['exp_decision'] == 'approve'))} |",
              f"| **Fully correct** | **{_pct(sum(1 for r in known if r['correct']), n)}** |",
+             f"| Delivered ≠ stored (not verifiable; finish rejected) | {sum(1 for r in rows if r.get('delivery_mismatch'))} |",
              f"| Needs human review | {sum(1 for r in rows if r['note'])} |",
              f"| Mean rubric score (platform) | {round(sum(rub) / len(rub), 3) if rub else '—'} |", ""]
     by = defaultdict(list)

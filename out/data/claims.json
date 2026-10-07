@@ -4182,7 +4182,7 @@
       "exclusion_flags": [],
       "contamination_from_filter_housing": false,
       "prior_claim": {
-        "claim_id": "C-2026-03110",
+        "claim_id": "C-2026-03111",
         "completed_date": "2026-04-20",
         "component": "controls"
       },
@@ -4191,7 +4191,7 @@
     "adjudication": {
       "claim_id": "C-2026-04190",
       "decision": "approve",
-      "reason": "Within the 90-day repair warranty on claim C-2026-03110 (repair completed 2026-04-20, 42 days before this repair).",
+      "reason": "Within the 90-day repair warranty on claim C-2026-03111 (repair completed 2026-04-20, 42 days before this repair).",
       "governing_instrument": "POL-WAR-4.2 6.1",
       "considered_instruments": [
         "POL-WAR-4.2"

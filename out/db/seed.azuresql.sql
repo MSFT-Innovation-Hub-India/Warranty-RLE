@@ -3288,7 +3288,7 @@ INSERT INTO AssetTelemetry (serial, as_of_date, running_hours) VALUES ('CIE-2200
 INSERT INTO AssetTelemetry (serial, as_of_date, running_hours) VALUES ('CIE-2200-AC-00929', '2026-06-03', 4320);
 INSERT INTO AssetTelemetry (serial, as_of_date, running_hours) VALUES ('CIE-2200-AC-00929', '2026-07-03', 4500);
 INSERT INTO AssetTelemetry (serial, as_of_date, running_hours) VALUES ('CIE-2200-AC-00929', '2026-08-03', 4680);
--- Claims: 90 rows
+-- Claims: 92 rows
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04101', 'CIE-4000-CH-01050', 'D-IN-01', '2026-05-16', '2026-05-10', 'CTRL-BD-RR', 'P-44900', 1.5, NULL, 'Submitted');
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04102', 'CIE-4000-CH-01052', 'D-IN-01', '2026-02-24', '2026-02-18', 'COND-FAN-RR', 'P-44520', 3.5, NULL, 'Submitted');
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04103', 'CIE-2200-AC-00320', 'D-IN-01', '2026-04-28', '2026-04-22', 'SEAL-KIT-RR', 'P-22120', 3.0, NULL, 'Submitted');
@@ -3379,6 +3379,8 @@ INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, op
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04188', 'CIE-4000-CH-01366', 'D-IN-01', '2026-06-07', '2026-06-01', 'HYD-PUMP-RR', 'P-44120-A', 5.5, NULL, 'Submitted');
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04189', 'CIE-4000-CH-01980', 'D-IN-01', '2026-06-07', '2026-06-01', 'CTRL-BD-RR', 'P-44900', 1.5, NULL, 'Submitted');
 INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-04190', 'CIE-4000-CH-01981', 'D-IN-01', '2026-06-07', '2026-06-01', 'CTRL-BD-RR', 'P-44900', 1.5, NULL, 'Submitted');
+INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-03110', 'CIE-4000-CH-01980', 'D-IN-01', '2026-04-26', '2026-04-20', 'CTRL-BD-RR', 'P-44900', 1.5, NULL, 'Paid');
+INSERT INTO Claims (claim_id, serial, dealer_id, submitted_date, repair_date, operation_code, claimed_part, claimed_labour_hours, goodwill_requested, status) VALUES ('C-2026-03111', 'CIE-4000-CH-01981', 'D-IN-01', '2026-04-26', '2026-04-20', 'CTRL-BD-RR', 'P-44900', 1.5, NULL, 'Paid');
 -- ServiceHistory: 89 rows
 INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00001', 'CIE-4000-CH-01050', '2026-05-10', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-04101', '2026-05-10');
 INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00002', 'CIE-4000-CH-01052', '2026-02-18', 'COND-FAN-RR', 'structure', 'P-44520', 3.5, 'C-2026-04102', '2026-02-18');
@@ -3468,7 +3470,7 @@ INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component,
 INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00086', 'CIE-4000-CH-01980', '2026-06-01', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-04189', '2026-06-01');
 INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00087', 'CIE-4000-CH-01980', '2026-04-20', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-03110', '2026-04-20');
 INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00088', 'CIE-4000-CH-01981', '2026-06-01', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-04190', '2026-06-01');
-INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00089', 'CIE-4000-CH-01981', '2026-04-20', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-03110', '2026-04-20');
+INSERT INTO ServiceHistory (job_id, serial, job_date, operation_code, component, part_fitted, labour_hours, claim_id, completed_date) VALUES ('J-00089', 'CIE-4000-CH-01981', '2026-04-20', 'CTRL-BD-RR', 'controls', 'P-44900', 1.5, 'C-2026-03111', '2026-04-20');
 -- GoodwillAuthority: 4 rows
 INSERT INTO GoodwillAuthority (tier, max_amount_inr, approver_role) VALUES (1, 25000, 'Service Supervisor');
 INSERT INTO GoodwillAuthority (tier, max_amount_inr, approver_role) VALUES (2, 100000, 'Regional Service Manager');

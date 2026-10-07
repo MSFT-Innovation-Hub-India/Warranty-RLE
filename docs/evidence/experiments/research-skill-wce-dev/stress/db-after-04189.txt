@@ -1,0 +1,9 @@
+
+kind  id             claim_id     detail                                                                                                                                                                              created_at                 
+----  --             --------     ------                                                                                                                                                                              ----------                 
+draft ADJ-BBD5F0E1B5 C-2026-04185 approve | payable=199175.00 INR | refs=["TSB-C-0051", "TSB-C-0043", "ADD-IN-2.1 A1", "POL-WAR-4.2 1.4", "POL-WAR-4.2 4.1", "POL-WAR-4.2 4.2", "POL-WAR-4.2 4.3", "POL-WAR-4.2 5.2"] 10/5/2026 1:15:47 PM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed

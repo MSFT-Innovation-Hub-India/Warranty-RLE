@@ -1,4 +1,4 @@
-# Ground-truth check — stage-2-base
+# Ground-truth check — stage-2
 
 Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the source of GROUND-TRUTH.md).
 
@@ -9,6 +9,7 @@ Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the sour
 | Governing instrument correct | 30/30 (100%) |
 | Payable correct (approvals) | 16/17 (94%) |
 | **Fully correct** | **27/30 (90%)** |
+| Delivered ≠ stored (not verifiable; finish rejected) | 0 |
 | Needs human review | 2 |
 | Mean rubric score (platform) | 0.98 |
 

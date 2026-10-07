@@ -16,7 +16,7 @@ None; this is the baseline.
 | --- | --- |
 | World | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` |
 | Model · strategy | `prod-gpt-56-reasoning-sol` (GPT-5.6-Sol) · `simple` |
-| Knowledge | SharePoint `Warranty Operations` + 3 Teams channels ([world/env.md](../../world/env.md)) |
+| Knowledge | SharePoint `Warranty Operations` + 3 Teams channels ([world/env.md](../../../world/env.md)) |
 | MCP server | `contoso-service` `1c171d49-7f85-4997-8126-ae20829a4dbf`: **disabled** |
 | Other tool sources | SharePoint, OneDrive, Teams on; Email, Calendar, Word, M365Chat, fabriciq off |
 | Skill | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` |

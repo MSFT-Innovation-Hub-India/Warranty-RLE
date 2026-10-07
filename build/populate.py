@@ -242,11 +242,14 @@ def build_slices() -> None:
     # --- repair warranty: reserve trap, training only -----------------
     # The corpus supports it fully; no evaluation samples are written yet, so it
     # is available to harden the eval set at stage 3 without touching the world.
+    # Each asset has its own earlier warranty claim, which gen_db seeds as a
+    # settled (Paid) claim: clause 6.1 needs the earlier replacement to have been
+    # made under warranty, and the claim system must be able to show that.
     for i in range(2):
         a = asset(1980 + i, "4000-CH", "2023-01-01")
         claim("train", "repair-warranty", cid(), a, "CTRL-BD-RR", "2026-06-01",
               1.5, "P-44900", "P-44900", 6100,
-              prior_claim={"claim_id": "C-2026-03110",
+              prior_claim={"claim_id": f"C-2026-{3110 + i:05d}",
                            "completed_date": "2026-04-20", "component": "controls"})
 
 

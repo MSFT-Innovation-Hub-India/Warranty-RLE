@@ -1,0 +1,9 @@
+
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                       created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                       ----------                  
+draft ADJ-9666AD27EB C-2026-04103 approve | payable=19150.00 INR | refs=["POL-WAR-4.2 Global Warranty Policy \u00a72.1", "ADD-IN-2.1 Regional Addendum - India v2.1 A1", "POL-WAR-4.2 \u00a74.1 Labour", "POL-WAR-4.2 \u00a74.2 Parts", "SPA-2023-FAB-IN \u00a76 Parts and handling", "POL-WAR-4.2 \u00a76.1 Repair warranty"] 10/5/2026 11:45:08 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed

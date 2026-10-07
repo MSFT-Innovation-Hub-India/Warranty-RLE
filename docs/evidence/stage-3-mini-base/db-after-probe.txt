@@ -1,0 +1,10 @@
+
+kind  id             claim_id     detail                                                                                            created_at                 
+----  --             --------     ------                                                                                            ----------                 
+draft ADJ-071822BABB C-2026-04114 request_evidence | payable=-  | refs=["POL-WAR-1.4", "POL-WAR-2.1", "POL-WAR-4.2", "POL-WAR-4.3"] 10/4/2026 3:45:36 PM +00:00
+draft ADJ-6DEE6A7E4B C-2026-04114 request_evidence | payable=-  | refs=["Global Warranty Policy 6.1"]                               10/4/2026 3:47:24 PM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed

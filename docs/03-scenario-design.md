@@ -883,13 +883,14 @@ and register the Entra app (deploy guide § 5) before `tools create`.
 - [ ] Switch both registrations to Entra auth in place: `frontier-tuning tools upsert` on main `1c171d49-…` and dev `34d14238-…` with `--auth-scheme AzureAD --aud api://<appId>`. They were registered `NoAuth` on 2026-10-03 (JOURNEY P8)
 - [ ] Optional: narrow the identity from `db_datawriter` to INSERT on the 3 action tables + UPDATE on `Claims`
 
-Until this is done, confirm a clean baseline before every evaluation run (all four counts should be 0):
+Until this is done, confirm a clean baseline before every evaluation run (all four counts should be 0). Since world v2.3 the settled earlier claims (`C-2026-03xxx`) are seeded `Paid`, so the last count compares with the seeded status; `scripts/db-baseline.sql` is the maintained copy:
 
 ```sql
 SELECT (SELECT COUNT(*) FROM ClaimAdjudicationDraft) drafts,
        (SELECT COUNT(*) FROM EvidenceRequest) evidence,
        (SELECT COUNT(*) FROM GoodwillEscalation) escalations,
-       (SELECT COUNT(*) FROM Claims WHERE status <> 'Submitted') non_submitted;
+       (SELECT COUNT(*) FROM Claims
+         WHERE status <> CASE WHEN claim_id LIKE 'C-2026-03%' THEN 'Paid' ELSE 'Submitted' END) non_seeded;
 ```
 
 ### Ground truth

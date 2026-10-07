@@ -1,23 +1,17 @@
-# The Contoso warranty RLE — journey
+# The Contoso warranty RLE: journey
 
-How this world is built, what has been done, and what comes next. Read it top
-to bottom the first time; after that, **Where we are** is all you need.
+How this world is built, where the climb stands, and what we learned on the way. **Where we are** is all you need on a return visit.
 
 | Part | What it gives you |
 | --- | --- |
-| [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard, and [how it reasons through a claim](#how-the-agent-reasons-through-a-claim) |
-| [2. Setting up the world](#2-setting-up-the-world) | A step-by-step recipe, with what you should see at each step |
-| [3. The climb](#3-the-climb) | The five stages, what each must prove, how to tell |
-| [4. What we've learned](#4-what-weve-learned) | Findings so far, in one table |
+| [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard, and how a run works |
+| [2. Setting up the world](#2-setting-up-the-world) | The build recipe, step by step |
+| [3. The climb](#3-the-climb) | The stages, one line each; detail in [stages/](../stages/README.md) |
+| [4. What we've learned](#4-what-weve-learned) | Lessons, as issue → what we did |
 | [5. Side experiments](#5-side-experiments) | Runs outside the climb |
-| [Appendix](#appendix--helper-snippets) | The small scripts the steps use |
+| [Appendix](#appendix--helper-snippets) | Helper snippets |
 
-Legend: ✅ done · ⏳ in progress · ⬜ not started · 🖥️ measured here ·
-📄 upstream guidance · 🔬 unverified · 💭 reasoning
-
-The full verbatim command record, including every dead end, is in
-[evidence/journey-record-2026-10-03.md](evidence/journey-record-2026-10-03.md) and
-[evidence/journey-record-2026-10-04.md](evidence/journey-record-2026-10-04.md).
+Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream guidance · 🔬 unverified · 💭 reasoning. The full chronological record, with every dead end, is in [archive/](../archive/README.md) and [evidence/](evidence/README.md).
 
 ---
 
@@ -25,19 +19,16 @@ The full verbatim command record, including every dead end, is in
 
 | | |
 | --- | --- |
-| **Status** | World v2 (inspection-report rule corrected). **Stage 0 v2** rubric 0.535 · correct 0/8. **Stage 1 v2** rubric **0.991** · correct **7/8**, with all 8 runs getting the tools. ⚠️ **0.991 is saturated** (AGENTS.md: harden above ~0.95) |
-| **Next** | **Decision needed: direction.** The frontier model has no headroom in this world (2-base: 29/30 right by the world's rules). Both defects it exposed are fixed (world **v2.2**). Recommended: 2a hand-written rubrics (needed as the RFT reward anyway), then measure GPT-5.4-Mini on the 30 to find the real headroom. See [stage-2-base](../stages/stage-2-base/README.md) |
-| **2b commitment** | When a skill is changed in 2b, show **each edit next to the rubric it serves**, and why the edit doesn't restate that rubric. The user wants this as an explicit takeaway |
-| **Deferred** | **P6**: Entra auth on the MCP endpoint (open to anyone with the URL). **P11**: runbook fixes |
-| **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4`: the climb, CLI default · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc`: scratch |
-| **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` (**on** since stage 1 v2) · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` (on). ACA pinned at **3 replicas** (min = max = 3) since 10-04 |
-| **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44` · 5 pinned rubrics |
-| **Stage artefacts** | One folder per stage in [stages/](../stages/): exact skill, rubrics, prompts, commands and results. Never overwritten |
-| **Stage 4 plan** | **4a GPT-5.4-Mini** (run `dev-ct-gpt-54-mini-mp`, tune `gpt-54-mini`: likely the same model, so a clean before/after) · then **4b MAI** (run `dev-ct-mai-code-mp`, tune `mai-code-1-flash`) as a repeat |
-| **Before every run** | Check that the 4 baseline counts are 0: `.\scripts\sql-run.ps1 -File scripts\db-baseline.sql`. From stage 1, snapshot and reset after every run (`db-actions-snapshot.sql`, `db-reset-actions.sql`) |
+| **Status** | Stages 0–2 done on GPT-5.6-Sol: it saturates the world (0.978 · 27/30). **Stage 3** (MAI-CODE-5b, research split into its own skill, folder-scoped search) is ready to run in wce-main; trialled 6/6 correct in wce-dev. World **v2.3** |
+| **Next** | Apply [stage 3](../stages/stage-3/README.md) to wce-main → smoke test 1 sample → 30 claims in 3 batches of 10 → three numbers (rubric, correct, hand-in rejections). Then rubrics v2 (stage 4) → headroom (stage 5) → RFT (stage 6) |
+| **Open** | Hand-in rejections by the platform's finish tool ([note](evidence/platform-issue-finish-rejection.md)) · MAI-CODE-5b vs `mai-code-1-flash`: same weights? · does tuning use Training or Evaluation samples? · P6 endpoint auth deferred |
+| **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (the climb) · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc` (trials) |
+| **Skills** | main: `warranty-assistant` `cf00d339-5217-4cd1-b390-cc0d911735da` (stage 2 config) · dev: `warranty-assistant` `8e9d12a2-b0a5-4683-95f1-b225ed9ade44` + `library-research` `9db9be9a-f862-4444-a904-f63373f387fa` (stage 3 config) |
+| **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` · ACA pinned at 5 replicas · OneDrive slot off in both worlds |
+| **Models** | Run: `prod-gpt-56-reasoning-sol`, `dev-ct-gpt-54-mini-mp`, `dev-ct-mai-code-mp` · Tune: `gpt-54-mini`, `mai-code-1-flash` |
+| **Before every run** | SQL public access is switched off daily (SFI): re-enable it. Add your IP to the SQL firewall if it changed. `/healthz`, then `scripts\db-baseline.sql` = 0 0 0 0. Snapshot and reset after every run |
 
 ---
-
 ## 1. The scenario in two minutes
 
 **The job.** Contoso Industrial makes chillers and compressors. Service partners
@@ -118,10 +109,25 @@ measures and RFT reinforces.
 For one claim walked end to end, step by step, see
 [04-walkthrough.md](04-walkthrough.md) and [03 § 8](03-scenario-design.md#8-a-worked-example-end-to-end).
 
-**The point of the exercise.** Start with an honestly weak agent and improve it
-in stages, **changing one thing at a time**, so each gain can be attributed.
-The frontier model (GPT-5.6-Sol) stays the same through stages 0–3. Stage 4
-then asks whether a small, tuned model can match it.
+### How a run works
+
+**One request; the world runs the agent.** A `chat` call, or each sample in an evaluation, is a single request. Inside the world:
+
+1. A **top-level agent** reads the skill descriptions and calls the skill(s) it needs, in the order the descriptions suggest. Skills can't call each other; an unrelated request calls none.
+2. Each skill runs as a **sub-agent with its own context**: its instructions plus every enabled tool (~118 here: MCP, SharePoint, Teams, M365 search…).
+3. The model calls tools; each result is appended and the **whole history is re-sent** every turn.
+4. It **hands in** through the platform's finish tool, which can reject a hand-in.
+5. A **grader model** scores each skill's accepted hand-in against **that skill's** rubrics. The run's score is the adjudication skill's.
+
+| Role | Model | Chosen by |
+| --- | --- | --- |
+| Agent (plans, calls tools, answers) | `--model` / `--base-model` | Us |
+| Grader | Undisclosed platform model | Platform |
+| Rubric generator (stage 0 only) | Platform model | Platform |
+
+**What we can see:** `executions get` gives the successful tool calls, `Skills[]` (status and errors such as `ContextLength`), the rubric scores with the grader's reasoning, and token billing. Rejected hand-ins appear only in the grader's notes; the diagnostics API is blocked (403).
+
+**Context budget.** A small model's window is the binding limit, not the task's complexity. Per run, GPT-5.6-Sol carried up to 386k characters of tool output; MAI-CODE-5b fails at ~230–275k. Design to stay well inside it: compact tool outputs (MCP < 1k each), folder-scoped searches, and work split across sub-agents.
 
 ---
 
@@ -465,89 +471,73 @@ specifically, and the same on main. The stage-0 probe on main covers the last.
 - Stage 4: GPT-5.4-Mini first (4a), then repeat with MAI (4b). The runbook currently plans MAI only.
 
 ---
-
 ## 3. The climb
 
-📄 Plan from [runbook 05](05-hill-climb-runbook.md). Scores are 💭 predictions until measured.
+Each stage changes one thing and reports two numbers: the platform's **rubric score**, and **ground-truth correctness** (decision, governing instrument, payable; [`build/score_ground_truth.py`](#h5-score-answers-against-the-ground-truth)). The rubric score is the RFT reward, so if it climbs while correctness doesn't, the rubrics get fixed before tuning.
 
-| Stage | The one change | Expect | It proves… | Pass if |
-| --- | --- | --- | --- | --- |
-| **0** | Nothing — one broad skill, platform-written rubrics, MCP off, 8 easy prompts | 0.45–0.55 | The documents are reachable; the weakness is missing facts | Retrieval shows up in the trace · score 0.40–0.60 (< 0.30 means retrieval is broken, stop) |
-| **1** | MCP server switched on | 0.62–0.70 | How much was just plumbing | Score up ≥ 0.10 **and** DB tools in the trace |
-| **2** | Hand-written rubrics first, then 3 thin skills | 0.76–0.84 | Rubric and skill design is the biggest lever | The 3 skills score differently per rubric |
-| **3** | All 30 honest prompts | 0.72–0.80 (may drop) | Where the agent is truly weak | 0.60–0.75 · Simple vs BestOfN gap measured |
-| **4** | Swap to a small model, then tune it: **4a GPT-5.4-Mini**, then **4b MAI** as a repeat | 0.50–0.60 → 0.76–0.82 | A tuned small model can match the frontier | Within 0.05 of frontier, still abstains correctly |
-
-**Skills vs rubrics.** Stage 0 lets the platform write the rubrics on purpose:
-that's the naive baseline. From stage 2, rubrics are written by hand
-**before** the skills ([drafts in 03 § 9.2](03-scenario-design.md#92-rubrics-for-the-flagship-skill--written-before-the-skill-exists)),
-and the platform tools are measured against them.
-
-**Will the skill change?** Yes, at stage 2: the one broad skill is
-**disabled, not edited**, and three narrow skills replace it. Rubrics change
-at stage 2 too. Every version is kept in its stage folder
-([stages/](../stages/)), so the progression can be replayed and shown later.
-
-**Two numbers per stage.** Each stage reports the platform's **rubric score**
-*and* **ground-truth correctness**: decision, governing instrument and payable,
-checked automatically against the answer key by
-[`build/score_ground_truth.py`](#h5-score-answers-against-the-ground-truth). The
-rubric score is also the RFT reward, so if it climbs while correctness doesn't,
-the rubrics are fixed before any tuning.
-
-### Results so far
-
-| Stage | Date | Rubric score | Fully correct (ground truth) | What happened | Gate |
+| Stage | Change | Model | Rubric | Correct | Takeaway |
 | --- | --- | --- | --- | --- | --- |
-| **0** | 10-04 | **0.630** | **1/8** (12%) | With the claim system off, the agent **held 7 of 8 claims** for missing facts (policy 2.3) instead of guessing. It still found the right rules and the contingent amounts. Every rubric delivered as predicted; *Draft Execution* was 0.0, as expected | ✅ proceed |
-| **1** | 10-04 | **0.905** (+0.275) | **3/8** (38%) | MCP calls first, then documents, then a recorded draft. In the 6 runs that got the tools: 3 correct, and 3 **held for an inspection report** that the partner agreement requires but the ground truth doesn't (**world defect**). 2 runs got **no MCP tools** (scale-out during the burst; **environment defect**) | ⚠️ passed on paper; fix and re-run |
-| *World v2* | 10-04 | | | TSB-G-0029, SPA clause 2 (3 agreements) and one Teams reply corrected to match the ground truth. MCP replicas pinned at 3. The v1 rows above stay as the record | |
-| **0 v2** | 10-04 | **0.535** | **0/8** | Same behaviour as v1: no claim facts, so holds. The agent quoted the *new* TSB-G-0029 wording. 💭 0.630 → 0.535 with almost nothing relevant changed, so treat ~0.1 at 8 samples as noise | ✅ proceed |
-| **1 v2** | 10-04 | **0.991** (+0.456) | **7/8** (88%) | All 8 runs used the MCP tools (8–10 calls each). The only miss, 04103, is a **second world ambiguity**: a seal kit, where policy 5.4 excludes seals "fitted as routine maintenance" and nothing the agent can see says which this was. The agent held it, and the rubrics gave that miss **1.0** | ✅ plumbing proven · ⚠️ **saturated** |
-| *World v2.1* | 10-04 | | | Clause 5.4 clarified: a consumable claimed under a warranty repair op code is a corrective repair, covered unless an inspection report says routine. Answer key unchanged; not re-run | |
-| **2-base** | 10-04 | **0.978** | **27/30** (90%); **29/30** by the world's rules | Stage 1's setup on all 30 eval prompts. Every hard slice right: precedence, serial boundary, dual limit, valuation, stale deck, abstention. One genuine miss: 04172 hedged on ₹312k goodwill instead of escalating, and the rubrics gave it 1.0. Two misses were world defects (a duplicate claim, a wrong answer-key entry) | ⚠️ **no frontier headroom** |
-| *World v2.2* | 10-04 | | | Both defects fixed: the answer key tests the time limit before a missing hours reading; training claims no longer duplicate eval claims (plus a guard in `populate.py`). Azure SQL reloaded. Answer key unchanged for all 30 eval claims; no uploads needed | |
+| [0](../stages/stage-0/README.md) | Baseline: one skill, generated rubrics, claim system off, 8 prompts | GPT-5.6-Sol | 0.535 | 0/8 | Without claim facts the agent holds, and doesn't invent |
+| [1](../stages/stage-1/README.md) | Claim system (MCP) on | GPT-5.6-Sol | 0.991 | 7/8 | Plumbing was the whole gap; saturated |
+| [2](../stages/stage-2/README.md) | All 30 eval prompts | GPT-5.6-Sol | 0.978 | 27/30 | The frontier model handles every trap: no headroom |
+| [3](../stages/stage-3/README.md) | MAI-CODE-5b; research split into its own skill; folder-scoped search | MAI-CODE-5b | ⬜ | ⬜ | Ready; 6/6 correct in the wce-dev trial |
+| 4 | Hand-written rubrics (v2) for both skills | MAI-CODE-5b | | | |
+| 5 | `Simple` vs `BestOfN`: headroom for tuning? | MAI-CODE-5b | | | |
+| 6 | RFT on `mai-code-1-flash`, before and after | MAI | | | |
 
-Details: [stage-0](../stages/stage-0/README.md#results--2026-10-04--job-555d5dd2-f9c3-4008-8846-02e9ceca44d3) · [stage-1](../stages/stage-1/README.md) · [stage-0-v2](../stages/stage-0-v2/README.md) · [stage-1-v2](../stages/stage-1-v2/README.md).
-
-*Stage 0's gap (0.63 vs 12%) is mostly **missing data**, not bad reasoning: a hold
-is the honest answer when the system of record is unreachable. Stage 1 is the
-real test of whether the rubrics overrate the agent.*
+World versions v2–v2.3 (each fixing a defect a run exposed) are listed in [stages/README](../stages/README.md).
 
 ---
 
 ## 4. What we've learned
 
-| Date | Finding | |
-| --- | --- | --- |
-| 10-03 | Uploaded content became searchable in **under 5.5 h**, not the day we budgeted | 🖥️ |
-| 10-03 | Agent calls take **50–90 s** when the right tools are available, about 4 min when the agent has to hunt. Each tool call costs 3–11 s through the platform | 🖥️ |
-| 10-03 | The run response **doesn't name the model** that served it, and its tool-call count in `billingSummary` doesn't always match the trace | 🖥️ |
-| 10-03 | The GPT-5.4-Mini pair (run vs tune) share a base-model name; the MAI pair don't. That matters for a clean before/after in stage 4 | 🔬 |
-| 10-03 | `--strategy simple` is accepted. Whether strategies actually change behaviour is still untested (stage 3) | 🔬 |
-| 10-03 | **Rubric generation isn't repeatable.** The same skill gave 5, 1 and 5 (different) rubrics across three generations, so we pin one set. The generated set covers task structure well but misses precedence reasoning and approval authority | 🖥️ |
-| 10-03 | **Generated rubrics restate the skill.** All 28 checklist items trace back to a sentence in the skill; none states a trap's rule. They add useful judging precision (pass/fail conditions, "when relevant" applicability, 2 checks on what the agent actually did), but have no reference answers: an answer that's wrong but consistent and well sourced can pass. Item 18 even *rewards* consulting the review decks, stale Q2 included. **For stage 0: also score each answer's decision against `GROUND-TRUTH.md`**, so the rubric score and actual correctness can be compared | 🖥️ text · 💭 mapping |
-| 10-04 | **World defect: inspection reports.** The partner agreements (SPA clause 2) and TSB-G-0029 say a claim *must carry* the inspection report and a repair-date hours reading. The ground truth requires neither, and only 12 of 90 claims have a report. With tools available, the agent held every approval that lacked a report. The corpus and the ground truth disagree, so this must be fixed before results can be trusted | 🖥️ |
-| 10-04 | **Environment defect: tools missing under a burst.** The 8 evaluation runs start within about 18 s; the app scaled to 3 replicas mid-burst, and 2 runs got no MCP tools. 🔬 Likely cause: tool discovery failing during scale-out. Fix: pre-warm replicas before evaluations | 🖥️ · 🔬 |
-| 10-04 | **Stage 1: plumbing was worth +0.275.** Same skill, rubrics, samples and model; only the MCP server switched on | 🖥️ |
-| 10-04 | `chat --skill-id` returns **API error 500** in both worlds. Leave it out: normal routing picks the skill (confirmed: it was routed and graded on the pinned rubrics) | 🖥️ |
-| 10-04 | **World v2 fix confirmed.** After the corrected documents were uploaded, the agent's search served the new text within about 10 min. In stage 1 v2, no claim was held for a missing report | 🖥️ |
-| 10-04 | **Pinning ACA at 3 replicas fixed the missing-tools defect**: 8/8 runs used the MCP tools, against 6/8 in v1. Evaluations also ran faster (26 and 22 min, against 52) | 🖥️ (speed cause 🔬) |
-| 10-04 | **Run-to-run noise is about ±0.1 at 8 samples.** Stage 0 v1 → v2 moved 0.630 → 0.535 with only document wording changed, which the agent couldn't use without claim facts | 💭 |
-| 10-04 | **Stage 1 v2 saturated: 0.991, 7/8.** On the 3 easy slices, GPT-5.6-Sol with tools makes no reasoning errors. Headroom must come from the hard slices (dual-limit, valuation, abstention, authority, exclusion, stale-deck), not from these 8 prompts | 🖥️ |
-| 10-04 | **The rubrics gave a wrong answer full marks.** 04103 (expected approve ₹19,150; the agent held for evidence) scored 1.0 on all 5 rubrics. This is the first clean evidence the generated rubrics don't check correctness, which is why stage 2 writes rubrics by hand | 🖥️ |
-| 10-04 | **Second world ambiguity: seals vs routine maintenance.** POL-WAR-4.2 clause 5.4 excludes *"seals fitted as routine maintenance"*. The claim record carries only op code `SEAL-KIT-RR`, with no failure description, and the engine excludes only on `exclusion_flags`. A held seal-kit claim is therefore defensible but marked wrong. **Resolved the same day (world v2.1):** clause 5.4 now says a consumable claimed under a warranty repair op code is a corrective repair | 🖥️ |
-| 10-04 | **No frontier headroom, even on the hard slices.** Stage 2-base: rubric 0.978, and 29/30 right by the world's rules. GPT-5.6-Sol with tools handles every designed trap. The upstream prediction for this point was 0.76–0.84 📄; it doesn't hold here | 🖥️ |
-| 10-04 | **Answer-key defect: missing hours tested before an expired time limit.** For 04178, coverage had expired by time, so the missing hours reading is irrelevant and decline is right. `adjudicate.py` returns `request_evidence` first. The agent was right and the key wrong | 🖥️ |
-| 10-04 | **World defect: eval claims with identical training twins.** In serial-boundary, 4 eval claims (04129–04132) have training copies identical in every field (04133/04134/04136/04137). The agent flagged one as a duplicate submission (04131). In stage 4 this would **leak eval answers into training** | 🖥️ |
-| 10-04 | **The scorer needs reading by hand.** Each new slice exposed a new phrasing ("no X, Y, goodwill escalation, or …"; "X does not govern"; "covered by X"). All 6 flagged answers were read by hand; 3 were scorer errors. Treat ❌ as "check", not as a verdict | 🖥️ |
-| 10-04 | `evaluate results <job> -o json` is only the summary (3 KB). Per-answer detail needs `--samples` (3.6 MB here). In it, `Response` is a list of parts, not plain text | 🖥️ |
-| 10-04 | **Stage 0, without the claim system: the agent abstained instead of inventing.** 7/8 answers held the claim, citing policy 2.3; no commissioning date was made up. The rubric *Requested Outcome Delivery* gave 1.0 to every hold | 🖥️ |
-| 10-04 | **There's no field for an expected answer.** A sample is a `Prompt` plus optional file `References`; `samples create/update/upload` document nothing else. During tuning, the **only** training signal is the grader's rubric score, so ground truth must reach the reward **through the rubrics**. 🔬 Untested: samples hold a snapshot of the rubrics, and skills have a `SupplementaryGraderConfig` field; either *might* allow answers per sample | 🖥️ · 🔬 |
-| 10-03 | **Our MCP tool descriptions carry trap answers.** `get_tsb_index` says *"THE BULLETIN DOCUMENT GOVERNS"* (trap 1); `get_asset` says the install date *"must not be substituted"* (trap 12). The agent reads these word for word. That was intended for trap 1 (03 § 13), but it eases traps 1 and 12 from stage 1 on, and likely explains why both models aced trap 1. **Decide before the stage-1 baseline:** keep it, or make the descriptions factual only | 🖥️ |
+**The platform**
+
+| Issue | What we did |
+| --- | --- |
+| Skills are sub-agents chosen by the top-level agent from their descriptions; one skill can't call another | Steer the order with descriptions ("Use this first…" / "expects the facts… gathered first") |
+| Grading is per skill, by that skill's own rubrics; a skill without rubrics goes unmeasured | Rubrics for `library-research` drafted (v2) |
+| The finish tool rejects some hand-ins: GPT-5.4-Mini 22/28; MAI 4/8 in one window. The user gets a correct answer, but the graded hand-in is a stub, and the skill re-runs and writes duplicate drafts | Reported ([note](evidence/platform-issue-finish-rejection.md)); removed a hand-in line from the skill (0/3 after); track the rejection rate per stage |
+| `chat --wait` gives up at ~16 min while the run continues | Poll `executions get` until the status settles |
+| `chat --skill-id` returns error 500 | Omit it; routing works |
+| No per-skill model: `--model` applies to the whole run | One model per run |
+| The tool set can change without notice (`m365__call_copilot` vanished; counts briefly read 88) | Record `tools available` before every run; re-read |
+| Search returns large extracts (~18k characters) and the same "hub" documents (policy, review decks) for different queries | Scope each search to a folder: `path:"<library>/<folder>"` in the query |
+| Search works on title and reference words; "rate card" and queries stuffed with identifiers return nothing | Search with the references the claim system returns, plus the kind of document |
+
+**Measuring**
+
+| Issue | What we did |
+| --- | --- |
+| The generated rubrics don't check correctness: wrong holds and a hedged escalation scored 1.0 | Ground truth reported every stage; hand-written rubrics (stage 4) before RFT |
+| ~0.1 moves at 8 samples are noise | Judge on 30 prompts |
+| The stored answer isn't always the delivered one (rejected hand-ins) | The scorer checks delivery; flagged answers are read by hand |
+| The frontier model saturates this world | The climb continues on a small model |
+
+**The world**
+
+| Issue | What we did |
+| --- | --- |
+| Runs exposed four world defects: inspection reports, a seal-kit ambiguity, twin claims and an answer-key order, a missing prior claim | Each fixed in the generator, with a gate so it can't recur (v2–v2.3) |
+| Our MCP tool descriptions state trap answers (e.g. "the bulletin document governs") | 🔬 Open: keep, or make the descriptions purely factual |
+
+**Small models**
+
+| Issue | What we did |
+| --- | --- |
+| GPT-5.4-Mini skipped documents, finished early, and its hand-ins were rejected | Skill guidance fixed the research order, not the hand-ins; moved to MAI |
+| MAI's decisions were right, but it ran out of context on heavy claims | Split research into its own skill; folder-scoped search (610k → 57k on the heaviest claim) |
+| MAI invented folder names when left to infer them | The folder map is given in a `## Library folders` section of each skill |
+| Small-model runs re-send their context every turn: ~1–2.5 M input tokens per claim (Sol ~0.2–0.9 M) | Fewer turns, compact outputs; evaluate in batches of 10 |
+
+**The environment**
+
+| Issue | What we did |
+| --- | --- |
+| SQL public access is switched off daily; the client IP changes | Pre-flight check; single-IP firewall rule |
+| MCP: `Invalid Host header`; `ER05017` with stateful sessions; no tools during scale-out | `MCP_ALLOWED_HOSTS`; `stateless_http=True`; replicas pinned |
 
 ---
-
 ## 5. Side experiments
 
 ### GPT-5.6 vs MAI on one question · 10-03
@@ -588,12 +578,14 @@ $j.toolExecutions | ForEach-Object { "  {0} | {1} | {2} ms | inputs: {3}" -f $_.
 
 ### H2 Baseline check — are the action tables clean?
 
+*Updated for world v2.3 (10-06): the last count compares with the seeded status, since the `C-2026-03xxx` prior claims are seeded `Paid`.*
+
 ```powershell
 $s = @'
 param($Token)
 $cn = New-Object System.Data.SqlClient.SqlConnection("Server=tcp:az-sqldb-common.database.windows.net,1433;Database=contoso-warranty;Encrypt=True;Connection Timeout=90;")
 $cn.AccessToken = $Token; $cn.Open(); $c = $cn.CreateCommand()
-$c.CommandText = "SELECT (SELECT COUNT(*) FROM ClaimAdjudicationDraft) drafts, (SELECT COUNT(*) FROM EvidenceRequest) evidence, (SELECT COUNT(*) FROM GoodwillEscalation) escalations, (SELECT COUNT(*) FROM Claims WHERE status <> 'Submitted') non_submitted"
+$c.CommandText = "SELECT (SELECT COUNT(*) FROM ClaimAdjudicationDraft) drafts, (SELECT COUNT(*) FROM EvidenceRequest) evidence, (SELECT COUNT(*) FROM GoodwillEscalation) escalations, (SELECT COUNT(*) FROM Claims WHERE status <> CASE WHEN claim_id LIKE 'C-2026-03%' THEN 'Paid' ELSE 'Submitted' END) non_submitted"
 $r = $c.ExecuteReader(); $r.Read() | Out-Null; "drafts={0} evidence={1} escalations={2} non_submitted={3}" -f $r[0], $r[1], $r[2], $r[3]; $cn.Close()
 '@
 $p = "$env:TEMP\baseline-check.ps1"; Set-Content $p $s -Encoding UTF8

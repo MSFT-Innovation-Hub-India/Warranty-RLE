@@ -172,7 +172,9 @@ with connect() as db:
           "6.1" in prior["note"] and "90 days" in prior["note"], "")
 
     # --- actions are drafts -------------------------------------------
-    cid = db.one("SELECT claim_id FROM Claims")["claim_id"]
+    row = db.one("SELECT claim_id, status FROM Claims WHERE status = 'Submitted' "
+                 "ORDER BY claim_id")
+    cid, seeded_status = row["claim_id"], row["status"]
     r = T.create_claim_adjudication(db, cid, "approve", ["TSB-C-0051"], 199175.0, "INR",
                                     "test draft")
     check("create_claim_adjudication writes a draft", r["created"] and
@@ -198,7 +200,7 @@ with connect() as db:
     db.execute("DELETE FROM ClaimAdjudicationDraft WHERE created_by = 'agent'")
     db.execute("DELETE FROM EvidenceRequest WHERE claim_id = ?", (cid,))
     db.execute("DELETE FROM GoodwillEscalation WHERE claim_id = ?", (cid,))
-    db.execute("UPDATE Claims SET status = 'Submitted' WHERE claim_id = ?", (cid,))
+    db.execute("UPDATE Claims SET status = ? WHERE claim_id = ?", (seeded_status, cid))
 
 
 if __name__ == "__main__":

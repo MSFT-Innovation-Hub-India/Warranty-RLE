@@ -1,0 +1,19 @@
+Evaluation Diagnostics: 73fa5456-45f6-411c-92e1-b553931acab8
+  Status:   ⟳ Running    Phase: Submitting
+  Created:       2026-10-04T15:54:27.4823583+00:00
+  Last Progress: 2026-10-04T16:49:39.4530748+00:00
+
+Progress  (30 samples)
+  Execution:  completed 28, running 1, pending 0, failed 0  (93%)
+  Grading:    graded 28, excluded 0, awaiting 2  (93%)
+
+Results so far
+  Score: 0.415   Graded samples: 28   Scored rubrics: 165
+Skill                                   Score  Samples
+cf00d339-5217-4cd1-b390-cc0d911735da    0.415       28
+
+Signals
+  Retried: 5   Near retry cap: 0   Resubmissions: 8   Grading gap: 0
+  Skills with graded sample: 1/1   Throughput: 0.31/min
+
+Reliability: Partial

@@ -1,0 +1,61 @@
+
+kind     id             claim_id     detail                                                                                                                                                                                      created_at                 
+----     --             --------     ------                                                                                                                                                                                      ----------                 
+draft    ADJ-C761577C68 C-2026-04101 request_evidence | payable=-  | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-C-0051", "TSB-C-0043"]                                                                                              10/4/2026 4:23:25 PM +00:00
+evidence EVR-AAA162EA35 C-2026-04102 field=serial confirmation / proof of supply                                                                                                                                                 10/4/2026 4:24:09 PM +00:00
+draft    ADJ-4AC5D42C3B C-2026-04109 request_evidence | payable=-  | refs=["POL-WAR-6.1", "POL-WAR-1.4"]                                                                                                                         10/4/2026 4:17:33 PM +00:00
+draft    ADJ-4BF3F5E615 C-2026-04110 request_evidence | payable=-  | refs=["POL-WAR-1.4"]                                                                                                                                        10/4/2026 5:01:12 PM +00:00
+draft    ADJ-21DEAAB20B C-2026-04114 approve | payable=199175.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2 clauses 1.4, 4.1, 4.2, 4.3", "Flat-Rate-Labour-FY26", "Labour-Rates-By-Region-FY26", "SPA-2023-FAB-IN"]                  10/4/2026 4:20:34 PM +00:00
+draft    ADJ-E0536DD3B9 C-2026-04115 request_evidence | payable=- INR | refs=["Global Warranty Policy 6.1", "TSB-C-0051", "SPA-2023-FAB-IN", "Parts list P-44310"]                                                               10/4/2026 4:17:17 PM +00:00
+draft    ADJ-6AD55F6F49 C-2026-04116 decline | payable=0.00 INR | refs=["ADD-IN-2.1 A1", "POL-WAR-4.2 1.4", "POL-WAR-4.2 6.1", "TSB-C-0051"]                                                                                     10/4/2026 4:18:56 PM +00:00
+draft    ADJ-15F5ECA941 C-2026-04117 request_evidence | payable=-  | refs=["Global Warranty Policy clause 6.1"]                                                                                                                  10/4/2026 4:17:09 PM +00:00
+draft    ADJ-2D6C981EE2 C-2026-04118 request_evidence | payable=-  | refs=["POL-WAR-1.4", "TSB-P-0115"]                                                                                                                          10/4/2026 5:19:47 PM +00:00
+draft    ADJ-11F8D773BB C-2026-04118 request_evidence | payable=-  | refs=["POL-WAR-1.4"]                                                                                                                                        10/4/2026 4:44:59 PM +00:00
+draft    ADJ-3C37FA5276 C-2026-04118 approve | payable=0.00 INR | refs=["Global Warranty Policy 6.1", "TSB-C-0043", "SPA-2023-FAB-IN"]                                                                                           10/4/2026 4:12:10 PM +00:00
+draft    ADJ-E9BBD051C3 C-2026-04118 request_evidence | payable=-  | refs=[]                                                                                                                                                     10/4/2026 4:44:32 PM +00:00
+draft    ADJ-D29AC99AD8 C-2026-04129 request_evidence | payable=- INR | refs=["POL-WAR-4.2", "POL-WAR-1.4"]                                                                                                                      10/4/2026 4:12:24 PM +00:00
+draft    ADJ-BC5EF32C08 C-2026-04130 request_evidence | payable=-  | refs=["POL-WAR-1.4", "POL-WAR-?", "SPA-2023-FAB-IN"]                                                                                                        10/4/2026 4:12:18 PM +00:00
+evidence EVR-DC3722F99A C-2026-04130 field=commissioning_date                                                                                                                                                                    10/4/2026 4:12:07 PM +00:00
+draft    ADJ-D55A8A9E47 C-2026-04131 request_evidence | payable=-  | refs=["Global Warranty Policy 6.1", "Global Warranty Policy 1.4"]                                                                                           10/4/2026 4:45:13 PM +00:00
+draft    ADJ-79641D3477 C-2026-04131 request_evidence | payable=- INR | refs=["POL-WAR-Global", "India Addendum", "HYD-PUMP-RR", "SPA-2023-FAB-IN"]                                                                              10/4/2026 4:12:11 PM +00:00
+draft    ADJ-4B6B279BE8 C-2026-04132 decline | payable=0.00 INR | refs=["TSB-C-0051", "ADD-IN-2.1", "POL-WAR-4.2 1.4"]                                                                                                           10/4/2026 4:16:10 PM +00:00
+draft    ADJ-9D1309E62E C-2026-04132 approve | payable=191200.00 INR | refs=["Global Warranty Policy 6.1", "SPA-2023-FAB-IN", "P-44120-A part record"]                                                                           10/4/2026 4:12:00 PM +00:00
+draft    ADJ-D26FA38B4E C-2026-04139 request_evidence | payable=-  | refs=["POL-WAR-1.4", "TSB-C-0051"]                                                                                                                          10/4/2026 4:21:32 PM +00:00
+draft    ADJ-EC9D459902 C-2026-04139 request_evidence | payable=- INR | refs=["POL-WAR-1.4", "POL-WAR-6.1"]                                                                                                                      10/4/2026 4:12:00 PM +00:00
+draft    ADJ-F5F74F7FC7 C-2026-04139 request_evidence | payable=0.00 INR | refs=["POL-WAR-7.1", "POL-WAR-2.1"]                                                                                                                   10/4/2026 4:13:51 PM +00:00
+draft    ADJ-5B9B8E8854 C-2026-04140 request_evidence | payable=-  | refs=["Global Warranty Policy clause 1.4", "Global Warranty Policy clause 6.1", "TSB-C-0051"]                                                               10/4/2026 4:45:17 PM +00:00
+draft    ADJ-539B743401 C-2026-04140 request_evidence | payable=- INR | refs=["POL-WAR-1.4", "POL-WAR-4.2", "POL-WAR-7.1"]                                                                                                       10/4/2026 4:11:57 PM +00:00
+evidence EVR-4B8A8623B4 C-2026-04140 field=warranty instrument                                                                                                                                                                   10/4/2026 4:12:22 PM +00:00
+draft    ADJ-D85D54FB6F C-2026-04141 request_evidence | payable=-  | refs=["POL-WAR-1.4", "TSB-C-0051"]                                                                                                                          10/4/2026 4:07:02 PM +00:00
+draft    ADJ-90780A3914 C-2026-04148 request_evidence | payable=- INR | refs=["POL-WAR-1.4", "POL-WAR-4.2"]                                                                                                                      10/4/2026 4:06:47 PM +00:00
+draft    ADJ-2758E2F238 C-2026-04148 request_evidence | payable=- INR | refs=["POL-WAR-4.2", "POL-WAR-1.4"]                                                                                                                      10/4/2026 4:06:35 PM +00:00
+draft    ADJ-B846C1A7F9 C-2026-04149 request_evidence | payable=- INR | refs=["POL-WAR-1.4", "POL-WAR-4.2", "POL-WAR-7.1"]                                                                                                       10/4/2026 4:06:25 PM +00:00
+draft    ADJ-1668DD4B70 C-2026-04150 approve | payable=742000.00 INR | refs=["Global Warranty Policy clause 6.1", "Global Warranty Policy clause 1.4", "Global Warranty Policy clause 4.2", "Global Warranty Policy clause 4.3"] 10/4/2026 4:06:16 PM +00:00
+draft    ADJ-05DD9FA788 C-2026-04151 request_evidence | payable=-  | refs=["POL-WAR-1.4", "POL-WAR-2.1"]                                                                                                                         10/4/2026 4:06:09 PM +00:00
+draft    ADJ-376DF7238E C-2026-04151 request_evidence | payable=- INR | refs=["Global Warranty Policy 1.4", "Global Warranty Policy 6.1", "TSB-C-0051"]                                                                          10/4/2026 4:34:12 PM +00:00
+draft    ADJ-95C35F5793 C-2026-04152 approve | payable=0.00 INR | refs=["Global Warranty Policy clause 6.1"]                                                                                                                     10/4/2026 4:06:30 PM +00:00
+draft    ADJ-566925DF7E C-2026-04166 request_evidence | payable=-  | refs=["POL-WAR-1.4", "POL-WAR-2.x", "POL-WAR-6.1"]                                                                                                          10/4/2026 4:01:08 PM +00:00
+draft    ADJ-C786356D49 C-2026-04167 request_evidence | payable=-  | refs=["Global Warranty Policy 6.1"]                                                                                                                         10/4/2026 4:00:59 PM +00:00
+evidence EVR-076B071217 C-2026-04167 field=warranty instrument                                                                                                                                                                   10/4/2026 4:01:11 PM +00:00
+draft    ADJ-ED33F9F162 C-2026-04171 approve | payable=67400.00 INR | refs=["Global Warranty Policy 6.1", "Policy 4.2", "Policy 4.3", "TSB-C-0051"]                                                                              10/4/2026 4:01:01 PM +00:00
+draft    ADJ-C0850E33BA C-2026-04176 request_evidence | payable=-  | refs=[]                                                                                                                                                     10/4/2026 4:00:14 PM +00:00
+evidence EVR-1106CC21E4 C-2026-04176 field=commissioning_date / running_hours                                                                                                                                                    10/4/2026 4:00:43 PM +00:00
+draft    ADJ-0E11B0C1E0 C-2026-04177 request_evidence | payable=-  | refs=["POL-WAR-1.4", "POL-WAR-2.x", "POL-WAR-4.2"]                                                                                                          10/4/2026 4:00:55 PM +00:00
+evidence EVR-8029370D49 C-2026-04177 field=asset serial / proof of supply                                                                                                                                                        10/4/2026 4:00:55 PM +00:00
+draft    ADJ-9726BEA42D C-2026-04178 request_evidence | payable=- INR | refs=["Global Warranty Policy 6.1", "Global Warranty Policy 1.4", "SPA-2023-FAB-IN", "TSB index (not authoritative for serial range)"]                   10/4/2026 4:00:44 PM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04102 Held  
+C-2026-04130 Held  
+C-2026-04140 Held  
+C-2026-04167 Held  
+C-2026-04176 Held  
+C-2026-04177 Held  
+
+
+
+OK: 1 batch(es) executed

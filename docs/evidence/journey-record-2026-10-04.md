@@ -781,3 +781,46 @@ Regenerated: ground truth, DB seeds, decks, docs, samples, sheets, Teams. A cont
 Azure SQL reload with `load-sql.ps1` (Entra token): `OK: 8 batches executed`. Assets 117 (local 120; the 3 registry-unknown abstention assets aren't loaded, as before) · claims 90 · telemetry 3007. Spot checks: 04136 → CIE-4000-CH-01849; 02110 commissioned 2025-10-01 with 0 readings. healthz ok; baseline 0 0 0 0.
 
 Not re-run: stage 2-base (job `9f4ad313`) stays the record on v2.1. 04178 and 04131 are documented as defects there.
+
+## Stage 3-mini-base — the small model, same setup (21:12 IST)
+
+User: *"do we now not create the need for better rubrics by using the SLM first and then go about improving it? Would we not be assuming the mini model would fail with the same rubrics before indeed finding them to be so? I am trying to progress the hill climb with the realization at every step for the next."* Agreed: the evidence that the rubrics don't follow correctness is n=1 (04172), so measure first.
+
+Before this, the rubric for right vs wrong answers (scorer CSVs):
+
+```text
+stage-1:      right n=3  mean 1.000 | wrong: 04118 0.96, 04116 0.627, 04114 0.747, 04103 0.967, 04102 1.0
+stage-1-v2:   right n=7  mean 0.990 min 0.93 | wrong: 04103 1.0
+stage-2-base: right n=27 mean 0.979 min 0.77 | wrong: 04178 1.0, 04172 1.0, 04131 0.96   (04178, 04131 = world defects)
+```
+
+Models: `models list` → `dev-ct-gpt-54-mini-mp` (GPT-5.4-Mini, IsSelected False), `prod-gpt-56-reasoning-sol` (IsSelected True). `evaluate start --base-model <id>` accepts it without `models set`.
+
+Hand probe, execution `bb32816e-189d-4819-9889-05d84e2ceb95`, `chat -q "Adjudicate claim C-2026-04114." --model dev-ct-gpt-54-mini-mp --strategy simple`: Completed, 19 tool calls, **all `1c171__*`** (get_claim ×4, get_asset ×2, get_service_history ×2, get_tsb_index ×2, lookup_part ×2, get_dealer ×2, get_running_hours, find_prior_claims, create_claim_adjudication ×2). Answer: *"Decision: Request evidence — claim cannot yet be finally adjudicated"*. Billing: 474,720 input tokens, 5,513 output. DB: ADJ-071822BABB and ADJ-6DEE6A7E4B (both request_evidence, 04114) → reset → 0 0 0 0.
+
+⚠️ Pre-flight `tools available` → **106** (= 137 − 31 SharePoint). I started the evaluation without re-reading; that was a slip. Re-reads at 21:21–21:22 → 137 ×4 with all sources. The probe's `diagnostics` is null, so the tools offered to it are unknown. 🔬
+
+```text
+"JobId": "73fa5456-45f6-411c-92e1-b553931acab8", "BaseModelName": "dev-ct-gpt-54-mini-mp", "CreatedAt": "2026-10-04T15:50:40Z"
+SkillsCount 1 · ToolsCount 4 · SamplePromptsCount 30 · KnowledgeSourcesCount 4
+```
+
+### S3m.2 Stuck, then cancelled
+
+```text
+22:43 diagnostics: Phase Submitting · completed 28, running 1 · Last Progress 16:49:39Z · Retried 5 · Resubmissions 7 · Reliability Partial
+partial results: 04118 Status Running (0 tools) · 04110 Pending · every submission RetryCount 1
+MCP: healthz ok; ACA log POST /mcp 200 at 17:16Z (still serving)
+```
+
+User: *"cancel"* (22:52). `evaluate cancel` has no `--yes` → `{"status": "CancelRequested"}` → poll 22:53 TERMINAL, Status `Cancelled`, OverallScore null. Diagnostics: score 0.415, 28 graded, 165 rubric scores, resubmissions 8.
+
+### S3m.3 Reading the 28: a measurement artefact
+
+The first scorer pass gave correct 10 (mean rubric 0.310) vs wrong 14 (mean rubric 0.466), which looked like the rubrics rewarding wrong answers. Hand check:
+
+- 04103 grader, Outcome 0.0: *"The only successfully delivered finish message states that the agent was "not able to complete a final...adjudication"… Earlier detailed finish…"*. The exported `Response` is a single part: *"Recommended position: APPROVE under standard India warranty coverage. Total payable: INR 19,150.00."* A search of the whole execution object finds "not able to complete" **only in `RubricResults[].Reasoning`**.
+- The same pattern in grader reasoning ("successfully delivered finish" / "failed finish" / "earlier finish attempt"): **12/28** runs, covering most of the scorer's "correct" ones (04103, 04116, 04139, 04140, 04152, 04153; 04114's reasoning says "unable to finalize").
+- Document use: **11/28** runs called `m365__search_enterprise_files`, SharePoint or Teams tools (up to 10 calls). The other 17 used only `1c171__*`. So the 106-tools read didn't block documents.
+
+Per rubric (computed from the samples): Outcome 0.537 · Determination 0.119 · Grounding 0.300 · Presentation 0.393 · Draft Execution 0.724. DB: 36 drafts, 6 evidence requests → reset → 0 0 0 0.
