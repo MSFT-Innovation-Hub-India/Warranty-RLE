@@ -1,0 +1,817 @@
+{
+  "EvaluationResults": {
+    "workspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "jobId": "ce41e2c3-98fa-41a3-972f-a393761a5e16",
+    "ParentJobId": null,
+    "EvalType": "StandaloneEvaluation",
+    "modelName": "dev-ct-mai-code-mp",
+    "modelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategyBody": null,
+    "skillIds": [
+      "cf00d339-5217-4cd1-b390-cc0d911735da"
+    ],
+    "OverallScore": 0.92,
+    "FailureRate": 0.0,
+    "Status": "Completed",
+    "EvaluationCompletionDateTime": "2026-10-07T05:59:40.0437387+00:00",
+    "lastProgressDateTime": "2026-10-07T05:59:40.0384074+00:00",
+    "Results": [],
+    "StatusMessage": "Evaluation completed (overall=0.920): 1 graded.",
+    "Id": null,
+    "CreatedDateTime": null,
+    "LastModifiedDateTime": null,
+    "HasAllUserInputsForNextStep": false,
+    "Compressed": false,
+    "SchemaVersion": null,
+    "Value": null,
+    "ItemClass": null,
+    "SecondaryKey": null,
+    "SystemExpirationDateTime": null,
+    "Size": null
+  },
+  "Submissions": [
+    {
+      "ExecutionId": "3b6821a1-ea45-4abf-8956-394d5db7afd0",
+      "PromptId": "ca4404fe-03c4-418d-a9c1-738112617edf",
+      "RetryCount": 1,
+      "Status": "Completed",
+      "Sample": {
+        "Id": "ca4404fe-03c4-418d-a9c1-738112617edf",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Adjudicate claim C-2026-04101.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "03ff334c-8fe1-4cc6-a230-1bf0c1d7744d",
+            "PearlCategory": "primary",
+            "Name": "Requested Outcome Delivery",
+            "ChecklistItems": [
+              "When the request asks for a claim outcome, the response presents a definite covered, declined, or cannot-yet-be-decided result; a statement that the agent could not perform the analysis without definitively establishing the outcome fails.",
+              "When the request asks which warranty instrument governs, the response presents the identified instrument or definitively establishes that the available evidence does not identify one; an unsupported hedge or omitted result fails.",
+              "When the request asks about the coverage period, the response presents the applicable period and the repair's position in it, or definitively establishes why those values cannot yet be determined; an unverified non-answer fails.",
+              "When the request asks for an amount payable, the response presents the calculated amount and requested breakdown, or definitively establishes that the payable amount cannot yet be calculated from the available records; merely saying calculation was not completed fails.",
+              "When the request asks for claim next steps, the response presents the next action and responsible party; merely suggesting that someone should investigate later without specifying the requested result fails.",
+              "For a narrower question about a claim, asset warranty position, service partner, or part, the response delivers a direct answer within that requested scope rather than substituting a generic claim overview or a statement that the work was not done."
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "auto_generated"
+          },
+          {
+            "Id": "9829f57f-608f-467f-8a91-7a24a905bed4",
+            "PearlCategory": "primary",
+            "Name": "Claim Determination Requirements",
+            "ChecklistItems": [
+              "When the question requires a repair-coverage determination, the selected outcome is exactly one of covered, declined, or cannot yet be decided and is consistent with the facts and governing warranty provisions available in the input.",
+              "When the question requires identification of the governing warranty instrument, the response names the applicable instrument and connects its scope, region, product, effective date, or other relevant applicability criteria to the asset.",
+              "When the question requires analysis of the coverage period, the response states supported start and end boundaries or usage limits and accurately locates the repair date or running-hours position relative to them.",
+              "When the question requires a payable calculation, the response separately shows supported labour, parts, and partner-specific adjustments, applies the arithmetic correctly, and labels the total in the applicable currency without inferring unavailable rates or terms.",
+              "When the question requires disposition guidance, the response names a concrete next action on the claim and the adjudicator, service partner, Warranty Operations team, or other supported party responsible for taking it."
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "auto_generated"
+          },
+          {
+            "Id": "c546b2c0-d23f-4c2b-8698-a71debca58c7",
+            "PearlCategory": "primary",
+            "Name": "Internal Record Use and Grounding",
+            "ChecklistItems": [
+              "The execution relies on Contoso internal records for material claim facts and rules rather than substituting unsupported external sources.",
+              "When generally applicable warranty terms are material, the execution grounds them in the global warranty policy.",
+              "When regional terms for India, EMEA, or APAC could affect the answer, the execution grounds them in the applicable regional addenda.",
+              "When a technical service bulletin could govern the failure mode, repair, or part, the execution checks the relevant technical service bulletins.",
+              "When reimbursement rates are needed, the execution obtains the applicable labour and parts rate cards rather than inventing rates.",
+              "When partner-specific coverage or reimbursement terms are material, the execution obtains the applicable service partner agreements.",
+              "When relevant operational or policy context is carried by a quarterly review, the execution checks the applicable quarterly warranty review decks.",
+              "When repair-specific evidence is needed, the execution uses available claim evidence such as inspection reports rather than treating an allegation as an established fact.",
+              "When field escalations, partner conversations, or policy announcements are material, the execution checks the team's channels and preserves any disagreement with more authoritative records.",
+              "When asset registration, running hours, service history, submitted claim data, partner records, parts, or goodwill authority are material, the execution obtains the relevant values from the service claim system."
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "auto_generated"
+          },
+          {
+            "Id": "e629745b-6aa8-4783-87fa-300b0c002b5b",
+            "PearlCategory": "extended",
+            "Name": "Adjudicator-Ready Presentation and Traceability",
+            "ChecklistItems": [
+              "The response leads with the claim decision or, for a narrower question, the direct answer requested.",
+              "The response states the material facts and dates supporting its conclusion and shows each arithmetic step behind any amount the available evidence supports.",
+              "Each material factual assertion is attributed to an identifiable internal record, document, channel discussion, or claim-system field with enough specificity for an adjudicator to locate it.",
+              "The response explicitly identifies every material fact it could not establish from the available evidence.",
+              "The response explicitly identifies material disagreements between sources and does not silently choose one version without explaining the basis.",
+              "When the outcome requires a claim-system action, the response states that the action was recorded as a draft and describes what was recorded."
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "auto_generated"
+          },
+          {
+            "Id": "e87148d2-d4ca-4024-983b-69e72122ce12",
+            "PearlCategory": "primary",
+            "Name": "Claim-System Draft Execution",
+            "ChecklistItems": [
+              "When the determined outcome calls for an evidence request, draft adjudication, or goodwill escalation in the claim system, the execution evidence shows that the appropriate draft was actually recorded for the claim with content consistent with the supported outcome."
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "auto_generated"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-04T14:27:11.2081258+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_ca4404fe-03c4-418d-a9c1-738112617edf",
+        "CreatedDateTime": "2026-10-04T14:27:11.2081258+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": {
+        "Id": "3b6821a1-ea45-4abf-8956-394d5db7afd0",
+        "IsRecurring": false,
+        "TaskSnapshot": null,
+        "Status": "Completed",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "DisplayName": "Srikantan Sankaran"
+        },
+        "StartDateTime": "2026-10-07T05:48:47.44876+00:00",
+        "EndDateTime": "2026-10-07T05:56:38.7990204+00:00",
+        "Skills": [
+          {
+            "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+            "SubAgentId": "call_4ot8o8vzynhs4Fmvb529lYJK",
+            "Name": "warranty-assistant",
+            "ShortDescription": null,
+            "ToolExecutions": [],
+            "RubricResults": [
+              {
+                "Score": 0.8,
+                "Reasoning": "The completed hand-in delivers a definite covered/approved outcome, identifies ADD-IN-2.1 as governing, states the coverage boundaries and repair position, calculates INR 69,575 with a breakdown, and records a draft. However, the future next step is only described as the “normal approval workflow” without explicitly naming the adjudicator or another responsible party.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "03ff334c-8fe1-4cc6-a230-1bf0c1d7744d",
+                "RubricName": "Requested Outcome Delivery",
+                "ChecklistItems": [
+                  "When the request asks for a claim outcome, the response presents a definite covered, declined, or cannot-yet-be-decided result; a statement that the agent could not perform the analysis without definitively establishing the outcome fails.",
+                  "When the request asks which warranty instrument governs, the response presents the identified instrument or definitively establishes that the available evidence does not identify one; an unsupported hedge or omitted result fails.",
+                  "When the request asks about the coverage period, the response presents the applicable period and the repair's position in it, or definitively establishes why those values cannot yet be determined; an unverified non-answer fails.",
+                  "When the request asks for an amount payable, the response presents the calculated amount and requested breakdown, or definitively establishes that the payable amount cannot yet be calculated from the available records; merely saying calculation was not completed fails.",
+                  "When the request asks for claim next steps, the response presents the next action and responsible party; merely suggesting that someone should investigate later without specifying the requested result fails.",
+                  "For a narrower question about a claim, asset warranty position, service partner, or part, the response delivers a direct answer within that requested scope rather than substituting a generic claim overview or a statement that the work was not done."
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.8,
+                "Reasoning": "The covered determination is consistent with the India addendum, commissioning date, hours record, inspection evidence, and bulletin scope. The payable arithmetic and partner adjustment are supported. Disposition guidance is incomplete because the party responsible for the next approval action is not expressly named.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "9829f57f-608f-467f-8a91-7a24a905bed4",
+                "RubricName": "Claim Determination Requirements",
+                "ChecklistItems": [
+                  "When the question requires a repair-coverage determination, the selected outcome is exactly one of covered, declined, or cannot yet be decided and is consistent with the facts and governing warranty provisions available in the input.",
+                  "When the question requires identification of the governing warranty instrument, the response names the applicable instrument and connects its scope, region, product, effective date, or other relevant applicability criteria to the asset.",
+                  "When the question requires analysis of the coverage period, the response states supported start and end boundaries or usage limits and accurately locates the repair date or running-hours position relative to them.",
+                  "When the question requires a payable calculation, the response separately shows supported labour, parts, and partner-specific adjustments, applies the arithmetic correctly, and labels the total in the applicable currency without inferring unavailable rates or terms.",
+                  "When the question requires disposition guidance, the response names a concrete next action on the claim and the adjudicator, service partner, Warranty Operations team, or other supported party responsible for taking it."
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "The execution grounds the adjudication in Contoso records: claim and asset-system data, POL-WAR-4.2, ADD-IN-2.1, relevant bulletins, FY26 labour schedules, the Fabrikam agreement, inspection evidence, parts data, running hours, and service history. It also checks quarterly review material and recognizes the stale Q2 summary rather than relying on it. No material channel escalation or announcement required a channel check.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "c546b2c0-d23f-4c2b-8698-a71debca58c7",
+                "RubricName": "Internal Record Use and Grounding",
+                "ChecklistItems": [
+                  "The execution relies on Contoso internal records for material claim facts and rules rather than substituting unsupported external sources.",
+                  "When generally applicable warranty terms are material, the execution grounds them in the global warranty policy.",
+                  "When regional terms for India, EMEA, or APAC could affect the answer, the execution grounds them in the applicable regional addenda.",
+                  "When a technical service bulletin could govern the failure mode, repair, or part, the execution checks the relevant technical service bulletins.",
+                  "When reimbursement rates are needed, the execution obtains the applicable labour and parts rate cards rather than inventing rates.",
+                  "When partner-specific coverage or reimbursement terms are material, the execution obtains the applicable service partner agreements.",
+                  "When relevant operational or policy context is carried by a quarterly review, the execution checks the applicable quarterly warranty review decks.",
+                  "When repair-specific evidence is needed, the execution uses available claim evidence such as inspection reports rather than treating an allegation as an established fact.",
+                  "When field escalations, partner conversations, or policy announcements are material, the execution checks the team's channels and preserves any disagreement with more authoritative records.",
+                  "When asset registration, running hours, service history, submitted claim data, partner records, parts, or goodwill authority are material, the execution obtains the relevant values from the service claim system."
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "The hand-in leads with approval and INR 69,575, presents dated facts and complete arithmetic, attributes material assertions through citations, explains the 2,400-versus-2,229-hours disagreement, and identifies draft ADJ-BB6F542FC7. No unresolved material fact is apparent from the completed evidence set.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "e629745b-6aa8-4783-87fa-300b0c002b5b",
+                "RubricName": "Adjudicator-Ready Presentation and Traceability",
+                "ChecklistItems": [
+                  "The response leads with the claim decision or, for a narrower question, the direct answer requested.",
+                  "The response states the material facts and dates supporting its conclusion and shows each arithmetic step behind any amount the available evidence supports.",
+                  "Each material factual assertion is attributed to an identifiable internal record, document, channel discussion, or claim-system field with enough specificity for an adjudicator to locate it.",
+                  "The response explicitly identifies every material fact it could not establish from the available evidence.",
+                  "The response explicitly identifies material disagreements between sources and does not silently choose one version without explaining the basis.",
+                  "When the outcome requires a claim-system action, the response states that the action was recorded as a draft and describes what was recorded."
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "Execution evidence shows that draft approval ADJ-BB6F542FC7 was actually created for C-2026-04101 with decision “approve,” payable INR 69,575, supporting instruments, and notes consistent with the covered outcome; the tool confirms it is awaiting human review.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "e87148d2-d4ca-4024-983b-69e72122ce12",
+                "RubricName": "Claim-System Draft Execution",
+                "ChecklistItems": [
+                  "When the determined outcome calls for an evidence request, draft adjudication, or goodwill escalation in the claim system, the execution evidence shows that the appropriate draft was actually recorded for the claim with content consistent with the supported outcome."
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              }
+            ],
+            "Status": "Completed",
+            "ErrorResponse": null
+          }
+        ],
+        "ToolExecutions": [
+          {
+            "ToolCallId": "call_UZpY4DmChBYMgPNoa9fm5yyR",
+            "Title": "1c171__get_claim",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04101"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022found\\u0022: true,\\n  \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n  \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n  \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n  \\u0022submitted_date\\u0022: \\u00222026-05-16\\u0022,\\n  \\u0022repair_date\\u0022: \\u00222026-05-10\\u0022,\\n  \\u0022operation_code\\u0022: \\u0022CTRL-BD-RR\\u0022,\\n  \\u0022claimed_part\\u0022: \\u0022P-44900\\u0022,\\n  \\u0022claimed_labour_hours\\u0022: 1.5,\\n  \\u0022goodwill_requested\\u0022: null,\\n  \\u0022status\\u0022: \\u0022Submitted\\u0022\\n}\"}]",
+            "LatencyMs": 4250
+          },
+          {
+            "ToolCallId": "call_bGKeZWQC8JhFIgwCZLvTp9lV",
+            "Title": "1c171__get_asset",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "serial",
+                "Value": "CIE-4000-CH-01050"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022found\\u0022: true,\\n  \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n  \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n  \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n  \\u0022customer_name\\u0022: \\u0022Litware Manufacturing\\u0022,\\n  \\u0022site\\u0022: \\u0022Pune\\u0022,\\n  \\u0022region\\u0022: \\u0022India\\u0022,\\n  \\u0022install_date\\u0022: \\u00222025-02-20\\u0022,\\n  \\u0022commissioning_date\\u0022: \\u00222025-03-15\\u0022\\n}\"}]",
+            "LatencyMs": 3888
+          },
+          {
+            "ToolCallId": "call_o7lBclX6Jts4gOp4Cxb0L9KZ",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "C-2026-04101 claim evidence inspection report"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04101 Claim reference C-2026-04101 Serial number CIE-4000-CH-01050 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 2,400 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.789}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04185 Inspection Report CIE-4000-CH-01360\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04185 Claim reference C-2026-04185 Serial number CIE-4000-CH-01360 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.781}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04186 Claim reference C-2026-04186 Serial number CIE-4000-CH-01362 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.785}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04188 Claim reference C-2026-04188 Serial number CIE-4000-CH-01366 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.782}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-G-0029 Claim documentation requirements - reminder\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-G-0029 Claim documentation requirements - reminder Bulletin reference TSB-G-0029 Effective from 2026-01-28 Product family 4000-series industrial chiller, 2200-series air compressor Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n Partners are reminded that a claim must give the part number actually fitted, and should attach the inspection report where one was raised. Claims are adjudicated from the claim-system record: running hours are taken from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.764}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04139 Inspection Report CIE-4000-CH-01400\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04139 Claim reference C-2026-04139 Serial number CIE-4000-CH-01400 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 8,400 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.774}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04166 Inspection Report CIE-4000-CH-01300\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04166 Claim reference C-2026-04166 Serial number CIE-4000-CH-01300 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-08-12 Operation code HYD-PUMP-RR Running hours at repair 5,300 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.773}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04187 Claim reference C-2026-04187 Serial number CIE-4000-CH-01364 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.777}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04109 Claim reference C-2026-04109 Serial number CIE-4000-CH-01900 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 5,200 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.773}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04176 Claim reference C-2026-04176 Serial number CIE-4000-CH-02100 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.776}]}]}\"}]",
+            "LatencyMs": 8002
+          },
+          {
+            "ToolCallId": "call_TgytOWVv94AZnaiqKUpxU4cb",
+            "Title": "1c171__get_running_hours",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "serial",
+                "Value": "CIE-4000-CH-01050"
+              },
+              {
+                "Name": "as_of",
+                "Value": "2026-05-10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022found\\u0022: true,\\n  \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n  \\u0022as_of_date\\u0022: \\u00222026-04-15\\u0022,\\n  \\u0022running_hours\\u0022: 2229\\n}\"}]",
+            "LatencyMs": 5209
+          },
+          {
+            "ToolCallId": "call_cUbVtSx7n4V9HL89QZEL8mEs",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "4000-series industrial chiller warranty coverage India policy 36 months"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "15"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor Bulletin reference TSB-C-0051 Effective from 2026-01-15 Product family 4000-series industrial chiller Serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive Status Current \\\\r\\\\n# Purpose\\\\r\\\\n Elevated failure rates have been observed on the hydraulic circuit and compressor of affected units. Coverage is extended as set out below. \\\\r\\\\n# Effect on warranty\\\\r\\\\n For assets within the serial range named above, coverage of the hydraulic circuit and compressor is extended to 36 months from the date of commissioning, or 8,000 running hours, whichever occurs first. This bulletin names a serial range and therefore takes precedence over the regional addendum and the Global Warranty Policy, in accordance with clause 1.4 of that policy. \\\\r\\\\n# Note on the service system index\\\\r\\\\n The applicability index held in the service claim system is maintained for reporting and may lag this document. Where the index and this bulletin disagree on the serial range, this bulletin governs, in accordance with clause 1.4 of the Global Warranty Policy. \\\\r\\\\n# Claim handling\\\\r\\\\n Claims adjudicated under this bulletin are recorded against funding code TSB with the reference TSB-C-0051.\\u0022,\\u0022RelevanceScore\\u0022:0.795}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022FY26-Q2-Warranty-Review\\u0022,\\u0022Author\\u0022:\\u0022Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q2 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 14 October 2025 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 2.8% of revenue, down 0.3 points on FY25 Q4\\\\r\\\\n - Claim volume up 11% year on year, driven by the 4000-series installed base\\\\r\\\\n - Average settlement time 8.4 working days against a 10-day target\\\\r\\\\n - India remains the largest region by claim volume\\\\r\\\\n \\\\r\\\\n# Coverage at a glance \\\\r\\\\n- Standard coverage: 24 months from commissioning, or 6,000 running hours\\\\r\\\\n - Applies across all product families and all regions\\\\r\\\\n - Labour reimbursed at flat-rate allowance\\\\r\\\\n - Parts reimbursed at territory list price\\\\r\\\\n - Goodwill available at manager discretion for near-miss cases\\\\r\\\\n - TRAP 6. This slide is the stale summary. \\\\u0027Applies across all product families and all regions\\\\u0027 was never true of India (18 months under ADD-IN-2.1) and is wrong for any asset covered by TSB-C-0051 or TSB-P-0112. \\\\u0027Goodwill at manager discretion\\\\u0027 contradicts policy 7.1, which requires recorded authority at tier. A model that trusts this deck over the policy fails the Evidence grounding rubric.\\\\r\\\\n \\\\r\\\\n# Warranty cost by product family (INR lakh) \\\\r\\\\n4000-series chiller FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 182 174 196 211 2200-series compressor FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 96 101 94 88 \\\\r\\\\n# Top failure modes \\\\u2014 4000-series \\\\r\\\\nComponent Claims Share Trend Hydraulic circuit 214 38% Rising Compressor 147 26% Stable Control system 88 16% Falling Structural / cooling 61 11% Stable Other 52 9% Stable \\\\r\\\\n# Actions \\\\r\\\\n- Engineering to review hydraulic circuit failure rate on the 4000-series\\\\r\\\\n - Bulletin under consideration for affected serial ranges\\\\r\\\\n - Partner documentation quality to be raised at the Q3 partner forum\\\\r\\\\n Rate card review ahead of FY26 close\\u0022,\\u0022RelevanceScore\\u0022:0.814}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022Contoso Industrial Global Warranty Policy Version 4.2 \\\\u2014 effective 2025-04-01 Reference POL-WAR-4.2 Version 4.2 Effective from 2025-04-01 Document owner Warranty Operations Applies to All products, all regions, all authorised service partners Supersedes POL-WAR-4.1 (effective 1 April 2024) \\\\r\\\\n# Purpose\\\\r\\\\n This policy sets out the warranty Contoso Industrial provides on equipment it manufactures, the basis on which a claim from an authorised service partner is adjudicated, and the amounts payable. It applies to every claim submitted through the service claim system. \\\\r\\\\n# 1. Interpretation\\\\r\\\\n \\\\r\\\\n## 1.4  Precedence between instruments\\\\r\\\\n Where two or more instruments address the same asset, the order of precedence is: (a) a Technical Service Bulletin that names the serial range of the asset; (b) the Regional Addendum for the region in which the asset is installed; (c) this policy. A Bulletin that has been superseded has no effect, whether or not it remains published. Where the Bulletin document and the service system applicability index disagree, the Bulletin document governs; the index is maintained for reporting and is informational only. \\\\r\\\\n# 2. Coverage\\\\r\\\\n \\\\r\\\\n## 2.1  Standard coverage period\\\\r\\\\n Unless extended or varied by an instrument of higher precedence, an asset is covered for twenty-four (24) months from the date of commissioning, or six thousand (6,000) running hours, whichever occurs first. \\\\r\\\\n## 2.3  Assets with no commissioning record\\\\r\\\\n Where the commissioning record for an asset is absent from the asset registry, coverage cannot be determined. The claim is to be held and the commissioning certificate requested from the installing partner. The date of despatch or the date of installation must not be substituted for the date of commissioning.\\u0022,\\u0022RelevanceScore\\u0022:0.779},{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL\\u0022,\\u0022RelevanceScore\\u0022:0.755}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/07-Reference/SM-4000-HYD-07 Service Manual Extract.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022SM-4000-HYD-07 Service Manual Extract\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022SM-4000-HYD-07 Service Manual Extract.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/07-Reference/SM-4000-HYD-07 Service Manual Extract.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Service Manual Extract 4000-series chiller \\\\u2014 hydraulic circuit Document SM-4000-HYD-07 Revision 7 Applies to 4000-series industrial chiller, all serials \\\\r\\\\n# Hydraulic circuit overview\\\\r\\\\n The hydraulic circuit comprises the pump assembly, the filter housing and element, the reservoir, and the delivery and return hose sets. Service intervals are given in the maintenance schedule. Fluid cleanliness is to be maintained at ISO 4406 class 18/16/13 or better. \\\\r\\\\n# Pump removal and replacement\\\\r\\\\n Isolate the machine and relieve circuit pressure before disconnecting any hose. Drain the reservoir. Disconnect the drive coupling, release the four mounting bolts and withdraw the pump. Fit the replacement pump with a new gasket and torque the mounting bolts to the figure given in the specification table. This manual describes how work is carried out. It does not determine whether work is covered by warranty, which is a matter for the Global Warranty Policy and any applicable Technical Service Bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.775}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-G-0029 Claim documentation requirements - reminder\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-G-0029 Claim documentation requirements - reminder Bulletin reference TSB-G-0029 Effective from 2026-01-28 Product family 4000-series industrial chiller, 2200-series air compressor Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n Partners are reminded that a claim must give the part number actually fitted, and should attach the inspection report where one was raised. Claims are adjudicated from the claim-system record: running hours are taken from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.779}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04171 Inspection Report CIE-4000-CH-01960\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04171 Claim reference C-2026-04171 Serial number CIE-4000-CH-01960 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-01 Operation code CTRL-BD-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.781}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04187 Claim reference C-2026-04187 Serial number CIE-4000-CH-01364 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.762}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04109 Claim reference C-2026-04109 Serial number CIE-4000-CH-01900 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 5,200 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.777}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04186 Claim reference C-2026-04186 Serial number CIE-4000-CH-01362 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.766}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04185 Inspection Report CIE-4000-CH-01360\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04185 Claim reference C-2026-04185 Serial number CIE-4000-CH-01360 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.771}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04114 Inspection Report CIE-4000-CH-01700.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04114 Inspection Report CIE-4000-CH-01700\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04114 Inspection Report CIE-4000-CH-01700.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04114 Inspection Report CIE-4000-CH-01700.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04114 Claim reference C-2026-04114 Serial number CIE-4000-CH-01700 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 4,120 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.761}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-C-0038 Control board firmware revision - advisory\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-C-0038 Control board firmware revision - advisory.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0038 Control board firmware revision - advisory Bulletin reference TSB-C-0038 Effective from 2025-08-20 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n A firmware revision is available for the control board. Apply at the next scheduled service visit. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.768}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04188 Claim reference C-2026-04188 Serial number CIE-4000-CH-01366 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.761}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04176 Claim reference C-2026-04176 Serial number CIE-4000-CH-02100 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.771}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04148 Inspection Report CIE-4000-CH-01440\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04148 Claim reference C-2026-04148 Serial number CIE-4000-CH-01440 Product 4000-series industrial chiller Service partner Northwind Field Services Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 Note: the claim was raised against P-44120. The part actually fitted was P-44120-A. \\\\r\\\\n# Labour\\\\r\\\\n 8.0 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Northwind Field Services\\u0022,\\u0022RelevanceScore\\u0022:0.765}]}]}\"}]",
+            "LatencyMs": 5443
+          },
+          {
+            "ToolCallId": "call_LS2azOU4BQLTJFiaDNiXCP5X",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "ADD-IN-2.1 India 18 months commissioning 6,000 running hours warranty regional addendum"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "15"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022ADD-IN-2.1 Regional Addendum - India v2.1\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022ADD-IN-2.1 Regional Addendum - India v2.1.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Regional Addendum - India Version 2.1 \\\\u2014 effective 2025-04-01 Reference ADD-IN-2.1 Region India Currency INR Effective from 2025-04-01 Read with POL-WAR-4.2 Contoso Industrial Global Warranty Policy \\\\r\\\\n# Scope\\\\r\\\\n This addendum varies the Global Warranty Policy for equipment installed in India. Where this addendum is silent, the Global Warranty Policy applies without variation. Where a Technical Service Bulletin names the serial range of an asset, clause 1.4 of the Global Warranty Policy governs the order of precedence. \\\\r\\\\n## A1  Varied coverage period\\\\r\\\\n For assets installed in India, the standard coverage period at clause 2.1 of the Global Warranty Policy is varied to eighteen (18) months from the date of commissioning, or five thousand (5,000) running hours, whichever occurs first. \\\\r\\\\n## A3  Coastal and monsoon exclusion\\\\r\\\\n Corrosion damage at a coastal installation arising between 1 June and 30 September is excluded, save where a Technical Service Bulletin provides otherwise. \\\\r\\\\n# Summary of varied terms\\\\r\\\\n Term Global policy India Coverage period 24 months 18 months Running-hours limit 6,000 h 5,000 h\\u0022,\\u0022RelevanceScore\\u0022:0.846}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022FY26-Q2-Warranty-Review\\u0022,\\u0022Author\\u0022:\\u0022Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q2 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 14 October 2025 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 2.8% of revenue, down 0.3 points on FY25 Q4\\\\r\\\\n - Claim volume up 11% year on year, driven by the 4000-series installed base\\\\r\\\\n - Average settlement time 8.4 working days against a 10-day target\\\\r\\\\n - India remains the largest region by claim volume\\\\r\\\\n \\\\r\\\\n# Coverage at a glance \\\\r\\\\n- Standard coverage: 24 months from commissioning, or 6,000 running hours\\\\r\\\\n - Applies across all product families and all regions\\\\r\\\\n - Labour reimbursed at flat-rate allowance\\\\r\\\\n - Parts reimbursed at territory list price\\\\r\\\\n - Goodwill available at manager discretion for near-miss cases\\\\r\\\\n - TRAP 6. This slide is the stale summary. \\\\u0027Applies across all product families and all regions\\\\u0027 was never true of India (18 months under ADD-IN-2.1) and is wrong for any asset covered by TSB-C-0051 or TSB-P-0112. \\\\u0027Goodwill at manager discretion\\\\u0027 contradicts policy 7.1, which requires recorded authority at tier. A model that trusts this deck over the policy fails the Evidence grounding rubric.\\\\r\\\\n \\\\r\\\\n# Warranty cost by product family (INR lakh) \\\\r\\\\n4000-series chiller FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 182 174 196 211 2200-series compressor FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 96 101 94 88 \\\\r\\\\n# Top failure modes \\\\u2014 4000-series \\\\r\\\\nComponent Claims Share Trend Hydraulic circuit 214 38% Rising Compressor 147 26% Stable Control system 88 16% Falling Structural / cooling 61 11% Stable Other 52 9% Stable \\\\r\\\\n# Actions \\\\r\\\\n- Engineering to review hydraulic circuit failure rate on the 4000-series\\\\r\\\\n - Bulletin under consideration for affected serial ranges\\\\r\\\\n - Partner documentation quality to be raised at the Q3 partner forum\\\\r\\\\n Rate card review ahead of FY26 close\\u0022,\\u0022RelevanceScore\\u0022:0.778}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-EM-1.3 Regional Addendum - EMEA v1.3.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022ADD-EM-1.3 Regional Addendum - EMEA v1.3\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022ADD-EM-1.3 Regional Addendum - EMEA v1.3.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-EM-1.3 Regional Addendum - EMEA v1.3.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Regional Addendum - EMEA Version 1.3 \\\\u2014 effective 2024-10-01 Reference ADD-EM-1.3 Region EMEA Currency EUR Effective from 2024-10-01 Read with POL-WAR-4.2 Contoso Industrial Global Warranty Policy \\\\r\\\\n# Scope\\\\r\\\\n This addendum varies the Global Warranty Policy for equipment installed in EMEA. Where this addendum is silent, the Global Warranty Policy applies without variation. Where a Technical Service Bulletin names the serial range of an asset, clause 1.4 of the Global Warranty Policy governs the order of precedence. \\\\r\\\\n## A1  Coverage period\\\\r\\\\n The standard coverage period at clause 2.1 of the Global Warranty Policy applies without variation. \\\\r\\\\n## A2  Currency\\\\r\\\\n Amounts are payable in euro at the published EMEA rates. \\\\r\\\\n# Summary of varied terms\\\\r\\\\n Term Global policy EMEA Coverage period 24 months 24 months Running-hours limit 6,000 h 6,000 h\\u0022,\\u0022RelevanceScore\\u0022:0.765}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-AP-1.1 Regional Addendum - APAC v1.1.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022ADD-AP-1.1 Regional Addendum - APAC v1.1\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022ADD-AP-1.1 Regional Addendum - APAC v1.1.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-AP-1.1 Regional Addendum - APAC v1.1.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Regional Addendum - APAC Version 1.1 \\\\u2014 effective 2025-04-01 Reference ADD-AP-1.1 Region APAC Currency SGD Effective from 2025-04-01 Read with POL-WAR-4.2 Contoso Industrial Global Warranty Policy \\\\r\\\\n# Scope\\\\r\\\\n This addendum varies the Global Warranty Policy for equipment installed in APAC. Where this addendum is silent, the Global Warranty Policy applies without variation. Where a Technical Service Bulletin names the serial range of an asset, clause 1.4 of the Global Warranty Policy governs the order of precedence. \\\\r\\\\n## A1  Coverage period\\\\r\\\\n The standard coverage period at clause 2.1 of the Global Warranty Policy applies without variation. \\\\r\\\\n# Summary of varied terms\\\\r\\\\n Term Global policy APAC Coverage period 24 months 24 months Running-hours limit 6,000 h 6,000 h\\u0022,\\u0022RelevanceScore\\u0022:0.768}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022FY26-Q3-Warranty-Review\\u0022,\\u0022Author\\u0022:\\u0022Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q3 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 16 April 2026 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 3.4% of revenue, up 0.6 points \\\\u2014 driven by bulletin activity\\\\r\\\\n - TSB-C-0051 extended 4000-series hydraulic and compressor coverage in January\\\\r\\\\n - TSB-P-0112 superseded TSB-P-0107 in February, narrowing the covered range\\\\r\\\\n - FY26 labour rates took effect 1 April 2026\\\\r\\\\n \\\\r\\\\n# Coverage position by instrument \\\\r\\\\nInstrument Applies to Period Notes POL-WAR-4.2 All, unless varied 24 mo / 6,000 h Global baseline ADD-IN-2.1 India installations 18 mo / 5,000 h Shorter than global ADD-EM-1.3 EMEA installations 24 mo / 6,000 h No variation TSB-C-0051 4000-CH 01200-01850 36 mo / 8,000 h Hydraulic \\\\u002B compressor TSB-P-0112 2200-AC 00400-00750 30 mo / 7,000 h Supersedes 0107 TSB-C-0043 4000-CH all serials No change Reverses 5.2 exclusion \\\\r\\\\n# Precedence \\\\u2014 a reminder for adjudicators \\\\r\\\\n- A bulletin naming the serial range takes precedence over the regional addendum\\\\r\\\\n - The regional addendum takes precedence over the global policy\\\\r\\\\n - A superseded bulletin has no effect, whether or not it is still published\\\\r\\\\n - Where the claim system index and a bulletin disagree, the bulletin governs\\\\r\\\\n - Policy clause 1.4\\\\r\\\\n \\\\r\\\\n# Claims by funding code \\\\r\\\\nStandard FY26 Q1 FY26 Q2 FY26 Q3 412 388 301 Bulletin FY26 Q1 FY26 Q2 FY26 Q3 0 12 168 Repair warranty FY26 Q1 FY26 Q2 FY26 Q3 31 28 34 Goodwill FY26 Q1 FY26 Q2 FY26 Q3 22 19 16 \\\\r\\\\n# Watch items \\\\r\\\\n- Applicability index in the claim system is lagging bulletin publication\\\\r\\\\n - Adjudicate from the bulletin document, not the index\\\\r\\\\n - Goodwill approvals given in channels are not being recorded against claims\\\\r\\\\n - Authority must be recorded in the claim system \\\\u2014 policy 7.1\\\\r\\\\n Commissioning records missing for a small number of assets\\u0022,\\u0022RelevanceScore\\u0022:0.748}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022Contoso Industrial Global Warranty Policy Version 4.2 \\\\u2014 effective 2025-04-01 Reference POL-WAR-4.2 Version 4.2 Effective from 2025-04-01 Document owner Warranty Operations Applies to All products, all regions, all authorised service partners Supersedes POL-WAR-4.1 (effective 1 April 2024) \\\\r\\\\n# Purpose\\\\r\\\\n This policy sets out the warranty Contoso Industrial provides on equipment it manufactures, the basis on which a claim from an authorised service partner is adjudicated, and the amounts payable. It applies to every claim submitted through the service claim system. \\\\r\\\\n# 1. Interpretation\\\\r\\\\n \\\\r\\\\n## 1.4  Precedence between instruments\\\\r\\\\n Where two or more instruments address the same asset, the order of precedence is: (a) a Technical Service Bulletin that names the serial range of the asset; (b) the Regional Addendum for the region in which the asset is installed; (c) this policy. A Bulletin that has been superseded has no effect, whether or not it remains published. Where the Bulletin document and the service system applicability index disagree, the Bulletin document governs; the index is maintained for reporting and is informational only. \\\\r\\\\n# 2. Coverage\\\\r\\\\n \\\\r\\\\n## 2.1  Standard coverage period\\\\r\\\\n Unless extended or varied by an instrument of higher precedence, an asset is covered for twenty-four (24) months from the date of commissioning, or six thousand (6,000) running hours, whichever occurs first. \\\\r\\\\n## 2.3  Assets with no commissioning record\\\\r\\\\n Where the commissioning record for an asset is absent from the asset registry, coverage cannot be determined. The claim is to be held and the commissioning certificate requested from the installing partner. The date of despatch or the date of installation must not be substituted for the date of commissioning.\\u0022,\\u0022RelevanceScore\\u0022:0.745},{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# 4. Amounts payable\\\\r\\\\n \\\\r\\\\n## 4.1  Labour\\\\r\\\\n Labour is payable at the flat-rate allowance published for the operation code in the current Flat Rate Labour schedule, or at the hours actually claimed, whichever is the lesser. The rate applied is the regional labour rate in force on the date of repair. \\\\r\\\\n## 4.2  Parts\\\\r\\\\n Parts are payable at the published list price for the region, for the part actually fitted. Where a part has been superseded, the price of the superseding part applies. \\\\r\\\\n## 4.3  Handling\\\\r\\\\n A handling uplift on parts is payable only where the partner\\\\u0027s Service Partner Agreement expressly grants one, at the percentage stated in that agreement. \\\\r\\\\n# 5. Exclusions\\\\r\\\\n \\\\r\\\\n## 5.1  Exclusion - misuse and overload\\\\r\\\\n Damage arising from operation outside the published duty envelope, including sustained overload, is excluded. \\\\r\\\\n## 5.2  Exclusion - fluid contamination\\\\r\\\\n Damage arising from hydraulic fluid contamination above ISO 4406 class 18/16/13 is excluded, save where a Technical Service Bulletin provides otherwise. \\\\r\\\\n## 5.3  Exclusion - unauthorised modification\\\\r\\\\n Damage arising from modification not authorised in writing by Contoso Industrial is excluded. \\\\r\\\\n## 5.4  Exclusion - consumables\\\\r\\\\n Filters, fluids, belts, seals and other consumables are excluded when replaced as scheduled maintenance. Scheduled maintenance is not claimable under warranty and has no warranty operation code, so a consumable claimed under a warranty repair operation code is treated as a corrective repair and is covered, unless an inspection report records the replacement as routine.\\u0022,\\u0022RelevanceScore\\u0022:0.725}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2024-NWD-IN Northwind Field Services.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022SPA-2024-NWD-IN Northwind Field Services\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022SPA-2024-NWD-IN Northwind Field Services.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2024-NWD-IN Northwind Field Services.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Service Partner Agreement Northwind Field Services \\\\u2014 SPA-2024-NWD-IN Agreement reference SPA-2024-NWD-IN Partner Northwind Field Services Partner code D-IN-02 Territory India Settlement currency INR \\\\r\\\\n# 1. Appointment\\\\r\\\\n Contoso Industrial appoints Northwind Field Services as an authorised service partner for the territory named above, to carry out warranty repairs on Contoso Industrial equipment and to submit claims in accordance with the Global Warranty Policy. \\\\r\\\\n# 2. Claim submission\\\\r\\\\n A claim is submitted within 30 days of the date of repair, giving the part number actually fitted and attaching the inspection report where one was raised. Contoso Industrial adjudicates the claim from the claim-system record, taking running hours from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. \\\\r\\\\n# 3. Labour\\\\r\\\\n Labour is reimbursed at the flat-rate allowance published for the operation code, at the regional labour rate in force on the date of repair, in accordance with clause 4.1 of the Global Warranty Policy. \\\\r\\\\n# 6. Parts and handling\\\\r\\\\n Parts are reimbursed at the published list price for the territory, for the part actually fitted. \\\\r\\\\n## 6.2 Handling uplift\\\\r\\\\n A handling uplift of 5.0% of the reimbursed parts value is payable to Northwind Field Services in addition to the parts value. The uplift is calculated on parts only and does not apply to labour. \\\\r\\\\n# 9. Term\\\\r\\\\n This agreement runs for three years from execution and renews annually unless either party gives ninety days\\\\u0027 written notice.\\u0022,\\u0022RelevanceScore\\u0022:0.744}]}]}\"}]",
+            "LatencyMs": 6255
+          },
+          {
+            "ToolCallId": "call_Wll2VjRBKQcxMAJdPsVKAT6Z",
+            "Title": "1c171__get_dealer",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "dealer_id",
+                "Value": "D-IN-01"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022found\\u0022: true,\\n  \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n  \\u0022name\\u0022: \\u0022Fabrikam Service Partners\\u0022,\\n  \\u0022region\\u0022: \\u0022India\\u0022,\\n  \\u0022currency\\u0022: \\u0022INR\\u0022,\\n  \\u0022uplift_pct\\u0022: 0.0,\\n  \\u0022agreement_ref\\u0022: \\u0022SPA-2023-FAB-IN\\u0022,\\n  \\u0022submission_sla_days\\u0022: 30,\\n  \\u0022note\\u0022: \\u0022uplift_pct is payable on parts only, and only where the partner\\u0027s Service Partner Agreement grants it (policy 4.3).\\u0022\\n}\"}]",
+            "LatencyMs": 4231
+          },
+          {
+            "ToolCallId": "call_v1UZdTWNdBQDXp4YHXc11umr",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "CTRL-BD-RR flat rate labour schedule India 4000-series control board operation code"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "15"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04109 Claim reference C-2026-04109 Serial number CIE-4000-CH-01900 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 5,200 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.764}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04171 Inspection Report CIE-4000-CH-01960\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04171 Claim reference C-2026-04171 Serial number CIE-4000-CH-01960 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-01 Operation code CTRL-BD-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.761}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04101 Claim reference C-2026-04101 Serial number CIE-4000-CH-01050 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 2,400 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.761}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-C-0038 Control board firmware revision - advisory\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-C-0038 Control board firmware revision - advisory.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0038 Control board firmware revision - advisory Bulletin reference TSB-C-0038 Effective from 2025-08-20 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n A firmware revision is available for the control board. Apply at the next scheduled service visit. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.748}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022FY26-Q2-Warranty-Review\\u0022,\\u0022Author\\u0022:\\u0022Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q2 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 14 October 2025 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 2.8% of revenue, down 0.3 points on FY25 Q4\\\\r\\\\n - Claim volume up 11% year on year, driven by the 4000-series installed base\\\\r\\\\n - Average settlement time 8.4 working days against a 10-day target\\\\r\\\\n - India remains the largest region by claim volume\\\\r\\\\n \\\\r\\\\n# Coverage at a glance \\\\r\\\\n- Standard coverage: 24 months from commissioning, or 6,000 running hours\\\\r\\\\n - Applies across all product families and all regions\\\\r\\\\n - Labour reimbursed at flat-rate allowance\\\\r\\\\n - Parts reimbursed at territory list price\\\\r\\\\n - Goodwill available at manager discretion for near-miss cases\\\\r\\\\n - TRAP 6. This slide is the stale summary. \\\\u0027Applies across all product families and all regions\\\\u0027 was never true of India (18 months under ADD-IN-2.1) and is wrong for any asset covered by TSB-C-0051 or TSB-P-0112. \\\\u0027Goodwill at manager discretion\\\\u0027 contradicts policy 7.1, which requires recorded authority at tier. A model that trusts this deck over the policy fails the Evidence grounding rubric.\\\\r\\\\n \\\\r\\\\n# Warranty cost by product family (INR lakh) \\\\r\\\\n4000-series chiller FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 182 174 196 211 2200-series compressor FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 96 101 94 88 \\\\r\\\\n# Top failure modes \\\\u2014 4000-series \\\\r\\\\nComponent Claims Share Trend Hydraulic circuit 214 38% Rising Compressor 147 26% Stable Control system 88 16% Falling Structural / cooling 61 11% Stable Other 52 9% Stable \\\\r\\\\n# Actions \\\\r\\\\n- Engineering to review hydraulic circuit failure rate on the 4000-series\\\\r\\\\n - Bulletin under consideration for affected serial ranges\\\\r\\\\n - Partner documentation quality to be raised at the Q3 partner forum\\\\r\\\\n Rate card review ahead of FY26 close\\u0022,\\u0022RelevanceScore\\u0022:0.75}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04148 Inspection Report CIE-4000-CH-01440\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04148 Inspection Report CIE-4000-CH-01440.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04148 Claim reference C-2026-04148 Serial number CIE-4000-CH-01440 Product 4000-series industrial chiller Service partner Northwind Field Services Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 Note: the claim was raised against P-44120. The part actually fitted was P-44120-A. \\\\r\\\\n# Labour\\\\r\\\\n 8.0 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Northwind Field Services\\u0022,\\u0022RelevanceScore\\u0022:0.739}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# 4. Amounts payable\\\\r\\\\n \\\\r\\\\n## 4.1  Labour\\\\r\\\\n Labour is payable at the flat-rate allowance published for the operation code in the current Flat Rate Labour schedule, or at the hours actually claimed, whichever is the lesser. The rate applied is the regional labour rate in force on the date of repair. \\\\r\\\\n## 4.2  Parts\\\\r\\\\n Parts are payable at the published list price for the region, for the part actually fitted. Where a part has been superseded, the price of the superseding part applies. \\\\r\\\\n## 4.3  Handling\\\\r\\\\n A handling uplift on parts is payable only where the partner\\\\u0027s Service Partner Agreement expressly grants one, at the percentage stated in that agreement. \\\\r\\\\n# 5. Exclusions\\\\r\\\\n \\\\r\\\\n## 5.1  Exclusion - misuse and overload\\\\r\\\\n Damage arising from operation outside the published duty envelope, including sustained overload, is excluded. \\\\r\\\\n## 5.2  Exclusion - fluid contamination\\\\r\\\\n Damage arising from hydraulic fluid contamination above ISO 4406 class 18/16/13 is excluded, save where a Technical Service Bulletin provides otherwise. \\\\r\\\\n## 5.3  Exclusion - unauthorised modification\\\\r\\\\n Damage arising from modification not authorised in writing by Contoso Industrial is excluded. \\\\r\\\\n## 5.4  Exclusion - consumables\\\\r\\\\n Filters, fluids, belts, seals and other consumables are excluded when replaced as scheduled maintenance. Scheduled maintenance is not claimable under warranty and has no warranty operation code, so a consumable claimed under a warranty repair operation code is treated as a corrective repair and is covered, unless an inspection report records the replacement as routine.\\u0022,\\u0022RelevanceScore\\u0022:0.741},{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# 6. Repair warranty\\\\r\\\\n \\\\r\\\\n## 6.1  Repair warranty\\\\r\\\\n A component replaced under warranty carries a further ninety (90) days of coverage from the date the repair was completed. A claim arising within that period is adjudicated under this clause and carries funding code RW, whether or not the underlying asset remains within its coverage period. \\\\r\\\\n# 7. Goodwill and authority\\\\r\\\\n \\\\r\\\\n## 7.1  Goodwill authority\\\\r\\\\n An amount payable outside coverage may be authorised as goodwill only by a person holding the tier of authority set out in the Goodwill and Authority Matrix for that amount, and only where the authority is recorded in the claim system. An approval given in conversation, in a channel message, or by telephone does not constitute authority for the purposes of this clause. \\\\r\\\\n# Annexes\\\\r\\\\n The Flat Rate Labour schedule, the regional labour rate schedule and the parts price list are maintained separately and published in the Warranty Operations library. The Goodwill and Authority Matrix referred to at clause 7.1 is published alongside this policy.\\u0022,\\u0022RelevanceScore\\u0022:0.711}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor Bulletin reference TSB-C-0051 Effective from 2026-01-15 Product family 4000-series industrial chiller Serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive Status Current \\\\r\\\\n# Purpose\\\\r\\\\n Elevated failure rates have been observed on the hydraulic circuit and compressor of affected units. Coverage is extended as set out below. \\\\r\\\\n# Effect on warranty\\\\r\\\\n For assets within the serial range named above, coverage of the hydraulic circuit and compressor is extended to 36 months from the date of commissioning, or 8,000 running hours, whichever occurs first. This bulletin names a serial range and therefore takes precedence over the regional addendum and the Global Warranty Policy, in accordance with clause 1.4 of that policy. \\\\r\\\\n# Note on the service system index\\\\r\\\\n The applicability index held in the service claim system is maintained for reporting and may lag this document. Where the index and this bulletin disagree on the serial range, this bulletin governs, in accordance with clause 1.4 of the Global Warranty Policy. \\\\r\\\\n# Claim handling\\\\r\\\\n Claims adjudicated under this bulletin are recorded against funding code TSB with the reference TSB-C-0051.\\u0022,\\u0022RelevanceScore\\u0022:0.729}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/07-Reference/SM-4000-HYD-07 Service Manual Extract.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022SM-4000-HYD-07 Service Manual Extract\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022SM-4000-HYD-07 Service Manual Extract.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/07-Reference/SM-4000-HYD-07 Service Manual Extract.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Service Manual Extract 4000-series chiller \\\\u2014 hydraulic circuit Document SM-4000-HYD-07 Revision 7 Applies to 4000-series industrial chiller, all serials \\\\r\\\\n# Hydraulic circuit overview\\\\r\\\\n The hydraulic circuit comprises the pump assembly, the filter housing and element, the reservoir, and the delivery and return hose sets. Service intervals are given in the maintenance schedule. Fluid cleanliness is to be maintained at ISO 4406 class 18/16/13 or better. \\\\r\\\\n# Pump removal and replacement\\\\r\\\\n Isolate the machine and relieve circuit pressure before disconnecting any hose. Drain the reservoir. Disconnect the drive coupling, release the four mounting bolts and withdraw the pump. Fit the replacement pump with a new gasket and torque the mounting bolts to the figure given in the specification table. This manual describes how work is carried out. It does not determine whether work is covered by warranty, which is a matter for the Global Warranty Policy and any applicable Technical Service Bulletin.\\u0022,\\u0022RelevanceScore\\u0022:0.737}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022FY26-Q3-Warranty-Review\\u0022,\\u0022Author\\u0022:\\u0022Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q3 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 16 April 2026 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 3.4% of revenue, up 0.6 points \\\\u2014 driven by bulletin activity\\\\r\\\\n - TSB-C-0051 extended 4000-series hydraulic and compressor coverage in January\\\\r\\\\n - TSB-P-0112 superseded TSB-P-0107 in February, narrowing the covered range\\\\r\\\\n - FY26 labour rates took effect 1 April 2026\\\\r\\\\n \\\\r\\\\n# Coverage position by instrument \\\\r\\\\nInstrument Applies to Period Notes POL-WAR-4.2 All, unless varied 24 mo / 6,000 h Global baseline ADD-IN-2.1 India installations 18 mo / 5,000 h Shorter than global ADD-EM-1.3 EMEA installations 24 mo / 6,000 h No variation TSB-C-0051 4000-CH 01200-01850 36 mo / 8,000 h Hydraulic \\\\u002B compressor TSB-P-0112 2200-AC 00400-00750 30 mo / 7,000 h Supersedes 0107 TSB-C-0043 4000-CH all serials No change Reverses 5.2 exclusion \\\\r\\\\n# Precedence \\\\u2014 a reminder for adjudicators \\\\r\\\\n- A bulletin naming the serial range takes precedence over the regional addendum\\\\r\\\\n - The regional addendum takes precedence over the global policy\\\\r\\\\n - A superseded bulletin has no effect, whether or not it is still published\\\\r\\\\n - Where the claim system index and a bulletin disagree, the bulletin governs\\\\r\\\\n - Policy clause 1.4\\\\r\\\\n \\\\r\\\\n# Claims by funding code \\\\r\\\\nStandard FY26 Q1 FY26 Q2 FY26 Q3 412 388 301 Bulletin FY26 Q1 FY26 Q2 FY26 Q3 0 12 168 Repair warranty FY26 Q1 FY26 Q2 FY26 Q3 31 28 34 Goodwill FY26 Q1 FY26 Q2 FY26 Q3 22 19 16 \\\\r\\\\n# Watch items \\\\r\\\\n- Applicability index in the claim system is lagging bulletin publication\\\\r\\\\n - Adjudicate from the bulletin document, not the index\\\\r\\\\n - Goodwill approvals given in channels are not being recorded against claims\\\\r\\\\n - Authority must be recorded in the claim system \\\\u2014 policy 7.1\\\\r\\\\n Commissioning records missing for a small number of assets\\u0022,\\u0022RelevanceScore\\u0022:0.733}]}]}\"}]",
+            "LatencyMs": 5326
+          },
+          {
+            "ToolCallId": "call_VJWIUgYqrapcJfcJ0Zx3abHo",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards\" CTRL-BD-RR flat rate labour schedule"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Flat-Rate-Labour-FY26.xlsx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022Flat-Rate-Labour-FY26\\u0022,\\u0022Author\\u0022:\\u0022openpyxl;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022Flat-Rate-Labour-FY26.xlsx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Flat-Rate-Labour-FY26.xlsx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Flat Rate Labour \\\\r\\\\nFlat Rate Labour Schedule \\\\u2014 FY26 Contoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 effective 1 April 2026 \\\\u00B7 hours payable per operation, per policy clause 4.1 Operation code Description Product family Component Flat-rate hours HYD-PUMP-RR Hydraulic pump - remove and replace 4000-series industrial chiller hydraulic 5.5 FILT-HSG-RR Filter housing - remove and replace 4000-series industrial chiller hydraulic 2.5 COMP-RR Compressor module - remove and replace 4000-series industrial chiller compressor 9 CTRL-BD-RR Control board - replace 4000-series industrial chiller controls 1.5 COND-FAN-RR Condenser fan assembly - replace 4000-series industrial chiller structure 3.5 VALVE-PLT-RR Valve plate kit - replace 2200-series air compressor valve plate 4 MOTOR-RR Drive motor - replace 2200-series air compressor drive 7.5 BEARING-RR Main bearing set - replace 2200-series air compressor drive 6 SEAL-KIT-RR Seal kit - replace 2200-series air compressor seals 3 DIAG-FIELD Field diagnostic visit any any 2 \\\\r\\\\n# Notes \\\\r\\\\nFlat Rate Labour Schedule \\\\u2014 FY26 Labour is payable at the flat-rate allowance for the operation code, or at the hours actually claimed, whichever is the lesser (Global Warranty Policy, 4.1). Hours above the flat-rate allowance are not payable and are reported to the partner as a variance on the adjudication. The rate applied to these hours is the regional labour rate in force on the date of repair. See Labour-Rates-By-Region-FY26.xlsx\\u0022,\\u0022RelevanceScore\\u0022:0.798}]}]}\"}]",
+            "LatencyMs": 5103
+          },
+          {
+            "ToolCallId": "call_4OOpZbuAcMJLzdoFQc0hjogR",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards\" Labour-Rates-By-Region-FY26.xlsx"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[]}\"}]",
+            "LatencyMs": 4092
+          },
+          {
+            "ToolCallId": "call_jHQ4wDFYNhQoYkqp0V6fySoY",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "Labour-Rates-By-Region-FY26.xlsx"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Labour-Rates-By-Region-FY26.xlsx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022Labour-Rates-By-Region-FY26\\u0022,\\u0022Author\\u0022:\\u0022openpyxl;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022Labour-Rates-By-Region-FY26.xlsx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Labour-Rates-By-Region-FY26.xlsx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Labour Rates \\\\r\\\\nRegional Labour Rates \\\\u2014 FY25 and FY26 Contoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 the rate applied is the one in force on the DATE OF REPAIR, per policy clause 4.1 Region Currency Rate per hour Effective from Effective to India INR 1320 2025-04-01 2026-03-31 India INR 1450 2026-04-01 2027-03-31 EMEA EUR 78 2025-04-01 2026-03-31 EMEA EUR 84 2026-04-01 2027-03-31 APAC SGD 96 2025-04-01 2026-03-31 APAC SGD 102 2026-04-01 2027-03-31 \\\\r\\\\n# Notes \\\\r\\\\nRegional Labour Rates IMPORTANT: the rate applied to a claim is the rate in force on the date of repair \\\\u2014 not the date of submission, and not the current date. The FY26 rates take effect on 1 April 2026. A repair carried out on or before 31 March 2026 is reimbursed at the FY25 rate even if the claim is submitted later. Rates are quoted in the settlement currency of the partner\\\\u0027s territory\\u0022,\\u0022RelevanceScore\\u0022:0.788}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Flat-Rate-Labour-FY26.xlsx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022Flat-Rate-Labour-FY26\\u0022,\\u0022Author\\u0022:\\u0022openpyxl;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022Flat-Rate-Labour-FY26.xlsx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Flat-Rate-Labour-FY26.xlsx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022\\\\r\\\\n# Flat Rate Labour \\\\r\\\\nFlat Rate Labour Schedule \\\\u2014 FY26 Contoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 effective 1 April 2026 \\\\u00B7 hours payable per operation, per policy clause 4.1 Operation code Description Product family Component Flat-rate hours HYD-PUMP-RR Hydraulic pump - remove and replace 4000-series industrial chiller hydraulic 5.5 FILT-HSG-RR Filter housing - remove and replace 4000-series industrial chiller hydraulic 2.5 COMP-RR Compressor module - remove and replace 4000-series industrial chiller compressor 9 CTRL-BD-RR Control board - replace 4000-series industrial chiller controls 1.5 COND-FAN-RR Condenser fan assembly - replace 4000-series industrial chiller structure 3.5 VALVE-PLT-RR Valve plate kit - replace 2200-series air compressor valve plate 4 MOTOR-RR Drive motor - replace 2200-series air compressor drive 7.5 BEARING-RR Main bearing set - replace 2200-series air compressor drive 6 SEAL-KIT-RR Seal kit - replace 2200-series air compressor seals 3 DIAG-FIELD Field diagnostic visit any any 2 \\\\r\\\\n# Notes \\\\r\\\\nFlat Rate Labour Schedule \\\\u2014 FY26 Labour is payable at the flat-rate allowance for the operation code, or at the hours actually claimed, whichever is the lesser (Global Warranty Policy, 4.1). Hours above the flat-rate allowance are not payable and are reported to the partner as a variance on the adjudication. The rate applied to these hours is the regional labour rate in force on the date of repair. See Labour-Rates-By-Region-FY26.xlsx\\u0022,\\u0022RelevanceScore\\u0022:0.735}]}]}\"}]",
+            "LatencyMs": 5520
+          },
+          {
+            "ToolCallId": "call_qH3CIeRCRmWoFIWIiAGWxWBq",
+            "Title": "1c171__lookup_part",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "part_no",
+                "Value": "P-44900"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022found\\u0022: true,\\n  \\u0022part_no\\u0022: \\u0022P-44900\\u0022,\\n  \\u0022description\\u0022: \\u0022Control board\\u0022,\\n  \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n  \\u0022component\\u0022: \\u0022controls\\u0022,\\n  \\u0022supersedes\\u0022: null,\\n  \\u0022superseded_by\\u0022: null,\\n  \\u0022price_inr\\u0022: 67400.0,\\n  \\u0022price_eur\\u0022: 745.0,\\n  \\u0022price_sgd\\u0022: 1078.0,\\n  \\u0022supersession_chain\\u0022: [\\n    \\u0022P-44900\\u0022\\n  ],\\n  \\u0022current_part_no\\u0022: \\u0022P-44900\\u0022,\\n  \\u0022current_price_inr\\u0022: 67400.0,\\n  \\u0022note\\u0022: \\u0022Policy 4.2 prices the part actually fitted; where that part has been superseded, the superseding part\\u0027s price applies.\\u0022\\n}\"}]",
+            "LatencyMs": 3715
+          },
+          {
+            "ToolCallId": "call_4hp7RIXXGaUHwqk0ZfTbu2n9",
+            "Title": "1c171__get_service_history",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "serial",
+                "Value": "CIE-4000-CH-01050"
+              },
+              {
+                "Name": "months",
+                "Value": "24"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n  \\u0022job_count\\u0022: 1,\\n  \\u0022jobs\\u0022: [\\n    {\\n      \\u0022job_id\\u0022: \\u0022J-00001\\u0022,\\n      \\u0022job_date\\u0022: \\u00222026-05-10\\u0022,\\n      \\u0022operation_code\\u0022: \\u0022CTRL-BD-RR\\u0022,\\n      \\u0022component\\u0022: \\u0022controls\\u0022,\\n      \\u0022part_fitted\\u0022: \\u0022P-44900\\u0022,\\n      \\u0022labour_hours\\u0022: 1.5,\\n      \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n      \\u0022completed_date\\u0022: \\u00222026-05-10\\u0022\\n    }\\n  ],\\n  \\u0022note\\u0022: \\u0022part_fitted records the part actually installed. Where it differs from the part on the claim, policy 4.2 prices the part fitted.\\u0022\\n}\"}]",
+            "LatencyMs": 3881
+          },
+          {
+            "ToolCallId": "call_ZS9uqcLQN80MH5958LgAYTJM",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "SPA-2023-FAB-IN Fabrikam Service Partners India agreement"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022FileRetrievalDetails\\u0022:[{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022SPA-2023-FAB-IN Fabrikam Service Partners\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022SPA-2023-FAB-IN Fabrikam Service Partners.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Service Partner Agreement Fabrikam Service Partners \\\\u2014 SPA-2023-FAB-IN Agreement reference SPA-2023-FAB-IN Partner Fabrikam Service Partners Partner code D-IN-01 Territory India Settlement currency INR \\\\r\\\\n# 1. Appointment\\\\r\\\\n Contoso Industrial appoints Fabrikam Service Partners as an authorised service partner for the territory named above, to carry out warranty repairs on Contoso Industrial equipment and to submit claims in accordance with the Global Warranty Policy. \\\\r\\\\n# 2. Claim submission\\\\r\\\\n A claim is submitted within 30 days of the date of repair, giving the part number actually fitted and attaching the inspection report where one was raised. Contoso Industrial adjudicates the claim from the claim-system record, taking running hours from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. \\\\r\\\\n# 3. Labour\\\\r\\\\n Labour is reimbursed at the flat-rate allowance published for the operation code, at the regional labour rate in force on the date of repair, in accordance with clause 4.1 of the Global Warranty Policy. \\\\r\\\\n# 6. Parts and handling\\\\r\\\\n Parts are reimbursed at the published list price for the territory, for the part actually fitted. No handling uplift is payable under this agreement. Parts are reimbursed at list price without addition. \\\\r\\\\n# 9. Term\\\\r\\\\n This agreement runs for three years from execution and renews annually unless either party gives ninety days\\\\u0027 written notice.\\u0022,\\u0022RelevanceScore\\u0022:0.902}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2024-NWD-IN Northwind Field Services.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022SPA-2024-NWD-IN Northwind Field Services\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022SPA-2024-NWD-IN Northwind Field Services.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2024-NWD-IN Northwind Field Services.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Service Partner Agreement Northwind Field Services \\\\u2014 SPA-2024-NWD-IN Agreement reference SPA-2024-NWD-IN Partner Northwind Field Services Partner code D-IN-02 Territory India Settlement currency INR \\\\r\\\\n# 1. Appointment\\\\r\\\\n Contoso Industrial appoints Northwind Field Services as an authorised service partner for the territory named above, to carry out warranty repairs on Contoso Industrial equipment and to submit claims in accordance with the Global Warranty Policy. \\\\r\\\\n# 2. Claim submission\\\\r\\\\n A claim is submitted within 30 days of the date of repair, giving the part number actually fitted and attaching the inspection report where one was raised. Contoso Industrial adjudicates the claim from the claim-system record, taking running hours from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. \\\\r\\\\n# 3. Labour\\\\r\\\\n Labour is reimbursed at the flat-rate allowance published for the operation code, at the regional labour rate in force on the date of repair, in accordance with clause 4.1 of the Global Warranty Policy. \\\\r\\\\n# 6. Parts and handling\\\\r\\\\n Parts are reimbursed at the published list price for the territory, for the part actually fitted. \\\\r\\\\n## 6.2 Handling uplift\\\\r\\\\n A handling uplift of 5.0% of the reimbursed parts value is payable to Northwind Field Services in addition to the parts value. The uplift is calculated on parts only and does not apply to labour. \\\\r\\\\n# 9. Term\\\\r\\\\n This agreement runs for three years from execution and renews annually unless either party gives ninety days\\\\u0027 written notice.\\u0022,\\u0022RelevanceScore\\u0022:0.772}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04176 Claim reference C-2026-04176 Serial number CIE-4000-CH-02100 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.745}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04186 Claim reference C-2026-04186 Serial number CIE-4000-CH-01362 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.752}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04188 Claim reference C-2026-04188 Serial number CIE-4000-CH-01366 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.747}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04166 Inspection Report CIE-4000-CH-01300\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04166 Inspection Report CIE-4000-CH-01300.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04166 Claim reference C-2026-04166 Serial number CIE-4000-CH-01300 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-08-12 Operation code HYD-PUMP-RR Running hours at repair 5,300 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.745}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04139 Inspection Report CIE-4000-CH-01400\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04139 Claim reference C-2026-04139 Serial number CIE-4000-CH-01400 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 8,400 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.748}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04101 Claim reference C-2026-04101 Serial number CIE-4000-CH-01050 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 2,400 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.743}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04187 Claim reference C-2026-04187 Serial number CIE-4000-CH-01364 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.74}]},{\\u0022WebUrl\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022ResourceMetadata\\u0022:{\\u0022Title\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900\\u0022,\\u0022Author\\u0022:\\u0022python-docx;Srikantan Sankaran\\u0022,\\u0022Filename\\u0022:\\u0022C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022},\\u0022Extracts\\u0022:[{\\u0022Text\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04109 Claim reference C-2026-04109 Serial number CIE-4000-CH-01900 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 5,200 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022,\\u0022RelevanceScore\\u0022:0.741}]}]}\"}]",
+            "LatencyMs": 5643
+          },
+          {
+            "ToolCallId": "call_TLzHDiDsjXk8S0cXs5Vgtu2d",
+            "Title": "1c171__create_claim_adjudication",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04101"
+              },
+              {
+                "Name": "decision",
+                "Value": "approve"
+              },
+              {
+                "Name": "instrument_refs",
+                "Value": "[\"POL-WAR-4.2\",\"ADD-IN-2.1\",\"TSB-G-0029\",\"Flat-Rate-Labour-FY26.xlsx\",\"Labour-Rates-By-Region-FY26.xlsx\",\"SPA-2023-FAB-IN\"]"
+              },
+              {
+                "Name": "payable",
+                "Value": "69575"
+              },
+              {
+                "Name": "currency",
+                "Value": "INR"
+              },
+              {
+                "Name": "notes",
+                "Value": "Approved under India warranty terms. Asset CIE-4000-CH-01050 commissioned 2025-03-15, installed in India. Coverage under ADD-IN-2.1: 18 months from commissioning or 5,000 running hours, whichever first. Latest pre-repair running-hours reading in the claim system is 2,229 hours (2026-04-15), below the 5,000-hour cap and before the 2026-09-15 coverage end. No TSB applies to this serial range (TSB-C-0051 covers 01200-01850 only). Labour paid at 1.5 flat-rate hours × INR 1,450/hour = INR 2,175; parts paid at P-44900 list price INR 67,400; no handling uplift under SPA-2023-FAB-IN. Claim report's 2,400-hour figure is not the governing record because TSB-G-0029 requires using the latest reading in the claim system before repair."
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022created\\u0022: true,\\n  \\u0022draft_id\\u0022: \\u0022ADJ-BB6F542FC7\\u0022,\\n  \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n  \\u0022decision\\u0022: \\u0022approve\\u0022,\\n  \\u0022payable\\u0022: 69575.0,\\n  \\u0022currency\\u0022: \\u0022INR\\u0022,\\n  \\u0022instrument_refs\\u0022: [\\n    \\u0022POL-WAR-4.2\\u0022,\\n    \\u0022ADD-IN-2.1\\u0022,\\n    \\u0022TSB-G-0029\\u0022,\\n    \\u0022Flat-Rate-Labour-FY26.xlsx\\u0022,\\n    \\u0022Labour-Rates-By-Region-FY26.xlsx\\u0022,\\n    \\u0022SPA-2023-FAB-IN\\u0022\\n  ],\\n  \\u0022status\\u0022: \\u0022Draft - awaiting human review. No payment has been made.\\u0022\\n}\"}]",
+            "LatencyMs": 4280
+          }
+        ],
+        "RubricResults": [
+          {
+            "Score": 0.8,
+            "Reasoning": "The completed hand-in delivers a definite covered/approved outcome, identifies ADD-IN-2.1 as governing, states the coverage boundaries and repair position, calculates INR 69,575 with a breakdown, and records a draft. However, the future next step is only described as the “normal approval workflow” without explicitly naming the adjudicator or another responsible party.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "03ff334c-8fe1-4cc6-a230-1bf0c1d7744d",
+            "RubricName": "Requested Outcome Delivery",
+            "ChecklistItems": [
+              "When the request asks for a claim outcome, the response presents a definite covered, declined, or cannot-yet-be-decided result; a statement that the agent could not perform the analysis without definitively establishing the outcome fails.",
+              "When the request asks which warranty instrument governs, the response presents the identified instrument or definitively establishes that the available evidence does not identify one; an unsupported hedge or omitted result fails.",
+              "When the request asks about the coverage period, the response presents the applicable period and the repair's position in it, or definitively establishes why those values cannot yet be determined; an unverified non-answer fails.",
+              "When the request asks for an amount payable, the response presents the calculated amount and requested breakdown, or definitively establishes that the payable amount cannot yet be calculated from the available records; merely saying calculation was not completed fails.",
+              "When the request asks for claim next steps, the response presents the next action and responsible party; merely suggesting that someone should investigate later without specifying the requested result fails.",
+              "For a narrower question about a claim, asset warranty position, service partner, or part, the response delivers a direct answer within that requested scope rather than substituting a generic claim overview or a statement that the work was not done."
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.8,
+            "Reasoning": "The covered determination is consistent with the India addendum, commissioning date, hours record, inspection evidence, and bulletin scope. The payable arithmetic and partner adjustment are supported. Disposition guidance is incomplete because the party responsible for the next approval action is not expressly named.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "9829f57f-608f-467f-8a91-7a24a905bed4",
+            "RubricName": "Claim Determination Requirements",
+            "ChecklistItems": [
+              "When the question requires a repair-coverage determination, the selected outcome is exactly one of covered, declined, or cannot yet be decided and is consistent with the facts and governing warranty provisions available in the input.",
+              "When the question requires identification of the governing warranty instrument, the response names the applicable instrument and connects its scope, region, product, effective date, or other relevant applicability criteria to the asset.",
+              "When the question requires analysis of the coverage period, the response states supported start and end boundaries or usage limits and accurately locates the repair date or running-hours position relative to them.",
+              "When the question requires a payable calculation, the response separately shows supported labour, parts, and partner-specific adjustments, applies the arithmetic correctly, and labels the total in the applicable currency without inferring unavailable rates or terms.",
+              "When the question requires disposition guidance, the response names a concrete next action on the claim and the adjudicator, service partner, Warranty Operations team, or other supported party responsible for taking it."
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "The execution grounds the adjudication in Contoso records: claim and asset-system data, POL-WAR-4.2, ADD-IN-2.1, relevant bulletins, FY26 labour schedules, the Fabrikam agreement, inspection evidence, parts data, running hours, and service history. It also checks quarterly review material and recognizes the stale Q2 summary rather than relying on it. No material channel escalation or announcement required a channel check.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "c546b2c0-d23f-4c2b-8698-a71debca58c7",
+            "RubricName": "Internal Record Use and Grounding",
+            "ChecklistItems": [
+              "The execution relies on Contoso internal records for material claim facts and rules rather than substituting unsupported external sources.",
+              "When generally applicable warranty terms are material, the execution grounds them in the global warranty policy.",
+              "When regional terms for India, EMEA, or APAC could affect the answer, the execution grounds them in the applicable regional addenda.",
+              "When a technical service bulletin could govern the failure mode, repair, or part, the execution checks the relevant technical service bulletins.",
+              "When reimbursement rates are needed, the execution obtains the applicable labour and parts rate cards rather than inventing rates.",
+              "When partner-specific coverage or reimbursement terms are material, the execution obtains the applicable service partner agreements.",
+              "When relevant operational or policy context is carried by a quarterly review, the execution checks the applicable quarterly warranty review decks.",
+              "When repair-specific evidence is needed, the execution uses available claim evidence such as inspection reports rather than treating an allegation as an established fact.",
+              "When field escalations, partner conversations, or policy announcements are material, the execution checks the team's channels and preserves any disagreement with more authoritative records.",
+              "When asset registration, running hours, service history, submitted claim data, partner records, parts, or goodwill authority are material, the execution obtains the relevant values from the service claim system."
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "The hand-in leads with approval and INR 69,575, presents dated facts and complete arithmetic, attributes material assertions through citations, explains the 2,400-versus-2,229-hours disagreement, and identifies draft ADJ-BB6F542FC7. No unresolved material fact is apparent from the completed evidence set.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "e629745b-6aa8-4783-87fa-300b0c002b5b",
+            "RubricName": "Adjudicator-Ready Presentation and Traceability",
+            "ChecklistItems": [
+              "The response leads with the claim decision or, for a narrower question, the direct answer requested.",
+              "The response states the material facts and dates supporting its conclusion and shows each arithmetic step behind any amount the available evidence supports.",
+              "Each material factual assertion is attributed to an identifiable internal record, document, channel discussion, or claim-system field with enough specificity for an adjudicator to locate it.",
+              "The response explicitly identifies every material fact it could not establish from the available evidence.",
+              "The response explicitly identifies material disagreements between sources and does not silently choose one version without explaining the basis.",
+              "When the outcome requires a claim-system action, the response states that the action was recorded as a draft and describes what was recorded."
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "Execution evidence shows that draft approval ADJ-BB6F542FC7 was actually created for C-2026-04101 with decision “approve,” payable INR 69,575, supporting instruments, and notes consistent with the covered outcome; the tool confirms it is awaiting human review.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "e87148d2-d4ca-4024-983b-69e72122ce12",
+            "RubricName": "Claim-System Draft Execution",
+            "ChecklistItems": [
+              "When the determined outcome calls for an evidence request, draft adjudication, or goodwill escalation in the claim system, the execution evidence shows that the appropriate draft was actually recorded for the claim with content consistent with the supported outcome."
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          }
+        ],
+        "ConversationId": "4ca5d452-a293-42e4-851e-49df33569c0e",
+        "UserQuery": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nAdjudicate claim C-2026-04101.",
+        "Response": [
+          {
+            "Content": "Decision: Approve claim C-2026-04101 for INR 69,575 in the claim system. The repair is covered under the India warranty terms for this asset.\n\nWhy this decision is correct\n- The claim is for serial CIE-4000-CH-01050, a 4000-series chiller installed in India, with repair date 2026-05-10 and operation code CTRL-BD-RR; the claim is for 1.5 labour hours and part P-44900.\n- The governing warranty instrument for this asset is the India regional addendum ADD-IN-2.1, because the asset is installed in India and the addendum varies the global policy to 18 months from commissioning or 5,000 running hours, whichever occurs first.\n- The asset’s commissioning date is 2025-03-15, so the coverage period runs to 2026-09-15. The latest running-hours reading held in the claim system before the repair date is 2,229 hours on 2026-04-15, which is well below the 5,000-hour cap, so the repair falls within coverage.\n- TSB-C-0051 does not apply to this serial because that bulletin only covers serials CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive; CIE-4000-CH-01050 is outside that range.\n- The inspection report says the control board was unresponsive on power-up and that there was “no evidence of moisture ingress or surge damage”; that supports the repair being a covered control-board failure rather than an excluded failure mode.\n\nAmount payable\n- Labour: 1.5 flat-rate hours for CTRL-BD-RR × INR 1,450/hour (FY26 India labour rate in force on the repair date 2026-05-10) = INR 2,175. The claim uses the flat-rate allowance, and 1.5 hours is the allowed amount.\n- Parts: the part actually fitted was P-44900, a control board, priced at INR 67,400 in the India parts list.\n- Handling uplift: none. Fabrikam Service Partners’ agreement says no handling uplift is payable under SPA-2023-FAB-IN.\n- Total payable: INR 67,400 + INR 2,175 = INR 69,575.\n\nWhat I had to resolve\n- There is a small discrepancy in the evidence: the inspection report says 2,400 running hours at repair, but the claim-system running-hours record shows 2,229 hours at the latest reading before the repair date. TSB-G-0029 says claims are adjudicated from the claim-system record, so I used 2,229 hours, not the report’s 2,400-hour figure.\n\nNext action\n- I recorded a draft approval in the claim system for this claim (draft ADJ-BB6F542FC7) and no further evidence is needed to complete the adjudication.\n- No goodwill is needed and no further partner action is required on this claim beyond the normal approval workflow.\n\n## Sources\n\n1. `tr_ea1cf2efb5448d761e7b` Referenced tool result\n2. `tr_71ea9b0c5d119012f049` Referenced tool result\n3. `tr_3b4272f8c9cbecf6322e` Referenced tool result\n4. `tr_e382ac8b68c56504003f` Referenced tool result\n5. `tr_d180e9753174f3c4443a` Referenced tool result\n6. `tr_9fd132e46bb4f62c4c85` Referenced tool result\n7. `tr_e5373df3e67c665f27fe` Referenced tool result\n8. `tr_961134a767d32c264a10` Referenced tool result\n9. `tr_ae7c4043a4ecc3377e1b` Referenced tool result\n10. `tr_d8628e5ca94ca41ec1b5` Referenced tool result\n11. `tr_1c8e09084d51a8e0d4fb` Referenced tool result\n12. `tr_24da64f9e6691ee3aa2e` Referenced tool result",
+            "Link": ""
+          }
+        ],
+        "ErrorResponse": null,
+        "UserActionMetadata": [],
+        "LatestChainOfThought": null,
+        "BillingSummary": {
+          "InputTokens": 801400,
+          "OutputTokens": 21229,
+          "CacheReadTokens": 659712,
+          "CacheCreationTokens": 0,
+          "TotalTokens": 822629,
+          "ToolInvocations": 23.0,
+          "RaiChecks": 19.0,
+          "InfraSeconds": 0.0,
+          "OrchestratorCpuSeconds": 346.3852991
+        },
+        "DebugContext": {
+          "Logs": []
+        }
+      },
+      "ExecutionState": null
+    }
+  ]
+}
