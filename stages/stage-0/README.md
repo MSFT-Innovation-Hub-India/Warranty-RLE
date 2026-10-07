@@ -1,135 +1,92 @@
-# Stage 0 — The naive baseline
+# Stage 0 v2 — The naive baseline, on the corrected world
 
-**Status:** ✅ done 2026-10-04. Evaluation job `555d5dd2-f9c3-4008-8846-02e9ceca44d3`: **rubric 0.630 · fully correct 1/8**. Gate passed.
+**Status:** ✅ done 2026-10-04. Job `53495f74-fcd5-47ef-8b33-43893a49eb04`: **rubric 0.535 · fully correct 0/8**. Gate passed.
 
-**Purpose.** Build the way most teams start, with one broad skill and
-platform-generated rubrics, and measure it honestly. The MCP server is **off**,
-so database facts are unreachable. Stage 1 switches it on.
+**Why a v2.** Stage 1 found that the world contradicted its own answer key
+([stage-1 defect 1](../stage-1/README.md#results--2026-10-04--job-cf102eae-e5a6-489a-bd21-c1e1bd50a79b)):
+the partner agreements and TSB-G-0029 demanded an inspection report and a reading at
+the repair date, while the ground truth requires neither. The world was corrected
+("world v2"), so stage 0 is measured again. The [v1 folder](../stage-0/) stays as it was.
 
-## The one change
+## What differs from stage 0 (v1)
 
-None; this is the baseline.
+Only the world. Skill, rubrics, prompts, model, strategy and tool switches are identical.
+
+| | v1 | **v2** |
+| --- | --- | --- |
+| TSB-G-0029 and SPA clause 2 (3 agreements) | a claim *must carry* the inspection report and the reading at the date of repair | adjudicated from the claim-system record, using the latest reading at or before the repair date; a missing report *does not of itself hold a claim* |
+| Teams: Partner Fabrikam, "Weekly claim status", Meera's reply | *"The three without reports are held, not declined."* | *"…We adjudicate from the claim-system record, so they only hold things up where an exclusion turns on the report."* |
+| Ground truth (`out/data/claims.json`) | — | unchanged; the world now agrees with it |
+
+Source edits: `build/gen_docs.py`, `build/gen_teams.py`. Gates 14/14 and 31/31. Only these 4 docx and 1 message changed in content. Details and the live check are in [the evidence record](../../docs/evidence/journey-record-2026-10-04.md#world-v2--fixing-the-inspection-report-inconsistency).
 
 ## World state for this stage
 
 | | |
 | --- | --- |
 | World | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` |
-| Model · strategy | `prod-gpt-56-reasoning-sol` (GPT-5.6-Sol) · `simple` |
-| Knowledge | SharePoint `Warranty Operations` + 3 Teams channels ([world/env.md](../../world/env.md)) |
-| MCP server | `contoso-service` `1c171d49-7f85-4997-8126-ae20829a4dbf`: **disabled** |
-| Other tool sources | SharePoint, OneDrive, Teams on; Email, Calendar, Word, M365Chat, fabriciq off |
-| Skill | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` |
-| Rubrics | 5 rubrics / 28 items, platform-generated on dev on 2026-10-03 and **pinned** |
-| Samples | 8 eval prompts: covered-simple 04101–04103, declined-simple 04109–04110, precedence 04114 · 04116 · 04118 ([stage0.jsonl](stage0.jsonl)). 5 approve, 3 decline. 04115 and 04117 dropped as near-duplicates |
+| Model · strategy | `prod-gpt-56-reasoning-sol` · `simple` |
+| MCP server | `1c171d49-7f85-4997-8126-ae20829a4dbf`: **disabled** (125 tools available, 0 MCP) |
+| Skill · rubrics | `cf00d339-5217-4cd1-b390-cc0d911735da` · the same pinned 5 rubrics ([warranty-assistant.md](warranty-assistant.md), [warranty-assistant.rubrics.json](warranty-assistant.rubrics.json); hashes equal v1) |
+| Samples | the same 8 uploaded Evaluation samples ([stage0.jsonl](stage0.jsonl)) |
+| Platform snapshot | SkillsCount 1 · ToolsCount 3 · SamplePromptsCount 8 · KnowledgeSourcesCount 4, the same as v1 |
 
-## Files
+## Apply and run
 
-| File | What it is |
-| --- | --- |
-| [warranty-assistant.md](warranty-assistant.md) | The skill: the business job and sources, with no trap rules. `generateRubrics: false` (see its header comment) |
-| [warranty-assistant.rubrics.json](warranty-assistant.rubrics.json) | The pinned rubric set, verbatim from the platform's generation |
-| [stage0.jsonl](stage0.jsonl) | The 8 prompts, copied word for word from `out/samples/warranty-adjudication.eval.jsonl` |
-
-## Apply (to a fresh world)
+As [stage 0](../stage-0/README.md#apply-to-a-fresh-world), after regenerating and uploading the world-v2 corpus. One extra check before evaluating, so that search isn't serving the old text:
 
 ```powershell
-$world = '<world-id>'
-frontier-tuning skills create --file stages\stage-0\warranty-assistant.md --env-id $world -o json   # note the skill id
-# apply the pinned rubrics: put the JSON array into the skill payload's "Rubrics" field
-$raw  = frontier-tuning skills get <skill-id> --env-id $world -o json | Out-String
-$s    = $raw.Substring($raw.IndexOf('{')) | ConvertFrom-Json
-$s.Rubrics = Get-Content stages\stage-0\warranty-assistant.rubrics.json -Raw | ConvertFrom-Json
-$s | ConvertTo-Json -Depth 12 | Set-Content "$env:TEMP\payload.json" -Encoding utf8
-frontier-tuning skills update <skill-id> --file "$env:TEMP\payload.json" --env-id $world
-frontier-tuning tools disable <mcp-server-id> --env-id $world                                        # stage 0: MCP off
+frontier-tuning chat --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 --model prod-gpt-56-reasoning-sol --strategy simple --wait -o json -q "Quote verbatim what bulletin TSB-G-0029 and the Fabrikam partner agreement (SPA-2023-FAB-IN) clause 2 say about inspection reports and running-hours readings. Quote only; do not adjudicate anything."
 ```
 
-## Run
+On 2026-10-04 (execution `fc64ba2a-7354-4dcc-9fb5-c2335b000518`), the agent quoted both new paragraphs word for word, about 10 minutes after upload.
 
-```powershell
-# 1. Hand probe (the gate): main reads the documents and routes to the skill
-frontier-tuning chat --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -q "Adjudicate claim C-2026-04114." --model prod-gpt-56-reasoning-sol --strategy simple --wait -o json
-# 2. Samples
-frontier-tuning samples upload stages\stage-0\stage0.jsonl --skill-id cf00d339-5217-4cd1-b390-cc0d911735da --type Evaluation --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
-# 3. Evaluate
-frontier-tuning evaluate start --skill-id cf00d339-5217-4cd1-b390-cc0d911735da --base-model prod-gpt-56-reasoning-sol --strategy simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json
-# 4. Results, then the second number
-frontier-tuning evaluate results 555d5dd2-f9c3-4008-8846-02e9ceca44d3 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json > stages\stage-0\eval-results.json                   # summary
-frontier-tuning evaluate results 555d5dd2-f9c3-4008-8846-02e9ceca44d3 --samples --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json > stages\stage-0\eval-results-samples.json   # every answer
-.\.venv\Scripts\python.exe build\score_ground_truth.py stages\stage-0\eval-results-samples.json --out stages\stage-0
-```
+## Results — 2026-10-04 · job `53495f74-fcd5-47ef-8b33-43893a49eb04`
 
-**Watch out.** `chat --skill-id …` returned `API error (500)` in both worlds.
-Leave it out: routing picks the skill by itself.
+| | Stage 0 (v1) | **Stage 0 v2** |
+| --- | --- | --- |
+| **Rubric score (platform)** | 0.630 | **0.535** |
+| **Fully correct vs ground truth** | 1/8 | **0/8** |
+| Submitted · graded | 8 · 8 | 8 · 8 |
+| Wall time | 52 min | **26 min** (10:13 → 10:39 UTC) |
 
-**Hand probe, 2026-10-04 (gate ✅).** Execution `4796e7dc-c2ee-4ad3-9235-44511c6976e0`:
-routed to `warranty-assistant`, 24 tool calls (SharePoint search, Teams, `m365__call_copilot`;
-no MCP), and every document search returned results. The answer: *"Cannot yet be finally
-decided — hold pending commissioning evidence"*, with TSB-C-0051 correctly named as governing.
-The ground truth says approve, ₹199,175. Without the claim system the agent couldn't find the
-commissioning date, so it held the claim. The rubrics still scored *Claim Determination* 1.0.
-
-## Results — 2026-10-04 · job `555d5dd2-f9c3-4008-8846-02e9ceca44d3`
-
-| | Result |
-| --- | --- |
-| **Rubric score (platform)** | **0.630**: 8 submitted, 8 graded, 0 failed |
-| **Fully correct vs ground truth** | **1 of 8 (12%)**: decision 1/8 · governing instrument 3/8 · payable 0/5 |
-| Wall time | 52 min: about 4 min queued, about 16 min running the 8 prompts, the rest grading |
-| Detail | [ground-truth-check.md](ground-truth-check.md) · [eval-results.json](eval-results.json) (summary) · `eval-results-samples.json` (every answer and trace, 3.6 MB) · [eval-diagnostics.txt](eval-diagnostics.txt) |
+Detail: [ground-truth-check.md](ground-truth-check.md) · [eval-results.json](eval-results.json) · `eval-results-samples.json` (4.0 MB)
 
 **Per rubric (platform)**
 
-| Rubric | Score |
-| --- | --- |
-| Requested Outcome Delivery | 1.00 |
-| Claim Determination Requirements | 0.65 |
-| Internal Record Use and Grounding | 0.75 |
-| Adjudicator-Ready Presentation and Traceability | 0.75 |
-| Claim-System Draft Execution | 0.00 (expected: the MCP server is off) |
+| Rubric | v1 | v2 |
+| --- | --- | --- |
+| Requested Outcome Delivery | 1.00 | 0.84 |
+| Claim Determination Requirements | 0.65 | 0.43 |
+| Internal Record Use and Grounding | 0.75 | 0.73 |
+| Adjudicator-Ready Presentation and Traceability | 0.75 | 0.68 |
+| Claim-System Draft Execution | 0.00 | 0.00 (n=5) |
 
-**What happened.** **7 of 8 answers held the claim** ("cannot yet be decided").
-With the claim system off, the agent couldn't retrieve the claim record,
-the asset or the commissioning date. It cited policy 2.3 and refused to
-guess, rather than inventing facts. It still found the right rules: TSB-C-0051 for
-04114, and the exact contingent amounts (₹69,575 on 04101, ₹199,175 on 04114,
-"approve only if commissioning confirms…"). The one correct answer, 04109
-(decline), is a claim whose inspection report is in the library.
+**What happened.** The same behaviour as v1: with the claim system off, the agent
+can't get the claim facts, so it holds the claim or asks for evidence (7 of 8).
+04109 was again a decline, but given as *"provisional decline / do not approve yet"*.
+The scorer reads the decision correctly, but the governing instrument cited
+(TSB-C-0038) isn't the expected one, so it doesn't count as fully correct. 04103 and
+04116 were marked ❓ by the scorer. I read both by hand: both say *"unable to complete"*,
+which is a hold, so both are wrong.
 
-**Reading the two numbers**
-- **The gap is large: 0.63 vs 12%.** *Requested Outcome Delivery* gave **1.0 to every
-  answer**: "cannot yet be decided" counts as a definite answer, so a hold scores
-  full marks there.
-- **But the agent behaved correctly for this stage.** Holding is the right call when the
-  system of record is unreachable. The ground truth assumes full access, so it marks
-  these answers wrong. Stage 0's "wrong" is mostly **missing data**, not bad reasoning.
-- So stage 0 doesn't yet prove the rubrics overrate the agent. **Stage 1 is the
-  cleaner test:** with the facts available, a wrong decision can no longer hide
-  behind a hold.
+**The world fix reached the agent.** On 04110 the agent checked `06-ClaimEvidence`, found
+no report, and wrote: *"That absence does **not by itself justify declining or holding the
+claim**: … a missing inspection report does not itself hold a claim."* That is the v2 wording
+of TSB-G-0029. In v1, a missing report was a reason to hold.
 
-**Gate.** ✅ **Proceed to stage 1.**
-- Documents retrieved in every answer.
-- Submitted = graded (8 = 8).
-- The weakness is the diagnosable one: missing facts, not broken retrieval.
-- 0.63 is just above the predicted 0.40–0.60 band, but below the "samples too easy" line of 0.70.
+**The agent also tried to call the claim tools.** It reports `ToolNotFound` "on repeated
+attempts". The skill names the service claim system as a source, so the agent looks
+for it, finds nothing, and says so honestly.
 
-**Problems found during the run, and how they were handled**
+**Reading the numbers**
+- 💭 **Treat a move of about 0.1 as noise at 8 samples.** Between v1 and v2 the only change
+  was document wording, which the agent can barely use without claim facts. Yet the rubric
+  score moved 0.630 → 0.535, and *Requested Outcome Delivery* fell from 1.00 to 0.84 for
+  answers of the same kind. Most of that movement is run-to-run variance, not the world.
+  Deltas smaller than about 0.1 on 8 samples shouldn't be read as real.
+- The ground-truth number is stable: 1/8 → 0/8, and the one difference is a citation
+  change on a decline that was right both times.
+- Stage 0's purpose holds: without the claim system, the agent can't adjudicate.
 
-| Problem | Handled by |
-| --- | --- |
-| `chat --skill-id` returned `API error (500)` in both worlds | Left it out. Normal routing chose the skill and graded on the pinned rubrics |
-| `evaluate results` without `--samples` is a 3 KB summary with no answers | Use `--samples` (3.6 MB, every answer and trace) |
-| In those results, `Response` is a list of parts, not text | The scorer joins the parts (+1 test, 19/19 passing) |
-| The scorer showed a stray "payable" on held answers (e.g. 04102: ₹1,450, an hourly rate) | Approve-expected answers that weren't approvals are now marked *"payable not assessed"* |
-
-**How the ground-truth check was verified.** I read four answers (04101,
-04102, 04110, 04116) by hand against the scorer's output. Every one says *"cannot
-yet be decided / hold"*, cites missing claim-system facts and POL-WAR-4.2 clause 2.3,
-and matches what the scorer read. The "governing = POL-WAR-4.2" readings on held
-answers are correct: a hold rests on clause 2.3, not on an addendum or bulletin.
-
-**Before stage 1:**
-- P6: endpoint auth.
-- P11: runbook fixes.
-- Decide whether the MCP tool descriptions keep their trap hints (JOURNEY § 4).
+**Gate.** ✅ Proceed to stage 1 v2. Documents retrieved in every answer, 8 = 8 graded, and the corrected wording is in use.

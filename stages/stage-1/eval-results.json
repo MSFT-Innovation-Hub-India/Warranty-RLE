@@ -11,10 +11,10 @@
   ],
   "Evaluations": [
     {
-      "Id": "cf102eae-e5a6-489a-bd21-c1e1bd50a79b",
+      "Id": "95f7d234-df64-4e71-aa82-2d3db8d51b11",
       "EvalType": "StandaloneEvaluation",
       "Name": "Evaluation",
-      "OverallScore": 0.9053571224212646,
+      "OverallScore": 0.9908333420753479,
       "SkillAggregateResults": [
         {
           "SkillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
@@ -29,42 +29,42 @@
             {
               "RubricId": "9829f57f-608f-467f-8a91-7a24a905bed4",
               "RubricName": "Claim Determination Requirements",
-              "AvgScore": 0.9,
+              "AvgScore": 0.975,
               "SampleCount": 8
             },
             {
               "RubricId": "c546b2c0-d23f-4c2b-8698-a71debca58c7",
               "RubricName": "Internal Record Use and Grounding",
-              "AvgScore": 0.975,
+              "AvgScore": 1.0,
               "SampleCount": 8
             },
             {
               "RubricId": "e629745b-6aa8-4783-87fa-300b0c002b5b",
               "RubricName": "Adjudicator-Ready Presentation and Traceability",
-              "AvgScore": 0.9375,
+              "AvgScore": 0.9791666666666666,
               "SampleCount": 8
             },
             {
               "RubricId": "e87148d2-d4ca-4024-983b-69e72122ce12",
               "RubricName": "Claim-System Draft Execution",
-              "AvgScore": 0.7142857142857143,
-              "SampleCount": 7
+              "AvgScore": 1.0,
+              "SampleCount": 6
             }
           ],
-          "SkillOverallScore": 0.9053571428571429,
+          "SkillOverallScore": 0.9908333333333333,
           "SampleCount": 8
         }
       ],
-      "EvaluationCompletionDate": "2026-10-04T09:47:46.580963+00:00",
-      "LastUpdatedDate": "2026-10-04T09:47:46.6029372+00:00",
+      "EvaluationCompletionDate": "2026-10-04T11:04:34.6656599+00:00",
+      "LastUpdatedDate": "2026-10-04T11:04:34.683162+00:00",
       "Status": "Succeeded",
-      "StatusMessage": "Evaluation completed (overall=0.905): 8 graded.",
+      "StatusMessage": "Evaluation completed (overall=0.991): 8 graded.",
       "Strategy": "Simple",
       "StrategyBody": null
     }
   ],
   "IndexInstanceId": null,
-  "JobId": "cf102eae-e5a6-489a-bd21-c1e1bd50a79b",
+  "JobId": "95f7d234-df64-4e71-aa82-2d3db8d51b11",
   "JobTaskType": null,
   "JobType": "Evaluation",
   "FinetuningType": null,
@@ -77,15 +77,15 @@
   ],
   "BaseModelDisplayName": "prod-gpt-56-reasoning-sol",
   "NewModelName": "",
-  "CreatedAt": "2026-10-04T09:27:48.5722823+00:00",
-  "UpdatedAt": "2026-10-04T09:47:51.3795872+00:00",
+  "CreatedAt": "2026-10-04T10:44:30.4930766+00:00",
+  "UpdatedAt": "2026-10-04T11:04:38.8060974+00:00",
   "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
   "LastModifiedByObjectId": null,
   "EvaluationMetadata": {
-    "OverallScore": 0.9053571224212646
+    "OverallScore": 0.9908333420753479
   },
   "WorkspaceSnapshotMetadata": {
-    "Id": "cf102eae-e5a6-489a-bd21-c1e1bd50a79b",
+    "Id": "95f7d234-df64-4e71-aa82-2d3db8d51b11",
     "SkillsCount": 1,
     "ToolsCount": 4,
     "SamplePromptsCount": 8,
