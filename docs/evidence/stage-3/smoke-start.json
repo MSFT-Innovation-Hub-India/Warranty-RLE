@@ -1,0 +1,36 @@
+{
+  "JobId": "ce41e2c3-98fa-41a3-972f-a393761a5e16",
+  "JobTaskType": null,
+  "JobType": "Evaluation",
+  "FinetuningType": null,
+  "Status": "Running",
+  "ErrorCode": null,
+  "ErrorMessage": "",
+  "BaseModelName": "dev-ct-mai-code-mp",
+  "BaseModelNames": [
+    "dev-ct-mai-code-mp"
+  ],
+  "BaseModelDisplayName": "dev-ct-mai-code-mp",
+  "NewModelName": "",
+  "CreatedAt": "2026-10-07T05:39:43.8097811+00:00",
+  "UpdatedAt": "2026-10-07T05:39:43.8347139+00:00",
+  "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "LastModifiedByObjectId": null,
+  "EvaluationMetadata": null,
+  "WorkspaceSnapshotMetadata": {
+    "Id": "ce41e2c3-98fa-41a3-972f-a393761a5e16",
+    "SkillsCount": 2,
+    "ToolsCount": 3,
+    "SamplePromptsCount": 1,
+    "KnowledgeSourcesCount": 4
+  },
+  "DebugContext": {
+    "Logs": []
+  },
+  "continuesServerSide": true,
+  "statusCommand": "frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate status ce41e2c3-98fa-41a3-972f-a393761a5e16",
+  "pollAfterSeconds": 60,
+  "cancelOnlyOnExplicitUserRequest": true,
+  "operationId": "ce41e2c3-98fa-41a3-972f-a393761a5e16"
+}
+

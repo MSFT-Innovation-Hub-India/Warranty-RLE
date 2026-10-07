@@ -1,0 +1,10 @@
+
+kind  id             claim_id     detail                                                                                                                                                                 created_at                 
+----  --             --------     ------                                                                                                                                                                 ----------                 
+draft ADJ-BB6F542FC7 C-2026-04101 approve | payable=69575.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-G-0029", "Flat-Rate-Labour-FY26.xlsx", "Labour-Rates-By-Region-FY26.xlsx", "SPA-2023-FAB-IN"] 10/7/2026 5:54:40 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+
