@@ -16,7 +16,7 @@ One folder per stage, holding that stage's latest configuration: skill, pinned r
 
 ## Rules
 1. **One change per stage**, compared with the stage before. Say plainly if two things must move together.
-2. **Report three numbers:** the platform's rubric score, ground-truth correctness (`build/score_ground_truth.py`), and the hand-in rejection rate.
+2. **Report three numbers:** the platform's rubric score, ground-truth correctness (`scripts/score_ground_truth.py`), and the hand-in rejection rate.
 3. **Rubrics are pinned files.** Samples capture the rubrics at upload, so re-upload samples when the rubrics change.
 4. **Run claims in batches of 5 per evaluation job** ([scripts/eval-sequential.ps1](../scripts/eval-sequential.ps1) `-BatchSize 5`). Each job pays ~9 min of platform start-up, so one claim per job wastes most of the time; batches of 5 ran without stalls on world v3. Snapshot and reset the database after each job.
 5. **A stage folder holds its latest configuration**; a superseded run is deleted (git keeps it), and the fix becomes one line in Findings.

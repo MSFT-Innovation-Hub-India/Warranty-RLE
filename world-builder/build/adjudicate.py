@@ -11,7 +11,7 @@ docs/03-scenario-design.md.
 
 Run it directly to execute the worked-example self-test:
 
-    .venv/Scripts/python.exe build/adjudicate.py
+    .venv/Scripts/python.exe world-builder/build/adjudicate.py
 """
 
 from __future__ import annotations

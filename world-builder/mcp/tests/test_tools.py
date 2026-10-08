@@ -5,7 +5,7 @@ and take a database adapter. What is being checked is not just that queries
 work, but that each tool exposes the specific fact a designed trap depends on.
 
     cd scenario/mcp
-    ../.venv/Scripts/python.exe tests/test_tools.py
+    ../../.venv/Scripts/python.exe tests/test_tools.py
 """
 
 from __future__ import annotations

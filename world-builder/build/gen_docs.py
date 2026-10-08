@@ -4,7 +4,7 @@ Nothing here invents a rule. Every clause, term, serial range and effective date
 is read from instruments.json, so the prose a model retrieves and the answer the
 engine computes come from one source.
 
-    .venv/Scripts/python.exe build/gen_docs.py
+    .venv/Scripts/python.exe world-builder/build/gen_docs.py
 """
 
 from __future__ import annotations

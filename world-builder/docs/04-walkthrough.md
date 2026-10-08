@@ -1,6 +1,6 @@
 # Guide 04 — The world, told as a story
 
-> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [JOURNEY.md](JOURNEY.md) and [stages/](../stages/README.md).
+> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [JOURNEY.md](../../docs/JOURNEY.md) and [stages/](../../stages/README.md).
 
 **Read this first** if you want to understand what was built and why, before
 looking at any of it.
@@ -11,7 +11,7 @@ claim reference, serial number and amount below is real — taken from the
 generated corpus, computed by the same engine that produces the answer key.
 
 - [Guide 03](03-scenario-design.md) — *why* the world is shaped this way
-- [scenario/README](../README.md) — *how* it is built and regenerated
+- [scenario/README](../../README.md) — *how* it is built and regenerated
 - [scenario/out/GROUND-TRUTH.md](../out/GROUND-TRUTH.md) — every expected answer, with full working
 
 ---

@@ -1,6 +1,6 @@
 # Ground-truth check — stage-0
 
-Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the source of GROUND-TRUTH.md).
+Scored by `scripts/score_ground_truth.py` against `world-builder/out/data/claims.json` (the source of GROUND-TRUTH.md).
 
 | Measure | Result |
 | --- | --- |

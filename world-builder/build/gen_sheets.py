@@ -1,6 +1,6 @@
 """Render the labour rate card and the parts price list from catalog.json.
 
-    .venv/Scripts/python.exe build/gen_sheets.py
+    .venv/Scripts/python.exe world-builder/build/gen_sheets.py
 """
 
 from __future__ import annotations

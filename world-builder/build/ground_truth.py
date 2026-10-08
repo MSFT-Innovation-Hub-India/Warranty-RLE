@@ -5,7 +5,7 @@ answer against this file, not against the model's own reasoning. It is also what
 an out-of-band numeric checker reads if the grader turns out not to verify
 arithmetic (guide 03 section 9.4).
 
-    .venv/Scripts/python.exe build/ground_truth.py
+    .venv/Scripts/python.exe world-builder/build/ground_truth.py
 """
 
 from __future__ import annotations
@@ -48,7 +48,7 @@ def render() -> str:
     L.append("# Ground truth — Contoso Industrial warranty adjudication")
     L.append("")
     L.append("**Generated. Do not edit by hand.**  ")
-    L.append("`.venv/Scripts/python.exe build/ground_truth.py`")
+    L.append("`.venv/Scripts/python.exe world-builder/build/ground_truth.py`")
     L.append("")
     L.append(f"Produced {date.today().isoformat()} from `scenario/spec/` via "
              "`build/adjudicate.py`. Every row is computed by the same engine that "

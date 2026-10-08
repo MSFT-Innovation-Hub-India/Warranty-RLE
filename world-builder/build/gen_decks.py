@@ -6,7 +6,7 @@ for any asset a bulletin now covers, and wrong for India in the other direction.
 It is the most confidently-worded source in the corpus and the least reliable —
 which is exactly how review decks behave in a real company.
 
-    .venv/Scripts/python.exe build/gen_decks.py
+    .venv/Scripts/python.exe world-builder/build/gen_decks.py
 """
 
 from __future__ import annotations

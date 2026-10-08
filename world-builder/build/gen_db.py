@@ -11,7 +11,7 @@ One table is deliberately wrong: TsbApplicability records TSB-C-0051 as ending
 at serial 1500 when the bulletin document says 1850. That is trap 1, and it is
 the single most important row in the database.
 
-    .venv/Scripts/python.exe build/gen_db.py
+    .venv/Scripts/python.exe world-builder/build/gen_db.py
 """
 
 from __future__ import annotations

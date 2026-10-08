@@ -2,7 +2,7 @@
 
 The rubric score says how well an answer *reads*; this says whether it is
 *right*. For each answer it compares three things with the expected
-adjudication in out/data/claims.json, the same engine output that
+adjudication in world-builder/out/data/claims.json, the same engine output that
 GROUND-TRUTH.md is rendered from:
 
     decision            approve | decline | request_evidence | escalate
@@ -17,7 +17,7 @@ Inputs, any mix of:
   * single execution files        (frontier-tuning chat … --wait -o json, executions get -o json)
   * folders containing either
 
-    .venv/Scripts/python.exe build/score_ground_truth.py <inputs…> --out <stage folder>
+    .venv/Scripts/python.exe scripts/score_ground_truth.py <inputs…> --out <stage folder>
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CLAIMS = ROOT / "out" / "data" / "claims.json"
+CLAIMS = ROOT / "world-builder" / "out" / "data" / "claims.json"
 
 CLAIM_RE = re.compile(r"\bC-\d{4}-\d{5}\b")
 INSTRUMENT_RE = re.compile(r"\b(TSB-[A-Z]-\d{4}|ADD-[A-Z]{2}-\d\.\d|POL-WAR-\d\.\d|MTX-GW-\d)\b")
@@ -354,7 +354,7 @@ def report(rows: list[dict], label: str) -> str:
     known = [r for r in rows if r["correct"] is not None]
     rub = [r["rubric"] for r in rows if r["rubric"] is not None]
     lines = [f"# Ground-truth check — {label}", "",
-             f"Scored by `build/score_ground_truth.py` against `out/data/claims.json` (the source of GROUND-TRUTH.md).", "",
+             f"Scored by `scripts/score_ground_truth.py` against `world-builder/out/data/claims.json` (the source of GROUND-TRUTH.md).", "",
              "| Measure | Result |", "| --- | --- |",
              f"| Answers scored | {n} |",
              f"| Decision correct | {_pct(sum(1 for r in rows if r['decision_ok'] is True), n)} |",

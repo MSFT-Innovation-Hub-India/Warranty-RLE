@@ -9,7 +9,7 @@ train a model to recognise one sentence shape rather than to do the job, and
 would tell you nothing about how it behaves when a real adjudicator types
 something else.
 
-    .venv/Scripts/python.exe build/gen_samples.py
+    .venv/Scripts/python.exe world-builder/build/gen_samples.py
 """
 
 from __future__ import annotations

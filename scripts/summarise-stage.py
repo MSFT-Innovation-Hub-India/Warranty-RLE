@@ -4,7 +4,7 @@
 
 Reads every results-*.json written by eval-sequential.ps1 in <evidence dir>,
 writes <stage dir>/eval-results-samples.json (all submissions, the format
-build/score_ground_truth.py reads) and <stage dir>/run-summary.md, then runs
+scripts/score_ground_truth.py reads) and <stage dir>/run-summary.md, then runs
 the ground-truth scorer on the merged file.
 
 --consolidate then folds the per-job db-after-*.txt files into one
@@ -80,7 +80,7 @@ open(os.path.join(stage_dir, "run-summary.md"), "w", encoding="utf-8").write("\n
 print("\n".join(lines))
 
 py = os.path.join(".venv", "Scripts", "python.exe")
-subprocess.run([py, os.path.join("build", "score_ground_truth.py"),
+subprocess.run([py, os.path.join("scripts", "score_ground_truth.py"),
                 os.path.join(stage_dir, "eval-results-samples.json"), "--out", stage_dir])
 
 if CONSOLIDATE:

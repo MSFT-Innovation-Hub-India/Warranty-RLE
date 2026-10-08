@@ -1,6 +1,6 @@
 """Checks for score_ground_truth.py's extraction rules.
 
-    .venv/Scripts/python.exe build/test_score_ground_truth.py
+    .venv/Scripts/python.exe scripts/test_score_ground_truth.py
 """
 
 from __future__ import annotations

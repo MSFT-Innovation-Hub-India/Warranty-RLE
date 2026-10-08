@@ -8,7 +8,7 @@
 
 In fine-tuning the rubric score is the **only reward**, so v1 would teach vocabulary rather than correctness. The baseline and the post-tuning evaluation must use the same, final rubrics, so they are settled before stage 4 (RFT): stage 1 applies them and every later stage keeps them.
 
-**Source.** [Design guide 03 § 9.2](../docs/03-scenario-design.md#92-rubrics-for-the-flagship-skill--written-before-the-skill-exists), written before any skill existed (AGENTS.md: rubrics before skills). Its satisfiability audit (§ 9.3) holds: every rubric can be met or skipped on every claim path, including "cannot be determined" and "serial not in the registry".
+**Source.** [Design guide 03 § 9.2](../world-builder/docs/03-scenario-design.md#92-rubrics-for-the-flagship-skill--written-before-the-skill-exists), written before any skill existed (AGENTS.md: rubrics before skills). Its satisfiability audit (§ 9.3) holds: every rubric can be met or skipped on every claim path, including "cannot be determined" and "serial not in the registry".
 
 **Changes from § 9.2**, each traced to evidence:
 

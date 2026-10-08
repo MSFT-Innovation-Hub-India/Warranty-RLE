@@ -8,7 +8,7 @@ The load-bearing thread is the verbal goodwill approval in Field Escalations.
 Everything else is noise of the kind a real channel carries, which is the point:
 retrieval has to find one message among fifty that look similar.
 
-    .venv/Scripts/python.exe build/gen_teams.py
+    .venv/Scripts/python.exe world-builder/build/gen_teams.py
 """
 
 from __future__ import annotations

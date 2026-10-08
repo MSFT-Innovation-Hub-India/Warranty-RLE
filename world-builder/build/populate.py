@@ -5,7 +5,7 @@ the trap distribution in guide 03 section 10 is a requirement, not an outcome.
 Every claim declares the slice it belongs to, and the generator refuses to write
 anything if the distribution drifts from the design.
 
-    .venv/Scripts/python.exe build/populate.py
+    .venv/Scripts/python.exe world-builder/build/populate.py
 """
 
 from __future__ import annotations

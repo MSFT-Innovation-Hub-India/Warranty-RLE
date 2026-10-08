@@ -5,7 +5,7 @@ the outcome the design says it should produce. If a trap cannot be expressed as
 a passing case in this file, it is not buildable and should be removed from the
 design rather than discovered later as an ambiguous sample.
 
-    .venv/Scripts/python.exe build/test_traps.py
+    .venv/Scripts/python.exe world-builder/build/test_traps.py
 """
 
 from __future__ import annotations

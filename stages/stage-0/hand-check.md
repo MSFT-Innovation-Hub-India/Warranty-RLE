@@ -1,6 +1,6 @@
 # Stage 0: hand check of the scorer's flags (2026-10-08)
 
-`build/score_ground_truth.py` gave 16/30 fully correct with 7 ❓. Every ❓ and ❌ was read by hand against GROUND-TRUTH.md.
+`scripts/score_ground_truth.py` gave 16/30 fully correct with 7 ❓. Every ❓ and ❌ was read by hand against GROUND-TRUTH.md.
 
 | Claim | Scorer | Delivered answer | Verdict |
 | --- | --- | --- | --- |

@@ -59,8 +59,8 @@ stage in git (`stage-0`, `stage-1`, …). The goal: someone can replay and
 demonstrate the whole climb from the beginning, not just see the final artefacts.
 
 **Two numbers per stage.** The platform's rubric score is never reported on its
-own. Every stage also runs `build/score_ground_truth.py`, which checks decision,
-governing instrument and payable against `out/data/claims.json`. A rubric score
+own. Every stage also runs `scripts/score_ground_truth.py`, which checks decision,
+governing instrument and payable against `world-builder/out/data/claims.json`. A rubric score
 that rises while correctness doesn't means the rubrics reward the wrong thing.
 Fix that before tuning, because during RFT the rubric score *is* the reward.
 
@@ -69,8 +69,8 @@ a baseline to compare against. A change you cannot measure is a change you
 cannot defend.
 
 **One set of numbers, one arbiter.** Every document, workbook, deck, database row
-and sample is generated from `spec/`, and every expected answer is computed by
-`build/adjudicate.py`. Nothing is hand-written twice. If the corpus and the
+and sample is generated from `world-builder/spec/`, and every expected answer is
+computed by `world-builder/build/adjudicate.py`. Nothing is hand-written twice. If the corpus and the
 ground truth can disagree, the measurement is worthless.
 
 **Gates before artefacts.** `adjudicate.py` (14 checks) and `test_traps.py`
@@ -149,17 +149,13 @@ Two documents, two audiences. Update both **as work happens**, every session.
 
 | Path | What it holds |
 | --- | --- |
-| `spec/` | Canonical source of truth — hand-authored, reviewed |
-| `build/` | Ground-truth engine, trap tests, corpus generators |
-| `out/` | Generated corpus, database, samples, `GROUND-TRUTH.md` |
-| `mcp/` | The MCP server — world v3: 1 read (`get_claim_dossier`) + 3 action tools, ACA + Azure SQL deploy |
-| `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
+| `world-builder/` | Everything that creates and deploys the world: `spec/` (source of truth), `build/` (ground-truth engine, gates, generators), `out/` (generated corpus, database, samples, `GROUND-TRUTH.md`), `mcp/` (the MCP server), `env.md` (world definition), `SETUP.md` (build recipe), `docs/` (scenario design, walkthrough). Touch it only to rebuild or redeploy |
 | `stages/` | One folder per climb stage, holding its latest configuration: skills, pinned rubrics, prompts, commands, result, findings |
-| `scripts/` | Reusable helpers: `sql-run.ps1` (run SQL with your Entra sign-in), and the database baseline, snapshot and reset scripts |
-| `docs/` | `JOURNEY.md` (start here), scenario design, walkthrough, `evidence/` |
+| `scripts/` | Climb helpers: batch evaluation runner, stage summariser, ground-truth scorer (+ tests), `sql-run.ps1`, and the database baseline, snapshot and reset scripts |
+| `docs/` | `JOURNEY.md` (start here) and `evidence/` (the verbatim record) |
 
-Run order matters: `adjudicate` → `test_traps` → `populate` → `ground_truth` →
-the `gen_*` scripts. Generators read `out/data/`, so population comes first.
+World build order (in `world-builder/build/`): `adjudicate` → `test_traps` → `populate` →
+`ground_truth` → the `gen_*` scripts. Generators read `out/data/`, so population comes first.
 
 ---
 
