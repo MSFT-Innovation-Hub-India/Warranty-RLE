@@ -37,6 +37,17 @@ CASES = [
     ("total", "Total payable: ₹1,99,175 (labour ₹7,975 + parts ₹1,91,200)", 199175.0),
     ("total", "Amount payable EUR 2,341.50", 2341.50),
     ("total", "No amount is payable.", None),
+    # stage 0 (world v3) misreads, 2026-10-08
+    ("decision", "Decision: **Covered**. C-2026-04152 is payable at **INR 197,000** under **TSB-C-0051**.", "approve"),
+    ("governing", "Decision: approve claim C-2026-04101 for INR 69,575. Under the India addendum and the global policy, the period is 18 months. TSB-C-0051 does not apply to this serial.", "ADD-IN-2.1"),
+    ("governing", "Decline. TSB-C-0051 also does not apply because this serial (01950) is outside the named range. The India addendum ADD-IN-2.1 applies.", "ADD-IN-2.1"),
+    ("governing", "- Global Warranty Policy POL-WAR-4.2 governs the baseline.\n- India addendum ADD-IN-2.1 applies because the asset is installed in India.", "ADD-IN-2.1"),
+    ("governing", "The applicable coverage instrument is the India addendum (ADD-IN-2.1). No bulletin changes this result: TSB-P-0115 is EMEA only.", "ADD-IN-2.1"),
+    ("total", "Decision: approve for INR 69,575.\n- Labour: 1.5 h at INR 1,450/hour = INR 2,175. Payable labour is the lesser.\n- Total payable: INR 69,575.", 69575.0),
+    ("total", "- Labour: 1.5 h × INR 1,450 = INR 2,175, payable at the flat rate.\n- Total: INR 67,400 + INR 2,175 + INR 3,370 = INR 72,945.", 72945.0),
+    ("total", "Decision: Approve claim C-2026-04131 for INR 198,450. Labour 5.0 h is payable at INR 1,450, so payable labour is INR 7,250.", 198450.0),
+    # stage 1 misreads, 2026-10-08
+    ("decision", "Decision: the claim is not yet decidable; I recorded a draft as request_evidence.", "request_evidence"),
     ("delivery", "The fuller attempted messages were rejected by the finish tool and were not successfully delivered.", True),
     ("delivery", "The only successfully delivered finish message states that the agent was \u201cnot able to complete\u201d.", True),
     ("delivery", "The successful finish only states that the assessment could not be completed.", True),
@@ -69,6 +80,15 @@ def _delivered_check() -> bool:
     return a == "request_evidence" and b == "approve" and c is None
 
 
+def _no_decision_check() -> bool:
+    from score_ground_truth import _no_decision
+    a = _no_decision("Adjudicate claim C-2026-04167.", "Adjudicate claim C-2026-04167.")
+    b = _no_decision("Where do we land on C-2026-04141?", "I'm unable to complete the requested warranty adjudication because the rate card is missing.")
+    b = b and _no_decision("Take a look at C-2026-04129.", "I can\u2019t determine the outcome of claim C-2026-04129 from the currently available records.")
+    c = _no_decision("Adjudicate claim C-2026-04101.", "The asset was commissioned on 2025-03-15 and the repair falls inside the period.")
+    return bool(a) and bool(b) and c is None
+
+
 def main() -> int:
     failed = 0
     for kind, text, want in CASES:
@@ -86,7 +106,10 @@ def main() -> int:
     ok = _delivered_check()
     failed += not ok
     print(f"  {'PASS' if ok else 'FAIL'}  delivered decision read from the grader's description")
-    print(f"\n{len(CASES) + 3 - failed}/{len(CASES) + 3} checks passed.")
+    ok = _no_decision_check()
+    failed += not ok
+    print(f"  {'PASS' if ok else 'FAIL'}  an echoed question or inability statement counts as no answer")
+    print(f"\n{len(CASES) + 4 - failed}/{len(CASES) + 4} checks passed.")
     return 1 if failed else 0
 
 

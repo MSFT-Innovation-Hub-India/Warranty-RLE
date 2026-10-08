@@ -19,7 +19,7 @@ A Microsoft 365 **Frontier Tuning** world: an agent adjudicates warranty claims 
 
 ```powershell
 .\scripts\sql-run.ps1 -File scripts\db-baseline.sql                     # claim database clean: 0 0 0 0
-powershell -File scripts\eval-sequential.ps1 -Env <world-id> -Samples <label=sampleId,...> -OutDir docs\evidence\stage-N -BatchSize 5
+powershell -File scripts\eval-batches.ps1 -Env <world-id> -Samples <label=sampleId,...> -OutDir docs\evidence\stage-N -BatchSize 5
 python scripts\summarise-stage.py docs\evidence\stage-N stages\stage-N --consolidate
 ```
 

@@ -2,7 +2,7 @@
 
     python scripts/summarise-stage.py docs/evidence/stage-0 stages/stage-0 [--consolidate]
 
-Reads every results-*.json written by eval-sequential.ps1 in <evidence dir>,
+Reads every results-*.json written by eval-batches.ps1 in <evidence dir>,
 writes <stage dir>/eval-results-samples.json (all submissions, the format
 scripts/score_ground_truth.py reads) and <stage dir>/run-summary.md, then runs
 the ground-truth scorer on the merged file.
@@ -33,8 +33,10 @@ for p in sorted(glob.glob(os.path.join(ev_dir, "results-*.json"))):
     label = os.path.basename(p)[8:-5]
     d = load(p)
     for s in d.get("Submissions", []):
-        subs.append(s)
         x = s.get("Execution") or {}
+        if not x or x.get("Status") not in ("Completed", "Failed"):
+            continue  # cancelled or timed out before it finished; rerun separately
+        subs.append(s)
         tools = x.get("ToolExecutions") or []
         searches = [t for t in tools if "search_enterprise" in t["Title"]]
         skills = x.get("Skills") or []

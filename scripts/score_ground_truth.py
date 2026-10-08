@@ -38,12 +38,33 @@ INSTRUMENT_RE = re.compile(r"\b(TSB-[A-Z]-\d{4}|ADD-[A-Z]{2}-\d\.\d|POL-WAR-\d\.
 AMOUNT_RE = re.compile(r"(?:₹|INR\s?|Rs\.?\s?|EUR\s?|€)\s?(\d{1,3}(?:,\d{2,3})+(?:\.\d+)?|\d+(?:\.\d+)?)")
 LEAD_CHARS = 600
 
+
+def _clean(text: str) -> str:
+    """Drop markdown emphasis and code marks, which break phrase matching ("Decision: **Covered**")."""
+    text = (text or "").replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
+    return re.sub(r"\*\*|__|`", "", text)
+
+
+# Instruments named in words rather than by reference code.
+INSTRUMENT_NAMES = [
+    (re.compile(r"\b(?:India|Indian)(?: regional)? (?:warranty )?addendum\b", re.I), "ADD-IN-2.1"),
+    (re.compile(r"\bEMEA(?: regional)? (?:warranty )?addendum\b", re.I), "ADD-EM-1.3"),
+    (re.compile(r"\bAPAC(?: regional)? (?:warranty )?addendum\b", re.I), "ADD-AP-1.1"),
+    (re.compile(r"\bglobal (?:warranty )?policy\b", re.I), "POL-WAR-4.2"),
+]
+
+
+def _with_codes(text: str) -> str:
+    for pat, code in INSTRUMENT_NAMES:
+        text = pat.sub(code, text)
+    return text
+
 # Order matters: negative and "can't decide" phrasings are checked before the
 # bare word "covered", so "not covered" never reads as an approval.
 DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("request_evidence", re.compile(
         r"cannot (?:yet )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
-        r"cannot yet decide|not yet be decided|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
+        r"cannot yet decide|not yet be decided|not yet decidable|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
         r"\bhold\b[^.\n]{0,20}\b(?:evidence|request)|hold the claim|claim (?:is|should be|has been) (?:placed on )?held|"
         r"request(?:ing|ed)? (?:the )?(?:missing|commissioning|evidence|certificate|inspection)|"
         r"evidence request|insufficient (?:records|evidence)", re.I)),
@@ -51,7 +72,8 @@ DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("decline", re.compile(
         r"\bdeclin\w*|\bnot covered\b|\bisn't covered\b|\bis not covered\b|\bout of warranty\b|"
         r"\boutside (?:the )?(?:warranty|coverage)\b|\breject\w*", re.I)),
-    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:warranty|coverage)\b", re.I)),
+    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:warranty|coverage)\b|"
+                           r"\bdecision\W{0,4}covered\b|\bcovered (?:decision|outcome)\b", re.I)),
 ]
 
 
@@ -234,7 +256,7 @@ def extract_decision(response: str) -> str | None:
     escalation. So those two win when present and not negated; otherwise the
     earliest of decline/approve wins.
     """
-    lead = response[:LEAD_CHARS]
+    lead = _clean(response)[:LEAD_CHARS]
     pats = dict(DECISION_PATTERNS)
     for label in ("request_evidence", "escalate"):
         if _first_unnegated(pats[label], lead) is not None:
@@ -253,7 +275,8 @@ def extract_decision(response: str) -> str | None:
 def _instrument_negated(s: str, m: re.Match) -> bool:
     after = s[m.end():m.end() + 45]
     before = s[max(0, m.start() - 30):m.start()]
-    if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?(?:does not|doesn't|did not|is not|isn't|cannot|would not|no longer)\b", after, re.I):
+    if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?(?:(?:also|still|therefore|thus|then|itself)\s+)?"
+                r"(?:does not|doesn't|did not|is not|isn't|cannot|would not|no longer)\b", after, re.I):
         return True
     if re.search(r"(?:\bnot (?:under|covered by|by)|rather than|instead of|\bnot)\W*$", before, re.I):
         return True
@@ -261,17 +284,25 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
     return bool(re.match(r"\W*(?:clauses?\s+)?1\.4\b", after))
 
 
-GOVERNING_CUE = r"govern|applies|applicable instrument|covered (?:under|by)|under\b"
+GOVERNING_CUE = (r"govern|applies|applicable (?:coverage )?instrument|instruments? (?:is|are)\b|"
+                 r"covered (?:under|by)|under\b|takes? precedence")
 
 
 def extract_governing(response: str) -> str | None:
-    sentences = re.split(r"(?<=[.!?\n])\s+", response)
-    for s in sentences:
+    """The governing instrument. The global policy is the baseline every answer cites, so
+    a bulletin or addendum named in a governing sentence wins over it; the policy is
+    returned only when nothing more specific is named."""
+    text = _with_codes(_clean(response))
+    found = []
+    for s in re.split(r"(?<=[.!?\n])\s+", text):
         if re.search(GOVERNING_CUE, s, re.I):
-            for m in INSTRUMENT_RE.finditer(s):
-                if not _instrument_negated(s, m):
-                    return m.group(1)
-    m = INSTRUMENT_RE.search(response)
+            found += [m.group(1) for m in INSTRUMENT_RE.finditer(s) if not _instrument_negated(s, m)]
+    specific = [f for f in found if not f.startswith(("POL-", "MTX-"))]
+    if specific:
+        return specific[0]
+    if found:
+        return found[0]
+    m = INSTRUMENT_RE.search(text)
     return m.group(1) if m else None
 
 
@@ -280,17 +311,51 @@ def _num(s: str) -> float:
 
 
 def extract_total(response: str) -> float | None:
-    lines = response.splitlines()
+    """The payable total. Working lines ("Labour: 1.5 h x INR 1,450 = INR 2,175") also say
+    "payable", so a line that says "total" is read first, taking the figure after any "="
+    (the result of a sum) or else its first figure; then the opening decision line; then other payable lines."""
+    text = _clean(response)
+    lines = text.splitlines()
+    for cue in (r"\btotal\b[^\n]{0,20}\bpayable\b|\bpayable\b[^\n]{0,10}\btotal\b|\bamount payable\b",
+                r"\btotal\b"):
+        for line in lines:
+            if re.search(cue, line, re.I) and not re.search(r"\b(?:claimed|provisional|if covered|would be)\b", line, re.I):
+                tail = line.rsplit("=", 1)[1] if "=" in line else line
+                amounts = [_num(a) for a in AMOUNT_RE.findall(tail)] or [_num(a) for a in AMOUNT_RE.findall(line)]
+                if amounts:
+                    return amounts[0]
+    lead = re.split(r"(?<=[.!?\n])\s+", text[:LEAD_CHARS])
+    for sent in lead:
+        if re.search(r"\bapprov|\bpayable\b|\bpay\b|\bcovered\b", sent, re.I):
+            amounts = [_num(a) for a in AMOUNT_RE.findall(sent)]
+            if amounts:
+                return amounts[0]
     for line in lines:
-        if re.search(r"\btotal\b|\bpayable\b|\bamount payable\b", line, re.I):
+        if re.search(r"\bpayable\b", line, re.I):
             amounts = [_num(a) for a in AMOUNT_RE.findall(line)]
             if amounts:
                 return max(amounts)
-    amounts = [_num(a) for a in AMOUNT_RE.findall(response)]
+    amounts = [_num(a) for a in AMOUNT_RE.findall(text)]
     return max(amounts) if amounts else None
 
 
 # ---------------------------------------------------------------------------
+
+INABILITY_RE = re.compile(
+    r"\b(?:unable to|not able to|cannot|can't|could not|couldn't)\b[^.\n]{0,40}"
+    r"\b(?:complete|adjudicate|determine|compute|provide|finish|decide)\b", re.I)
+
+
+def _no_decision(prompt: str, response: str) -> str | None:
+    """Why an answer with no readable decision is wrong, if it plainly is."""
+    norm = lambda t: re.sub(r"\W+", " ", (t or "").lower()).strip()
+    r, p = norm(response), norm(prompt)
+    if not r or (len(r) < 300 and (r in p or p in r)):
+        return "echoed the question: no answer delivered"
+    if INABILITY_RE.search(_clean(response)[:LEAD_CHARS]):
+        return "inability statement: no decision delivered"
+    return None
+
 
 def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
     out = []
@@ -319,6 +384,12 @@ def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
         else:
             tot_ok = True
         notes = []
+        if got_dec is None:
+            nodec = _no_decision(r["prompt"], r["response"])
+            if nodec:
+                # Nothing was delivered that could be right: an echo of the question or an
+                # inability statement is a wrong answer, not an unreadable one.
+                dec_ok, notes = False, [nodec]
         if dec_ok is None:
             notes.append("decision unclear")
         if exp["decision"] == "approve" and got_dec not in (None, "approve"):
@@ -328,10 +399,14 @@ def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
         elif tot_ok is None:
             notes.append("no amount stated")
         correct = None if (dec_ok is None) else (dec_ok and gov_ok and tot_ok is True)
+        if dec_ok is False and got_dec is None:
+            gov_ok, tot_ok = False, False
         mismatch = bool(r.get("delivery_mismatch"))
         said = delivered_decision(r.get("_notes", ""))
         if not mismatch and said and got_dec and said != got_dec:
             mismatch = True  # the grader describes a different decision from the stored answer
+        elif mismatch and said and got_dec and said == got_dec:
+            mismatch = False  # a hand-in was rejected, but the grader confirms the delivered decision is this one
         if mismatch:
             notes.insert(0, "NOT VERIFIABLE: grader says the delivered answer differs from the stored one (finish rejected)")
             correct = None
@@ -362,7 +437,7 @@ def report(rows: list[dict], label: str) -> str:
              f"| Payable correct (approvals) | {_pct(sum(1 for r in rows if r['exp_decision'] == 'approve' and r['total_ok'] is True), sum(1 for r in rows if r['exp_decision'] == 'approve'))} |",
              f"| **Fully correct** | **{_pct(sum(1 for r in known if r['correct']), n)}** |",
              f"| Delivered ≠ stored (not verifiable; finish rejected) | {sum(1 for r in rows if r.get('delivery_mismatch'))} |",
-             f"| Needs human review | {sum(1 for r in rows if r['note'])} |",
+             f"| Needs human review (unreadable) | {sum(1 for r in rows if r['correct'] is None)} |",
              f"| Mean rubric score (platform) | {round(sum(rub) / len(rub), 3) if rub else '—'} |", ""]
     by = defaultdict(list)
     for r in rows:

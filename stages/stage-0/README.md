@@ -27,7 +27,7 @@ frontier-tuning skills update $sk --description $desc --instructions $body --env
 ```powershell
 .\scripts\sql-run.ps1 -File scripts\db-baseline.sql                                         # 0 0 0 0
 $s = (Get-Content stages\stage-0\sample-map.json -Raw | ConvertFrom-Json | ForEach-Object { "$($_.claim.Substring(7))=$($_.id)" }) -join ','
-powershell -File scripts\eval-sequential.ps1 -Env $e -Samples $s -OutDir docs\evidence\stage-0 -BatchSize 5 -TimeoutMin 60
+powershell -File scripts\eval-batches.ps1 -Env $e -Samples $s -OutDir docs\evidence\stage-0 -BatchSize 5
 python scripts\summarise-stage.py docs\evidence\stage-0 stages\stage-0 --consolidate   # merges, tabulates, scores; keeps one results file and one snapshot file
 # then read every ❓ and ❌ by hand (hand-check.md)
 ```
@@ -39,7 +39,7 @@ python scripts\summarise-stage.py docs\evidence\stage-0 stages\stage-0 --consoli
 
 By slice (correct): covered-simple 3/3 · declined-simple 2/2 · precedence 4/5 · serial-boundary 4/4 · valuation 6/6 · stale-deck 1/2 · dual-limit 1/3 · abstention 2/3 · **authority 0/2**.
 
-Detail: [run-summary.md](run-summary.md) (per claim) · [ground-truth-check.md](ground-truth-check.md) (scorer) · [hand-check.md](hand-check.md) (manual reading) · run log and database snapshots in `docs/evidence/stage-0/`. Jobs: 04150 `e29b39ef`, 04101–04140 one per claim, then batches `92cf4f5f`, `6ba0f977`, `afecf010`.
+Detail: [run-summary.md](run-summary.md) (per claim) · [ground-truth-check.md](ground-truth-check.md) (scorer, after the fix: 23/30) · [hand-check.md](hand-check.md) (manual reading) · run log and database snapshots in `docs/evidence/stage-0/`. Jobs: 04150 `e29b39ef`, 04101–04140 one per claim, then batches `92cf4f5f`, `6ba0f977`, `afecf010`.
 ## Findings
 | Issue | What we did |
 | --- | --- |
@@ -48,5 +48,5 @@ Detail: [run-summary.md](run-summary.md) (per claim) · [ground-truth-check.md](
 | **Authority trap missed:** both goodwill claims declined instead of escalated; the generated rubrics scored them 0.85 and 1.0 | Hand-written rubric 5 (stage 1) checks escalation |
 | 04141 said the rate card was "not available" (it is, at rank 1 in search) and recorded approve with payable 0 | Search guidance in stage 2 (folder map, title words) |
 | The generated rubrics overrate: 0.744 rubric vs 77% correct, with wrong answers at 0.85–1.0 and correct-but-terse answers below 0.6 | Stage 1 replaces them |
-| The scorer misread 7 correct answers (labour sub-line taken as payable, a negated instrument, bold "Covered") | Hand-checked; fix the scorer before stage 1 |
+| The scorer misread 7 correct answers (labour sub-line taken as payable, a negated instrument, bold "Covered") | **Fixed (2026-10-08):** the scorer now gives 23/30 on its own, matching the hand check; echoes and inability statements are scored wrong, not unreadable. Tests 52/52 |
 | One claim per job pays ~9 min of platform start-up + ~2.5 min grading; agent execution is only ~7 min | Batches of 5 per job: 5 claims in 20–27 min, no stalls |

@@ -6,7 +6,7 @@ How this world is built, where the climb stands, and what we learned on the way.
 | --- | --- |
 | [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard, and how a run works |
 | [2. The world](#2-the-world) | Where the world lives, and where its build recipe is |
-| [3. The climb](#3-the-climb) | The stages on world v3; detail in [stages/](../stages/README.md) |
+| [3. The climb](#3-the-climb) | The stages on world v3, [stage 0 in brief](#stage-0-in-brief), [stage 1 in brief](#stage-1-in-brief-the-reward-now-tracks-correctness) and [the road ahead](#the-road-ahead); detail in [stages/](../stages/README.md) |
 | [4. What we carried from the first climb](#4-what-we-carried-from-the-first-climb) | The lessons from world v2 that shaped v3 |
 | [Appendix](#appendix--helper-snippets) | Helper snippets |
 
@@ -18,8 +18,8 @@ Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream gu
 
 | | |
 | --- | --- |
-| **Status** | **World v3** (one-call claim dossier, records only; one labour workbook). **Stage 0 closed:** MAI-CODE-5b with the naive skill and generated rubrics: rubric **0.744**, correct **23/30**, 0 overflows; 4 claims lost to echoed hand-ins |
-| **Next** | Fix the scorer's 7 misreads → GPT-5.6-Sol reference run on stage 0's configuration → **stage 1**: hand-written rubrics (re-upload the 30 samples, which capture rubrics at upload) |
+| **Status** | **World v3.** Stage 0 closed (0.744 · 23/30). **Stage 1 closed:** hand-written rubrics, 0.637 · 23/30; the rubric score now ranks right answers above wrong ones 93% of the time (stage 0: 83%) |
+| **Next** | **Stage 2: skill refinement.** First the platform's own tools (`skills refine`, `skills enrich`), then our guidance (method, folder map, hand-in), aimed at the weakest rubrics: authority and action, precedence, grounding; and at hand-in stubs and echoes |
 | **Open** | Hand-in rejections by the platform's finish tool ([note](evidence/platform-issue-finish-rejection.md)) · MAI-CODE-5b vs `mai-code-1-flash`: same weights? · does tuning use Training or Evaluation samples? · P6 endpoint auth deferred |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (the climb) · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc` (trials) |
 | **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`; one skill per world |
@@ -149,10 +149,94 @@ On world v3, with **MAI-CODE-5b** as the climbing model. Each stage changes one 
 | Stage | Change | Rubric | Correct | Takeaway |
 | --- | --- | --- | --- | --- |
 | [0](../stages/stage-0/README.md) | Naive baseline: business-brief skill, platform-generated rubrics, 30 prompts | **0.744** | **23/30** | Real headroom: authority 0/2, 4 claims lost to echoed hand-ins; generated rubrics overrate (wrong answers at 0.85–1.0); median 10 calls against a ~5-call minimum |
-| 1 | Hand-written rubrics ([draft](../stages/hand-written-rubrics-draft.md)) | | | |
+| [1](../stages/stage-1/README.md) | Hand-written rubrics ([reviewed set](../stages/stage-1/rubrics.md)) | **0.637** | **23/30** | The reward now tracks correctness better: ranks right above wrong 93% (was 83%); correct answers lose points unless working, sources and next action are shown. Weakest: authority and action (0.46) |
 | 2 | Skill refined with the platform's tools, then our approach guidance | | | |
 | 3 | `Simple` vs `BestOfN`: headroom for tuning? | | | |
 | 4 | RFT on `mai-code-1-flash`; compare with GPT-5.6-Sol | | | |
+
+### Stage 0 in brief
+
+**What we did**
+- Rebuilt the world as **v3**. One claim-system call (`get_claim_dossier`) replaces nine, and it returns records only, so no tool gives away an answer. The labour rate cards are one workbook. The answer key is unchanged.
+- Ran the honest starting point on all 30 eval claims: **MAI-CODE-5b**, the naive business-brief skill, and the rubrics the platform generated.
+- Found that **5 claims per evaluation job** cuts a 30-claim run from ~12 h to ~2.5 h. Each job pays ~9 min of platform start-up, whatever the claim.
+
+**Result** 🖥️
+
+| Rubric score | Correct (hand-checked) | Context overflows | Tool calls per claim | Agent time per claim |
+| --- | --- | --- | --- | --- |
+| **0.744** | **23/30 (77%)** | **0** (the blocker in v2) | median 10 (2–32), against a ~5-call minimum | median 6.6 min (v2: 15–30) |
+
+**What it shows: the headroom the climb works on**
+
+| Weakness | Evidence | Addressed by |
+| --- | --- | --- |
+| **Authority: 0/2** | Both goodwill requests beyond the requester's authority were declined, not escalated | Stage 1 (a rubric checks escalation), stage 2 (skill) |
+| **Echoed hand-ins: 4 claims lost** | MAI handed in the user's question as its answer (5 runs; one recovered on re-run) | Stage 2 (how to hand in); with the platform team |
+| **The generated rubrics overrate** | 0.744 rubric vs 77% correct: wrong answers scored 0.85–1.0, correct but terse ones below 0.6 | Stage 1 (hand-written rubrics) |
+| **Wandering** | Folder browsing, file downloads, searches for documents the claim doesn't need | Stage 2 (method and folder map), stage 4 (RFT) |
+| The scorer misreads | 7 correct answers misread (labour sub-line taken as payable, missed negations) | ✅ Fixed: 23/30 automatically, matching the hand check |
+
+Detail: [stages/stage-0](../stages/stage-0/README.md) · [per-claim table](../stages/stage-0/run-summary.md) · [hand check](../stages/stage-0/hand-check.md).
+
+### Stage 1 in brief: the reward now tracks correctness
+
+**What we did**
+1. **Fixed the ground-truth scorer.** It now scores both stages without a hand check (53/53 tests).
+2. **Reviewed and revised the hand-written rubrics.** Six rubrics; [stages/stage-1/rubrics.md](../stages/stage-1/rubrics.md) ends with a table of each change and the evidence for it. The main ones:
+   - Rubrics can now be met when a record is genuinely missing.
+   - Authority now requires escalation "rather than approving, declining outright or leaving it open".
+   - Sources are updated for world v3.
+   - Items that rewarded boilerplate are dropped.
+   - After the first batch, valuation was made to apply **only to covered claims**: it had scored a correct decline at 0.0.
+3. **Ran stage 1** on all 30 claims. Only the rubrics changed: same model, skill and prompts.
+
+**Result** 🖥️
+
+| | Stage 0 (generated rubrics) | **Stage 1 (hand-written)** |
+| --- | --- | --- |
+| Correct | 23/30 | **23/30**: unchanged, as it should be, since the agent didn't change |
+| Rubric score | 0.744 | **0.637** |
+| Average score, right answers | 0.86 | **0.72**: now marked down when working, sources or next action aren't shown |
+| Average score, wrong answers | 0.37 | 0.38 |
+| **Right answer scored above a wrong one** | 83% | **93%** |
+
+The hand-written rubrics separate right from wrong more reliably, and that score is the reward RFT will optimise.
+
+**What it shows for stage 2.** The weakest rubrics:
+- **Authority and action (0.46):** naming the next action and who takes it; escalating goodwill beyond the requester's authority.
+- **Precedence (0.54) and grounding (0.54):** explaining why an instrument governs, and citing clauses.
+
+There are also hand-in failures: one echoed question and two answers cut to a stub (e.g. *"Approve the claim."*) even though the drafts written to the claim system were complete. Two answers claimed the documents "aren't accessible" without searching for them.
+
+**What went wrong during the run, and the fixes**
+- **Stalled claims.** The platform reran 3 claims from scratch: the agent finished each attempt, but the platform never registered it as done. Evidence added to the [platform note](evidence/platform-issue-finish-rejection.md). The runner, [scripts/eval-batches.ps1](../scripts/eval-batches.ps1), now cancels after 15 minutes without progress and requeues automatically.
+- **The `frontier-tuning` CLI broke mid-run.** An interrupted upgrade left it unusable, and the runner waited silently for 2 hours. Version 0.3.16 restored exactly; the runner now warns when it can't read status.
+
+**What stage 1 did and didn't do.** It didn't make the agent any better: correctness is 23/30 in both stages, by design. It made the **measurement** better. Stage 0's generated rubrics could give a wrong answer full marks (04172 scored 1.0) and a correct one half marks. Under the hand-written rubrics, a randomly chosen right answer outscores a wrong one 93% of the time instead of 83%. That matters most at stage 4, where the rubric score is the RFT reward: rubrics that reward wrong answers would train the model to give them. Two wrong answers still score above 0.6 (04172 at 0.63, 04166 at 0.67), so the reward isn't perfect yet; stage 2 watches them.
+
+Detail: [stages/stage-1](../stages/stage-1/README.md) · [per-claim table](../stages/stage-1/run-summary.md) · [rubrics and review](../stages/stage-1/rubrics.md).
+
+### The road ahead
+
+**Before stage 1** (done)
+1. ✅ **Fix the scorer's 7 misreads**, so correctness is scored without a hand check (done 2026-10-08).
+2. ✅ **Review the hand-written rubrics:** reviewed against stage 0 and world v3 and revised ([the set and what changed](../stages/stage-1/rubrics.md)). They become the RFT reward, so they are settled before any tuning.
+3. *Deferred (user, 2026-10-08):* a **GPT-5.6-Sol reference run** on stage 0's configuration, to measure the frontier gap on v3.
+
+**The stages**
+
+| Stage | One change | What it should show | Time |
+| --- | --- | --- | --- |
+| **1 · Hand-written rubrics** ✅ | Replace the generated rubrics; re-upload the 30 samples (they capture the rubrics at upload) | Done: correctness 23/30 (unchanged); the rubric score ranks right above wrong 93% (was 83%) | ~6 h with stalls |
+| **2 · Skill refinement** | First the platform's own tools (`skills refine`, `skills enrich`); then our guidance: method, folder map, how to hand in. Each edit shown next to the rubric it serves, without echoing it | Correctness up; echoed hand-ins and wandering down | ~2.5 h per variant |
+| **3 · Headroom** | `Simple` vs `BestOfN` on the same model and skill | Whether tuning has anything to capture. A near-zero gap means stop and report | 2.5–5 h |
+| **4 · RFT** | Tune `mai-code-1-flash`; compare before, after, and GPT-5.6-Sol | Whether a tuned small model matches the frontier, stating what was and wasn't controlled | platform-dependent |
+
+**Open questions to resolve before stage 4** 🔬
+- Are MAI-CODE-5b (`dev-ct-mai-code-mp`) and `mai-code-1-flash` the same weights?
+- Does tuning use the 60 Training samples, or the Evaluation samples?
+- Echoed and rejected hand-ins: with the platform team ([note](evidence/platform-issue-finish-rejection.md)).
 
 ---
 
@@ -177,7 +261,7 @@ On world v3, with **MAI-CODE-5b** as the climbing model. Each stage changes one 
 | **An evaluation runs one skill per sample**; a two-skill design only works in `chat` | One self-contained skill |
 | Search returns large extracts, and the same "hub" documents for different queries | Scope searches to a folder (`path:"<library>/<folder>"`); give the folder map in the skill (stage 2) |
 | `skills create --file` silently drops sections it doesn't recognise | Set instructions with `skills update --instructions` |
-| Each evaluation job pays ~9 min of platform start-up + ~2.5 min grading, whatever the claim | Batches of 5 claims per job (`scripts/eval-sequential.ps1 -BatchSize 5`): 5 claims in 20–27 min. (Parallel runs stalled on world v2's heavy runs, not on v3's light ones) |
+| Each evaluation job pays ~9 min of platform start-up + ~2.5 min grading, whatever the claim | Batches of 5 claims per job (`scripts/eval-batches.ps1 -BatchSize 5`): 5 claims in 20–27 min. (Parallel runs stalled on world v2's heavy runs, not on v3's light ones) |
 | The finish tool sometimes rejects a correct hand-in; the graded answer is then a stub | Track the rejection rate per stage; reported to the platform team |
 | `chat --wait` gives up at ~16 min; `evaluate status` reports `Succeeded`, not `Completed` | Poll `executions get` / `evaluate status` until terminal |
 | World defects found by runs (inspection reports, a seal-kit clause, twin claims, an answer-key order, a missing prior claim) | Each fixed in the generator with a gate (v2–v2.3); v3 keeps them all |
