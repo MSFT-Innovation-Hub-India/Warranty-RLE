@@ -51,3 +51,7 @@ The same rejection now appears with `dev-ct-mai-code-mp`. In wce-dev (two skills
 - Eval job `73fa5456…` (GPT-5.4-Mini, 30 samples): 2 runs (C-2026-04118, C-2026-04110) hung from 16:49 UTC with resubmissions 5 → 8; cancelled at 17:23 UTC. GPT-5.6-Sol ran 30 concurrently with 0 retries. Is there a lower throughput quota on `dev-ct-*` deployments?
 - Some runs graded twice (two sets of rubric results); MAI run `181a5c12…` not graded, with no error.
 - `m365__call_copilot` vanished from `tools available` between 03:30 and 05:40 UTC on 2026-10-05 (137 → 136 tools); `tools available` also returns short counts (88, 106) on some reads.
+
+## Update 2026-10-08: echoed hand-ins on world v3 (MAI-CODE-5b, 30-claim evaluation)
+
+In the stage-0 evaluation (wce-main, jobs `92cf4f5f-…`, `6ba0f977-…`, `afecf010-…` and one job per claim for 04101–04140), **5 of 30 runs handed in the user's own question as the answer**. Grader: *"passing the user's query verbatim to `finish`"* (C-2026-04115, 04139, 04140, 04167, 04176; 04139 recovered when the platform re-ran the skill). Two more runs had a full answer rejected and a shorter one accepted (04103, 04152). The skill gives no hand-in instructions. **Question:** is this the same finish-tool format check?

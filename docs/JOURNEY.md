@@ -6,12 +6,11 @@ How this world is built, where the climb stands, and what we learned on the way.
 | --- | --- |
 | [1. The scenario](#1-the-scenario-in-two-minutes) | What the agent does, where its facts live, why it's hard, and how a run works |
 | [2. Setting up the world](#2-setting-up-the-world) | The build recipe, step by step |
-| [3. The climb](#3-the-climb) | The stages, one line each; detail in [stages/](../stages/README.md) |
-| [4. What we've learned](#4-what-weve-learned) | Lessons, as issue → what we did |
-| [5. Side experiments](#5-side-experiments) | Runs outside the climb |
+| [3. The climb](#3-the-climb) | The stages on world v3; detail in [stages/](../stages/README.md) |
+| [4. What we carried from the first climb](#4-what-we-carried-from-the-first-climb) | The lessons from world v2 that shaped v3 |
 | [Appendix](#appendix--helper-snippets) | Helper snippets |
 
-Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream guidance · 🔬 unverified · 💭 reasoning. The full chronological record, with every dead end, is in [archive/](../archive/README.md) and [evidence/](evidence/README.md).
+Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream guidance · 🔬 unverified · 💭 reasoning. The verbatim record is in [evidence/](evidence/README.md).
 
 ---
 
@@ -19,14 +18,14 @@ Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream gu
 
 | | |
 | --- | --- |
-| **Status** | Stages 0–2 done on GPT-5.6-Sol: it saturates the world (0.978 · 27/30). **Stage 3** (MAI-CODE-5b, research split into its own skill, folder-scoped search) is ready to run in wce-main; trialled 6/6 correct in wce-dev. World **v2.3** |
-| **Next** | Apply [stage 3](../stages/stage-3/README.md) to wce-main → smoke test 1 sample → 30 claims in 3 batches of 10 → three numbers (rubric, correct, hand-in rejections). Then rubrics v2 (stage 4) → headroom (stage 5) → RFT (stage 6) |
+| **Status** | **World v3** (one-call claim dossier, records only; one labour workbook). **Stage 0 closed:** MAI-CODE-5b with the naive skill and generated rubrics: rubric **0.744**, correct **23/30**, 0 overflows; 4 claims lost to echoed hand-ins |
+| **Next** | Fix the scorer's 7 misreads → GPT-5.6-Sol reference run on stage 0's configuration → **stage 1**: hand-written rubrics (re-upload the 30 samples, which capture rubrics at upload) |
 | **Open** | Hand-in rejections by the platform's finish tool ([note](evidence/platform-issue-finish-rejection.md)) · MAI-CODE-5b vs `mai-code-1-flash`: same weights? · does tuning use Training or Evaluation samples? · P6 endpoint auth deferred |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (the climb) · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc` (trials) |
-| **Skills** | main: `warranty-assistant` `cf00d339-5217-4cd1-b390-cc0d911735da` (stage 2 config) · dev: `warranty-assistant` `8e9d12a2-b0a5-4683-95f1-b225ed9ade44` + `library-research` `9db9be9a-f862-4444-a904-f63373f387fa` (stage 3 config) |
-| **MCP server** | main `1c171d49-7f85-4997-8126-ae20829a4dbf` · dev `34d14238-fe93-48b5-ba70-3f3a949f6d64` · ACA pinned at 5 replicas · OneDrive slot off in both worlds |
-| **Models** | Run: `prod-gpt-56-reasoning-sol`, `dev-ct-gpt-54-mini-mp`, `dev-ct-mai-code-mp` · Tune: `gpt-54-mini`, `mai-code-1-flash` |
-| **Before every run** | SQL public access is switched off daily (SFI): re-enable it. Add your IP to the SQL firewall if it changed. `/healthz`, then `scripts\db-baseline.sql` = 0 0 0 0. Snapshot and reset after every run |
+| **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`; one skill per world |
+| **MCP server** | `contoso-service-mcp:v5-dossier-20261007-1646` · main `1c171d49-…` · dev `34d14238-…` · 5 replicas · OneDrive slot off · 110 tools |
+| **Models** | Run: `dev-ct-mai-code-mp` (climb), `prod-gpt-56-reasoning-sol` (reference) · Tune: `mai-code-1-flash` |
+| **Before every run** | SQL public access is switched off daily (SFI): re-enable it; your IP must be in the SQL firewall. `/healthz`, then `scripts\db-baseline.sql` = 0 0 0 0. Run claims in **batches of 5** per job; snapshot and reset after each job |
 
 ---
 ## 1. The scenario in two minutes
@@ -43,7 +42,7 @@ Every answer is a decision plus a number, and can be checked against
 | --- | --- | --- |
 | SharePoint library `Warranty Operations` | Policy, regional addenda, 12 bulletins, rate cards (Excel), partner agreements, review decks (PowerPoint), inspection reports | Built-in SharePoint search |
 | 3 Teams channels | Field escalations, policy announcements, partner chatter | Built-in Teams tools |
-| Azure SQL, via our MCP server | Assets, running hours, service history, claims, partners, parts, goodwill authority | 9 read + 3 write tools |
+| Azure SQL, via our MCP server | Assets, running hours, service history, claims, partners, parts, a bulletin index, goodwill authority | **1 read** (`get_claim_dossier`: every record for a claim, records only) + 3 draft-only write tools |
 
 **Why it's hard.** Twelve deliberate traps. A few examples:
 
@@ -59,12 +58,11 @@ All 12 are in [03 § 7](03-scenario-design.md).
 
 ### How the agent reasons through a claim
 
-There's no fixed reading list. **Which documents matter depends on facts found
-along the way**, so the agent works in steps: each result decides the next lookup.
+There's no fixed reading list. **Which documents matter depends on the claim's own records**: the dossier gives the facts in one call, and they decide which documents to read and which source wins.
 
 ```
-get_claim ─► get_asset ─┬─ commissioning missing? ──► STOP: request evidence            (abstention)
-                        │
+dossier: claim + asset ┬─ commissioning missing? ──► STOP: request evidence            (abstention)
+                       │
                         ├─ region ──► regional addendum (India 18 mo / EMEA …)
                         ├─ family + serial ──► a bulletin naming this serial?           (precedence, serial boundary)
                         │         └─ superseded? use the newer one; DB index disagrees? the document wins
@@ -97,12 +95,12 @@ get_claim ─► get_asset ─┬─ commissioning missing? ──► STOP: requ
 | authority | out of cover, goodwill asked → matrix → Teams → **escalate**, don't approve | ~6–8 |
 | abstention | commissioning missing → policy 2.3 → **request evidence** and stop | ~4 |
 
-🖥️ The coverage-only comparison question took **8 hops in sequence**: claim → asset → hours → history → prior claims → bulletin index → bulletin → policy. A full adjudication adds the money lookups. At 3–11 s per hop, that's why a run takes 1.5–3 minutes.
+In world v2 each of those facts was a separate tool call (13–17 per claim). World v3 gathers the claim-system facts into one dossier, so a claim takes about 4–6 calls: the dossier, 1–3 folder-scoped document searches, Teams where goodwill is involved, and the draft. The judgment (which source wins, which limit bites, what is payable) is unchanged.
 
-**Why it's built this way.** A single search can't answer a claim: the right
-bulletin is only findable *after* the serial comes back, the right rate row
+**Why it's built this way.** No single source answers a claim: the right
+bulletin is only identifiable from the asset's serial, the right rate row
 needs the repair date, and the distractors (stale deck, stale index, Teams
-"approval") surface mid-research and must be discounted. Choosing the next step,
+"approval") must be discounted. Choosing the next step,
 knowing when to stop and deciding which source wins are the habits the climb
 measures and RFT reinforces.
 
@@ -114,7 +112,7 @@ For one claim walked end to end, step by step, see
 **One request; the world runs the agent.** A `chat` call, or each sample in an evaluation, is a single request. Inside the world:
 
 1. A **top-level agent** reads the skill descriptions and calls the skill(s) it needs, in the order the descriptions suggest. Skills can't call each other; an unrelated request calls none.
-2. Each skill runs as a **sub-agent with its own context**: its instructions plus every enabled tool (~118 here: MCP, SharePoint, Teams, M365 search…).
+2. Each skill runs as a **sub-agent with its own context**: its instructions plus every enabled tool (110 here: MCP, SharePoint, Teams, M365 search…).
 3. The model calls tools; each result is appended and the **whole history is re-sent** every turn.
 4. It **hands in** through the platform's finish tool, which can reject a hand-in.
 5. A **grader model** scores each skill's accepted hand-in against **that skill's** rubrics. The run's score is the adjudication skill's.
@@ -127,7 +125,7 @@ For one claim walked end to end, step by step, see
 
 **What we can see:** `executions get` gives the successful tool calls, `Skills[]` (status and errors such as `ContextLength`), the rubric scores with the grader's reasoning, and token billing. Rejected hand-ins appear only in the grader's notes; the diagnostics API is blocked (403).
 
-**Context budget.** A small model's window is the binding limit, not the task's complexity. Per run, GPT-5.6-Sol carried up to 386k characters of tool output; MAI-CODE-5b fails at ~230–275k. Design to stay well inside it: compact tool outputs (MCP < 1k each), folder-scoped searches, and work split across sub-agents.
+**Context budget.** A small model's window is a binding limit. In world v2, GPT-5.6-Sol carried up to 386k characters of tool output per run; MAI-CODE-5b failed at ~230–275k. World v3 stays well inside it: one ~2.5k-character dossier instead of nine reads, and folder-scoped document searches. **An evaluation runs one skill per sample**, so the work can't be split across skills there.
 
 ---
 
@@ -145,11 +143,10 @@ For one claim walked end to end, step by step, see
 | [P8](#p8--connect-the-mcp-server-to-the-worlds) | Connect the MCP server to the worlds | ✅ |
 | [P9](#p9--stage-0-skill-and-prompts) | Stage-0 skill and prompts | ✅ |
 | [P10](#p10--prove-every-source-is-reachable) | Prove every source is reachable | ✅ dev · ✅ main (stage-0 probe) |
-| [P11](#p11--update-the-runbook) | Update the runbook | ⬜ before stage 1 |
 
 > P1 (running the generators) is folded into P0. Outputs below are
 > **excerpts**, trimmed or condensed for reading. Every command and its full
-> output is in the [execution record](evidence/journey-record-2026-10-03.md).
+> output is in the execution record.
 
 ### P0 — Build and check the corpus
 
@@ -188,7 +185,7 @@ seed, and 30 eval / 60 train prompts in `out/`.
 <details><summary><strong>You should see</strong></summary>
 
 ```text
-local=39 remote=39 missing=0
+local=39 remote=39 missing=0      (v2; v3 has 38: the two labour workbooks are merged into one)
 .docx: n=34 delta min=8890 max=8902
 .pptx: n=2 delta min=8447 max=8533
 .xlsx: n=3 delta min=7448 max=7462
@@ -203,6 +200,8 @@ TSB-C-0051 text, downloaded vs local: paragraphs+rows 18 18 identical: True
 - Uploaded files are about 8 KB bigger. That's SharePoint adding its own metadata, not damage.
 
 ✅ **Result:** 39/39 files in place, and the trap-1 bulletin's text is identical.
+
+**World v3 (2026-10-07):** `03-RateCards` now holds `Warranty-Labour-Rate-Card-FY26.xlsx` (flat-rate schedule + regional rates, two sheets) and `Parts-Price-List-FY26.xlsx`. Uploaded and the two v2 workbooks deleted with the world's own SharePoint tools (`tools invoke mcp_SharePointRemoteServer__createSmallBinaryFile` / `deleteFileOrFolder`, run without `cmd.exe`, whose ~8k command-line limit truncates the base64). Searchable at rank 1 within minutes.
 
 ### P3 — Teams
 
@@ -286,9 +285,10 @@ Then give the app's managed identity access to the database ([H4](#h4-give-the-a
 GET https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/healthz
 {"status":"ok","assets":117}
 
-tools/list -> 12 tools: get_asset, get_running_hours, get_service_history, find_prior_claims, get_claim,
-get_dealer, lookup_part, get_tsb_index, get_goodwill_authority, create_claim_adjudication,
+tools/list -> 4 tools (world v3): get_claim_dossier, create_claim_adjudication,
 request_missing_evidence, escalate_goodwill
+(world v2 had 9 reads: get_asset, get_running_hours, get_service_history, find_prior_claims,
+get_claim, get_dealer, lookup_part, get_tsb_index, get_goodwill_authority)
 ```
 
 </details>
@@ -302,7 +302,7 @@ request_missing_evidence, escalate_goodwill
 | `ER05017 Failed to connect` when registering, or the agent never calls the tools | **The server must be stateless**: with more than one replica, a session kept in memory is lost | `stateless_http=True` in `server.py` |
 | Redirect error on `/mcp/` | The trailing slash redirects to plain HTTP | Always use `/mcp` |
 
-✅ **Result:** healthy, and all 12 tools tested directly, including the writes,
+✅ **Result:** healthy, and all tools tested directly, including the writes,
 which were cleaned up afterwards. ⚠️ The endpoint has **no authentication** yet; see P6.
 
 ### P6 — Protect the MCP endpoint
@@ -403,9 +403,9 @@ main available total: 125            (dev: 137 = 125 + our 12)
 rather than by us. That's the naive baseline the climb starts from.
 
 **Do.**
-1. Write [stages/stage-0/warranty-assistant.md](../stages/stage-0/warranty-assistant.md). It describes the business job: who the agent serves, what an adjudication must establish, which sources exist, and how to write for an adjudicator. It deliberately leaves out the rules that solve the traps (which instrument wins, document over index, no install-date substitute, flat-rate cap, rate by repair date, written authority). The agent has to find those in the policy documents.
+1. Write stages/stage-0/warranty-assistant.md. It describes the business job: who the agent serves, what an adjudication must establish, which sources exist, and how to write for an adjudicator. It deliberately leaves out the rules that solve the traps (which instrument wins, document over index, no install-date substitute, flat-rate cap, rate by repair date, written authority). The agent has to find those in the policy documents.
 2. Create it on dev with `generateRubrics: true`, and review what the platform generates.
-3. Pin the generated set in [warranty-assistant.rubrics.json](../stages/stage-0/warranty-assistant.rubrics.json) and apply it to main, so both worlds are scored against identical rubrics.
+3. Pin the generated set in warranty-assistant.rubrics.json and apply it to main, so both worlds are scored against identical rubrics.
 
 ```powershell
 frontier-tuning skills create --file stages\stage-0\warranty-assistant.md --env-id 6bec3bf9-0222-4285-8a5b-214867ac42cc -o json   # dev: generates rubrics
@@ -446,7 +446,7 @@ The ⚠️ gaps are intentional headroom: stage 2's hand-written rubrics close t
 - From stage 1, the agent records drafts, so run the baseline check ([H2](#h2-baseline-check--are-the-action-tables-clean)) and clean up between runs.
 
 ✅ **Skill done:** `warranty-assistant` on main `cf00d339-5217-4cd1-b390-cc0d911735da` and dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`, with identical pinned rubrics.
-✅ **Prompts done:** 8 eval prompts in [stages/stage-0/stage0.jsonl](../stages/stage-0/stage0.jsonl): 3 covered-simple, 2 declined-simple, and 3 precedence (04114, 04116, 04118).
+✅ **Prompts done:** 8 eval prompts in stages/stage-0/stage0.jsonl: 3 covered-simple, 2 declined-simple, and 3 precedence (04114, 04116, 04118).
 
 ### P10 — Prove every source is reachable
 
@@ -458,108 +458,54 @@ The ⚠️ gaps are intentional headroom: stage 2's hand-written rubrics close t
 | Teams | What did Vikram say on C-2026-04141, and Meera's reply? | 7 Teams calls → correct, authors read from the text | 80 s |
 | Database | Commissioning date and hours of CIE-4000-CH-01700? | 2 MCP calls → correct (4 Apr 2024, 4,120 h) | 53 s |
 
-Raw records: [p7](evidence/p7/) · [p8](evidence/p8/).
+Raw records: p7 · p8.
 
 🔬 **Not yet proven:** the other files and threads one by one, Excel content
 specifically, and the same on main. The stage-0 probe on main covers the last.
 
-### P11 — Update the runbook
-
-⬜ **Before stage 1.** Three updates to [runbook 05](05-hill-climb-runbook.md):
-- Add AGENTS goals 3 (use the platform's own tools) and 4 (Simple vs BestOfN headroom).
-- Correct the tool names to the `<id prefix>__<tool>` form.
-- Stage 4: GPT-5.4-Mini first (4a), then repeat with MAI (4b). The runbook currently plans MAI only.
-
 ---
+
 ## 3. The climb
 
-Each stage changes one thing and reports two numbers: the platform's **rubric score**, and **ground-truth correctness** (decision, governing instrument, payable; [`build/score_ground_truth.py`](#h5-score-answers-against-the-ground-truth)). The rubric score is the RFT reward, so if it climbs while correctness doesn't, the rubrics get fixed before tuning.
+On world v3, with **MAI-CODE-5b** as the climbing model. Each stage changes one thing and reports **three numbers**: the platform's rubric score, ground-truth correctness ([`build/score_ground_truth.py`](#h5-score-answers-against-the-ground-truth)), and the hand-in rejection rate. The rubric score becomes the RFT reward, so if it climbs while correctness doesn't, the rubrics get fixed before tuning.
 
-| Stage | Change | Model | Rubric | Correct | Takeaway |
-| --- | --- | --- | --- | --- | --- |
-| [0](../stages/stage-0/README.md) | Baseline: one skill, generated rubrics, claim system off, 8 prompts | GPT-5.6-Sol | 0.535 | 0/8 | Without claim facts the agent holds, and doesn't invent |
-| [1](../stages/stage-1/README.md) | Claim system (MCP) on | GPT-5.6-Sol | 0.991 | 7/8 | Plumbing was the whole gap; saturated |
-| [2](../stages/stage-2/README.md) | All 30 eval prompts | GPT-5.6-Sol | 0.978 | 27/30 | The frontier model handles every trap: no headroom |
-| [3](../stages/stage-3/README.md) | MAI-CODE-5b; research split into its own skill; folder-scoped search | MAI-CODE-5b | ⬜ | ⬜ | Ready; 6/6 correct in the wce-dev trial |
-| 4 | Hand-written rubrics (v2) for both skills | MAI-CODE-5b | | | |
-| 5 | `Simple` vs `BestOfN`: headroom for tuning? | MAI-CODE-5b | | | |
-| 6 | RFT on `mai-code-1-flash`, before and after | MAI | | | |
-
-World versions v2–v2.3 (each fixing a defect a run exposed) are listed in [stages/README](../stages/README.md).
+| Stage | Change | Rubric | Correct | Takeaway |
+| --- | --- | --- | --- | --- |
+| [0](../stages/stage-0/README.md) | Naive baseline: business-brief skill, platform-generated rubrics, 30 prompts | **0.744** | **23/30** | Real headroom: authority 0/2, 4 claims lost to echoed hand-ins; generated rubrics overrate (wrong answers at 0.85–1.0); median 10 calls against a ~5-call minimum |
+| 1 | Hand-written rubrics ([draft](../stages/hand-written-rubrics-draft.md)) | | | |
+| 2 | Skill refined with the platform's tools, then our approach guidance | | | |
+| 3 | `Simple` vs `BestOfN`: headroom for tuning? | | | |
+| 4 | RFT on `mai-code-1-flash`; compare with GPT-5.6-Sol | | | |
 
 ---
 
-## 4. What we've learned
+## 4. What we carried from the first climb
 
-**The platform**
+**The first climb (world v2)**, in brief. Its files were removed from the workspace on 2026-10-08 (kept in the backup and in git history).
 
-| Issue | What we did |
-| --- | --- |
-| Skills are sub-agents chosen by the top-level agent from their descriptions; one skill can't call another | Steer the order with descriptions ("Use this first…" / "expects the facts… gathered first") |
-| Grading is per skill, by that skill's own rubrics; a skill without rubrics goes unmeasured | Rubrics for `library-research` drafted (v2) |
-| The finish tool rejects some hand-ins: GPT-5.4-Mini 22/28; MAI 4/8 in one window. The user gets a correct answer, but the graded hand-in is a stub, and the skill re-runs and writes duplicate drafts | Reported ([note](evidence/platform-issue-finish-rejection.md)); removed a hand-in line from the skill (0/3 after); track the rejection rate per stage |
-| `chat --wait` gives up at ~16 min while the run continues | Poll `executions get` until the status settles |
-| `chat --skill-id` returns error 500 | Omit it; routing works |
-| No per-skill model: `--model` applies to the whole run | One model per run |
-| The tool set can change without notice (`m365__call_copilot` vanished; counts briefly read 88) | Record `tools available` before every run; re-read |
-| Search returns large extracts (~18k characters) and the same "hub" documents (policy, review decks) for different queries | Scope each search to a folder: `path:"<library>/<folder>"` in the query |
-| Search works on title and reference words; "rate card" and queries stuffed with identifiers return nothing | Search with the references the claim system returns, plus the kind of document |
+| Step | Model | Result | What it taught |
+| --- | --- | --- | --- |
+| Baseline, claim system off | GPT-5.6-Sol | 0.535 · 0/8 | Without claim facts the agent holds, and doesn't invent |
+| Claim system on | GPT-5.6-Sol | 0.991 · 7/8 | Plumbing was the whole gap on easy prompts |
+| All 30 prompts | GPT-5.6-Sol | 0.978 · 27/30 | **The frontier model saturates the world**: no headroom |
+| Small models | GPT-5.4-Mini, MAI-CODE-5b | 6/6 correct on MAI trials after fixes | Hand-in rejections (Mini); context overflow (MAI), fixed by folder-scoped search |
 
-**Measuring**
+**Lessons that shaped world v3 and this climb**
 
 | Issue | What we did |
 | --- | --- |
-| The generated rubrics don't check correctness: wrong holds and a hedged escalation scored 1.0 | Ground truth reported every stage; hand-written rubrics (stage 4) before RFT |
-| ~0.1 moves at 8 samples are noise | Judge on 30 prompts |
-| The stored answer isn't always the delivered one (rejected hand-ins) | The scorer checks delivery; flagged answers are read by hand |
-| The frontier model saturates this world | The climb continues on a small model |
-
-**The world**
-
-| Issue | What we did |
-| --- | --- |
-| Runs exposed four world defects: inspection reports, a seal-kit ambiguity, twin claims and an answer-key order, a missing prior claim | Each fixed in the generator, with a gate so it can't recur (v2–v2.3) |
-| Our MCP tool descriptions state trap answers (e.g. "the bulletin document governs") | 🔬 Open: keep, or make the descriptions purely factual |
-
-**Small models**
-
-| Issue | What we did |
-| --- | --- |
-| GPT-5.4-Mini skipped documents, finished early, and its hand-ins were rejected | Skill guidance fixed the research order, not the hand-ins; moved to MAI |
-| MAI's decisions were right, but it ran out of context on heavy claims | Split research into its own skill; folder-scoped search (610k → 57k on the heaviest claim) |
-| MAI invented folder names when left to infer them | The folder map is given in a `## Library folders` section of each skill |
-| Small-model runs re-send their context every turn: ~1–2.5 M input tokens per claim (Sol ~0.2–0.9 M) | Fewer turns, compact outputs; evaluate in batches of 10 |
-
-**The environment**
-
-| Issue | What we did |
-| --- | --- |
-| SQL public access is switched off daily; the client IP changes | Pre-flight check; single-IP firewall rule |
-| MCP: `Invalid Host header`; `ER05017` with stateful sessions; no tools during scale-out | `MCP_ALLOWED_HOSTS`; `stateless_http=True`; replicas pinned |
+| A claim took 13–17 tool calls; small-model runs took 15–30 min and filled their context | **World v3:** one claim dossier (1 call instead of 9) and one labour workbook |
+| Our tool descriptions stated the trap answers ("the bulletin document governs"), easing the climb | **World v3:** the dossier returns records only |
+| The generated rubrics gave wrong answers full marks | Hand-written rubrics in stage 1, before any tuning |
+| **An evaluation runs one skill per sample**; a two-skill design only works in `chat` | One self-contained skill |
+| Search returns large extracts, and the same "hub" documents for different queries | Scope searches to a folder (`path:"<library>/<folder>"`); give the folder map in the skill (stage 2) |
+| `skills create --file` silently drops sections it doesn't recognise | Set instructions with `skills update --instructions` |
+| Each evaluation job pays ~9 min of platform start-up + ~2.5 min grading, whatever the claim | Batches of 5 claims per job (`scripts/eval-sequential.ps1 -BatchSize 5`): 5 claims in 20–27 min. (Parallel runs stalled on world v2's heavy runs, not on v3's light ones) |
+| The finish tool sometimes rejects a correct hand-in; the graded answer is then a stub | Track the rejection rate per stage; reported to the platform team |
+| `chat --wait` gives up at ~16 min; `evaluate status` reports `Succeeded`, not `Completed` | Poll `executions get` / `evaluate status` until terminal |
+| World defects found by runs (inspection reports, a seal-kit clause, twin claims, an answer-key order, a missing prior claim) | Each fixed in the generator with a gate (v2–v2.3); v3 keeps them all |
 
 ---
-## 5. Side experiments
-
-### GPT-5.6 vs MAI on one question · 10-03
-
-Same question on dev for both models: *"Is the hydraulic pump repair on claim
-C-2026-04114 covered under warranty? State the governing instrument and when
-that coverage expires. Do not record or change anything in the claim system."*
-Expected: covered, TSB-C-0051, expires 4 Apr 2027 or 8,000 h. Trap 1 is in play.
-
-| | GPT-5.6 (`prod-gpt-56-reasoning-sol`) | MAI (`dev-ct-mai-code-mp`) |
-| --- | --- | --- |
-| Answer | ✅ Correct, trap 1 handled | ✅ Correct, trap 1 handled |
-| Time | 62 s | 86 s |
-| Tool calls | 6 DB + 2 documents | 6 DB + 3 documents |
-| Tokens in / out | 143,361 / 1,238 | 115,928 / 435 |
-
-💭 This is the first run to use documents and database together, and both
-models handled it. One easy question says nothing about the gap between them;
-stage 4 measures that properly. Raw records: [evidence/adhoc-model-compare/](evidence/adhoc-model-compare/).
-
----
-
 ## Appendix — helper snippets
 
 H3 and H4 are exactly as run. H1 is a simplified, single-file form of the

@@ -1,0 +1,167 @@
+What each stage-0 job wrote to the claim system, captured before the reset (scripts/db-actions-snapshot.sql).
+
+===== 04101 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                              created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                              ----------                  
+draft ADJ-FC9582D566 C-2026-04101 approve | payable=69575.00 INR | refs=["POL-WAR-4.2 clause 4.1 labour", "POL-WAR-4.2 clause 4.2 parts", "ADD-IN-2.1 A1 coverage period (India)", "SPA-2023-FAB-IN clause 6.2 no handling uplift", "Warranty-Labour-Rate-Card-FY26.xlsx (CTRL-BD-RR flat-rate 1.5 h, INR 1450/h)", "Parts-Price-List-FY26.xlsx (P-44900 price INR 67,400)", "C-2026-04101 Inspection Report CIE-4000-CH-01050.docx"] 10/7/2026 12:29:42 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04102 (after the job, before reset)
+kind  id             claim_id     detail                                                                                        created_at                  
+----  --             --------     ------                                                                                        ----------                  
+draft ADJ-52E4A6C736 C-2026-04102 approve | payable=48420.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "SPA-2023-FAB-IN"]        10/7/2026 12:53:10 PM +00:00
+draft ADJ-8782DD9BAE C-2026-04102 approve | payable=48420.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "SPA-2023-FAB-IN"]        10/7/2026 12:53:44 PM +00:00
+draft ADJ-9FFE34F927 C-2026-04102 approve | payable=- INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-C-0051", "SPA-2023-FAB-IN"] 10/7/2026 12:52:20 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04103 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                           created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                           ----------                 
+draft ADJ-BAD9CAFC63 C-2026-04103 approve | payable=19150.00 INR | refs=["POL-WAR-4.2 \u00a72.1 (standard coverage)", "ADD-IN-2.1 A1 (India 18 months / 5,000 h)", "Warranty-Labour-Rate-Card-FY26 (India INR 1,450/h for SEAL-KIT-RR on 2026-04-22)", "Part record P-22120 (Seal kit, INR 14,800 current price)"] 10/7/2026 1:15:07 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04109 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                        created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                        ----------                 
+draft ADJ-60C376D0D5 C-2026-04109 decline | payable=0.00 INR | refs=["POL-WAR-4.2 Global Warranty Policy v4.2, \u00a7\u00a71.4, 2.1, 4.1\u20134.3", "ADD-IN-2.1 Regional Addendum - India v2.1, \u00a7A1", "Warranty-Labour-Rate-Card-FY26.xlsx, Flat Rate Labour CTRL-BD-RR = 1.5h; Labour Rates India INR 1450/h from 2026-04-01", "SPA-2023-FAB-IN Fabrikam Service Partners, \u00a76 (no handling uplift)"] 10/7/2026 1:40:42 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04110 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                        created_at                 
+----  --             --------     ------                                                                                                                                        ----------                 
+draft ADJ-D432CD1EAA C-2026-04110 decline | payable=0.00 INR | refs=["ADD-IN-2.1 Regional Addendum - India v2.1", "POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2"] 10/7/2026 1:59:57 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04114 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ----------                 
+draft ADJ-141B26F227 C-2026-04114 approve | payable=199175.00 INR | refs=["TSB-C-0051 \u2013 extended hydraulic/compressor coverage for 4000-CH serials 01200-01850 inclusive (36 months / 8,000 running hours)", "ADD-IN-2.1 A1 \u2013 India coverage varied to 18 months / 5,000 hours, but TSB-C-0051 takes precedence for this serial range under POL-WAR-4.2 1.4", "POL-WAR-4.2 4.1 Labour payable at flat-rate allowance / regional rate in force on repair date; 4.2 Parts payable at territory list price", "Warranty-Labour-Rate-Card-FY26.xlsx \u2013 HYD-PUMP-RR flat-rate 5.5 h; India INR 1450/h effective 2026-04-01", "SPA-2023-FAB-IN Fabrikam \u2013 no handling uplift payable"] 10/7/2026 2:22:51 PM +00:00
+draft ADJ-2D63758546 C-2026-04114 approve | payable=199175.00 INR | refs=["TSB-C-0051 \u2013 extended hydraulic/compressor coverage for 4000-CH serials 01200-01850 inclusive (36 months / 8,000 running hours)", "ADD-IN-2.1 A1 \u2013 India coverage varied to 18 months / 5,000 hours, but TSB-C-0051 takes precedence for this serial range under POL-WAR-4.2 1.4", "POL-WAR-4.2 4.1 Labour payable at flat-rate allowance / regional rate in force on repair date; 4.2 Parts payable at territory list price", "Warranty-Labour-Rate-Card-FY26.xlsx \u2013 HYD-PUMP-RR flat-rate 5.5 h; India INR 1450/h effective 2026-04-01", "SPA-2023-FAB-IN Fabrikam \u2013 no handling uplift payable"] 10/7/2026 2:20:27 PM +00:00
+draft ADJ-CBB9105EBF C-2026-04114 approve | payable=199175.00 INR | refs=["TSB-C-0051", "ADD-IN-2.1", "POL-WAR-4.2 4.1, 4.2", "Warranty-Labour-Rate-Card-FY26.xlsx", "SPA-2023-FAB-IN"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            10/7/2026 2:22:34 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04115 (after the job, before reset)
+(no rows)
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04116 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                 created_at                 
+----  --             --------     ------                                                                                                                                                                                                 ----------                 
+draft ADJ-5CD36FD615 C-2026-04116 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 2.1", "ADD-IN-2.1 A1", "TSB-C-0051 serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive (does not apply to serial CIE-4000-CH-01950)"] 10/7/2026 2:56:12 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04117 (after the job, before reset)
+kind  id             claim_id     detail                                                                       created_at                 
+----  --             --------     ------                                                                       ----------                 
+draft ADJ-B536D869C8 C-2026-04117 decline | payable=0.00 INR | refs=["POL-WAR-4.2 \u00a72.1", "ADD-IN-2.1 A1"] 10/7/2026 3:12:47 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04118 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                             created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                             ----------                 
+draft ADJ-E35A090EEB C-2026-04118 approve | payable=67500.00 INR | refs=["POL-WAR-4.2 \u00a71.4 (precedence)", "TSB-P-0112 (valve plate coverage, serial range CIE-2200-AC-00400 to 00750)", "ADD-IN-2.1 \u00a7A1 (India coverage period, varied to 18 months / 5,000 h)", "POL-WAR-4.2 \u00a74.1\u20134.3 (labour/parts/handling)", "Warranty-Labour-Rate-Card-FY26 (VALVE-PLT-RR at 4.0 h; India INR 1,450/h on 2026-06-01)", "SPA-2023-FAB-IN \u00a76 (parts at list price; no handling uplift)"] 10/7/2026 3:31:32 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04129 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                        created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                        ----------                 
+draft ADJ-CE1FA6A68A C-2026-04129 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 1.4 (precedence)", "ADD-IN-2.1 A1 (India coverage period: 18 months from commissioning or 5,000 running hours, whichever first)", "TSB-C-0051 (serial range CIE-4000-CH-01200 to CIE-4000-CH-01850; asset serial CIE-4000-CH-01199 is outside range)"] 10/7/2026 3:54:40 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04130 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ----------                 
+draft ADJ-56BFF4B035 C-2026-04130 approve | payable=198450.00 INR | refs=["TSB-C-0051: Extended coverage - 4000-series hydraulic circuit and compressor (serial range CIE-4000-CH-01200 to CIE-4000-CH-01850; 36 months / 8,000 h, hydraulic circuit and compressor)", "POL-WAR-4.2 \u00a71.4: Precedence between instruments (TSB outranks regional addendum and global policy)", "Warranty-Labour-Rate-Card-FY26: HYD-PUMP-RR flat-rate 5.5 h; India FY26 labour rate INR 1,450/h from 2026-04-01", "SPA-2023-FAB-IN \u00a76: Fabrikam Service Partners \u2014 no handling uplift payable"] 10/7/2026 4:15:13 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04131 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                       created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                       ----------                 
+draft ADJ-B5594484B1 C-2026-04131 approve | payable=198450.00 INR | refs=["POL-WAR-4.2 clause 1.4 (precedence)", "ADD-IN-2.1 A1 (India coverage period 18 months / 5,000 h)", "TSB-C-0051 'Effect on warranty' (36 months / 8,000 h for 4000-CH hydraulic circuit and compressor, serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "Warranty-Labour-Rate-Card-FY26 (HYD-PUMP-RR flat-rate 5.5 h; India INR 1450/h from 2026-04-01)", "Claim-system part record P-44120-A (INR 191,200)"] 10/7/2026 4:33:26 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04132 (after the job, before reset)
+kind  id             claim_id     detail                                                                        created_at                 
+----  --             --------     ------                                                                        ----------                 
+draft ADJ-E95B848ADD C-2026-04132 decline | payable=0.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-C-0051"] 10/7/2026 4:55:26 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04139 (after the job, before reset)
+kind  id             claim_id     detail                                                                        created_at                 
+----  --             --------     ------                                                                        ----------                 
+draft ADJ-483B83775E C-2026-04139 decline | payable=0.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2", "ADD-IN-2.1"] 10/7/2026 5:17:22 PM +00:00
+draft ADJ-4F64569011 C-2026-04139 decline | payable=0.00 INR | refs=["TSB-C-0051"]                              10/7/2026 5:17:56 PM +00:00
+draft ADJ-86BEB7B870 C-2026-04139 request_evidence | payable=- INR | refs=["TSB-C-0051"]                        10/7/2026 5:15:34 PM +00:00
+draft ADJ-F85C4BA9AC C-2026-04139 decline | payable=0.00 INR | refs=["TSB-C-0051", "ADD-IN-2.1", "POL-WAR-4.2"] 10/7/2026 5:18:41 PM +00:00
+draft ADJ-FB2A927A57 C-2026-04139 decline | payable=0.00 INR | refs=["TSB-C-0051"]                              10/7/2026 5:19:22 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04140 (after the job, before reset)
+(no rows)
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04141+04148+04149+04151+04152 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           created_at                 
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ----------                 
+draft ADJ-8F9DCABB4E C-2026-04141 approve | payable=0.00 INR | refs=["TSB-C-0051"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 10/7/2026 5:54:07 PM +00:00
+draft ADJ-67DD4C93E7 C-2026-04148 approve | payable=208735.00 INR | refs=["TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor (serial range CIE-4000-CH-01200 to CIE-4000-CH-01850; 36 months / 8,000 h; hydraulic circuit coverage)", "POL-WAR-4.2 clause 1.4 (precedence), 4.1 labour, 4.2 parts, 4.3 handling uplift", "ADD-IN-2.1 India addendum A1 (18 months / 5,000 h) but superseded for this asset by TSB-C-0051", "SPA-2024-NWD-IN clause 6.2 (5% handling uplift on parts)", "Warranty-Labour-Rate-Card-FY26.xlsx: HYD-PUMP-RR flat-rate 5.5 h; India INR 1450/h from 2026-04-01", "C-2026-04148 Inspection Report CIE-4000-CH-01440 (part actually fitted P-44120-A; 8.0 h claimed; repair date 2026-06-18)"] 10/7/2026 5:54:56 PM +00:00
+draft ADJ-86C0C2AE21 C-2026-04149 approve | payable=753880.00 INR | refs=["POL-WAR-4.2 \u00a71.4 precedence between instruments", "ADD-IN-2.1 A1 varied coverage period for India", "TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor (serial range CIE-4000-CH-01200 to CIE-4000-CH-01850; 36 months / 8,000 h)", "Warranty-Labour-Rate-Card-FY26.xlsx flat-rate labour for COMP-RR and regional labour rate INR 1320/h on date of repair", "SPA-2023-FAB-IN Fabrikam Service Partners agreement (0% uplift)"]                                                                                                                                                                                                         10/7/2026 5:57:18 PM +00:00
+draft ADJ-DC72D6AEA0 C-2026-04151 approve | payable=31030.00 INR | refs=["POL-WAR-4.2 \u00a7\u00a72.1, 4.1, 4.2, 4.3", "ADD-IN-2.1 A1 (India coverage as fallback, overridden by TSB-C-0051 for this serial)", "TSB-C-0051 (hydraulic coverage, serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "Warranty-Labour-Rate-Card-FY26.xlsx (FILT-HSG-RR flat-rate 2.5h; INR 1450/h on 2026-05-20)", "SPA-2024-NWD-IN \u00a76.2 (5% handling uplift on parts)", "Claim dossier C-2026-04151 (repair 2026-05-20, running hours 3000, part P-44080 superseded by P-44080-B)"]                                                                                                                                                                        10/7/2026 5:57:28 PM +00:00
+draft ADJ-84C7C5D740 C-2026-04152 approve | payable=197000.00 INR | refs=["TSB-C-0051 \u2014 extended hydraulic circuit/compressor coverage to 36 months or 8,000 h, effective 2026-01-15", "POL-WAR-4.2 clause 1.4 \u2014 bulletin precedes regional addendum/global policy; clause 4.1 labour and 4.2 parts payable", "ADD-IN-2.1 clause A1 \u2014 India coverage period is 18 months/5,000 h, but superseded by TSB-C-0051 for this serial range", "Warranty-Labour-Rate-Card-FY26 \u2014 India INR 1,450/h effective 2026-04-01, flat-rate HYD-PUMP-RR = 5.5 h, payable at lesser of 4.0 h claimed or 5.5 h flat rate", "SPA-2023-FAB-IN Fabrikam \u2014 no handling uplift payable"]                                                          10/7/2026 5:53:06 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04150 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                            created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ----------                  
+draft ADJ-C6A070D095 C-2026-04150 approve | payable=755050.00 INR | refs=["POL-WAR-4.2 \u00a71.4 (precedence) and \u00a72.1 (standard coverage)", "ADD-IN-2.1 \u00a7A1 (India 18 months / 5,000 h)", "TSB-C-0051 'Effect on warranty' (36 months / 8,000 h, serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "Warranty-Labour-Rate-Card-FY26 India 2026-04-01 rate INR 1,450/h", "SPA-2023-FAB-IN \u00a76 (parts at list price; no handling uplift)", "Claim dossier C-2026-04150 / asset CIE-4000-CH-01444"] 10/7/2026 12:05:08 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04150 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                            created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ----------                  
+draft ADJ-C6A070D095 C-2026-04150 approve | payable=755050.00 INR | refs=["POL-WAR-4.2 \u00a71.4 (precedence) and \u00a72.1 (standard coverage)", "ADD-IN-2.1 \u00a7A1 (India 18 months / 5,000 h)", "TSB-C-0051 'Effect on warranty' (36 months / 8,000 h, serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "Warranty-Labour-Rate-Card-FY26 India 2026-04-01 rate INR 1,450/h", "SPA-2023-FAB-IN \u00a76 (parts at list price; no handling uplift)", "Claim dossier C-2026-04150 / asset CIE-4000-CH-01444"] 10/7/2026 12:05:08 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04153+04166+04167+04171+04172 (after the job, before reset)
+kind  id             claim_id     detail                                                                                                                                                                                                                   created_at                 
+----  --             --------     ------                                                                                                                                                                                                                   ----------                 
+draft ADJ-C4C9DA52B3 C-2026-04153 approve | payable=72945.00 INR | refs=["POL-WAR-4.2 \u00a72.1, \u00a74.1, \u00a74.2", "ADD-IN-2.1 A1", "SPA-2024-NWD-IN \u00a76.2", "Warranty-Labour-Rate-Card-FY26.xlsx (flat-rate labour and FY26 India labour rate)"] 10/7/2026 6:23:46 PM +00:00
+draft ADJ-E7B3A2FC6B C-2026-04166 approve | payable=199175.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-C-0051"]                                                                                                                                       10/7/2026 6:22:01 PM +00:00
+draft ADJ-051F362746 C-2026-04166 approve | payable=- INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "TSB-C-0051"]                                                                                                                                               10/7/2026 6:20:55 PM +00:00
+draft ADJ-08D0DEEE30 C-2026-04171 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 2.1", "ADD-IN-2.1 A1", "TSB-C-0051 serial-range applicability"]                                                                                                   10/7/2026 6:21:57 PM +00:00
+draft ADJ-5E20076F59 C-2026-04172 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 2.1 (standard coverage)", "ADD-IN-2.1 A1 (India 18 months / 5,000 h)"]                                                                                            10/7/2026 6:23:25 PM +00:00
+(no rows)
+OK: 1 batch(es) executed
+
+===== 04176+04177+04178 (after the job, before reset)
+kind     id             claim_id     detail                                                                                                                                                                 created_at                 
+----     --             --------     ------                                                                                                                                                                 ----------                 
+draft    ADJ-21EC82B6C4 C-2026-04177 request_evidence | payable=- INR | refs=["POL-WAR-4.2 clause 2.3", "ADD-IN-2.1 clause A1", "TSB-C-0051 serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive"] 10/7/2026 6:46:05 PM +00:00
+evidence EVR-E2E6EEDE5B C-2026-04177 field=commissioning certificate                                                                                                                                        10/7/2026 6:46:45 PM +00:00
+draft    ADJ-D93877F14D C-2026-04178 request_evidence | payable=-  | refs=["POL-WAR-4.2", "ADD-IN-2.1", "SPA-2023-FAB-IN"]                                                                                  10/7/2026 6:45:43 PM +00:00
+evidence EVR-409440210D C-2026-04178 field=running_hours_at_rerepair_date                                                                                                                                   10/7/2026 6:44:32 PM +00:00
+claim_id     status
+--------     ------
+C-2026-04177 Held  
+C-2026-04178 Held  
+OK: 1 batch(es) executed
+

@@ -1,0 +1,63 @@
+--- smoke test (04150)
+17:15:52 04150 job e29b39ef-e75e-47ab-8c5e-4e51b20d075f started
+17:41:53 04150 Succeeded after 26 min
+17:42:41 04150 done (job e29b39ef-e75e-47ab-8c5e-4e51b20d075f, Succeeded); DB snapshot saved and reset
+17:42:41 ALL DONE
+--- main run
+17:44:21 04101 job 89d691ac-39f9-4dbd-935b-c5b42bbc8751 started
+18:04:57 04101 Succeeded after 21 min
+18:05:42 04101 done (job 89d691ac-39f9-4dbd-935b-c5b42bbc8751, Succeeded); DB snapshot saved and reset
+18:06:12 04102 job 9861d4db-6760-4e89-95af-80021d6a2693 started
+18:32:16 04102 Succeeded after 26 min
+18:33:09 04102 done (job 9861d4db-6760-4e89-95af-80021d6a2693, Succeeded); DB snapshot saved and reset
+18:33:50 04103 job 9b1d1d31-1d17-4a7c-967e-338393571f32 started
+18:54:35 04103 Succeeded after 21 min
+18:55:25 04103 done (job 9b1d1d31-1d17-4a7c-967e-338393571f32, Succeeded); DB snapshot saved and reset
+18:56:02 04109 job c9a18abe-2661-4d25-8360-6e76b1c42bff started
+19:17:05 04109 Succeeded after 21 min
+19:17:48 04109 done (job c9a18abe-2661-4d25-8360-6e76b1c42bff, Succeeded); DB snapshot saved and reset
+19:18:38 04110 job ea363cce-8ae6-4d46-850f-181185698368 started
+19:34:20 04110 Succeeded after 16 min
+19:35:02 04110 done (job ea363cce-8ae6-4d46-850f-181185698368, Succeeded); DB snapshot saved and reset
+19:35:42 04114 job ce6e9de7-c24a-46f6-8b67-fb14bea1eef4 started
+19:56:24 04114 Succeeded after 21 min
+19:57:23 04114 done (job ce6e9de7-c24a-46f6-8b67-fb14bea1eef4, Succeeded); DB snapshot saved and reset
+19:58:07 04115 job d0672467-f032-48f3-9b8c-847a3c96fc11 started
+20:13:27 04115 Succeeded after 15 min
+20:14:13 04115 done (job d0672467-f032-48f3-9b8c-847a3c96fc11, Succeeded); DB snapshot saved and reset
+20:14:57 04116 job d99198c6-8aad-4631-881b-47cdf29c6b2f started
+20:30:38 04116 Succeeded after 16 min
+20:31:29 04116 done (job d99198c6-8aad-4631-881b-47cdf29c6b2f, Succeeded); DB snapshot saved and reset
+20:32:09 04117 job d8df3cd6-92b0-4a5f-ba8f-24cf190a0047 started
+20:47:26 04117 Succeeded after 15 min
+20:48:17 04117 done (job d8df3cd6-92b0-4a5f-ba8f-24cf190a0047, Succeeded); DB snapshot saved and reset
+20:48:59 04118 job b2d74683-8d27-4ded-9755-1f4e04a177ff started
+21:09:50 04118 Succeeded after 21 min
+21:10:40 04118 done (job b2d74683-8d27-4ded-9755-1f4e04a177ff, Succeeded); DB snapshot saved and reset
+21:11:16 04129 job dfa97fc3-e015-48a2-8970-52ec00298891 started
+21:31:36 04129 Succeeded after 20 min
+21:32:39 04129 done (job dfa97fc3-e015-48a2-8970-52ec00298891, Succeeded); DB snapshot saved and reset
+21:33:15 04130 job 15c30a9a-9881-46f2-9463-46308024c356 started
+21:48:03 04130 Succeeded after 15 min
+21:48:41 04130 done (job 15c30a9a-9881-46f2-9463-46308024c356, Succeeded); DB snapshot saved and reset
+21:49:32 04131 job 8390a655-dea1-43f9-b74d-d294b3bafe38 started
+22:10:40 04131 Succeeded after 21 min
+22:11:30 04131 done (job 8390a655-dea1-43f9-b74d-d294b3bafe38, Succeeded); DB snapshot saved and reset
+22:12:13 04132 job 8671ab7b-9cfa-4ae5-9ccd-653cec9df150 started
+22:32:53 04132 Succeeded after 21 min
+22:33:34 04132 done (job 8671ab7b-9cfa-4ae5-9ccd-653cec9df150, Succeeded); DB snapshot saved and reset
+22:34:17 04139 job a1d827b4-32b4-4064-8baf-a20cdc2155c2 started
+22:54:23 04139 Succeeded after 20 min
+22:54:54 04139 done (job a1d827b4-32b4-4064-8baf-a20cdc2155c2, Succeeded); DB snapshot saved and reset
+22:55:21 04140 job 899b19b3-7d59-4c66-9d7a-019aedc41b0d started
+23:11:08 04140 done (job 899b19b3-7d59-4c66-9d7a-019aedc41b0d, Succeeded; collected after the network change); DB snapshot saved and reset
+23:11:57 04141+04148+04149+04151+04152 job 92cf4f5f-3035-4ded-b763-9f441477fe35 started
+23:38:52 04141+04148+04149+04151+04152 Succeeded after 27 min
+23:39:23 04141+04148+04149+04151+04152 done (job 92cf4f5f-3035-4ded-b763-9f441477fe35, Succeeded); DB snapshot saved and reset
+23:39:50 04153+04166+04167+04171+04172 job 6ba0f977-6c44-4c9f-9fbe-d4ac087385fd started
+00:00:20 04153+04166+04167+04171+04172 Succeeded after 20 min
+00:00:54 04153+04166+04167+04171+04172 done (job 6ba0f977-6c44-4c9f-9fbe-d4ac087385fd, Succeeded); DB snapshot saved and reset
+00:01:22 04176+04177+04178 job afecf010-7b79-4e8a-9bf3-99bd8fd6d3dd started
+00:21:56 04176+04177+04178 Succeeded after 21 min
+00:22:28 04176+04177+04178 done (job afecf010-7b79-4e8a-9bf3-99bd8fd6d3dd, Succeeded); DB snapshot saved and reset
+00:22:28 ALL DONE

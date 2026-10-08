@@ -3,7 +3,7 @@
 **Generated. Do not edit by hand.**  
 `.venv/Scripts/python.exe build/ground_truth.py`
 
-Produced 2026-10-06 from `scenario/spec/` via `build/adjudicate.py`. Every row is computed by the same engine that the corpus documents are rendered from, so the expected answer and the text a model will read cannot disagree.
+Produced 2026-10-07 from `scenario/spec/` via `build/adjudicate.py`. Every row is computed by the same engine that the corpus documents are rendered from, so the expected answer and the text a model will read cannot disagree.
 
 | Split | Claims |
 | --- | --- |

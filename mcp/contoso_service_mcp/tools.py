@@ -298,3 +298,62 @@ def escalate_goodwill(db, claim_id: str, amount: float,
 READ_TOOLS = [get_asset, get_running_hours, get_service_history, find_prior_claims,
               get_claim, get_dealer, lookup_part, get_tsb_index, get_goodwill_authority]
 ACTION_TOOLS = [create_claim_adjudication, request_missing_evidence, escalate_goodwill]
+
+
+# ---------------------------------------------------------------------------
+# world v3: one read for everything the claim system holds about a claim
+# ---------------------------------------------------------------------------
+
+# Keys that carry policy guidance rather than records. A real claim system
+# returns data; reading the policy is the adjudicator's job, so the dossier
+# drops these (world v3).
+_GUIDANCE_KEYS = {"note", "authority_warning", "suggested_action"}
+
+
+def _facts(d: dict[str, Any]) -> dict[str, Any]:
+    return {k: v for k, v in d.items() if k not in _GUIDANCE_KEYS}
+
+
+def get_claim_dossier(db, claim_id: str) -> dict[str, Any]:
+    """Every claim-system record that bears on one claim, in a single response.
+
+    Replaces nine separate reads (claim, asset, running hours at the repair date,
+    service history, related claims, partner, parts, bulletin index, goodwill
+    authority matrix). Records only: no policy guidance.
+    """
+    claim = get_claim(db, claim_id)
+    if not claim.get("found"):
+        return {"claim": claim}
+
+    serial = claim["serial"]
+    asset = _facts(get_asset(db, serial))
+    out: dict[str, Any] = {"claim": claim, "asset": asset}
+
+    if asset.get("found"):
+        out["running_hours_at_repair_date"] = _facts(
+            get_running_hours(db, serial, claim["repair_date"]))
+        jobs = get_service_history(db, serial)["jobs"]
+    else:
+        jobs = []
+    out["service_history"] = jobs
+
+    related_ids = sorted({j["claim_id"] for j in jobs
+                          if j.get("claim_id") and j["claim_id"] != claim_id})
+    out["related_claims"] = [_facts(get_claim(db, cid)) for cid in related_ids]
+
+    out["service_partner"] = _facts(get_dealer(db, claim["dealer_id"]))
+
+    part_nos = [claim.get("claimed_part")] + [j["part_fitted"] for j in jobs
+                                              if j.get("claim_id") == claim_id]
+    seen: list[str] = []
+    for p in part_nos:
+        if p and p not in seen:
+            seen.append(p)
+    out["parts"] = [_facts(lookup_part(db, p)) for p in seen]
+
+    index = get_tsb_index(db, asset.get("family"), serial if asset.get("found") else None)
+    out["tsb_applicability_index"] = _facts(index)
+
+    out["goodwill_authority_matrix"] = db.all(
+        "SELECT tier, max_amount_inr, approver_role FROM GoodwillAuthority ORDER BY tier")
+    return out

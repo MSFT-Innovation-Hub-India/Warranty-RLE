@@ -44,17 +44,17 @@ numbers, money. No customer or private content, ever.
 
 ## Rules that are not negotiable
 
-**One variable per stage.** The frontier model is held constant from stage 0 to
-stage 2, where it saturated. Stage 3 moves to the small model, which is then held
-constant through tuning. When two things must change together (stage 3: model +
-skill split), say so plainly in the stage README.
+**One variable per stage.** On world v3 the climbing model is the small model,
+MAI-CODE-5b, held constant from stage 0 until it is tuned in stage 4. GPT-5.6-Sol
+is a reference, measured but not climbed (it saturated world v2). When two
+things must change together, say so plainly in the stage README.
 
 **Every stage stays replayable.** Each stage has its own folder under
 `stages/` with the exact skills, pinned rubrics, prompts, commands and results
 of its **latest** configuration. A new stage starts as a copy of the previous one
-and changes one thing. If a stage is re-run after a fix, the superseded run moves
-to `archive/` and the fix becomes one line in the stage's Findings (decided
-2026-10-06). Rubrics are pinned files, never left to regenerate. Tag each closed
+and changes one thing. If a stage is re-run after a fix, the superseded run is
+deleted (git history keeps it) and the fix becomes one line in the stage's
+Findings (decided 2026-10-06). Rubrics are pinned files, never left to regenerate. Tag each closed
 stage in git (`stage-0`, `stage-1`, …). The goal: someone can replay and
 demonstrate the whole climb from the beginning, not just see the final artefacts.
 
@@ -93,8 +93,7 @@ I am keeping a build log, not producing marketing. Specifically:
 - **Consolidated, not chronological** (decided 2026-10-06). `JOURNEY.md` and the
   stage READMEs hold the current state and the lessons, each as *issue → what we
   did*, one line, with a sample response only where it explains the behaviour.
-  No blow-by-blow narratives. The chronology lives in `docs/evidence/` and
-  `archive/`.
+  No blow-by-blow narratives. The chronology lives in `docs/evidence/`.
 - **Label the source.** 🖥️ measured on this tenant · 📄 upstream guidance ·
   🔬 unverified · 💭 reasoning. Never present an inference as a measurement.
 - **Upstream results are not our results.** Their numbers may guide the process;
@@ -153,12 +152,11 @@ Two documents, two audiences. Update both **as work happens**, every session.
 | `spec/` | Canonical source of truth — hand-authored, reviewed |
 | `build/` | Ground-truth engine, trap tests, corpus generators |
 | `out/` | Generated corpus, database, samples, `GROUND-TRUTH.md` |
-| `mcp/` | The MCP server — 9 read + 3 action tools, ACA + Azure SQL deploy |
+| `mcp/` | The MCP server — world v3: 1 read (`get_claim_dossier`) + 3 action tools, ACA + Azure SQL deploy |
 | `world/` | `env.md` — the world definition used by `environments init` (dev and main) |
 | `stages/` | One folder per climb stage, holding its latest configuration: skills, pinned rubrics, prompts, commands, result, findings |
-| `archive/` | Superseded stage runs, experiments and the full chronological journey, kept unedited |
 | `scripts/` | Reusable helpers: `sql-run.ps1` (run SQL with your Entra sign-in), and the database baseline, snapshot and reset scripts |
-| `docs/` | Design, walkthrough, runbook, cross-cutting references |
+| `docs/` | `JOURNEY.md` (start here), scenario design, walkthrough, `evidence/` |
 
 Run order matters: `adjudicate` → `test_traps` → `populate` → `ground_truth` →
 the `gen_*` scripts. Generators read `out/data/`, so population comes first.
@@ -181,14 +179,15 @@ first.
 
 ## Status
 
-Stages 0–2 are **measured** on GPT-5.6-Sol (0.535 · 0/8 → 0.991 · 7/8 → 0.978 ·
-27/30); the frontier model saturates the world. **Stage 3** (MAI-CODE-5b,
-research split into its own skill, folder-scoped search) is ready to run in
-wce-main. The world is at **v2.3**.
+The first climb (world v2) was removed from the workspace on 2026-10-08 (kept in
+the user's backup and in git history): GPT-5.6-Sol saturated it (0.978 · 27/30),
+and small-model runs needed 13–17 tool calls per claim. The climb restarted on **world v3** (2026-10-07): a one-call claim
+dossier with records only, and one labour workbook (~4–6 calls per claim; answer
+key unchanged). **Stage 0** (MAI-CODE-5b, business-brief skill, generated
+rubrics, 30 prompts) is set up in wce-main.
 
 **Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md)** and
-[`stages/README.md`](stages/README.md). P6 (endpoint auth) and P11 (runbook) are
+[`stages/README.md`](stages/README.md). P6 (endpoint auth) is
 deferred; the MCP server is registered as `NoAuth`.
 
-⚠️ `docs/05-hill-climb-runbook.md` is the original plan and is out of date;
-`stages/README.md` holds the current stage plan.
+`stages/README.md` holds the stage plan.

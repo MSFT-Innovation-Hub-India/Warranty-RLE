@@ -1,5 +1,7 @@
 # Guide 03 — Designing a showcase world you can actually hill-climb
 
+> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [JOURNEY.md](JOURNEY.md) and [stages/](../stages/README.md).
+
 **Status: design, not record.** Nothing in this document has been built or
 measured. Every number in it is a **target or a prediction**, marked as such.
 The conventions of [guides/README.md](README.md) apply — 📄 is upstream, 🔬 is
@@ -126,7 +128,7 @@ That sentence is the specification. Sections 5–9 are an instance of it.
 ### Why the small model matters to the business story
 
 The RFT narrative only lands if the tuned model is one a customer would actually
-want to run. `gpt-54-mini` is in `FTBaseModels` ([CLI-REFERENCE § models](CLI-REFERENCE.md#models)).
+want to run. `gpt-54-mini` is in `FTBaseModels` (CLI-REFERENCE § models).
 The claim becomes:
 
 > "This task needed a frontier reasoning model. After tuning, a mini model does
@@ -149,12 +151,12 @@ Seven rules. Each one is a decision you will be tempted to break later.
 | 1 | **Difficulty comes from reasoning, never from broken retrieval** | A world that scores low because content is unreachable teaches nothing and points the diagnosis at the wrong place |
 | 2 | **Every fact needed for a correct answer must be reachable** — and provably so, by a `chat` probe | Otherwise you cannot tell a reasoning failure from a plumbing failure, which is exactly the day guide 01 lost |
 | 3 | **Rubrics before skills**, always | 📄 *"A rubric written after the skill tends to describe what the skill already does."* This is the documented cause of guide 01's saturation |
-| 4 | **The standard lives in rubrics, not in the prompt** | Restating rubrics in the prompt solves the task at inference and leaves the weights nothing to learn. [rubric-defects § 3](rubric-defects.md#defect-3--the-prompt-gives-away-every-rubric) |
-| 5 | **Every rubric must be satisfiable *or* skippable on every legitimate path** — including the empty and refusal paths | [rubric-defects § 1](rubric-defects.md#defect-1--rubrics-penalise-correct-refusals). Under tuning this is not a bad measurement, it is a reward function that trains hallucination |
+| 4 | **The standard lives in rubrics, not in the prompt** | Restating rubrics in the prompt solves the task at inference and leaves the weights nothing to learn. rubric-defects § 3 |
+| 5 | **Every rubric must be satisfiable *or* skippable on every legitimate path** — including the empty and refusal paths | rubric-defects § 1. Under tuning this is not a bad measurement, it is a reward function that trains hallucination |
 | 6 | **Traps must be independent** | Correlated traps move rubrics together and you lose attribution. Each trap gets its own rubric line and its own samples |
 | 7 | **Ground truth must be computable by a human in under two minutes** | If you cannot check an answer quickly by hand, you cannot audit the grader, and you will trust a number you should not |
 
-Principle 7 deserves emphasis. [rubric-defects § 2](rubric-defects.md#defect-2--nothing-measures-cross-source-provenance)
+Principle 7 deserves emphasis. rubric-defects § 2
 is the record of a confidently wrong answer scoring 1.00 five times. The only
 defence is out-of-band ground truth that a person can verify. Section 8 shows
 what that looks like.
@@ -186,7 +188,7 @@ requirement for SharePoint + Teams + structured database + MCP actions.
 3. **The database is load-bearing, not decorative.** Install date, running
    hours, prior claims and part supersession genuinely cannot live in documents.
    A model that skips the DB *cannot* produce the right number, which makes the
-   join gradeable by [the derived-quantity pattern](rubric-patterns.md#second-lever--require-a-derived-quantity)
+   join gradeable by the derived-quantity pattern
    you already documented.
 4. **The action surface is natural and safe.** Draft an adjudication, request a
    missing record, escalate for goodwill. All idempotent, all reversible,
@@ -282,7 +284,7 @@ where the duplication *is* the trap, and then it is deliberate and documented.
 
 ### The four-source discipline, and how it is enforced
 
-📄 Your [rubric-patterns.md](rubric-patterns.md) already establishes the
+📄 Your rubric-patterns.md already establishes the
 technique: you cannot grade a join, so you grade **provenance per claim type**
 and **a derived quantity only a correct join can produce**. This scenario is
 built so that mapping is total:
@@ -544,7 +546,7 @@ Consequences:
 | 🔬 The grader may not verify arithmetic at all | **Verify this before building.** Run one probe with a deliberately wrong total and read `RubricResults[].Reasoning`. If the grader does not catch it, valuation must be graded on *derivation shown* and numeric correctness checked out-of-band by script |
 
 🔬 **Open, and worth testing early:** does the sample schema accept a reference
-or expected answer alongside `Prompt`? [CLI-REFERENCE](CLI-REFERENCE.md#samples)
+or expected answer alongside `Prompt`? CLI-REFERENCE
 records *"at least a `Prompt` field"*, which implies other fields exist. If a
 reference answer is supported, grading gets materially stronger and several
 mitigations above become unnecessary. Check `samples create --help` before
@@ -967,16 +969,3 @@ Rough, and worth agreeing before starting.
 | 4 | Is the showcase audience **technical or business**? | Decides whether the artefact is a guide, a deck, or both — and how much of § 12's caveat surfaces |
 | 5 | Is there an existing SharePoint site and Teams team, or is one being created? | Determines when content can be loaded. Does not block curation |
 | 6 | **TODO — protect the MCP endpoint** (deferred 2026-10-03). Checklist under *MCP server* in § 13 | Endpoint is public and unauthenticated; anyone can call the 3 write tools and contaminate a stage's baseline. Registered `NoAuth` in P8, so **switch to AzureAD via `tools upsert` before stage 1**, when the tools are first enabled in main |
-
----
-
-## Related
-
-| Document | Covers |
-| --- | --- |
-| 01-contract-renewal.md | The reference world, and why it saturated |
-| 02-next-fine-tuning.md | The model-list constraint this design has to work around |
-| [rubric-design.md](rubric-design.md) | Why rubrics come before skills |
-| [rubric-patterns.md](rubric-patterns.md) | The provenance and derived-quantity techniques § 9.2 applies |
-| [rubric-defects.md](rubric-defects.md) | The three defects § 3's principles exist to prevent |
-| [../CLI-REFERENCE.md](CLI-REFERENCE.md) | Command surface and the 20 traps § 14 budgets around |

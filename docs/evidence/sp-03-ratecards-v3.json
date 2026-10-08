@@ -1,0 +1,32 @@
+{
+ "upload": {
+  "name": null,
+  "id": null,
+  "size": null,
+  "webUrl": null
+ },
+ "deletes": [
+  {
+   "deleted": "Flat-Rate-Labour-FY26.xlsx",
+   "result": "{'Status': 'Successful', 'Message': 'File or folder deleted successfully.', 'DeletedTarget': {'kind': 'file', 'name': 'Flat-Rate-Labour-FY26.xlsx', 'parentWebUrl': 'https://microsoftapc.sharepoint.com/teams/ContosoFieldService/_layouts/15', 'id': '01DRFRACVRWZYZZOM3LVFJBXDGU2JSF52B', 'webUrl': 'http"
+  },
+  {
+   "deleted": "Labour-Rates-By-Region-FY26.xlsx",
+   "result": "{'Status': 'Successful', 'Message': 'File or folder deleted successfully.', 'DeletedTarget': {'kind': 'file', 'name': 'Labour-Rates-By-Region-FY26.xlsx', 'parentWebUrl': 'https://microsoftapc.sharepoint.com/teams/ContosoFieldService/_layouts/15', 'id': '01DRFRACXJVZQZX63HYNFITCYAEMDK7LPI', 'webUrl':"
+  }
+ ],
+ "after": [
+  [
+   "Flat-Rate-Labour-FY26.xlsx",
+   14145
+  ],
+  [
+   "Labour-Rates-By-Region-FY26.xlsx",
+   13804
+  ],
+  [
+   "Parts-Price-List-FY26.xlsx",
+   15546
+  ]
+ ]
+}

@@ -1,9 +1,0 @@
-
-kind  id             claim_id     detail                                                                                                                                                                     created_at                 
-----  --             --------     ------                                                                                                                                                                     ----------                 
-draft ADJ-877DB7C742 C-2026-04150 approve | payable=755050.00 INR | refs=["TSB-C-0051", "POL-WAR-4.2 clauses 1.4, 4.1, 4.2, 4.3", "Flat-Rate-Labour-FY26", "Labour-Rates-By-Region-FY26", "SPA-2023-FAB-IN"] 10/5/2026 8:30:11 AM +00:00
-
-
-
-(no rows)
-OK: 1 batch(es) executed

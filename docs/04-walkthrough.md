@@ -1,5 +1,7 @@
 # Guide 04 — The world, told as a story
 
+> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [JOURNEY.md](JOURNEY.md) and [stages/](../stages/README.md).
+
 **Read this first** if you want to understand what was built and why, before
 looking at any of it.
 
@@ -213,7 +215,7 @@ all six were done correctly. Get any one wrong and the number changes.
 
 So you do not grade the join. You grade **a number that only a correct join can
 produce**. That is the technique already documented in
-[rubric-patterns.md](rubric-patterns.md), and this scenario is built to make it
+rubric-patterns.md, and this scenario is built to make it
 apply everywhere.
 
 ---
@@ -323,10 +325,8 @@ approver name cannot pass.
 
 **The corpus does not change between stages. The configuration does.**
 
-> 🧭 The table below is the summary. For what to actually run at each stage —
-> prerequisites, which skills and rubrics are in play, which tools the agent
-> calls, and the specific reading that says *proceed* — see
-> [guide 05, the hill-climb runbook](05-hill-climb-runbook.md).
+> 🧭 The table below is the original summary. The stages as actually run, with
+> what to run at each one, are in `stages/README.md`.
 
 | Stage | What changes | What happens to the corpus | Predicted |
 | --- | --- | --- | --- |

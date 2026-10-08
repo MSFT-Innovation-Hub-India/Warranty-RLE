@@ -31,9 +31,8 @@ it is why the engine was built before a single document.
 
 ```text
 contoso-warranty-rle/
-├── docs/                      journey, design, walkthrough, runbook, evidence, references
+├── docs/                      journey (start here), design, walkthrough, evidence
 ├── stages/                    one folder per climb stage (latest configuration)
-├── archive/                   superseded runs, experiments, the full chronological journey
 ├── spec/                      the source of truth - hand-authored, reviewed
 │   ├── entities.json          manufacturer, families, partners, customers, people, authority tiers
 │   ├── instruments.json       policy clauses, regional addenda, 12 bulletins
@@ -44,12 +43,12 @@ contoso-warranty-rle/
 │   ├── populate.py            assets, telemetry, claims - with a conformance gate
 │   ├── ground_truth.py        renders out/GROUND-TRUTH.md
 │   ├── gen_docs.py            34 Word documents
-│   ├── gen_sheets.py          3 Excel workbooks
+│   ├── gen_sheets.py          2 Excel workbooks (labour rate card, parts list)
 │   ├── gen_decks.py           2 PowerPoint decks
 │   ├── gen_teams.py           3 Teams channels
 │   ├── gen_db.py              schema + seed in two SQL dialects
 │   └── gen_samples.py         eval / train / smoke JSONL
-├── mcp/                       the MCP server - 9 read + 3 action tools, ACA deploy
+├── mcp/                       the MCP server - 1 read (claim dossier) + 3 action tools, ACA deploy
 └── out/                       generated artefacts (committed, reproducible from spec/)
     ├── data/                  assets.json, telemetry.json, claims.json
     ├── sharepoint/            the document corpus, ready to upload
@@ -69,11 +68,11 @@ contoso-warranty-rle/
 | 4. Asset + claim population | `out/data/` — 120 assets, 2,989 telemetry rows, 90 claims | ✅ **Design conformance OK** — 30 eval / 60 train, all four decision types |
 | 5. `GROUND-TRUTH.md` | `out/GROUND-TRUTH.md` — 993 lines, full working per eval claim | ✅ Generated |
 | 6. Word documents | `out/sharepoint/` — **34 documents** across 7 folders | ✅ Generated |
-| 7. Excel workbooks | `out/sharepoint/03-RateCards/` — 3 workbooks, 14 parts, 10 operations | ✅ Generated |
+| 7. Excel workbooks | `out/sharepoint/03-RateCards/` — 2 workbooks (labour rate card: flat rate + regional rates; parts list), 14 parts, 10 operations | ✅ Generated |
 | 8. PowerPoint decks | `out/sharepoint/05-Reviews/` — Q2 (stale) and Q3, 6 slides each | ✅ Generated |
 | 9. Teams threads | `out/teams/` — 3 channels, 14 threads, 31 messages | ✅ Generated |
 | 10. Database seed | `out/db/` — 11 tables in **two dialects**: SQLite + Azure SQL T-SQL | ✅ **trap 1 armed** — index says 1500, document says 1850 |
-| 11. MCP server | `mcp/` — 9 read + 3 action tools, ODBC image, ACA + Azure SQL deploy guide | ✅ **37/37 checks pass** |
+| 11. MCP server | `mcp/` — world v3: 1 read (`get_claim_dossier`) + 3 action tools, ODBC image, ACA + Azure SQL deploy guide | ✅ **45/45 checks pass** |
 | 12. Samples | `out/samples/` — 30 eval, 60 train, 3 smoke | ✅ Generated |
 
 ## Running the checks
@@ -95,7 +94,7 @@ cd build
 ..\.venv\Scripts\python.exe populate.py        # population + conformance gate
 ..\.venv\Scripts\python.exe ground_truth.py    # renders out/GROUND-TRUTH.md
 ..\.venv\Scripts\python.exe gen_docs.py        # 34 Word documents
-..\.venv\Scripts\python.exe gen_sheets.py      # 3 Excel workbooks
+..\.venv\Scripts\python.exe gen_sheets.py      # 2 Excel workbooks
 ..\.venv\Scripts\python.exe gen_decks.py       # 2 PowerPoint decks
 ..\.venv\Scripts\python.exe gen_teams.py       # 3 Teams channels
 ..\.venv\Scripts\python.exe test_score_ground_truth.py   # ground-truth scorer, 18 checks

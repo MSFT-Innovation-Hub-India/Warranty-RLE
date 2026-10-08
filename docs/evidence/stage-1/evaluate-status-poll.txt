@@ -1,7 +1,0 @@
-poll start 2026-10-04T14:58:26.0982620+05:30
-14:58:40 status=NotStarted
-15:03:53 status=InProgress
-15:09:06 status=InProgress
-15:14:17 status=InProgress
-15:19:29 status=Succeeded
-poll end 2026-10-04T15:19:29.8801801+05:30

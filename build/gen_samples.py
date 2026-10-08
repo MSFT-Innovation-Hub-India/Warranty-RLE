@@ -89,7 +89,7 @@ def build() -> dict[str, int]:
         "\n".join(lines) + "\n", encoding="utf-8")
     counts["warranty-adjudication.smoke.jsonl"] = len(lines)
 
-    # Upload guidance, kept with the files so the traps in CLI-REFERENCE are not
+    # Upload guidance, kept with the files so the CLI's upload traps are not
     # rediscovered the hard way.
     (OUT / "UPLOAD.md").write_text(f"""# Uploading the samples
 

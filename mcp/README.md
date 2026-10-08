@@ -31,7 +31,7 @@ That is the point: the join is not optional, so it becomes gradeable.
 scenario/mcp/
 ├── contoso_service_mcp/
 │   ├── db.py       SQLite locally, Azure SQL in Azure - one portable surface
-│   ├── tools.py    the twelve tools as pure functions - no MCP, no network
+│   ├── tools.py    the claim-system functions (and the v3 dossier) as pure functions - no MCP, no network
 │   ├── auth.py     Entra ID bearer validation, off when unconfigured
 │   └── server.py   FastMCP wiring + /healthz, the only MCP-aware file
 ├── tests/test_tools.py    37 checks - tools against the seeded DB, plus T-SQL translation
@@ -48,19 +48,15 @@ without an MCP client, which is why the test suite runs in the repo's existing
 
 ## The tools
 
-### Read
+### Read — world v3: one call per claim
 
-| Tool | Returns | Carries |
-| --- | --- | --- |
-| `get_asset` | Registry record, incl. commissioning date | Flags a missing commissioning record and cites policy 2.3 |
-| `get_running_hours` | Latest reading at or before a date | Reports absence rather than returning zero |
-| `get_service_history` | Jobs, most recent first | `part_fitted` — the part actually installed |
-| `find_prior_claims` | Earlier repairs, optionally by component | The 90-day repair-warranty rule |
-| `get_claim` | The claim as submitted | What the partner asked for, which is not the answer |
-| `get_dealer` | Partner master | `uplift_pct` — 0% for most, 5% for Northwind |
-| `lookup_part` | Part with supersession chain resolved | `current_part_no` and its price |
-| `get_tsb_index` | ⚠️ Bulletin index — **deliberately stale** | Its own warning that it is not authoritative |
-| `get_goodwill_authority` | Tier and approving role for an amount | That a channel approval is not authority |
+| Tool | Returns |
+| --- | --- |
+| `get_claim_dossier(claim_id)` | Everything the claim system holds about a claim: the claim, the asset (commissioning date may be absent), running hours at the repair date, service history (`part_fitted` per job), related claims and their status, the service partner (`uplift_pct`, `agreement_ref`), part records for the parts claimed and fitted (supersession, prices), the bulletin applicability index (**deliberately stale** on TSB-C-0051), and the goodwill authority matrix |
+
+**Records only.** The dossier carries no policy guidance: no tool says which source governs, that the install date must not be substituted, or that a channel approval isn't authority. Those are in the policy documents, and finding them is the competence measured. About 2–3k characters per claim.
+
+World v2 exposed the same data as nine read tools (`get_asset`, `get_running_hours`, `get_service_history`, `find_prior_claims`, `get_claim`, `get_dealer`, `lookup_part`, `get_tsb_index`, `get_goodwill_authority`), each with a guidance note. They remain in `tools.py` as the dossier's building blocks and for the tests, but are no longer served.
 
 ### Action — all draft-only
 

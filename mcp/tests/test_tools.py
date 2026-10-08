@@ -10,6 +10,7 @@ work, but that each tool exposes the specific fact a designed trap depends on.
 
 from __future__ import annotations
 
+import json
 import os
 import sys
 from pathlib import Path
@@ -201,6 +202,52 @@ with connect() as db:
     db.execute("DELETE FROM EvidenceRequest WHERE claim_id = ?", (cid,))
     db.execute("DELETE FROM GoodwillEscalation WHERE claim_id = ?", (cid,))
     db.execute("UPDATE Claims SET status = ? WHERE claim_id = ?", (seeded_status, cid))
+
+    # --- world v3: get_claim_dossier ----------------------------------
+    def _walk_keys(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                yield k
+                yield from _walk_keys(v)
+        elif isinstance(o, list):
+            for v in o:
+                yield from _walk_keys(v)
+
+    d = T.get_claim_dossier(db, "C-2026-04114")
+    sections = {"claim", "asset", "running_hours_at_repair_date", "service_history",
+                "related_claims", "service_partner", "parts", "tsb_applicability_index",
+                "goodwill_authority_matrix"}
+    check("dossier returns every section for a claim", sections <= set(d), str(set(d)))
+    check("dossier carries no policy guidance (notes, warnings, suggested actions)",
+          not ({"note", "authority_warning", "suggested_action"} & set(_walk_keys(d))), "")
+    check("dossier is compact (under 6,000 characters)", len(json.dumps(d)) < 6000,
+          str(len(json.dumps(d))))
+    entry = next((e for e in d["tsb_applicability_index"]["entries"]
+                  if e["tsb_id"] == "TSB-C-0051"), {})
+    check("dossier keeps the stale bulletin index: 0051 ends at 1500 (trap 1)",
+          entry.get("serial_to") == 1500, str(entry))
+
+    sup = db.one("SELECT claim_id FROM Claims WHERE claimed_part = 'P-44120'")
+    d = T.get_claim_dossier(db, sup["claim_id"])
+    nos = {p["part_no"] for p in d["parts"]}
+    check("dossier shows the part claimed and the part fitted, unlabelled (trap 7)",
+          {"P-44120", "P-44120-A"} <= nos, str(nos))
+
+    nc = db.one("SELECT c.claim_id FROM Claims c JOIN Assets a ON a.serial = c.serial "
+                "WHERE a.commissioning_date IS NULL")
+    d = T.get_claim_dossier(db, nc["claim_id"])
+    check("dossier shows a missing commissioning date as a fact, without guidance (trap 12)",
+          d["asset"].get("commissioning_date") is None
+          and d["asset"].get("commissioning_date_missing") is True, str(d["asset"]))
+
+    d = T.get_claim_dossier(db, "C-2026-04189")
+    rel = {c["claim_id"]: c.get("status") for c in d["related_claims"]}
+    check("dossier shows the earlier warranty claim and its status (policy 6.1 path)",
+          rel.get("C-2026-03110") == "Paid", str(rel))
+
+    d = T.get_claim_dossier(db, "C-DOES-NOT-EXIST")
+    check("dossier returns found=false for an unknown claim",
+          d["claim"]["found"] is False and set(d) == {"claim"}, str(d))
 
 
 if __name__ == "__main__":

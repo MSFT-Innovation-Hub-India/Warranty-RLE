@@ -1,4 +1,4 @@
-"""Render the rate cards and parts price list from catalog.json.
+"""Render the labour rate card and the parts price list from catalog.json.
 
     .venv/Scripts/python.exe build/gen_sheets.py
 """
@@ -43,7 +43,12 @@ def style_sheet(ws, widths: list[int], title: str, subtitle: str) -> None:
     ws.freeze_panes = "A4"
 
 
-def flat_rate_labour() -> Path:
+def labour_rate_card() -> Path:
+    """One workbook for labour: the flat-rate schedule and the regional rates (world v3).
+
+    v2 shipped these as two workbooks, so valuing labour took two searches. They are
+    the same rate card in practice, one sheet each.
+    """
     wb = Workbook()
     ws = wb.active
     ws.title = "Flat Rate Labour"
@@ -54,56 +59,34 @@ def flat_rate_labour() -> Path:
                    FAMILY_NAME.get(op["family"], op["family"]),
                    op["component"].replace("_", " "), op["flat_hours"]])
     style_sheet(ws, [18, 42, 32, 16, 16],
-                "Flat Rate Labour Schedule — FY26",
+                "Warranty Labour Rate Card — FY26 · Flat Rate Labour",
                 "Contoso Industrial · Warranty Operations · effective 1 April 2026 · "
                 "hours payable per operation, per policy clause 4.1")
 
-    notes = wb.create_sheet("Notes")
-    for r, line in enumerate([
-        "Flat Rate Labour Schedule — FY26",
-        "",
-        "Labour is payable at the flat-rate allowance for the operation code, or at the",
-        "hours actually claimed, whichever is the lesser (Global Warranty Policy, 4.1).",
-        "",
-        "Hours above the flat-rate allowance are not payable and are reported to the",
-        "partner as a variance on the adjudication.",
-        "",
-        "The rate applied to these hours is the regional labour rate in force on the",
-        "date of repair. See Labour-Rates-By-Region-FY26.xlsx.",
-    ], start=1):
-        notes.cell(row=r, column=1, value=line)
-    notes.column_dimensions["A"].width = 80
-    notes["A1"].font = Font(bold=True, size=12)
-
-    OUT.mkdir(parents=True, exist_ok=True)
-    path = OUT / "Flat-Rate-Labour-FY26.xlsx"
-    wb.save(path)
-    return path
-
-
-def labour_rates() -> Path:
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "Labour Rates"
-    ws.append(["Region", "Currency", "Rate per hour", "Effective from", "Effective to"])
+    ws2 = wb.create_sheet("Labour Rates")
+    ws2.append(["Region", "Currency", "Rate per hour", "Effective from", "Effective to"])
     for row in CATALOG["labour_rates"]:
-        ws.append([row["region"], row["currency"], row["rate"],
-                   row["effective_from"], row["effective_to"]])
-    style_sheet(ws, [14, 12, 16, 16, 16],
-                "Regional Labour Rates — FY25 and FY26",
+        ws2.append([row["region"], row["currency"], row["rate"],
+                    row["effective_from"], row["effective_to"]])
+    style_sheet(ws2, [14, 12, 16, 16, 16],
+                "Warranty Labour Rate Card — FY26 · Regional Labour Rates (FY25 and FY26)",
                 "Contoso Industrial · Warranty Operations · the rate applied is the one in "
                 "force on the DATE OF REPAIR, per policy clause 4.1")
 
     notes = wb.create_sheet("Notes")
     for r, line in enumerate([
-        "Regional Labour Rates",
+        "Warranty Labour Rate Card — FY26",
         "",
-        "IMPORTANT: the rate applied to a claim is the rate in force on the date of",
-        "repair — not the date of submission, and not the current date.",
+        "Labour is payable at the flat-rate allowance for the operation code, or at the",
+        "hours actually claimed, whichever is the lesser (Global Warranty Policy, 4.1).",
+        "Hours above the flat-rate allowance are not payable and are reported to the",
+        "partner as a variance on the adjudication.",
         "",
-        "The FY26 rates take effect on 1 April 2026. A repair carried out on or before",
-        "31 March 2026 is reimbursed at the FY25 rate even if the claim is submitted",
-        "later.",
+        "The rate applied to these hours is the regional labour rate in force on the",
+        "date of repair (sheet Labour Rates) - not the date of submission, and not the",
+        "current date. The FY26 rates take effect on 1 April 2026; a repair carried out",
+        "on or before 31 March 2026 is reimbursed at the FY25 rate even if the claim is",
+        "submitted later.",
         "",
         "Rates are quoted in the settlement currency of the partner's territory.",
     ], start=1):
@@ -111,7 +94,8 @@ def labour_rates() -> Path:
     notes.column_dimensions["A"].width = 80
     notes["A1"].font = Font(bold=True, size=12)
 
-    path = OUT / "Labour-Rates-By-Region-FY26.xlsx"
+    OUT.mkdir(parents=True, exist_ok=True)
+    path = OUT / "Warranty-Labour-Rate-Card-FY26.xlsx"
     wb.save(path)
     return path
 
@@ -174,10 +158,11 @@ def parts_price_list() -> Path:
 
 
 if __name__ == "__main__":
-    a = flat_rate_labour()
-    b = labour_rates()
+    for stale in ("Flat-Rate-Labour-FY26.xlsx", "Labour-Rates-By-Region-FY26.xlsx"):
+        (OUT / stale).unlink(missing_ok=True)           # v2 names, merged in v3
+    a = labour_rate_card()
     n, c = parts_price_list()
-    print(f"  {a.name:36} {len(CATALOG['operations'])} operations")
-    print(f"  {b.name:36} {len(CATALOG['labour_rates'])} rate rows")
-    print(f"  {c.name:36} {n} parts")
-    print(f"\n3 workbooks written to {OUT}")
+    print(f"  {a.name:40} {len(CATALOG['operations'])} operations, "
+          f"{len(CATALOG['labour_rates'])} rate rows")
+    print(f"  {c.name:40} {n} parts")
+    print(f"\n2 workbooks written to {OUT}")
