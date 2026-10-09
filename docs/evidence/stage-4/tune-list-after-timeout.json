@@ -1,0 +1,32 @@
+[
+  {
+    "JobId": "c77feaed-96de-4b88-9802-e0f265601eb8",
+    "JobTaskType": "SampleBasedFineTuning",
+    "JobType": "FineTuning",
+    "FinetuningType": null,
+    "Status": "Running",
+    "ErrorCode": null,
+    "ErrorMessage": "",
+    "BaseModelName": "mai-code-1-flash",
+    "BaseModelNames": [
+      "mai-code-1-flash"
+    ],
+    "BaseModelDisplayName": "MAI-Code-1-Flash",
+    "NewModelName": "contoso-warranty-v3-stage4-pilot-20261009",
+    "CreatedAt": "2026-10-09T05:29:38.0481483+00:00",
+    "UpdatedAt": "2026-10-09T05:29:38.0585196+00:00",
+    "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "LastModifiedByObjectId": null,
+    "EvaluationMetadata": null,
+    "WorkspaceSnapshotMetadata": {
+      "Id": "c77feaed-96de-4b88-9802-e0f265601eb8",
+      "SkillsCount": 1,
+      "ToolsCount": 3,
+      "SamplePromptsCount": 90,
+      "KnowledgeSourcesCount": 4
+    },
+    "DebugContext": {
+      "Logs": []
+    }
+  }
+]

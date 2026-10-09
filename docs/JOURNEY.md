@@ -18,8 +18,8 @@ Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream gu
 
 | | |
 | --- | --- |
-| **Status** | **World v3. Stage 2 closed on 29 claims (2026-10-09): regression.** Rubric 0.526 · hand-checked correct 17/29, against stage 1's 0.637 · 22/29 on the same claims. User excluded stalled 04130. Original stage 1 result stays 0.637 · 23/30 |
-| **Next** | **Stage 4 preflight requested (2026-10-09).** Stage 3 full BestOfN batch failed before execution and was cancelled, zero completed; probe 0.900 · correct 1/1 only. **Cohort headroom unmeasured, gate not passed**; explicit exception required before a pilot submission. Live skill is stage 1; last verified SQL baseline 0 0 0 0; no RFT |
+| **Status** | **World v3. Stage 4 exploratory pilot submitted (2026-10-09, 10:59 IST).** User explicitly waived measured-headroom prerequisite; stage 3 gate remains unpassed. Job `c77feaed-96de-4b88-9802-e0f265601eb8`: Running, training/deployment NotStarted, not ready for evaluation. No tuning gain measured |
+| **Next** | Monitor [stage 4](../stages/stage-4/README.md) status; verify sample selection and actual deployment/model ID before evaluating. Snapshot captured 90 prompts (60 Training + 30 Evaluation inventory), not proof of training on either bucket. Stronger stage 1 skill retained; preflight SQL baseline 0 0 0 0; do not reset during an active tuning job |
 | **Open** | Hand-in rejections by the platform's finish tool ([note](evidence/platform-issue-finish-rejection.md)) · MAI-CODE-5b vs `mai-code-1-flash`: same weights? · does tuning use Training or Evaluation samples? · P6 endpoint auth deferred |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (the climb) · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc` (trials) |
 | **Skill** | `warranty-assistant`: main `cf00d339-5217-4cd1-b390-cc0d911735da` · dev `8e9d12a2-b0a5-4683-95f1-b225ed9ade44`; one skill per world |

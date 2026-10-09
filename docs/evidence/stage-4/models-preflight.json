@@ -1,0 +1,76 @@
+{
+  "TrainingModels": [
+    {
+      "Id": "prod-gpt-56-reasoning-sol",
+      "Name": "GPT-5.6-Sol",
+      "BaseModel": "GPT-5.6-Sol",
+      "DisplayName": "GPT-5.6-Sol",
+      "IsFineTuned": false,
+      "IsSelected": true
+    },
+    {
+      "Id": "dev-ct-gpt-54-mini-mp",
+      "Name": "GPT-5.4-Mini",
+      "BaseModel": "GPT-5.4-Mini",
+      "DisplayName": "GPT-5.4-Mini",
+      "IsFineTuned": false,
+      "IsSelected": false
+    },
+    {
+      "Id": "dev-ct-mai-code-mp",
+      "Name": "MAI-CODE-5b",
+      "BaseModel": "DEV-CT-MAI-CODE-MP",
+      "DisplayName": "MAI-CODE-5b",
+      "IsFineTuned": false,
+      "IsSelected": false
+    }
+  ],
+  "EvaluationModels": [
+    {
+      "Id": "prod-gpt-56-reasoning-sol",
+      "Name": "GPT-5.6-Sol",
+      "BaseModel": "GPT-5.6-Sol",
+      "DisplayName": "GPT-5.6-Sol",
+      "IsFineTuned": false,
+      "IsSelected": true
+    },
+    {
+      "Id": "dev-ct-gpt-54-mini-mp",
+      "Name": "GPT-5.4-Mini",
+      "BaseModel": "GPT-5.4-Mini",
+      "DisplayName": "GPT-5.4-Mini",
+      "IsFineTuned": false,
+      "IsSelected": false
+    },
+    {
+      "Id": "dev-ct-mai-code-mp",
+      "Name": "MAI-CODE-5b",
+      "BaseModel": "DEV-CT-MAI-CODE-MP",
+      "DisplayName": "MAI-CODE-5b",
+      "IsFineTuned": false,
+      "IsSelected": false
+    }
+  ],
+  "SearchModels": [],
+  "FTBaseModels": [
+    {
+      "Id": "gpt-54-mini",
+      "Name": "GPT-5.4-Mini",
+      "BaseModel": "GPT-5.4-Mini",
+      "DisplayName": null,
+      "IsFineTuned": false,
+      "IsSelected": false
+    },
+    {
+      "Id": "mai-code-1-flash",
+      "Name": "MAI-Code-1-Flash",
+      "BaseModel": "MAI-Code-1-Flash",
+      "DisplayName": null,
+      "IsFineTuned": false,
+      "IsSelected": false
+    }
+  ],
+  "DebugContext": {
+    "Logs": []
+  }
+}

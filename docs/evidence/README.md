@@ -8,6 +8,7 @@ For an auditor. Commands exactly as run, outputs verbatim, raw execution JSON, a
 | [journey-record-2026-10-09.md](journey-record-2026-10-09.md) | Stage 2 closure, stage 3 probe and cancellation, SQL cleanup, evidence consolidation and validation |
 | [stage-2/](stage-2/) | Refinement inputs/output, retained batch results, failed attempts and database evidence |
 | [stage-3/](stage-3/) | Configuration verification, BestOfN probe, cancelled comparison jobs and database evidence |
+| [stage-4/](stage-4/) | Pilot preflight, submission timeout, reconciled job/status and unavailable diagnostics |
 | `stage-0/` | Stage 0: `run-log.txt` (every job, as run) and `db-snapshots.txt` (what each job wrote, before the reset). The results of all 30 claims are in `stages/stage-0/eval-results-samples.json` |
 | `sp-03-ratecards-*.json` | The SharePoint change to `03-RateCards` |
 | [platform-issue-finish-rejection.md](platform-issue-finish-rejection.md) | Note for the platform team: rejected and echoed hand-ins, model identity (open) |

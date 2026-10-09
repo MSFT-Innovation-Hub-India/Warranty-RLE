@@ -464,3 +464,94 @@ Staged files: 96
 Local credential-pattern check also found no matches inside any of the 122
 archived captures. Existing raw results and logs are synthetic scenario
 evidence, not customer data.
+
+## Stage 4: approved exploratory pilot
+
+User explicitly selected **"Approve exploratory tuning pilot without measured
+headroom"**. Stage 3 is not passed. Read the user-provided orbit playbook: rubrics
+are reward functions, tuning is whole-world, at least 11 usable training prompts
+are required, and completion can take days. Those are upstream guidance, not
+tenant measurements. No separate grader code was created.
+
+User upgraded Frontier Tuning; verified `frontier-tuning --version` returns
+`0.3.17 (2026-10-03)`. `tune start --help` still says the service determines sample
+selection and training. Epoch override omitted (server default).
+
+Preflight reads:
+
+```powershell
+frontier-tuning --output json models list --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+frontier-tuning --output json samples get 0187ef5c-8464-4f62-a24c-e6d286ee97e0 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+frontier-tuning --output json skills get cf00d339-5217-4cd1-b390-cc0d911735da --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts\sql-run.ps1 -File scripts\db-baseline.sql
+```
+
+Full CLI JSON in [stage-4/](stage-4/). Live inventory was read before upgrade:
+60 Training + 30 Evaluation. Base `mai-code-1-flash` is in `FTBaseModels` after
+upgrade. Live skill enabled; instructions match restored stage 1 pin after CRLF
+normalization; all six live skill rubric scoring definitions match.
+
+SQL verbatim output:
+
+```text
+drafts evidence_requests escalations claims_not_seeded
+------ ----------------- ----------- -----------------
+     0                 0           0                 0
+
+
+
+OK: 1 batch(es) executed
+```
+
+Reward-check dead end: exact comparison with authored JSON failed because the
+Training sample DTO omits descriptions and scoring direction. Investigated
+against the **measured stage 1 sample payload**: same IDs, checklist items,
+category, scale, scoring criteria, red flags, method, importance and source for
+all six rubrics. The baseline also omits descriptions and has null direction.
+No live/sample edit made. Only Training sample 04104 individually inspected.
+Pinned input copies and live snapshots retained for replay.
+
+### Submission and reconciliation
+
+Exactly as run:
+
+```powershell
+$ErrorActionPreference='Stop'; frontier-tuning --output json tune start --base-model mai-code-1-flash --new-model contoso-warranty-v3-stage4-pilot-20261009 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 2>&1 | Tee-Object -FilePath docs\evidence\stage-4\tune-start.json; if ($LASTEXITCODE -ne 0) { throw 'Tuning submission failed; do not retry without inspecting evidence and reconciling jobs' }
+```
+
+Full verbatim CLI output: [tune-start.json](stage-4/tune-start.json). `ReadTimeout`,
+submission outcome unknown. **Did not retry or cancel.**
+
+Exactly as run:
+
+```powershell
+frontier-tuning --output json tune list --limit 5 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 2>&1 | Tee-Object -FilePath docs\evidence\stage-4\tune-list-after-timeout.json; if ($LASTEXITCODE -ne 0) { throw 'Tuning reconciliation read failed; submission outcome still unknown' }
+```
+
+[Full reconciliation](stage-4/tune-list-after-timeout.json) returned one matching
+job, `c77feaed-96de-4b88-9802-e0f265601eb8`, created 05:29:38 UTC / 10:59:38 IST.
+`JobTaskType: SampleBasedFineTuning`, `Status: Running`; snapshot one skill,
+three tools, **90 prompts**, four knowledge sources. Capture counts do not
+identify the backend training subset. `FinetuningType` is null; do not infer
+the specific training algorithm from that payload.
+
+Exactly as run (independent read-only calls):
+
+```powershell
+frontier-tuning --output json tune status c77feaed-96de-4b88-9802-e0f265601eb8 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 2>&1 | Tee-Object -FilePath docs\evidence\stage-4\tune-status.json; if ($LASTEXITCODE -ne 0) { throw 'Tuning status read failed' }
+frontier-tuning --output json tune diagnostics c77feaed-96de-4b88-9802-e0f265601eb8 --include-metrics --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 2>&1 | Tee-Object -FilePath docs\evidence\stage-4\tune-diagnostics.json; if ($LASTEXITCODE -ne 0) { throw 'Tuning diagnostics read failed' }
+```
+
+[Status](stage-4/tune-status.json): training and deployment `NotStarted`,
+`readyForEvaluation: false`, `isTerminal: false`. Diagnostics verbatim:
+
+```json
+{
+  "jobId": "c77feaed-96de-4b88-9802-e0f265601eb8",
+  "state": "NotAvailable",
+  "status": "Running"
+}
+```
+
+No background local polling process left running. No database reset during the
+active tuning job. No training metrics, tuned-model readiness or gain claimed.

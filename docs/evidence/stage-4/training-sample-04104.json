@@ -1,0 +1,159 @@
+{
+  "Id": "0187ef5c-8464-4f62-a24c-e6d286ee97e0",
+  "Title": "Adjudicate claim C-2026-04104.",
+  "Prompt": "Adjudicate claim C-2026-04104.",
+  "FormattedPrompt": null,
+  "Skills": [
+    {
+      "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+      "Name": null
+    }
+  ],
+  "Rubrics": [
+    {
+      "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+      "RubricName": "Coverage determination",
+      "ChecklistItems": [
+        "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+        "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+        "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+        "Where one limit is exceeded and the other is not, says which limit ends the cover"
+      ],
+      "PearlCategory": "primary",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": null
+    },
+    {
+      "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+      "RubricName": "Precedence discipline",
+      "ChecklistItems": [
+        "Where coverage can be determined, names one governing instrument by reference code",
+        "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+        "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+        "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+      ],
+      "PearlCategory": "primary",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": null
+    },
+    {
+      "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+      "RubricName": "Evidence grounding",
+      "ChecklistItems": [
+        "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+        "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+        "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+        "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+      ],
+      "PearlCategory": "extended",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "high",
+      "Source": "user_authored",
+      "RubricType": null
+    },
+    {
+      "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+      "RubricName": "Valuation accuracy",
+      "ChecklistItems": [
+        "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+        "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+        "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+        "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+        "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+      ],
+      "PearlCategory": "primary",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": null
+    },
+    {
+      "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+      "RubricName": "Authority and action",
+      "ChecklistItems": [
+        "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+        "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+        "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+        "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+      ],
+      "PearlCategory": "primary",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": null
+    },
+    {
+      "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+      "RubricName": "Gaps reported, not filled",
+      "ChecklistItems": [
+        "Names any record needed for the decision that is missing, and the field that is absent",
+        "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+        "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+      ],
+      "PearlCategory": "extended",
+      "Description": null,
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": null
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "high",
+      "Source": "user_authored",
+      "RubricType": null
+    }
+  ],
+  "References": [],
+  "LastModifiedDateTime": "2026-10-08T13:07:22.0751764+00:00",
+  "Status": "Active",
+  "SampleType": "Training",
+  "DebugContext": {
+    "Logs": []
+  }
+}
