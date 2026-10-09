@@ -555,3 +555,15 @@ frontier-tuning --output json tune diagnostics c77feaed-96de-4b88-9802-e0f265601
 
 No background local polling process left running. No database reset during the
 active tuning job. No training metrics, tuned-model readiness or gain claimed.
+
+## Stage 4 status check after 11:14 IST
+
+User requested current status. Exactly as run:
+
+```powershell
+frontier-tuning --output json tune status c77feaed-96de-4b88-9802-e0f265601eb8 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+```
+
+Exit code 0. Full verbatim output: [status response](stage-4/tune-status-training-in-progress.json).
+ModelTraining changed from NotStarted to InProgress; deployment remains
+NotStarted, no stage errors, readyForEvaluation false. No database changes.
