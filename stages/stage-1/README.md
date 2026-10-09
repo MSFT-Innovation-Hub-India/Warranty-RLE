@@ -59,3 +59,5 @@ Detail: [run-summary.md](run-summary.md) (per claim) · [ground-truth-check.md](
 | The scorer misread "can't" written with a curly apostrophe, and "not yet decidable" | Fixed; 53/53 tests; stages 0 and 1 both score without a hand check |
 | The CLI broke mid-run (an interrupted upgrade left `agent_tuning` renamed) and the runner waited silently for 2 h | CLI restored to 0.3.16; the runner now warns when it can't read job status and still times out |
 
+## Next
+Stage 2 (skill refinement): what it does and what to look for is in [JOURNEY § What we do next: stage 2](../../docs/JOURNEY.md#what-we-do-next-stage-2).

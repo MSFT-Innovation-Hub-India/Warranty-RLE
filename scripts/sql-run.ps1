@@ -21,12 +21,14 @@ param(
 )
 
 if (-not $File -and -not $Query) { throw 'Give -File or -Query.' }
+$ErrorActionPreference = 'Stop'
 $sql = if ($File) { [IO.File]::ReadAllText((Resolve-Path $File).Path) } else { $Query }
 $token = az account get-access-token --resource https://database.windows.net/ --query accessToken -o tsv
 if (-not $token) { throw 'No Azure CLI token. Run az login.' }
 
 $inner = @'
 param($Server, $Database, $Token, $SqlB64)
+$ErrorActionPreference = 'Stop'
 $sql = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($SqlB64))
 $cn = New-Object System.Data.SqlClient.SqlConnection("Server=tcp:$Server,1433;Database=$Database;Encrypt=True;TrustServerCertificate=False;Connection Timeout=90;")
 $cn.AccessToken = $Token; $cn.Open()
@@ -46,7 +48,13 @@ foreach ($b in $batches) {
 Write-Output "OK: $i batch(es) executed"
 $cn.Close()
 '@
-$tmp = Join-Path $env:TEMP 'sql-run-inner.ps1'
+$tmp = Join-Path $env:TEMP ("sql-run-" + [guid]::NewGuid() + ".ps1")
 Set-Content -Path $tmp -Value $inner -Encoding UTF8
 $b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($sql))
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File $tmp -Server $Server -Database $Database -Token $token -SqlB64 $b64
+try {
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File $tmp -Server $Server -Database $Database -Token $token -SqlB64 $b64
+  $code = $LASTEXITCODE
+} finally {
+  Remove-Item -LiteralPath $tmp
+}
+exit $code

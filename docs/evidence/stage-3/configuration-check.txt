@@ -1,0 +1,1 @@
+PASS: stage 1 instructions restored (CRLF-normalised); live rubrics unchanged; all six scoring definitions match pinned stage 1. Server category/type metadata differences retained, not rewritten. Evaluation sample IDs unchanged.

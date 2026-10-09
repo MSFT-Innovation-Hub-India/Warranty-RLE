@@ -1,0 +1,11 @@
+{
+  "planned_claims": 30,
+  "reported_claims": 29,
+  "excluded_claims": ["C-2026-04130"],
+  "exclusion_reason": "User requested closure without waiting for the final claim on 2026-10-09. No answer from its final attempt was considered.",
+  "cancelled_job": "beb6e3ac-ceb5-4283-b107-7a5368bdbd7f",
+  "comparison": "The same 29 claims in stage 1 and stage 2; original stage 1 full-cohort result remains unchanged.",
+  "automatic_correct": 14,
+  "hand_checked_correct": 17,
+  "matched_stage_1_correct": 22
+}

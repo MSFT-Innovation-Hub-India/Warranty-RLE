@@ -1,0 +1,1 @@
+PASS under Windows PowerShell 5.1: successful output, exit 7 propagation, one-second process-tree timeout, real CLI diagnostics.

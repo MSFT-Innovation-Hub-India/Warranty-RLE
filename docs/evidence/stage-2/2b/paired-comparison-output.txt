@@ -1,0 +1,19 @@
+stage-1 correct 22 rubric 0.636896551724138 calls mean 15.413793103448276 median 14 right 0.7188636363636364 wrong 0.3792857142857143 ranking 0.9285714285714286
+per rubric {'Coverage determination': 0.784, 'Precedence discipline': 0.543, 'Evidence grounding': 0.549, 'Valuation accuracy': 0.657, 'Authority and action': 0.464, 'Gaps reported, not filled': 0.722}
+handin flags 0
+stage-2 correct 17 rubric 0.5256896551724138 calls mean 20.310344827586206 median 17 right 0.7043529411764706 wrong 0.27258333333333334 ranking 0.9240196078431373
+per rubric {'Coverage determination': 0.683, 'Precedence discipline': 0.5, 'Evidence grounding': 0.422, 'Valuation accuracy': 0.588, 'Authority and action': 0.285, 'Gaps reported, not filled': 0.821}
+handin flags 0
+CHANGED C-2026-04102 True -> False
+CHANGED C-2026-04114 False -> True
+CHANGED C-2026-04129 False -> True
+CHANGED C-2026-04131 True -> False
+CHANGED C-2026-04139 False -> True
+CHANGED C-2026-04149 True -> False
+CHANGED C-2026-04153 True -> False
+CHANGED C-2026-04140 True -> False
+CHANGED C-2026-04148 True -> False
+CHANGED C-2026-04150 True -> False
+CHANGED C-2026-04152 True -> False
+CHANGED C-2026-04166 False -> True
+CHANGED C-2026-04178 True -> False

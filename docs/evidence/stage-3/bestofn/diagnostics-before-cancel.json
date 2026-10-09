@@ -1,0 +1,154 @@
+{
+  "evaluationId": "729ff2cd-5096-4f87-8026-638043f68019",
+  "lastModifiedDateTime": "2026-10-09T04:43:56.6488858+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-09T04:43:56.6488858+00:00",
+    "totalSamples": 5,
+    "execution": {
+      "notStarted": 5,
+      "pending": 0,
+      "running": 0,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 5,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-09T04:43:56.6488858+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 0
+  },
+  "generatedDateTime": "2026-10-09T04:52:50.6111769+00:00",
+  "status": "Running",
+  "phase": "Submitting",
+  "createdDateTime": "2026-10-09T04:43:56.6488836+00:00",
+  "startedDateTime": "2026-10-09T04:40:17.4081642+00:00",
+  "lastProgressDateTime": "2026-10-09T04:43:56.6488858+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T04:42:40.8163963+00:00",
+      "completedDateTime": "2026-10-09T04:42:44.6024497+00:00",
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-09T04:43:55.2208739+00:00",
+      "failedAttempts": 1
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:41:26.7241729+00:00",
+      "observedDateTime": "2026-10-09T04:41:26.7241729+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:42:40.3525897+00:00",
+      "observedDateTime": "2026-10-09T04:42:40.3525897+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:42:44.8789217+00:00",
+      "observedDateTime": "2026-10-09T04:42:44.8789217+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:43:52.9067356+00:00",
+      "observedDateTime": "2026-10-09T04:43:52.9067356+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation failed.",
+      "stage": "StandaloneEvaluation",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:49:12.6756886+00:00",
+      "observedDateTime": "2026-10-09T04:49:12.6756886+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "HttpRequestException",
+      "category": "TransientIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "StandaloneEvaluation",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:49:13.3463958+00:00",
+      "observedDateTime": "2026-10-09T04:49:13.3463958+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 5 minutes.",
+      "stage": "StandaloneEvaluation",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T04:49:14.0347561+00:00",
+      "observedDateTime": "2026-10-09T04:49:14.0347561+00:00"
+    }
+  ]
+}

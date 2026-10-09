@@ -1,0 +1,31 @@
+# Ground-truth check — Stage 3 BestOfN capability probe
+
+Scored by `scripts/score_ground_truth.py` against `world-builder/out/data/claims.json` (the source of GROUND-TRUTH.md).
+
+| Measure | Result |
+| --- | --- |
+| Answers scored | 1 |
+| Decision correct | 1/1 (100%) |
+
+| Governing instrument correct | 1/1 (100%) |
+| Payable correct (approvals) | 1/1 (100%) |
+| **Fully correct** | **1/1 (100%)** |
+| Delivered ≠ stored (not verifiable; finish rejected) | 0 |
+| Needs human review (unreadable) | 0 |
+| Mean rubric score (platform) | 0.9 |
+
+## By slice
+
+| Slice | Answers | Fully correct | Mean rubric score |
+| --- | --- | --- | --- |
+| covered-simple | 1 | 1 | 0.9 |
+
+## Per answer
+
+| Claim | Slice | Decision exp → got | Governing exp → got | Payable exp → got | Rubric | Correct | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `C-2026-04101` | covered-simple | approve → approve ✅ | ADD-IN-2.1 → ADD-IN-2.1 ✅ | ₹69,575 → ₹69,575 ✅ | 0.9 | ✅ |  |
+
+❓ = could not be read confidently; check that answer by hand against GROUND-TRUTH.md.
+
+1 answers from 1 file(s); decisions read: {'approve': 1}

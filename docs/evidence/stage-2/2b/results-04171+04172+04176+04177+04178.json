@@ -1,0 +1,1319 @@
+﻿{
+  "EvaluationResults": {
+    "workspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "jobId": "ecb48280-7477-422d-8545-afd95085fea8",
+    "ParentJobId": null,
+    "EvalType": "StandaloneEvaluation",
+    "modelName": "dev-ct-mai-code-mp",
+    "modelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategyBody": null,
+    "skillIds": [
+      "cf00d339-5217-4cd1-b390-cc0d911735da"
+    ],
+    "OverallScore": null,
+    "FailureRate": null,
+    "Status": "InProgress",
+    "EvaluationCompletionDateTime": "0001-01-01T00:00:00+00:00",
+    "lastProgressDateTime": "2026-10-08T18:29:39.4802066+00:00",
+    "Results": [],
+    "StatusMessage": null,
+    "Id": null,
+    "CreatedDateTime": null,
+    "LastModifiedDateTime": null,
+    "HasAllUserInputsForNextStep": false,
+    "Compressed": false,
+    "SchemaVersion": null,
+    "Value": null,
+    "ItemClass": null,
+    "SecondaryKey": null,
+    "SystemExpirationDateTime": null,
+    "Size": null
+  },
+  "Submissions": [
+    {
+      "ExecutionId": null,
+      "PromptId": "ea05686e-752d-4884-8af0-04ff8ad66aa5",
+      "RetryCount": 1,
+      "Status": "Pending",
+      "Sample": {
+        "Id": "ea05686e-752d-4884-8af0-04ff8ad66aa5",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Fabrikam Service Partners have submitted C-2026-04171. Is it covered, and what do we pay?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:09:43.3455106+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_ea05686e-752d-4884-8af0-04ff8ad66aa5",
+        "CreatedDateTime": "2026-10-08T06:09:43.3455106+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "83d678a6-4369-4a24-86a9-6fb7f0a6fb41",
+      "PromptId": "9b56c2c2-c90d-4406-a827-c4f7e4c0f9a0",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "9b56c2c2-c90d-4406-a827-c4f7e4c0f9a0",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Is serial CIE-4000-CH-01962 still in warranty as at 2026-05-01? There's a claim, C-2026-04172.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:09:49.4683808+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_9b56c2c2-c90d-4406-a827-c4f7e4c0f9a0",
+        "CreatedDateTime": "2026-10-08T06:09:49.4683808+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "a45a5a78-eaf0-43bf-8c22-517eed93ebdc",
+      "PromptId": "50b197a9-512f-480f-94e0-934578ad9124",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "50b197a9-512f-480f-94e0-934578ad9124",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "What's the position on C-2026-04176?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:09:55.4522972+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_50b197a9-512f-480f-94e0-934578ad9124",
+        "CreatedDateTime": "2026-10-08T06:09:55.4522972+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "e80d07be-faf6-40ab-901e-a8432d1dc990",
+      "PromptId": "ff199284-dbd5-4fb1-b62b-7166979e3435",
+      "RetryCount": 1,
+      "Status": "Completed",
+      "Sample": {
+        "Id": "ff199284-dbd5-4fb1-b62b-7166979e3435",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Review C-2026-04177 and tell me the decision, the instrument it turns on, and the amount.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:10:01.4000467+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_ff199284-dbd5-4fb1-b62b-7166979e3435",
+        "CreatedDateTime": "2026-10-08T06:10:01.4000467+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": {
+        "Id": "e80d07be-faf6-40ab-901e-a8432d1dc990",
+        "IsRecurring": false,
+        "TaskSnapshot": null,
+        "Status": "Completed",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "DisplayName": "Srikantan Sankaran"
+        },
+        "StartDateTime": "2026-10-08T18:23:57.5925868+00:00",
+        "EndDateTime": "2026-10-08T18:26:02.5003204+00:00",
+        "Skills": [
+          {
+            "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+            "SubAgentId": "call_PQVaafnPkmxEPvopkwH7lmjh",
+            "Name": "warranty-assistant",
+            "ShortDescription": null,
+            "ToolExecutions": [],
+            "RubricResults": [
+              {
+                "Score": 0.6666666666666666,
+                "Reasoning": "The finish message clearly says a reliable warranty determination is not yet possible because the asset registry record is missing. It identifies the missing record, but does not separately address comparison of the repair date and repair-date running hours.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                "RubricName": "Coverage determination",
+                "ChecklistItems": [
+                  "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                  "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                  "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                  "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.0,
+                "Reasoning": "No governing instrument was determined because document retrieval failed. Although the dossier exposed a bulletin index, the agent did not explain the treatment or precedence of any listed bulletin.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                "RubricName": "Precedence discipline",
+                "ChecklistItems": [
+                  "Where coverage can be determined, names one governing instrument by reference code",
+                  "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                  "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                  "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.25,
+                "Reasoning": "The agent did not provide the requested policy, date/hour, rate, or price grounding. Its limited factual statement about the absent asset record is supported by the dossier, and it introduced no unsupported numeric or reference data in the finish message.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+                "RubricName": "Evidence grounding",
+                "ChecklistItems": [
+                  "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                  "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                  "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                  "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": null,
+                "Reasoning": null,
+                "Skip": "All valuation anchors are expressly conditional on the claim being covered. The agent instead concluded that a reliable warranty determination was not possible, so those triggers did not occur.",
+                "ExtraOutputs": null,
+                "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                "RubricName": "Valuation accuracy",
+                "ChecklistItems": [
+                  "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                  "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                  "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                  "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                  "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.0,
+                "Reasoning": "The response says what information or access is needed to proceed, but does not name a responsible actor and does not show that a matching evidence request or other claim-system action was recorded.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                "RubricName": "Authority and action",
+                "ChecklistItems": [
+                  "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                  "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                  "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                  "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.6666666666666666,
+                "Reasoning": "The agent appropriately declined to fill the asset-record gap or issue a dependent final coverage decision. However, it named only the missing asset registry record generally and did not enumerate the absent decision fields.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                "RubricName": "Gaps reported, not filled",
+                "ChecklistItems": [
+                  "Names any record needed for the decision that is missing, and the field that is absent",
+                  "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                  "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              }
+            ],
+            "Status": "Completed",
+            "ErrorResponse": null
+          }
+        ],
+        "ToolExecutions": [
+          {
+            "ToolCallId": "call_Hnk3W0svJyWHA7I2eQGpbmQd",
+            "Title": "1c171__get_claim_dossier",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04177"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022claim\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022claim_id\\u0022: \\u0022C-2026-04177\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-09990\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022submitted_date\\u0022: \\u00222026-06-24\\u0022,\\n    \\u0022repair_date\\u0022: \\u00222026-06-18\\u0022,\\n    \\u0022operation_code\\u0022: \\u0022HYD-PUMP-RR\\u0022,\\n    \\u0022claimed_part\\u0022: \\u0022P-44120-A\\u0022,\\n    \\u0022claimed_labour_hours\\u0022: 5.5,\\n    \\u0022goodwill_requested\\u0022: null,\\n    \\u0022status\\u0022: \\u0022Submitted\\u0022\\n  },\\n  \\u0022asset\\u0022: {\\n    \\u0022found\\u0022: false,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-09990\\u0022,\\n    \\u0022reason\\u0022: \\u0022No asset with this serial number is present in the asset registry.\\u0022\\n  },\\n  \\u0022service_history\\u0022: [],\\n  \\u0022related_claims\\u0022: [],\\n  \\u0022service_partner\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022name\\u0022: \\u0022Fabrikam Service Partners\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022currency\\u0022: \\u0022INR\\u0022,\\n    \\u0022uplift_pct\\u0022: 0.0,\\n    \\u0022agreement_ref\\u0022: \\u0022SPA-2023-FAB-IN\\u0022,\\n    \\u0022submission_sla_days\\u0022: 30\\n  },\\n  \\u0022parts\\u0022: [\\n    {\\n      \\u0022found\\u0022: true,\\n      \\u0022part_no\\u0022: \\u0022P-44120-A\\u0022,\\n      \\u0022description\\u0022: \\u0022Hydraulic pump assembly, rev A\\u0022,\\n      \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n      \\u0022component\\u0022: \\u0022hydraulic\\u0022,\\n      \\u0022supersedes\\u0022: \\u0022P-44120\\u0022,\\n      \\u0022superseded_by\\u0022: null,\\n      \\u0022price_inr\\u0022: 191200.0,\\n      \\u0022price_eur\\u0022: 2115.0,\\n      \\u0022price_sgd\\u0022: 3060.0,\\n      \\u0022supersession_chain\\u0022: [\\n        \\u0022P-44120-A\\u0022\\n      ],\\n      \\u0022current_part_no\\u0022: \\u0022P-44120-A\\u0022,\\n      \\u0022current_price_inr\\u0022: 191200.0\\n    }\\n  ],\\n  \\u0022tsb_applicability_index\\u0022: {\\n    \\u0022family\\u0022: null,\\n    \\u0022serial\\u0022: null,\\n    \\u0022entry_count\\u0022: 4,\\n    \\u0022entries\\u0022: [\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-P-0115\\u0022,\\n        \\u0022family\\u0022: \\u00222200-AC\\u0022,\\n        \\u0022serial_from\\u0022: 300,\\n        \\u0022serial_to\\u0022: 1100,\\n        \\u0022effective_from\\u0022: \\u00222026-04-02\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      },\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-P-0112\\u0022,\\n        \\u0022family\\u0022: \\u00222200-AC\\u0022,\\n        \\u0022serial_from\\u0022: 400,\\n        \\u0022serial_to\\u0022: 750,\\n        \\u0022effective_from\\u0022: \\u00222026-02-09\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      },\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-C-0051\\u0022,\\n        \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n        \\u0022serial_from\\u0022: 1200,\\n        \\u0022serial_to\\u0022: 1500,\\n        \\u0022effective_from\\u0022: \\u00222026-01-15\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      },\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-P-0107\\u0022,\\n        \\u0022family\\u0022: \\u00222200-AC\\u0022,\\n        \\u0022serial_from\\u0022: 400,\\n        \\u0022serial_to\\u0022: 900,\\n        \\u0022effective_from\\u0022: \\u00222025-06-03\\u0022,\\n        \\u0022status\\u0022: \\u0022Superseded\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      }\\n    ]\\n  },\\n  \\u0022goodwill_authority_matrix\\u0022: [\\n    {\\n      \\u0022tier\\u0022: 1,\\n      \\u0022max_amount_inr\\u0022: 25000.0,\\n      \\u0022approver_role\\u0022: \\u0022Service Supervisor\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 2,\\n      \\u0022max_amount_inr\\u0022: 100000.0,\\n      \\u0022approver_role\\u0022: \\u0022Regional Service Manager\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 3,\\n      \\u0022max_amount_inr\\u0022: 400000.0,\\n      \\u0022approver_role\\u0022: \\u0022Warranty Operations Head\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 4,\\n      \\u0022max_amount_inr\\u0022: null,\\n      \\u0022approver_role\\u0022: \\u0022Director, Aftermarket\\u0022\\n    }\\n  ]\\n}\"}]",
+            "LatencyMs": 8027
+          },
+          {
+            "ToolCallId": "call_AeuyyfSArQDw2ws8Ft5xpiwE",
+            "Title": "mcp_SharePointRemoteServer__getSiteByPath",
+            "Status": "Failed",
+            "Inputs": [
+              {
+                "Name": "hostname",
+                "Value": "microsoftapc.sharepoint.com"
+              },
+              {
+                "Name": "serverRelativePath",
+                "Value": "teams/ContosoFieldService/Warranty Operations"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"Error: Error executing tool: {\\r\\n  \\u0022Error\\u0022: \\u0022Tool Request Failed\\u0022,\\r\\n  \\u0022StatusCode\\u0022: 404,\\r\\n  \\u0022StatusDescription\\u0022: \\u0022NotFound\\u0022,\\r\\n  \\u0022SPLogId\\u0022: \\u0022f6ee42a2-c06f-5000-a8e2-d0ab5f565f46\\u0022,\\r\\n  \\u0022ResponseContent\\u0022: null\\r\\n,\\u0022ErrorType\\u0022:\\u0022ClientError\\u0022}\\r\\nCorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:24:35\"},{\"type\":\"text\",\"text\":\"CorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:24:35\"}]",
+            "LatencyMs": 6684
+          },
+          {
+            "ToolCallId": "call_8IMEEiyjDqMvStMmypoywlzw",
+            "Title": "mcp_SharePointRemoteServer__listDocumentLibrariesInSite",
+            "Status": "Failed",
+            "Inputs": [
+              {
+                "Name": "siteId",
+                "Value": "microsoftapc.sharepoint.com,3f7d1b1b-4c52-4d4a-bb4d-4f7b3a39e8f6,3f7d1b1b-4c52-4d4a-bb4d-4f7b3a39e8f6?web=3f7d1b1b-4c52-4d4a-bb4d-4f7b3a39e8f6"
+              },
+              {
+                "Name": "pageCursor",
+                "Value": ""
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"Error: Error executing tool: {\\r\\n  \\u0022Error\\u0022: \\u0022Tool Request Failed\\u0022,\\r\\n  \\u0022StatusCode\\u0022: 404,\\r\\n  \\u0022StatusDescription\\u0022: \\u0022NotFound\\u0022,\\r\\n  \\u0022SPLogId\\u0022: \\u0022fbee42a2-5074-1000-bf53-df44b117a94b\\u0022,\\r\\n  \\u0022ResponseContent\\u0022: null\\r\\n,\\u0022ErrorType\\u0022:\\u0022ClientError\\u0022}\\r\\nCorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:24:56\"},{\"type\":\"text\",\"text\":\"CorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:24:56\"}]",
+            "LatencyMs": 3974
+          },
+          {
+            "ToolCallId": "call_xu8QZM0ItC8gbYO7HY1so66J",
+            "Title": "mcp_SharePointRemoteServer__getDefaultDocumentLibraryInSite",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "siteId",
+                "Value": "root"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\r\\n  \\u0022createdBy\\u0022: {\\r\\n    \\u0022user\\u0022: {\\r\\n      \\u0022displayName\\u0022: \\u0022System Account\\u0022\\r\\n    }\\r\\n  },\\r\\n  \\u0022createdDateTime\\u0022: \\u00222018-08-10T08:05:45Z\\u0022,\\r\\n  \\u0022description\\u0022: \\u0022\\u0022,\\r\\n  \\u0022id\\u0022: \\u0022b!Hpsovc0KS0CPIsn-WFNR8GhV9dMxb2tCsYvkwOKABNL69zaN5XNbQK-xZLoG0MbN\\u0022,\\r\\n  \\u0022lastModifiedDateTime\\u0022: \\u00222026-06-05T22:11:01Z\\u0022,\\r\\n  \\u0022name\\u0022: \\u0022Documents\\u0022,\\r\\n  \\u0022webUrl\\u0022: \\u0022https://microsoft.sharepoint.com/Shared%20Documents\\u0022,\\r\\n  \\u0022driveType\\u0022: \\u0022documentLibrary\\u0022,\\r\\n  \\u0022owner\\u0022: {\\r\\n    \\u0022user\\u0022: {\\r\\n      \\u0022email\\u0022: \\u0022ejaffe@microsoft.com\\u0022,\\r\\n      \\u0022id\\u0022: \\u00226921df2e-7741-429f-9730-ee30a9396e4f\\u0022,\\r\\n      \\u0022displayName\\u0022: \\u0022Eric Jaffe (CELA)\\u0022\\r\\n    }\\r\\n  },\\r\\n  \\u0022quota\\u0022: {}\\r\\n}\"},{\"type\":\"text\",\"text\":\"CorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:25:14\"}]",
+            "LatencyMs": 3602
+          },
+          {
+            "ToolCallId": "call_CrAf2PWuimx9pgUyweeuu04p",
+            "Title": "mcp_SharePointRemoteServer__getFileOrFolderMetadataByUrl",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "fileOrFolderUrl",
+                "Value": "https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\r\\n  \\u0022onedrive.linkFeatures@odata.type\\u0022: \\u0022#Collection(oneDrive.linkFeatures)\\u0022,\\r\\n  \\u0022@onedrive.linkFeatures\\u0022: [],\\r\\n  \\u0022createdDateTime\\u0022: \\u00222026-10-03T05:36:27Z\\u0022,\\r\\n  \\u0022id\\u0022: \\u002201DRFRACV6Y2GOVW7725BZO354PWSELRRZ\\u0022,\\r\\n  \\u0022lastModifiedDateTime\\u0022: \\u00222026-10-07T11:30:45Z\\u0022,\\r\\n  \\u0022name\\u0022: \\u0022root\\u0022,\\r\\n  \\u0022parentReference\\u0022: {\\r\\n    \\u0022driveType\\u0022: \\u0022documentLibrary\\u0022,\\r\\n    \\u0022driveId\\u0022: \\u0022b!btFf7qjNiU-QygGw0VS1so4ix19FHqNChv72tIlM04CvSo4n6A1NQLAFuB7fhxAE\\u0022\\r\\n  },\\r\\n  \\u0022webUrl\\u0022: \\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty%20Operations\\u0022,\\r\\n  \\u0022fileSystemInfo\\u0022: {\\r\\n    \\u0022createdDateTime\\u0022: \\u00222026-10-03T05:36:27Z\\u0022,\\r\\n    \\u0022lastModifiedDateTime\\u0022: \\u00222026-10-07T11:30:45Z\\u0022\\r\\n  },\\r\\n  \\u0022folder\\u0022: {\\r\\n    \\u0022childCount\\u0022: 7\\r\\n  },\\r\\n  \\u0022isAuthoritative\\u0022: false,\\r\\n  \\u0022root\\u0022: {},\\r\\n  \\u0022size\\u0022: 1709433\\r\\n}\"},{\"type\":\"text\",\"text\":\"CorrelationId: 6a94cc8f-0c3d-1f6b-1a5d-591f2735b911, TimeStamp: 2026-10-08_18:25:26\"}]",
+            "LatencyMs": 4324
+          }
+        ],
+        "RubricResults": [
+          {
+            "Score": 0.6666666666666666,
+            "Reasoning": "The finish message clearly says a reliable warranty determination is not yet possible because the asset registry record is missing. It identifies the missing record, but does not separately address comparison of the repair date and repair-date running hours.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "RubricName": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.0,
+            "Reasoning": "No governing instrument was determined because document retrieval failed. Although the dossier exposed a bulletin index, the agent did not explain the treatment or precedence of any listed bulletin.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "RubricName": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.25,
+            "Reasoning": "The agent did not provide the requested policy, date/hour, rate, or price grounding. Its limited factual statement about the absent asset record is supported by the dossier, and it introduced no unsupported numeric or reference data in the finish message.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "RubricName": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": null,
+            "Reasoning": null,
+            "Skip": "All valuation anchors are expressly conditional on the claim being covered. The agent instead concluded that a reliable warranty determination was not possible, so those triggers did not occur.",
+            "ExtraOutputs": null,
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "RubricName": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.0,
+            "Reasoning": "The response says what information or access is needed to proceed, but does not name a responsible actor and does not show that a matching evidence request or other claim-system action was recorded.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "RubricName": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.6666666666666666,
+            "Reasoning": "The agent appropriately declined to fill the asset-record gap or issue a dependent final coverage decision. However, it named only the missing asset registry record generally and did not enumerate the absent decision fields.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "RubricName": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          }
+        ],
+        "ConversationId": "63aad052-8e75-40f6-936c-9cd6ea676d6c",
+        "UserQuery": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nReview C-2026-04177 and tell me the decision, the instrument it turns on, and the amount.",
+        "Response": [
+          {
+            "Content": "I could not complete the warranty review because the SharePoint document lookup returned errors and the claim dossier for **C-2026-04177** returned a missing asset-registry record. Without the governing warranty documents or a valid asset record, a reliable **decision, controlling instrument, and amount** cannot be determined.\n\nPlease restore access to the relevant SharePoint warranty library or correct the claim’s asset/serial record, then retry the review.",
+            "Link": ""
+          }
+        ],
+        "ErrorResponse": null,
+        "UserActionMetadata": [],
+        "LatestChainOfThought": null,
+        "BillingSummary": {
+          "InputTokens": 209764,
+          "OutputTokens": 4265,
+          "CacheReadTokens": 152832,
+          "CacheCreationTokens": 0,
+          "TotalTokens": 214029,
+          "ToolInvocations": 5.0,
+          "RaiChecks": 8.0,
+          "InfraSeconds": 0.0,
+          "OrchestratorCpuSeconds": 87.644733
+        },
+        "DebugContext": {
+          "Logs": []
+        }
+      },
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "8705ac7a-cc0e-40a6-b7eb-70b8521a0fb5",
+      "PromptId": "86d63152-9f56-4d38-b8a6-5ee0e35b0643",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "86d63152-9f56-4d38-b8a6-5ee0e35b0643",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "C-2026-04178 came in from Fabrikam Service Partners this morning. Where do we land?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:10:07.6123887+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_86d63152-9f56-4d38-b8a6-5ee0e35b0643",
+        "CreatedDateTime": "2026-10-08T06:10:07.6123887+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    }
+  ]
+}
+

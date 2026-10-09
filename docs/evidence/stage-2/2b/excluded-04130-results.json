@@ -1,0 +1,204 @@
+{
+  "EvaluationResults": {
+    "workspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "jobId": "beb6e3ac-ceb5-4283-b107-7a5368bdbd7f",
+    "ParentJobId": null,
+    "EvalType": "StandaloneEvaluation",
+    "modelName": "dev-ct-mai-code-mp",
+    "modelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategyBody": null,
+    "skillIds": [
+      "cf00d339-5217-4cd1-b390-cc0d911735da"
+    ],
+    "OverallScore": null,
+    "FailureRate": null,
+    "Status": "InProgress",
+    "EvaluationCompletionDateTime": "0001-01-01T00:00:00+00:00",
+    "lastProgressDateTime": null,
+    "Results": [],
+    "StatusMessage": null,
+    "Id": null,
+    "CreatedDateTime": null,
+    "LastModifiedDateTime": null,
+    "HasAllUserInputsForNextStep": false,
+    "Compressed": false,
+    "SchemaVersion": null,
+    "Value": null,
+    "ItemClass": null,
+    "SecondaryKey": null,
+    "SystemExpirationDateTime": null,
+    "Size": null
+  },
+  "Submissions": [
+    {
+      "ExecutionId": "51ed46b6-f909-447a-ac40-3eeae10c7203",
+      "PromptId": "effbf3b0-023a-47e3-b45b-70a5d51bbd56",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "effbf3b0-023a-47e3-b45b-70a5d51bbd56",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Give me the adjudication for C-2026-04130, with the instrument you relied on.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:08:15.3287555+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_effbf3b0-023a-47e3-b45b-70a5d51bbd56",
+        "CreatedDateTime": "2026-10-08T06:08:15.3287555+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    }
+  ]
+}

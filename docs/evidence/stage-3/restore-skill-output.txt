@@ -1,0 +1,3 @@
+Skill upserted successfully!
+ID: cf00d339-5217-4cd1-b390-cc0d911735da
+Name: warranty-assistant

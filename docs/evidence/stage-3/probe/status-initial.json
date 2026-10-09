@@ -1,0 +1,60 @@
+{
+  "PauseReason": null,
+  "ReasonMessage": null,
+  "Stages": [
+    {
+      "Name": "StandaloneEvaluation",
+      "DisplayName": "Evaluation",
+      "Status": "InProgress",
+      "Errors": []
+    }
+  ],
+  "Evaluations": [
+    {
+      "Id": "44945388-1e87-41b5-adfd-32123fe29268",
+      "EvalType": "StandaloneEvaluation",
+      "Name": "Evaluation",
+      "OverallScore": null,
+      "SkillAggregateResults": null,
+      "EvaluationCompletionDate": "0001-01-01T00:00:00+00:00",
+      "LastUpdatedDate": "2026-10-09T03:21:44.8140432+00:00",
+      "Status": "Running",
+      "StatusMessage": null,
+      "Strategy": "BestOfN",
+      "StrategyBody": {
+        "N": 4
+      }
+    }
+  ],
+  "IndexInstanceId": null,
+  "JobId": "44945388-1e87-41b5-adfd-32123fe29268",
+  "JobTaskType": null,
+  "JobType": "Evaluation",
+  "FinetuningType": null,
+  "Status": "Running",
+  "ErrorCode": null,
+  "ErrorMessage": "",
+  "BaseModelName": "dev-ct-mai-code-mp",
+  "BaseModelNames": [
+    "dev-ct-mai-code-mp"
+  ],
+  "BaseModelDisplayName": "dev-ct-mai-code-mp",
+  "NewModelName": "",
+  "CreatedAt": "2026-10-09T03:17:41.6261388+00:00",
+  "UpdatedAt": "2026-10-09T03:17:41.6395984+00:00",
+  "CreatedByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "LastModifiedByObjectId": null,
+  "EvaluationMetadata": null,
+  "WorkspaceSnapshotMetadata": {
+    "Id": "44945388-1e87-41b5-adfd-32123fe29268",
+    "SkillsCount": 1,
+    "ToolsCount": 3,
+    "SamplePromptsCount": 1,
+    "KnowledgeSourcesCount": 4
+  },
+  "DebugContext": {
+    "Logs": []
+  },
+  "normalizedStatus": "running",
+  "isTerminal": false
+}

@@ -1,0 +1,1914 @@
+﻿{
+  "EvaluationResults": {
+    "workspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "jobId": "4623ca82-4053-41c8-a0be-8cedbc585ee1",
+    "ParentJobId": null,
+    "EvalType": "StandaloneEvaluation",
+    "modelName": "dev-ct-mai-code-mp",
+    "modelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategyBody": null,
+    "skillIds": [
+      "cf00d339-5217-4cd1-b390-cc0d911735da"
+    ],
+    "OverallScore": null,
+    "FailureRate": null,
+    "Status": "InProgress",
+    "EvaluationCompletionDateTime": "0001-01-01T00:00:00+00:00",
+    "lastProgressDateTime": "2026-10-08T14:55:12.6476072+00:00",
+    "Results": [],
+    "StatusMessage": null,
+    "Id": null,
+    "CreatedDateTime": null,
+    "LastModifiedDateTime": null,
+    "HasAllUserInputsForNextStep": false,
+    "Compressed": false,
+    "SchemaVersion": null,
+    "Value": null,
+    "ItemClass": null,
+    "SecondaryKey": null,
+    "SystemExpirationDateTime": null,
+    "Size": null
+  },
+  "Submissions": [
+    {
+      "ExecutionId": "24670b97-77fd-4bad-bed5-471905440bde",
+      "PromptId": "90dfe727-082c-4c06-bca9-6321b9382be4",
+      "RetryCount": 1,
+      "Status": "Completed",
+      "Sample": {
+        "Id": "90dfe727-082c-4c06-bca9-6321b9382be4",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Adjudicate claim C-2026-04101.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:07:08.1969163+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_90dfe727-082c-4c06-bca9-6321b9382be4",
+        "CreatedDateTime": "2026-10-08T06:07:08.1969163+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": {
+        "Id": "24670b97-77fd-4bad-bed5-471905440bde",
+        "IsRecurring": false,
+        "TaskSnapshot": null,
+        "Status": "Completed",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "DisplayName": "Srikantan Sankaran"
+        },
+        "StartDateTime": "2026-10-08T14:43:24.1016938+00:00",
+        "EndDateTime": "2026-10-08T14:51:51.880576+00:00",
+        "Skills": [
+          {
+            "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+            "SubAgentId": "call_ryRb0IOTowwZhfyTH0sE0QL0",
+            "Name": "warranty-assistant",
+            "ShortDescription": null,
+            "ToolExecutions": [],
+            "RubricResults": [
+              {
+                "Score": 1.0,
+                "Reasoning": "The completed finish response leads with approval, states the India limits as 18 months/5,000 hours from commissioning, and compares the 2026-05-10 repair and 2,229-hour record with the 2026-09-15/5,000-hour endpoints. Neither limit was exceeded, so the fourth conditional anchor did not arise.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                "RubricName": "Coverage determination",
+                "ChecklistItems": [
+                  "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                  "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                  "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                  "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "The response identifies ADD-IN-2.1 and POL-WAR-4.2, explains that the India addendum varies the global baseline for an India installation, and explains that TSB-C-0051 is inapplicable because serial 01050 is outside 01200–01850 and the repair concerns controls rather than hydraulic/compressor components. No bulletin-index/document serial-range disagreement occurred here.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                "RubricName": "Precedence discipline",
+                "ChecklistItems": [
+                  "Where coverage can be determined, names one governing instrument by reference code",
+                  "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                  "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                  "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.25,
+                "Reasoning": "Although sources are cited throughout, the final response does not consistently provide clauses for each coverage term/exclusion, omits the 2026-04-15 as-of date for the 2,229-hour claim-system reading, and does not name effective dates for the labour rate or a parts price-list effective date/source. Its substantive figures and references are nevertheless supported by consulted records or transparent calculations.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+                "RubricName": "Evidence grounding",
+                "ChecklistItems": [
+                  "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                  "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                  "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                  "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "The response correctly uses the lesser of 1.5 claimed and 1.5 flat-rate hours, applies INR 1,450/hour for INR 2,175 labour, prices fitted P-44900 at INR 67,400, applies no uplift under SPA-2023-FAB-IN, and totals INR 69,575. There is no excess claimed labour or amount requiring a variance.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                "RubricName": "Valuation accuracy",
+                "ChecklistItems": [
+                  "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                  "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                  "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                  "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                  "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 1.0,
+                "Reasoning": "The response directs the adjudicator to approve and release INR 69,575, and the trajectory shows exactly one successful create_claim_adjudication call recording a consistent approval draft for that amount. No goodwill was requested and no conversational approval was presented.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                "RubricName": "Authority and action",
+                "ChecklistItems": [
+                  "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                  "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                  "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                  "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": null,
+                "Reasoning": null,
+                "Skip": "All records needed for this determination were available, including commissioning date and running-hours evidence. The agent did not substitute installation for commissioning and did not identify any decision-critical missing record, so the missing-record conditions did not arise.",
+                "ExtraOutputs": null,
+                "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                "RubricName": "Gaps reported, not filled",
+                "ChecklistItems": [
+                  "Names any record needed for the decision that is missing, and the field that is absent",
+                  "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                  "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              }
+            ],
+            "Status": "Completed",
+            "ErrorResponse": null
+          }
+        ],
+        "ToolExecutions": [
+          {
+            "ToolCallId": "call_HcYMU2vBegZwHEbzpSQ94noQ",
+            "Title": "1c171__get_claim_dossier",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04101"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022claim\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022submitted_date\\u0022: \\u00222026-05-16\\u0022,\\n    \\u0022repair_date\\u0022: \\u00222026-05-10\\u0022,\\n    \\u0022operation_code\\u0022: \\u0022CTRL-BD-RR\\u0022,\\n    \\u0022claimed_part\\u0022: \\u0022P-44900\\u0022,\\n    \\u0022claimed_labour_hours\\u0022: 1.5,\\n    \\u0022goodwill_requested\\u0022: null,\\n    \\u0022status\\u0022: \\u0022Submitted\\u0022\\n  },\\n  \\u0022asset\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022customer_name\\u0022: \\u0022Litware Manufacturing\\u0022,\\n    \\u0022site\\u0022: \\u0022Pune\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022install_date\\u0022: \\u00222025-02-20\\u0022,\\n    \\u0022commissioning_date\\u0022: \\u00222025-03-15\\u0022\\n  },\\n  \\u0022running_hours_at_repair_date\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n    \\u0022as_of_date\\u0022: \\u00222026-04-15\\u0022,\\n    \\u0022running_hours\\u0022: 2229\\n  },\\n  \\u0022service_history\\u0022: [\\n    {\\n      \\u0022job_id\\u0022: \\u0022J-00001\\u0022,\\n      \\u0022job_date\\u0022: \\u00222026-05-10\\u0022,\\n      \\u0022operation_code\\u0022: \\u0022CTRL-BD-RR\\u0022,\\n      \\u0022component\\u0022: \\u0022controls\\u0022,\\n      \\u0022part_fitted\\u0022: \\u0022P-44900\\u0022,\\n      \\u0022labour_hours\\u0022: 1.5,\\n      \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n      \\u0022completed_date\\u0022: \\u00222026-05-10\\u0022\\n    }\\n  ],\\n  \\u0022related_claims\\u0022: [],\\n  \\u0022service_partner\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022name\\u0022: \\u0022Fabrikam Service Partners\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022currency\\u0022: \\u0022INR\\u0022,\\n    \\u0022uplift_pct\\u0022: 0.0,\\n    \\u0022agreement_ref\\u0022: \\u0022SPA-2023-FAB-IN\\u0022,\\n    \\u0022submission_sla_days\\u0022: 30\\n  },\\n  \\u0022parts\\u0022: [\\n    {\\n      \\u0022found\\u0022: true,\\n      \\u0022part_no\\u0022: \\u0022P-44900\\u0022,\\n      \\u0022description\\u0022: \\u0022Control board\\u0022,\\n      \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n      \\u0022component\\u0022: \\u0022controls\\u0022,\\n      \\u0022supersedes\\u0022: null,\\n      \\u0022superseded_by\\u0022: null,\\n      \\u0022price_inr\\u0022: 67400.0,\\n      \\u0022price_eur\\u0022: 745.0,\\n      \\u0022price_sgd\\u0022: 1078.0,\\n      \\u0022supersession_chain\\u0022: [\\n        \\u0022P-44900\\u0022\\n      ],\\n      \\u0022current_part_no\\u0022: \\u0022P-44900\\u0022,\\n      \\u0022current_price_inr\\u0022: 67400.0\\n    }\\n  ],\\n  \\u0022tsb_applicability_index\\u0022: {\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01050\\u0022,\\n    \\u0022entry_count\\u0022: 1,\\n    \\u0022entries\\u0022: [\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-C-0051\\u0022,\\n        \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n        \\u0022serial_from\\u0022: 1200,\\n        \\u0022serial_to\\u0022: 1500,\\n        \\u0022effective_from\\u0022: \\u00222026-01-15\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      }\\n    ]\\n  },\\n  \\u0022goodwill_authority_matrix\\u0022: [\\n    {\\n      \\u0022tier\\u0022: 1,\\n      \\u0022max_amount_inr\\u0022: 25000.0,\\n      \\u0022approver_role\\u0022: \\u0022Service Supervisor\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 2,\\n      \\u0022max_amount_inr\\u0022: 100000.0,\\n      \\u0022approver_role\\u0022: \\u0022Regional Service Manager\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 3,\\n      \\u0022max_amount_inr\\u0022: 400000.0,\\n      \\u0022approver_role\\u0022: \\u0022Warranty Operations Head\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 4,\\n      \\u0022max_amount_inr\\u0022: null,\\n      \\u0022approver_role\\u0022: \\u0022Director, Aftermarket\\u0022\\n    }\\n  ]\\n}\"}]",
+            "LatencyMs": 7244
+          },
+          {
+            "ToolCallId": "call_GrBTildj8ccHI8KYTziqqKza",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy\" warranty policy India addendum 4000-CH"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+            "LatencyMs": 2411
+          },
+          {
+            "ToolCallId": "call_HTr4ihgrkPEiqmi4pJCmEbwC",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy\" warranty policy India addendum 4000-CH"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "25"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+            "LatencyMs": 8850
+          },
+          {
+            "ToolCallId": "call_RR7HyLbPxVAsmYyY2U8utH7R",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy\" warranty policy India addendum 4000-CH"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "25"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+            "LatencyMs": 659
+          },
+          {
+            "ToolCallId": "call_tk44yh1OOUNAauTE6LJpSPc4",
+            "Title": "mcp_SharePointRemoteServer__getSiteByPath",
+            "Status": "Failed",
+            "Inputs": [
+              {
+                "Name": "hostname",
+                "Value": "microsoftapc.sharepoint.com"
+              },
+              {
+                "Name": "serverRelativePath",
+                "Value": "teams/ContosoFieldService/Warranty Operations"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"Error: Error executing tool: {\\r\\n  \\u0022Error\\u0022: \\u0022Tool Request Failed\\u0022,\\r\\n  \\u0022StatusCode\\u0022: 404,\\r\\n  \\u0022StatusDescription\\u0022: \\u0022NotFound\\u0022,\\r\\n  \\u0022SPLogId\\u0022: \\u002266e242a2-b03b-5000-a8e2-d0029a9dcf3a\\u0022,\\r\\n  \\u0022ResponseContent\\u0022: null\\r\\n,\\u0022ErrorType\\u0022:\\u0022ClientError\\u0022}\\r\\nCorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:01\"},{\"type\":\"text\",\"text\":\"CorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:01\"}]",
+            "LatencyMs": 5104
+          },
+          {
+            "ToolCallId": "call_P9c9zeXmvex1PaFoN8XrRjAt",
+            "Title": "mcp_SharePointRemoteServer__listDocumentLibrariesInSite",
+            "Status": "Failed",
+            "Inputs": [
+              {
+                "Name": "siteId",
+                "Value": "microsoftapc.sharepoint.com,4f6b5d56-7f36-45c2-bc4f-1d55f7712e55,4f6b5d56-7f36-45c2-bc4f-1d55f7712e55"
+              },
+              {
+                "Name": "pageCursor",
+                "Value": ""
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"Error: Error executing tool: {\\r\\n  \\u0022Error\\u0022: \\u0022Tool Request Failed\\u0022,\\r\\n  \\u0022StatusCode\\u0022: 404,\\r\\n  \\u0022StatusDescription\\u0022: \\u0022NotFound\\u0022,\\r\\n  \\u0022SPLogId\\u0022: \\u002269e242a2-a03b-1000-bab1-55a470bfc68b\\u0022,\\r\\n  \\u0022ResponseContent\\u0022: null\\r\\n,\\u0022ErrorType\\u0022:\\u0022ClientError\\u0022}\\r\\nCorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:14\"},{\"type\":\"text\",\"text\":\"CorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:14\"}]",
+            "LatencyMs": 5765
+          },
+          {
+            "ToolCallId": "call_i559t0XWKd9o46MxNqUQAs8N",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy\" warranty policy India addendum 4000-CH"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "25"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+            "LatencyMs": 660
+          },
+          {
+            "ToolCallId": "call_I9gTjLKojXdthZTyjLTi7jcg",
+            "Title": "mcp_SharePointRemoteServer__getSiteByPath",
+            "Status": "Failed",
+            "Inputs": [
+              {
+                "Name": "hostname",
+                "Value": "microsoftapc.sharepoint.com"
+              },
+              {
+                "Name": "serverRelativePath",
+                "Value": "teams/ContosoFieldService/Warranty Operations"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"Error: Error executing tool: {\\r\\n  \\u0022Error\\u0022: \\u0022Tool Request Failed\\u0022,\\r\\n  \\u0022StatusCode\\u0022: 404,\\r\\n  \\u0022StatusDescription\\u0022: \\u0022NotFound\\u0022,\\r\\n  \\u0022SPLogId\\u0022: \\u00226ee242a2-30c9-5000-d7ae-75d65e5c86c0\\u0022,\\r\\n  \\u0022ResponseContent\\u0022: null\\r\\n,\\u0022ErrorType\\u0022:\\u0022ClientError\\u0022}\\r\\nCorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:36\"},{\"type\":\"text\",\"text\":\"CorrelationId: 26b38c78-d665-1039-fb81-0aed9cdd5c6d, TimeStamp: 2026-10-08_14:45:36\"}]",
+            "LatencyMs": 5194
+          },
+          {
+            "ToolCallId": "call_b3ify6B9IcUnug2TjjxgpL9D",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "path:\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy\" warranty policy India"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+            "LatencyMs": 3578
+          },
+          {
+            "ToolCallId": "call_TuibQuo4Ch4eF9gIp44lhFMw",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "Warranty Policy India"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx\\u0022,\\u0022Summary\\u0022:\\u0022\\\\r\\\\n# \\\\r\\\\n# Flat Rate Labour \\\\r\\\\n\\\\r\\\\nWarranty Labour Rate Card \\\\u2014 FY26 \\\\u00B7 Flat Rate Labour Contoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 effective 1 April 2026 \\\\u00B7 hours payable per operation, per policy clause 4.1 Operation code Description Product family Component Flat-rate hours HYD-PUMP-RR Hydraulic pump - remove and replace 4000-series industrial chiller hydraulic 5.5 FILT-HSG-RR Filter housing - remove and replace 4000-series industrial chiller hydraulic 2.5 COMP-RR Compressor module - remove and replace 4000-series industrial chiller compressor 9 CTRL-BD-RR Control board - replace 4000-series industrial chiller controls 1.5 COND-FAN-RR Condenser fan assembly - replace 4000-series industrial chiller structure 3.5 VALVE-PLT-RR Valve plate kit - replace 2200-series air compressor valve plate 4 MOTOR-RR Drive motor - replace 2200-series air compressor drive 7.5 BEARING-RR Main bearing set - replace 2200-series air compressor drive 6 SEAL-KIT-RR Seal kit - replace 2200-series air compressor seals 3 DIAG-FIELD Field diagnostic visit any any 2 \\\\r\\\\n# \\\\r\\\\n# Labour Rates \\\\r\\\\n\\\\r\\\\nWarranty Labour Rate Card \\\\u2014 FY26 \\\\u00B7 Regional Labour Rates (FY25 and FY26) Contoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 the rate applied is the one in force on the DATE OF REPAIR, per policy clause 4.1 Region Currency Rate per hour Effective from Effective to India INR 1320 2025-04-01 2026-03-31 India INR 1450 2026-04-01 2027-03-31 EMEA EUR 78 2025-04-01 2026-03-31 EMEA EUR 84 2026-04-01 2027-03-31 APAC SGD 96 2025-04-01 2026-03-31 APAC SGD 102 2026-04-01 2027-03-31 \\\\r\\\\n# \\\\r\\\\n# Notes \\\\r\\\\n\\\\r\\\\nWarranty Labour Rate Card \\\\u2014 FY26 Labour is payable at the flat-rate allowance for the operation code, or at the hours actually claimed, whichever is the lesser (Global Warranty Policy, 4.1). Hours above the flat-rate allowance are not payable and are reported to the partner as a variance on the adjudication.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Regional Addendum - India Version 2.1 \\\\u2014 effective 2025-04-01 Reference ADD-IN-2.1 Region India Currency INR Effective from 2025-04-01 Read with POL-WAR-4.2 Contoso Industrial Global Warranty Policy \\\\r\\\\n# \\\\r\\\\n# Scope\\\\r\\\\n\\\\r\\\\n This addendum varies the Global Warranty Policy for equipment installed in India. Where this addendum is silent, the Global Warranty Policy applies without variation. Where a Technical Service Bulletin names the serial range of an asset, clause 1.4 of the Global Warranty Policy governs the order of precedence. \\\\r\\\\n## \\\\r\\\\n## A1  Varied coverage period\\\\r\\\\n\\\\r\\\\n For assets installed in India, the standard coverage period at clause 2.1 of the Global Warranty Policy is varied to eighteen (18) months from the date of commissioning, or five thousand (5,000) running hours, whichever occurs first. \\\\r\\\\n## \\\\r\\\\n## A3  Coastal and monsoon exclusion\\\\r\\\\n\\\\r\\\\n Corrosion damage at a coastal installation arising between 1 June and 30 September is excluded, save where a Technical Service Bulletin provides otherwise. \\\\r\\\\n# \\\\r\\\\n# Summary of varied terms\\\\r\\\\n\\\\r\\\\n Term Global policy India Coverage period 24 months 18 months Running-hours limit 6,000 h 5,000 h\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL [...] Contoso Industrial Global Warranty Policy Version 4.2 \\\\u2014 effective 2025-04-01 Reference POL-WAR-4.2 Version 4.2 Effective from 2025-04-01 Document owner Warranty Operations Applies to All products, all regions, all authorised service partners Supersedes POL-WAR-4.1 (effective 1 April 2024) \\\\r\\\\n# \\\\r\\\\n# Purpose\\\\r\\\\n\\\\r\\\\n This policy sets out the warranty Contoso Industrial provides on equipment it manufactures, the basis on which a claim from an authorised service partner is adjudicated, and the amounts payable. It applies to every claim submitted through the service claim system. \\\\r\\\\n# \\\\r\\\\n# 1. Interpretation\\\\r\\\\n\\\\r\\\\n \\\\r\\\\n## \\\\r\\\\n## 1.4  Precedence between instruments\\\\r\\\\n\\\\r\\\\n Where two or more instruments address the same asset, the order of precedence is: (a) a Technical Service Bulletin that names the serial range of the asset; (b) the Regional Addendum for the region in which the asset is installed; (c) this policy. A Bulletin that has been superseded has no effect, whether or not it remains published. Where the Bulletin document and the service system applicability index disagree, the Bulletin document governs; the index is maintained for reporting and is informational only. \\\\r\\\\n# \\\\r\\\\n# 2. Coverage\\\\r\\\\n\\\\r\\\\n \\\\r\\\\n## \\\\r\\\\n## 2.1  Standard coverage period\\\\r\\\\n\\\\r\\\\n Unless extended or varied by an instrument of higher precedence, an asset is covered for twenty-four (24) months from the date of commissioning, or six thousand (6,000) running hours, whichever occurs first. \\\\r\\\\n## \\\\r\\\\n## 2.3  Assets with no commissioning record\\\\r\\\\n\\\\r\\\\n Where the commissioning record for an asset is absent from the asset registry, coverage cannot be determined. The claim is to be held and the commissioning certificate requested from the installing partner. The date of despatch or the date of installation must not be substituted for the date of commissioning. [...] \\\\r\\\\n# \\\\r\\\\n# 6. Repair warranty\\\\r\\\\n\\\\r\\\\n \\\\r\\\\n## \\\\r\\\\n## 6.1  Repair warranty\\\\r\\\\n\\\\r\\\\n A component replaced under warranty carries a further ninety (90) days of coverage from the date the repair was completed.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Service Partner Agreement Fabrikam Service Partners \\\\u2014 SPA-2023-FAB-IN Agreement reference SPA-2023-FAB-IN Partner Fabrikam Service Partners Partner code D-IN-01 Territory India Settlement currency INR \\\\r\\\\n# \\\\r\\\\n# 1. Appointment\\\\r\\\\n\\\\r\\\\n Contoso Industrial appoints Fabrikam Service Partners as an authorised service partner for the territory named above, to carry out warranty repairs on Contoso Industrial equipment and to submit claims in accordance with the Global Warranty Policy. \\\\r\\\\n# \\\\r\\\\n# 2. Claim submission\\\\r\\\\n\\\\r\\\\n A claim is submitted within 30 days of the date of repair, giving the part number actually fitted and attaching the inspection report where one was raised. Contoso Industrial adjudicates the claim from the claim-system record, taking running hours from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. \\\\r\\\\n# \\\\r\\\\n# 3. Labour\\\\r\\\\n\\\\r\\\\n Labour is reimbursed at the flat-rate allowance published for the operation code, at the regional labour rate in force on the date of repair, in accordance with clause 4.1 of the Global Warranty Policy. \\\\r\\\\n# \\\\r\\\\n# 6. Parts and handling\\\\r\\\\n\\\\r\\\\n Parts are reimbursed at the published list price for the territory, for the part actually fitted. No handling uplift is payable under this agreement. Parts are reimbursed at list price without addition. \\\\r\\\\n# \\\\r\\\\n# 9. Term\\\\r\\\\n\\\\r\\\\n This agreement runs for three years from execution and renews annually unless either party gives ninety days\\\\u0027 written notice.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022Summary\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q2 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 14 October 2025 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 2.8% of revenue, down 0.3 points on FY25 Q4\\\\r\\\\n - Claim volume up 11% year on year, driven by the 4000-series installed base\\\\r\\\\n - Average settlement time 8.4 working days against a 10-day target\\\\r\\\\n - India remains the largest region by claim volume\\\\r\\\\n \\\\r\\\\n# Coverage at a glance \\\\r\\\\n- Standard coverage: 24 months from commissioning, or 6,000 running hours\\\\r\\\\n - Applies across all product families and all regions\\\\r\\\\n - Labour reimbursed at flat-rate allowance\\\\r\\\\n - Parts reimbursed at territory list price\\\\r\\\\n - Goodwill available at manager discretion for near-miss cases\\\\r\\\\n - TRAP 6. This slide is the stale summary. \\\\u0027Applies across all product families and all regions\\\\u0027 was never true of India (18 months under ADD-IN-2.1) and is wrong for any asset covered by TSB-C-0051 or TSB-P-0112. \\\\u0027Goodwill at manager discretion\\\\u0027 contradicts policy 7.1, which requires recorded authority at tier. A model that trusts this deck over the policy fails the Evidence grounding rubric.\\\\r\\\\n \\\\r\\\\n# Warranty cost by product family (INR lakh) \\\\r\\\\n4000-series chiller FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 182 174 196 211 2200-series compressor FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 96 101 94 88 \\\\r\\\\n# Top failure modes \\\\u2014 4000-series \\\\r\\\\nComponent Claims Share Trend Hydraulic circuit 214 38% Rising Compressor 147 26% Stable Control system 88 16% Falling Structural / cooling 61 11% Stable Other 52 9% Stable \\\\r\\\\n# Actions \\\\r\\\\n- Engineering to review hydraulic circuit failure rate on the 4000-series\\\\r\\\\n - Bulletin under consideration for affected serial ranges\\\\r\\\\n - Partner documentation quality to be raised at the Q3 partner forum\\\\r\\\\n Rate card review ahead of FY26 close\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2024-NWD-IN Northwind Field Services.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Service Partner Agreement Northwind Field Services \\\\u2014 SPA-2024-NWD-IN Agreement reference SPA-2024-NWD-IN Partner Northwind Field Services Partner code D-IN-02 Territory India Settlement currency INR \\\\r\\\\n# 1. Appointment\\\\r\\\\n Contoso Industrial appoints Northwind Field Services as an authorised service partner for the territory named above, to carry out warranty repairs on Contoso Industrial equipment and to submit claims in accordance with the Global Warranty Policy. \\\\r\\\\n# 2. Claim submission\\\\r\\\\n A claim is submitted within 30 days of the date of repair, giving the part number actually fitted and attaching the inspection report where one was raised. Contoso Industrial adjudicates the claim from the claim-system record, taking running hours from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. \\\\r\\\\n# 3. Labour\\\\r\\\\n Labour is reimbursed at the flat-rate allowance published for the operation code, at the regional labour rate in force on the date of repair, in accordance with clause 4.1 of the Global Warranty Policy. \\\\r\\\\n# 6. Parts and handling\\\\r\\\\n Parts are reimbursed at the published list price for the territory, for the part actually fitted. \\\\r\\\\n## 6.2 Handling uplift\\\\r\\\\n A handling uplift of 5.0% of the reimbursed parts value is payable to Northwind Field Services in addition to the parts value. The uplift is calculated on parts only and does not apply to labour. \\\\r\\\\n# 9. Term\\\\r\\\\n This agreement runs for three years from execution and renews annually unless either party gives ninety days\\\\u0027 written notice.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022Summary\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q3 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 16 April 2026 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 3.4% of revenue, up 0.6 points \\\\u2014 driven by bulletin activity\\\\r\\\\n - TSB-C-0051 extended 4000-series hydraulic and compressor coverage in January\\\\r\\\\n - TSB-P-0112 superseded TSB-P-0107 in February, narrowing the covered range\\\\r\\\\n - FY26 labour rates took effect 1 April 2026\\\\r\\\\n \\\\r\\\\n# Coverage position by instrument \\\\r\\\\nInstrument Applies to Period Notes POL-WAR-4.2 All, unless varied 24 mo / 6,000 h Global baseline ADD-IN-2.1 India installations 18 mo / 5,000 h Shorter than global ADD-EM-1.3 EMEA installations 24 mo / 6,000 h No variation TSB-C-0051 4000-CH 01200-01850 36 mo / 8,000 h Hydraulic \\\\u002B compressor TSB-P-0112 2200-AC 00400-00750 30 mo / 7,000 h Supersedes 0107 TSB-C-0043 4000-CH all serials No change Reverses 5.2 exclusion \\\\r\\\\n# Precedence \\\\u2014 a reminder for adjudicators \\\\r\\\\n- A bulletin naming the serial range takes precedence over the regional addendum\\\\r\\\\n - The regional addendum takes precedence over the global policy\\\\r\\\\n - A superseded bulletin has no effect, whether or not it is still published\\\\r\\\\n - Where the claim system index and a bulletin disagree, the bulletin governs\\\\r\\\\n - Policy clause 1.4\\\\r\\\\n \\\\r\\\\n# Claims by funding code \\\\r\\\\nStandard FY26 Q1 FY26 Q2 FY26 Q3 412 388 301 Bulletin FY26 Q1 FY26 Q2 FY26 Q3 0 12 168 Repair warranty FY26 Q1 FY26 Q2 FY26 Q3 31 28 34 Goodwill FY26 Q1 FY26 Q2 FY26 Q3 22 19 16 \\\\r\\\\n# Watch items \\\\r\\\\n- Applicability index in the claim system is lagging bulletin publication\\\\r\\\\n - Adjudicate from the bulletin document, not the index\\\\r\\\\n - Goodwill approvals given in channels are not being recorded against claims\\\\r\\\\n - Authority must be recorded in the claim system \\\\u2014 policy 7.1\\\\r\\\\n Commissioning records missing for a small number of assets\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/MTX-GW-3 Goodwill and Authority Matrix v3.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Goodwill and Authority Matrix Version 3 \\\\u2014 effective 1 April 2025 Reference MTX-GW-3 Effective from 2025-04-01 Authority for Policy clause 7.1 Currency INR (equivalent amounts apply in other regions) \\\\r\\\\n# Authority to approve goodwill\\\\r\\\\n An amount payable outside coverage may be authorised as goodwill only by a person holding the tier of authority shown below for that amount, and only where the authority is recorded in the claim system. An approval given in conversation, in a channel message, or by telephone does not constitute authority. Tier Amount up to Approving role 1 INR 25,000 Service Supervisor 2 INR 100,000 Regional Service Manager 3 INR 400,000 Warranty Operations Head 4 No limit Director, Aftermarket \\\\r\\\\n# Recording authority\\\\r\\\\n Authority is recorded against the claim in the service claim system before payment is released. A claim carrying goodwill without a recorded authority at the correct tier is returned to the adjudicator.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-AP-1.1 Regional Addendum - APAC v1.1.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Regional Addendum - APAC Version 1.1 \\\\u2014 effective 2025-04-01 Reference ADD-AP-1.1 Region APAC Currency SGD Effective from 2025-04-01 Read with POL-WAR-4.2 Contoso Industrial Global Warranty Policy \\\\r\\\\n# Scope\\\\r\\\\n This addendum varies the Global Warranty Policy for equipment installed in APAC. Where this addendum is silent, the Global Warranty Policy applies without variation. Where a Technical Service Bulletin names the serial range of an asset, clause 1.4 of the Global Warranty Policy governs the order of precedence. \\\\r\\\\n## A1  Coverage period\\\\r\\\\n The standard coverage period at clause 2.1 of the Global Warranty Policy applies without variation. \\\\r\\\\n# Summary of varied terms\\\\r\\\\n Term Global policy APAC Coverage period 24 months 24 months Running-hours limit 6,000 h 6,000 h\\u0022}}]}]}]}\"}]",
+            "LatencyMs": 4137
+          },
+          {
+            "ToolCallId": "call_TzFRUgXcqDh8BFeDiWB0DOab",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "TSB-C-0051"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor Bulletin reference TSB-C-0051 Effective from 2026-01-15 Product family 4000-series industrial chiller Serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 inclusive Status Current \\\\r\\\\n# \\\\r\\\\n# Purpose\\\\r\\\\n\\\\r\\\\n Elevated failure rates have been observed on the hydraulic circuit and compressor of affected units. Coverage is extended as set out below. \\\\r\\\\n# \\\\r\\\\n# Effect on warranty\\\\r\\\\n\\\\r\\\\n For assets within the serial range named above, coverage of the hydraulic circuit and compressor is extended to 36 months from the date of commissioning, or 8,000 running hours, whichever occurs first. This bulletin names a serial range and therefore takes precedence over the regional addendum and the Global Warranty Policy, in accordance with clause 1.4 of that policy. \\\\r\\\\n# \\\\r\\\\n# Note on the service system index\\\\r\\\\n\\\\r\\\\n The applicability index held in the service claim system is maintained for reporting and may lag this document. Where the index and this bulletin disagree on the serial range, this bulletin governs, in accordance with clause 1.4 of the Global Warranty Policy. \\\\r\\\\n# \\\\r\\\\n# Claim handling\\\\r\\\\n\\\\r\\\\n Claims adjudicated under this bulletin are recorded against funding code TSB with the reference TSB-C-0051.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0043 Filter housing defect - reversal of fluid contamination excl.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0043 Filter housing defect - reversal of fluid contamination exclusion Bulletin reference TSB-C-0043 Effective from 2025-11-12 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# \\\\r\\\\n# Purpose\\\\r\\\\n\\\\r\\\\n A manufacturing defect has been identified in the filter housing fitted to certain units, permitting particulate ingress into the hydraulic circuit. Damage arising from that ingress is not attributable to the operator. \\\\r\\\\n# \\\\r\\\\n# Effect on warranty\\\\r\\\\n\\\\r\\\\n The exclusion at clause 5.2 of the Global Warranty Policy (fluid contamination) does not apply where the inspection report attributes the contamination to the filter housing defect. Where the inspection report attributes the contamination to any other cause, clause 5.2 continues to apply and the claim is excluded. This bulletin does not extend the coverage period of any asset. The coverage period continues to be determined under clause 1.4 of the Global Warranty Policy. \\\\r\\\\n# \\\\r\\\\n# Claim handling\\\\r\\\\n\\\\r\\\\n Claims adjudicated under this bulletin are recorded against funding code TSB with the reference TSB-C-0043.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-G-0029 Claim documentation requirements - reminder.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-G-0029 Claim documentation requirements - reminder Bulletin reference TSB-G-0029 Effective from 2026-01-28 Product family 4000-series industrial chiller, 2200-series air compressor Serial range All serials in the named family Status Current \\\\r\\\\n# \\\\r\\\\n# Purpose\\\\r\\\\n\\\\r\\\\n Partners are reminded that a claim must give the part number actually fitted, and should attach the inspection report where one was raised. Claims are adjudicated from the claim-system record: running hours are taken from the latest reading held at or before the date of repair. An inspection report matters where an exclusion depends on it; a missing report does not of itself hold a claim. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# \\\\r\\\\n# Claim handling\\\\r\\\\n\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04185 Claim reference C-2026-04185 Serial number CIE-4000-CH-01360 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# \\\\r\\\\n# Findings\\\\r\\\\n\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# \\\\r\\\\n# Fluid analysis\\\\r\\\\n\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# \\\\r\\\\n# Parts fitted\\\\r\\\\n\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# \\\\r\\\\n# Labour\\\\r\\\\n\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04176 Claim reference C-2026-04176 Serial number CIE-4000-CH-02100 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0055 Revised torque specification - compressor mounting.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0055 Revised torque specification - compressor mounting Bulletin reference TSB-C-0055 Effective from 2026-03-18 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n The torque specification for compressor mounting bolts is revised. Refer to the service manual for the revised figures. This bulletin is advisory and does not vary the warranty position of any asset, and does not extend coverage of the compressor or any other component. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q3-Warranty-Review.pptx\\u0022,\\u0022Summary\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q3 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 16 April 2026 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 3.4% of revenue, up 0.6 points \\\\u2014 driven by bulletin activity\\\\r\\\\n - TSB-C-0051 extended 4000-series hydraulic and compressor coverage in January\\\\r\\\\n - TSB-P-0112 superseded TSB-P-0107 in February, narrowing the covered range\\\\r\\\\n - FY26 labour rates took effect 1 April 2026\\\\r\\\\n \\\\r\\\\n# Coverage position by instrument \\\\r\\\\nInstrument Applies to Period Notes POL-WAR-4.2 All, unless varied 24 mo / 6,000 h Global baseline ADD-IN-2.1 India installations 18 mo / 5,000 h Shorter than global ADD-EM-1.3 EMEA installations 24 mo / 6,000 h No variation TSB-C-0051 4000-CH 01200-01850 36 mo / 8,000 h Hydraulic \\\\u002B compressor TSB-P-0112 2200-AC 00400-00750 30 mo / 7,000 h Supersedes 0107 TSB-C-0043 4000-CH all serials No change Reverses 5.2 exclusion \\\\r\\\\n# Precedence \\\\u2014 a reminder for adjudicators \\\\r\\\\n- A bulletin naming the serial range takes precedence over the regional addendum\\\\r\\\\n - The regional addendum takes precedence over the global policy\\\\r\\\\n - A superseded bulletin has no effect, whether or not it is still published\\\\r\\\\n - Where the claim system index and a bulletin disagree, the bulletin governs\\\\r\\\\n - Policy clause 1.4\\\\r\\\\n \\\\r\\\\n# Claims by funding code \\\\r\\\\nStandard FY26 Q1 FY26 Q2 FY26 Q3 412 388 301 Bulletin FY26 Q1 FY26 Q2 FY26 Q3 0 12 168 Repair warranty FY26 Q1 FY26 Q2 FY26 Q3 31 28 34 Goodwill FY26 Q1 FY26 Q2 FY26 Q3 22 19 16 \\\\r\\\\n# Watch items \\\\r\\\\n- Applicability index in the claim system is lagging bulletin publication\\\\r\\\\n - Adjudicate from the bulletin document, not the index\\\\r\\\\n - Goodwill approvals given in channels are not being recorded against claims\\\\r\\\\n - Authority must be recorded in the claim system \\\\u2014 policy 7.1\\\\r\\\\n Commissioning records missing for a small number of assets\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0038 Control board firmware revision - advisory Bulletin reference TSB-C-0038 Effective from 2025-08-20 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n A firmware revision is available for the control board. Apply at the next scheduled service visit. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0047 Condenser fan balancing procedure.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Technical Service Bulletin TSB-C-0047 Condenser fan balancing procedure Bulletin reference TSB-C-0047 Effective from 2025-12-04 Product family 4000-series industrial chiller Serial range All serials in the named family Status Current \\\\r\\\\n# Purpose\\\\r\\\\n A revised condenser fan balancing procedure is published in the service manual. This bulletin is advisory and does not vary the warranty position of any asset. \\\\r\\\\n# Claim handling\\\\r\\\\n No change to claim handling arises from this bulletin.\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx\\u0022,\\u0022Summary\\u0022:\\u0022\\\\r\\\\n# Warranty Review \\\\u2014 FY26 Q2 \\\\r\\\\nContoso Industrial \\\\u00B7 Warranty Operations \\\\u00B7 published 14 October 2025 \\\\r\\\\n# Headlines \\\\r\\\\n- Warranty cost at 2.8% of revenue, down 0.3 points on FY25 Q4\\\\r\\\\n - Claim volume up 11% year on year, driven by the 4000-series installed base\\\\r\\\\n - Average settlement time 8.4 working days against a 10-day target\\\\r\\\\n - India remains the largest region by claim volume\\\\r\\\\n \\\\r\\\\n# Coverage at a glance \\\\r\\\\n- Standard coverage: 24 months from commissioning, or 6,000 running hours\\\\r\\\\n - Applies across all product families and all regions\\\\r\\\\n - Labour reimbursed at flat-rate allowance\\\\r\\\\n - Parts reimbursed at territory list price\\\\r\\\\n - Goodwill available at manager discretion for near-miss cases\\\\r\\\\n - TRAP 6. This slide is the stale summary. \\\\u0027Applies across all product families and all regions\\\\u0027 was never true of India (18 months under ADD-IN-2.1) and is wrong for any asset covered by TSB-C-0051 or TSB-P-0112. \\\\u0027Goodwill at manager discretion\\\\u0027 contradicts policy 7.1, which requires recorded authority at tier. A model that trusts this deck over the policy fails the Evidence grounding rubric.\\\\r\\\\n \\\\r\\\\n# Warranty cost by product family (INR lakh) \\\\r\\\\n4000-series chiller FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 182 174 196 211 2200-series compressor FY25 Q3 FY25 Q4 FY26 Q1 FY26 Q2 96 101 94 88 \\\\r\\\\n# Top failure modes \\\\u2014 4000-series \\\\r\\\\nComponent Claims Share Trend Hydraulic circuit 214 38% Rising Compressor 147 26% Stable Control system 88 16% Falling Structural / cooling 61 11% Stable Other 52 9% Stable \\\\r\\\\n# Actions \\\\r\\\\n- Engineering to review hydraulic circuit failure rate on the 4000-series\\\\r\\\\n - Bulletin under consideration for affected serial ranges\\\\r\\\\n - Partner documentation quality to be raised at the Q3 partner forum\\\\r\\\\n Rate card review ahead of FY26 close\\u0022}}]}]}]}\"}]",
+            "LatencyMs": 5838
+          },
+          {
+            "ToolCallId": "call_YvwAL5YMoMlBj3nDDxGwgWuj",
+            "Title": "m365__search_enterprise_files",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "searchQuery",
+                "Value": "C-2026-04101 inspection report"
+              },
+              {
+                "Name": "from",
+                "Value": "0"
+              },
+              {
+                "Name": "size",
+                "Value": "10"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04101 Claim reference C-2026-04101 Serial number CIE-4000-CH-01050 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 2,400 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04185 Inspection Report CIE-4000-CH-01360.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04185 Claim reference C-2026-04185 Serial number CIE-4000-CH-01360 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# \\\\r\\\\n# Findings\\\\r\\\\n\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# \\\\r\\\\n# Fluid analysis\\\\r\\\\n\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# \\\\r\\\\n# Parts fitted\\\\r\\\\n\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# \\\\r\\\\n# Labour\\\\r\\\\n\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04176 Inspection Report CIE-4000-CH-02100.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04176 Claim reference C-2026-04176 Serial number CIE-4000-CH-02100 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# \\\\r\\\\n# Findings\\\\r\\\\n\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# \\\\r\\\\n# Parts fitted\\\\r\\\\n\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# \\\\r\\\\n# Labour\\\\r\\\\n\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04186 Inspection Report CIE-4000-CH-01362.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04186 Claim reference C-2026-04186 Serial number CIE-4000-CH-01362 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04187 Inspection Report CIE-4000-CH-01364.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04187 Claim reference C-2026-04187 Serial number CIE-4000-CH-01364 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be aluminium consistent with the filter housing casting. The filter housing was found cracked at the mounting boss. The contamination is attributable to the filter housing defect described in TSB-C-0043. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04188 Inspection Report CIE-4000-CH-01366.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04188 Claim reference C-2026-04188 Serial number CIE-4000-CH-01366 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Fluid analysis\\\\r\\\\n Hydraulic fluid sample returned ISO 4406 class 22/20/17, above the acceptable limit. Particulate examined under magnification and found to be silica consistent with ingress through an unsealed reservoir cap left open during site top-up. The filter housing was examined and found intact. The contamination is not attributable to the filter housing defect. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04109 Inspection Report CIE-4000-CH-01900.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04109 Claim reference C-2026-04109 Serial number CIE-4000-CH-01900 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-10 Operation code CTRL-BD-RR Running hours at repair 5,200 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04171 Inspection Report CIE-4000-CH-01960.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04171 Claim reference C-2026-04171 Serial number CIE-4000-CH-01960 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-05-01 Operation code CTRL-BD-RR Running hours at repair 3,000 \\\\r\\\\n# Findings\\\\r\\\\n Control board unresponsive on power-up. No evidence of moisture ingress or surge damage. Board replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44900 Control board 1 \\\\r\\\\n# Labour\\\\r\\\\n 1.5 hours claimed against operation CTRL-BD-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04139 Inspection Report CIE-4000-CH-01400.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04139 Claim reference C-2026-04139 Serial number CIE-4000-CH-01400 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-01 Operation code HYD-PUMP-RR Running hours at repair 8,400 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}},{\\u0022Source\\u0022:{\\u0022URL\\u0022:\\u0022https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04114 Inspection Report CIE-4000-CH-01700.docx\\u0022,\\u0022Summary\\u0022:\\u0022CONTOSO INDUSTRIAL Field Inspection Report Claim C-2026-04114 Claim reference C-2026-04114 Serial number CIE-4000-CH-01700 Product 4000-series industrial chiller Service partner Fabrikam Service Partners Date of repair 2026-06-18 Operation code HYD-PUMP-RR Running hours at repair 4,120 \\\\r\\\\n# Findings\\\\r\\\\n Hydraulic pump seized under load. Drive coupling intact. No external impact damage. Pump removed and replaced. \\\\r\\\\n# Parts fitted\\\\r\\\\n Part number Description Quantity P-44120-A Hydraulic pump assembly, rev A 1 \\\\r\\\\n# Labour\\\\r\\\\n 5.5 hours claimed against operation HYD-PUMP-RR. Inspected by: Sunil Bhat, Field Engineer, Fabrikam Service Partners\\u0022}}]}]}]}\"}]",
+            "LatencyMs": 4638
+          },
+          {
+            "ToolCallId": "call_SGGo9GqaRlBG43Q6SS79a1r3",
+            "Title": "lumina_sandbox__upload_file_from_sharepoint",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "files",
+                "Value": "[{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\",\"sandbox_path\":\"/home/oai/share/policy.docx\",\"file_name\":\"policy.docx\"},{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx\",\"sandbox_path\":\"/home/oai/share/addendum.docx\",\"file_name\":\"addendum.docx\"},{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\",\"sandbox_path\":\"/home/oai/share/tsb.docx\",\"file_name\":\"tsb.docx\"},{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx\",\"sandbox_path\":\"/home/oai/share/ratecard.xlsx\",\"file_name\":\"ratecard.xlsx\"},{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx\",\"sandbox_path\":\"/home/oai/share/agreement.docx\",\"file_name\":\"agreement.docx\"},{\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\",\"sandbox_path\":\"/home/oai/share/claim_evidence.docx\",\"file_name\":\"claim_evidence.docx\"}]"
+              }
+            ],
+            "Output": "{\"total_files\":6,\"success_count\":6,\"failure_count\":0,\"results\":[{\"transfer_id\":\"07f0b8e18a934c089de8450e31ac3ff2\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx\",\"sandbox_path\":\"/home/oai/share/policy.docx\",\"file_name\":\"policy.docx\",\"file_size\":47982,\"retryable\":false,\"failure_code\":\"None\",\"success\":true},{\"transfer_id\":\"b55b72a7fd8642b082743cdf5816a6ed\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx\",\"sandbox_path\":\"/home/oai/share/addendum.docx\",\"file_name\":\"addendum.docx\",\"file_size\":46404,\"retryable\":false,\"failure_code\":\"None\",\"success\":true},{\"transfer_id\":\"1fb618e9a6144272937c16a5a9755914\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx\",\"sandbox_path\":\"/home/oai/share/tsb.docx\",\"file_name\":\"tsb.docx\",\"file_size\":46402,\"retryable\":false,\"failure_code\":\"None\",\"success\":true},{\"transfer_id\":\"2f7d195d033d4480973222f4eec0b9db\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx\",\"sandbox_path\":\"/home/oai/share/ratecard.xlsx\",\"file_name\":\"ratecard.xlsx\",\"file_size\":15612,\"retryable\":false,\"failure_code\":\"None\",\"success\":true},{\"transfer_id\":\"eb2f1ce60d094bb5b82ffe4744b06dc2\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx\",\"sandbox_path\":\"/home/oai/share/agreement.docx\",\"file_name\":\"agreement.docx\",\"file_size\":46767,\"retryable\":false,\"failure_code\":\"None\",\"success\":true},{\"transfer_id\":\"6b03d7ce37ce4790a9e2e74c2778d307\",\"share_point_location\":\"https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx\",\"sandbox_path\":\"/home/oai/share/claim_evidence.docx\",\"file_name\":\"claim_evidence.docx\",\"file_size\":46169,\"retryable\":false,\"failure_code\":\"None\",\"success\":true}],\"message\":\"Successfully transferred 6 file(s) from SharePoint to sandbox.\"}",
+            "LatencyMs": 25547
+          },
+          {
+            "ToolCallId": "call_eUFfaAwubXbBaPIWLlySYVtO",
+            "Title": "1c171__create_claim_adjudication",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04101"
+              },
+              {
+                "Name": "decision",
+                "Value": "approve"
+              },
+              {
+                "Name": "instrument_refs",
+                "Value": "[\"POL-WAR-4.2 Global Warranty Policy v4.2 (clauses 1.4, 2.1, 4.1)\",\"ADD-IN-2.1 Regional Addendum - India v2.1 (18 months / 5,000 running hours)\",\"Warranty-Labour-Rate-Card-FY26.xlsx (CTRL-BD-RR flat-rate 1.5 h, India rate INR 1,450/h)\",\"SPA-2023-FAB-IN Fabrikam Service Partners (parts at published list price, no handling uplift)\"]"
+              },
+              {
+                "Name": "payable",
+                "Value": "69575"
+              },
+              {
+                "Name": "currency",
+                "Value": "INR"
+              },
+              {
+                "Name": "notes",
+                "Value": "Approved as a covered warranty repair. Coverage is under the India addendum (18 months / 5,000 h) because the asset is installed in India; TSB-C-0051 does not apply because serial CIE-4000-CH-01050 is outside its 01200-01850 range. Labour payable at 1.5 flat-rate hours × INR 1,450/h = INR 2,175; parts payable at list price P-44900 = INR 67,400; total INR 69,575. Used the claim-system running-hours reading (2,229 h) as the latest reading held at or before the repair date, per policy/partner terms, even though the inspection report states 2,400 h."
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022created\\u0022: true,\\n  \\u0022draft_id\\u0022: \\u0022ADJ-1F1537FC56\\u0022,\\n  \\u0022claim_id\\u0022: \\u0022C-2026-04101\\u0022,\\n  \\u0022decision\\u0022: \\u0022approve\\u0022,\\n  \\u0022payable\\u0022: 69575.0,\\n  \\u0022currency\\u0022: \\u0022INR\\u0022,\\n  \\u0022instrument_refs\\u0022: [\\n    \\u0022POL-WAR-4.2 Global Warranty Policy v4.2 (clauses 1.4, 2.1, 4.1)\\u0022,\\n    \\u0022ADD-IN-2.1 Regional Addendum - India v2.1 (18 months / 5,000 running hours)\\u0022,\\n    \\u0022Warranty-Labour-Rate-Card-FY26.xlsx (CTRL-BD-RR flat-rate 1.5 h, India rate INR 1,450/h)\\u0022,\\n    \\u0022SPA-2023-FAB-IN Fabrikam Service Partners (parts at published list price, no handling uplift)\\u0022\\n  ],\\n  \\u0022status\\u0022: \\u0022Draft - awaiting human review. No payment has been made.\\u0022\\n}\"}]",
+            "LatencyMs": 4352
+          }
+        ],
+        "RubricResults": [
+          {
+            "Score": 1.0,
+            "Reasoning": "The completed finish response leads with approval, states the India limits as 18 months/5,000 hours from commissioning, and compares the 2026-05-10 repair and 2,229-hour record with the 2026-09-15/5,000-hour endpoints. Neither limit was exceeded, so the fourth conditional anchor did not arise.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "RubricName": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "The response identifies ADD-IN-2.1 and POL-WAR-4.2, explains that the India addendum varies the global baseline for an India installation, and explains that TSB-C-0051 is inapplicable because serial 01050 is outside 01200–01850 and the repair concerns controls rather than hydraulic/compressor components. No bulletin-index/document serial-range disagreement occurred here.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "RubricName": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.25,
+            "Reasoning": "Although sources are cited throughout, the final response does not consistently provide clauses for each coverage term/exclusion, omits the 2026-04-15 as-of date for the 2,229-hour claim-system reading, and does not name effective dates for the labour rate or a parts price-list effective date/source. Its substantive figures and references are nevertheless supported by consulted records or transparent calculations.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "RubricName": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "The response correctly uses the lesser of 1.5 claimed and 1.5 flat-rate hours, applies INR 1,450/hour for INR 2,175 labour, prices fitted P-44900 at INR 67,400, applies no uplift under SPA-2023-FAB-IN, and totals INR 69,575. There is no excess claimed labour or amount requiring a variance.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "RubricName": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 1.0,
+            "Reasoning": "The response directs the adjudicator to approve and release INR 69,575, and the trajectory shows exactly one successful create_claim_adjudication call recording a consistent approval draft for that amount. No goodwill was requested and no conversational approval was presented.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "RubricName": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": null,
+            "Reasoning": null,
+            "Skip": "All records needed for this determination were available, including commissioning date and running-hours evidence. The agent did not substitute installation for commissioning and did not identify any decision-critical missing record, so the missing-record conditions did not arise.",
+            "ExtraOutputs": null,
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "RubricName": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          }
+        ],
+        "ConversationId": "2d36f996-e4d7-4235-8505-522daeda525c",
+        "UserQuery": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nAdjudicate claim C-2026-04101.",
+        "Response": [
+          {
+            "Content": "Decision: Approve claim C-2026-04101 for INR 69,575 (labour INR 2,175 + parts INR 67,400).\n\nWhy this is the right outcome\n- The asset is serial CIE-4000-CH-01050, family 4000-CH, installed in India, commissioned on 2025-03-15, and the repair completed on 2026-05-10. The latest claim-system running-hours reading at or before the repair date is 2,229 hours; the inspection report records 2,400 hours, but the partner agreement and policy direct adjudication from the claim-system record, so I used 2,229 hours for warranty-position purposes.\n- The governing warranty instruments are the Global Warranty Policy v4.2 and the India regional addendum. The India addendum shortens the standard coverage to 18 months from commissioning or 5,000 running hours, whichever occurs first, and the global policy sets the precedence rules.\n- This repair falls inside the applicable coverage period: 18 months from commissioning expires on 2026-09-15, and 5,000 running hours is far above the 2,229 hours on the claim record. The repair date 2026-05-10 is therefore within coverage.\n- TSB-C-0051 does not govern this claim. It applies to 4000-CH serials 01200-01850 and extends hydraulic-circuit/compressor coverage; this claim is a control-board replacement for serial 01050, and the claim-system applicability index also shows this serial is outside the bulletin range. The policy says a bulletin that names the serial range takes precedence over the regional addendum and the global policy, but here no applicable bulletin governs this control-board failure.\n- The inspection report supports that the control board was replaced and records no moisture ingress or surge damage, so no exclusion in the policy or an applicable bulletin is triggered on the evidence provided.\n\nAmount payable\n- Labour: 1.5 flat-rate hours for operation CTRL-BD-RR at the India rate in force on the repair date (INR 1,450/hour) = INR 2,175. The flat-rate allowance and claimed hours are both 1.5, so the lesser amount is 1.5 hours.\n- Parts: P-44900 Control board at the published India list price = INR 67,400.\n- Partner-specific terms: Fabrikam Service Partners’ agreement pays parts at published list price and carries no handling uplift for this partner.\n- Total payable: INR 69,575.\n\nNext action\n- The adjudicator should approve the claim and release payment for INR 69,575. No further evidence is needed to decide this claim.\n- I recorded the claim-system draft adjudication as: decision approve, payable INR 69,575, instruments POL-WAR-4.2 / ADD-IN-2.1 / FY26 labour rate card / SPA-2023-FAB-IN, status draft awaiting human review.\n\nNotes on disagreement / limits\n- The field inspection report says 2,400 running hours, but the claim-system record is the authoritative adjudication record under the partner agreement, so I used 2,229 hours for the coverage check.\n- I did not find any applicable goodwill request or authority issue to resolve because no goodwill was requested on this claim.\n\n## Sources\n\n1. `claim_dossier` Referenced tool result\n2. `agreement` [Fabrikam Service Partner Agreement SPA-2023-FAB-IN](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx>)\n3. `inspection` [Inspection report for claim C-2026-04101](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx>)\n4. `policy` [Contoso Industrial Global Warranty Policy v4.2](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx>)\n5. `addendum` [Regional Addendum - India v2.1](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx>)\n6. `tsb0051` [TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx>)\n7. `rate_card` [Warranty Labour Rate Card FY26](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx>)",
+            "Link": ""
+          }
+        ],
+        "ErrorResponse": null,
+        "UserActionMetadata": [],
+        "LatestChainOfThought": null,
+        "BillingSummary": {
+          "InputTokens": 651004,
+          "OutputTokens": 26219,
+          "CacheReadTokens": 558464,
+          "CacheCreationTokens": 0,
+          "TotalTokens": 677223,
+          "ToolInvocations": 38.0,
+          "RaiChecks": 20.0,
+          "InfraSeconds": 0.0,
+          "OrchestratorCpuSeconds": 380.4623537
+        },
+        "DebugContext": {
+          "Logs": []
+        }
+      },
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "83f22834-a828-4e0c-a7dd-ba6e712cc66c",
+      "PromptId": "bfec6b1b-6442-49d2-a35e-9e84ad260662",
+      "RetryCount": 1,
+      "Status": "Completed",
+      "Sample": {
+        "Id": "bfec6b1b-6442-49d2-a35e-9e84ad260662",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Fabrikam Service Partners have submitted C-2026-04102. Is it covered, and what do we pay?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:07:14.6110582+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_bfec6b1b-6442-49d2-a35e-9e84ad260662",
+        "CreatedDateTime": "2026-10-08T06:07:14.6110582+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": {
+        "Id": "83f22834-a828-4e0c-a7dd-ba6e712cc66c",
+        "IsRecurring": false,
+        "TaskSnapshot": null,
+        "Status": "Completed",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "DisplayName": "Srikantan Sankaran"
+        },
+        "StartDateTime": "2026-10-08T14:43:28.6730886+00:00",
+        "EndDateTime": "2026-10-08T14:44:54.0915184+00:00",
+        "Skills": [
+          {
+            "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+            "SubAgentId": "call_2e5RVvHROzOYWYooUsmhcgYA",
+            "Name": "warranty-assistant",
+            "ShortDescription": null,
+            "ToolExecutions": [],
+            "RubricResults": [
+              {
+                "Score": 0.6666666666666666,
+                "Reasoning": "The finish message explicitly says coverage and payment cannot yet be established without the library records, which is a valid hold outcome. It identifies the warranty policy as missing, but does not state the applicable month/hour limits or specifically compare the recorded repair date and running hours with them.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                "RubricName": "Coverage determination",
+                "ChecklistItems": [
+                  "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                  "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                  "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                  "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.0,
+                "Reasoning": "Because the assistant held the decision pending documents, the governing-instrument requirements are not triggered. The dossier did surface TSB-C-0051 as out of the indexed serial range, but the assistant did not explain its treatment or inspect the bulletin document for any disagreement.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                "RubricName": "Precedence discipline",
+                "ChecklistItems": [
+                  "Where coverage can be determined, names one governing instrument by reference code",
+                  "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                  "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                  "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.25,
+                "Reasoning": "The assistant provides no clause-level policy grounding, no attribution of the repair date or running-hours reading, and no rate or price sourcing. It does not invent any unsupported numerical fact or reference in its finish message.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+                "RubricName": "Evidence grounding",
+                "ChecklistItems": [
+                  "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                  "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                  "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                  "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": null,
+                "Reasoning": null,
+                "Skip": "All valuation anchors are expressly conditional on a covered claim. The assistant did not determine the claim was covered, instead holding the decision pending policy and related documents.",
+                "ExtraOutputs": null,
+                "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                "RubricName": "Valuation accuracy",
+                "ChecklistItems": [
+                  "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                  "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                  "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                  "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                  "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.0,
+                "Reasoning": "The response asks for files or library access but does not name a claim action and responsible operational role. No goodwill request or conversational approval exists, and the hold message does not clearly call for a claim-system action.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                "RubricName": "Authority and action",
+                "ChecklistItems": [
+                  "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                  "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                  "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                  "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "critical",
+                "Source": null,
+                "RubricType": null
+              },
+              {
+                "Score": 0.6666666666666666,
+                "Reasoning": "The assistant correctly refrains from inventing missing policy data or issuing a dependent final coverage decision. However, it refers broadly to the warranty policy and “related documents” without identifying the exact missing records and absent fields needed for adjudication.",
+                "Skip": null,
+                "ExtraOutputs": null,
+                "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                "RubricName": "Gaps reported, not filled",
+                "ChecklistItems": [
+                  "Names any record needed for the decision that is missing, and the field that is absent",
+                  "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                  "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                ],
+                "PearlCategory": null,
+                "Description": null,
+                "ScoringScale": {
+                  "Min": 0,
+                  "Max": 1,
+                  "Direction": "higher_is_better"
+                },
+                "ScoringCriteria": {},
+                "RedFlags": [],
+                "MeasurementMethod": null,
+                "Importance": "high",
+                "Source": null,
+                "RubricType": null
+              }
+            ],
+            "Status": "Completed",
+            "ErrorResponse": null
+          }
+        ],
+        "ToolExecutions": [
+          {
+            "ToolCallId": "call_rLYDPgMdEm4VGVZiQ85aovJy",
+            "Title": "1c171__get_claim_dossier",
+            "Status": "Completed",
+            "Inputs": [
+              {
+                "Name": "claim_id",
+                "Value": "C-2026-04102"
+              }
+            ],
+            "Output": "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022claim\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022claim_id\\u0022: \\u0022C-2026-04102\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01052\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022submitted_date\\u0022: \\u00222026-02-24\\u0022,\\n    \\u0022repair_date\\u0022: \\u00222026-02-18\\u0022,\\n    \\u0022operation_code\\u0022: \\u0022COND-FAN-RR\\u0022,\\n    \\u0022claimed_part\\u0022: \\u0022P-44520\\u0022,\\n    \\u0022claimed_labour_hours\\u0022: 3.5,\\n    \\u0022goodwill_requested\\u0022: null,\\n    \\u0022status\\u0022: \\u0022Submitted\\u0022\\n  },\\n  \\u0022asset\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01052\\u0022,\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022customer_name\\u0022: \\u0022Litware Manufacturing\\u0022,\\n    \\u0022site\\u0022: \\u0022Pune\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022install_date\\u0022: \\u00222024-12-16\\u0022,\\n    \\u0022commissioning_date\\u0022: \\u00222025-01-08\\u0022\\n  },\\n  \\u0022running_hours_at_repair_date\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01052\\u0022,\\n    \\u0022as_of_date\\u0022: \\u00222026-02-08\\u0022,\\n    \\u0022running_hours\\u0022: 1900\\n  },\\n  \\u0022service_history\\u0022: [\\n    {\\n      \\u0022job_id\\u0022: \\u0022J-00002\\u0022,\\n      \\u0022job_date\\u0022: \\u00222026-02-18\\u0022,\\n      \\u0022operation_code\\u0022: \\u0022COND-FAN-RR\\u0022,\\n      \\u0022component\\u0022: \\u0022structure\\u0022,\\n      \\u0022part_fitted\\u0022: \\u0022P-44520\\u0022,\\n      \\u0022labour_hours\\u0022: 3.5,\\n      \\u0022claim_id\\u0022: \\u0022C-2026-04102\\u0022,\\n      \\u0022completed_date\\u0022: \\u00222026-02-18\\u0022\\n    }\\n  ],\\n  \\u0022related_claims\\u0022: [],\\n  \\u0022service_partner\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022name\\u0022: \\u0022Fabrikam Service Partners\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022currency\\u0022: \\u0022INR\\u0022,\\n    \\u0022uplift_pct\\u0022: 0.0,\\n    \\u0022agreement_ref\\u0022: \\u0022SPA-2023-FAB-IN\\u0022,\\n    \\u0022submission_sla_days\\u0022: 30\\n  },\\n  \\u0022parts\\u0022: [\\n    {\\n      \\u0022found\\u0022: true,\\n      \\u0022part_no\\u0022: \\u0022P-44520\\u0022,\\n      \\u0022description\\u0022: \\u0022Condenser fan assembly\\u0022,\\n      \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n      \\u0022component\\u0022: \\u0022structure\\u0022,\\n      \\u0022supersedes\\u0022: null,\\n      \\u0022superseded_by\\u0022: null,\\n      \\u0022price_inr\\u0022: 43800.0,\\n      \\u0022price_eur\\u0022: 484.0,\\n      \\u0022price_sgd\\u0022: 701.0,\\n      \\u0022supersession_chain\\u0022: [\\n        \\u0022P-44520\\u0022\\n      ],\\n      \\u0022current_part_no\\u0022: \\u0022P-44520\\u0022,\\n      \\u0022current_price_inr\\u0022: 43800.0\\n    }\\n  ],\\n  \\u0022tsb_applicability_index\\u0022: {\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01052\\u0022,\\n    \\u0022entry_count\\u0022: 1,\\n    \\u0022entries\\u0022: [\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-C-0051\\u0022,\\n        \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n        \\u0022serial_from\\u0022: 1200,\\n        \\u0022serial_to\\u0022: 1500,\\n        \\u0022effective_from\\u0022: \\u00222026-01-15\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: false\\n      }\\n    ]\\n  },\\n  \\u0022goodwill_authority_matrix\\u0022: [\\n    {\\n      \\u0022tier\\u0022: 1,\\n      \\u0022max_amount_inr\\u0022: 25000.0,\\n      \\u0022approver_role\\u0022: \\u0022Service Supervisor\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 2,\\n      \\u0022max_amount_inr\\u0022: 100000.0,\\n      \\u0022approver_role\\u0022: \\u0022Regional Service Manager\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 3,\\n      \\u0022max_amount_inr\\u0022: 400000.0,\\n      \\u0022approver_role\\u0022: \\u0022Warranty Operations Head\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 4,\\n      \\u0022max_amount_inr\\u0022: null,\\n      \\u0022approver_role\\u0022: \\u0022Director, Aftermarket\\u0022\\n    }\\n  ]\\n}\"}]",
+            "LatencyMs": 7159
+          }
+        ],
+        "RubricResults": [
+          {
+            "Score": 0.6666666666666666,
+            "Reasoning": "The finish message explicitly says coverage and payment cannot yet be established without the library records, which is a valid hold outcome. It identifies the warranty policy as missing, but does not state the applicable month/hour limits or specifically compare the recorded repair date and running hours with them.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "RubricName": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.0,
+            "Reasoning": "Because the assistant held the decision pending documents, the governing-instrument requirements are not triggered. The dossier did surface TSB-C-0051 as out of the indexed serial range, but the assistant did not explain its treatment or inspect the bulletin document for any disagreement.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "RubricName": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.25,
+            "Reasoning": "The assistant provides no clause-level policy grounding, no attribution of the repair date or running-hours reading, and no rate or price sourcing. It does not invent any unsupported numerical fact or reference in its finish message.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "RubricName": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": null,
+            "Reasoning": null,
+            "Skip": "All valuation anchors are expressly conditional on a covered claim. The assistant did not determine the claim was covered, instead holding the decision pending policy and related documents.",
+            "ExtraOutputs": null,
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "RubricName": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.0,
+            "Reasoning": "The response asks for files or library access but does not name a claim action and responsible operational role. No goodwill request or conversational approval exists, and the hold message does not clearly call for a claim-system action.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "RubricName": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "critical",
+            "Source": null,
+            "RubricType": null
+          },
+          {
+            "Score": 0.6666666666666666,
+            "Reasoning": "The assistant correctly refrains from inventing missing policy data or issuing a dependent final coverage decision. However, it refers broadly to the warranty policy and “related documents” without identifying the exact missing records and absent fields needed for adjudication.",
+            "Skip": null,
+            "ExtraOutputs": null,
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "RubricName": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "PearlCategory": null,
+            "Description": null,
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": "higher_is_better"
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": null,
+            "Importance": "high",
+            "Source": null,
+            "RubricType": null
+          }
+        ],
+        "ConversationId": "f5ebaeb8-e422-4c8e-b133-142fa07f0624",
+        "UserQuery": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nFabrikam Service Partners have submitted C-2026-04102. Is it covered, and what do we pay?",
+        "Response": [
+          {
+            "Content": "I need the warranty policy and related documents from the Warranty Operations library to determine coverage and payment for claim **C-2026-04102**. Please provide the relevant files or access to the library. Without those records, I cannot establish the governing instrument, coverage period, or payable amount.",
+            "Link": ""
+          }
+        ],
+        "ErrorResponse": null,
+        "UserActionMetadata": [],
+        "LatestChainOfThought": null,
+        "BillingSummary": {
+          "InputTokens": 121299,
+          "OutputTokens": 2461,
+          "CacheReadTokens": 75520,
+          "CacheCreationTokens": 0,
+          "TotalTokens": 123760,
+          "ToolInvocations": 1.0,
+          "RaiChecks": 5.0,
+          "InfraSeconds": 0.0,
+          "OrchestratorCpuSeconds": 60.2112701
+        },
+        "DebugContext": {
+          "Logs": []
+        }
+      },
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "9480a7b7-190f-4401-8417-dd58a9797b85",
+      "PromptId": "4f946a00-5bdd-4aae-895d-4d7d27a59968",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "4f946a00-5bdd-4aae-895d-4d7d27a59968",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Can you work up C-2026-04103 for me — coverage position and payable amount?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:07:20.7142255+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_4f946a00-5bdd-4aae-895d-4d7d27a59968",
+        "CreatedDateTime": "2026-10-08T06:07:20.7142255+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "70560808-699f-4373-8eb9-2f43323c176d",
+      "PromptId": "87fff69f-de3e-4bc4-91c2-f2159dcd5d5f",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "87fff69f-de3e-4bc4-91c2-f2159dcd5d5f",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "What's the position on C-2026-04109?",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:07:26.4886035+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_87fff69f-de3e-4bc4-91c2-f2159dcd5d5f",
+        "CreatedDateTime": "2026-10-08T06:07:26.4886035+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    },
+    {
+      "ExecutionId": "3be8d1ea-071a-4fcc-be70-d2d41a0fb7ae",
+      "PromptId": "656ae5ac-f2f1-48f3-b88f-beaefa2368c2",
+      "RetryCount": 1,
+      "Status": "Running",
+      "Sample": {
+        "Id": "656ae5ac-f2f1-48f3-b88f-beaefa2368c2",
+        "WorkspaceId": "598fd1b0-36f1-402f-ba36-aa00c8a67cc4",
+        "Prompt": "Review C-2026-04110 and tell me the decision, the instrument it turns on, and the amount.",
+        "FormattedPrompt": null,
+        "Title": null,
+        "SkillIds": [
+          "cf00d339-5217-4cd1-b390-cc0d911735da"
+        ],
+        "References": [],
+        "Rubrics": [
+          {
+            "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "PearlCategory": "primary",
+            "Name": "Coverage determination",
+            "ChecklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "PearlCategory": "primary",
+            "Name": "Precedence discipline",
+            "ChecklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "PearlCategory": "extended",
+            "Name": "Evidence grounding",
+            "ChecklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "PearlCategory": "primary",
+            "Name": "Valuation accuracy",
+            "ChecklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "PearlCategory": "primary",
+            "Name": "Authority and action",
+            "ChecklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "critical",
+            "Source": "user_authored"
+          },
+          {
+            "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "PearlCategory": "extended",
+            "Name": "Gaps reported, not filled",
+            "ChecklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "ScoringScale": {
+              "Min": 0,
+              "Max": 1,
+              "Direction": null
+            },
+            "ScoringCriteria": {},
+            "RedFlags": [],
+            "MeasurementMethod": "binary_checklist",
+            "Importance": "high",
+            "Source": "user_authored"
+          }
+        ],
+        "SampleType": "Evaluation",
+        "IsSuggested": false,
+        "LastModifiedDateTime": "2026-10-08T06:07:33.4998851+00:00",
+        "CreatedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "LastModifiedBy": {
+          "ExternalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+          "Type": "Person"
+        },
+        "Compressed": false,
+        "SchemaVersion": null,
+        "Value": null,
+        "ItemClass": "Microsoft.M365.TenantCopilot.Models.ServingWorkspace.WorkspaceSample, Microsoft.M365.TenantCopilot.Models",
+        "SecondaryKey": "TC_656ae5ac-f2f1-48f3-b88f-beaefa2368c2",
+        "CreatedDateTime": "2026-10-08T06:07:33.4998851+00:00",
+        "SystemExpirationDateTime": null,
+        "Size": null
+      },
+      "Execution": null,
+      "ExecutionState": null
+    }
+  ]
+}
+

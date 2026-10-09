@@ -1,0 +1,44 @@
+20:04:24 04101+04102+04103+04109+04110 job 4623ca82-4053-41c8-a0be-8cedbc585ee1 started
+20:40:39 04101+04102+04103+04109+04110 STALLED (3 running, no progress for 15 min) : cancelling
+20:41:30   requeued 04103 (attempt 2 of 3 next)
+20:41:30   requeued 04109 (attempt 2 of 3 next)
+20:41:30   requeued 04110 (attempt 2 of 3 next)
+20:41:30 04101+04102+04103+04109+04110 done (job 4623ca82-4053-41c8-a0be-8cedbc585ee1): 2/5 finished; DB snapshot saved and reset
+20:42:03 04114+04115+04116+04117+04118 job d6ca60fb-a46d-4189-b961-d1f52ee6897d started
+21:28:45 04114+04115+04116+04117+04118 STALLED (1 running, no progress for 15 min) : cancelling
+21:29:40   requeued 04117 (attempt 2 of 3 next)
+21:29:40 04114+04115+04116+04117+04118 done (job d6ca60fb-a46d-4189-b961-d1f52ee6897d): 4/5 finished; DB snapshot saved and reset
+21:30:12 04129+04130+04131+04132+04139 job e936fcd0-4ca1-49f9-8853-997e5ee45182 started
+22:06:23 04129+04130+04131+04132+04139 STALLED (1 running, no progress for 15 min) : cancelling
+22:07:09   requeued 04130 (attempt 2 of 3 next)
+22:07:09   requeued 04132 (attempt 2 of 3 next)
+22:07:09   requeued 04139 (attempt 2 of 3 next)
+22:07:09 04129+04130+04131+04132+04139 done (job e936fcd0-4ca1-49f9-8853-997e5ee45182): 2/5 finished; DB snapshot saved and reset
+22:07:36 04140+04141+04148+04149+04150 job 1cee8244-dd97-4e03-b387-d6e742916199 started
+23:05:06 04140+04141+04148+04149+04150 STALLED (1 running, no progress for 15 min) : cancelling
+23:05:59   requeued 04149 (attempt 2 of 3 next)
+23:05:59 04140+04141+04148+04149+04150 done (job 1cee8244-dd97-4e03-b387-d6e742916199): 4/5 finished; DB snapshot saved and reset
+23:06:28 04151+04152+04153+04166+04167 job 8052611c-93b5-4599-b202-d42f48064fca started
+23:43:23 04151+04152+04153+04166+04167 STALLED (3 running, no progress for 15 min) : cancelling
+23:44:13   requeued 04151 (attempt 2 of 3 next)
+23:44:13   requeued 04153 (attempt 2 of 3 next)
+23:44:13   requeued 04166 (attempt 2 of 3 next)
+23:44:13 04151+04152+04153+04166+04167 done (job 8052611c-93b5-4599-b202-d42f48064fca): 2/5 finished; DB snapshot saved and reset
+23:44:47 04171+04172+04176+04177+04178 job ecb48280-7477-422d-8545-afd95085fea8 started
+00:16:10 04171+04172+04176+04177+04178 STALLED (4 running, no progress for 15 min) : cancelling
+00:16:55   requeued 04171 (attempt 2 of 3 next)
+00:16:55   requeued 04172 (attempt 2 of 3 next)
+00:16:55   requeued 04176 (attempt 2 of 3 next)
+00:16:55   requeued 04178 (attempt 2 of 3 next)
+00:16:55 04171+04172+04176+04177+04178 done (job ecb48280-7477-422d-8545-afd95085fea8): 1/5 finished; DB snapshot saved and reset
+00:17:37 04103+04109+04110+04117+04130 job 8393be03-1857-4d48-aec3-d13081606bd6 started
+01:17:02 04103+04109+04110+04117+04130 STALLED (1 running, no progress for 15 min) : cancelling
+01:17:54   requeued 04130 (attempt 3 of 3 next)
+01:17:54 04103+04109+04110+04117+04130 done (job 8393be03-1857-4d48-aec3-d13081606bd6): 4/5 finished; DB snapshot saved and reset
+01:18:23 04132+04139+04149+04151+04153 job ab6ab777-7d8a-47d5-b966-1f348ab5025c started
+04:54:14 04132+04139+04149+04151+04153 Succeeded after 216 min
+04:54:54 04132+04139+04149+04151+04153 done (job ab6ab777-7d8a-47d5-b966-1f348ab5025c): 5/5 finished; DB snapshot saved and reset
+04:55:34 04166+04171+04172+04176+04178 job b27edc85-14e0-43e0-95ca-56480e2ff4b3 started
+05:53:59 04166+04171+04172+04176+04178 Succeeded after 58 min
+05:54:48 04166+04171+04172+04176+04178 done (job b27edc85-14e0-43e0-95ca-56480e2ff4b3): 5/5 finished; DB snapshot saved and reset
+05:55:23 04130 job beb6e3ac-ceb5-4283-b107-7a5368bdbd7f started

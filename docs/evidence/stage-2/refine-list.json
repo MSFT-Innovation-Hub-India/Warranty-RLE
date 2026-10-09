@@ -1,0 +1,17 @@
+{
+  "value": [
+    {
+      "RefinementId": "588f45c8-cd74-4bfc-9522-b334933d8211",
+      "Status": "Running",
+      "SkillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+      "SkillName": "warranty-assistant",
+      "CreatedBy": {
+        "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+        "type": "Person"
+      },
+      "CreatedDateTime": "2026-10-08T13:20:30.9929126+00:00",
+      "LastModifiedDateTime": "2026-10-08T13:20:31.0238478+00:00"
+    }
+  ]
+}
+

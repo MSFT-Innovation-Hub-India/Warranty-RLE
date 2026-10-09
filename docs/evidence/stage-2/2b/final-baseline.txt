@@ -1,0 +1,10 @@
+Exception calling "Open" with "0" argument(s): "Reason: An instance-specific error occurred while establishing a 
+connection to SQL Server. Connection was denied because Deny Public Network Access is set to Yes. For more 
+information, see https://go.microsoft.com/fwlink/?linkid=2323206."
+At C:\Users\sansri\AppData\Local\Temp\sql-run-inner.ps1:4 char:27
++ $cn.AccessToken = $Token; $cn.Open()
++                           ~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : SqlException
+ 
+FAILED batch 1 : Exception calling "Fill" with "1" argument(s): "Reason: An instance-specific error occurred while establishing a connection to SQL Server. Connection was denied because Deny Public Network Access is set to Yes. For more information, see https://go.microsoft.com/fwlink/?linkid=2323206."

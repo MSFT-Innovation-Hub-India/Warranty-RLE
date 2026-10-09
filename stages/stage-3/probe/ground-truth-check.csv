@@ -1,0 +1,2 @@
+claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,delivery_mismatch,note
+C-2026-04101,covered-simple,approve,approve,ADD-IN-2.1,ADD-IN-2.1,69575.0,69575.0,0.9,7b44f001-a06f-46c7-8378-18be16d6dddf,results-04101.json,True,True,True,True,False,

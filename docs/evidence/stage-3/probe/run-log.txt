@@ -1,0 +1,485 @@
+08:52:24 adopting job 44945388-1e87-41b5-adfd-32123fe29268 for 04101
+08:54:07 04101 WARNING: Command failed (): frontier-tuning --output json evaluate diagnostics 44945388-1e87-41b5-adfd-32123fe29268 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+{
+  "evaluationId": "44945388-1e87-41b5-adfd-32123fe29268",
+  "lastModifiedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "totalSamples": 1,
+    "execution": {
+      "notStarted": 1,
+      "pending": 0,
+      "running": 0,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 1,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 0
+  },
+  "generatedDateTime": "2026-10-09T03:24:06.7586301+00:00",
+  "status": "Running",
+  "phase": "Submitting",
+  "createdDateTime": "2026-10-09T03:21:44.8140069+00:00",
+  "startedDateTime": "2026-10-09T03:17:41.6261388+00:00",
+  "lastProgressDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T03:20:15.4994725+00:00",
+      "completedDateTime": "2026-10-09T03:20:18.2919435+00:00",
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-09T03:21:43.4332894+00:00",
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:18:52.7297917+00:00",
+      "observedDateTime": "2026-10-09T03:18:52.7297917+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:15.0605985+00:00",
+      "observedDateTime": "2026-10-09T03:20:15.0605985+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:18.5653431+00:00",
+      "observedDateTime": "2026-10-09T03:20:18.5653431+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:21:41.3855607+00:00",
+      "observedDateTime": "2026-10-09T03:21:41.3855607+00:00"
+    }
+  ]
+}
+
+08:55:42 04101 WARNING: Command failed (): frontier-tuning --output json evaluate diagnostics 44945388-1e87-41b5-adfd-32123fe29268 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+{
+  "evaluationId": "44945388-1e87-41b5-adfd-32123fe29268",
+  "lastModifiedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "totalSamples": 1,
+    "execution": {
+      "notStarted": 1,
+      "pending": 0,
+      "running": 0,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 1,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 0
+  },
+  "generatedDateTime": "2026-10-09T03:25:42.0864207+00:00",
+  "status": "Running",
+  "phase": "Submitting",
+  "createdDateTime": "2026-10-09T03:21:44.8140069+00:00",
+  "startedDateTime": "2026-10-09T03:17:41.6261388+00:00",
+  "lastProgressDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T03:20:15.4994725+00:00",
+      "completedDateTime": "2026-10-09T03:20:18.2919435+00:00",
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-09T03:21:43.4332894+00:00",
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:18:52.7297917+00:00",
+      "observedDateTime": "2026-10-09T03:18:52.7297917+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:15.0605985+00:00",
+      "observedDateTime": "2026-10-09T03:20:15.0605985+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:18.5653431+00:00",
+      "observedDateTime": "2026-10-09T03:20:18.5653431+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:21:41.3855607+00:00",
+      "observedDateTime": "2026-10-09T03:21:41.3855607+00:00"
+    }
+  ]
+}
+
+08:57:16 04101 WARNING: Command failed (): frontier-tuning --output json evaluate diagnostics 44945388-1e87-41b5-adfd-32123fe29268 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+{
+  "evaluationId": "44945388-1e87-41b5-adfd-32123fe29268",
+  "lastModifiedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "totalSamples": 1,
+    "execution": {
+      "notStarted": 1,
+      "pending": 0,
+      "running": 0,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 1,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-09T03:21:44.8140432+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 0
+  },
+  "generatedDateTime": "2026-10-09T03:27:16.1199275+00:00",
+  "status": "Running",
+  "phase": "Submitting",
+  "createdDateTime": "2026-10-09T03:21:44.8140069+00:00",
+  "startedDateTime": "2026-10-09T03:17:41.6261388+00:00",
+  "lastProgressDateTime": "2026-10-09T03:21:44.8140432+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T03:20:15.4994725+00:00",
+      "completedDateTime": "2026-10-09T03:20:18.2919435+00:00",
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-09T03:21:43.4332894+00:00",
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:18:52.7297917+00:00",
+      "observedDateTime": "2026-10-09T03:18:52.7297917+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:15.0605985+00:00",
+      "observedDateTime": "2026-10-09T03:20:15.0605985+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:18.5653431+00:00",
+      "observedDateTime": "2026-10-09T03:20:18.5653431+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:21:41.3855607+00:00",
+      "observedDateTime": "2026-10-09T03:21:41.3855607+00:00"
+    }
+  ]
+}
+
+08:58:55 04101 WARNING: Command failed (): frontier-tuning --output json evaluate diagnostics 44945388-1e87-41b5-adfd-32123fe29268 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+{
+  "evaluationId": "44945388-1e87-41b5-adfd-32123fe29268",
+  "lastModifiedDateTime": "2026-10-09T03:27:19.8659004+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-09T03:27:19.8659004+00:00",
+    "totalSamples": 1,
+    "execution": {
+      "notStarted": 0,
+      "pending": 0,
+      "running": 1,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 1,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-09T03:27:19.8659004+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 1
+  },
+  "generatedDateTime": "2026-10-09T03:28:54.9639614+00:00",
+  "status": "Running",
+  "phase": "Executing",
+  "createdDateTime": "2026-10-09T03:21:44.8140069+00:00",
+  "startedDateTime": "2026-10-09T03:17:41.6261388+00:00",
+  "lastProgressDateTime": "2026-10-09T03:27:19.8659004+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T03:20:15.4994725+00:00",
+      "completedDateTime": "2026-10-09T03:20:18.2919435+00:00",
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-09T03:21:43.4332894+00:00",
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:18:52.7297917+00:00",
+      "observedDateTime": "2026-10-09T03:18:52.7297917+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:15.0605985+00:00",
+      "observedDateTime": "2026-10-09T03:20:15.0605985+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:20:18.5653431+00:00",
+      "observedDateTime": "2026-10-09T03:20:18.5653431+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T03:21:41.3855607+00:00",
+      "observedDateTime": "2026-10-09T03:21:41.3855607+00:00"
+    }
+  ]
+}
+
+09:03:05 adopting job 44945388-1e87-41b5-adfd-32123fe29268 for 04101
+09:55:35 04101 Succeeded after 53 min
+09:56:25 04101 done (job 44945388-1e87-41b5-adfd-32123fe29268): 1/1 finished; DB snapshot saved and reset
+09:56:25 ALL DONE

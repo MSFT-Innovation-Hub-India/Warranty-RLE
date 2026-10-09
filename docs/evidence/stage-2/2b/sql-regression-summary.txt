@@ -1,0 +1,5 @@
+Before midnight IST 15 claims; stage1 13 correct; stage2 9 correct; newly wrong ['04102', '04131', '04140', '04148', '04150', '04152']
+After midnight IST 14 claims; stage1 9 correct; stage2 8 correct; newly wrong ['04149', '04153', '04178']
+stage-1 failed tool calls 11 claims affected 5
+stage-2 failed tool calls 66 claims affected 17
+Verified all retained SQL-backed agent calls: 63 successful dossier reads; 31 successful writes; zero failure payloads.

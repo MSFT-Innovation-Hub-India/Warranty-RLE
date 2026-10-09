@@ -1,0 +1,33 @@
+| claim | status | rubric | calls | mcp | searches | scoped | teams | tool_k | minutes | skill_runs | overflow | retries | rejected_handin |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 04101 | Completed | 0.85 | 14 | 2 | 8 | 5 | 0 | 49 | 8.4 | 1 | 0 | 1 | False |
+| 04102 | Completed | 0.317 | 1 | 1 | 0 | 0 | 0 | 4 | 1.4 | 1 | 0 | 1 | False |
+| 04103 | Completed | 0.85 | 16 | 4 | 11 | 3 | 0 | 88 | 8.4 | 1 | 0 | 1 | False |
+| 04109 | Completed | 0.688 | 26 | 2 | 12 | 12 | 0 | 145 | 14.9 | 1 | 0 | 1 | False |
+| 04110 | Completed | 0.75 | 17 | 3 | 14 | 11 | 0 | 76 | 8.6 | 1 | 0 | 1 | False |
+| 04114 | Completed | 0.66 | 10 | 3 | 5 | 3 | 0 | 54 | 7.5 | 1 | 0 | 1 | False |
+| 04115 | Completed | 0.743 | 45 | 8 | 26 | 0 | 0 | 438 | 21.9 | 1 | 0 | 1 | False |
+| 04116 | Completed | 0.688 | 10 | 3 | 6 | 0 | 0 | 106 | 13.1 | 1 | 0 | 1 | False |
+| 04117 | Completed | 0.875 | 51 | 5 | 16 | 13 | 0 | 245 | 18.9 | 1 | 0 | 1 | False |
+| 04118 | Completed | 0.733 | 20 | 7 | 10 | 0 | 0 | 97 | 16.6 | 1 | 0 | 1 | False |
+| 04129 | Completed | 0.646 | 14 | 2 | 7 | 0 | 3 | 130 | 8.6 | 1 | 0 | 1 | False |
+| 04131 | Completed | 0.05 | 3 | 1 | 2 | 0 | 0 | 32 | 2.0 | 1 | 0 | 1 | False |
+| 04132 | Completed | 0.062 | 15 | 1 | 9 | 7 | 0 | 60 | 5.5 | 1 | 0 | 1 | False |
+| 04139 | Completed | 0.729 | 29 | 3 | 17 | 12 | 0 | 87 | 10.8 | 1 | 0 | 1 | False |
+| 04140 | Completed | 0.3 | 19 | 1 | 11 | 10 | 0 | 83 | 7.9 | 1 | 0 | 1 | False |
+| 04141 | Completed | 0.418 | 41 | 3 | 24 | 0 | 0 | 336 | 16.2 | 2 | 0 | 1 | False |
+| 04148 | Completed | 0.194 | 9 | 3 | 4 | 2 | 0 | 44 | 6.4 | 1 | 0 | 1 | False |
+| 04149 | Completed | 0.264 | 10 | 1 | 9 | 2 | 0 | 103 | 3.5 | 1 | 0 | 1 | False |
+| 04150 | Completed | 0.433 | 44 | 7 | 32 | 19 | 0 | 139 | 18.5 | 1 | 0 | 1 | False |
+| 04151 | Completed | 0.661 | 14 | 1 | 12 | 2 | 0 | 124 | 7.0 | 1 | 0 | 1 | False |
+| 04152 | Completed | 0.264 | 19 | 2 | 15 | 7 | 0 | 104 | 7.0 | 1 | 0 | 1 | False |
+| 04153 | Completed | 0.183 | 25 | 2 | 9 | 9 | 0 | 387 | 8.6 | 1 | 0 | 1 | False |
+| 04166 | Completed | 0.623 | 33 | 7 | 20 | 4 | 3 | 215 | 23.1 | 2 | 0 | 1 | False |
+| 04167 | Completed | 0.743 | 22 | 3 | 18 | 12 | 0 | 61 | 10.0 | 1 | 0 | 1 | False |
+| 04171 | Completed | 0.183 | 18 | 1 | 10 | 0 | 7 | 241 | 6.4 | 1 | 0 | 1 | False |
+| 04172 | Completed | 0.771 | 14 | 2 | 12 | 10 | 0 | 47 | 10.4 | 1 | 0 | 1 | False |
+| 04176 | Completed | 1.0 | 11 | 2 | 3 | 0 | 0 | 51 | 6.9 | 1 | 0 | 1 | False |
+| 04177 | Completed | 0.317 | 5 | 1 | 0 | 0 | 0 | 7 | 2.1 | 1 | 0 | 1 | False |
+| 04178 | Completed | 0.25 | 34 | 13 | 18 | 12 | 0 | 156 | 10.6 | 1 | 0 | 1 | False |
+
+Claims: 29 · mean rubric 0.5 · mean calls 20.3 · mean tool output 127.9k · overflows 0 · rejected hand-ins 0

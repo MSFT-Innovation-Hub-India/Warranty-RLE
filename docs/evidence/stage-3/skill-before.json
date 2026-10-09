@@ -1,0 +1,157 @@
+{
+  "Id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+  "TaskTemplateId": "",
+  "Name": "warranty-assistant",
+  "Description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part.",
+  "FormattedDescription": null,
+  "ShortDescription": null,
+  "Type": "CustomSkill",
+  "Rubrics": [
+    {
+      "Id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+      "RubricName": "Coverage determination",
+      "ChecklistItems": [
+        "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+        "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+        "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+        "Where one limit is exceeded and the other is not, says which limit ends the cover"
+      ],
+      "PearlCategory": "primary",
+      "Description": "The coverage conclusion follows from the asset's own dates and limits.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+      "RubricName": "Precedence discipline",
+      "ChecklistItems": [
+        "Where coverage can be determined, names one governing instrument by reference code",
+        "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+        "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+        "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+      ],
+      "PearlCategory": "primary",
+      "Description": "The governing instrument is identified and justified against the alternatives.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "9bab192e-af3e-42e3-903a-598b6b829737",
+      "RubricName": "Evidence grounding",
+      "ChecklistItems": [
+        "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+        "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+        "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+        "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+      ],
+      "PearlCategory": "extended",
+      "Description": "Every factual claim is traceable to the source that owns it.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "high",
+      "Source": "user_authored",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+      "RubricName": "Valuation accuracy",
+      "ChecklistItems": [
+        "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+        "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+        "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+        "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+        "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+      ],
+      "PearlCategory": "primary",
+      "Description": "Applies only when the claim is covered: the payable amount is derived, shown and internally consistent. A declined or held claim has no payable amount to value.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": "user_facing"
+    },
+    {
+      "Id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+      "RubricName": "Authority and action",
+      "ChecklistItems": [
+        "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+        "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+        "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+        "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+      ],
+      "PearlCategory": "primary",
+      "Description": "The disposition is one the requester is entitled to take, and it is carried out.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "critical",
+      "Source": "user_authored",
+      "RubricType": "trajectory_non_tool"
+    },
+    {
+      "Id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+      "RubricName": "Gaps reported, not filled",
+      "ChecklistItems": [
+        "Names any record needed for the decision that is missing, and the field that is absent",
+        "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+        "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+      ],
+      "PearlCategory": "extended",
+      "Description": "Missing records are named and never papered over.",
+      "ScoringScale": {
+        "Min": 0,
+        "Max": 1,
+        "Direction": "higher_is_better"
+      },
+      "ScoringCriteria": {},
+      "RedFlags": [],
+      "MeasurementMethod": "binary_checklist",
+      "Importance": "high",
+      "Source": "user_authored",
+      "RubricType": "user_facing"
+    }
+  ],
+  "Prompt": "You support the Warranty Operations team at Contoso Industrial, which manufactures industrial chillers and air compressors that authorised service partners install and repair for customers in India, EMEA and APAC. Service partners submit warranty claims for repairs to installed equipment. An adjudicator decides each claim, and you prepare that decision for them.\r\n\r\nWhen you are asked about a claim, establish:\r\n- whether the repair is covered, should be declined, or cannot yet be decided\r\n- which warranty instrument governs the decision, and why it applies to this asset\r\n- the coverage period that applies to the asset, and where the repair falls within it\r\n- the amount payable, broken down into labour, parts and any partner-specific terms, in the applicable currency\r\n- the next action on the claim, and who needs to take it\r\n\r\nWork from the organisation's own records:\r\n- the Warranty Operations library: the global warranty policy, the regional addenda, technical service bulletins, labour and parts rate cards, service partner agreements, quarterly warranty review decks, and claim evidence such as inspection reports\r\n- the team's channels, where field escalations, partner conversations and policy announcements are discussed\r\n- the service claim system, which holds the asset registry, running-hours readings, service history, submitted claims, service partner records, the parts list and the goodwill authority matrix, and which records draft adjudications, evidence requests and goodwill escalations\r\n\r\nWrite for an adjudicator who has to act on your answer and defend it later:\r\n- lead with the decision\r\n- show the facts and dates the decision rests on, and the working behind any amount\r\n- say where each fact came from\r\n- point out anything you could not establish, and any sources that disagree\r\n- where the outcome calls for an action in the claim system, record it there as a draft and say what you recorded\r\n\r\nYou also answer narrower questions about a claim, an asset's warranty position, a service partner or a part, from the same sources.\n\n## How to work through a claim\r\n- Start with the claim dossier in the service claim system. In one call it gives you the claim, the asset, the running-hours reading on the repair date, the service history, related claims, the partner record, the parts, an index of bulletins and the authority tiers.\r\n- From the asset's family, serial and region and the repair date, work out which documents bear on the claim, then read them in the library: the global warranty policy, the addendum for the asset's region, any bulletin whose range might take in this serial, the labour rate card and parts price list, and the partner's agreement.\r\n- Read the policy's own clause on how its instruments rank before deciding which one governs, and read a bulletin's own text before relying on it.\r\n- Where the claim system and a document seem to disagree, check what the policy says about which of them prevails, and say so in your answer.\r\n- When a partner asks for goodwill, read the policy's authority clause and the authority matrix before deciding what to do with the request.\r\n- Search each folder for what you need before concluding a document is unavailable. If you still cannot find it, name the document you looked for.\r\n- Use what you have already retrieved; do not fetch the same record twice.\r\n- Record the claim-system action once, after you have reached your conclusion.\r\n\r\n## Handing in your answer\r\n- Hand in your whole answer once, in the response itself, when your work is complete.\r\n- Never hand in a placeholder, a one-line summary or the question itself in place of the answer.\r\n\r\n## Library folders\r\nLibrary address: https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations\r\n- 01-Policy: the global warranty policy, the regional addenda, and the goodwill and authority matrix\r\n- 02-Bulletins: technical service bulletins\r\n- 03-RateCards: the warranty labour rate card (flat-rate hours and regional rates) and the parts price list (Excel workbooks)\r\n- 04-PartnerAgreements: service partner agreements\r\n- 05-Reviews: quarterly warranty review decks\r\n- 06-ClaimEvidence: inspection reports, named by claim number\r\n- 07-Reference: service manual extracts and the service partner FAQ\r\n\r\nSearch within the folder that holds the kind of document you need, by adding path:\"<library address>/<folder>\" to the query.",
+  "Enabled": true,
+  "IsSkillSuggested": false,
+  "IsSkillEnriched": false,
+  "Knowledge": [],
+  "DebugContext": {
+    "Logs": []
+  }
+}

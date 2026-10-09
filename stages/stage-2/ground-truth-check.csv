@@ -1,0 +1,30 @@
+claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,delivery_mismatch,note
+C-2026-04101,covered-simple,approve,approve,ADD-IN-2.1,ADD-IN-2.1,69575.0,69575.0,0.85,24670b97-77fd-4bad-bed5-471905440bde,eval-results-samples.json,True,True,True,True,False,
+C-2026-04102,covered-simple,approve,review,ADD-IN-2.1,—,48420.0,,0.317,83f22834-a828-4e0c-a7dd-ba6e712cc66c,eval-results-samples.json,,False,,,False,decision unclear; no amount stated
+C-2026-04103,covered-simple,approve,approve,ADD-IN-2.1,ADD-IN-2.1,19150.0,19150.0,0.85,be30e0f6-f03a-4d45-929f-b5a73cd5b030,eval-results-samples.json,True,True,True,True,False,
+C-2026-04109,declined-simple,decline,decline,ADD-IN-2.1,ADD-IN-2.1,,0.0,0.688,c1392419-9715-4e85-a328-4420cfb7a75d,eval-results-samples.json,True,True,True,True,False,
+C-2026-04110,declined-simple,decline,decline,ADD-IN-2.1,ADD-IN-2.1,,14800.0,0.75,d66e7981-7844-4088-9238-9bc0592d268d,eval-results-samples.json,True,True,True,True,False,
+C-2026-04117,precedence,decline,decline,ADD-IN-2.1,ADD-IN-2.1,,,0.875,6459bfe9-6e99-475f-9ba9-b23ec819779e,eval-results-samples.json,True,True,True,True,False,
+C-2026-04114,precedence,approve,approve,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.66,f18759df-ad1a-4040-9f2c-0575b36e45e6,eval-results-samples.json,True,True,True,True,False,
+C-2026-04115,precedence,approve,approve,TSB-C-0051,TSB-C-0051,755050.0,13050.0,0.743,cf410225-e4e1-44c3-8b66-18924dd0fb43,eval-results-samples.json,True,True,False,False,False,
+C-2026-04116,precedence,decline,decline,ADD-IN-2.1,TSB-C-0051,,0.0,0.688,9784eda0-a1b7-4dd3-ae46-989d6068c43a,eval-results-samples.json,True,False,True,False,False,
+C-2026-04118,precedence,approve,approve,TSB-P-0112,TSB-P-0112,67500.0,67500.0,0.733,8bbb4caa-da6a-4e72-a85d-d596622648df,eval-results-samples.json,True,True,True,True,False,
+C-2026-04129,serial-boundary,decline,decline,ADD-IN-2.1,ADD-IN-2.1,,0.0,0.646,fb7900ec-3a8c-4c1f-b2dc-54199f708e2d,eval-results-samples.json,True,True,True,True,False,
+C-2026-04131,serial-boundary,approve,review,TSB-C-0051,—,198450.0,,0.05,f785c5f8-b2aa-42f2-be82-433fbb12dc24,eval-results-samples.json,False,False,False,False,False,echoed the question: no answer delivered; no amount stated
+C-2026-04132,serial-boundary,decline,review,ADD-IN-2.1,—,,,0.062,0b0bce8b-c0fc-4378-b37b-bc57ca8f9792,eval-results-samples.json,False,False,False,False,False,echoed the question: no answer delivered
+C-2026-04139,dual-limit,decline,decline,TSB-C-0051,TSB-C-0051,,0.0,0.729,5c465dac-7654-4008-b236-fba01d45bd4a,eval-results-samples.json,True,True,True,True,False,
+C-2026-04149,valuation,approve,review,TSB-C-0051,—,753880.0,,0.264,34763dd9-f016-4a12-990f-aa3021a50fb6,eval-results-samples.json,False,False,False,False,False,inability statement: no decision delivered; no amount stated
+C-2026-04151,valuation,approve,review,TSB-C-0051,TSB-C-0051,31030.0,31030.0,0.661,55328796-e899-46b2-9817-ad02d2790ce1,eval-results-samples.json,,True,True,,False,decision unclear
+C-2026-04153,valuation,approve,review,ADD-IN-2.1,—,72945.0,,0.183,38d27536-0e76-4e59-8d32-e66dbb4cf17a,eval-results-samples.json,False,False,False,False,False,inability statement: no decision delivered; no amount stated
+C-2026-04140,dual-limit,decline,review,TSB-C-0051,TSB-C-0043,,,0.3,2f031e0c-6b97-4633-8f8c-f895bc7973a1,eval-results-samples.json,False,False,False,False,False,inability statement: no decision delivered
+C-2026-04141,dual-limit,approve,approve,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.418,8ab4c764-a3b4-4cb4-8497-eb405817aac9,eval-results-samples.json,True,True,True,True,False,
+C-2026-04148,valuation,approve,review,TSB-C-0051,—,208735.0,,0.194,8c384732-5be2-48dc-bdb0-ebc83befe409,eval-results-samples.json,False,False,False,False,False,echoed the question: no answer delivered; no amount stated
+C-2026-04150,valuation,approve,review,TSB-C-0051,—,755050.0,755050.0,0.433,10096e35-e8d8-4aa2-ad2e-2fd7d77896cb,eval-results-samples.json,,False,True,,False,decision unclear
+C-2026-04152,valuation,approve,review,TSB-C-0051,—,197000.0,,0.264,281ecd57-f9c3-4db1-bab6-f428e3bb9b60,eval-results-samples.json,False,False,False,False,False,inability statement: no decision delivered; no amount stated
+C-2026-04167,stale-deck,approve,approve,TSB-C-0051,TSB-C-0051,755050.0,755050.0,0.743,309d9141-223a-44d0-b3b6-5eac77e57ee6,eval-results-samples.json,True,True,True,True,False,
+C-2026-04166,stale-deck,approve,approve,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.623,5b0357df-f366-4fc7-89c6-d01c05eed276,eval-results-samples.json,True,True,True,True,False,
+C-2026-04171,authority,escalate,review,ADD-IN-2.1,—,,,0.183,163eee16-01d5-4427-92d7-786777aa0b65,eval-results-samples.json,False,False,False,,True,NOT VERIFIABLE: grader says the delivered answer differs from the stored one (finish rejected); echoed the question: no answer delivered
+C-2026-04172,authority,escalate,decline,ADD-IN-2.1,ADD-IN-2.1,,,0.771,2c4ea933-5ac3-46a8-bf84-b5354c5c80ea,eval-results-samples.json,False,True,True,False,False,
+C-2026-04176,abstention,request_evidence,request_evidence,—,ADD-IN-2.1,,199175.0,1.0,7da03bdb-3799-4435-b15a-db00f0979259,eval-results-samples.json,True,True,True,True,False,
+C-2026-04178,abstention,request_evidence,request_evidence,ADD-IN-2.1,TSB-C-0051,,191200.0,0.25,e365e65f-df7f-4588-a51f-b32b1f28f96b,eval-results-samples.json,True,False,True,False,False,
+C-2026-04177,abstention,request_evidence,request_evidence,—,—,,,0.317,e80d07be-faf6-40ab-901e-a8432d1dc990,eval-results-samples.json,True,True,True,True,False,
