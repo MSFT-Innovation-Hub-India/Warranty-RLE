@@ -1,0 +1,1658 @@
+{
+  "schemaVersion": "1.0",
+  "finetuningId": "c77feaed-96de-4b88-9802-e0f265601eb8",
+  "isProgressStale": false,
+  "scope": {
+    "trainingSampleCount": 90,
+    "validationSampleCount": 0,
+    "skillCount": 1
+  },
+  "metrics": [
+    {
+      "name": "Skills included",
+      "value": 1.0,
+      "series": [
+        1.0
+      ]
+    },
+    {
+      "name": "Input examples received",
+      "value": 60.0,
+      "series": [
+        60.0
+      ]
+    },
+    {
+      "name": "Examples excluded",
+      "value": 0.0,
+      "series": [
+        0.0
+      ]
+    },
+    {
+      "name": "Input issues found",
+      "value": 0.0,
+      "series": [
+        0.0
+      ]
+    },
+    {
+      "name": "Examples prepared",
+      "value": 60.0,
+      "series": [
+        60.0
+      ]
+    },
+    {
+      "name": "Examples used for training",
+      "value": 54.0,
+      "series": [
+        54.0
+      ]
+    },
+    {
+      "name": "Examples used for validation",
+      "value": 6.0,
+      "series": [
+        6.0
+      ]
+    },
+    {
+      "name": "Reference files included",
+      "value": 0.0,
+      "series": [
+        0.0
+      ]
+    },
+    {
+      "name": "Scoring criteria configured",
+      "value": 6.0,
+      "series": [
+        6.0
+      ]
+    },
+    {
+      "name": "Tools provided by the agent",
+      "value": 100.0,
+      "series": [
+        100.0
+      ]
+    },
+    {
+      "name": "Tools excluded for safety",
+      "value": 36.0,
+      "series": [
+        36.0
+      ]
+    },
+    {
+      "name": "Tools enabled for training",
+      "value": 64.0,
+      "series": [
+        64.0
+      ]
+    }
+  ],
+  "generatedDateTime": "2026-10-10T17:33:25.5604201+00:00",
+  "status": "Running",
+  "phase": "Training",
+  "createdDateTime": "2026-10-09T05:29:41.84347+00:00",
+  "startedDateTime": "2026-10-09T05:29:38.0481483+00:00",
+  "lastProgressDateTime": "2026-10-10T17:07:48.6944991+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-09T05:32:17.0493709+00:00",
+      "completedDateTime": "2026-10-09T05:32:20.6075984+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "Training",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-10T12:36:30.8431418+00:00",
+      "attempts": 4,
+      "failedAttempts": 3
+    },
+    {
+      "name": "Deployment",
+      "status": "New",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T05:31:00.2517552+00:00",
+      "observedDateTime": "2026-10-09T05:31:00.2517552+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Onboarding started.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T05:32:16.5928243+00:00",
+      "observedDateTime": "2026-10-09T05:32:16.5928243+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T05:32:20.899679+00:00",
+      "observedDateTime": "2026-10-09T05:32:20.899679+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T05:33:40.7489464+00:00",
+      "observedDateTime": "2026-10-09T05:33:40.7489464+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T05:48:58.6054755+00:00",
+      "observedDateTime": "2026-10-09T05:48:58.6054755+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T06:04:12.4835477+00:00",
+      "observedDateTime": "2026-10-09T06:04:12.4835477+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T06:19:28.3507294+00:00",
+      "observedDateTime": "2026-10-09T06:19:28.3507294+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T06:34:51.1188402+00:00",
+      "observedDateTime": "2026-10-09T06:34:51.1188402+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T06:50:20.3243731+00:00",
+      "observedDateTime": "2026-10-09T06:50:20.3243731+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T07:05:52.0749066+00:00",
+      "observedDateTime": "2026-10-09T07:05:52.0749066+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T07:22:24.3518753+00:00",
+      "observedDateTime": "2026-10-09T07:22:24.3518753+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T07:37:51.3446533+00:00",
+      "observedDateTime": "2026-10-09T07:37:51.3446533+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T07:53:17.5883096+00:00",
+      "observedDateTime": "2026-10-09T07:53:17.5883096+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:08:34.7152173+00:00",
+      "observedDateTime": "2026-10-09T08:08:34.7152173+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:24:05.0243045+00:00",
+      "observedDateTime": "2026-10-09T08:24:05.0243045+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:39:34.1842661+00:00",
+      "observedDateTime": "2026-10-09T08:39:34.1842661+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "FINE_TUNING_STARTED",
+      "message": "Fine-tuning started. Preparing your training examples.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:49.426+00:00",
+      "observedDateTime": "2026-10-09T08:43:49.426+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Skills included: 1",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:50.616+00:00",
+      "observedDateTime": "2026-10-09T08:43:50.616+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Input examples received: 60",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:50.954+00:00",
+      "observedDateTime": "2026-10-09T08:43:50.954+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Examples excluded: 0",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:51.117+00:00",
+      "observedDateTime": "2026-10-09T08:43:51.117+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Input issues found: 0",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:51.278+00:00",
+      "observedDateTime": "2026-10-09T08:43:51.278+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Examples prepared: 60",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:43:55.995+00:00",
+      "observedDateTime": "2026-10-09T08:43:55.995+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Examples used for training: 54",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:47:06.972+00:00",
+      "observedDateTime": "2026-10-09T08:47:06.972+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Examples used for validation: 6",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:47:07.137+00:00",
+      "observedDateTime": "2026-10-09T08:47:07.137+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Reference files included: 0",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:50:56.992+00:00",
+      "observedDateTime": "2026-10-09T08:50:56.992+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Scoring criteria configured: 6",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:50:57.149+00:00",
+      "observedDateTime": "2026-10-09T08:50:57.149+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_DATA_READY",
+      "message": "Training data is ready: 54 examples for training and 6 for validation.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T08:50:57.229+00:00",
+      "observedDateTime": "2026-10-09T08:50:57.229+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T12:50:19.6260564+00:00",
+      "observedDateTime": "2026-10-09T12:50:19.6260564+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T12:50:20.6358165+00:00",
+      "observedDateTime": "2026-10-09T12:50:20.6358165+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 10 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T12:50:21.6555788+00:00",
+      "observedDateTime": "2026-10-09T12:50:21.6555788+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T15:25:02.9885243+00:00",
+      "observedDateTime": "2026-10-09T15:25:02.9885243+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T15:25:03.6551411+00:00",
+      "observedDateTime": "2026-10-09T15:25:03.6551411+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 10 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T15:25:04.3734873+00:00",
+      "observedDateTime": "2026-10-09T15:25:04.3734873+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T20:46:33.3085321+00:00",
+      "observedDateTime": "2026-10-09T20:46:33.3085321+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T20:46:33.9891639+00:00",
+      "observedDateTime": "2026-10-09T20:46:33.9891639+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 120 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T20:46:36.7495945+00:00",
+      "observedDateTime": "2026-10-09T20:46:36.7495945+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T22:47:04.0019104+00:00",
+      "observedDateTime": "2026-10-09T22:47:04.0019104+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T23:02:34.3999681+00:00",
+      "observedDateTime": "2026-10-09T23:02:34.3999681+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T23:17:58.3816414+00:00",
+      "observedDateTime": "2026-10-09T23:17:58.3816414+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T23:33:17.1735981+00:00",
+      "observedDateTime": "2026-10-09T23:33:17.1735981+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-09T23:48:48.0745929+00:00",
+      "observedDateTime": "2026-10-09T23:48:48.0745929+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T00:04:57.9799866+00:00",
+      "observedDateTime": "2026-10-10T00:04:57.9799866+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T00:20:20.7432395+00:00",
+      "observedDateTime": "2026-10-10T00:20:20.7432395+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T00:35:52.5374412+00:00",
+      "observedDateTime": "2026-10-10T00:35:52.5374412+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T00:51:21.4683641+00:00",
+      "observedDateTime": "2026-10-10T00:51:21.4683641+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T01:07:23.7292234+00:00",
+      "observedDateTime": "2026-10-10T01:07:23.7292234+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T01:22:57.3248978+00:00",
+      "observedDateTime": "2026-10-10T01:22:57.3248978+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T01:38:24.5612065+00:00",
+      "observedDateTime": "2026-10-10T01:38:24.5612065+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T01:54:02.1070753+00:00",
+      "observedDateTime": "2026-10-10T01:54:02.1070753+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T02:09:27.791269+00:00",
+      "observedDateTime": "2026-10-10T02:09:27.791269+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T02:24:56.5407905+00:00",
+      "observedDateTime": "2026-10-10T02:24:56.5407905+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T02:40:30.2575336+00:00",
+      "observedDateTime": "2026-10-10T02:40:30.2575336+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T02:56:11.3802567+00:00",
+      "observedDateTime": "2026-10-10T02:56:11.3802567+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T03:11:38.1683467+00:00",
+      "observedDateTime": "2026-10-10T03:11:38.1683467+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T03:26:53.3503271+00:00",
+      "observedDateTime": "2026-10-10T03:26:53.3503271+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T03:42:09.53285+00:00",
+      "observedDateTime": "2026-10-10T03:42:09.53285+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T03:57:26.5308611+00:00",
+      "observedDateTime": "2026-10-10T03:57:26.5308611+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T04:12:47.414645+00:00",
+      "observedDateTime": "2026-10-10T04:12:47.414645+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T06:48:33.0271771+00:00",
+      "observedDateTime": "2026-10-10T06:48:33.0271771+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T06:48:33.6866953+00:00",
+      "observedDateTime": "2026-10-10T06:48:33.6866953+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 121 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T06:48:35.7866581+00:00",
+      "observedDateTime": "2026-10-10T06:48:35.7866581+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T08:50:01.8948011+00:00",
+      "observedDateTime": "2026-10-10T08:50:01.8948011+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T10:34:08.2338218+00:00",
+      "observedDateTime": "2026-10-10T10:34:08.2338218+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T10:34:09.0719721+00:00",
+      "observedDateTime": "2026-10-10T10:34:09.0719721+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 122 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T10:34:11.2924837+00:00",
+      "observedDateTime": "2026-10-10T10:34:11.2924837+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step Training started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:36:21.4553581+00:00",
+      "observedDateTime": "2026-10-10T12:36:21.4553581+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Tools provided by the agent: 100",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:41:50.33+00:00",
+      "observedDateTime": "2026-10-10T12:41:50.33+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Tools excluded for safety: 36",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:41:50.498+00:00",
+      "observedDateTime": "2026-10-10T12:41:50.498+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "TOOLS_EXCLUDED_FOR_SAFETY",
+      "message": "Tools not used because they can make changes: 36.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:41:50.579+00:00",
+      "observedDateTime": "2026-10-10T12:41:50.579+00:00"
+    },
+    {
+      "level": "Info",
+      "message": "Tools enabled for training: 64",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:41:56.725+00:00",
+      "observedDateTime": "2026-10-10T12:41:56.725+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "WAITING_FOR_TRAINING_CAPACITY",
+      "message": "Your model is ready to train and is waiting for available capacity.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:45:49.252+00:00",
+      "observedDateTime": "2026-10-10T12:45:49.252+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "MODEL_TRAINING_STARTED",
+      "message": "Model training has started.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T12:53:54.465+00:00",
+      "observedDateTime": "2026-10-10T12:53:54.465+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_REWARD_FOR_STEP",
+      "message": "Training Reward for Step 1 is 0.35846860613941356.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:27.384+00:00",
+      "observedDateTime": "2026-10-10T16:32:27.384+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__download_file at Step 1 (training): 0.00 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:27.855+00:00",
+      "observedDateTime": "2026-10-10T16:32:27.855+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__read_file at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:27.936+00:00",
+      "observedDateTime": "2026-10-10T16:32:27.936+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__run_in_terminal at Step 1 (training): 1.15 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.017+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.017+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__upload_file at Step 1 (training): 0.00 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.102+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.102+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__upload_file_from_sharepoint at Step 1 (training): 0.49 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.184+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.184+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__write_file at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.264+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.264+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool m365__GetSpoId at Step 1 (training): 0.02 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.345+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.345+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool m365__search_enterprise_files at Step 1 (training): 5.52 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.427+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.427+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__checkOperationStatus at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.518+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.518+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getDefaultDocumentLibraryInSite at Step 1 (training): 0.20 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.597+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.597+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getFileOrFolderMetadata at Step 1 (training): 0.07 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.678+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.678+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getFileOrFolderMetadataByUrl at Step 1 (training): 0.39 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.757+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.757+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getFolderChildren at Step 1 (training): 3.72 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.837+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.837+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getSiteByPath at Step 1 (training): 0.99 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.916+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.916+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listColumns at Step 1 (training): 0.11 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:28.996+00:00",
+      "observedDateTime": "2026-10-10T16:32:28.996+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listDocumentLibrariesInSite at Step 1 (training): 1.07 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.076+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.076+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listListItems at Step 1 (training): 0.10 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.157+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.157+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listLists at Step 1 (training): 0.80 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.237+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.237+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listSubsites at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.317+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.317+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__readSmallBinaryFile at Step 1 (training): 0.05 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.396+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.396+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__readSmallTextFile at Step 1 (training): 0.06 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.478+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.478+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool polymer_atomic__extract_document_text at Step 1 (training): 0.06 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.558+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.558+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool polymer_atomic__read_docx_as_html at Step 1 (training): 0.02 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.638+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.638+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__GetChannel at Step 1 (training): 0.00 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.744+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.744+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__GetChat at Step 1 (training): 0.00 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.827+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.827+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__GetChatMessage at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.911+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.911+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__GetRichMessageFormats at Step 1 (training): 0.01 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:29.991+00:00",
+      "observedDateTime": "2026-10-10T16:32:29.991+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChannelFiles at Step 1 (training): 0.03 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.075+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.075+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChannelMessages at Step 1 (training): 0.04 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.157+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.157+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChannels at Step 1 (training): 0.07 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.242+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.242+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChats at Step 1 (training): 0.03 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.325+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.325+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListTeams at Step 1 (training): 0.09 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.409+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.409+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__SearchTeamMessagesQueryParameters at Step 1 (training): 0.67 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.493+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.493+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__SearchTeamsMessages at Step 1 (training): 0.47 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.574+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.574+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "TRAINING_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__get_channel_message at Step 1 (training): 0.05 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.668+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.668+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__read_file at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.748+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.748+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__run_in_terminal at Step 1 (validation): 1.83 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.827+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.827+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool lumina_sandbox__upload_file_from_sharepoint at Step 1 (validation): 1.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.909+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.909+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool m365__search_enterprise_files at Step 1 (validation): 5.50 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:30.99+00:00",
+      "observedDateTime": "2026-10-10T16:32:30.99+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getDefaultDocumentLibraryInSite at Step 1 (validation): 0.50 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.071+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.071+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getFileOrFolderMetadataByUrl at Step 1 (validation): 0.50 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.151+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.151+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getFolderChildren at Step 1 (validation): 3.83 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.233+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.233+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__getSiteByPath at Step 1 (validation): 1.00 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.313+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.313+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listColumns at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.393+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.393+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listDocumentLibrariesInSite at Step 1 (validation): 1.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.474+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.474+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listListItems at Step 1 (validation): 0.33 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.555+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.555+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__listLists at Step 1 (validation): 0.50 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.636+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.636+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__readSmallBinaryFile at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.718+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.718+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool mcp_SharePointRemoteServer__readSmallTextFile at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.809+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.809+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool polymer_atomic__extract_document_text at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.89+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.89+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__GetRichMessageFormats at Step 1 (validation): 0.33 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:31.971+00:00",
+      "observedDateTime": "2026-10-10T16:32:31.971+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChannelMessages at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.071+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.071+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChannels at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.153+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.153+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListChats at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.234+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.234+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__ListTeams at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.316+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.316+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__SearchTeamMessagesQueryParameters at Step 1 (validation): 0.83 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.397+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.397+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__SearchTeamsMessages at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.478+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.478+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "VALIDATION_TOOL_SUCCESS_RATE_FOR_STEP",
+      "message": "Tool teams__get_channel_message at Step 1 (validation): 0.17 successful calls per rollout, success rate 100.0%, error rate 0.0%.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:32:32.562+00:00",
+      "observedDateTime": "2026-10-10T16:32:32.562+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "MODEL_TRAINING_FAILED",
+      "message": "Model training did not complete.",
+      "stage": "Training",
+      "retryable": false,
+      "source": "Aml",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T16:58:41.994+00:00",
+      "observedDateTime": "2026-10-10T16:58:41.994+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "StepFailed",
+      "category": "Lifecycle",
+      "message": "Step Training failed.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T17:07:45.9692865+00:00",
+      "observedDateTime": "2026-10-10T17:07:45.9692865+00:00"
+    },
+    {
+      "level": "Error",
+      "code": "400",
+      "category": "InfrastructureIssue",
+      "message": "We hit an internal error and will retry automatically.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T17:07:46.6341767+00:00",
+      "observedDateTime": "2026-10-10T17:07:46.6341767+00:00"
+    },
+    {
+      "level": "Warning",
+      "code": "StepRetryScheduled",
+      "category": "Lifecycle",
+      "message": "The step encountered an internal failure, but it can be retried. The retry will begin in approximately 123 minutes.",
+      "stage": "Training",
+      "retryable": true,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-10T17:07:48.6944991+00:00",
+      "observedDateTime": "2026-10-10T17:07:48.6944991+00:00"
+    }
+  ]
+}

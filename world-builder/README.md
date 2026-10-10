@@ -4,7 +4,7 @@ Everything that **creates and deploys** the world lives here: the hand-authored
 spec, the ground-truth engine and its gates, the generators, the generated
 corpus and database, the MCP server, and the world definition. You only need
 this folder to rebuild or redeploy the world; the hill climb itself lives in
-[../stages/](../stages/README.md) and [../docs/JOURNEY.md](../docs/JOURNEY.md).
+[../climb/](../climb/README.md) and [../README.md](../README.md).
 
 | Read | For |
 | --- | --- |

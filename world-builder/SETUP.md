@@ -276,7 +276,7 @@ main available total: 125            (dev: 137 = 125 + our 12)
 rather than by us. That's the naive baseline the climb starts from.
 
 **Do.**
-1. Write stages/stage-0/warranty-assistant.md. It describes the business job: who the agent serves, what an adjudication must establish, which sources exist, and how to write for an adjudicator. It deliberately leaves out the rules that solve the traps (which instrument wins, document over index, no install-date substitute, flat-rate cap, rate by repair date, written authority). The agent has to find those in the policy documents.
+1. Write the skill (now pinned at climb/stage-0/config/skill.md). It describes the business job: who the agent serves, what an adjudication must establish, which sources exist, and how to write for an adjudicator. It deliberately leaves out the rules that solve the traps (which instrument wins, document over index, no install-date substitute, flat-rate cap, rate by repair date, written authority). The agent has to find those in the policy documents.
 2. Create it on dev with `generateRubrics: true`, and review what the platform generates.
 3. Pin the generated set in warranty-assistant.rubrics.json and apply it to main, so both worlds are scored against identical rubrics.
 

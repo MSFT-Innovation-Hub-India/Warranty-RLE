@@ -1,189 +1,117 @@
-# AGENTS.md — Contoso Industrial warranty adjudication RLE
+# AGENTS.md: Contoso Industrial warranty adjudication RLE
 
-Read this first, every session. It states what this repository is for and the
-rules that govern how it is built. When a request conflicts with something here,
-say so rather than quietly doing it.
+Read this first, every session. It states what this repository is for and the rules for working in it. When a request conflicts with something here, say so rather than quietly doing it.
 
 ---
 
 ## What this repository is
 
-A Microsoft 365 **Frontier Tuning** world, built from scratch to demonstrate a
-measurable hill climb — from a deliberately naive starting point through to
-reinforcement fine-tuning, with the gain at each stage attributable to one
-change.
+A Microsoft 365 **Frontier Tuning** world (an RLE) where an agent adjudicates warranty claims for a fictional manufacturer, plus the record of a **hill climb** on it: measure a frontier model, measure a small model, and close the gap one change at a time, ending with reinforcement fine-tuning (RFT).
 
-It is **not** the upstream reference scenario. That exploration lives separately
-in `frontier-tuning-sandbox` (contract renewal) and is a finished record. Do not
-copy its conclusions here; this world has its own measurements.
+Everything is **synthetic**: fictional companies, serial numbers and money. No customer or private content, ever.
 
-Everything in this repository is **synthetic**. Fictional companies, serial
-numbers, money. No customer or private content, ever.
+**Current attempt:** climb 2 (restarted 2026-10-10). Attempt 1 is archived in `archive/attempt-1/` and is read-only.
+
+---
+
+## The Frontier Tuning CLI documentation: look here first
+
+**<https://ft-cli-docs.bluebeach-20303fe3.eastus2.azurecontainerapps.io/v1>**
+
+Use it whenever you need to know how a command works, which options exist, what an error means, or how a hill climb should be run. Don't guess from memory or from old runs.
+
+| Need | Where in the docs |
+| --- | --- |
+| A command and its options | Main page (`/v1`), sections Setup · Run an execution · Samples · Models · Tune & Evaluate |
+| How to run the climb (skill → rubric → inference → tuning) | `/v1/agent-guidance/GUIDE.html` and the playbooks: `tuning-flows`, `evaluation`, `skill-tuning`, `rubric-tuning`, `harness-tuning`, `model-tuning` (under `/v1/agent-guidance/playbooks/`) |
+| A platform error | Main page § *API error diagnostics* and *Job and execution diagnostics*; playbook `troubleshooting.html` |
+| What changed between CLI versions | Main page § *Release notes* |
+
+Two cautions:
+- The docs describe CLI **1.0.x**. Check the installed version with `frontier-tuning --version`. On 2026-10-10 it was **0.3.17**, which lacks `skills refine --mode` and returns PascalCase JSON. When the docs and the installed `--help` disagree, the installed `--help` decides what will run. Record the difference.
+- Docs are 📄 upstream guidance, not measurements on this tenant.
 
 ---
 
 ## The goals, in priority order
 
-1. **Start at stage 0 and climb.** Begin with a world that is honestly weak, and
-   improve it in stages where each stage changes **one variable**. The story is
-   the progression, not the final number.
-2. **Create and preserve headroom.** A saturated world proves nothing. If a stage
-   scores above ~0.95 there is nothing left to demonstrate — harden the world
-   rather than celebrate the score.
-3. **Use the platform's own tools to improve the world**, not hand-editing alone:
-   `skills generate-rubrics`, `rubrics refine`, `skills refine`, `skills enrich`,
-   `rle-quality check`, `health insights`. Part of the exercise is finding out
-   what they actually do.
-4. **Measure headroom before tuning.** `Simple` vs `BestOfN` on the same model is
-   the cheap test for whether fine-tuning has anything to capture. If the gap is
-   near zero, do not tune — report that.
-5. **Reach RFT with an honest comparison.** Finish by matching a frontier model
-   with a tuned small model, stating plainly what was and was not controlled.
+1. **Measure the ceiling first.** GPT-5.6-Sol on the fixed world, skill and rubrics shows what is achievable. Claims Sol gets wrong are world or answer-key problems, not model problems.
+2. **Measure the small model's floor and reach.** MAI-CODE-5b with repeats: average correctness, and correctness "in any attempt". The difference is what RFT can capture.
+3. **Close the gap with the right lever.** Skill for behaviour the model never shows, rubrics for a reward that ranks wrong attempts higher, RFT for behaviour it shows inconsistently. The reasoning is in [docs/04-hill-climb-method.md](docs/04-hill-climb-method.md).
+4. **Use the platform's own tools** where they fit (`skills refine`, `skills generate-rubrics`, `health quality check`, `evaluate compare`), and record what they actually do.
+5. **Finish with an honest comparison**: tuned small model vs base small model vs frontier, stating what was and was not controlled.
 
 ---
 
 ## Rules that are not negotiable
 
-**One variable per stage.** On world v3 the climbing model is the small model,
-MAI-CODE-5b, held constant from stage 0 until it is tuned in stage 4. GPT-5.6-Sol
-is a reference, measured but not climbed (it saturated world v2). When two
-things must change together, say so plainly in the stage README.
+**One variable per stage.** Each stage changes one thing against the previous stage's `config/`. If two things must change together, say so in the stage README.
 
-**Every stage stays replayable.** Each stage has its own folder under
-`stages/` with the exact skills, pinned rubrics, prompts, commands and results
-of its **latest** configuration. A new stage starts as a copy of the previous one
-and changes one thing. If a stage is re-run after a fix, the superseded run is
-deleted (git history keeps it) and the fix becomes one line in the stage's
-Findings (decided 2026-10-06). Rubrics are pinned files, never left to regenerate. Tag each closed
-stage in git (`stage-0`, `stage-1`, …). The goal: someone can replay and
-demonstrate the whole climb from the beginning, not just see the final artefacts.
+**Two numbers, always.** The platform's rubric score is never reported alone. Every stage also runs `scripts/score_ground_truth.py` (decision, governing instrument, payable against `world-builder/out/data/claims.json`). During RFT the rubric score *is* the reward, so a rubric score that rises while correctness doesn't must be fixed before tuning.
 
-**Two numbers per stage.** The platform's rubric score is never reported on its
-own. Every stage also runs `scripts/score_ground_truth.py`, which checks decision,
-governing instrument and payable against `world-builder/out/data/claims.json`. A rubric score
-that rises while correctness doesn't means the rubrics reward the wrong thing.
-Fix that before tuning, because during RFT the rubric score *is* the reward.
+**Measure before changing.** No edit to rubrics, samples or skill without a baseline to compare against. Changed rubrics need a new baseline.
 
-**Measure before changing.** Never edit rubrics, samples or instructions without
-a baseline to compare against. A change you cannot measure is a change you
-cannot defend.
+**Evaluation claims stay held out.** The 30 Evaluation samples are never used for `skills refine`, rubric refinement or training. Refinement and tuning use the 60 Training samples only.
 
-**One set of numbers, one arbiter.** Every document, workbook, deck, database row
-and sample is generated from `world-builder/spec/`, and every expected answer is
-computed by `world-builder/build/adjudicate.py`. Nothing is hand-written twice. If the corpus and the
-ground truth can disagree, the measurement is worthless.
+**One source of truth for the world.** Every document, workbook, database row, sample and expected answer is generated from `world-builder/spec/` and computed by `world-builder/build/adjudicate.py`. Gates (`adjudicate.py` 14 checks, `test_traps.py` 31 checks) pass before any generator runs.
 
-**Gates before artefacts.** `adjudicate.py` (14 checks) and `test_traps.py`
-(31 checks) must pass before any generator runs. `populate.py` exits non-zero if
-the trap distribution drifts.
+**Rubrics before skills, and never the rubric's wording in the skill.** The standard lives only in the rubrics, which the grader sees and the model does not. Check with `scripts/check-skill.py` before applying a skill.
 
-**Rubrics before skills.** Success criteria first. A rubric written after the
-skill tends to describe what the skill already does — which is what saturated the
-contract-renewal world.
+**Paid or outward-facing actions need the user's go-ahead**: evaluations, refinements, tuning jobs, cancellations, rubric generation, CLI upgrades. An unknown submission outcome is read with `status`/`list`, never resubmitted.
 
-**Never put a rubric's wording into the skill instructions.** The standard lives
-only in the rubric, which the grader sees and the model does not.
+**The database is reset between runs, never during one.** Baseline `0 0 0 0` before every evaluation; snapshot and reset after. Never reset while a tuning or evaluation job is active.
 
 ---
 
-## How to write for me
+## How every stage is documented
 
-I am keeping a build log, not producing marketing. Specifically:
+Each stage lives in `climb/stage-N/`, copied from [climb/_template/](climb/_template/):
 
-- **Consolidated, not chronological** (decided 2026-10-06). `JOURNEY.md` and the
-  stage READMEs hold the current state and the lessons, each as *issue → what we
-  did*, one line, with a sample response only where it explains the behaviour.
-  No blow-by-blow narratives. The chronology lives in `docs/evidence/`.
-- **Label the source.** 🖥️ measured on this tenant · 📄 upstream guidance ·
-  🔬 unverified · 💭 reasoning. Never present an inference as a measurement.
-- **Upstream results are not our results.** Their numbers may guide the process;
-  they are not evidence about this world.
-- **Crisp.** Short paragraphs, tables over prose, no restating the obvious. If a
-  section can be a table, make it a table.
-- **Report failures plainly.** A stage that did not improve is a finding worth
-  recording, not a problem to write around.
-
----
-
-## Journey log — keep it current
-
-Two documents, two audiences. Update both **as work happens**, every session.
-
-| Document | Reader | Holds |
+| File | Reader | Holds |
 | --- | --- | --- |
-| `docs/JOURNEY.md` | A human catching up | The readable story: scenario → setup recipe → climb → findings |
-| `docs/evidence/` | An auditor | Every command exactly as run, full verbatim output, raw execution JSON, dead ends |
+| `README.md` | A business reader | Goal · what changed · how the run went · results (the numbers) · findings · conclusion · next step. Tables over prose. No CLI output |
+| `RUNBOOK.md` | Someone replaying the stage, or an auditor | Every CLI command **exactly as run**, in order, each followed by its response (verbatim, or marked *trimmed*). Platform errors with their transaction IDs |
+| `config/` | The platform | What was applied: `skill.md`, `rubrics.json` (+ readable `rubrics.md`), samples and their platform IDs. See [climb/_template/config/README.md](climb/_template/config/README.md) |
+| `results/` | Both | Platform results JSON, `ground-truth-check.md`, `run-summary.md` |
+| `raw/` | An auditor | Run logs, database snapshots, status/diagnostics JSON |
 
-**`JOURNEY.md` — written for someone new to the scenario.**
+Writing rules:
+- **Label the source.** 🖥️ measured on this tenant · 📄 CLI docs / upstream guidance · 🔬 unverified · 💭 reasoning. Never present an inference as a measurement.
+- **Crisp.** Short paragraphs, tables where possible, findings as *issue → what we did*, one line each.
+- **Report failures plainly.** A stage that did not improve is a finding.
+- **Never invent output.** Excerpts are marked as excerpts.
+- Keep **"Where we are"** in [README.md](README.md) true at the end of every session, and the scoreboard in [climb/README.md](climb/README.md).
 
-- **Keep its shape.** Where we are → 1 Scenario → 2 Setup (P#) → 3 Climb
-  (one line per stage) → 4 What we've learned (issue → what we did) → 5 Side
-  experiments → Appendix (helper snippets).
-- **"Where we are" is always true.** Status · Next · Blockers · IDs.
-- **Each step reads as a recipe:** **Why** (one line) · **Do** (the commands
-  that matter, cleanly) · **You should see** (a collapsed excerpt of the real
-  output) · **Watch out** (gotchas) · ✅ **Result** (one line).
-- **Gotchas are one line each: symptom → what to do.** No debugging narratives.
-  The investigation belongs in the evidence record. *Example:* "Run the MCP
-  server stateless, or with more than one replica registration fails with
-  `ER05017`."
-- **Stages close with a short result**: score, what moved, gate passed or not.
-  Don't start the next stage until it's written.
-- Put long helper scripts in the Appendix (H1, H2 …) and reference them from
-  steps. Say plainly whether each is *exactly as run* or simplified.
-- Excerpts are fine in `JOURNEY.md`. Never invent output or present an excerpt
-  as the full output.
+---
 
-**`docs/evidence/` — the verbatim record.**
+## When the platform errors
 
-- Commands **exactly as run**, including variables and pipes. Outputs
-  **verbatim**, marked *(trimmed)* only when lines are cut.
-- Raw JSON (executions, probes) under `docs/evidence/<step>/`.
-- Dead ends and failed attempts are logged here, one line each.
-- Start a dated record file per working session (e.g.
-  `journey-record-2026-10-03.md`) and link it from `JOURNEY.md`.
+1. Look the error up in the CLI docs (§ *API error diagnostics*, § *Job and execution diagnostics*, `troubleshooting.html`).
+2. Read the job's own diagnostics (`evaluate diagnostics`, `tune diagnostics`, `executions diagnostics`) and status `Stages[].Errors`.
+3. Record it in [docs/06-platform-issues.md](docs/06-platform-issues.md) with the fields the docs ask for: CLI version, command (sensitive args removed), environment/job/execution IDs, UTC time window, exit code, error text, transaction ID, and what we did. Then reference it from the stage RUNBOOK.
+4. Don't retry a write, cancel, or resubmit without the user's go-ahead.
 
 ---
 
 ## Layout
 
-| Path | What it holds |
+| Path | Holds |
 | --- | --- |
-| `world-builder/` | Everything that creates and deploys the world: `spec/` (source of truth), `build/` (ground-truth engine, gates, generators), `out/` (generated corpus, database, samples, `GROUND-TRUTH.md`), `mcp/` (the MCP server), `env.md` (world definition), `SETUP.md` (build recipe), `docs/` (scenario design, walkthrough). Touch it only to rebuild or redeploy |
-| `stages/` | One folder per climb stage, holding its latest configuration: skills, pinned rubrics, prompts, commands, result, findings |
-| `scripts/` | Climb helpers: batch evaluation runner, stage summariser, ground-truth scorer (+ tests), `sql-run.ps1`, and the database baseline, snapshot and reset scripts |
-| `docs/` | `JOURNEY.md` (start here) and `evidence/` (the verbatim record) |
-
-World build order (in `world-builder/build/`): `adjudicate` → `test_traps` → `populate` →
-`ground_truth` → the `gen_*` scripts. Generators read `out/data/`, so population comes first.
+| `README.md` | Where we are, and a map of the repository |
+| `docs/` | The scenario, world configuration, claim flow, hill-climb method, operations runbook, platform issues ([index](docs/README.md)) |
+| `climb/` | One folder per stage of the current climb, and the template |
+| `scripts/` | Evaluation runner, scorer, database scripts ([what each does](scripts/README.md)) |
+| `world-builder/` | Everything that creates and deploys the world, including the MCP server. Touch only to rebuild or redeploy |
+| `archive/attempt-1/` | The first climb on world v3: read-only record and lessons |
 
 ---
 
-## Open questions — resolve before relying on them
+## Open questions (🔬 unverified)
 
-| Question | Why it matters |
+| Question | Status |
 | --- | --- |
-| Are `dev-ct-mai-code-mp` and `mai-code-1-flash` the same weights? | Decides whether a true before/after on one model is possible, or only an operational comparison |
-| Does `tune start` consume Training or Evaluation samples? | The CLI help and the samples documentation contradict each other |
-| Does tuning reuse rollouts and grader scores from evaluation runs? | Determines whether test-time search is part of the learning loop at all |
-| Is `--strategy` enabled on this tenant? | Overrides "take effect only where the service has enabled them" |
-
-🔬 Each of these is unverified. Do not build a claim on one without testing it
-first.
-
----
-
-## Status
-
-The first climb (world v2) was removed from the workspace on 2026-10-08 (kept in
-the user's backup and in git history): GPT-5.6-Sol saturated it (0.978 · 27/30),
-and small-model runs needed 13–17 tool calls per claim. The climb restarted on **world v3** (2026-10-07): a one-call claim
-dossier with records only, and one labour workbook (~4–6 calls per claim; answer
-key unchanged). **Stage 0** (MAI-CODE-5b, business-brief skill, generated
-rubrics, 30 prompts) is set up in wce-main.
-
-**Progress lives in [`docs/JOURNEY.md`](docs/JOURNEY.md)** and
-[`stages/README.md`](stages/README.md). P6 (endpoint auth) is
-deferred; the MCP server is registered as `NoAuth`.
-
-`stages/README.md` holds the stage plan.
+| Are `dev-ct-mai-code-mp` (MAI-CODE-5b, evaluation) and `mai-code-1-flash` (tuning base) the same weights? | Open. Decides whether base vs tuned is like-for-like |
+| Does `tune start` use Training or Evaluation samples? | 📄 Docs: Training only, minimum 11. Not yet confirmed on this tenant |
+| Does tuning reuse rollouts or grader scores from earlier evaluations? | Open |
+| Does the grader see the world's sources, or only the answer and tool trace? | Open. Decides how far rubrics can check correctness |
+| Why does the finish tool sometimes reject a correct hand-in? | With the platform team ([docs/06](docs/06-platform-issues.md)) |

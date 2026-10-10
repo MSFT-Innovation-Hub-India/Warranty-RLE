@@ -1,6 +1,6 @@
 """Merge per-claim evaluation results and summarise a stage run.
 
-    python scripts/summarise-stage.py docs/evidence/stage-0 stages/stage-0 [--consolidate]
+    python scripts/summarise-stage.py climb/stage-N/raw climb/stage-N/results [--consolidate]
 
 Reads every results-*.json written by eval-batches.ps1 in <evidence dir>,
 writes <stage dir>/eval-results-samples.json (all submissions, the format

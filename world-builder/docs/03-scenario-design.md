@@ -1,6 +1,6 @@
 # Guide 03 — Designing a showcase world you can actually hill-climb
 
-> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [JOURNEY.md](../../docs/JOURNEY.md) and [stages/](../../stages/README.md).
+> **World v3 (2026-10-07).** The world is built as designed here, with two changes: the claim system's nine read tools are served as **one** call, `get_claim_dossier` (records only, no policy guidance in any tool description), and the two labour workbooks are merged into `Warranty-Labour-Rate-Card-FY26.xlsx`. Where this document names the individual read tools, read them as sections of the dossier. Current state: [README.md](../../README.md) and [climb/](../../climb/README.md).
 
 **Status: design, not record.** Nothing in this document has been built or
 measured. Every number in it is a **target or a prediction**, marked as such.

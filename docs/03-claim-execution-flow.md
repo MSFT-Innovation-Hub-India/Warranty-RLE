@@ -22,7 +22,7 @@ No step is hard-coded. The documents and the claim's own facts decide which path
 | --- | --- |
 | **Decides** | Approve · Decline · Escalate for goodwill · Request evidence (hold) |
 | **Never does** | Pay, notify a partner, or grant goodwill. It writes **drafts** a human reviews |
-| **Quality gate** | Ground truth (decision, governing instrument, payable) **and** six hand-written rubrics ([stage 1](../stages/stage-1/rubrics.md)) |
+| **Quality gate** | Ground truth (decision, governing instrument, payable) **and** six hand-written rubrics ([stage 1](../climb/stage-0/config/rubrics.md)) |
 
 ---
 
@@ -33,7 +33,7 @@ No step is hard-coded. The documents and the claim's own facts decide which path
 | **Claim system** (Azure SQL, via our MCP server) | The claim, asset, commissioning date, running hours, service history, partner terms, part records, a bulletin index, the goodwill authority matrix | `get_claim_dossier` (read) · `create_claim_adjudication`, `request_missing_evidence`, `escalate_goodwill` (draft-only writes) | **Facts about this claim and machine**. Not rules |
 | **SharePoint library** `Warranty Operations` | Controlled documents, by folder (below) | M365 file search (`search_enterprise_files`), plus SharePoint browse tools | **The rules and the prices** |
 | **Teams channels** (Field Escalations, Warranty Policy Updates, Partner Fabrikam) | Conversations, announcements, verbal approvals | Teams search tools | **Context only**. Never authority |
-| **The skill** ([warranty-assistant.md](../stages/stage-0/warranty-assistant.md)) | The job, the five things to establish, how to write the answer | Loaded at start | **The brief**, not the rules |
+| **The skill** ([warranty-assistant.md](../climb/stage-0/config/skill.md)) | The job, the five things to establish, how to write the answer | Loaded at start | **The brief**, not the rules |
 
 The library folders and what each is used for:
 
@@ -63,7 +63,7 @@ The library folders and what each is used for:
 
 ## 3. What the skill tells the agent, and what it does not
 
-🖥️ The skill used in stages 0 and 1 is a **business brief**. It has no method, no tool names and no rules ([stage 0](../stages/stage-0/warranty-assistant.md); stage 1 is identical).
+🖥️ The skill used in stages 0 and 1 is a **business brief**. It has no method, no tool names and no rules ([stage 0](../climb/stage-0/config/skill.md); stage 1 is identical).
 
 | The skill says | Effect on the flow |
 | --- | --- |
@@ -72,9 +72,9 @@ The library folders and what each is used for:
 | Lead with the decision; show dates and working; **cite where each fact came from**; flag gaps and disagreements | Shapes the write-up |
 | Where an action is needed, **record it as a draft** and say so | Triggers the final write tool |
 
-**Everything else comes from the documents.** The skill never says "check the serial range" or "the bulletin beats the addendum". The policy does ([JOURNEY §1](../docs/JOURNEY.md)). Reading it and applying it is the competence being measured.
+**Everything else comes from the documents.** The skill never says "check the serial range" or "the bulletin beats the addendum". The policy does ([the scenario](01-scenario.md)). Reading it and applying it is the competence being measured.
 
-💭 The step order below is therefore **the intended path**: what the five questions plus the policy lead to. [Stage 2b](../stages/stage-2/warranty-assistant.2b.md) wrote the order down as method (dossier first, then read the policy's precedence clause, then the bulletin, then the rate card, then record the draft). It regressed correctness and was **not** promoted, so the stage 0/1 agent has to work the order out itself.
+💭 The step order below is therefore **the intended path**: what the five questions plus the policy lead to. [Stage 2b](../archive/attempt-1/stages/stage-2/warranty-assistant.2b.md) wrote the order down as method (dossier first, then read the policy's precedence clause, then the bulletin, then the rate card, then record the draft). It regressed correctness and was **not** promoted, so the stage 0/1 agent has to work the order out itself.
 
 ---
 
@@ -209,7 +209,7 @@ Fabrikam Service Partners, Litware Pune. Hydraulic pump replaced 2026-06-18. **E
 | 7 `create_claim_adjudication` | Record the draft | `approve`, ₹199,175 INR, refs TSB-C-0051 and POL-WAR-4.2 §1.4 | Draft recorded. "No payment has been made" |
 | 8 answer | Write for the adjudicator | | Decision first · facts and dates · working for the amount · sources · **the index disagrees with the bulletin, bulletin governs** · next action: adjudicator reviews and releases the draft |
 
-**What a recorded run did** 🖥️ (stage 2b skill, [results file](../docs/evidence/stage-2/2b/results-04114+04115+04116+04117+04118.json)): correct decision, instrument and amount (approve, TSB-C-0051, ₹199,175, and it noted the index lag). It took **10 calls**: the dossier, seven search or browse calls (several returned empty results before one worked), and **two** draft writes. The reasoning matched the table; the efficiency did not.
+**What a recorded run did** 🖥️ (stage 2b skill, [results file](../archive/attempt-1/evidence/stage-2/2b/results-04114+04115+04116+04117+04118.json)): correct decision, instrument and amount (approve, TSB-C-0051, ₹199,175, and it noted the index lag). It took **10 calls**: the dossier, seven search or browse calls (several returned empty results before one worked), and **two** draft writes. The reasoning matched the table; the efficiency did not.
 
 **A recorded plain decline, C-2026-04109** 🖥️ (stage 1): dossier (read twice), one policy/bulletin search, one rate-card search, one draft. 5 calls, correct (decline, ADD-IN-2.1, ₹0). It states: commissioned 2023-06-01 + 18 months = 2024-12-01, and 5,200 h > 5,000 h; serial 01900 is outside TSB-C-0051's range.
 
