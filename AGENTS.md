@@ -28,7 +28,7 @@ Use it whenever you need to know how a command works, which options exist, what 
 | What changed between CLI versions | Main page § *Release notes* |
 
 Two cautions:
-- The docs describe CLI **1.0.x**. Check the installed version with `frontier-tuning --version`. On 2026-10-10 it was **0.3.17**, which lacks `skills refine --mode` and returns PascalCase JSON. When the docs and the installed `--help` disagree, the installed `--help` decides what will run. Record the difference.
+- The docs describe CLI **1.0.x**, which is installed (1.0.14 since 2026-10-10). v1 is its own release channel; a 0.3.x client's `update` can't see it ([docs/05 § CLI version](docs/05-operations.md#cli-version)). When the docs and the installed `--help` disagree, the installed `--help` decides what will run. Record the difference.
 - Docs are 📄 upstream guidance, not measurements on this tenant.
 
 ---

@@ -89,16 +89,17 @@ function RunJob($job, $batch) {
   }
   if ($why -notin $terminal) {
     Log "$label $why : cancelling"
-    InvokeBounded 'frontier-tuning' @('evaluate','cancel',$job,'--env-id',$Env) | Out-Null
+    InvokeBounded 'frontier-tuning' @('evaluate','cancel',$job,'--yes','--env-id',$Env) | Out-Null   # CLI 1.0 requires --yes
     $state = JsonResult (InvokeBounded 'frontier-tuning' @('--output','json','evaluate','status',$job,'--env-id',$Env))
-    if ($state.Status -notin $terminal) { throw "Cancellation not terminal for $job; stopping before database reset." }
+    if (-not $state.isTerminal -and $state.Status -notin $terminal) { throw "Cancellation not terminal for $job; stopping before database reset." }
   }
   else { Log "$label $why after $([int]((Get-Date) - $t0).TotalMinutes) min" }
   $r = InvokeBounded 'frontier-tuning' @('--output','json','evaluate','results',$job,'--samples','--env-id',$Env)
   $res = JsonResult $r
   if ($null -eq $res.Submissions) { throw "Results for $job have no Submissions collection; stopping before reset." }
   $r.Substring($r.IndexOf('{')) | Out-File "$OutDir\results-$label.json" -Encoding utf8
-  $finishedIds = @($res.Submissions | Where-Object { $_.Execution -and $_.Execution.Status -in 'Completed','Failed' } | ForEach-Object { $_.PromptId })
+  # CLI 1.0 reports a finished claim as submission status Graded; 0.3.x as Execution.Status Completed/Failed
+  $finishedIds = @($res.Submissions | Where-Object { $_.Status -in 'Graded','Completed','Failed','Succeeded' -or ($_.Execution -and $_.Execution.Status -in 'Completed','Failed') } | ForEach-Object { $_.PromptId })
   InvokeBounded 'powershell.exe' @('-NoProfile','-ExecutionPolicy','Bypass','-File','scripts\sql-run.ps1','-File','scripts\db-actions-snapshot.sql') 480 | Out-File "$OutDir\db-after-$label.txt" -Encoding utf8
   InvokeBounded 'powershell.exe' @('-NoProfile','-ExecutionPolicy','Bypass','-File','scripts\sql-run.ps1','-File','scripts\db-reset-actions.sql') 480 | Out-File "$OutDir\db-reset-$label.txt" -Encoding utf8
   CleanBaseline
@@ -128,7 +129,8 @@ while ($queue.Count -gt 0) {
   $startArgs = @('--output','json','evaluate','start') + $sidArgs + @('--base-model',$Model,'--strategy',$Strategy,'--env-id',$Env)
   if ($Strategy -eq 'BestOfN') { $startArgs += @('--best-of-n',"$BestOfN") }
   $o = InvokeBounded 'frontier-tuning' $startArgs
-  $job = [regex]::Match($o, '"JobId":\s*"([0-9a-f-]{36})"').Groups[1].Value
+  $job = [regex]::Match($o, '(?i)"jobId":\s*"([0-9a-f-]{36})"').Groups[1].Value      # JobId (0.3.x) or jobId (1.0)
+  if (-not $job) { $job = [regex]::Match($o, '"id":\s*"([0-9a-f-]{36})"').Groups[1].Value }
   if (-not $job) { throw "$label START outcome unknown: $($o.Trim()); reconcile before retrying." }
   Log "$label job $job started"
   RunJob $job $batch

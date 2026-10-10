@@ -7,7 +7,8 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | # | Issue | Status | First seen (UTC) |
 | --- | --- | --- | --- |
 | [P7](#p7-tuning-excludes-the-claim-system-tools) | Tuning excludes 36 tools "that can make changes"; the claim-system tools never appear in training rollouts | 🔬 Open, **blocks a meaningful RFT** | 2026-10-10 12:41 |
-| [P6](#p6-tuning-step-fails-repeatedly-with-400) | Tuning step fails repeatedly with `400 We hit an internal error` | Open, job still retrying | 2026-10-09 12:50 |
+| [P8](#p8-skipped-rubrics-reported-as-00-in-cli-10) | CLI 1.0 reports a rubric skipped as not applicable as `score: 0.0` | Worked around in our scripts | 2026-10-10 |
+| [P6](#p6-tuning-step-fails-repeatedly-with-400) | Tuning step fails repeatedly with `400 We hit an internal error` | Closed: job cancelled 2026-10-10 17:45 UTC | 2026-10-09 12:50 |
 | [P5](#p5-bestofn-evaluation-fails-before-any-claim-runs) | BestOfN evaluation fails before any claim runs (`HttpRequestException`) | Closed by cancellation; not reproduced | 2026-10-09 04:49 |
 | [P4](#p4-submissions-time-out-but-succeed) | `tune start` and `skills refine start` time out on the reply but start server-side | Workaround: reconcile with `list` | 2026-10-07 |
 | [P3](#p3-evaluation-claims-never-register-as-complete) | Evaluation claims finish but never register as complete; platform resubmits up to 6× | Workaround: runner cancels after 15 min idle | 2026-10-08 |
@@ -15,6 +16,17 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | [P1](#p1-execution-diagnostics-unavailable) | Execution diagnostics API returns 403/404 | Open | 2026-10-05 |
 
 ---
+
+## P8 Skipped rubrics reported as 0.0 in CLI 1.0
+
+| Field | Value |
+| --- | --- |
+| CLI | 1.0.14 (0.3.17 for comparison) |
+| Command | `frontier-tuning -e 598fd1b0-… -o json evaluate results 9abbbeb3-424c-4093-bdb7-91936cf8fa3d --samples` (also `-o json-legacy` and `--schema samples-v1`) |
+| Reported | For C-2026-04140 (a correct decline), *Valuation accuracy* and *Gaps reported* come back as `score: 0.0`, `scoreReason: ""`. 0.3.17 returned the same rubrics as `Score: null` with a `Skip` reason ("…covered-claim valuation requirements were not triggered") |
+| Impact | Anyone averaging the per-rubric scores would penalise every decline and hold. The help text says "a null score is unmeasured", but the null is not preserved |
+| Our handling | Use the submission's `score` (it excludes skipped rubrics: 0.6875 = mean of the four graded) and treat `0.0` + empty reason as skipped |
+| Ask | Preserve `null` and the skip reason for skipped rubrics in CLI 1.0 JSON output |
 
 ## P7 Tuning excludes the claim-system tools
 
@@ -40,6 +52,7 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | Job | `c77feaed-96de-4b88-9802-e0f265601eb8`, submitted 2026-10-09 05:29:38 UTC |
 | Reported | `Stages[ModelTraining].Errors: [{Code: "400", Message: "Job execution failed with an unknown error."}]`. Log: `StepFailed` + `400 We hit an internal error and will retry automatically.` at 10-09 12:50, 15:25, 20:46; 10-10 06:48, 10:34, 17:07. Training stage `attempts: 4, failedAttempts: 3` (as of 17:33). `MODEL_TRAINING_FAILED: Model training did not complete.` at 10-10 16:58, after model training had started at 12:53 and reported a step-1 reward |
 | Status at last read | 2026-10-10 17:33 UTC: `Running`, retry scheduled in ~123 min, `readyForEvaluation: false`. Status `UpdatedAt` still shows the creation time, so it can't be used to tell progress |
+| Closed | Cancelled at the user's request: `tune cancel` 17:44:39 UTC → `CancelRequested`; `tune status` 17:45:28 → `Cancelled`, `isTerminal: true` ([after-cancel status](../archive/attempt-1/evidence/stage-4/tune-status-after-cancel-2026-10-10.json)) |
 | Transaction ID | None returned (the error is in the job, not a CLI response) |
 | Ask | What is failing in the Training step, and is it related to P7? |
 | Evidence | [tune-status-2026-10-10.json](../archive/attempt-1/evidence/stage-4/tune-status-2026-10-10.json) · [tune-diagnostics-2026-10-10.json](../archive/attempt-1/evidence/stage-4/tune-diagnostics-2026-10-10.json) |

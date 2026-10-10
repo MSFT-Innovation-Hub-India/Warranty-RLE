@@ -6,7 +6,7 @@ How to run any stage: checks before a run, the run itself, scoring, and the data
 
 | # | Check | Command | Expect |
 | --- | --- | --- | --- |
-| 1 | CLI installed and signed in | `frontier-tuning --version` · `frontier-tuning check` (0.3.17; `auth check` in 1.0) | Version noted in the stage RUNBOOK |
+| 1 | CLI installed and signed in | `frontier-tuning --version` · `frontier-tuning auth check` | Version noted in the stage RUNBOOK |
 | 2 | Azure CLI signed in (for SQL) | `az account show` | Your account |
 | 3 | SQL reachable | Public network access on `az-sqldb-common` is switched off daily (SFI): re-enable it, and add your IP to the firewall | — |
 | 4 | MCP server healthy | `curl https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/healthz` | `"status":"ok"`. `degraded` with `Login timeout expired` means step 3 isn't done |
@@ -71,4 +71,19 @@ A job's `UpdatedAt` may not move while it progresses; use the diagnostics' `last
 
 ## CLI version
 
-Installed on 2026-10-10: **0.3.17**. The [docs](https://ft-cli-docs.bluebeach-20303fe3.eastus2.azurecontainerapps.io/v1) describe **1.0.14**, which adds `skills refine --mode instruction|rubrics|both`, `evaluate sample-results`, and **camelCase JSON**. The runner and scorer read PascalCase fields, so after an upgrade use `-o json-legacy` or update them first. Upgrade only between stages, and record the version in the RUNBOOK.
+**1.0.14** since 2026-10-10 (was 0.3.17). v1 is a separate release channel: a 0.3.x client's `frontier-tuning update` only checks the v0 channel and reports "already the latest". Switch once with the v1 installer (it uses the `python` first on PATH, so put the Python that holds the CLI first, not the project `.venv`):
+
+```powershell
+irm https://aka.ms/ft-cli/v1/ps1 | iex     # then: frontier-tuning update keeps you on v1
+```
+
+What changed for this repository 🖥️ (checked on attempt 1's job `9abbbeb3`, same 3 claims scored identically on both versions):
+
+| Change in 1.0 | Effect | Handled |
+| --- | --- | --- |
+| camelCase JSON (`submissions[].execution.response`); `-o json-legacy` only partly restores PascalCase | Python scripts are case-sensitive | Scorer and summariser read both shapes |
+| `evaluate cancel` needs `--yes` when non-interactive | The runner's stall cancel would fail | Runner passes `--yes` |
+| A finished claim is submission `status: Graded` | The runner's requeue check | Runner accepts both |
+| A rubric skipped as not applicable shows `score: 0.0` with an empty `scoreReason` (0.3.x: `null` + skip reason) | Naive means would penalise declines and holds | Treated as skipped. The per-claim rubric score is the platform's own `score`, which matches attempt 1's definition |
+| No per-tool call list, execution ID, timestamps or context-overflow errors in results; only `billingSummary.toolInvocations` | Calls per claim is a count; per-claim minutes unavailable (per-job minutes are in `run-log.txt`) | Summary shows what exists |
+| Root auth commands are now `auth check` / `auth login` | — | Docs updated |

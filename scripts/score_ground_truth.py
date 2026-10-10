@@ -126,16 +126,25 @@ def _text(v) -> str:
 
 def _rubric_score(execution: dict) -> float | None:
     """Mean rubric score for one execution, wherever the platform put it."""
+    # A rubric the grader skipped as not applicable is Score None in CLI 0.3.x, and
+    # score 0.0 with an empty scoreReason in CLI 1.0; neither counts.
+    def graded(rr):
+        s = _get(rr, "Score", "score")
+        if not isinstance(s, (int, float)):
+            return None
+        if "scoreReason" in rr and s == 0 and not (rr.get("scoreReason") or rr.get("reasoning")):
+            return None
+        return float(s)
     scores = []
     for skill in _get(execution, "Skills", "skills") or []:
         for rr in _get(skill, "RubricResults", "rubricResults") or []:
-            s = _get(rr, "Score", "score")
-            if isinstance(s, (int, float)):
-                scores.append(float(s))
+            s = graded(rr)
+            if s is not None:
+                scores.append(s)
     for rr in _get(execution, "RubricResults", "rubricResults") or []:
-        s = _get(rr, "Score", "score")
-        if isinstance(s, (int, float)):
-            scores.append(float(s))
+        s = graded(rr)
+        if s is not None:
+            scores.append(s)
     return round(sum(scores) / len(scores), 3) if scores else None
 
 
@@ -187,10 +196,12 @@ def delivered_decision(grader_notes: str) -> str | None:
 def _as_execution(obj: dict) -> dict | None:
     if not isinstance(obj, dict):
         return None
+    inner = _get(obj, "Execution", "execution")    # a results submission (CLI 1.0 also copies the response onto it)
+    if isinstance(inner, dict):
+        return inner
     if _get(obj, "Response", "response") is not None or _get(obj, "UserQuery", "userQuery") is not None:
         return obj
-    inner = _get(obj, "Execution", "execution")
-    return inner if isinstance(inner, dict) else None
+    return None
 
 
 def read_executions(path: Path) -> list[dict]:
@@ -211,10 +222,10 @@ def read_executions(path: Path) -> list[dict]:
             continue
         prompt = _text(_get(ex, "UserQuery", "userQuery") or _get(c, "Prompt", "prompt"))
         out.append({
-            "id": _get(ex, "Id", "id", "ExecutionId", "executionId") or "",
+            "id": _get(ex, "Id", "id", "ExecutionId", "executionId") or _get(c, "ExecutionId", "id") or "",
             "prompt": prompt,
             "response": _text(_get(ex, "Response", "response")),
-            "rubric": _rubric_score(ex),
+            "rubric": round(_get(c, "score"), 3) if isinstance(_get(c, "score"), (int, float)) else _rubric_score(ex),
             "delivery_mismatch": delivery_mismatch(_grader_notes(ex)),
             "_notes": _grader_notes(ex),
             "source": path.name,
