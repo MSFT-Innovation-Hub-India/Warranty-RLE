@@ -18,7 +18,7 @@ Legend: ✅ done · ⬜ not started · 🖥️ measured here · 📄 upstream gu
 
 | | |
 | --- | --- |
-| **Status** | **World v3. Stage 4 exploratory pilot training in progress (checked 2026-10-09, after 11:14 IST).** User explicitly waived measured-headroom prerequisite; stage 3 gate remains unpassed. Job `c77feaed-96de-4b88-9802-e0f265601eb8`: Running, ModelTraining InProgress, deployment NotStarted, not ready for evaluation. No errors reported; no tuning gain measured. [Status check](evidence/journey-record-2026-10-09.md#stage-4-status-check-after-1114-ist) |
+| **Status** | **World v3. Stage 4 exploratory pilot training in progress (checked 2026-10-09, after 11:36 IST).** User explicitly waived measured-headroom prerequisite; stage 3 gate remains unpassed. Job `c77feaed-96de-4b88-9802-e0f265601eb8`: Running, ModelTraining InProgress, deployment NotStarted, not ready for evaluation. No errors reported; no tuning gain measured. [Status check](evidence/journey-record-2026-10-09.md#stage-4-status-check-after-1136-ist) |
 | **Next** | Monitor [stage 4](../stages/stage-4/README.md) status; verify sample selection and actual deployment/model ID before evaluating. Snapshot captured 90 prompts (60 Training + 30 Evaluation inventory), not proof of training on either bucket. Stronger stage 1 skill retained; preflight SQL baseline 0 0 0 0; do not reset during an active tuning job |
 | **Open** | Hand-in rejections by the platform's finish tool ([note](evidence/platform-issue-finish-rejection.md)) · MAI-CODE-5b vs `mai-code-1-flash`: same weights? · does tuning use Training or Evaluation samples? · P6 endpoint auth deferred |
 | **Worlds** | `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (the climb) · `wce-dev` `6bec3bf9-0222-4285-8a5b-214867ac42cc` (trials) |

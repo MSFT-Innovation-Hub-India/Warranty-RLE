@@ -567,3 +567,15 @@ frontier-tuning --output json tune status c77feaed-96de-4b88-9802-e0f265601eb8 -
 Exit code 0. Full verbatim output: [status response](stage-4/tune-status-training-in-progress.json).
 ModelTraining changed from NotStarted to InProgress; deployment remains
 NotStarted, no stage errors, readyForEvaluation false. No database changes.
+
+## Stage 4 status check after 11:36 IST
+
+Exactly as run:
+
+```powershell
+frontier-tuning --output json tune status c77feaed-96de-4b88-9802-e0f265601eb8 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+```
+
+Exit code 0. Full output identical to the [previous saved response](stage-4/tune-status-training-in-progress.json):
+Running, ModelTraining InProgress, ModelDeployment NotStarted, no errors,
+readyForEvaluation false. No progress percentage or ETA returned. No database changes.
