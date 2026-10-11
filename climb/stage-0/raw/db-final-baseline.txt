@@ -1,0 +1,8 @@
+
+drafts evidence_requests escalations claims_not_seeded
+------ ----------------- ----------- -----------------
+     0                 0           0                 0
+
+
+
+OK: 1 batch(es) executed

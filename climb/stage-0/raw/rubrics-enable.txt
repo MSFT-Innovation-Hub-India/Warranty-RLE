@@ -1,0 +1,6 @@
+0fdf9e95-3602-4505-9514-287a4bf6cfdc -> exit 0 : Rubric updated. / Rubric: Coverage determination
+cd65bcb6-f40f-4de2-9ad9-23158b2dc492 -> exit 0 : Rubric updated. / Rubric: Precedence discipline
+9bab192e-af3e-42e3-903a-598b6b829737 -> exit 0 : Rubric updated. / Rubric: Evidence grounding
+3f15471d-00d4-496e-bb87-faa37cca9fb9 -> exit 0 : Rubric updated. / Rubric: Valuation accuracy
+c64e109d-baeb-4377-9724-0feeb3eb95b7 -> exit 0 : Rubric updated. / Rubric: Authority and action
+d09918c5-f072-4db5-8b40-647ff046d4b3 -> exit 0 : Rubric updated. / Rubric: Gaps reported, not filled

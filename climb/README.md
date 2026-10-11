@@ -8,7 +8,7 @@ One folder per stage. Each holds a business-readable `README.md`, a `RUNBOOK.md`
 
 | Stage | One change | Question | Rubric | Correct | Status |
 | --- | --- | --- | --- | --- | --- |
-| [0 · Frontier reference](stage-0/README.md) | Model = GPT-5.6-Sol | What does the world allow? | | /30 | ⬜ planned |
+| [0 · Frontier reference](stage-0/README.md) | Model = GPT-5.6-Sol | What does the world allow? | **0.956** | **29/30** | ✅ 2026-10-11 · gate passed; the one miss (supersession) scored 0.96 |
 | 1 · Small-model baseline and headroom | Model = MAI-CODE-5b, 3 runs per claim | Floor, reach, and does the reward rank MAI's right answers higher? | | /30 (mean) · /30 (any) | ⬜ |
 | 2 · Reward alignment | Rubrics only | Does the reward prefer the right attempt? | | | ⬜ skipped if stage 1 passes |
 | 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing procedure be taught? | | | ⬜ |

@@ -38,11 +38,11 @@ def g(d, *names):
 
 def rubric_scores(x):
     """(name, score) per graded rubric. A rubric the grader skipped as not applicable is
-    Score None in CLI 0.3.x, and score 0.0 with an empty scoreReason in CLI 1.0."""
+    Score None in CLI 0.3.x; in CLI 1.0 (camelCase displayName) score 0.0 with no scoreReason."""
     out = []
     for r in g(x, "RubricResults", "rubricResults") or []:
         s = g(r, "Score", "score")
-        if s is None or ("scoreReason" in r and s == 0 and not (r.get("scoreReason") or r.get("reasoning"))):
+        if s is None or ("displayName" in r and s == 0 and not (r.get("scoreReason") or r.get("reasoning"))):
             continue
         out.append((g(r, "RubricName", "displayName", "name"), float(s)))
     return out

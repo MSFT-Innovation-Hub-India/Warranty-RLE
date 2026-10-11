@@ -1,0 +1,842 @@
+﻿{
+  "id": "da0fd79d-8bbc-466c-9cf7-b480054bf96a",
+  "statusMessage": "Evaluation completed (overall=0.950): 1 graded.",
+  "inputModelName": "prod-gpt-56-reasoning-sol",
+  "inputModelNames": [
+    "prod-gpt-56-reasoning-sol"
+  ],
+  "skillIds": [
+    "cf00d339-5217-4cd1-b390-cc0d911735da"
+  ],
+  "score": 0.949999988079071,
+  "skillResults": [
+    {
+      "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+      "displayName": "warranty-assistant",
+      "version": 11,
+      "snapshotData": {
+        "displayName": "warranty-assistant",
+        "description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part."
+      },
+      "score": 0.95,
+      "rubricResults": [
+        {
+          "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+          "displayName": "Coverage determination",
+          "snapshotData": {
+            "displayName": "Coverage determination",
+            "checklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "importance": "critical"
+          },
+          "score": 1.0
+        },
+        {
+          "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+          "displayName": "Precedence discipline",
+          "snapshotData": {
+            "displayName": "Precedence discipline",
+            "checklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.75
+        },
+        {
+          "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+          "displayName": "Evidence grounding",
+          "snapshotData": {
+            "displayName": "Evidence grounding",
+            "checklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "importance": "high"
+          },
+          "score": 1.0
+        },
+        {
+          "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+          "displayName": "Valuation accuracy",
+          "snapshotData": {
+            "displayName": "Valuation accuracy",
+            "checklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "importance": "critical"
+          },
+          "score": 1.0
+        },
+        {
+          "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+          "displayName": "Authority and action",
+          "snapshotData": {
+            "displayName": "Authority and action",
+            "checklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "importance": "critical"
+          },
+          "score": 1.0
+        }
+      ]
+    }
+  ],
+  "harnessStrategyType": "Simple",
+  "harnessStrategy": {
+    "type": "Simple"
+  },
+  "createdDateTime": "2026-10-11T02:00:42.7108666+00:00",
+  "lastModifiedDateTime": "2026-10-11T02:11:27.5716323+00:00",
+  "completedDateTime": "2026-10-11T02:11:27.5528354+00:00",
+  "jobId": "da0fd79d-8bbc-466c-9cf7-b480054bf96a",
+  "baseModelName": "prod-gpt-56-reasoning-sol",
+  "baseModelNames": [
+    "prod-gpt-56-reasoning-sol"
+  ],
+  "evaluations": [
+    {
+      "id": "da0fd79d-8bbc-466c-9cf7-b480054bf96a",
+      "name": null,
+      "evalType": "StandaloneEvaluation",
+      "status": "Completed",
+      "statusMessage": "Evaluation completed (overall=0.950): 1 graded.",
+      "strategy": "Simple",
+      "overallScore": 0.949999988079071,
+      "evaluationCompletionDate": "2026-10-11T02:11:27.5528354+00:00",
+      "lastUpdatedDate": "2026-10-11T02:11:27.5716323+00:00",
+      "skillAggregateResults": [
+        {
+          "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+          "skillName": "warranty-assistant",
+          "skillOverallScore": 0.95,
+          "sampleCount": null,
+          "rubrics": [
+            {
+              "rubricId": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+              "rubricName": "Coverage determination",
+              "avgScore": 1.0,
+              "sampleCount": null
+            },
+            {
+              "rubricId": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+              "rubricName": "Precedence discipline",
+              "avgScore": 0.75,
+              "sampleCount": null
+            },
+            {
+              "rubricId": "9bab192e-af3e-42e3-903a-598b6b829737",
+              "rubricName": "Evidence grounding",
+              "avgScore": 1.0,
+              "sampleCount": null
+            },
+            {
+              "rubricId": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+              "rubricName": "Valuation accuracy",
+              "avgScore": 1.0,
+              "sampleCount": null
+            },
+            {
+              "rubricId": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+              "rubricName": "Authority and action",
+              "avgScore": 1.0,
+              "sampleCount": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "evaluationResults": {
+    "id": "da0fd79d-8bbc-466c-9cf7-b480054bf96a",
+    "status": "Completed",
+    "statusMessage": "Evaluation completed (overall=0.950): 1 graded.",
+    "inputModelName": "prod-gpt-56-reasoning-sol",
+    "inputModelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ],
+    "skillIds": [
+      "cf00d339-5217-4cd1-b390-cc0d911735da"
+    ],
+    "score": 0.949999988079071,
+    "skillResults": [
+      {
+        "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+        "displayName": "warranty-assistant",
+        "version": 11,
+        "snapshotData": {
+          "displayName": "warranty-assistant",
+          "description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part."
+        },
+        "score": 0.95,
+        "rubricResults": [
+          {
+            "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "displayName": "Coverage determination",
+            "snapshotData": {
+              "displayName": "Coverage determination",
+              "checklistItems": [
+                "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                "Where one limit is exceeded and the other is not, says which limit ends the cover"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0
+          },
+          {
+            "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "displayName": "Precedence discipline",
+            "snapshotData": {
+              "displayName": "Precedence discipline",
+              "checklistItems": [
+                "Where coverage can be determined, names one governing instrument by reference code",
+                "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+              ],
+              "importance": "critical"
+            },
+            "score": 0.75
+          },
+          {
+            "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "displayName": "Evidence grounding",
+            "snapshotData": {
+              "displayName": "Evidence grounding",
+              "checklistItems": [
+                "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+              ],
+              "importance": "high"
+            },
+            "score": 1.0
+          },
+          {
+            "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "displayName": "Valuation accuracy",
+            "snapshotData": {
+              "displayName": "Valuation accuracy",
+              "checklistItems": [
+                "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0
+          },
+          {
+            "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "displayName": "Authority and action",
+            "snapshotData": {
+              "displayName": "Authority and action",
+              "checklistItems": [
+                "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0
+          }
+        ]
+      }
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategy": {
+      "type": "Simple"
+    },
+    "createdDateTime": "2026-10-11T02:00:42.7108666+00:00",
+    "lastModifiedDateTime": "2026-10-11T02:11:27.5716323+00:00",
+    "completedDateTime": "2026-10-11T02:11:27.5528354+00:00",
+    "overallScore": 0.949999988079071,
+    "modelName": "prod-gpt-56-reasoning-sol",
+    "modelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ]
+  },
+  "debugContext": null,
+  "submissions": [
+    {
+      "id": "90dfe727-082c-4c06-bca9-6321b9382be4",
+      "prompt": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nAdjudicate claim C-2026-04101.",
+      "score": 0.95,
+      "skillResults": [
+        {
+          "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+          "displayName": "warranty-assistant",
+          "version": 11,
+          "snapshotData": {
+            "displayName": "warranty-assistant",
+            "description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part."
+          },
+          "score": 0.95,
+          "rubrics": [
+            {
+              "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+              "displayName": "Coverage determination",
+              "snapshotData": {
+                "displayName": "Coverage determination",
+                "checklistItems": [
+                  "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                  "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                  "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                  "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise."
+            },
+            {
+              "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+              "displayName": "Precedence discipline",
+              "snapshotData": {
+                "displayName": "Precedence discipline",
+                "checklistItems": [
+                  "Where coverage can be determined, names one governing instrument by reference code",
+                  "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                  "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                  "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                ],
+                "importance": "critical"
+              },
+              "score": 0.75,
+              "scoreReason": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement."
+            },
+            {
+              "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+              "displayName": "Evidence grounding",
+              "snapshotData": {
+                "displayName": "Evidence grounding",
+                "checklistItems": [
+                  "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                  "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                  "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                  "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                ],
+                "importance": "high"
+              },
+              "score": 1.0,
+              "scoreReason": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident."
+            },
+            {
+              "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+              "displayName": "Valuation accuracy",
+              "snapshotData": {
+                "displayName": "Valuation accuracy",
+                "checklistItems": [
+                  "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                  "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                  "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                  "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                  "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report."
+            },
+            {
+              "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+              "displayName": "Authority and action",
+              "snapshotData": {
+                "displayName": "Authority and action",
+                "checklistItems": [
+                  "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                  "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                  "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                  "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise."
+            },
+            {
+              "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+              "displayName": "Gaps reported, not filled",
+              "snapshotData": {
+                "displayName": "Gaps reported, not filled",
+                "checklistItems": [
+                  "Names any record needed for the decision that is missing, and the field that is absent",
+                  "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                  "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                ],
+                "importance": "high"
+              },
+              "score": 0.0
+            }
+          ],
+          "rubricResults": [
+            {
+              "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+              "displayName": "Coverage determination",
+              "snapshotData": {
+                "displayName": "Coverage determination",
+                "checklistItems": [
+                  "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                  "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                  "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                  "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise."
+            },
+            {
+              "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+              "displayName": "Precedence discipline",
+              "snapshotData": {
+                "displayName": "Precedence discipline",
+                "checklistItems": [
+                  "Where coverage can be determined, names one governing instrument by reference code",
+                  "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                  "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                  "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                ],
+                "importance": "critical"
+              },
+              "score": 0.75,
+              "scoreReason": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement."
+            },
+            {
+              "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+              "displayName": "Evidence grounding",
+              "snapshotData": {
+                "displayName": "Evidence grounding",
+                "checklistItems": [
+                  "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                  "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                  "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                  "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                ],
+                "importance": "high"
+              },
+              "score": 1.0,
+              "scoreReason": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident."
+            },
+            {
+              "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+              "displayName": "Valuation accuracy",
+              "snapshotData": {
+                "displayName": "Valuation accuracy",
+                "checklistItems": [
+                  "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                  "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                  "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                  "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                  "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report."
+            },
+            {
+              "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+              "displayName": "Authority and action",
+              "snapshotData": {
+                "displayName": "Authority and action",
+                "checklistItems": [
+                  "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                  "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                  "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                  "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                ],
+                "importance": "critical"
+              },
+              "score": 1.0,
+              "scoreReason": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise."
+            },
+            {
+              "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+              "displayName": "Gaps reported, not filled",
+              "snapshotData": {
+                "displayName": "Gaps reported, not filled",
+                "checklistItems": [
+                  "Names any record needed for the decision that is missing, and the field that is absent",
+                  "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                  "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                ],
+                "importance": "high"
+              },
+              "score": 0.0
+            }
+          ]
+        }
+      ],
+      "response": "# Decision â€” APPROVE INR 69,575\n\nApprove claim **C-2026-04101** for **INR 69,575**, subject to the adjudicatorâ€™s human review. The repair was performed during the applicable India warranty period, the latest claim-system running-hours reading was below the applicable limit, the claimed part and labour agree with the service record and inspection report, and the inspection found no evidence of moisture ingress or surge damage.\n\n## 1. Claim and repair facts\n\n- **Asset:** CIE-4000-CH-01050, 4000-CH industrial chiller\n- **Customer/site:** Litware Manufacturing, Pune, India\n- **Installed:** 20 February 2025\n- **Commissioned:** 15 March 2025\n- **Repair:** 10 May 2026\n- **Claim submitted:** 16 May 2026\n- **Partner:** Fabrikam Service Partners, dealer D-IN-01\n- **Operation:** CTRL-BD-RR â€” control board replacement\n- **Part actually fitted:** P-44900, control board, quantity 1\n- **Labour claimed:** 1.5 hours\n- **Failure evidence:** The control board was unresponsive on power-up; the report records no moisture ingress or surge damage.\n\nThe claim was submitted **6 days after the repair**, within the partnerâ€™s 30-day submission requirement.\n\n## 2. Governing warranty instrument\n\nThe governing coverage period is **ADD-IN-2.1, Regional Addendum â€” India**, read with **POL-WAR-4.2, Global Warranty Policy**:\n\n1. POL-WAR-4.2 clause 1.4 gives precedence to an applicable serial-specific TSB, then the regional addendum, then the global policy.\n2. The asset is installed in Pune, India, so ADD-IN-2.1 applies and varies standard coverage to **18 months from commissioning or 5,000 running hours, whichever occurs first**.\n3. **TSB-C-0051 does not govern this repair.** Its document range is CIE-4000-CH-01200 through CIE-4000-CH-01850, while this asset is serial 01050. In addition, that bulletin extends only hydraulic-circuit and compressor coverage, whereas this claim concerns a control board.\n4. **TSB-C-0038** concerns control-board firmware but is advisory only and expressly makes no change to warranty handling.\n\n## 3. Coverage calculation\n\n- Commissioning date: **15 March 2025**\n- India calendar term: **18 months**\n- Calendar expiry: **15 September 2026**\n- Repair date: **10 May 2026**\n\nThe repair occurred approximately **14 months after commissioning**, more than four months before calendar expiry.\n\nFor usage, the agreement says adjudication uses the latest reading held in the claim system at or before the repair. That reading was **2,229 hours as of 15 April 2026**, below the **5,000-hour** limit.\n\n**Source disagreement:** the inspection report states **2,400 hours at repair**, while the claim systemâ€™s latest prior reading is 2,229 hours. The agreement requires the system reading to be used. The discrepancy does not affect the outcome because both figures are below 5,000 hours.\n\n## 4. Amount payable\n\n| Element | Working | Payable |\n|---|---:|---:|\n| Labour | Lesser of 1.5 hours claimed and 1.5 flat-rate hours = 1.5 hours; 1.5 Ã— INR 1,450/hour | **INR 2,175** |\n| Part P-44900 | India territory list price, quantity 1 | **INR 67,400** |\n| Partner handling uplift | SPA-2023-FAB-IN provides no handling uplift; claim-system partner uplift is 0% | **INR 0** |\n| **Total** | INR 2,175 + INR 67,400 + INR 0 | **INR 69,575** |\n\nThe FY26 rate card sets CTRL-BD-RR at 1.5 flat-rate hours and the India rate effective 1 April 2026 through 31 March 2027 at INR 1,450/hour. The partner agreement reimburses the part actually fitted at territory list price without any handling addition. The claim system lists P-44900 at INR 67,400 and confirms a 0% partner uplift.\n\n## 5. Conflicts and limitations\n\n- The inspection-report/system-hours difference is addressed above and is not outcome-determinative.\n- The FY26 Q2 warranty review deck contains a stale general statement of 24 months/6,000 hours across all regions. It must not be used for this India asset; ADD-IN-2.1 is the controlling instrument and provides 18 months/5,000 hours.\n- No Teams message was found for this exact claim reference; there was therefore no field escalation or channel-based approval to reconcile. Channel discussion would not replace claim-system authority in any event.\n- No missing evidence prevents a decision. The serial, commissioning date, partner, fitted part, operation, labour, system hours and inspection findings are all available.\n\n## 6. Action recorded\n\nI recorded **draft adjudication ADJ-92B40546B5** in the service claim system:\n\n- **Decision:** Approve\n- **Payable:** INR 69,575\n- **Status:** Draft â€” awaiting human review\n- **Payment:** None made\n- **Goodwill:** Not required\n- **Evidence request:** Not required\n\n**Next action:** the assigned **Warranty Adjudicator** should review the cited instruments and calculation, then release/finalise the approval in the claim system. Fabrikam Service Partners does not need to submit further evidence unless the adjudicator wants the 2,229-versus-2,400 running-hours discrepancy corrected for record quality.\n\n## Sources\n\n1. `claim-dossier` Referenced tool result\n2. `inspection-report` [C-2026-04101 Inspection Report CIE-4000-CH-01050](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx>)\n3. `partner-agreement` [SPA-2023-FAB-IN Fabrikam Service Partners](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx>)\n4. `global-policy` [POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx>)\n5. `india-addendum` [ADD-IN-2.1 Regional Addendum - India v2.1](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx>)\n6. `tsb-c-0051` [TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx>)\n7. `tsb-c-0038` [TSB-C-0038 Control board firmware revision - advisory](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx>)\n8. `labour-rate-card` [Warranty Labour Rate Card FY26](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx>)\n9. `review-deck` [FY26 Q2 Warranty Review](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx>)\n10. `draft-adjudication` Referenced tool result",
+      "billingSummary": {
+        "inputTokens": 291475,
+        "outputTokens": 6819,
+        "cacheReadTokens": 171520,
+        "cacheCreationTokens": 0,
+        "totalTokens": 298294,
+        "toolInvocations": 10.0,
+        "raiChecks": 8.0,
+        "infraSeconds": 0.0,
+        "orchestratorCpuSeconds": 92.74790379999999
+      },
+      "promptId": "90dfe727-082c-4c06-bca9-6321b9382be4",
+      "status": "Graded",
+      "execution": {
+        "userQuery": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nAdjudicate claim C-2026-04101.",
+        "response": "# Decision â€” APPROVE INR 69,575\n\nApprove claim **C-2026-04101** for **INR 69,575**, subject to the adjudicatorâ€™s human review. The repair was performed during the applicable India warranty period, the latest claim-system running-hours reading was below the applicable limit, the claimed part and labour agree with the service record and inspection report, and the inspection found no evidence of moisture ingress or surge damage.\n\n## 1. Claim and repair facts\n\n- **Asset:** CIE-4000-CH-01050, 4000-CH industrial chiller\n- **Customer/site:** Litware Manufacturing, Pune, India\n- **Installed:** 20 February 2025\n- **Commissioned:** 15 March 2025\n- **Repair:** 10 May 2026\n- **Claim submitted:** 16 May 2026\n- **Partner:** Fabrikam Service Partners, dealer D-IN-01\n- **Operation:** CTRL-BD-RR â€” control board replacement\n- **Part actually fitted:** P-44900, control board, quantity 1\n- **Labour claimed:** 1.5 hours\n- **Failure evidence:** The control board was unresponsive on power-up; the report records no moisture ingress or surge damage.\n\nThe claim was submitted **6 days after the repair**, within the partnerâ€™s 30-day submission requirement.\n\n## 2. Governing warranty instrument\n\nThe governing coverage period is **ADD-IN-2.1, Regional Addendum â€” India**, read with **POL-WAR-4.2, Global Warranty Policy**:\n\n1. POL-WAR-4.2 clause 1.4 gives precedence to an applicable serial-specific TSB, then the regional addendum, then the global policy.\n2. The asset is installed in Pune, India, so ADD-IN-2.1 applies and varies standard coverage to **18 months from commissioning or 5,000 running hours, whichever occurs first**.\n3. **TSB-C-0051 does not govern this repair.** Its document range is CIE-4000-CH-01200 through CIE-4000-CH-01850, while this asset is serial 01050. In addition, that bulletin extends only hydraulic-circuit and compressor coverage, whereas this claim concerns a control board.\n4. **TSB-C-0038** concerns control-board firmware but is advisory only and expressly makes no change to warranty handling.\n\n## 3. Coverage calculation\n\n- Commissioning date: **15 March 2025**\n- India calendar term: **18 months**\n- Calendar expiry: **15 September 2026**\n- Repair date: **10 May 2026**\n\nThe repair occurred approximately **14 months after commissioning**, more than four months before calendar expiry.\n\nFor usage, the agreement says adjudication uses the latest reading held in the claim system at or before the repair. That reading was **2,229 hours as of 15 April 2026**, below the **5,000-hour** limit.\n\n**Source disagreement:** the inspection report states **2,400 hours at repair**, while the claim systemâ€™s latest prior reading is 2,229 hours. The agreement requires the system reading to be used. The discrepancy does not affect the outcome because both figures are below 5,000 hours.\n\n## 4. Amount payable\n\n| Element | Working | Payable |\n|---|---:|---:|\n| Labour | Lesser of 1.5 hours claimed and 1.5 flat-rate hours = 1.5 hours; 1.5 Ã— INR 1,450/hour | **INR 2,175** |\n| Part P-44900 | India territory list price, quantity 1 | **INR 67,400** |\n| Partner handling uplift | SPA-2023-FAB-IN provides no handling uplift; claim-system partner uplift is 0% | **INR 0** |\n| **Total** | INR 2,175 + INR 67,400 + INR 0 | **INR 69,575** |\n\nThe FY26 rate card sets CTRL-BD-RR at 1.5 flat-rate hours and the India rate effective 1 April 2026 through 31 March 2027 at INR 1,450/hour. The partner agreement reimburses the part actually fitted at territory list price without any handling addition. The claim system lists P-44900 at INR 67,400 and confirms a 0% partner uplift.\n\n## 5. Conflicts and limitations\n\n- The inspection-report/system-hours difference is addressed above and is not outcome-determinative.\n- The FY26 Q2 warranty review deck contains a stale general statement of 24 months/6,000 hours across all regions. It must not be used for this India asset; ADD-IN-2.1 is the controlling instrument and provides 18 months/5,000 hours.\n- No Teams message was found for this exact claim reference; there was therefore no field escalation or channel-based approval to reconcile. Channel discussion would not replace claim-system authority in any event.\n- No missing evidence prevents a decision. The serial, commissioning date, partner, fitted part, operation, labour, system hours and inspection findings are all available.\n\n## 6. Action recorded\n\nI recorded **draft adjudication ADJ-92B40546B5** in the service claim system:\n\n- **Decision:** Approve\n- **Payable:** INR 69,575\n- **Status:** Draft â€” awaiting human review\n- **Payment:** None made\n- **Goodwill:** Not required\n- **Evidence request:** Not required\n\n**Next action:** the assigned **Warranty Adjudicator** should review the cited instruments and calculation, then release/finalise the approval in the claim system. Fabrikam Service Partners does not need to submit further evidence unless the adjudicator wants the 2,229-versus-2,400 running-hours discrepancy corrected for record quality.\n\n## Sources\n\n1. `claim-dossier` Referenced tool result\n2. `inspection-report` [C-2026-04101 Inspection Report CIE-4000-CH-01050](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/06-ClaimEvidence/C-2026-04101 Inspection Report CIE-4000-CH-01050.docx>)\n3. `partner-agreement` [SPA-2023-FAB-IN Fabrikam Service Partners](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/04-PartnerAgreements/SPA-2023-FAB-IN Fabrikam Service Partners.docx>)\n4. `global-policy` [POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/POL-WAR-4.2 Contoso Industrial Global Warranty Policy v4.2.docx>)\n5. `india-addendum` [ADD-IN-2.1 Regional Addendum - India v2.1](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/01-Policy/ADD-IN-2.1 Regional Addendum - India v2.1.docx>)\n6. `tsb-c-0051` [TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compressor](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0051 Extended coverage - 4000-series hydraulic circuit and compre.docx>)\n7. `tsb-c-0038` [TSB-C-0038 Control board firmware revision - advisory](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/02-Bulletins/TSB-C-0038 Control board firmware revision - advisory.docx>)\n8. `labour-rate-card` [Warranty Labour Rate Card FY26](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/03-RateCards/Warranty-Labour-Rate-Card-FY26.xlsx>)\n9. `review-deck` [FY26 Q2 Warranty Review](<https://microsoftapc.sharepoint.com/teams/ContosoFieldService/Warranty Operations/05-Reviews/FY26-Q2-Warranty-Review.pptx>)\n10. `draft-adjudication` Referenced tool result",
+        "skills": [
+          {
+            "displayName": "warranty-assistant",
+            "version": 11,
+            "snapshotData": {
+              "displayName": "warranty-assistant",
+              "description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part."
+            },
+            "score": 0.95,
+            "rubrics": [
+              {
+                "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                "displayName": "Coverage determination",
+                "snapshotData": {
+                  "displayName": "Coverage determination",
+                  "checklistItems": [
+                    "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                    "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                    "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                    "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise."
+              },
+              {
+                "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                "displayName": "Precedence discipline",
+                "snapshotData": {
+                  "displayName": "Precedence discipline",
+                  "checklistItems": [
+                    "Where coverage can be determined, names one governing instrument by reference code",
+                    "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                    "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                    "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 0.75,
+                "scoreReason": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement."
+              },
+              {
+                "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+                "displayName": "Evidence grounding",
+                "snapshotData": {
+                  "displayName": "Evidence grounding",
+                  "checklistItems": [
+                    "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                    "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                    "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                    "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                  ],
+                  "importance": "high"
+                },
+                "score": 1.0,
+                "scoreReason": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident."
+              },
+              {
+                "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                "displayName": "Valuation accuracy",
+                "snapshotData": {
+                  "displayName": "Valuation accuracy",
+                  "checklistItems": [
+                    "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                    "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                    "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                    "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                    "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report."
+              },
+              {
+                "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                "displayName": "Authority and action",
+                "snapshotData": {
+                  "displayName": "Authority and action",
+                  "checklistItems": [
+                    "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                    "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                    "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                    "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise."
+              },
+              {
+                "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                "displayName": "Gaps reported, not filled",
+                "snapshotData": {
+                  "displayName": "Gaps reported, not filled",
+                  "checklistItems": [
+                    "Names any record needed for the decision that is missing, and the field that is absent",
+                    "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                    "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                  ],
+                  "importance": "high"
+                },
+                "score": 0.0
+              }
+            ],
+            "rubricResults": [
+              {
+                "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                "displayName": "Coverage determination",
+                "snapshotData": {
+                  "displayName": "Coverage determination",
+                  "checklistItems": [
+                    "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                    "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                    "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                    "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise."
+              },
+              {
+                "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                "displayName": "Precedence discipline",
+                "snapshotData": {
+                  "displayName": "Precedence discipline",
+                  "checklistItems": [
+                    "Where coverage can be determined, names one governing instrument by reference code",
+                    "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                    "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                    "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 0.75,
+                "scoreReason": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement."
+              },
+              {
+                "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+                "displayName": "Evidence grounding",
+                "snapshotData": {
+                  "displayName": "Evidence grounding",
+                  "checklistItems": [
+                    "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                    "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                    "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                    "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                  ],
+                  "importance": "high"
+                },
+                "score": 1.0,
+                "scoreReason": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident."
+              },
+              {
+                "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                "displayName": "Valuation accuracy",
+                "snapshotData": {
+                  "displayName": "Valuation accuracy",
+                  "checklistItems": [
+                    "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                    "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                    "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                    "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                    "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report."
+              },
+              {
+                "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                "displayName": "Authority and action",
+                "snapshotData": {
+                  "displayName": "Authority and action",
+                  "checklistItems": [
+                    "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                    "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                    "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                    "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+                  ],
+                  "importance": "critical"
+                },
+                "score": 1.0,
+                "scoreReason": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise."
+              },
+              {
+                "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                "displayName": "Gaps reported, not filled",
+                "snapshotData": {
+                  "displayName": "Gaps reported, not filled",
+                  "checklistItems": [
+                    "Names any record needed for the decision that is missing, and the field that is absent",
+                    "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                    "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                  ],
+                  "importance": "high"
+                },
+                "score": 0.0
+              }
+            ],
+            "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+            "name": "warranty-assistant"
+          }
+        ],
+        "rubricResults": [
+          {
+            "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "displayName": "Coverage determination",
+            "snapshotData": {
+              "displayName": "Coverage determination",
+              "checklistItems": [
+                "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                "Where one limit is exceeded and the other is not, says which limit ends the cover"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0,
+            "scoreReason": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise.",
+            "name": "Coverage determination",
+            "reasoning": "The final response leads with â€œAPPROVE INR 69,575,â€ identifies the applicable 18-month/5,000-hour limits running from commissioning on 15 March 2025, and compares the 10 May 2026 repair and both available hour readings against those limits. Neither limit was exceeded, so the one-limit-exceeded condition did not arise."
+          },
+          {
+            "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "displayName": "Precedence discipline",
+            "snapshotData": {
+              "displayName": "Precedence discipline",
+              "checklistItems": [
+                "Where coverage can be determined, names one governing instrument by reference code",
+                "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+              ],
+              "importance": "critical"
+            },
+            "score": 0.75,
+            "scoreReason": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement.",
+            "name": "Precedence discipline",
+            "reasoning": "The response names ADD-IN-2.1 as governing and explains the POL-WAR-4.2 clause 1.4 hierarchy. It correctly excludes TSB-C-0051 based on both serial and component scope and treats TSB-C-0038 as advisory. However, although the dossierâ€™s index range ends at 01500 while the bulletin document ends at 01850, the response does not explicitly report that index/document disagreement."
+          },
+          {
+            "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "displayName": "Evidence grounding",
+            "snapshotData": {
+              "displayName": "Evidence grounding",
+              "checklistItems": [
+                "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+                "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+              ],
+              "importance": "high"
+            },
+            "score": 1.0,
+            "scoreReason": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident.",
+            "name": "Evidence grounding",
+            "reasoning": "Coverage and precedence are tied to ADD-IN-2.1 A1 and POL-WAR-4.2 clauses 1.4/2.1; claim dates and the 2,229-hour reading are tied to the claim dossier with its 15 April 2026 as-of date; the conflicting 2,400-hour figure is tied to the inspection report. Labour and parts values are attributed to the FY26 rate card, partner agreement, and claim-system part record. No unsupported material figure, date, part number, or instrument reference is evident."
+          },
+          {
+            "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+            "displayName": "Valuation accuracy",
+            "snapshotData": {
+              "displayName": "Valuation accuracy",
+              "checklistItems": [
+                "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+                "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+                "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0,
+            "scoreReason": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report.",
+            "name": "Valuation accuracy",
+            "reasoning": "The response calculates payable labour as min(1.5 claimed, 1.5 flat-rate), applies the India rate of INR 1,450 effective 1 April 2026, prices fitted part P-44900 at INR 67,400, applies zero uplift under SPA-2023-FAB-IN, and totals INR 69,575. Claimed and allowable labour are equal, so there is no excess-hours variance to report."
+          },
+          {
+            "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "displayName": "Authority and action",
+            "snapshotData": {
+              "displayName": "Authority and action",
+              "checklistItems": [
+                "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+                "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+                "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+              ],
+              "importance": "critical"
+            },
+            "score": 1.0,
+            "scoreReason": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise.",
+            "name": "Authority and action",
+            "reasoning": "The response directs the assigned Warranty Adjudicator to review and finalise the approval and records one matching draft, ADJ-92B40546B5, for INR 69,575. No goodwill was requested and no conversational or channel approval was present, so those conditional anchors did not arise."
+          },
+          {
+            "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "displayName": "Gaps reported, not filled",
+            "snapshotData": {
+              "displayName": "Gaps reported, not filled",
+              "checklistItems": [
+                "Names any record needed for the decision that is missing, and the field that is absent",
+                "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+              ],
+              "importance": "high"
+            },
+            "score": 0.0,
+            "name": "Gaps reported, not filled",
+            "reasoning": null
+          }
+        ],
+        "billingSummary": {
+          "inputTokens": 291475,
+          "outputTokens": 6819,
+          "cacheReadTokens": 171520,
+          "cacheCreationTokens": 0,
+          "totalTokens": 298294,
+          "toolInvocations": 10.0,
+          "raiChecks": 8.0,
+          "infraSeconds": 0.0,
+          "orchestratorCpuSeconds": 92.74790379999999
+        }
+      }
+    }
+  ]
+}
+

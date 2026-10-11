@@ -1,0 +1,18 @@
+
+tbl                       n
+---                       -
+Dealers                   4
+Parts                    14
+Assets                  117
+AssetTelemetry         3007
+Claims                   92
+ServiceHistory           89
+GoodwillAuthority         4
+TsbApplicability          4
+ClaimAdjudicationDraft   19
+EvidenceRequest           0
+GoodwillEscalation        0
+
+
+
+OK: 1 batch(es) executed

@@ -19,7 +19,14 @@ $ErrorActionPreference = 'Stop'
 if ($BatchSize -lt 1 -or $TimeoutMin -lt 1 -or $StallMin -lt 1 -or $MaxAttempts -lt 1) { throw 'Batch size, time limits and attempts must be positive.' }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $terminal = 'Succeeded','Completed','Failed','Cancelled','Canceled','PartiallySucceeded','Paused'
-function Log($m) { $line = "$(Get-Date -Format HH:mm:ss) $m"; $line; Add-Content "$OutDir\run-log.txt" $line }
+function Log($m) {
+  $line = "$(Get-Date -Format HH:mm:ss) $m"; $line
+  # A reader holding the log open (e.g. a tail) must not stop the run: retry, then carry on.
+  for ($i = 1; $i -le 5; $i++) {
+    try { Add-Content "$OutDir\run-log.txt" $line -ErrorAction Stop; return } catch { Start-Sleep -Milliseconds (200 * $i) }
+  }
+  Write-Warning "could not write run-log.txt: $line"
+}
 function InvokeBounded([string]$Command, [string[]]$Arguments, [int]$Seconds = 120) {
   $id = [guid]::NewGuid().ToString('N')
   $stdout = Join-Path ([IO.Path]::GetFullPath($OutDir)) "command-$id.stdout.txt"

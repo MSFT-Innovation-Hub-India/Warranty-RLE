@@ -6,9 +6,9 @@ A Microsoft 365 **Frontier Tuning** world where an agent adjudicates warranty cl
 
 | | |
 | --- | --- |
-| **Status** (2026-10-10) | Climb restarted as **attempt 2**. Attempt 1 is [archived](archive/attempt-1/README.md): it stalled after stage 1 (best: 0.637 · 23/30 on MAI-CODE-5b). Stage 0 (GPT-5.6-Sol reference) is set up, not yet run |
-| **Next** | [Stage 0](climb/stage-0/README.md): run GPT-5.6-Sol on the 30 claims |
-| **Blockers** | Tuning excludes the claim-system tools ([P7](docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools)): blocks stage 4 · SQL public access is off (daily); re-enable before a run |
+| **Status** (2026-10-11) | Attempt 2. **[Stage 0](climb/stage-0/README.md) closed: GPT-5.6-Sol 29/30, rubric 0.956.** The ceiling for MAI-CODE-5b (attempt 1: 23/30, 0.637). Attempt 1 is [archived](archive/attempt-1/README.md) |
+| **Next** | Stage 1: MAI-CODE-5b on the same configuration, 3 runs per claim. First, teach the scorer the three phrasings it missed in stage 0 |
+| **Blockers** | Tuning excludes the claim-system tools ([P7](docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools)): blocks stage 4 · Starting a tuning job may disable the skill's rubrics ([P9](docs/06-platform-issues.md#p9-rubrics-found-disabled-evaluation-refused-er07018)) · Re-enable SQL public access before each run (switched off daily) |
 | **CLI** | 1.0.14 (switched from 0.3.17 on 2026-10-10; scripts updated and checked, [docs/05 § CLI version](docs/05-operations.md#cli-version)). Attempt 1's tuning job `c77feaed` cancelled 2026-10-10 |
 | **IDs** | Environment `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` · skill `cf00d339-5217-4cd1-b390-cc0d911735da` · MCP `1c171d49-7f85-4997-8126-ae20829a4dbf` |
 

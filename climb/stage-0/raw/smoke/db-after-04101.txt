@@ -1,0 +1,10 @@
+﻿
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                   created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                   ----------                  
+draft ADJ-92B40546B5 C-2026-04101 approve | payable=69575.00 INR | refs=["POL-WAR-4.2 clauses 1.4, 2.1 and 4.1", "ADD-IN-2.1 scope and clause A1", "Warranty Labour Rate Card FY26 \u2014 CTRL-BD-RR and India rate effective 2026-04-01", "SPA-2023-FAB-IN clauses 2, 3 and 6", "C-2026-04101 Field Inspection Report dated 2026-05-10", "Service claim system dossier for C-2026-04101"] 10/11/2026 2:07:36 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+

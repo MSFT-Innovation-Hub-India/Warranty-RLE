@@ -10,8 +10,8 @@ How to run any stage: checks before a run, the run itself, scoring, and the data
 | 2 | Azure CLI signed in (for SQL) | `az account show` | Your account |
 | 3 | SQL reachable | Public network access on `az-sqldb-common` is switched off daily (SFI): re-enable it, and add your IP to the firewall | — |
 | 4 | MCP server healthy | `curl https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/healthz` | `"status":"ok"`. `degraded` with `Login timeout expired` means step 3 isn't done |
-| 5 | Database clean | `.\scripts\sql-run.ps1 -File scripts\db-baseline.sql` | `0 0 0 0` |
-| 6 | Live skill and rubrics match the stage's `config/` | `frontier-tuning skills get <skill-id> --env-id <env> -o json` (compare instructions and the six rubrics) | Identical after newline normalisation |
+| 5 | Database clean | `.\scripts\sql-run.ps1 -File scripts\db-baseline.sql` and `-File scripts\db-table-counts.sql` | `0 0 0 0`, seeded counts. If not, or if anything outside this climb may have used the database (e.g. a Foundry agent), **re-seed** (below) |
+| 6 | Live skill, rubrics and sample IDs match the stage's `config/` | `.\.venv\Scripts\python.exe scripts\check-live-config.py climb\stage-N\config` | `ALL MATCH` (rubric `enabled` differs on rubrics created with CLI 0.3.x; see stage 0 RUNBOOK 1.8) |
 | 7 | No other job active in the environment | `frontier-tuning evaluate list` · `frontier-tuning tune list` | Nothing `Running` that writes to the database |
 
 ## Running an evaluation
@@ -31,6 +31,8 @@ powershell -File scripts\eval-batches.ps1 -Env $e -Samples $s -OutDir climb\stag
 | `-Strategy` / `-BestOfN` | `Simple` / 4 | Inference-strategy comparisons |
 | `-StallMin` / `-TimeoutMin` / `-MaxAttempts` | 15 / 75 / 3 | Stall handling |
 | `-AdoptJob` / `-AdoptSamples` | — | Take over a job already running instead of submitting a new one |
+
+Watching a run: read `run-log.txt` (or the runner's console output); don't `tail -f` it on Windows. A tail holds the file open, and on 2026-10-11 that stopped the runner mid-job (the platform job carried on and was adopted with `-AdoptJob`). The runner's logging now retries instead of stopping.
 
 Timing 🖥️: 5 claims take 20–27 minutes per job on MAI-CODE-5b when nothing stalls; 30 claims about 2.5–3 hours.
 
@@ -53,7 +55,7 @@ The agent's draft writes persist in Azure SQL, so every run must start from the 
 | Before a run | [db-baseline.sql](../scripts/db-baseline.sql) | Counts drafts, evidence requests, escalations, and claims not in their seeded status. Must be `0 0 0 0` |
 | After each job | [db-actions-snapshot.sql](../scripts/db-actions-snapshot.sql) | Lists everything the agent wrote (kept with the results as evidence) |
 | After the snapshot | [db-reset-actions.sql](../scripts/db-reset-actions.sql) | Empties the three action tables and puts claim statuses back to seeded |
-| Full rebuild (rare) | `world-builder/out/db/seed.azuresql.sql` | Recreates and reseeds the whole database |
+| Full re-seed | `world-builder/out/db/seed.azuresql.sql` | Drops and recreates all 11 tables from the generated seed (~20 s). Use when the database may have been touched outside a run. The MCP server keeps access (database roles) |
 
 All are run with `.\scripts\sql-run.ps1 -File <file>`, which signs in with your Azure CLI token (Entra-only, no passwords). The runner does snapshot and reset automatically after each job.
 

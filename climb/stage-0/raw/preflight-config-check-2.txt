@@ -1,0 +1,10 @@
+instructions match config/skill.md: True
+rubrics: live 6, pinned 6
+  Authority and action: items ok, importance ok, enabled ok
+  Coverage determination: items ok, importance ok, enabled ok
+  Evidence grounding: items ok, importance ok, enabled ok
+  Gaps reported, not filled: items ok, importance ok, enabled ok
+  Precedence discipline: items ok, importance ok, enabled ok
+  Valuation accuracy: items ok, importance ok, enabled ok
+evaluation samples: 30/30 present; wrong type or skill: none
+ALL MATCH

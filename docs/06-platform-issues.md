@@ -7,6 +7,7 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | # | Issue | Status | First seen (UTC) |
 | --- | --- | --- | --- |
 | [P7](#p7-tuning-excludes-the-claim-system-tools) | Tuning excludes 36 tools "that can make changes"; the claim-system tools never appear in training rollouts | 🔬 Open, **blocks a meaningful RFT** | 2026-10-10 12:41 |
+| [P9](#p9-rubrics-found-disabled-evaluation-refused-er07018) | All six rubrics found disabled; `evaluate start` refused with `ER07018` | Fixed by re-enabling; cause 🔬 | 2026-10-11 01:51 |
 | [P8](#p8-skipped-rubrics-reported-as-00-in-cli-10) | CLI 1.0 reports a rubric skipped as not applicable as `score: 0.0` | Worked around in our scripts | 2026-10-10 |
 | [P6](#p6-tuning-step-fails-repeatedly-with-400) | Tuning step fails repeatedly with `400 We hit an internal error` | Closed: job cancelled 2026-10-10 17:45 UTC | 2026-10-09 12:50 |
 | [P5](#p5-bestofn-evaluation-fails-before-any-claim-runs) | BestOfN evaluation fails before any claim runs (`HttpRequestException`) | Closed by cancellation; not reproduced | 2026-10-09 04:49 |
@@ -16,6 +17,20 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | [P1](#p1-execution-diagnostics-unavailable) | Execution diagnostics API returns 403/404 | Open | 2026-10-05 |
 
 ---
+
+## P9 Rubrics found disabled; evaluation refused (ER07018)
+
+| Field | Value |
+| --- | --- |
+| CLI | 1.0.14 |
+| Command | `frontier-tuning --output json evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model prod-gpt-56-reasoning-sol --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4` (via `eval-batches.ps1`) |
+| Window | 2026-10-11 01:50:41–01:51:28 UTC · exit 1 |
+| Error | `API error (400): ER07018: None of the selected samples are eligible for evaluation based on their attached skills.` |
+| Transaction ID | `10611f24-b671-3788-a09b-681656a26987` |
+| State found | The sample was fine (Evaluation, attached to the skill) and the skill was enabled, but **all six rubrics were `isEnabled: false`**. Skill `lastModifiedDateTime` 2026-10-09 08:43:44 UTC, 5 s before the tuning job `c77feaed` logged `FINE_TUNING_STARTED … Preparing your training examples` (08:43:49). The last successful evaluation (`44945388`) was created before that, at 03:17 UTC |
+| Likely cause 🔬 | Starting the tuning job disabled the skill's rubrics. Unconfirmed |
+| Fix | `rubrics update <id> --skill-id … --enable` for all six (01:54:57 UTC); content unchanged. Resubmission accepted (job `da0fd79d-8bbc-466c-9cf7-b480054bf96a`) |
+| Ask | Does `tune start` disable a skill's rubrics? If so, why, and should it re-enable them afterwards? The ER07018 message could name the cause ("no enabled rubrics") |
 
 ## P8 Skipped rubrics reported as 0.0 in CLI 1.0
 

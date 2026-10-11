@@ -11,7 +11,7 @@
   .\scripts\sql-run.ps1 -File scripts\db-baseline.sql
   .\scripts\sql-run.ps1 -File scripts\db-actions-snapshot.sql
   .\scripts\sql-run.ps1 -File scripts\db-reset-actions.sql
-  .\scripts\sql-run.ps1 -File out\db\seed.azuresql.sql
+  .\scripts\sql-run.ps1 -File world-builder\out\db\seed.azuresql.sql
 #>
 param(
   [string]$File,
@@ -27,9 +27,9 @@ $token = az account get-access-token --resource https://database.windows.net/ --
 if (-not $token) { throw 'No Azure CLI token. Run az login.' }
 
 $inner = @'
-param($Server, $Database, $Token, $SqlB64)
+param($Server, $Database, $Token, $SqlFile)
 $ErrorActionPreference = 'Stop'
-$sql = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($SqlB64))
+$sql = [IO.File]::ReadAllText($SqlFile, [Text.Encoding]::UTF8)
 $cn = New-Object System.Data.SqlClient.SqlConnection("Server=tcp:$Server,1433;Database=$Database;Encrypt=True;TrustServerCertificate=False;Connection Timeout=90;")
 $cn.AccessToken = $Token; $cn.Open()
 $batches = [regex]::Split($sql, '(?im)^\s*GO\s*$') | Where-Object { $_.Trim() }
@@ -50,11 +50,14 @@ $cn.Close()
 '@
 $tmp = Join-Path $env:TEMP ("sql-run-" + [guid]::NewGuid() + ".ps1")
 Set-Content -Path $tmp -Value $inner -Encoding UTF8
-$b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($sql))
+# The SQL goes through a temp file: a command-line argument is limited to ~32K characters,
+# which the full seed (world-builder/out/db/seed.azuresql.sql) far exceeds.
+$sqlTmp = Join-Path $env:TEMP ("sql-run-" + [guid]::NewGuid() + ".sql")
+[IO.File]::WriteAllText($sqlTmp, $sql, (New-Object Text.UTF8Encoding $false))
 try {
-  powershell.exe -NoProfile -ExecutionPolicy Bypass -File $tmp -Server $Server -Database $Database -Token $token -SqlB64 $b64
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File $tmp -Server $Server -Database $Database -Token $token -SqlFile $sqlTmp
   $code = $LASTEXITCODE
 } finally {
-  Remove-Item -LiteralPath $tmp
+  Remove-Item -LiteralPath $tmp, $sqlTmp
 }
 exit $code

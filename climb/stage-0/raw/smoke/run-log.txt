@@ -1,0 +1,3 @@
+07:28:19 04101 job da0fd79d-8bbc-466c-9cf7-b480054bf96a started
+07:42:33 04101 done (job da0fd79d-8bbc-466c-9cf7-b480054bf96a): 1/1 finished; DB snapshot saved and reset
+07:42:33 ALL DONE

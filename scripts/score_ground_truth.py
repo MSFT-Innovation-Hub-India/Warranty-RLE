@@ -132,7 +132,7 @@ def _rubric_score(execution: dict) -> float | None:
         s = _get(rr, "Score", "score")
         if not isinstance(s, (int, float)):
             return None
-        if "scoreReason" in rr and s == 0 and not (rr.get("scoreReason") or rr.get("reasoning")):
+        if "displayName" in rr and s == 0 and not (rr.get("scoreReason") or rr.get("reasoning")):
             return None
         return float(s)
     scores = []
@@ -331,7 +331,13 @@ def extract_total(response: str) -> float | None:
                 r"\btotal\b"):
         for line in lines:
             if re.search(cue, line, re.I) and not re.search(r"\b(?:claimed|provisional|if covered|would be)\b", line, re.I):
-                tail = line.rsplit("=", 1)[1] if "=" in line else line
+                if "=" in line:
+                    tail = line.rsplit("=", 1)[1]
+                elif line.lstrip().startswith("|"):   # a table row: the result is in the last cell
+                    cells = [c for c in line.split("|") if c.strip()]
+                    tail = cells[-1] if cells else line
+                else:
+                    tail = line
                 amounts = [_num(a) for a in AMOUNT_RE.findall(tail)] or [_num(a) for a in AMOUNT_RE.findall(line)]
                 if amounts:
                     return amounts[0]

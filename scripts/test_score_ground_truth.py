@@ -36,6 +36,7 @@ CASES = [
     ("total", "Labour ₹7,975\nParts ₹191,200\n**Total payable: ₹199,175**", 199175.0),
     ("total", "Total payable: ₹1,99,175 (labour ₹7,975 + parts ₹1,91,200)", 199175.0),
     ("total", "Amount payable EUR 2,341.50", 2341.50),
+    ("total", "| Labour | 1.5 h x INR 1,450 | **INR 2,175** |\n| **Total** | INR 2,175 + INR 67,400 + INR 0 | **INR 69,575** |", 69575.0),
     ("total", "No amount is payable.", None),
     # stage 0 (world v3) misreads, 2026-10-08
     ("decision", "Decision: **Covered**. C-2026-04152 is payable at **INR 197,000** under **TSB-C-0051**.", "approve"),
