@@ -2,6 +2,63 @@
 
 What is configured in the Frontier Tuning environment, and where each piece comes from. Read live on 2026-10-09/10 🖥️. How to build all of this from scratch is in [world-builder/SETUP.md](../world-builder/SETUP.md) (steps P0–P10).
 
+## Architecture: who calls what
+
+There are two layers. **The CLI only calls a REST API.** **The MCP server is called by the platform**, during a job, when the agent uses a claim-system tool. Nothing on your laptop ever talks to the MCP server.
+
+```text
+ Your laptop                      Microsoft 365 (substrate.office.com)                 Azure (ours)
+┌──────────────┐  HTTPS/REST  ┌──────────────────────────────────────────┐
+│ frontier-    │ ───────────▶ │ Frontier Tuning service ("KnowledgeGraph │
+│ tuning CLI   │  public  or  │ API"): environments, skills, rubrics,    │
+│ (Python)     │  legacy      │ samples, models, evaluate/tune jobs      │
+└──────────────┘  route       └───────────────┬──────────────────────────┘
+                                              │ runs a job, one agent per claim
+                              ┌───────────────▼──────────────────────────┐
+                              │ Agent harness                            │
+                              │  • model (GPT-5.6-Sol, MAI-CODE-5b, …)   │
+                              │  • skill instructions                    │
+                              │  • SharePoint / Teams connectors and     │
+                              │    built-in search → knowledge sources   │
+                              │  • claim-system tools ── "tool           │
+                              │    virtualization" ──────────────────────┼──MCP──▶ contoso-service-mcp
+                              └───────────────┬──────────────────────────┘          (Container App)
+                              ┌───────────────▼──────────────────────────┐                │
+                              │ Grader: scores the final answer against  │                ▼
+                              │ the rubrics → rubric score (RFT reward)  │          Azure SQL
+                              └──────────────────────────────────────────┘          contoso-warranty
+```
+
+### Layer 1: CLI → Frontier Tuning service (REST)
+
+The CLI is a REST client. Every error it reports (`API error (500): ER99000 …`, with a transaction ID) comes from this API. It reaches the service by one of two **connections**, chosen by `transport` in the CLI config (`frontier-tuning config show`). Both connections go to the same host, service and environment. 🖥️ Verbose logs of a read-only `models list`, 2026-10-11:
+
+| Connection | URL called | Notes |
+| --- | --- | --- |
+| `public`, the 1.x default (ours) | `https://substrate.office.com/KnowledgeGraph/api/v1.0/Environments/<env>/Models/Execution` and `…/Models/Base` | Newer API: "Environments". Lists models with both GUID and name rows ([P10](06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000)) |
+| `legacy`, the alternate | `https://substrate.office.com/KnowledgeGraph/api/v1.0/Workspaces/<env>/Models` | Older API: "Workspaces". One row per model, as CLI 0.3.x showed it. 💭 Most likely the route 0.3.x used |
+
+The two connections can present the same data differently. 🖥️ On 2026-10-11, the legacy job list didn't show that morning's later Sol jobs or the failed MAI job. Some commands also call **Microsoft Graph** directly, for example to look up a file URL. 📄 The `-H` header option applies to "direct Frontier Tuning API requests (public, legacy, local, and mock)", not to Graph calls.
+
+To try the other connection for one command without changing the saved config, use a separate config file:
+```powershell
+"transport = `"legacy`"`nenv_id = `"<env>`"`n" | Set-Content ft-legacy.toml -Encoding ascii
+frontier-tuning -c ft-legacy.toml models list        # or set $env:FRONTIER_TUNING_CONFIG for a script
+```
+
+### Layer 2: inside a job (the platform calls the tools)
+
+After `evaluate start` or `tune start`, the CLI only polls for status. The service runs one agent per claim:
+
+| Step | Who | Talks to |
+| --- | --- | --- |
+| Reason and plan | The model, with the skill's instructions | — |
+| Read policy, bulletins, rate cards, partner terms | SharePoint / Teams connectors and built-in search | The [knowledge sources](#knowledge-sources-grounding) |
+| Read the claim record, record a draft decision, request evidence, escalate goodwill | The platform's **tool virtualization** layer forwards the call over **MCP** | Our server `contoso-service-mcp` → Azure SQL `contoso-warranty` ([tools](#the-claim-system-tools-mcp-server)) |
+| Score the answer | The grader, against the [rubrics](#the-rubrics-the-graders-checklist-and-the-rft-reward) | — (no answer key) |
+
+Our MCP server logs every `CallToolRequest`, so they show whether a tool call left the platform. 🖥️ In [P11](06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error), MAI's calls failed in the virtualization layer and never reached the server. How the agent moves through these tools for one claim: [03-claim-execution-flow.md](03-claim-execution-flow.md).
+
 ## The environments
 
 | | `wce-main` (the climb) | `wce-dev` (trials) |

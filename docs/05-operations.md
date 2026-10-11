@@ -75,6 +75,8 @@ A job's `UpdatedAt` may not move while it progresses; use the diagnostics' `last
 
 **Two release lines exist** 📄. The site root of the docs covers the **0.3.x preview** line ("Frontier Tuning CLI … is in preview"; installer `aka.ms/ft-cli/ps1`). `/v1` covers the **stable 1.x** line (1.0.2, 2026-08-28: "Introduced the stable 1.x CLI"; installer `aka.ms/ft-cli/v1/ps1`, "independent of the v0 release channel"). Both are updated in parallel. This climb uses **1.x**: it has `skills refine --mode` and the hill-climb playbooks. Evaluations run on the service, so the line doesn't change scores (🖥️ same job, same scores on 0.3.17 and 1.0.14).
 
+**Connection (`transport`)** is separate from the release line. 1.x defaults to `public` (the newer `…/Environments/…` API) and can use `legacy` (the older `…/Workspaces/…` API) for a single command via a separate config file. Ours is `public`. Both reach the same service and environment: [02 § Architecture](02-world-configuration.md#architecture-who-calls-what).
+
 **1.0.14** since 2026-10-10 (was 0.3.17). v1 is a separate release channel: a 0.3.x client's `frontier-tuning update` only checks the v0 channel and reports "already the latest". Switch once with the v1 installer (it uses the `python` first on PATH, so put the Python that holds the CLI first, not the project `.venv`):
 
 ```powershell
