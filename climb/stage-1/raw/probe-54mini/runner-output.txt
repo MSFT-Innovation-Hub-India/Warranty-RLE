@@ -1,0 +1,27 @@
+Command failed (1): frontier-tuning --output json evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 
+--base-model dev-ct-gpt-54-mini-mp --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+Error: API error (500): ER99000: An unknown error has occurred.
+The request outcome is unknown; it was not retried. Inspect the resource before submitting again.
+Transaction ID: 87f56fcd-7553-d4d3-78ce-0dc7c0c43ecf
+Submission outcome is unknown; the operation may have started server-side. Do not retry the start or cancel 
+automatically. Reconcile first with:
+  frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate list
+Inspect recent operations in this environment before deciding whether to submit again.
+At C:\Users\sansri\contoso-warranty-rle\scripts\eval-batches.ps1:46 char:30
++ ... de -ne 0) { throw "Command failed ($($p.ExitCode)): $Command $($Argum ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Command failed ...submit again.
+:String) [], RuntimeException
+    + FullyQualifiedErrorId : Command failed (1): frontier-tuning --output json evaluate start --sample-id 90dfe727-08 
+   2c-4c06-bca9-6321b9382be4 --base-model dev-ct-gpt-54-mini-mp --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa  
+  00c8a67cc4
+Error: API error (500): ER99000: An unknown error has occurred.
+The request outcome is unknown; it was not retried. Inspect the resource before submitting again.
+Transaction ID: 87f56fcd-7553-d4d3-78ce-0dc7c0c43ecf
+    Submission outcome is unknown; the operation may have started server-side. Do not retry the start or cancel automa 
+   tically. Reconcile first with:
+  frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate list
+Inspect recent operations in this environment before deciding whether to submit again.
+ 
+
+[exited with code 1]

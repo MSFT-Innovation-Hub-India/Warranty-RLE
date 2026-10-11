@@ -1,0 +1,172 @@
+[
+  {
+    "inputModelName": "dev-ct-mai-code-mp",
+    "inputModelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategy": {
+      "type": "Simple"
+    },
+    "lastModifiedDateTime": "2026-10-11T07:53:05.205805+00:00",
+    "completedDateTime": "2026-10-11T07:53:05.205805+00:00",
+    "resultMetadata": {
+      "score": 0.4375
+    },
+    "id": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+    "error": {
+      "code": "Rest401",
+      "message": "Job execution failed with an unknown error."
+    },
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-11T07:04:58.4971376+00:00",
+    "snapshotMetadata": {
+      "id": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+      "skillsCount": 1,
+      "toolsCount": 3,
+      "samplePromptsCount": 1,
+      "knowledgeSourcesCount": 4
+    },
+    "evaluationMetadata": {
+      "overallScore": 0.4375
+    },
+    "jobId": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+    "jobType": "Evaluation",
+    "jobTaskType": null,
+    "status": "Failed",
+    "baseModelName": "dev-ct-mai-code-mp",
+    "baseModelNames": [
+      "dev-ct-mai-code-mp"
+    ],
+    "baseModelDisplayName": null,
+    "newModelName": "",
+    "createdAt": "2026-10-11T07:04:58.4971376+00:00",
+    "updatedAt": "2026-10-11T07:53:05.205805+00:00",
+    "completedAt": "2026-10-11T07:53:05.205805+00:00",
+    "createdByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "lastModifiedByObjectId": null,
+    "errorCode": "Rest401",
+    "errorMessage": "Job execution failed with an unknown error.",
+    "finetuningType": null,
+    "indexInstanceId": null,
+    "pauseReason": null,
+    "reasonMessage": null,
+    "stages": [],
+    "debugContext": null
+  },
+  {
+    "inputModelName": "prod-gpt-56-reasoning-sol",
+    "inputModelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategy": {
+      "type": "Simple"
+    },
+    "lastModifiedDateTime": "2026-10-11T03:46:10.656282+00:00",
+    "completedDateTime": "2026-10-11T03:46:10.656282+00:00",
+    "resultMetadata": {
+      "score": 0.9833333492279053
+    },
+    "id": "2697a580-0671-49b5-b76f-f34041f22277",
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-11T03:32:35.6992743+00:00",
+    "snapshotMetadata": {
+      "id": "2697a580-0671-49b5-b76f-f34041f22277",
+      "skillsCount": 1,
+      "toolsCount": 3,
+      "samplePromptsCount": 4,
+      "knowledgeSourcesCount": 4
+    },
+    "evaluationMetadata": {
+      "overallScore": 0.9833333492279053
+    },
+    "jobId": "2697a580-0671-49b5-b76f-f34041f22277",
+    "jobType": "Evaluation",
+    "jobTaskType": null,
+    "status": "Succeeded",
+    "baseModelName": "prod-gpt-56-reasoning-sol",
+    "baseModelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ],
+    "baseModelDisplayName": null,
+    "newModelName": "",
+    "createdAt": "2026-10-11T03:32:35.6992743+00:00",
+    "updatedAt": "2026-10-11T03:46:10.656282+00:00",
+    "completedAt": "2026-10-11T03:46:10.656282+00:00",
+    "createdByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "lastModifiedByObjectId": null,
+    "errorCode": null,
+    "errorMessage": "",
+    "finetuningType": null,
+    "indexInstanceId": null,
+    "pauseReason": null,
+    "reasonMessage": null,
+    "stages": [],
+    "debugContext": null
+  },
+  {
+    "inputModelName": "prod-gpt-56-reasoning-sol",
+    "inputModelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ],
+    "harnessStrategyType": "Simple",
+    "harnessStrategy": {
+      "type": "Simple"
+    },
+    "lastModifiedDateTime": "2026-10-11T03:31:14.0613325+00:00",
+    "completedDateTime": "2026-10-11T03:31:14.0613325+00:00",
+    "resultMetadata": {
+      "score": 0.9466666579246521
+    },
+    "id": "4bae38ee-051b-4bf5-9faf-d71eb2d30b0b",
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-11T03:17:23.2953562+00:00",
+    "snapshotMetadata": {
+      "id": "4bae38ee-051b-4bf5-9faf-d71eb2d30b0b",
+      "skillsCount": 1,
+      "toolsCount": 3,
+      "samplePromptsCount": 5,
+      "knowledgeSourcesCount": 4
+    },
+    "evaluationMetadata": {
+      "overallScore": 0.9466666579246521
+    },
+    "jobId": "4bae38ee-051b-4bf5-9faf-d71eb2d30b0b",
+    "jobType": "Evaluation",
+    "jobTaskType": null,
+    "status": "Succeeded",
+    "baseModelName": "prod-gpt-56-reasoning-sol",
+    "baseModelNames": [
+      "prod-gpt-56-reasoning-sol"
+    ],
+    "baseModelDisplayName": null,
+    "newModelName": "",
+    "createdAt": "2026-10-11T03:17:23.2953562+00:00",
+    "updatedAt": "2026-10-11T03:31:14.0613325+00:00",
+    "completedAt": "2026-10-11T03:31:14.0613325+00:00",
+    "createdByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "lastModifiedByObjectId": null,
+    "errorCode": null,
+    "errorMessage": "",
+    "finetuningType": null,
+    "indexInstanceId": null,
+    "pauseReason": null,
+    "reasonMessage": null,
+    "stages": [],
+    "debugContext": null
+  }
+]
+

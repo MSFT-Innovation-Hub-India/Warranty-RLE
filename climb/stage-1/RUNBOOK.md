@@ -315,6 +315,21 @@ Reconcile at 08:06:50 UTC (`evaluate list --limit 3`): the same three jobs as ab
 
 ❌ The GUID accepted at 07:04 is now refused too. Recorded under [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) and [P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error). Not resubmitted.
 
+### 2.10 Another small model: GPT-5.4-Mini, one claim · 08:18 UTC (13:48 IST)
+
+On the user's request (they asked for gpt-4.1-mini, which is not in this environment's model list; GPT-5.4-Mini is the only other small model). Its only evaluation row is `dev-ct-gpt-54-mini-mp`. Pre-flight: database `0 0 0`, ALL MATCH, no active job ([raw/probe-54mini/](raw/probe-54mini/)).
+```powershell
+powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -Samples '04101=90dfe727-082c-4c06-bca9-6321b9382be4' -OutDir climb\stage-1\raw\probe-54mini -Model dev-ct-gpt-54-mini-mp -BatchSize 1 -MaxAttempts 1
+```
+```text
+Command failed (1): frontier-tuning --output json evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model dev-ct-gpt-54-mini-mp --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+Error: API error (500): ER99000: An unknown error has occurred.
+Transaction ID: 87f56fcd-7553-d4d3-78ce-0dc7c0c43ecf   (excerpt)
+```
+Reconcile at 08:19:30 UTC (`evaluate list --limit 3`): no new job.
+
+❌ Same failure. Only the enabled and selected model (GPT-5.6-Sol) can be evaluated in this environment now.
+
 (Before this was found:) every call that named MAI-CODE-5b by name returned `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
 
 ---
@@ -333,3 +348,4 @@ Reconcile at 08:06:50 UTC (`evaluate list --limit 3`): the same three jobs as ab
 | `models set` to enable MAI-CODE-5b, by name and by GUID | `400 ER59004` (needs a GUID), then `500 ER99000` |
 | One claim by GUID | Ran (28 min) but the claim-system calls failed inside the platform ("virtualization error"); not a valid result. Job later marked `Failed`, `Rest401` |
 | Same claim by GUID again, 08:05 UTC | `500 ER99000`, no job created |
+| GPT-5.4-Mini instead, 08:18 UTC | `500 ER99000`, no job created |
