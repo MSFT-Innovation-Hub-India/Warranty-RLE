@@ -273,6 +273,48 @@ The calls never reached our server: the platform failed them first. Recorded as 
 
 ⛔ **Stopped before the other 29 claims**: they would fail the same way, measuring the platform rather than the model. Database `0 0 0 0`.
 
+### 2.9 Retry the single claim by GUID · 08:03 UTC (13:33 IST)
+
+On the user's go-ahead. Pre-flight first:
+```powershell
+$e='598fd1b0-36f1-402f-ba36-aa00c8a67cc4'; New-Item -ItemType Directory -Force climb\stage-1\raw\probe-guid-2 | Out-Null
+.\scripts\sql-run.ps1 -File scripts\db-table-counts.sql | Tee-Object climb\stage-1\raw\probe-guid-2\preflight-db-counts.txt
+.\.venv\Scripts\python.exe scripts\check-live-config.py climb\stage-1\config | Tee-Object climb\stage-1\raw\probe-guid-2\preflight-config-check.txt
+$ev = frontier-tuning -e $e evaluate list --limit 3 -o json | Out-String; ($ev.Substring($ev.IndexOf('[')) | ConvertFrom-Json) | ForEach-Object { "eval $($_.id) $($_.status) $($_.inputModelName) $($_.createdDateTime)" }
+curl.exe -s -m 30 https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/healthz
+```
+```text
+Dealers 4 · Parts 14 · Assets 117 · AssetTelemetry 3007 · Claims 92 · ServiceHistory 89 · GoodwillAuthority 4 · TsbApplicability 4 · ClaimAdjudicationDraft 0 · EvidenceRequest 0 · GoodwillEscalation 0   (trimmed to one line)
+ALL MATCH
+eval bf5947ad-dd49-4812-9305-b9fc13a2ce45 Failed dev-ct-mai-code-mp 10/11/2026 12:34:58
+eval 2697a580-0671-49b5-b76f-f34041f22277 Succeeded prod-gpt-56-reasoning-sol 10/11/2026 09:02:35
+eval 4bae38ee-051b-4bf5-9faf-d71eb2d30b0b Succeeded prod-gpt-56-reasoning-sol 10/11/2026 08:47:23
+{"status":"ok","assets":117}
+```
+The earlier probe now reads **Failed**. Its status:
+```powershell
+frontier-tuning -e $e -o json evaluate status bf5947ad-dd49-4812-9305-b9fc13a2ce45 | Set-Content climb\stage-1\raw\probe-guid\status-after.json
+```
+```text
+"status": "Failed", "errorCode": "Rest401", "errorMessage": "Job execution failed with an unknown error.",
+"completedAt": "2026-10-11T07:53:05.205805+00:00", "resultMetadata": { "score": 0.4375 }, "stages": []   (excerpt)
+```
+(For comparison, Sol job `2697a580…`: `Succeeded`, no error code, same snapshot: 3 tools, 4 knowledge sources.)
+
+The retry:
+```powershell
+powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -Samples '04101=90dfe727-082c-4c06-bca9-6321b9382be4' -OutDir climb\stage-1\raw\probe-guid-2 -Model 00000000-0000-0000-8000-100000000004 -BatchSize 1 -MaxAttempts 1
+```
+```text
+Command failed (1): frontier-tuning --output json evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model 00000000-0000-0000-8000-100000000004 --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+Error: API error (500): ER99000: An unknown error has occurred.
+The request outcome is unknown; it was not retried. Inspect the resource before submitting again.
+Transaction ID: 7098a052-c09d-f81a-e17d-ec8fb2fdd798
+```
+Reconcile at 08:06:50 UTC (`evaluate list --limit 3`): the same three jobs as above, **no new job**. Nothing charged, database untouched.
+
+❌ The GUID accepted at 07:04 is now refused too. Recorded under [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) and [P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error). Not resubmitted.
+
 (Before this was found:) every call that named MAI-CODE-5b by name returned `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
 
 ---
@@ -289,4 +331,5 @@ The calls never reached our server: the platform failed them first. Recorded as 
 | --- | --- |
 | `evaluate start` with MAI-CODE-5b, ×3 (10 claims, 10 claims, 1 claim) | `500 ER99000` each time; no job created |
 | `models set` to enable MAI-CODE-5b, by name and by GUID | `400 ER59004` (needs a GUID), then `500 ER99000` |
-| One claim by GUID | Ran (28 min) but the claim-system calls failed inside the platform ("virtualization error"); not a valid result |
+| One claim by GUID | Ran (28 min) but the claim-system calls failed inside the platform ("virtualization error"); not a valid result. Job later marked `Failed`, `Rest401` |
+| Same claim by GUID again, 08:05 UTC | `500 ER99000`, no job created |

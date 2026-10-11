@@ -26,13 +26,14 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | --- | --- |
 | CLI | 1.0.14 |
 | Command | `evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model 00000000-0000-0000-8000-100000000004 --strategy Simple --env-id 598fd1b0-…` (via `eval-batches.ps1`) |
-| Job | `bf5947ad-dd49-4812-9305-b9fc13a2ce45`, claim C-2026-04101, 2026-10-11 07:04:58–07:33:23 UTC, `Succeeded` after 28 min |
+| Job | `bf5947ad-dd49-4812-9305-b9fc13a2ce45`, claim C-2026-04101, 2026-10-11 07:04:58–07:33:23 UTC, `Succeeded` after 28 min. At 07:53:05 UTC the platform changed it to **`Failed`**, `errorCode: Rest401`, "Job execution failed with an unknown error." (`stages: []`, score kept at 0.4375) |
 | Agent's answer | "I couldn't complete the adjudication for claim C-2026-04101 because the warranty assistant could not access the required claim-system dossier tool; it failed with a **virtualization error**." Rubric 0.4375 |
 | Platform counters | `evaluate diagnostics` → `toolCalls: succeeded 4, failed 5, total 9` |
 | Our MCP server | Healthy throughout (`/healthz` → `{"status":"ok","assets":117}`). Console logs of all 5 replicas (revision `contoso-service-mcp--0000007`): **no `CallToolRequest` between 07:00 and 07:33 UTC**, one `ListToolsRequest` at 07:27:26. During stage 0 (GPT-5.6-Sol, 01:58–03:47 UTC), tool calls did arrive (`CallToolRequest` at 03:26–03:42 in the retained log tail) |
-| Reading | The platform failed the claim-system calls for this MAI-CODE-5b execution before forwarding them to the MCP server. MAI-CODE-5b called the same server successfully in attempt 1 (2026-10-07 to 10-09) |
-| Ask | (1) What is the "virtualization error" on `contoso-service` tool calls in `dev-ct-mai-code-mp` executions? (2) Why does it affect this model and not GPT-5.6-Sol, in the same environment on the same day? (3) Is it related to P7 (tools excluded from tuning) or P10 (two catalogue rows for the model)? |
-| Evidence | [diagnostics.json](../climb/stage-1/raw/probe-guid/diagnostics.json) · [sample-detail.json](../climb/stage-1/raw/probe-guid/sample-detail.json) · MCP replica logs in [climb/stage-1/raw/probe-guid/](../climb/stage-1/raw/probe-guid/) |
+| Retry (08:05 UTC) | The same command, same GUID, returned `500 ER99000` (transaction `7098a052-c09d-f81a-e17d-ec8fb2fdd798`); `evaluate list` at 08:06:50 showed no new job. The GUID that was accepted at 07:04 is now refused as well (see P10) |
+| Reading | A `401` points to an authorization failure. The platform failed the claim-system calls for this MAI-CODE-5b execution before forwarding them to the MCP server. MAI-CODE-5b called the same server successfully in attempt 1 (2026-10-07 to 10-09) |
+| Ask | (1) What is the "virtualization error" on `contoso-service` tool calls in `dev-ct-mai-code-mp` executions? (2) Why does it affect this model and not GPT-5.6-Sol, in the same environment on the same day? (3) What does `Rest401` on the job mean: which call was unauthorized? (4) Is it related to P7 (tools excluded from tuning) or P10 (two catalogue rows for the model)? |
+| Evidence | [diagnostics.json](../climb/stage-1/raw/probe-guid/diagnostics.json) · [sample-detail.json](../climb/stage-1/raw/probe-guid/sample-detail.json) · [status-after.json](../climb/stage-1/raw/probe-guid/status-after.json) (the `Rest401`) · MCP replica logs in [climb/stage-1/raw/probe-guid/](../climb/stage-1/raw/probe-guid/) · retry: [runner-output.txt](../climb/stage-1/raw/probe-guid-2/runner-output.txt) |
 
 ## P10 Every call naming MAI-CODE-5b fails with 500 ER99000
 
@@ -49,13 +50,14 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | 06:57:21 | `evaluate start --sample-id 90dfe727-… --base-model dev-ct-mai-code-mp --strategy Simple` (1 claim) | same | `e7f5cfad-8a0b-7815-acd0-5182e8c48c8a` |
 | 06:59:22 | `models set dev-ct-mai-code-mp --enabled` | `API error (400): ER59004: modelId 'dev-ct-mai-code-mp' is invalid; it must contain a GUID.` | `0ed7d7a7-72f0-1507-c927-c49ee5dfe154` |
 | 06:59:51 | `models set 00000000-0000-0000-8000-100000000004 --enabled` | `API error (500): ER99000: An unknown error has occurred.` | `eb6d2bee-935e-d4fc-f0d3-25fc8fab500b` |
+| 08:05 | `evaluate start --sample-id 90dfe727-… --base-model 00000000-0000-0000-8000-100000000004 --strategy Simple` (1 claim; the GUID accepted at 07:04) | same | `7098a052-c09d-f81a-e17d-ec8fb2fdd798` |
 
 | | |
 | --- | --- |
 | Reconciled | After each `evaluate start`, `evaluate list` showed no new job (newest: GPT-5.6-Sol `2697a580…`, 03:32 UTC). Nothing was charged; the claim database was untouched |
 | Same environment, same hour | GPT-5.6-Sol evaluations succeeded 01:58–03:47 UTC (7 jobs); `ping` and `auth check` OK |
 | Environment model state | `models list` → `trainingModels`: `prod-gpt-56-reasoning-sol` `isEnabled: true, isSelected: true`; both MAI entries `isEnabled: false`. Same on 2026-10-10 17:58 UTC. MAI-CODE-5b evaluated successfully in this environment on 2026-10-07 to 10-09 (attempt 1); when it was disabled is unknown |
-| Workaround (07:04 UTC) | `--base-model 00000000-0000-0000-8000-100000000004` (MAI-CODE-5b's GUID ID) is accepted: job `bf5947ad-dd49-4812-9305-b9fc13a2ce45`. The model list has two MAI rows (IDs `0000…0004` and `dev-ct-mai-code-mp`); the CLI submits the matched ID, and the name-style ID fails. For GPT-5.6-Sol the name-style ID is the selected row, and it works |
+| Workaround (07:04 UTC, worked once) | `--base-model 00000000-0000-0000-8000-100000000004` (MAI-CODE-5b's GUID ID) is accepted: job `bf5947ad-dd49-4812-9305-b9fc13a2ce45`. The model list has two MAI rows (IDs `0000…0004` and `dev-ct-mai-code-mp`); the CLI submits the matched ID, and the name-style ID fails. For GPT-5.6-Sol the name-style ID is the selected row, and it works |
 | Ask | (1) Why do the two catalogue rows for one model behave differently, and why a 500 rather than a clear error? (2) Why do `evaluate start` and `models set` return 500 for it rather than a clear error? (3) Must a model be enabled with `models set` before `evaluate start --base-model` can use it? |
 
 ## P9 Rubrics found disabled; evaluation refused (ER07018)
