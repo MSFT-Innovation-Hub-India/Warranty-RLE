@@ -28,6 +28,7 @@ Use it whenever you need to know how a command works, which options exist, what 
 | What changed between CLI versions | Main page § *Release notes* |
 
 Two cautions:
+- **There are two CLI release lines.** `/v1` documents the **stable 1.x** line, which this climb uses (decided 2026-10-11). The site root `/` documents the **0.3.x preview** line, which keeps getting releases (0.3.16, 0.3.17 …) and has preview-only features but no hill-climb playbooks. Don't switch lines mid-climb.
 - The docs describe CLI **1.0.x**, which is installed (1.0.14 since 2026-10-10). v1 is its own release channel; a 0.3.x client's `update` can't see it ([docs/05 § CLI version](docs/05-operations.md#cli-version)). When the docs and the installed `--help` disagree, the installed `--help` decides what will run. Record the difference.
 - Docs are 📄 upstream guidance, not measurements on this tenant.
 
