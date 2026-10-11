@@ -330,6 +330,40 @@ Reconcile at 08:19:30 UTC (`evaluate list --limit 3`): no new job.
 
 ❌ Same failure. Only the enabled and selected model (GPT-5.6-Sol) can be evaluated in this environment now.
 
+### 2.11 MAI over the legacy connection · 09:58 UTC (15:28 IST)
+
+The user remembered no such errors on CLI 0.3.x. The 1.x docs describe two connections: the default (`transport = "public"`, ours) and the alternate `legacy`, the older route. Tried legacy with a separate config file, leaving the saved config unchanged ([raw/ft-legacy.toml](raw/ft-legacy.toml)):
+```powershell
+$c="<scratchpad>\ft-legacy.toml"
+"transport = `"legacy`"`nenv_id = `"598fd1b0-36f1-402f-ba36-aa00c8a67cc4`"`n" | Set-Content $c -Encoding ascii
+frontier-tuning -c $c models list
+```
+```text
+Models for Evaluation
+ID                         Name          Display Name  Fine-Tuned  Selected
+prod-gpt-56-reasoning-sol  GPT-5.6-Sol   GPT-5.6-Sol       —          ✓
+dev-ct-gpt-54-mini-mp      GPT-5.4-Mini  GPT-5.4-Mini      —          —
+dev-ct-mai-code-mp         MAI-CODE-5b   MAI-CODE-5b       —          —
+Models for Fine-tuning
+gpt-54-mini       GPT-5.4-Mini …   ·   mai-code-1-flash  MAI-Code-1-Flash …   (trimmed)
+```
+One row per model, no GUID rows: the list as 0.3.x showed it. The single MAI claim over legacy:
+```powershell
+$env:FRONTIER_TUNING_CONFIG = $c
+powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -Samples '04101=90dfe727-082c-4c06-bca9-6321b9382be4' -OutDir climb\stage-1\raw\probe-legacy -Model dev-ct-mai-code-mp -BatchSize 1 -MaxAttempts 1
+```
+```text
+Command failed (1): frontier-tuning --output json evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model dev-ct-mai-code-mp --strategy Simple --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+Error: API error (507): ER99000: An unknown error has occurred.
+Transaction ID: 729fb935-5ef3-091a-49d6-60010e0f5f7f   (excerpt)
+```
+Reconcile at 10:00 UTC on both connections:
+```text
+public: eval bf5947ad-… Failed dev-ct-mai-code-mp · 2697a580-… Succeeded Sol · 4bae38ee-… Succeeded Sol
+legacy: da0fd79d-… Succeeded prod-gpt-56-reasoning-sol 95% 2026-10-11T01:58 · 729ff2cd-… Cancelled dev-ct-mai-code-mp 2026-10-09T04:40 · 008103c3-… Cancelled dev-ct-mai-code-mp 2026-10-09T04:30   (trimmed)
+```
+No new job on either. ❌ The connection is not the cause: MAI is refused on both. The two connections show different job histories.
+
 (Before this was found:) every call that named MAI-CODE-5b by name returned `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
 
 ---
@@ -349,3 +383,4 @@ Reconcile at 08:19:30 UTC (`evaluate list --limit 3`): no new job.
 | One claim by GUID | Ran (28 min) but the claim-system calls failed inside the platform ("virtualization error"); not a valid result. Job later marked `Failed`, `Rest401` |
 | Same claim by GUID again, 08:05 UTC | `500 ER99000`, no job created |
 | GPT-5.4-Mini instead, 08:18 UTC | `500 ER99000`, no job created |
+| MAI over the legacy connection (the 0.3.x route), 09:58 UTC | `507 ER99000`, no job created |

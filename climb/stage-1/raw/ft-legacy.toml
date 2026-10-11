@@ -1,0 +1,6 @@
+transport = "legacy"
+env_id = "598fd1b0-36f1-402f-ba36-aa00c8a67cc4"
+last_update_check = 1791712697.8812551
+
+[environment_init_times]
+598fd1b0-36f1-402f-ba36-aa00c8a67cc4 = 1791712697.8721583

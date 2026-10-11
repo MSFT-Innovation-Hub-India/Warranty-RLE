@@ -52,10 +52,12 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | 06:59:51 | `models set 00000000-0000-0000-8000-100000000004 --enabled` | `API error (500): ER99000: An unknown error has occurred.` | `eb6d2bee-935e-d4fc-f0d3-25fc8fab500b` |
 | 08:05 | `evaluate start --sample-id 90dfe727-… --base-model 00000000-0000-0000-8000-100000000004 --strategy Simple` (1 claim; the GUID accepted at 07:04) | same | `7098a052-c09d-f81a-e17d-ec8fb2fdd798` |
 | 08:18:40 | `evaluate start --sample-id 90dfe727-… --base-model dev-ct-gpt-54-mini-mp --strategy Simple` (1 claim, **GPT-5.4-Mini**, its only evaluation row) | same | `87f56fcd-7553-d4d3-78ce-0dc7c0c43ecf` |
+| 09:58:45 | same 1-claim MAI start (`--base-model dev-ct-mai-code-mp`) over the **legacy connection** (`transport = "legacy"`, the route 0.3.x used) | `API error (507): ER99000: An unknown error has occurred.` | `729fb935-5ef3-091a-49d6-60010e0f5f7f` |
 
 | | |
 | --- | --- |
 | Reconciled | After each `evaluate start`, `evaluate list` showed no new job (newest: GPT-5.6-Sol `2697a580…`, 03:32 UTC). Nothing was charged; the claim database was untouched |
+| Not the connection | Over `transport = "legacy"`, `models list` shows one row per model (no GUID rows, as in 0.3.x) and Sol selected; the MAI start fails with `507 ER99000`. Reconciled 10:00 UTC on both connections: no new job. The two connections list different job histories (legacy's newest is Sol `da0fd79d…` 01:58 UTC; it does not show the later Sol jobs or `bf5947ad…`) |
 | Not only MAI | GPT-5.4-Mini (`dev-ct-gpt-54-mini-mp`, also `isEnabled: false`) fails the same way at 08:18 UTC; reconciled at 08:19:30, no job. The only model that has run today is the one enabled and selected, GPT-5.6-Sol |
 | Same environment, same hour | GPT-5.6-Sol evaluations succeeded 01:58–03:47 UTC (7 jobs); `ping` and `auth check` OK |
 | Environment model state | `models list` → `trainingModels`: `prod-gpt-56-reasoning-sol` `isEnabled: true, isSelected: true`; both MAI entries `isEnabled: false`. Same on 2026-10-10 17:58 UTC. MAI-CODE-5b evaluated successfully in this environment on 2026-10-07 to 10-09 (attempt 1); when it was disabled is unknown |
