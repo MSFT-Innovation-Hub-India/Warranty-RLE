@@ -7,6 +7,7 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | # | Issue | Status | First seen (UTC) |
 | --- | --- | --- | --- |
 | [P7](#p7-tuning-excludes-the-claim-system-tools) | Tuning excludes 36 tools "that can make changes"; the claim-system tools never appear in training rollouts | 🔬 Open, **blocks a meaningful RFT** | 2026-10-10 12:41 |
+| [P10](#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) | Every evaluation or model call naming MAI-CODE-5b fails with `500 ER99000`; GPT-5.6-Sol unaffected | 🔴 Open, **blocks stage 1** | 2026-10-11 06:51 |
 | [P9](#p9-rubrics-found-disabled-evaluation-refused-er07018) | All six rubrics found disabled; `evaluate start` refused with `ER07018` | Fixed by re-enabling; cause 🔬 | 2026-10-11 01:51 |
 | [P8](#p8-skipped-rubrics-reported-as-00-in-cli-10) | CLI 1.0 reports a rubric skipped as not applicable as `score: 0.0` | Worked around in our scripts | 2026-10-10 |
 | [P6](#p6-tuning-step-fails-repeatedly-with-400) | Tuning step fails repeatedly with `400 We hit an internal error` | Closed: job cancelled 2026-10-10 17:45 UTC | 2026-10-09 12:50 |
@@ -17,6 +18,29 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | [P1](#p1-execution-diagnostics-unavailable) | Execution diagnostics API returns 403/404 | Open | 2026-10-05 |
 
 ---
+
+## P10 Every call naming MAI-CODE-5b fails with 500 ER99000
+
+| Field | Value |
+| --- | --- |
+| CLI | 1.0.14 |
+| Window | 2026-10-11 06:51–07:00 UTC · every attempt exit 1 |
+| Model | `dev-ct-mai-code-mp` (MAI-CODE-5b), catalogue IDs `00000000-0000-0000-8000-100000000004` and `dev-ct-mai-code-mp` |
+
+| UTC | Command (sample IDs shortened) | Error | Transaction ID |
+| --- | --- | --- | --- |
+| 06:51:59 | `evaluate start --sample-id ×10 --base-model dev-ct-mai-code-mp --strategy Simple` | `API error (500): ER99000: An unknown error has occurred.` | `d4a49046-54b3-f8aa-e7d3-ecbf79b75029` |
+| 06:54:32 | same, resubmitted once after reconciling | same | `cd0c5f3c-815d-0354-891b-1ac14219acc7` |
+| 06:57:21 | `evaluate start --sample-id 90dfe727-… --base-model dev-ct-mai-code-mp --strategy Simple` (1 claim) | same | `e7f5cfad-8a0b-7815-acd0-5182e8c48c8a` |
+| 06:59:22 | `models set dev-ct-mai-code-mp --enabled` | `API error (400): ER59004: modelId 'dev-ct-mai-code-mp' is invalid; it must contain a GUID.` | `0ed7d7a7-72f0-1507-c927-c49ee5dfe154` |
+| 06:59:51 | `models set 00000000-0000-0000-8000-100000000004 --enabled` | `API error (500): ER99000: An unknown error has occurred.` | `eb6d2bee-935e-d4fc-f0d3-25fc8fab500b` |
+
+| | |
+| --- | --- |
+| Reconciled | After each `evaluate start`, `evaluate list` showed no new job (newest: GPT-5.6-Sol `2697a580…`, 03:32 UTC). Nothing was charged; the claim database was untouched |
+| Same environment, same hour | GPT-5.6-Sol evaluations succeeded 01:58–03:47 UTC (7 jobs); `ping` and `auth check` OK |
+| Environment model state | `models list` → `trainingModels`: `prod-gpt-56-reasoning-sol` `isEnabled: true, isSelected: true`; both MAI entries `isEnabled: false`. Same on 2026-10-10 17:58 UTC. MAI-CODE-5b evaluated successfully in this environment on 2026-10-07 to 10-09 (attempt 1); when it was disabled is unknown |
+| Ask | (1) Is `dev-ct-mai-code-mp` available for evaluation in this tenant now? (2) Why do `evaluate start` and `models set` return 500 for it rather than a clear error? (3) Must a model be enabled with `models set` before `evaluate start --base-model` can use it? |
 
 ## P9 Rubrics found disabled; evaluation refused (ER07018)
 

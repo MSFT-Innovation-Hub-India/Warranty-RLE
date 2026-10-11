@@ -1,0 +1,6 @@
+Error: API error (500): ER99000: An unknown error has occurred.
+The request outcome is unknown; it was not retried. Inspect the resource before submitting again.
+Transaction ID: cd0c5f3c-815d-0354-891b-1ac14219acc7
+Submission outcome is unknown; the operation may have started server-side. Do not retry the start or cancel automatically. Reconcile first with:
+  frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate list
+Inspect recent operations in this environment before deciding whether to submit again.

@@ -1,0 +1,60 @@
+{
+  "trainingModels": [
+    {
+      "isEnabled": false,
+      "id": "00000000-0000-0000-8000-100000000005",
+      "alias": "prod-gpt-56-reasoning-sol",
+      "displayName": "GPT-5.6-Sol",
+      "name": "prod-gpt-56-reasoning-sol",
+      "isSelected": false
+    },
+    {
+      "isEnabled": false,
+      "id": "00000000-0000-0000-8000-100000000004",
+      "alias": "dev-ct-mai-code-mp",
+      "displayName": "MAI-CODE-5b",
+      "name": "dev-ct-mai-code-mp",
+      "isSelected": false
+    },
+    {
+      "isEnabled": false,
+      "id": "dev-ct-mai-code-mp",
+      "alias": "dev-ct-mai-code-mp",
+      "displayName": "MAI-CODE-5b",
+      "name": "dev-ct-mai-code-mp",
+      "isSelected": false
+    },
+    {
+      "isEnabled": false,
+      "id": "dev-ct-gpt-54-mini-mp",
+      "alias": "dev-ct-gpt-54-mini-mp",
+      "displayName": "GPT-5.4-Mini",
+      "name": "dev-ct-gpt-54-mini-mp",
+      "isSelected": false
+    },
+    {
+      "isEnabled": true,
+      "id": "prod-gpt-56-reasoning-sol",
+      "alias": "prod-gpt-56-reasoning-sol",
+      "displayName": "GPT-5.6-Sol",
+      "name": "prod-gpt-56-reasoning-sol",
+      "isSelected": true
+    }
+  ],
+  "ftBaseModels": [
+    {
+      "id": "00000000-0000-0000-8000-200000000002",
+      "alias": "gpt-54-mini",
+      "displayName": "GPT-5.4-Mini",
+      "name": "gpt-54-mini"
+    },
+    {
+      "id": "00000000-0000-0000-8000-200000000003",
+      "alias": "mai-code-1-flash",
+      "displayName": "MAI-Code-1-Flash",
+      "name": "mai-code-1-flash"
+    }
+  ],
+  "searchModels": []
+}
+

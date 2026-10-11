@@ -11,7 +11,7 @@ Every stage reports two numbers: **right answers**, checked against the answer k
 | Stage | Model and change | Question | Right answers | Rubric | Status |
 | --- | --- | --- | --- | --- | --- |
 | [0 · Baseline](stage-0/README.md) | GPT-5.6-Sol, current skill and rubrics | How well does the strongest model do on this use case? | **29/30** | 0.956 | ✅ 2026-10-11 |
-| 1 · MAI-CODE-5b | MAI-CODE-5b, same configuration | How does the small model do on the same use case? | | | ⬜ next |
+| [1 · MAI-CODE-5b](stage-1/RUNBOOK.md) | MAI-CODE-5b, same configuration | How does the small model do on the same use case? | | | ⛔ blocked: MAI calls fail with `500` ([P10](../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000)) |
 | 2 · Reward alignment | Rubrics only | Does the reward prefer the right answer? | | | ⬜ |
 | 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing procedure be taught? | | | ⬜ |
 | 4 · RFT | Model weights | Does tuning turn "sometimes right" into "usually right"? | | | ⬜ blocked by [P7](../docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools) |
