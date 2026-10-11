@@ -1,0 +1,2 @@
+claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,delivery_mismatch,note
+C-2026-04101,covered-simple,approve,review,ADD-IN-2.1,—,69575.0,,0.438,90dfe727-082c-4c06-bca9-6321b9382be4,results-04101.json,,False,,,False,decision unclear; no amount stated

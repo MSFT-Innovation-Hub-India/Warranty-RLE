@@ -103,7 +103,7 @@ A sample is only a prompt, e.g. `{"Prompt": "Adjudicate claim C-2026-04101."}`. 
 | Role | Model ID | Display name |
 | --- | --- | --- |
 | Frontier reference | `prod-gpt-56-reasoning-sol` | GPT-5.6-Sol |
-| Climbing model (evaluation) | `dev-ct-mai-code-mp` | MAI-CODE-5b |
+| Climbing model (evaluation) | `dev-ct-mai-code-mp`: **pass the GUID `00000000-0000-0000-8000-100000000004`** to `--base-model` ([P10](06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000)) | MAI-CODE-5b |
 | Tuning base | `mai-code-1-flash` | MAI-Code-1-Flash |
 | Grader | undisclosed, chosen by the platform | — |
 

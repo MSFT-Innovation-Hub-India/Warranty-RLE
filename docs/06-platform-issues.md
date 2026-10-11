@@ -7,7 +7,8 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | # | Issue | Status | First seen (UTC) |
 | --- | --- | --- | --- |
 | [P7](#p7-tuning-excludes-the-claim-system-tools) | Tuning excludes 36 tools "that can make changes"; the claim-system tools never appear in training rollouts | 🔬 Open, **blocks a meaningful RFT** | 2026-10-10 12:41 |
-| [P10](#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) | Every evaluation or model call naming MAI-CODE-5b fails with `500 ER99000`; GPT-5.6-Sol unaffected | 🔴 Open, **blocks stage 1** | 2026-10-11 06:51 |
+| [P11](#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error) | MAI-CODE-5b runs can't call the claim system ("virtualization error"); the calls never reach the MCP server | 🔴 Open, **blocks stage 1** | 2026-10-11 07:05 |
+| [P10](#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) | `evaluate start --base-model dev-ct-mai-code-mp` fails with `500 ER99000` | Workaround: pass the GUID `00000000-0000-0000-8000-100000000004` | 2026-10-11 06:51 |
 | [P9](#p9-rubrics-found-disabled-evaluation-refused-er07018) | All six rubrics found disabled; `evaluate start` refused with `ER07018` | Fixed by re-enabling; cause 🔬 | 2026-10-11 01:51 |
 | [P8](#p8-skipped-rubrics-reported-as-00-in-cli-10) | CLI 1.0 reports a rubric skipped as not applicable as `score: 0.0` | Worked around in our scripts | 2026-10-10 |
 | [P6](#p6-tuning-step-fails-repeatedly-with-400) | Tuning step fails repeatedly with `400 We hit an internal error` | Closed: job cancelled 2026-10-10 17:45 UTC | 2026-10-09 12:50 |
@@ -18,6 +19,20 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | [P1](#p1-execution-diagnostics-unavailable) | Execution diagnostics API returns 403/404 | Open | 2026-10-05 |
 
 ---
+
+## P11 MAI-CODE-5b runs cannot call the claim system ("virtualization error")
+
+| Field | Value |
+| --- | --- |
+| CLI | 1.0.14 |
+| Command | `evaluate start --sample-id 90dfe727-082c-4c06-bca9-6321b9382be4 --base-model 00000000-0000-0000-8000-100000000004 --strategy Simple --env-id 598fd1b0-…` (via `eval-batches.ps1`) |
+| Job | `bf5947ad-dd49-4812-9305-b9fc13a2ce45`, claim C-2026-04101, 2026-10-11 07:04:58–07:33:23 UTC, `Succeeded` after 28 min |
+| Agent's answer | "I couldn't complete the adjudication for claim C-2026-04101 because the warranty assistant could not access the required claim-system dossier tool; it failed with a **virtualization error**." Rubric 0.4375 |
+| Platform counters | `evaluate diagnostics` → `toolCalls: succeeded 4, failed 5, total 9` |
+| Our MCP server | Healthy throughout (`/healthz` → `{"status":"ok","assets":117}`). Console logs of all 5 replicas (revision `contoso-service-mcp--0000007`): **no `CallToolRequest` between 07:00 and 07:33 UTC**, one `ListToolsRequest` at 07:27:26. During stage 0 (GPT-5.6-Sol, 01:58–03:47 UTC), tool calls did arrive (`CallToolRequest` at 03:26–03:42 in the retained log tail) |
+| Reading | The platform failed the claim-system calls for this MAI-CODE-5b execution before forwarding them to the MCP server. MAI-CODE-5b called the same server successfully in attempt 1 (2026-10-07 to 10-09) |
+| Ask | (1) What is the "virtualization error" on `contoso-service` tool calls in `dev-ct-mai-code-mp` executions? (2) Why does it affect this model and not GPT-5.6-Sol, in the same environment on the same day? (3) Is it related to P7 (tools excluded from tuning) or P10 (two catalogue rows for the model)? |
+| Evidence | [diagnostics.json](../climb/stage-1/raw/probe-guid/diagnostics.json) · [sample-detail.json](../climb/stage-1/raw/probe-guid/sample-detail.json) · MCP replica logs in [climb/stage-1/raw/probe-guid/](../climb/stage-1/raw/probe-guid/) |
 
 ## P10 Every call naming MAI-CODE-5b fails with 500 ER99000
 
@@ -40,7 +55,8 @@ Every platform error or unexplained behaviour, with what the platform team needs
 | Reconciled | After each `evaluate start`, `evaluate list` showed no new job (newest: GPT-5.6-Sol `2697a580…`, 03:32 UTC). Nothing was charged; the claim database was untouched |
 | Same environment, same hour | GPT-5.6-Sol evaluations succeeded 01:58–03:47 UTC (7 jobs); `ping` and `auth check` OK |
 | Environment model state | `models list` → `trainingModels`: `prod-gpt-56-reasoning-sol` `isEnabled: true, isSelected: true`; both MAI entries `isEnabled: false`. Same on 2026-10-10 17:58 UTC. MAI-CODE-5b evaluated successfully in this environment on 2026-10-07 to 10-09 (attempt 1); when it was disabled is unknown |
-| Ask | (1) Is `dev-ct-mai-code-mp` available for evaluation in this tenant now? (2) Why do `evaluate start` and `models set` return 500 for it rather than a clear error? (3) Must a model be enabled with `models set` before `evaluate start --base-model` can use it? |
+| Workaround (07:04 UTC) | `--base-model 00000000-0000-0000-8000-100000000004` (MAI-CODE-5b's GUID ID) is accepted: job `bf5947ad-dd49-4812-9305-b9fc13a2ce45`. The model list has two MAI rows (IDs `0000…0004` and `dev-ct-mai-code-mp`); the CLI submits the matched ID, and the name-style ID fails. For GPT-5.6-Sol the name-style ID is the selected row, and it works |
+| Ask | (1) Why do the two catalogue rows for one model behave differently, and why a 500 rather than a clear error? (2) Why do `evaluate start` and `models set` return 500 for it rather than a clear error? (3) Must a model be enabled with `models set` before `evaluate start --base-model` can use it? |
 
 ## P9 Rubrics found disabled; evaluation refused (ER07018)
 

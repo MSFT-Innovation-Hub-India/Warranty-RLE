@@ -1,0 +1,302 @@
+2026-10-11T07:36:18.03782  Connecting to the container 'contoso-service-mcp'...
+2026-10-11T07:36:18.16278  Successfully Connected to container: 'contoso-service-mcp' [Revision: 'contoso-service-mcp--0000007', Replica: 'contoso-service-mcp--0000007-6d656585bd-4krzr']
+2026-10-11T03:25:50.7567728Z stderr F Terminating session: None
+2026-10-11T03:26:30.6724586Z stdout F INFO:     100.100.0.134:38342 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:26:30.6725891Z stderr F Processing request of type CallToolRequest
+2026-10-11T03:26:30.6727934Z stderr F No environment configuration found.
+2026-10-11T03:26:30.6731082Z stderr F ManagedIdentityCredential will use App Service managed identity
+2026-10-11T03:26:30.6737130Z stderr F Request URL: 'http://localhost:12356/msi/token?api-version=2019-08-01&resource=REDACTED'
+2026-10-11T03:26:30.6737241Z stderr F Request method: 'GET'
+2026-10-11T03:26:30.6737299Z stderr F Request headers:
+2026-10-11T03:26:30.6737318Z stderr F     'X-IDENTITY-HEADER': 'REDACTED'
+2026-10-11T03:26:30.6737336Z stderr F     'Metadata': 'REDACTED'
+2026-10-11T03:26:30.6737351Z stderr F     'x-ms-client-request-id': '8d15ba8a-c523-11f1-91af-baf88a0255f4'
+2026-10-11T03:26:30.6737398Z stderr F     'User-Agent': 'azsdk-python-identity/1.26.0 Python/3.12.15 (Linux-6.6.150.1-1.azl3-x86_64-with-glibc2.41)'
+2026-10-11T03:26:30.6737415Z stderr F No body was attached to the request
+2026-10-11T03:26:30.6766794Z stderr F Response status: 200
+2026-10-11T03:26:30.6766941Z stderr F Response headers:
+2026-10-11T03:26:30.6767020Z stderr F     'Content-Type': 'application/json; charset=utf-8'
+2026-10-11T03:26:30.6767054Z stderr F     'Date': 'Sun, 11 Oct 2026 03:26:29 GMT'
+2026-10-11T03:26:30.6767077Z stderr F     'Server': 'Kestrel'
+2026-10-11T03:26:30.6767102Z stderr F     'Transfer-Encoding': 'chunked'
+2026-10-11T03:26:30.6767124Z stderr F     'X-CORRELATION-ID': 'REDACTED'
+2026-10-11T03:26:30.6770303Z stderr F DefaultAzureCredential acquired a token from ManagedIdentityCredential
+2026-10-11T03:26:33.4370399Z stderr F Terminating session: None
+2026-10-11T03:26:34.2908507Z stdout F INFO:     100.100.0.134:38344 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:26:34.2916453Z stderr F Terminating session: None
+2026-10-11T03:26:34.7425439Z stdout F INFO:     100.100.0.33:51976 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:26:34.7428767Z stderr F Processing request of type CallToolRequest
+2026-10-11T03:26:34.7432127Z stderr F No environment configuration found.
+2026-10-11T03:26:34.7451329Z stderr F ManagedIdentityCredential will use App Service managed identity
+2026-10-11T03:26:34.7460063Z stderr F Request URL: 'http://localhost:12356/msi/token?api-version=2019-08-01&resource=REDACTED'
+2026-10-11T03:26:34.7460223Z stderr F Request method: 'GET'
+2026-10-11T03:26:34.7460344Z stderr F Request headers:
+2026-10-11T03:26:34.7460374Z stderr F     'X-IDENTITY-HEADER': 'REDACTED'
+2026-10-11T03:26:34.7460398Z stderr F     'Metadata': 'REDACTED'
+2026-10-11T03:26:34.7460422Z stderr F     'x-ms-client-request-id': '8f831218-c523-11f1-91af-baf88a0255f4'
+2026-10-11T03:26:34.7460444Z stderr F     'User-Agent': 'azsdk-python-identity/1.26.0 Python/3.12.15 (Linux-6.6.150.1-1.azl3-x86_64-with-glibc2.41)'
+2026-10-11T03:26:34.7460467Z stderr F No body was attached to the request
+2026-10-11T03:26:34.7479908Z stderr F Response status: 200
+2026-10-11T03:26:34.7480087Z stderr F Response headers:
+2026-10-11T03:26:34.7480169Z stderr F     'Content-Type': 'application/json; charset=utf-8'
+2026-10-11T03:26:34.7480198Z stderr F     'Date': 'Sun, 11 Oct 2026 03:26:33 GMT'
+2026-10-11T03:26:34.7480221Z stderr F     'Server': 'Kestrel'
+2026-10-11T03:26:34.7480243Z stderr F     'Transfer-Encoding': 'chunked'
+2026-10-11T03:26:34.7480295Z stderr F     'X-CORRELATION-ID': 'REDACTED'
+2026-10-11T03:26:34.7484120Z stderr F DefaultAzureCredential acquired a token from ManagedIdentityCredential
+2026-10-11T03:26:37.5342102Z stderr F Terminating session: None
+2026-10-11T03:26:47.6142458Z stdout F INFO:     100.100.0.134:57210 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:26:47.6149367Z stderr F Terminating session: None
+2026-10-11T03:26:47.9900149Z stdout F INFO:     100.100.0.33:54650 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:26:47.9904510Z stderr F Terminating session: None
+2026-10-11T03:26:48.0830526Z stdout F INFO:     100.100.0.33:54666 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:26:48.1140543Z stderr F Processing request of type CallToolRequest
+2026-10-11T03:26:48.1142798Z stderr F No environment configuration found.
+2026-10-11T03:26:48.1146058Z stderr F ManagedIdentityCredential will use App Service managed identity
+2026-10-11T03:26:48.1152362Z stderr F Request URL: 'http://localhost:12356/msi/token?api-version=2019-08-01&resource=REDACTED'
+2026-10-11T03:26:48.1152520Z stderr F Request method: 'GET'
+2026-10-11T03:26:48.1152601Z stderr F Request headers:
+2026-10-11T03:26:48.1152622Z stderr F     'X-IDENTITY-HEADER': 'REDACTED'
+2026-10-11T03:26:48.1152683Z stderr F     'Metadata': 'REDACTED'
+2026-10-11T03:26:48.1152699Z stderr F     'x-ms-client-request-id': '977b12e0-c523-11f1-91af-baf88a0255f4'
+2026-10-11T03:26:48.1152715Z stderr F     'User-Agent': 'azsdk-python-identity/1.26.0 Python/3.12.15 (Linux-6.6.150.1-1.azl3-x86_64-with-glibc2.41)'
+2026-10-11T03:26:48.1152729Z stderr F No body was attached to the request
+2026-10-11T03:26:48.1173604Z stderr F Response status: 200
+2026-10-11T03:26:48.1173719Z stderr F Response headers:
+2026-10-11T03:26:48.1173780Z stderr F     'Content-Type': 'application/json; charset=utf-8'
+2026-10-11T03:26:48.1173799Z stderr F     'Date': 'Sun, 11 Oct 2026 03:26:47 GMT'
+2026-10-11T03:26:48.1173813Z stderr F     'Server': 'Kestrel'
+2026-10-11T03:26:48.1173826Z stderr F     'Transfer-Encoding': 'chunked'
+2026-10-11T03:26:48.1173840Z stderr F     'X-CORRELATION-ID': 'REDACTED'
+2026-10-11T03:26:48.1176954Z stderr F DefaultAzureCredential acquired a token from ManagedIdentityCredential
+2026-10-11T03:26:50.8693940Z stderr F Terminating session: None
+2026-10-11T03:37:38.8934590Z stderr F Terminating session: None
+2026-10-11T03:38:49.9449687Z stderr F Terminating session: None
+2026-10-11T03:38:53.2084934Z stderr F Terminating session: None
+2026-10-11T03:39:12.5051509Z stderr F Terminating session: None
+2026-10-11T03:39:13.3121106Z stdout F INFO:     100.100.0.134:33034 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:39:14.9292037Z stdout F INFO:     100.100.0.33:35910 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:39:16.0609809Z stdout F INFO:     100.100.0.134:33042 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:40:06.9672026Z stderr F Terminating session: None
+2026-10-11T03:40:09.3006004Z stdout F INFO:     100.100.0.134:54066 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:40:19.4858506Z stderr F Terminating session: None
+2026-10-11T03:40:25.7214364Z stdout F INFO:     100.100.0.134:33192 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:40:25.7219723Z stderr F Terminating session: None
+2026-10-11T03:40:35.2473270Z stdout F INFO:     100.100.0.134:49134 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:40:35.2481774Z stderr F Terminating session: None
+2026-10-11T03:40:40.2674717Z stdout F INFO:     100.100.0.33:54064 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:40:41.4017182Z stderr F Terminating session: None
+2026-10-11T03:40:46.1879873Z stderr F Terminating session: None
+2026-10-11T03:40:47.3352157Z stderr F Terminating session: None
+2026-10-11T03:40:54.4420552Z stdout F INFO:     100.100.0.33:57034 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:40:54.6674342Z stdout F INFO:     100.100.0.33:57044 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:40:54.6679789Z stderr F Terminating session: None
+2026-10-11T03:40:56.1085074Z stdout F INFO:     100.100.0.33:39066 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:00.5555643Z stdout F INFO:     100.100.0.134:33490 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:00.7765955Z stdout F INFO:     100.100.0.134:33500 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:41:00.7771318Z stderr F Terminating session: None
+2026-10-11T03:41:18.3503342Z stdout F INFO:     100.100.0.33:52372 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:34.1777441Z stderr F Terminating session: None
+2026-10-11T03:41:39.7554567Z stdout F INFO:     100.100.0.134:48434 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:39.7557361Z stderr F Processing request of type CallToolRequest
+2026-10-11T03:41:39.7560167Z stderr F No environment configuration found.
+2026-10-11T03:41:39.7563231Z stderr F ManagedIdentityCredential will use App Service managed identity
+2026-10-11T03:41:39.7568893Z stderr F Request URL: 'http://localhost:12356/msi/token?api-version=2019-08-01&resource=REDACTED'
+2026-10-11T03:41:39.7569046Z stderr F Request method: 'GET'
+2026-10-11T03:41:39.7569121Z stderr F Request headers:
+2026-10-11T03:41:39.7569142Z stderr F     'X-IDENTITY-HEADER': 'REDACTED'
+2026-10-11T03:41:39.7569156Z stderr F     'Metadata': 'REDACTED'
+2026-10-11T03:41:39.7569171Z stderr F     'x-ms-client-request-id': 'aaf0cf5c-c525-11f1-91af-baf88a0255f4'
+2026-10-11T03:41:39.7569228Z stderr F     'User-Agent': 'azsdk-python-identity/1.26.0 Python/3.12.15 (Linux-6.6.150.1-1.azl3-x86_64-with-glibc2.41)'
+2026-10-11T03:41:39.7569243Z stderr F No body was attached to the request
+2026-10-11T03:41:39.7594353Z stderr F Response status: 200
+2026-10-11T03:41:39.7594474Z stderr F Response headers:
+2026-10-11T03:41:39.7594533Z stderr F     'Content-Type': 'application/json; charset=utf-8'
+2026-10-11T03:41:39.7594551Z stderr F     'Date': 'Sun, 11 Oct 2026 03:41:38 GMT'
+2026-10-11T03:41:39.7594566Z stderr F     'Server': 'Kestrel'
+2026-10-11T03:41:39.7594583Z stderr F     'Transfer-Encoding': 'chunked'
+2026-10-11T03:41:39.7594597Z stderr F     'X-CORRELATION-ID': 'REDACTED'
+2026-10-11T03:41:39.7597638Z stderr F DefaultAzureCredential acquired a token from ManagedIdentityCredential
+2026-10-11T03:41:43.0874706Z stdout F INFO:     100.100.0.33:49468 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:43.0878181Z stdout F INFO:     100.100.0.33:49476 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:41:43.0885172Z stderr F Terminating session: None
+2026-10-11T03:41:43.0889182Z stderr F Terminating session: None
+2026-10-11T03:41:49.3002353Z stdout F INFO:     100.100.0.33:39738 - "POST /mcp HTTP/1.1" 202 Accepted
+2026-10-11T03:41:49.3004620Z stderr F Terminating session: None
+2026-10-11T03:41:55.3763731Z stdout F INFO:     100.100.0.134:33908 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:41:55.3773208Z stderr F Terminating session: None
+2026-10-11T03:42:11.5139969Z stdout F INFO:     100.100.0.134:59740 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:42:11.8574900Z stdout F INFO:     100.100.0.33:41884 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T03:42:11.8578365Z stderr F Processing request of type CallToolRequest
+2026-10-11T03:42:11.8580973Z stderr F No environment configuration found.
+2026-10-11T03:42:11.8583832Z stderr F ManagedIdentityCredential will use App Service managed identity
+2026-10-11T03:42:11.8589600Z stderr F Request URL: 'http://localhost:12356/msi/token?api-version=2019-08-01&resource=REDACTED'
+2026-10-11T03:42:11.8589738Z stderr F Request method: 'GET'
+2026-10-11T03:42:11.8589801Z stderr F Request headers:
+2026-10-11T03:42:11.8589823Z stderr F     'X-IDENTITY-HEADER': 'REDACTED'
+2026-10-11T03:42:11.8589837Z stderr F     'Metadata': 'REDACTED'
+2026-10-11T03:42:11.8589852Z stderr F     'x-ms-client-request-id': 'be133264-c525-11f1-91af-baf88a0255f4'
+2026-10-11T03:42:11.8589894Z stderr F     'User-Agent': 'azsdk-python-identity/1.26.0 Python/3.12.15 (Linux-6.6.150.1-1.azl3-x86_64-with-glibc2.41)'
+2026-10-11T03:42:11.8589910Z stderr F No body was attached to the request
+2026-10-11T03:42:11.8613947Z stderr F Response status: 200
+2026-10-11T03:42:11.8614098Z stderr F Response headers:
+2026-10-11T03:42:11.8614180Z stderr F     'Content-Type': 'application/json; charset=utf-8'
+2026-10-11T03:42:11.8614211Z stderr F     'Date': 'Sun, 11 Oct 2026 03:42:10 GMT'
+2026-10-11T03:42:11.8614234Z stderr F     'Server': 'Kestrel'
+2026-10-11T03:42:11.8614256Z stderr F     'Transfer-Encoding': 'chunked'
+2026-10-11T03:42:11.8614279Z stderr F     'X-CORRELATION-ID': 'REDACTED'
+2026-10-11T03:42:11.8617666Z stderr F DefaultAzureCredential acquired a token from ManagedIdentityCredential
+2026-10-11T03:42:15.0861532Z stderr F Terminating session: None
+2026-10-11T03:52:55.7500221Z stderr F Terminating session: None
+2026-10-11T03:53:04.9192042Z stderr F Terminating session: None
+2026-10-11T03:53:07.3211034Z stdout F INFO:     100.100.0.33:60944 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:53:30.7493700Z stdout F INFO:     100.100.0.134:54046 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:53:33.1366362Z stderr F Terminating session: None
+2026-10-11T03:54:17.7307300Z stderr F Terminating session: None
+2026-10-11T03:54:20.2699341Z stdout F INFO:     100.100.0.33:53430 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:54:34.9762575Z stderr F Terminating session: None
+2026-10-11T03:54:37.3853153Z stdout F INFO:     100.100.0.33:46858 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:54:56.7980691Z stdout F INFO:     100.100.0.33:47886 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:54:58.0755152Z stdout F INFO:     100.100.0.134:33512 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:54:58.2656698Z stdout F INFO:     100.100.0.134:33516 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:55:23.9680579Z stderr F Terminating session: None
+2026-10-11T03:55:41.9912951Z stderr F Terminating session: None
+2026-10-11T03:55:44.1083468Z stderr F Terminating session: None
+2026-10-11T03:55:46.7667293Z stdout F INFO:     100.100.0.33:40514 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:56:13.2379687Z stdout F INFO:     100.100.0.33:48150 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T03:56:32.7448464Z stdout F INFO:     100.100.0.134:50148 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:08:44.4090556Z stdout F INFO:     100.100.0.134:36688 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:09:12.8862008Z stdout F INFO:     100.100.0.134:48614 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:09:13.3115643Z stderr F Terminating session: None
+2026-10-11T04:09:14.9250104Z stderr F Terminating session: None
+2026-10-11T04:09:16.0567083Z stderr F Terminating session: None
+2026-10-11T04:09:59.6103127Z stdout F INFO:     100.100.0.134:44330 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:10:09.2976419Z stderr F Terminating session: None
+2026-10-11T04:10:11.6437855Z stdout F INFO:     100.100.0.33:36190 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:10:37.4415017Z stdout F INFO:     100.100.0.134:33078 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:10:40.2643197Z stderr F Terminating session: None
+2026-10-11T04:10:51.0183059Z stdout F INFO:     100.100.0.33:56010 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:10:54.4367621Z stderr F Terminating session: None
+2026-10-11T04:10:56.1049670Z stderr F Terminating session: None
+2026-10-11T04:11:00.5486131Z stderr F Terminating session: None
+2026-10-11T04:11:18.3450301Z stderr F Terminating session: None
+2026-10-11T04:11:28.1529927Z stdout F INFO:     100.100.0.33:44798 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:11:40.0572265Z stderr F Terminating session: None
+2026-10-11T04:11:42.4082856Z stdout F INFO:     100.100.0.33:43678 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:11:51.9411683Z stdout F INFO:     100.100.0.134:34644 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:12:11.5083327Z stderr F Terminating session: None
+2026-10-11T04:23:00.6453501Z stdout F INFO:     100.100.0.134:48894 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:23:07.3167465Z stderr F Terminating session: None
+2026-10-11T04:23:09.7268985Z stdout F INFO:     100.100.0.33:60082 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:23:30.7439696Z stderr F Terminating session: None
+2026-10-11T04:24:20.2652725Z stderr F Terminating session: None
+2026-10-11T04:24:22.3973896Z stdout F INFO:     100.100.0.134:48506 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:24:37.3814057Z stderr F Terminating session: None
+2026-10-11T04:24:39.7978873Z stdout F INFO:     100.100.0.134:34526 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:24:43.8990682Z stdout F INFO:     100.100.0.134:34534 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:24:56.7889823Z stderr F Terminating session: None
+2026-10-11T04:24:58.0691711Z stderr F Terminating session: None
+2026-10-11T04:24:58.2598408Z stderr F Terminating session: None
+2026-10-11T04:25:00.1052731Z stdout F INFO:     100.100.0.134:56856 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:25:00.4152491Z stdout F INFO:     100.100.0.33:55202 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:25:28.8236746Z stdout F INFO:     100.100.0.33:54632 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:25:46.7642695Z stderr F Terminating session: None
+2026-10-11T04:25:49.7553575Z stdout F INFO:     100.100.0.134:55838 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:26:13.2339934Z stderr F Terminating session: None
+2026-10-11T04:26:32.7412238Z stderr F Terminating session: None
+2026-10-11T04:26:35.1498575Z stdout F INFO:     100.100.0.33:53598 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:38:44.4043862Z stderr F Terminating session: None
+2026-10-11T04:38:56.9741086Z stdout F INFO:     100.100.0.33:57556 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:39:12.8828468Z stderr F Terminating session: None
+2026-10-11T04:39:15.3057924Z stdout F INFO:     100.100.0.33:45320 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:39:59.6047341Z stderr F Terminating session: None
+2026-10-11T04:40:11.6447160Z stderr F Terminating session: None
+2026-10-11T04:40:17.2852383Z stdout F INFO:     100.100.0.134:35728 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:40:26.7047306Z stdout F INFO:     100.100.0.33:34964 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:40:29.6718144Z stdout F INFO:     100.100.0.134:32962 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:40:37.4366024Z stderr F Terminating session: None
+2026-10-11T04:40:46.3204441Z stdout F INFO:     100.100.0.134:51206 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:40:51.0119408Z stderr F Terminating session: None
+2026-10-11T04:40:54.3383725Z stdout F INFO:     100.100.0.33:35498 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:41:05.3763010Z stdout F INFO:     100.100.0.33:41364 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:41:28.1487038Z stderr F Terminating session: None
+2026-10-11T04:41:41.4072556Z stdout F INFO:     100.100.0.134:36924 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:41:42.3982354Z stderr F Terminating session: None
+2026-10-11T04:41:51.9366262Z stderr F Terminating session: None
+2026-10-11T04:42:00.2177762Z stdout F INFO:     100.100.0.33:39492 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:53:00.6406875Z stderr F Terminating session: None
+2026-10-11T04:53:09.7241749Z stderr F Terminating session: None
+2026-10-11T04:53:12.1298371Z stdout F INFO:     100.100.0.134:60138 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:53:35.5035874Z stdout F INFO:     100.100.0.33:46536 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:54:22.3923817Z stderr F Terminating session: None
+2026-10-11T04:54:24.9392967Z stdout F INFO:     100.100.0.134:47604 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:54:39.7932014Z stderr F Terminating session: None
+2026-10-11T04:54:42.4142294Z stdout F INFO:     100.100.0.134:58754 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:54:43.8969291Z stderr F Terminating session: None
+2026-10-11T04:55:00.1036697Z stderr F Terminating session: None
+2026-10-11T04:55:00.4193145Z stderr F Terminating session: None
+2026-10-11T04:55:28.8212188Z stderr F Terminating session: None
+2026-10-11T04:55:31.2489861Z stdout F INFO:     100.100.0.33:49094 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:55:44.4888442Z stdout F INFO:     100.100.0.33:59618 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:55:49.7532947Z stderr F Terminating session: None
+2026-10-11T04:55:52.1716230Z stdout F INFO:     100.100.0.134:47380 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:55:54.5736019Z stdout F INFO:     100.100.0.134:47386 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:55:57.6928693Z stdout F INFO:     100.100.0.33:42724 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T04:56:35.1439285Z stderr F Terminating session: None
+2026-10-11T04:56:50.2732921Z stdout F INFO:     100.100.0.33:53254 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:08:27.6624338Z stdout F INFO:     100.100.0.134:41536 - "GET /mdcscanner HTTP/1.1" 404 Not Found
+2026-10-11T05:08:56.9709601Z stderr F Terminating session: None
+2026-10-11T05:09:15.3061785Z stderr F Terminating session: None
+2026-10-11T05:09:20.3196756Z stdout F INFO:     100.100.0.33:38926 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:09:23.2379181Z stdout F INFO:     100.100.0.134:57652 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:10:14.7465324Z stdout F INFO:     100.100.0.33:40276 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:10:17.2797291Z stderr F Terminating session: None
+2026-10-11T05:10:26.6992426Z stderr F Terminating session: None
+2026-10-11T05:10:29.6691769Z stderr F Terminating session: None
+2026-10-11T05:10:42.2637730Z stdout F INFO:     100.100.0.134:60272 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:10:46.3119321Z stderr F Terminating session: None
+2026-10-11T05:10:54.0529216Z stdout F INFO:     100.100.0.33:33650 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:10:54.3360022Z stderr F Terminating session: None
+2026-10-11T05:11:05.3796269Z stderr F Terminating session: None
+2026-10-11T05:11:25.5908033Z stdout F INFO:     100.100.0.134:56342 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:11:41.4043788Z stderr F Terminating session: None
+2026-10-11T05:11:44.7232065Z stdout F INFO:     100.100.0.33:54318 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:11:48.6094174Z stdout F INFO:     100.100.0.134:54398 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:11:56.7607678Z stdout F INFO:     100.100.0.33:33590 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:12:00.2133687Z stderr F Terminating session: None
+2026-10-11T05:23:12.1239382Z stderr F Terminating session: None
+2026-10-11T05:23:35.4966721Z stderr F Terminating session: None
+2026-10-11T05:24:24.9366888Z stderr F Terminating session: None
+2026-10-11T05:24:42.4112270Z stderr F Terminating session: None
+2026-10-11T05:24:44.6116549Z stdout F INFO:     100.100.0.134:59260 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:24:44.7428803Z stdout F INFO:     100.100.0.134:59262 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:25:05.2737131Z stdout F INFO:     100.100.0.33:40270 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:25:31.2451674Z stderr F Terminating session: None
+2026-10-11T05:25:44.4815112Z stderr F Terminating session: None
+2026-10-11T05:25:48.3793220Z stdout F INFO:     100.100.0.134:56060 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:25:52.1697215Z stderr F Terminating session: None
+2026-10-11T05:25:54.5697157Z stderr F Terminating session: None
+2026-10-11T05:25:57.6955507Z stderr F Terminating session: None
+2026-10-11T05:26:00.0943038Z stdout F INFO:     100.100.0.33:42864 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:26:20.4734528Z stdout F INFO:     100.100.0.134:35870 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T05:26:50.2681993Z stderr F Terminating session: None
+2026-10-11T05:35:22.7264250Z stderr F Terminating session: None
+2026-10-11T05:35:22.7298749Z stderr F Terminating session: None
+2026-10-11T05:35:22.7306713Z stderr F Terminating session: None
+2026-10-11T05:35:46.8746067Z stderr F Terminating session: None
+2026-10-11T05:35:46.8754643Z stderr F Terminating session: None
+2026-10-11T05:35:46.8759218Z stderr F Terminating session: None
+2026-10-11T05:36:08.0146560Z stderr F Terminating session: None
+2026-10-11T05:36:08.0146975Z stderr F Terminating session: None
+2026-10-11T05:36:08.0154143Z stderr F Terminating session: None
+2026-10-11T05:44:50.1321643Z stderr F Terminating session: None
+2026-10-11T05:44:50.1326804Z stderr F Terminating session: None
+2026-10-11T05:44:50.1333321Z stderr F Terminating session: None
+2026-10-11T05:44:50.1351199Z stderr F Terminating session: None
+2026-10-11T05:44:50.1363694Z stderr F Terminating session: None
+2026-10-11T05:45:56.8869307Z stderr F Terminating session: None
+2026-10-11T07:27:26.3584098Z stdout F INFO:     100.100.0.33:48512 - "GET /mcp HTTP/1.1" 200 OK
+2026-10-11T07:27:26.7360955Z stdout F INFO:     100.100.0.134:48914 - "POST /mcp HTTP/1.1" 200 OK
+2026-10-11T07:27:26.7362480Z stderr F Processing request of type ListToolsRequest
+2026-10-11T07:27:26.7371883Z stderr F Terminating session: None
+2026-10-11T07:27:50.3174642Z stdout F INFO:     100.100.0.33:48726 - "GET / HTTP/1.1" 404 Not Found

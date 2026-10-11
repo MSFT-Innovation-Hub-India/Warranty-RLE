@@ -1,0 +1,223 @@
+{
+  "id": "90dfe727-082c-4c06-bca9-6321b9382be4",
+  "prompt": "You are receiving a user query, provide this user prompt to skill warranty-assistant verbatim. You should not change anything from the user query.\r\nAdjudicate claim C-2026-04101.",
+  "status": "Graded",
+  "score": 0.4375,
+  "skillResults": [
+    {
+      "id": "cf00d339-5217-4cd1-b390-cc0d911735da",
+      "displayName": "warranty-assistant",
+      "version": 11,
+      "snapshotData": {
+        "displayName": "warranty-assistant",
+        "description": "Adjudicates Contoso Industrial warranty claims, deciding whether a repair is covered, which warranty instrument governs, what is payable and what happens next, and answers questions about an asset's warranty position, a service partner or a part."
+      },
+      "score": 0.4375,
+      "rubrics": [
+        {
+          "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+          "displayName": "Coverage determination",
+          "snapshotData": {
+            "displayName": "Coverage determination",
+            "checklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.3333333333333333,
+          "scoreReason": "The final tool message explicitly says the analysis “could not complete,” which communicates that a decision is not yet possible. However, it does not identify the missing coverage-start record or the month/hour limits, nor compare repair date or running hours. No evidence establishes a split-limit situation."
+        },
+        {
+          "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+          "displayName": "Precedence discipline",
+          "snapshotData": {
+            "displayName": "Precedence discipline",
+            "checklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.0
+        },
+        {
+          "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+          "displayName": "Evidence grounding",
+          "snapshotData": {
+            "displayName": "Evidence grounding",
+            "checklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "importance": "high"
+          },
+          "score": 0.25,
+          "scoreReason": "The requested adjudication required grounded policy, claim, and valuation evidence, but the trajectory obtained none. The response therefore supplies no required clause, claim-record, rate, or price attribution. It also avoids inventing substantive claim facts."
+        },
+        {
+          "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+          "displayName": "Valuation accuracy",
+          "snapshotData": {
+            "displayName": "Valuation accuracy",
+            "checklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.0
+        },
+        {
+          "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+          "displayName": "Authority and action",
+          "snapshotData": {
+            "displayName": "Authority and action",
+            "checklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.5,
+          "scoreReason": "The response gives the user a concrete next step—rerun with the claim-system tool available or provide the dossier/source files. No goodwill or conversational-approval scenario arose. Although the outcome effectively requires obtaining evidence, no matching claim-system evidence request was recorded."
+        },
+        {
+          "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+          "displayName": "Gaps reported, not filled",
+          "snapshotData": {
+            "displayName": "Gaps reported, not filled",
+            "checklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "importance": "high"
+          },
+          "score": 0.6666666666666666,
+          "scoreReason": "The agent correctly avoids substituting other facts or issuing a dependent final coverage decision, but it identifies only the unavailable dossier/source files generally and does not name the specific missing decision fields."
+        }
+      ],
+      "rubricResults": [
+        {
+          "id": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+          "displayName": "Coverage determination",
+          "snapshotData": {
+            "displayName": "Coverage determination",
+            "checklistItems": [
+              "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+              "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+              "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+              "Where one limit is exceeded and the other is not, says which limit ends the cover"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.3333333333333333,
+          "scoreReason": "The final tool message explicitly says the analysis “could not complete,” which communicates that a decision is not yet possible. However, it does not identify the missing coverage-start record or the month/hour limits, nor compare repair date or running hours. No evidence establishes a split-limit situation."
+        },
+        {
+          "id": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+          "displayName": "Precedence discipline",
+          "snapshotData": {
+            "displayName": "Precedence discipline",
+            "checklistItems": [
+              "Where coverage can be determined, names one governing instrument by reference code",
+              "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+              "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+              "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.0
+        },
+        {
+          "id": "9bab192e-af3e-42e3-903a-598b6b829737",
+          "displayName": "Evidence grounding",
+          "snapshotData": {
+            "displayName": "Evidence grounding",
+            "checklistItems": [
+              "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+              "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+              "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+              "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+            ],
+            "importance": "high"
+          },
+          "score": 0.25,
+          "scoreReason": "The requested adjudication required grounded policy, claim, and valuation evidence, but the trajectory obtained none. The response therefore supplies no required clause, claim-record, rate, or price attribution. It also avoids inventing substantive claim facts."
+        },
+        {
+          "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+          "displayName": "Valuation accuracy",
+          "snapshotData": {
+            "displayName": "Valuation accuracy",
+            "checklistItems": [
+              "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+              "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+              "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+              "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+              "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.0
+        },
+        {
+          "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+          "displayName": "Authority and action",
+          "snapshotData": {
+            "displayName": "Authority and action",
+            "checklistItems": [
+              "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+              "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+              "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+              "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+            ],
+            "importance": "critical"
+          },
+          "score": 0.5,
+          "scoreReason": "The response gives the user a concrete next step—rerun with the claim-system tool available or provide the dossier/source files. No goodwill or conversational-approval scenario arose. Although the outcome effectively requires obtaining evidence, no matching claim-system evidence request was recorded."
+        },
+        {
+          "id": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+          "displayName": "Gaps reported, not filled",
+          "snapshotData": {
+            "displayName": "Gaps reported, not filled",
+            "checklistItems": [
+              "Names any record needed for the decision that is missing, and the field that is absent",
+              "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+              "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+            ],
+            "importance": "high"
+          },
+          "score": 0.6666666666666666,
+          "scoreReason": "The agent correctly avoids substituting other facts or issuing a dependent final coverage decision, but it identifies only the unavailable dossier/source files generally and does not name the specific missing decision fields."
+        }
+      ]
+    }
+  ],
+  "response": "I couldn’t complete the adjudication for claim **C-2026-04101** because the warranty assistant could not access the required claim-system dossier tool; it failed with a virtualization error. No claim documents were otherwise available to evaluate.\n\nPlease retry when the claim-system integration is available, or provide the claim dossier and applicable supporting documents.",
+  "billingSummary": {
+    "inputTokens": 382108,
+    "outputTokens": 8827,
+    "cacheReadTokens": 264704,
+    "cacheCreationTokens": 0,
+    "totalTokens": 390935,
+    "toolInvocations": 6.0,
+    "raiChecks": 13.0,
+    "infraSeconds": 0.0,
+    "orchestratorCpuSeconds": 153.2565151
+  }
+}
+

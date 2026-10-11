@@ -206,7 +206,74 @@ Transaction ID: eb6d2bee-935e-d4fc-f0d3-25fc8fab500b
 ```
 `models list` afterwards: unchanged.
 
-⛔ **Stopped.** Every call that names MAI-CODE-5b returns `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
+### 2.6 Use the model's GUID as `--base-model` · 07:04 UTC (12:34 IST)
+
+Insight from the evaluation model list: MAI-CODE-5b appears twice, once with ID `00000000-0000-0000-8000-100000000004` and once with ID `dev-ct-mai-code-mp`. The CLI submits the *ID* it matches, and an ID beats a name, so `--base-model dev-ct-mai-code-mp` submitted the name-style row. For GPT-5.6-Sol the same rule picked the row marked selected (✓), which is why stage 0 worked. `models set` had already said a model ID "must contain a GUID".
+
+```powershell
+powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -Samples '04101=90dfe727-082c-4c06-bca9-6321b9382be4' -OutDir climb\stage-1\raw\probe-guid -Model 00000000-0000-0000-8000-100000000004 -BatchSize 1 -MaxAttempts 1
+```
+```text
+12:35:05 04101 job bf5947ad-dd49-4812-9305-b9fc13a2ce45 started
+```
+```powershell
+frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 evaluate list --limit 2 -o json     # summarised
+```
+```text
+eval bf5947ad-dd49-4812-9305-b9fc13a2ce45 Running dev-ct-mai-code-mp 10/11/2026 12:34:58
+```
+✅ **Accepted.** For MAI-CODE-5b, pass the GUID `00000000-0000-0000-8000-100000000004`.
+
+### 2.7 The probe's result · 07:33 UTC (13:03 IST)
+
+```text
+13:03:23 04101 Succeeded after 28 min
+13:04:11 04101 done (job bf5947ad-dd49-4812-9305-b9fc13a2ce45): 1/1 finished; DB snapshot saved and reset
+13:04:11 ALL DONE
+```
+```powershell
+$f='climb\stage-1\raw\probe-guid\results-04101.json'; $t=Get-Content $f -Raw; $o=$t.Substring($t.IndexOf('{')) | ConvertFrom-Json; $s=$o.submissions[0]
+"score=$($s.score) status=$($s.status) calls=$($s.execution.billingSummary.toolInvocations)"; $s.execution.response
+```
+```text
+score=0.4375 status=Graded calls=6
+I couldn't complete the adjudication for claim **C-2026-04101** because the warranty assistant could not access the required claim-system dossier tool; it failed with a virtualization error. No claim documents were otherwise available to evaluate.
+Please retry when the claim-system integration is available, or provide the claim dossier and applicable supporting documents.
+```
+❌ **Not a valid measurement**: the claim-system tool failed inside the platform.
+
+### 2.8 Where the tool call failed · 07:40 UTC
+
+```powershell
+$t = frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate diagnostics bf5947ad-dd49-4812-9305-b9fc13a2ce45 | Out-String
+$t | Set-Content climb\stage-1\raw\probe-guid\diagnostics.json -Encoding utf8
+($t.Substring($t.IndexOf('{')) | ConvertFrom-Json).reliability | ConvertTo-Json -Depth 4 -Compress
+curl.exe -s -m 30 https://contoso-service-mcp.whitemoss-1ee70859.southindia.azurecontainerapps.io/healthz
+```
+```text
+{"availability":"Current", … "toolCalls":{"succeeded":4,"failed":5,"rejected":0,"cancelled":0,"pending":0,"terminal":9,"total":9,"passRate":0.444…,"averageLatencyMs":1131}, …}
+{"status":"ok","assets":117}
+```
+MCP server logs from every replica (bash):
+```bash
+rev=$(az containerapp revision list -n contoso-service-mcp -g pcdotai-agent --query "[?properties.active].name" -o tsv | head -1)
+for r in $(az containerapp replica list -n contoso-service-mcp -g pcdotai-agent --revision "$rev" --query "[].name" -o tsv); do
+  az containerapp logs show -n contoso-service-mcp -g pcdotai-agent --revision "$rev" --replica "$r" --type console --tail 300 --format text > "climb/stage-1/raw/probe-guid/mcp-$r.txt"
+  echo "$r: calls in 07h: $(grep -E '2026-10-11T07' climb/stage-1/raw/probe-guid/mcp-$r.txt | grep -c CallToolRequest)"
+done
+```
+```text
+contoso-service-mcp--0000007-6d656585bd-4krzr: calls in 07h: 0
+contoso-service-mcp--0000007-6d656585bd-5vw55: calls in 07h: 0
+contoso-service-mcp--0000007-6d656585bd-7cddk: calls in 07h: 0
+contoso-service-mcp--0000007-6d656585bd-c5wd8: calls in 07h: 0
+contoso-service-mcp--0000007-6d656585bd-pm6x5: calls in 07h: 0   (one ListToolsRequest at 07:27:26)
+```
+The calls never reached our server: the platform failed them first. Recorded as [P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error).
+
+⛔ **Stopped before the other 29 claims**: they would fail the same way, measuring the platform rather than the model. Database `0 0 0 0`.
+
+(Before this was found:) every call that named MAI-CODE-5b by name returned `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
 
 ---
 
@@ -222,3 +289,4 @@ Transaction ID: eb6d2bee-935e-d4fc-f0d3-25fc8fab500b
 | --- | --- |
 | `evaluate start` with MAI-CODE-5b, ×3 (10 claims, 10 claims, 1 claim) | `500 ER99000` each time; no job created |
 | `models set` to enable MAI-CODE-5b, by name and by GUID | `400 ER59004` (needs a GUID), then `500 ER99000` |
+| One claim by GUID | Ran (28 min) but the claim-system calls failed inside the platform ("virtualization error"); not a valid result |

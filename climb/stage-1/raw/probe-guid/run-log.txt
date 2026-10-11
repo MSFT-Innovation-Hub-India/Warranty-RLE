@@ -1,0 +1,4 @@
+12:35:05 04101 job bf5947ad-dd49-4812-9305-b9fc13a2ce45 started
+13:03:23 04101 Succeeded after 28 min
+13:04:11 04101 done (job bf5947ad-dd49-4812-9305-b9fc13a2ce45): 1/1 finished; DB snapshot saved and reset
+13:04:11 ALL DONE

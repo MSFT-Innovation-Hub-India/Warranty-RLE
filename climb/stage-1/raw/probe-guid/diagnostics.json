@@ -1,0 +1,296 @@
+{
+  "evaluationId": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+  "lastModifiedDateTime": "2026-10-11T07:32:49.2371533+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-11T07:32:49.2127752+00:00",
+    "totalSamples": 1,
+    "execution": {
+      "notStarted": 0,
+      "pending": 0,
+      "running": 0,
+      "completed": 1,
+      "failed": 0,
+      "terminal": 1,
+      "percentComplete": 100.0
+    },
+    "grading": {
+      "awaiting": 0,
+      "graded": 1,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 100.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-11T07:32:49.2127752+00:00",
+    "score": 0.4375,
+    "gradedSampleCount": 1,
+    "scoredRubricCount": 4,
+    "skills": [
+      {
+        "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+        "score": 0.4375,
+        "sampleCount": 1,
+        "rubrics": [
+          {
+            "rubricId": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "score": 0.3333333333333333,
+            "sampleCount": 1
+          },
+          {
+            "rubricId": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "score": 0.25,
+            "sampleCount": 1
+          },
+          {
+            "rubricId": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "score": 0.5,
+            "sampleCount": 1
+          },
+          {
+            "rubricId": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "score": 0.6666666666666666,
+            "sampleCount": 1
+          }
+        ]
+      }
+    ],
+    "scoreDistribution": {
+      "count": 1,
+      "min": 0.4375,
+      "max": 0.4375,
+      "mean": 0.4375,
+      "p50": 0.4375,
+      "p90": 0.4375,
+      "buckets": [
+        {
+          "lowerBound": 0.4375,
+          "upperBound": 0.4375,
+          "upperBoundInclusive": true,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "reliability": {
+    "availability": "Current",
+    "lastUpdatedDateTime": "2026-10-11T07:32:49.2127752+00:00",
+    "coverage": {
+      "coveredExecutions": 1,
+      "eligibleExecutions": 1
+    },
+    "toolCalls": {
+      "succeeded": 4,
+      "failed": 5,
+      "rejected": 0,
+      "cancelled": 0,
+      "pending": 0,
+      "terminal": 9,
+      "total": 9,
+      "passRate": 0.4444444444444444,
+      "averageLatencyMs": 1131
+    },
+    "skills": [
+      {
+        "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+        "samplesTriggered": 1,
+        "coveredSamples": 1,
+        "eligibleStartedSamples": 1,
+        "triggerRate": 1.0
+      }
+    ]
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 1,
+    "expectedSkillCount": 1,
+    "terminalPerMinute": 0.076509427272429
+  },
+  "generatedDateTime": "2026-10-11T07:35:05.4488839+00:00",
+  "status": "Succeeded",
+  "phase": "Completed",
+  "createdDateTime": "2026-10-11T07:22:01.2317993+00:00",
+  "startedDateTime": "2026-10-11T07:04:58.4971376+00:00",
+  "completedDateTime": "2026-10-11T07:32:49.2155471+00:00",
+  "lastProgressDateTime": "2026-10-11T07:32:49.2127752+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-11T07:19:10.5291865+00:00",
+      "completedDateTime": "2026-10-11T07:19:13.8340453+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-11T07:22:00.5524762+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:06:23.9919762+00:00",
+      "observedDateTime": "2026-10-11T07:06:23.9919762+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:07:45.4702632+00:00",
+      "observedDateTime": "2026-10-11T07:07:45.4702632+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:09:01.8454694+00:00",
+      "observedDateTime": "2026-10-11T07:09:01.8454694+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:10:18.0783605+00:00",
+      "observedDateTime": "2026-10-11T07:10:18.0783605+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:11:40.4906285+00:00",
+      "observedDateTime": "2026-10-11T07:11:40.4906285+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:12:57.7582817+00:00",
+      "observedDateTime": "2026-10-11T07:12:57.7582817+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:14:13.9475663+00:00",
+      "observedDateTime": "2026-10-11T07:14:13.9475663+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:15:27.5698006+00:00",
+      "observedDateTime": "2026-10-11T07:15:27.5698006+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:16:48.7222142+00:00",
+      "observedDateTime": "2026-10-11T07:16:48.7222142+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:17:57.3845784+00:00",
+      "observedDateTime": "2026-10-11T07:17:57.3845784+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:19:14.422057+00:00",
+      "observedDateTime": "2026-10-11T07:19:14.422057+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:20:37.1330638+00:00",
+      "observedDateTime": "2026-10-11T07:20:37.1330638+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-11T07:21:58.2929574+00:00",
+      "observedDateTime": "2026-10-11T07:21:58.2929574+00:00"
+    }
+  ]
+}
+

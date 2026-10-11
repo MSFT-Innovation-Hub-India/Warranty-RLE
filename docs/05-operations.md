@@ -27,7 +27,7 @@ powershell -File scripts\eval-batches.ps1 -Env $e -Samples $s -OutDir climb\stag
 
 | Option | Default | Use |
 | --- | --- | --- |
-| `-Model` | `dev-ct-mai-code-mp` | `prod-gpt-56-reasoning-sol` for the frontier reference |
+| `-Model` | `dev-ct-mai-code-mp` | Pass the model **ID marked selected or a GUID** from `models list`: `prod-gpt-56-reasoning-sol` for GPT-5.6-Sol, `00000000-0000-0000-8000-100000000004` for MAI-CODE-5b (its name fails with `500`, [P10](06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000)) |
 | `-Strategy` / `-BestOfN` | `Simple` / 4 | Inference-strategy comparisons |
 | `-StallMin` / `-TimeoutMin` / `-MaxAttempts` | 15 / 75 / 3 | Stall handling |
 | `-AdoptJob` / `-AdoptSamples` | — | Take over a job already running instead of submitting a new one |

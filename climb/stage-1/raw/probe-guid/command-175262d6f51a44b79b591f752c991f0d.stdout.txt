@@ -1,0 +1,45 @@
+{
+  "inputModelName": "00000000-0000-0000-8000-100000000004",
+  "sampleIds": [
+    "90dfe727-082c-4c06-bca9-6321b9382be4"
+  ],
+  "harnessStrategyType": "Simple",
+  "id": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+  "createdBy": {
+    "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "displayName": "Srikantan Sankaran",
+    "type": "Person"
+  },
+  "createdDateTime": "2026-10-11T07:04:58.4971376+00:00",
+  "snapshotMetadata": {
+    "id": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+    "skillsCount": 1,
+    "toolsCount": 3,
+    "samplePromptsCount": 1,
+    "knowledgeSourcesCount": 4
+  },
+  "jobId": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+  "jobType": "Evaluation",
+  "jobTaskType": null,
+  "status": "Running",
+  "baseModelName": "00000000-0000-0000-8000-100000000004",
+  "newModelName": "",
+  "createdAt": "2026-10-11T07:04:58.4971376+00:00",
+  "updatedAt": null,
+  "completedAt": null,
+  "createdByObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+  "lastModifiedByObjectId": null,
+  "errorCode": null,
+  "errorMessage": "",
+  "finetuningType": null,
+  "indexInstanceId": null,
+  "pauseReason": null,
+  "reasonMessage": null,
+  "stages": [],
+  "debugContext": null,
+  "continuesServerSide": true,
+  "statusCommand": "frontier-tuning -e 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -o json evaluate status bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+  "pollAfterSeconds": 60,
+  "cancelOnlyOnExplicitUserRequest": true,
+  "operationId": "bf5947ad-dd49-4812-9305-b9fc13a2ce45"
+}

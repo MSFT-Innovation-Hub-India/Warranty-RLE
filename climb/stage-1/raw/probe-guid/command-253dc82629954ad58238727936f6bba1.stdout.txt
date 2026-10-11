@@ -1,0 +1,26 @@
+{
+  "evaluationId": "bf5947ad-dd49-4812-9305-b9fc13a2ce45",
+  "lastModifiedDateTime": "2026-10-11T07:04:58.5185671+00:00",
+  "issues": [],
+  "generatedDateTime": "2026-10-11T07:15:29.3959496+00:00",
+  "status": "Running",
+  "phase": "Queued",
+  "createdDateTime": "2026-10-11T07:04:58.4971376+00:00",
+  "startedDateTime": "2026-10-11T07:04:58.4971376+00:00",
+  "lastProgressDateTime": "2026-10-11T07:04:58.5185671+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "InProgress",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "NotStarted",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": []
+}
