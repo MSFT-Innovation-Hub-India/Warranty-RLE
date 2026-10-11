@@ -6,16 +6,12 @@ One folder per stage. Each holds a business-readable `README.md`, a `RUNBOOK.md`
 
 ## Scoreboard
 
-| Stage | One change | Question | Rubric | Correct | Status |
+Every stage reports two numbers: **right answers**, checked against the answer key (automatic scorer plus a hand-check of anything it marks wrong or can't read), and the platform's **rubric score**.
+
+| Stage | Model and change | Question | Right answers | Rubric | Status |
 | --- | --- | --- | --- | --- | --- |
-| [0 · Frontier reference](stage-0/README.md) | Model = GPT-5.6-Sol | What does the world allow? | **0.956** | **29/30** | ✅ 2026-10-11 · gate passed; the one miss (supersession) scored 0.96 |
-| 1 · Small-model baseline and headroom | Model = MAI-CODE-5b, 3 runs per claim | Floor, reach, and does the reward rank MAI's right answers higher? | | /30 (mean) · /30 (any) | ⬜ |
-| 2 · Reward alignment | Rubrics only | Does the reward prefer the right attempt? | | | ⬜ skipped if stage 1 passes |
+| [0 · Baseline](stage-0/README.md) | GPT-5.6-Sol, current skill and rubrics | How well does the strongest model do on this use case? | **29/30** | 0.956 | ✅ 2026-10-11 |
+| 1 · MAI-CODE-5b | MAI-CODE-5b, same configuration | How does the small model do on the same use case? | | | ⬜ next |
+| 2 · Reward alignment | Rubrics only | Does the reward prefer the right answer? | | | ⬜ |
 | 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing procedure be taught? | | | ⬜ |
 | 4 · RFT | Model weights | Does tuning turn "sometimes right" into "usually right"? | | | ⬜ blocked by [P7](../docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools) |
-
-## Starting point carried from attempt 1 🖥️
-
-| Configuration | Model | Rubric | Correct |
-| --- | --- | --- | --- |
-| Business-brief skill + hand-written rubrics (= stage 0 config here) | MAI-CODE-5b, one run | 0.637 | 23/30 |
