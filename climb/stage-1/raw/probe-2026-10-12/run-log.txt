@@ -1,0 +1,7 @@
+06:48:12 04101 job 171ccc7b-8fda-4a0a-a7c6-157697ffd822 started
+06:50:44 04101 WARNING: Command failed (1): frontier-tuning --output json evaluate diagnostics 171ccc7b-8fda-4a0a-a7c6-157697ffd822 --env-id 598fd1b0-36f1-402f-ba36-aa00c8a67cc4
+Error: HTTPSConnectionPool(host='login.microsoftonline.com', port=443): Max retries exceeded with url: /organizations/v2.0/.well-known/openid-configuration (Caused by NameResolutionError("HTTPSConnection(host='login.microsoftonline.com', port=443): Failed to resolve 'login.microsoftonline.com' ([Errno 11001] getaddrinfo failed)"))
+
+07:02:03 04101 Succeeded after 14 min
+07:03:03 04101 done (job 171ccc7b-8fda-4a0a-a7c6-157697ffd822): 1/1 finished; DB snapshot saved and reset
+07:03:03 ALL DONE

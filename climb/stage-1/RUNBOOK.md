@@ -364,6 +364,29 @@ legacy: da0fd79d-… Succeeded prod-gpt-56-reasoning-sol 95% 2026-10-11T01:58 ·
 ```
 No new job on either. ❌ The connection is not the cause: MAI is refused on both. The two connections show different job histories.
 
+## 2.12 Next day: is the platform working? · 2026-10-12 01:12 UTC (06:42 IST)
+
+Pre-flight ([raw/probe-2026-10-12/](raw/probe-2026-10-12/)): CLI 1.0.14, `transport = public`, ALL MATCH, no active job, MCP `/healthz` ok. The database first answered "Database 'contoso-warranty' … is not currently available. Please retry the connection later" (serverless resume, session tracing ID `{E3FC67CA-5741-47C3-9B13-67500B6CE9E5}`); 20 s later the counts read `… 0 0 0`. `models list` unchanged (Sol ✓ only).
+```powershell
+powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -Samples '04101=90dfe727-082c-4c06-bca9-6321b9382be4' -OutDir climb\stage-1\raw\probe-2026-10-12 -Model 00000000-0000-0000-8000-100000000004 -BatchSize 1 -MaxAttempts 1
+```
+```text
+06:48:12 04101 job 171ccc7b-8fda-4a0a-a7c6-157697ffd822 started
+06:50:44 04101 WARNING: Command failed (1): frontier-tuning … evaluate diagnostics … Failed to resolve 'login.microsoftonline.com'   (one local DNS blip during polling; trimmed)
+07:02:03 04101 Succeeded after 14 min
+07:03:03 04101 done (job 171ccc7b-8fda-4a0a-a7c6-157697ffd822): 1/1 finished; DB snapshot saved and reset
+```
+✅ Accepted (times are IST). The result and where the tool calls went:
+```text
+score=0.645833333333333 status=Graded calls=4
+I couldn't adjudicate claim C-2026-04101 because the warranty assistant's claim-dossier tool is unavailable in this environment—it failed with a virtualization support error.
+If you provide the claim dossier here, or have the 1c171 claim-system tool enabled, I can retry the adjudication.
+
+evaluate diagnostics → toolCalls: succeeded 0, failed 7, total 7
+MCP replica logs, polled 01:21–01:31 UTC: CallToolRequest since 01:00 UTC: 0
+```
+❌ **The platform is not working for MAI yet.** The job is accepted, but every claim-system call fails in the platform before reaching our server ([P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)). "1c171" is our MCP registration `1c171d49-…`. Not a valid measurement; database `0 0 0 0`.
+
 (Before this was found:) every call that named MAI-CODE-5b by name returned `500 ER99000`, while GPT-5.6-Sol worked in this environment two hours earlier. A platform-side problem; recorded as [P10](../../docs/06-platform-issues.md#p10-every-call-naming-mai-code-5b-fails-with-500-er99000) with all transaction IDs. Nothing ran, nothing was charged, and the database is still at the seeded state.
 
 ---
