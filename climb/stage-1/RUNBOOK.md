@@ -364,7 +364,7 @@ legacy: da0fd79d-… Succeeded prod-gpt-56-reasoning-sol 95% 2026-10-11T01:58 ·
 ```
 No new job on either. ❌ The connection is not the cause: MAI is refused on both. The two connections show different job histories.
 
-## 2.12 Next day: is the platform working? · 2026-10-12 01:12 UTC (06:42 IST)
+### 2.12 Next day: is the platform working? · 2026-10-12 01:12 UTC (06:42 IST)
 
 Pre-flight ([raw/probe-2026-10-12/](raw/probe-2026-10-12/)): CLI 1.0.14, `transport = public`, ALL MATCH, no active job, MCP `/healthz` ok. The database first answered "Database 'contoso-warranty' … is not currently available. Please retry the connection later" (serverless resume, session tracing ID `{E3FC67CA-5741-47C3-9B13-67500B6CE9E5}`); 20 s later the counts read `… 0 0 0`. `models list` unchanged (Sol ✓ only).
 ```powershell
