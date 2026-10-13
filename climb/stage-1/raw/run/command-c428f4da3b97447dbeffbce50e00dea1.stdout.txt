@@ -1,0 +1,41 @@
+{
+  "evaluationId": "f18010c9-07a9-4244-9048-88928a2fef52",
+  "lastModifiedDateTime": "2026-10-13T09:38:21.4073852+00:00",
+  "issues": [],
+  "generatedDateTime": "2026-10-13T09:40:53.0657584+00:00",
+  "status": "Running",
+  "phase": "Queued",
+  "createdDateTime": "2026-10-13T09:38:21.3484455+00:00",
+  "startedDateTime": "2026-10-13T09:38:21.3484455+00:00",
+  "lastProgressDateTime": "2026-10-13T09:38:21.4073852+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-13T09:39:36.3892661+00:00",
+      "completedDateTime": "2026-10-13T09:39:38.6195551+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "NotStarted",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-13T09:39:40.0325094+00:00",
+      "observedDateTime": "2026-10-13T09:39:40.0325094+00:00"
+    }
+  ]
+}

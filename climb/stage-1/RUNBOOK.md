@@ -76,3 +76,46 @@ powershell -File scripts\eval-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67
 ```text
 15:08:28 04104+04105+04106+04107+04108+04111+04112+04113+04119+04120 job f18010c9-07a9-4244-9048-88928a2fef52 started
 ```
+15:29:24 04104+…+04120 Succeeded after 21 min · 15:51:02 04121+…+04134 Succeeded after 20 min · 16:12:36 04135+…+04147 Succeeded after 20 min
+16:14:05 04154+04155+04156+04157+04158+04159+04160+04161+04162+04163 job 9243f112-3b92-406b-9e68-21edc1ce8fdd started   (trimmed)
+```
+
+### 2.1 ❌ The claim system never reached · 10:52 UTC
+
+A preview score of the first 30 showed Sol asking for evidence on almost every claim:
+```bash
+.venv/Scripts/python.exe scripts/score_ground_truth.py climb/stage-1/raw/run/results-*.json --out <scratch> --label "stage 1 preview"
+```
+```text
+| C-2026-04107 | covered-simple | approve → request_evidence ❌ | … | 0.875 | ❌ |
+| C-2026-04111 | declined-simple | decline → request_evidence ❌ | … | 0.875 | ❌ |   (trimmed: 3 of 30 right)
+```
+Sol's answers said why: "the service claim system was not available through the connected tools", and (04111) "I could not submit the prompt to the requested `warranty-assistant` skill because that skill is not available in this execution environment".
+
+The platform's own view looked normal, the same as stage 0's job `2697a580…`:
+```text
+f18010c9-… snapshot: skills=1 tools=3 ks=4 | trigger=cf00d339:1 | toolCalls succeeded 235, failed 1
+```
+The claims are in the database (`C-2026-04 90` rows, e.g. `C-2026-04107 CIE-2200-AC-00324 Submitted`). But our MCP server's logs, all replicas, 09:30–10:59 UTC:
+```text
+      6 ListToolsRequest      (0 CallToolRequest)
+```
+Evaluation jobs no longer deliver claim-system calls, for Sol as well as MAI ([P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)). The runner was stopped before job 5; job 4 ran to completion (11:04 UTC, `Succeeded`), its results were saved, and the database was snapshotted and reset by hand (`0 0 0`). Nothing was cancelled. The 40 results stay in [raw/run/](raw/run/) as evidence; they are **not** used.
+
+## 3. Re-run through `executions run` · 11:05 UTC (16:35 IST)
+
+The route that worked for Sol earlier the same day ([stage 4](../stage-4/README.md)). Same skill, rubrics, claims and model; `--strategy simple` grades against the rubrics.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\exec-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -SamplesFile climb\stage-1\config\training-samples.jsonl -OutDir climb\stage-1\raw\run-exec -Model prod-gpt-56-reasoning-sol -Parallel 5
+```
+```text
+16:35:47 60 claims, model prod-gpt-56-reasoning-sol, 5 at a time
+16:35:54 04104+04105+04106+04107+04108 started
+16:38:54   04104 Completed in 3 min: rubric 1.000 (5 graded), tools 13 (claim system 2, not completed 0)
+16:38:54   04105 Completed in 3 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+16:40:41   04106 Completed in 5 min: rubric 0.900 (5 graded), tools 16 (claim system 3, not completed 1)
+16:40:41   04107 Completed in 5 min: rubric 0.950 (5 graded), tools 9 (claim system 1, not completed 0)
+16:40:41   04108 Completed in 5 min: rubric 0.600 (5 graded), tools 8 (claim system 1, not completed 0)
+16:41:06 04104+04105+04106+04107+04108 done: DB snapshot saved and reset
+```
+✅ Claim-system calls complete. Full log: [raw/run-exec/run-log.txt](raw/run-exec/run-log.txt).

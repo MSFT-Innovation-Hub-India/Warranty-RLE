@@ -1,0 +1,96 @@
+{
+  "evaluationId": "9243f112-3b92-406b-9e68-21edc1ce8fdd",
+  "lastModifiedDateTime": "2026-10-13T10:46:39.8620195+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-13T10:46:39.8620195+00:00",
+    "totalSamples": 10,
+    "execution": {
+      "notStarted": 10,
+      "pending": 0,
+      "running": 0,
+      "completed": 0,
+      "failed": 0,
+      "terminal": 0,
+      "percentComplete": 0.0
+    },
+    "grading": {
+      "awaiting": 10,
+      "graded": 0,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 0.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-13T10:46:39.8620195+00:00",
+    "gradedSampleCount": 0,
+    "scoredRubricCount": 0,
+    "skills": [],
+    "scoreDistribution": {
+      "count": 0,
+      "buckets": []
+    }
+  },
+  "reliability": {
+    "availability": "Delayed",
+    "skills": []
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 0,
+    "expectedSkillCount": 0
+  },
+  "generatedDateTime": "2026-10-13T10:48:49.0668702+00:00",
+  "status": "Running",
+  "phase": "Submitting",
+  "createdDateTime": "2026-10-13T10:46:39.8620186+00:00",
+  "startedDateTime": "2026-10-13T10:44:02.1499+00:00",
+  "lastProgressDateTime": "2026-10-13T10:46:39.8620195+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-13T10:45:19.3073323+00:00",
+      "completedDateTime": "2026-10-13T10:45:22.2281697+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-13T10:46:38.9136809+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-13T10:45:22.8216159+00:00",
+      "observedDateTime": "2026-10-13T10:45:22.8216159+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-13T10:46:36.7634573+00:00",
+      "observedDateTime": "2026-10-13T10:46:36.7634573+00:00"
+    }
+  ]
+}

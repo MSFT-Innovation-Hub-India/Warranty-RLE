@@ -1,0 +1,9 @@
+16:35:47 60 claims, model prod-gpt-56-reasoning-sol, 5 at a time
+16:35:54 04104+04105+04106+04107+04108 started
+16:38:54   04104 Completed in 3 min: rubric 1.000 (5 graded), tools 13 (claim system 2, not completed 0)
+16:38:54   04105 Completed in 3 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+16:40:41   04106 Completed in 5 min: rubric 0.900 (5 graded), tools 16 (claim system 3, not completed 1)
+16:40:41   04107 Completed in 5 min: rubric 0.950 (5 graded), tools 9 (claim system 1, not completed 0)
+16:40:41   04108 Completed in 5 min: rubric 0.600 (5 graded), tools 8 (claim system 1, not completed 0)
+16:41:06 04104+04105+04106+04107+04108 done: DB snapshot saved and reset
+16:41:12 04111+04112+04113+04119+04120 started

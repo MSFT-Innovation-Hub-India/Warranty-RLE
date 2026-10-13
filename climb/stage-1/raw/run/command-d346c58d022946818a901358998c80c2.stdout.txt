@@ -1,0 +1,185 @@
+{
+  "evaluationId": "9243f112-3b92-406b-9e68-21edc1ce8fdd",
+  "lastModifiedDateTime": "2026-10-13T10:58:27.7884257+00:00",
+  "progress": {
+    "lastUpdatedDateTime": "2026-10-13T10:58:27.7880809+00:00",
+    "totalSamples": 10,
+    "execution": {
+      "notStarted": 0,
+      "pending": 0,
+      "running": 5,
+      "completed": 5,
+      "failed": 0,
+      "terminal": 5,
+      "percentComplete": 50.0
+    },
+    "grading": {
+      "awaiting": 5,
+      "graded": 5,
+      "excluded": 0,
+      "skillFailed": 0,
+      "percentComplete": 50.0
+    }
+  },
+  "resultsSoFar": {
+    "lastUpdatedDateTime": "2026-10-13T10:58:27.7880809+00:00",
+    "score": 0.8466666666666665,
+    "gradedSampleCount": 5,
+    "scoredRubricCount": 21,
+    "skills": [
+      {
+        "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+        "score": 0.8466666666666665,
+        "sampleCount": 5,
+        "rubrics": [
+          {
+            "rubricId": "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+            "score": 1.0,
+            "sampleCount": 5
+          },
+          {
+            "rubricId": "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+            "score": 1.0,
+            "sampleCount": 1
+          },
+          {
+            "rubricId": "9bab192e-af3e-42e3-903a-598b6b829737",
+            "score": 0.9333333333333332,
+            "sampleCount": 5
+          },
+          {
+            "rubricId": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+            "score": 0.3,
+            "sampleCount": 5
+          },
+          {
+            "rubricId": "d09918c5-f072-4db5-8b40-647ff046d4b3",
+            "score": 1.0,
+            "sampleCount": 5
+          }
+        ]
+      }
+    ],
+    "scoreDistribution": {
+      "count": 5,
+      "min": 0.75,
+      "max": 0.9,
+      "mean": 0.8133333333333332,
+      "p50": 0.7916666666666666,
+      "p90": 0.9,
+      "buckets": [
+        {
+          "lowerBound": 0.75,
+          "upperBound": 0.765,
+          "upperBoundInclusive": false,
+          "count": 2
+        },
+        {
+          "lowerBound": 0.78,
+          "upperBound": 0.795,
+          "upperBoundInclusive": false,
+          "count": 1
+        },
+        {
+          "lowerBound": 0.87,
+          "upperBound": 0.885,
+          "upperBoundInclusive": false,
+          "count": 1
+        },
+        {
+          "lowerBound": 0.885,
+          "upperBound": 0.9,
+          "upperBoundInclusive": true,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "reliability": {
+    "availability": "Partial",
+    "lastUpdatedDateTime": "2026-10-13T10:58:27.7880809+00:00",
+    "coverage": {
+      "coveredExecutions": 5,
+      "eligibleExecutions": 10
+    },
+    "toolCalls": {
+      "succeeded": 93,
+      "failed": 0,
+      "rejected": 0,
+      "cancelled": 0,
+      "pending": 0,
+      "terminal": 93,
+      "total": 93,
+      "passRate": 1.0,
+      "averageLatencyMs": 3180
+    },
+    "skills": [
+      {
+        "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+        "samplesTriggered": 5,
+        "coveredSamples": 5,
+        "eligibleStartedSamples": 10,
+        "triggerRate": 1.0
+      }
+    ]
+  },
+  "issues": [],
+  "progressSignals": {
+    "retriedSampleCount": 0,
+    "samplesNearRetryCap": 0,
+    "totalResubmissions": 0,
+    "gradingGapSampleCount": 0,
+    "skillsWithGradedSample": 1,
+    "expectedSkillCount": 1,
+    "terminalPerMinute": 0.33372130819664536
+  },
+  "generatedDateTime": "2026-10-13T11:01:38.8157043+00:00",
+  "status": "Running",
+  "phase": "Executing",
+  "createdDateTime": "2026-10-13T10:46:39.8620186+00:00",
+  "startedDateTime": "2026-10-13T10:44:02.1499+00:00",
+  "lastProgressDateTime": "2026-10-13T10:58:27.7880809+00:00",
+  "stages": [
+    {
+      "name": "Onboarding",
+      "status": "Succeeded",
+      "startedDateTime": "2026-10-13T10:45:19.3073323+00:00",
+      "completedDateTime": "2026-10-13T10:45:22.2281697+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    },
+    {
+      "name": "TaskExecutionEvaluation",
+      "status": "InProgress",
+      "startedDateTime": "2026-10-13T10:46:38.9136809+00:00",
+      "attempts": 1,
+      "failedAttempts": 0
+    }
+  ],
+  "logs": [
+    {
+      "level": "Info",
+      "code": "StepFinished",
+      "category": "Lifecycle",
+      "message": "Step Onboarding finished.",
+      "stage": "Onboarding",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-13T10:45:22.8216159+00:00",
+      "observedDateTime": "2026-10-13T10:45:22.8216159+00:00"
+    },
+    {
+      "level": "Info",
+      "code": "StepStarted",
+      "category": "Lifecycle",
+      "message": "Step StandaloneEvaluation started.",
+      "stage": "StandaloneEvaluation",
+      "retryable": false,
+      "source": "Service",
+      "count": 1,
+      "firstObservedDateTime": "2026-10-13T10:46:36.7634573+00:00",
+      "observedDateTime": "2026-10-13T10:46:36.7634573+00:00"
+    }
+  ]
+}
