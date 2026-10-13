@@ -15,6 +15,13 @@ What question this stage answers, in business terms, and why it comes now. One s
 
 Everything else is unchanged: model, skill, rubrics, samples, strategy, world (strike out what doesn't apply). Configuration: [config/](config/).
 
+**How the skill and rubrics were made** ([history](../../docs/04-hill-climb-method.md#6-where-the-skill-and-rubrics-came-from)):
+
+| | Made how | From |
+| --- | --- | --- |
+| Skill | by hand · platform (`skills refine --mode instruction`) · carried over | <stage, or the evidence it was written against> |
+| Rubrics | by hand · platform (`rubrics refine` / `generate-rubrics`) · carried over | <stage, or the evidence> |
+
 ## How the run went
 
 | | |

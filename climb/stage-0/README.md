@@ -18,6 +18,13 @@ Establish the baseline for this use case: how well the strongest available model
 | Claims | All 30 evaluation claims ([config/eval-sample-ids.json](config/eval-sample-ids.json)) |
 | World | v3, environment `wce-main`, claim database freshly re-seeded |
 
+**How the skill and rubrics were made** ([history](../../docs/04-hill-climb-method.md#6-where-the-skill-and-rubrics-came-from)):
+
+| | Made how | From |
+| --- | --- | --- |
+| Skill | By hand, carried over | Attempt 1's business brief, written 2026-10-03 without the trap rules. Same text, description restored |
+| Rubrics | By hand, carried over | The six designed before the skill existed (world-builder 03 § 9.2), revised against attempt 1 stage 0's answers. Identical to attempt 1 stage 1 |
+
 ## Two independent checks on every answer
 
 The platform's rubric score says how well an answer **reads** against the checklists. It does not know the right answer: the grader has no answer key. So every answer was also checked for whether it is **right**:
