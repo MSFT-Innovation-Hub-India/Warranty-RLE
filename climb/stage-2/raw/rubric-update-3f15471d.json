@@ -1,0 +1,31 @@
+{
+  "id": "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+  "displayName": "Valuation accuracy",
+  "checklistItems": [
+    {
+      "value": "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both"
+    },
+    {
+      "value": "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate"
+    },
+    {
+      "value": "When the claim is covered, prices the part actually fitted, naming the part number; where that part has been superseded, prices it at the superseding part's price and names both part numbers. Pricing a superseded part at its own list price does not meet this item"
+    },
+    {
+      "value": "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one"
+    },
+    {
+      "value": "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+    }
+  ],
+  "importance": "Critical",
+  "isEnabled": true,
+  "lastModifiedBy": {
+    "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "displayName": "Srikantan Sankaran",
+    "type": "Person"
+  },
+  "createdDateTime": "0001-01-01T00:00:00+00:00",
+  "lastModifiedDateTime": "2026-10-13T12:24:52.5515948+00:00"
+}
+

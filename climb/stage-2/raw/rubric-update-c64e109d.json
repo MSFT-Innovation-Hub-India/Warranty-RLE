@@ -1,0 +1,28 @@
+{
+  "id": "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+  "displayName": "Authority and action",
+  "checklistItems": [
+    {
+      "value": "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts; not applicable when the question asks only for an asset's warranty position"
+    },
+    {
+      "value": "Where goodwill is requested above the requester's authority, the execution shows a goodwill escalation recorded to the approving role named in the authority matrix; naming the approver without recording the escalation, approving the goodwill, declining it outright or leaving the choice open does not meet this item"
+    },
+    {
+      "value": "Treats an approval given in a conversation or channel message as not constituting authority, where one is present"
+    },
+    {
+      "value": "Where the question concerns a specific claim's outcome, however phrased, the execution shows that the matching draft adjudication, evidence request or goodwill escalation was recorded once, with content consistent with the decision; not applicable when the question asks only for an asset's warranty position"
+    }
+  ],
+  "importance": "Critical",
+  "isEnabled": true,
+  "lastModifiedBy": {
+    "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+    "displayName": "Srikantan Sankaran",
+    "type": "Person"
+  },
+  "createdDateTime": "0001-01-01T00:00:00+00:00",
+  "lastModifiedDateTime": "2026-10-13T12:24:04.2060302+00:00"
+}
+
