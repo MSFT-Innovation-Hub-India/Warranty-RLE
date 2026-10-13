@@ -1,0 +1,44 @@
+﻿{
+    "label":  "04101",
+    "prompt":  "Adjudicate claim C-2026-04101.",
+    "model":  "00000000-0000-0000-8000-100000000004",
+    "startedUtc":  "2026-10-13T08:33:06.4815855Z",
+    "endedUtc":  "2026-10-13T08:44:53.2097605Z",
+    "execution":  {
+                      "executionId":  "9ac6416e-3553-41a7-a60d-c79675b74439",
+                      "conversationId":  "1532d9b8-7a01-44e0-b5d8-ad7aa39c093c",
+                      "status":  "Failed",
+                      "strategyType":  "Simple",
+                      "harnessStrategy":  {
+                                              "type":  "Simple"
+                                          },
+                      "startDateTime":  "2026-10-13T08:33:17.6430496+00:00",
+                      "endDateTime":  "2026-10-13T08:44:47.5329498+00:00",
+                      "response":  "We encountered an issue while processing your request. Please try again in a new chat.",
+                      "rubricResults":  [
+
+                                        ],
+                      "toolExecutions":  [
+
+                                         ],
+                      "interruption":  null,
+                      "error":  null,
+                      "approvalRequired":  false,
+                      "pendingTools":  [
+
+                                       ],
+                      "billingSummary":  {
+                                             "inputTokens":  20579,
+                                             "outputTokens":  117,
+                                             "cacheCreationTokens":  0,
+                                             "cacheReadTokens":  19968,
+                                             "toolInvocations":  0,
+                                             "raiChecks":  1,
+                                             "infraSeconds":  0,
+                                             "orchestratorCpuSeconds":  14.5321116,
+                                             "totalTokens":  20696
+                                         },
+                      "diagnostics":  null,
+                      "timedOut":  false
+                  }
+}

@@ -1,0 +1,5 @@
+14:02:59 1 claims, model 00000000-0000-0000-8000-100000000004, 1 at a time
+14:03:06 04101 started
+14:14:53   04101 Failed in 12 min: rubric n/a (0 graded), tools 0 (claim system 0, not completed 0)
+14:15:16 04101 done: DB snapshot saved and reset
+14:15:16 FINISHED WITH FAILURES: 04101 (not resubmitted)

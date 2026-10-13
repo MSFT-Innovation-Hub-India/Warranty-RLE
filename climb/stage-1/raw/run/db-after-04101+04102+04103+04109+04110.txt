@@ -1,0 +1,14 @@
+﻿
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                 created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                 ----------                  
+draft ADJ-5ECD40726A C-2026-04101 approve | payable=-  | refs=[]                                                                                                                                                                                                                                                         10/13/2026 7:43:03 AM +00:00
+draft ADJ-925FBC7EE1 C-2026-04102 approve | payable=48420.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "Warranty Labour Rate Card FY26", "SPA-2023-FAB-IN"]                                                                                                                                                               10/13/2026 7:41:12 AM +00:00
+draft ADJ-A758645974 C-2026-04102 approve | payable=48420.00 INR | refs=["POL-WAR-4.2", "ADD-IN-2.1", "Warranty Labour Rate Card FY26", "SPA-2023-FAB-IN", "Claim dossier", "notes"]                                                                                                                                     10/13/2026 7:42:50 AM +00:00
+draft ADJ-1FED4D7A80 C-2026-04103 approve | payable=19150.00 INR | refs=["POL-WAR-4.2 clause 4.1 labour; POL-WAR-4.2 clause 4.2 parts", "ADD-IN-2.1 clause A1 coverage period", "SPA-2023-FAB-IN clause 6 parts and handling, clause 3 labour", "Warranty Labour Rate Card FY26 flat-rate hours and INR rate"]           10/13/2026 7:41:19 AM +00:00
+draft ADJ-4DA15C8BA5 C-2026-04110 decline | payable=0.00 INR | refs=["POL-WAR-4.2 \u00a71.4 (precedence)", "POL-WAR-4.2 \u00a72.1 (standard 24 months / 6,000h baseline)", "ADD-IN-2.1 \u00a7A1 (India varied 18 months / 5,000h)", "TSB-P-0112 (not applicable to serial CIE-2200-AC-00330; serial range 00400-00750)"] 10/13/2026 7:41:26 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+
