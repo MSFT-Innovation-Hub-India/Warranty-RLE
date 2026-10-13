@@ -1,0 +1,12 @@
+﻿
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                         created_at                   
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                         ----------                   
+draft ADJ-CA163CB0B9 C-2026-04122 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 1.4 (precedence between instruments)", "ADD-IN-2.1 clause A1 (India coverage: 18 months from commissioning or 5,000 running hours, whichever first)", "TSB-P-0112, Serial range / Effect on warranty (current valve-plate bulletin limited to CIE-2200-AC-00400\u201300750; asset 00801 is outside range)", "TSB-P-0107, Status (superseded by TSB-P-0112; no effect)"] 10/13/2026 12:35:17 PM +00:00
+draft ADJ-F3C3DB9B09 C-2026-04123 approve | payable=67500.00 INR | refs=["TSB-P-0112 \u2014 Effect on warranty; Claim handling", "POL-WAR-4.2 \u2014 clauses 1.4 and 4.1", "Warranty Labour Rate Card FY26 \u2014 VALVE-PLT-RR row and India rate effective 2026-04-01", "SPA-2023-FAB-IN \u2014 clauses 2, 3 and 6"]                                                                                                                                            10/13/2026 12:35:42 PM +00:00
+draft ADJ-9E46E645BC C-2026-04125 approve | payable=755050.00 INR | refs=["TSB-C-0051 \u2014 Effect on warranty; Claim handling", "POL-WAR-4.2 \u2014 clauses 1.4, 4.1, 4.2 and 4.3", "ADD-IN-2.1 \u2014 Scope and A1", "Warranty-Labour-Rate-Card-FY26 \u2014 COMP-RR flat-rate hours and India rate effective 2026-04-01", "SPA-2023-FAB-IN \u2014 clauses 2, 3 and 6"]                                                                                        10/13/2026 12:35:39 PM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+

@@ -1,0 +1,632 @@
+﻿{
+    "label":  "04147",
+    "prompt":  "C-2026-04147 came in from Fabrikam Service Partners this morning. Where do we land?",
+    "model":  "prod-gpt-56-reasoning-sol",
+    "startedUtc":  "2026-10-13T12:45:11.3435417Z",
+    "endedUtc":  "2026-10-13T12:50:17.7770819Z",
+    "execution":  {
+                      "executionId":  "cf46906b-701b-4156-857f-cf1b4611387f",
+                      "conversationId":  "fa65ff0e-cf44-4e76-982b-b6a4b30344cc",
+                      "status":  "Completed",
+                      "strategyType":  "Simple",
+                      "harnessStrategy":  {
+                                              "type":  "Simple"
+                                          },
+                      "startDateTime":  "2026-10-13T12:45:20.3770544+00:00",
+                      "endDateTime":  "2026-10-13T12:49:11.4740993+00:00",
+                      "response":  "## Decision — **hold / request evidence; do not approve or decline yet**\n\nThe claim is **not presently defensible for payment**. The service-claim record establishes that the asset, repair and fitted part align, and that **TSB-C-0051 is potentially controlling**, but the full bulletin, governing warranty policy/addendum, labour rate card, partner-agreement terms and TSB-compliant inspection evidence were not available. I therefore recorded a **draft `request_evidence` adjudication with no payable amount** and placed the claim on **Held** status pending the TSB inspection report. No payment or final decision has been made.\n\n### Facts supporting that position\n\n- **Asset:** 4000-CH chiller, serial **CIE-4000-CH-01426**, installed in Pune, India; installed **8 Jun 2023** and commissioned **1 Jul 2023**.\n- **Repair:** hydraulic-pump replacement on **20 Jun 2026**, operation **HYD-PUMP-RR**, part **P-44120-A**, with **5.5 labour hours**. Job **J-00047** matches the submitted claim.\n- **Warranty timing:** the repair occurred **2 years, 11 months and 19 days after commissioning**. The latest reading was **7,900 hours on 1 Jun 2026**, 19 days before the repair; exact hours at repair are not recorded. Because the global policy and India addendum could not be retrieved, I could not establish the applicable time/hour limit or conclude whether the repair falls inside ordinary warranty coverage.\n- **TSB:** the claim-system index identifies **TSB-C-0051** as current from **15 Jan 2026** and applicable to 4000-CH serials **1200–1500**; serial **1426** is in that range and the repair post-dates the bulletin. However, the index does not provide the bulletin’s failure criteria, remedy, coverage extension, labour allowance or evidence requirements.\n- **Submission:** the system records submission on **26 Jun 2026**, six days after repair, within Fabrikam’s recorded **30-day SLA**. This conflicts with the statement that the claim “came in this morning” on **13 Oct 2026** and should be reconciled, although the system date is timely under the recorded SLA.\n- **Partner terms:** Fabrikam’s record points to **SPA-2023-FAB-IN**, currency **INR**, and **0% uplift**; the full agreement was unavailable.\n\n### Payable amount\n\n**Final payable: not yet determinable.**\n\n| Element | Current position |\n|---|---:|\n| Parts | **INR 191,200** list price for P-44120-A, subject to the policy/TSB reimbursement basis and any return or evidence requirements |\n| Labour | **Not calculable** — 5.5 hours claimed, but the approved TSB/rate-card hours and INR rate were unavailable |\n| Partner uplift | **INR 0** at the recorded 0% uplift |\n| **Payable now** | **Not set** |\n\nNo goodwill was requested. Accordingly, I did **not** raise a goodwill approval. If this later becomes goodwill rather than warranty and the amount remains above INR 100,000 but no more than INR 400,000, the recorded authority matrix points to the **Warranty Operations Head**; that approval is not yet appropriate because the covered amount and labour remain unresolved.\n\n### Recorded action and next step\n\n- Created draft adjudication **ADJ-237B2BEF69**: decision **request_evidence**, currency INR, payable left blank; status is **Draft — awaiting human review**.\n- Created evidence request **EVR-B60BF6ABF2** for the **TSB-C-0051 inspection report**; claim status is now **Held**, not declined.\n- **Fabrikam Service Partners** should provide the diagnostic/inspection and repair-completion evidence showing that the failure and pump replacement satisfy TSB-C-0051.\n- **Warranty Operations** should retrieve and review the full **TSB-C-0051**, global warranty policy, India regional addendum, HYD-PUMP-RR labour rate/allowance and **SPA-2023-FAB-IN**, then calculate labour plus the reimbursable parts basis and convert the draft to approve or decline.\n\n**Recommendation:** leave the draft and hold in place. On present evidence, do not authorize the INR 191,200 part or the 5.5 labour hours.\n\n## Sources\n\n1. `claim-dossier` Referenced tool result\n2. `draft-adjudication` Referenced tool result\n3. `evidence-request` Referenced tool result",
+                      "rubricResults":  [
+                                            {
+                                                "importance":  "critical",
+                                                "id":  "0fdf9e95-3602-4505-9514-287a4bf6cfdc",
+                                                "rubricName":  "Coverage determination",
+                                                "score":  1.0,
+                                                "checklistItems":  [
+                                                                       "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+                                                                       "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+                                                                       "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+                                                                       "Where one limit is exceeded and the other is not, says which limit ends the cover"
+                                                                   ]
+                                            },
+                                            {
+                                                "importance":  "critical",
+                                                "id":  "cd65bcb6-f40f-4de2-9ad9-23158b2dc492",
+                                                "rubricName":  "Precedence discipline",
+                                                "score":  null,
+                                                "checklistItems":  [
+                                                                       "Where coverage can be determined, names one governing instrument by reference code",
+                                                                       "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+                                                                       "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+                                                                       "Where the claim system\u0027s bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+                                                                   ]
+                                            },
+                                            {
+                                                "importance":  "high",
+                                                "id":  "9bab192e-af3e-42e3-903a-598b6b829737",
+                                                "rubricName":  "Evidence grounding",
+                                                "score":  0.5,
+                                                "checklistItems":  [
+                                                                       "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+                                                                       "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+                                                                       "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system\u0027s part record), naming the region and the effective date where they apply",
+                                                                       "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+                                                                   ]
+                                            },
+                                            {
+                                                "importance":  "critical",
+                                                "id":  "3f15471d-00d4-496e-bb87-faa37cca9fb9",
+                                                "rubricName":  "Valuation accuracy",
+                                                "score":  null,
+                                                "checklistItems":  [
+                                                                       "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+                                                                       "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+                                                                       "When the claim is covered, prices the part actually fitted, naming the part number; where that part has been superseded, prices it at the superseding part\u0027s price and names both part numbers. Pricing a superseded part at its own list price does not meet this item",
+                                                                       "When the claim is covered, applies a partner handling uplift only where the partner\u0027s agreement grants one",
+                                                                       "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+                                                                   ]
+                                            },
+                                            {
+                                                "importance":  "critical",
+                                                "id":  "c64e109d-baeb-4377-9724-0feeb3eb95b7",
+                                                "rubricName":  "Authority and action",
+                                                "score":  1.0,
+                                                "checklistItems":  [
+                                                                       "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts; not applicable when the question asks only for an asset\u0027s warranty position",
+                                                                       "Where goodwill is requested above the requester\u0027s authority, the execution shows a goodwill escalation recorded to the approving role named in the authority matrix; naming the approver without recording the escalation, approving the goodwill, declining it outright or leaving the choice open does not meet this item",
+                                                                       "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+                                                                       "Where the question concerns a specific claim\u0027s outcome, however phrased, the execution shows that the matching draft adjudication, evidence request or goodwill escalation was recorded once, with content consistent with the decision; not applicable when the question asks only for an asset\u0027s warranty position"
+                                                                   ]
+                                            },
+                                            {
+                                                "importance":  "high",
+                                                "id":  "d09918c5-f072-4db5-8b40-647ff046d4b3",
+                                                "rubricName":  "Gaps reported, not filled",
+                                                "score":  1.0,
+                                                "checklistItems":  [
+                                                                       "Names any record needed for the decision that is missing, and the field that is absent",
+                                                                       "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+                                                                       "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+                                                                   ]
+                                            }
+                                        ],
+                      "toolExecutions":  [
+                                             {
+                                                 "id":  "call_oy8rfSmw13yOzY4koutbr7kN",
+                                                 "displayName":  "1c171__get_claim_dossier",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:45:43.3452378+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:45:58.9622667+00:00",
+                                                 "toolCallId":  "call_oy8rfSmw13yOzY4koutbr7kN",
+                                                 "title":  "1c171__get_claim_dossier",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "claim_id",
+                                                                    "Value":  "C-2026-04147"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022claim\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022claim_id\\u0022: \\u0022C-2026-04147\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01426\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022submitted_date\\u0022: \\u00222026-06-26\\u0022,\\n    \\u0022repair_date\\u0022: \\u00222026-06-20\\u0022,\\n    \\u0022operation_code\\u0022: \\u0022HYD-PUMP-RR\\u0022,\\n    \\u0022claimed_part\\u0022: \\u0022P-44120-A\\u0022,\\n    \\u0022claimed_labour_hours\\u0022: 5.5,\\n    \\u0022goodwill_requested\\u0022: null,\\n    \\u0022status\\u0022: \\u0022Submitted\\u0022\\n  },\\n  \\u0022asset\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01426\\u0022,\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022customer_name\\u0022: \\u0022Litware Manufacturing\\u0022,\\n    \\u0022site\\u0022: \\u0022Pune\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022install_date\\u0022: \\u00222023-06-08\\u0022,\\n    \\u0022commissioning_date\\u0022: \\u00222023-07-01\\u0022\\n  },\\n  \\u0022running_hours_at_repair_date\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01426\\u0022,\\n    \\u0022as_of_date\\u0022: \\u00222026-06-01\\u0022,\\n    \\u0022running_hours\\u0022: 7900\\n  },\\n  \\u0022service_history\\u0022: [\\n    {\\n      \\u0022job_id\\u0022: \\u0022J-00047\\u0022,\\n      \\u0022job_date\\u0022: \\u00222026-06-20\\u0022,\\n      \\u0022operation_code\\u0022: \\u0022HYD-PUMP-RR\\u0022,\\n      \\u0022component\\u0022: \\u0022hydraulic\\u0022,\\n      \\u0022part_fitted\\u0022: \\u0022P-44120-A\\u0022,\\n      \\u0022labour_hours\\u0022: 5.5,\\n      \\u0022claim_id\\u0022: \\u0022C-2026-04147\\u0022,\\n      \\u0022completed_date\\u0022: \\u00222026-06-20\\u0022\\n    }\\n  ],\\n  \\u0022related_claims\\u0022: [],\\n  \\u0022service_partner\\u0022: {\\n    \\u0022found\\u0022: true,\\n    \\u0022dealer_id\\u0022: \\u0022D-IN-01\\u0022,\\n    \\u0022name\\u0022: \\u0022Fabrikam Service Partners\\u0022,\\n    \\u0022region\\u0022: \\u0022India\\u0022,\\n    \\u0022currency\\u0022: \\u0022INR\\u0022,\\n    \\u0022uplift_pct\\u0022: 0.0,\\n    \\u0022agreement_ref\\u0022: \\u0022SPA-2023-FAB-IN\\u0022,\\n    \\u0022submission_sla_days\\u0022: 30\\n  },\\n  \\u0022parts\\u0022: [\\n    {\\n      \\u0022found\\u0022: true,\\n      \\u0022part_no\\u0022: \\u0022P-44120-A\\u0022,\\n      \\u0022description\\u0022: \\u0022Hydraulic pump assembly, rev A\\u0022,\\n      \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n      \\u0022component\\u0022: \\u0022hydraulic\\u0022,\\n      \\u0022supersedes\\u0022: \\u0022P-44120\\u0022,\\n      \\u0022superseded_by\\u0022: null,\\n      \\u0022price_inr\\u0022: 191200.0,\\n      \\u0022price_eur\\u0022: 2115.0,\\n      \\u0022price_sgd\\u0022: 3060.0,\\n      \\u0022supersession_chain\\u0022: [\\n        \\u0022P-44120-A\\u0022\\n      ],\\n      \\u0022current_part_no\\u0022: \\u0022P-44120-A\\u0022,\\n      \\u0022current_price_inr\\u0022: 191200.0\\n    }\\n  ],\\n  \\u0022tsb_applicability_index\\u0022: {\\n    \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n    \\u0022serial\\u0022: \\u0022CIE-4000-CH-01426\\u0022,\\n    \\u0022entry_count\\u0022: 1,\\n    \\u0022entries\\u0022: [\\n      {\\n        \\u0022tsb_id\\u0022: \\u0022TSB-C-0051\\u0022,\\n        \\u0022family\\u0022: \\u00224000-CH\\u0022,\\n        \\u0022serial_from\\u0022: 1200,\\n        \\u0022serial_to\\u0022: 1500,\\n        \\u0022effective_from\\u0022: \\u00222026-01-15\\u0022,\\n        \\u0022status\\u0022: \\u0022Current\\u0022,\\n        \\u0022index_says_in_range\\u0022: true\\n      }\\n    ]\\n  },\\n  \\u0022goodwill_authority_matrix\\u0022: [\\n    {\\n      \\u0022tier\\u0022: 1,\\n      \\u0022max_amount_inr\\u0022: 25000.0,\\n      \\u0022approver_role\\u0022: \\u0022Service Supervisor\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 2,\\n      \\u0022max_amount_inr\\u0022: 100000.0,\\n      \\u0022approver_role\\u0022: \\u0022Regional Service Manager\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 3,\\n      \\u0022max_amount_inr\\u0022: 400000.0,\\n      \\u0022approver_role\\u0022: \\u0022Warranty Operations Head\\u0022\\n    },\\n    {\\n      \\u0022tier\\u0022: 4,\\n      \\u0022max_amount_inr\\u0022: null,\\n      \\u0022approver_role\\u0022: \\u0022Director, Aftermarket\\u0022\\n    }\\n  ]\\n}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_mjAlhJkUxcgNl8bdnWcFcOld",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.0555819+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:17.1793068+00:00",
+                                                 "toolCallId":  "call_mjAlhJkUxcgNl8bdnWcFcOld",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "global warranty policy industrial chillers coverage commissioning running hours"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "10"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_RlI75QcwlIKbU0kNSbSM8n2p",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.0556085+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:16.8377253+00:00",
+                                                 "toolCallId":  "call_RlI75QcwlIKbU0kNSbSM8n2p",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "India regional warranty addendum 4000-CH"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "10"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_DyDh7h6hp8leFDd8vKzx3ww7",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.055618+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:18.1950456+00:00",
+                                                 "toolCallId":  "call_DyDh7h6hp8leFDd8vKzx3ww7",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "TSB-C-0051 hydraulic pump 4000-CH"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "10"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_MhCQxcXNAcVGdxGQ3ri3NwKQ",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.0556416+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:18.5650319+00:00",
+                                                 "toolCallId":  "call_MhCQxcXNAcVGdxGQ3ri3NwKQ",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "India labour rate card HYD-PUMP-RR 2026"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "10"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_OxYKAAHPfpj1XJpBV6yFVe6r",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.0556538+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:18.3524177+00:00",
+                                                 "toolCallId":  "call_OxYKAAHPfpj1XJpBV6yFVe6r",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "SPA-2023-FAB-IN Fabrikam Service Partners"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "10"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_asByNNbXkXOkN36Ll0Z091Xf",
+                                                 "displayName":  "teams__SearchTeamsMessages",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:11.0556636+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:15.5353952+00:00",
+                                                 "toolCallId":  "call_asByNNbXkXOkN36Ll0Z091Xf",
+                                                 "title":  "teams__SearchTeamsMessages",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "message",
+                                                                    "Value":  "TSB-C-0051 hydraulic pump"
+                                                                },
+                                                                {
+                                                                    "Name":  "conversationId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "top",
+                                                                    "Value":  "10"
+                                                                },
+                                                                {
+                                                                    "Name":  "nextLink",
+                                                                    "Value":  ""
+                                                                }
+                                                            ],
+                                                 "output":  "{\"total\":0,\"moreResultsAvailable\":false,\"results\":[]}",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_aAeC0Gs85tx441J0AouaPawq",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6098603+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:45.6909802+00:00",
+                                                 "toolCallId":  "call_aAeC0Gs85tx441J0AouaPawq",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "Warranty Operations"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "25"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_wAHKopeR2Qj84XxssNxh7vtz",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6098787+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:45.3888392+00:00",
+                                                 "toolCallId":  "call_wAHKopeR2Qj84XxssNxh7vtz",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "TSB-C-0051"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "25"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_GcVwLOKzXAkba7ggSk4eEoYr",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6098883+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:45.6994115+00:00",
+                                                 "toolCallId":  "call_GcVwLOKzXAkba7ggSk4eEoYr",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "SPA-2023-FAB-IN"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "25"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_zmcNyGIpxe8UhtyNlkKV26EA",
+                                                 "displayName":  "m365__search_enterprise_files",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6098969+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:47.1284187+00:00",
+                                                 "toolCallId":  "call_zmcNyGIpxe8UhtyNlkKV26EA",
+                                                 "title":  "m365__search_enterprise_files",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "searchQuery",
+                                                                    "Value":  "HYD-PUMP-RR"
+                                                                },
+                                                                {
+                                                                    "Name":  "from",
+                                                                    "Value":  "0"
+                                                                },
+                                                                {
+                                                                    "Name":  "size",
+                                                                    "Value":  "25"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\u0022EntitySets\\u0022:[{\\u0022ResultSets\\u0022:[{\\u0022Results\\u0022:[]}]}]}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_QT1xRxiF3kStiYd4iK7PUrRy",
+                                                 "displayName":  "teams__SearchTeamsMessages",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6099043+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:35.5093915+00:00",
+                                                 "toolCallId":  "call_QT1xRxiF3kStiYd4iK7PUrRy",
+                                                 "title":  "teams__SearchTeamsMessages",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "message",
+                                                                    "Value":  "C-2026-04147"
+                                                                },
+                                                                {
+                                                                    "Name":  "conversationId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "top",
+                                                                    "Value":  "10"
+                                                                },
+                                                                {
+                                                                    "Name":  "nextLink",
+                                                                    "Value":  ""
+                                                                }
+                                                            ],
+                                                 "output":  "{\"total\":0,\"moreResultsAvailable\":false,\"results\":[]}",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_YVEaGOi8kq6t4RM8Zar6VKBS",
+                                                 "displayName":  "teams__SearchTeamsMessages",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:31.6099139+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:46:35.7635392+00:00",
+                                                 "toolCallId":  "call_YVEaGOi8kq6t4RM8Zar6VKBS",
+                                                 "title":  "teams__SearchTeamsMessages",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "message",
+                                                                    "Value":  "SPA-2023-FAB-IN"
+                                                                },
+                                                                {
+                                                                    "Name":  "conversationId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "top",
+                                                                    "Value":  "10"
+                                                                },
+                                                                {
+                                                                    "Name":  "nextLink",
+                                                                    "Value":  ""
+                                                                }
+                                                            ],
+                                                 "output":  "{\"total\":0,\"moreResultsAvailable\":false,\"results\":[]}",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_aY91bxJuvM5F7umeg1rRKxih",
+                                                 "displayName":  "m365__call_copilot",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:59.1516991+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:47:04.7010448+00:00",
+                                                 "toolCallId":  "call_aY91bxJuvM5F7umeg1rRKxih",
+                                                 "title":  "m365__call_copilot",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "query",
+                                                                    "Value":  "In the Warranty Operations library, find and summarize the exact governing documents and clauses for claim C-2026-04147 / asset CIE-4000-CH-01426: global warranty policy, India regional addendum, TSB-C-0051, 2026 India labour rate for operation HYD-PUMP-RR, and service partner agreement SPA-2023-FAB-IN. Provide document titles, clause/row identifiers, coverage term, TSB remedy/evidence requirements, standard labour hours/rate, parts reimbursement terms, uplift, and submission SLA. Flag conflicts or missing documents."
+                                                                },
+                                                                {
+                                                                    "Name":  "agentId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "files",
+                                                                    "Value":  "[]"
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_CUVeOjDrlMGrYz1Np5IIGnIK",
+                                                 "displayName":  "teams__SearchTeamsMessages",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:59.1517163+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:47:03.6906504+00:00",
+                                                 "toolCallId":  "call_CUVeOjDrlMGrYz1Np5IIGnIK",
+                                                 "title":  "teams__SearchTeamsMessages",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "message",
+                                                                    "Value":  "4000-CH hydraulic pump warranty India"
+                                                                },
+                                                                {
+                                                                    "Name":  "conversationId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "top",
+                                                                    "Value":  "25"
+                                                                },
+                                                                {
+                                                                    "Name":  "nextLink",
+                                                                    "Value":  ""
+                                                                }
+                                                            ],
+                                                 "output":  "{\"total\":0,\"moreResultsAvailable\":false,\"results\":[]}",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_EswcUTnMNUjq8i2QwZhA4mZu",
+                                                 "displayName":  "teams__SearchTeamsMessages",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:46:59.1517241+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:47:05.038787+00:00",
+                                                 "toolCallId":  "call_EswcUTnMNUjq8i2QwZhA4mZu",
+                                                 "title":  "teams__SearchTeamsMessages",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "message",
+                                                                    "Value":  "Fabrikam warranty claim hydraulic pump"
+                                                                },
+                                                                {
+                                                                    "Name":  "conversationId",
+                                                                    "Value":  ""
+                                                                },
+                                                                {
+                                                                    "Name":  "top",
+                                                                    "Value":  "25"
+                                                                },
+                                                                {
+                                                                    "Name":  "nextLink",
+                                                                    "Value":  ""
+                                                                }
+                                                            ],
+                                                 "output":  "{\"total\":0,\"moreResultsAvailable\":false,\"results\":[]}",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_uwU0xxF9U4wAzC3nPa11SZB7",
+                                                 "displayName":  "1c171__create_claim_adjudication",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:47:24.5774366+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:47:31.0959091+00:00",
+                                                 "toolCallId":  "call_uwU0xxF9U4wAzC3nPa11SZB7",
+                                                 "title":  "1c171__create_claim_adjudication",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "claim_id",
+                                                                    "Value":  "C-2026-04147"
+                                                                },
+                                                                {
+                                                                    "Name":  "decision",
+                                                                    "Value":  "request_evidence"
+                                                                },
+                                                                {
+                                                                    "Name":  "instrument_refs",
+                                                                    "Value":  "[\"Service claim dossier: asset registry and claim record for C-2026-04147\",\"TSB applicability index: TSB-C-0051 (full bulletin and required completion evidence not available)\",\"Parts price list: P-44120-A, INR 191,200\",\"Service partner record: SPA-2023-FAB-IN (full agreement not available)\"]"
+                                                                },
+                                                                {
+                                                                    "Name":  "payable",
+                                                                    "Value":  "null"
+                                                                },
+                                                                {
+                                                                    "Name":  "currency",
+                                                                    "Value":  "INR"
+                                                                },
+                                                                {
+                                                                    "Name":  "notes",
+                                                                    "Value":  "Unable to make a defensible coverage/payment decision from available records. Asset CIE-4000-CH-01426 (4000-CH, India) was commissioned 2023-07-01; repair was 2026-06-20 at latest recorded 7,900 hours (reading 2026-06-01). TSB index shows current TSB-C-0051 applies to serial 01426, but the full TSB, its remedy conditions and required completion/diagnostic evidence were not available. Global policy, India addendum, labour rate card for HYD-PUMP-RR, full SPA-2023-FAB-IN terms, and claim inspection/diagnostic evidence were also not retrievable. Claimed 5.5 hours and part P-44120-A match service job J-00047; part list price is INR 191,200; partner uplift is 0%; submission was 6 days after repair and within the recorded 30-day SLA. Hold pending TSB-C-0051-compliant inspection/diagnostic report and retrieval of governing policy/rate instruments. No payable amount set."
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022created\\u0022: true,\\n  \\u0022draft_id\\u0022: \\u0022ADJ-237B2BEF69\\u0022,\\n  \\u0022claim_id\\u0022: \\u0022C-2026-04147\\u0022,\\n  \\u0022decision\\u0022: \\u0022request_evidence\\u0022,\\n  \\u0022payable\\u0022: null,\\n  \\u0022currency\\u0022: \\u0022INR\\u0022,\\n  \\u0022instrument_refs\\u0022: [\\n    \\u0022Service claim dossier: asset registry and claim record for C-2026-04147\\u0022,\\n    \\u0022TSB applicability index: TSB-C-0051 (full bulletin and required completion evidence not available)\\u0022,\\n    \\u0022Parts price list: P-44120-A, INR 191,200\\u0022,\\n    \\u0022Service partner record: SPA-2023-FAB-IN (full agreement not available)\\u0022\\n  ],\\n  \\u0022status\\u0022: \\u0022Draft - awaiting human review. No payment has been made.\\u0022\\n}\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_8d9B26D9WWLqcWRymwKeXN0F",
+                                                 "displayName":  "1c171__request_missing_evidence",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:47:39.817855+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:47:49.7436824+00:00",
+                                                 "toolCallId":  "call_8d9B26D9WWLqcWRymwKeXN0F",
+                                                 "title":  "1c171__request_missing_evidence",
+                                                 "status":  "Failed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "claim_id",
+                                                                    "Value":  "C-2026-04147"
+                                                                },
+                                                                {
+                                                                    "Name":  "field_name",
+                                                                    "Value":  "TSB-C-0051-compliant inspection/diagnostic and repair-completion evidence"
+                                                                },
+                                                                {
+                                                                    "Name":  "reason",
+                                                                    "Value":  "The claim system shows TSB-C-0051 applies to this 4000-CH serial, but no inspection/diagnostic report or evidence demonstrating that the failure and pump replacement satisfy the bulletin conditions was available. This evidence is required before coverage and payment can be determined."
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"Error executing tool request_missing_evidence: (\\u002742000\\u0027, \\u0022[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]String or binary data would be truncated in table \\u0027contoso-warranty.dbo.EvidenceRequest\\u0027, column \\u0027field_name\\u0027. Truncated value: \\u0027TSB-C-0051-compliant inspection/diagnost\\u0027. (2628) (SQLExecDirectW)\\u0022)\"}]",
+                                                 "latencyMs":  null
+                                             },
+                                             {
+                                                 "id":  "call_bHnQNvoFXz2IAR4vwd6sxiNk",
+                                                 "displayName":  "1c171__request_missing_evidence",
+                                                 "skillId":  "cf00d339-5217-4cd1-b390-cc0d911735da",
+                                                 "startDateTime":  "2026-10-13T12:47:57.561078+00:00",
+                                                 "completedDateTime":  "2026-10-13T12:48:04.2458393+00:00",
+                                                 "toolCallId":  "call_bHnQNvoFXz2IAR4vwd6sxiNk",
+                                                 "title":  "1c171__request_missing_evidence",
+                                                 "status":  "Completed",
+                                                 "inputs":  [
+                                                                {
+                                                                    "Name":  "claim_id",
+                                                                    "Value":  "C-2026-04147"
+                                                                },
+                                                                {
+                                                                    "Name":  "field_name",
+                                                                    "Value":  "TSB-C-0051 inspection report"
+                                                                },
+                                                                {
+                                                                    "Name":  "reason",
+                                                                    "Value":  "Provide diagnostic and completion evidence showing the pump failure and replacement satisfy TSB-C-0051. Coverage and payment cannot be determined without it."
+                                                                }
+                                                            ],
+                                                 "output":  "[{\"type\":\"text\",\"text\":\"{\\n  \\u0022created\\u0022: true,\\n  \\u0022request_id\\u0022: \\u0022EVR-B60BF6ABF2\\u0022,\\n  \\u0022claim_id\\u0022: \\u0022C-2026-04147\\u0022,\\n  \\u0022field_name\\u0022: \\u0022TSB-C-0051 inspection report\\u0022,\\n  \\u0022claim_status\\u0022: \\u0022Held\\u0022,\\n  \\u0022status\\u0022: \\u0022Evidence request recorded. The claim is held, not declined.\\u0022\\n}\"}]",
+                                                 "latencyMs":  null
+                                             }
+                                         ],
+                      "interruption":  null,
+                      "error":  null,
+                      "approvalRequired":  false,
+                      "pendingTools":  [
+
+                                       ],
+                      "billingSummary":  {
+                                             "inputTokens":  258463,
+                                             "outputTokens":  6756,
+                                             "cacheCreationTokens":  0,
+                                             "cacheReadTokens":  232704,
+                                             "toolInvocations":  24,
+                                             "raiChecks":  31,
+                                             "infraSeconds":  0,
+                                             "orchestratorCpuSeconds":  132.61472550000002,
+                                             "totalTokens":  265219
+                                         },
+                      "diagnostics":  null,
+                      "timedOut":  false
+                  }
+}

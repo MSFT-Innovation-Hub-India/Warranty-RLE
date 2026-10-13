@@ -1,2 +1,86 @@
 17:56:10 60 claims, model prod-gpt-56-reasoning-sol, 5 at a time
 17:56:18 04104+04105+04106+04107+04108 started
+17:59:28   04104 Completed in 3 min: rubric 1.000 (5 graded), tools 7 (claim system 2, not completed 0)
+18:00:17   04105 Completed in 4 min: rubric 0.875 (6 graded), tools 9 (claim system 1, not completed 0)
+18:00:17   04106 Completed in 4 min: rubric 1.000 (5 graded), tools 11 (claim system 2, not completed 0)
+18:00:17   04107 Completed in 4 min: rubric 1.000 (6 graded), tools 8 (claim system 2, not completed 0)
+18:00:17   04108 Completed in 4 min: rubric 1.000 (5 graded), tools 7 (claim system 2, not completed 0)
+18:00:37 04104+04105+04106+04107+04108 done: DB snapshot saved and reset
+18:00:43 04111+04112+04113+04119+04120 started
+18:03:27   04111 Completed in 3 min: rubric 1.000 (4 graded), tools 11 (claim system 2, not completed 0)
+18:03:29   04112 Completed in 3 min: rubric 1.000 (4 graded), tools 10 (claim system 2, not completed 0)
+18:03:29   04113 Completed in 3 min: rubric 1.000 (4 graded), tools 8 (claim system 2, not completed 0)
+18:03:29   04119 Completed in 3 min: rubric 0.750 (4 graded), tools 10 (claim system 1, not completed 0)
+18:03:29   04120 Completed in 3 min: rubric 1.000 (5 graded), tools 8 (claim system 2, not completed 0)
+18:03:50 04111+04112+04113+04119+04120 done: DB snapshot saved and reset
+18:03:56 04121+04122+04123+04124+04125 started
+18:07:08   04121 Completed in 3 min: rubric 0.875 (4 graded), tools 12 (claim system 1, not completed 0)
+18:07:08   04122 Completed in 3 min: rubric 1.000 (4 graded), tools 7 (claim system 2, not completed 0)
+18:07:08   04123 Completed in 3 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+18:07:25   04124 Completed in 3 min: rubric 0.917 (6 graded), tools 16 (claim system 1, not completed 0)
+18:07:25   04125 Completed in 3 min: rubric 0.958 (6 graded), tools 15 (claim system 2, not completed 1)
+18:07:45 04121+04122+04123+04124+04125 done: DB snapshot saved and reset
+18:07:51 04126+04127+04128+04133+04134 started
+18:10:21   04126 Completed in 2 min: rubric 0.938 (4 graded), tools 8 (claim system 2, not completed 0)
+18:10:21   04127 Completed in 2 min: rubric 1.000 (4 graded), tools 6 (claim system 2, not completed 0)
+18:10:25   04128 Completed in 3 min: rubric 1.000 (6 graded), tools 12 (claim system 2, not completed 0)
+18:10:28   04133 Completed in 3 min: rubric 1.000 (4 graded), tools 11 (claim system 2, not completed 0)
+18:10:40   04134 Completed in 3 min: rubric 1.000 (6 graded), tools 11 (claim system 2, not completed 0)
+18:10:59 04126+04127+04128+04133+04134 done: DB snapshot saved and reset
+18:11:05 04135+04136+04137+04138+04142 started
+18:14:12   04135 Completed in 3 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+18:14:45   04136 Completed in 4 min: rubric 1.000 (5 graded), tools 13 (claim system 2, not completed 0)
+18:14:45   04137 Completed in 4 min: rubric 0.875 (4 graded), tools 10 (claim system 1, not completed 0)
+18:14:45   04138 Completed in 4 min: rubric 1.000 (4 graded), tools 6 (claim system 2, not completed 0)
+18:14:45   04142 Completed in 4 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+18:15:04 04135+04136+04137+04138+04142 done: DB snapshot saved and reset
+18:15:10 04143+04144+04145+04146+04147 started
+18:18:52   04143 Completed in 4 min: rubric 1.000 (4 graded), tools 12 (claim system 2, not completed 0)
+18:19:41   04144 Completed in 5 min: rubric 0.889 (3 graded), tools 20 (claim system 1, not completed 1)
+18:19:57   04145 Completed in 5 min: rubric 0.900 (5 graded), tools 30 (claim system 1, not completed 0)
+18:20:17   04146 Completed in 5 min: rubric 0.542 (4 graded), tools 32 (claim system 1, not completed 1)
+18:20:17   04147 Completed in 5 min: rubric 0.875 (4 graded), tools 19 (claim system 4, not completed 1)
+18:20:36 04143+04144+04145+04146+04147 done: DB snapshot saved and reset
+18:20:42 04154+04155+04156+04157+04158 started
+18:24:33   04154 Completed in 4 min: rubric 1.000 (6 graded), tools 11 (claim system 2, not completed 0)
+18:25:01   04155 Completed in 4 min: rubric 0.958 (6 graded), tools 14 (claim system 2, not completed 1)
+18:25:01   04156 Completed in 4 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+18:25:01   04157 Completed in 4 min: rubric 0.883 (6 graded), tools 13 (claim system 2, not completed 0)
+18:25:01   04158 Completed in 4 min: rubric 1.000 (5 graded), tools 10 (claim system 2, not completed 0)
+18:25:24 04154+04155+04156+04157+04158 done: DB snapshot saved and reset
+18:25:30 04159+04160+04161+04162+04163 started
+18:28:07   04159 Completed in 3 min: rubric 0.833 (6 graded), tools 6 (claim system 1, not completed 0)
+18:28:52   04160 Completed in 3 min: rubric 0.893 (5 graded), tools 9 (claim system 2, not completed 0)
+18:28:52   04161 Completed in 3 min: rubric 0.900 (5 graded), tools 8 (claim system 1, not completed 0)
+18:29:27   04162 Completed in 4 min: rubric 0.883 (5 graded), tools 13 (claim system 2, not completed 0)
+18:29:27   04163 Completed in 4 min: rubric 0.833 (6 graded), tools 13 (claim system 1, not completed 1)
+18:29:58 04159+04160+04161+04162+04163 done: DB snapshot saved and reset
+18:30:05 04164+04165+04168+04169+04170 started
+18:32:13   04164 Completed in 2 min: rubric 0.583 (5 graded), tools 7 (claim system 1, not completed 0)
+18:33:14   04165 Completed in 3 min: rubric 0.925 (6 graded), tools 12 (claim system 2, not completed 1)
+18:33:15   04168 Completed in 3 min: rubric 1.000 (6 graded), tools 14 (claim system 2, not completed 1)
+18:33:23   04169 Completed in 3 min: rubric 0.944 (6 graded), tools 11 (claim system 2, not completed 0)
+18:33:23   04170 Completed in 3 min: rubric 0.917 (3 graded), tools 8 (claim system 1, not completed 0)
+18:33:43 04164+04165+04168+04169+04170 done: DB snapshot saved and reset
+18:33:50 04173+04174+04175+04179+04180 started
+18:37:23   04173 Completed in 4 min: rubric 0.938 (4 graded), tools 13 (claim system 3, not completed 0)
+18:37:23   04174 Completed in 4 min: rubric 1.000 (4 graded), tools 13 (claim system 3, not completed 0)
+18:37:23   04175 Completed in 4 min: rubric 0.938 (4 graded), tools 11 (claim system 3, not completed 0)
+18:37:43   04179 Completed in 4 min: rubric 0.950 (5 graded), tools 17 (claim system 4, not completed 1)
+18:37:43   04180 Completed in 4 min: rubric 1.000 (5 graded), tools 15 (claim system 4, not completed 1)
+18:38:02 04173+04174+04175+04179+04180 done: DB snapshot saved and reset
+18:38:09 04181+04182+04183+04184+04185 started
+18:41:01   04181 Completed in 3 min: rubric 1.000 (5 graded), tools 13 (claim system 3, not completed 0)
+18:41:32   04182 Completed in 3 min: rubric 0.958 (6 graded), tools 12 (claim system 1, not completed 0)
+18:41:32   04183 Completed in 3 min: rubric 0.883 (5 graded), tools 11 (claim system 4, not completed 1)
+18:42:24   04184 Completed in 4 min: rubric 1.000 (6 graded), tools 19 (claim system 3, not completed 0)
+18:42:24   04185 Completed in 4 min: rubric 0.933 (5 graded), tools 13 (claim system 2, not completed 0)
+18:42:43 04181+04182+04183+04184+04185 done: DB snapshot saved and reset
+18:42:50 04186+04187+04188+04189+04190 started
+18:45:39   04186 Completed in 3 min: rubric 0.938 (4 graded), tools 11 (claim system 2, not completed 0)
+18:46:41   04187 Completed in 4 min: rubric 1.000 (5 graded), tools 12 (claim system 2, not completed 0)
+18:46:41   04188 Completed in 4 min: rubric 0.938 (4 graded), tools 10 (claim system 2, not completed 0)
+18:46:42   04189 Completed in 4 min: rubric 0.958 (6 graded), tools 11 (claim system 2, not completed 0)
+18:46:45   04190 Completed in 4 min: rubric 1.000 (5 graded), tools 16 (claim system 2, not completed 0)
+18:47:09 04186+04187+04188+04189+04190 done: DB snapshot saved and reset
+18:47:09 ALL DONE

@@ -1,4 +1,4 @@
-# Ground-truth check — Stage 1: GPT-5.6-Sol on the 60 Training claims (scorer fixed 2026-10-13)
+# Ground-truth check — Stage 1: GPT-5.6-Sol on the 60 Training claims
 
 Scored by `scripts/score_ground_truth.py` against `world-builder/out/data/claims.json` (the source of GROUND-TRUTH.md).
 

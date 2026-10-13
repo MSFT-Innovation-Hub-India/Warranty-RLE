@@ -12,7 +12,7 @@ Every stage reports two numbers: **right answers**, checked against the answer k
 | --- | --- | --- | --- | --- | --- |
 | [0 · Baseline](stage-0/README.md) | GPT-5.6-Sol, current skill and rubrics | How well does the strongest model do on this use case? | **29/30** | 0.956 | ✅ 2026-10-11 |
 | [1 · Broaden the evidence](stage-1/README.md) | GPT-5.6-Sol on the 60 Training claims, no change | Where do the skill and rubrics fall short? | **57/60** (Training) | 0.934 | ✅ 2026-10-13: the Authority rubric gave the one wrong answer full marks |
-| [2 · Reward alignment](stage-2/README.md) | Rubrics only: Authority and Valuation revised | Does the reward prefer the right answer? | | | 🔄 2026-10-13 |
+| [2 · Reward alignment](stage-2/README.md) | Rubrics only: Authority and Valuation revised | Does the reward prefer the right answer? | **59/60** (Training) | 0.940 | ✅ 2026-10-13: asset-only questions no longer penalised, unrecorded drafts now are; the escalation and supersession items untested (Sol didn't make those errors) |
 | 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing behaviour be fixed by instruction? | | | ⬜ |
 | [4 · Small model](stage-4/README.md) | MAI-CODE-5b on the final configuration, with repeats | How far is the small model from Sol, and what could close it? | | | ⛔ first attempts blocked ([P11](../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)) |
 | 5 · Close the gap | Small-model skill, then RFT | Does tuning turn "sometimes right" into "usually right"? | | | ⬜ blocked by [P7](../docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools) |

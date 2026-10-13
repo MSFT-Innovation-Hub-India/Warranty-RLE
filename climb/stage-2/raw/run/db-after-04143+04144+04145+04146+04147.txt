@@ -1,0 +1,18 @@
+﻿
+kind     id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           created_at                   
+----     --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ----------                   
+draft    ADJ-6A88E951F2 C-2026-04143 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 1.4 (instrument precedence) and clause 4.1 (labour basis)", "TSB-C-0051, Effect on warranty and Claim handling (36 months/8,000 hours for hydraulic circuit; serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "ADD-IN-2.1 clause A1 (India baseline, subordinate to applicable serial-range TSB)", "Warranty Labour Rate Card FY26: HYD-PUMP-RR and India rate effective 2026-04-01", "SPA-2023-FAB-IN clauses 2, 3 and 6", "Service claim system dossier for C-2026-04143 (asset, hours, repair, part price and service history)"] 10/13/2026 12:46:48 PM +00:00
+draft    ADJ-237B2BEF69 C-2026-04147 request_evidence | payable=- INR | refs=["Service claim dossier: asset registry and claim record for C-2026-04147", "TSB applicability index: TSB-C-0051 (full bulletin and required completion evidence not available)", "Parts price list: P-44120-A, INR 191,200", "Service partner record: SPA-2023-FAB-IN (full agreement not available)"]                                                                                                                                                                                                                                                  10/13/2026 12:47:30 PM +00:00
+evidence EVR-B60BF6ABF2 C-2026-04147 field=TSB-C-0051 inspection report                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               10/13/2026 12:48:03 PM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04147 Held  
+
+
+
+OK: 1 batch(es) executed
+

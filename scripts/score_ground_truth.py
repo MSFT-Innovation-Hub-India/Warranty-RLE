@@ -65,6 +65,7 @@ DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("request_evidence", re.compile(
         r"cannot (?:yet |presently |currently )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
         r"\bclaim is now held\b|\bhold\W+do not (?:approve|decline)|"
+        r"cannot (?:yet |presently |currently )?be approved or declined|"
         r"cannot yet decide|not yet be decided|not yet decidable|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
         r"\bhold\b[^.\n]{0,20}\b(?:evidence|request)|hold the claim|claim (?:is|should be|has been) (?:placed on )?held|"
         r"request(?:ing|ed)? (?:the )?(?:missing|commissioning|evidence|certificate|inspection)|"
@@ -74,7 +75,7 @@ DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("decline", re.compile(
         r"\bdeclin\w*|\bnot covered\b|\bisn't covered\b|\bis not covered\b|\bout of warranty\b|"
         r"\boutside (?:the )?(?:warranty|coverage)\b|\breject\w*", re.I)),
-    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:applicable |extended |ordinary )?(?:warranty|coverage)\b|"
+    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bstill under (?:[\w-]+ ){0,3}warranty\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:applicable |extended |ordinary )?(?:warranty|coverage)\b|"
                            r"\bdecision\W{0,4}covered\b|\bcovered (?:decision|outcome)\b", re.I)),
 ]
 
@@ -229,6 +230,10 @@ def read_executions(path: Path) -> list[dict]:
             "response": _text(_get(ex, "Response", "response")),
             "rubric": round(_get(c, "score"), 3) if isinstance(_get(c, "score"), (int, float)) else _rubric_score(ex),
             "delivery_mismatch": delivery_mismatch(_grader_notes(ex)),
+            # claim-system writes that completed (only `executions run` output carries them)
+            "recorded": [str(_get(t, "displayName", "title") or "").split("__")[-1]
+                         for t in _get(ex, "toolExecutions", "ToolExecutions") or []
+                         if isinstance(t, dict) and _get(t, "status", "Status") == "Completed"],
             "_notes": _grader_notes(ex),
             "source": path.name,
         })
@@ -242,7 +247,7 @@ def read_executions(path: Path) -> list[dict]:
 NEGATION_RE = re.compile(r"\b(?:no|not|without|nor|never|no need to|doesn't need|does not need|isn't|is not)\b[^.;\n]{0,25}$", re.I)
 # "no draft adjudication, evidence request, or escalation was created": the negation
 # reaches the last item of a list, however far away it is.
-LIST_NEGATION_RE = re.compile(r"\b(?:no|not|neither)\b[^.;:\n]{0,100},?\s+(?:or|nor)\s+(?:any\s+|other\s+|an?\s+)?$", re.I)
+LIST_NEGATION_RE = re.compile(r"\b(?:no|not|neither)\b[^.;:\n]{0,100},?\s+(?:or|nor)\s+(?:any\s+|other\s+|an?\s+|goodwill\s+)?$", re.I)
 # "I did not create an adjudication, place the claim on hold, request evidence, or …": a negated
 # verb governs every item of the list that follows it, until a clause break ("so", "but" …).
 VERB_LIST_NEGATION_RE = re.compile(
@@ -306,6 +311,10 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
         return True
     # "Although the serial is in range for TSB-C-0051, …": named only to be set aside
     if re.search(r"\b(?:although|even though|while)\b(?:[^.;]|\.\d)*$", wide, re.I):
+        return True
+    # "… the filter-housing defect covered by TSB-C-0043, so the contamination exclusion does not
+    # apply": the instrument that settles the exclusion, not the one that sets the coverage period
+    if re.match(r"[^.;]{0,40}\bexclusion\b", after, re.I):
         return True
     # "TSB-C-0051 applies only to serials …": its limits, not its application
     if re.match(r"[\W_]*(?:applies only|only applies|covers only|only covers|is limited to)\b", after, re.I):
@@ -419,6 +428,10 @@ def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
         claim = ids[0] if ids else None
         exp = expected.get(claim) if claim else None
         got_dec = extract_decision(r["response"])
+        if got_dec in (None, "decline") and "escalate_goodwill" in r.get("recorded", []):
+            # "not covered under warranty" plus a goodwill escalation actually recorded in the
+            # claim system is an escalation; the record settles what the wording leaves open
+            got_dec = "escalate"
         got_gov = extract_governing(r["response"])
         got_tot = extract_total(r["response"])
         row = {

@@ -46,6 +46,12 @@ CASES = [
     ("governing", "- TSB-C-0051 applies only to serials CIE-4000-CH-01200 through 01850. The governing coverage term is therefore ADD-IN-2.1 A1.", "ADD-IN-2.1"),
     ("governing", "1. POL-WAR-4.2, clause 6.1 — repair warranty: this is the operative coverage provision. 2. ADD-IN-2.1 — this governs the asset's underlying warranty.", "POL-WAR-4.2 6.1"),
     ("governing", "This is a controls repair, so it should not be funded under TSB-C-0051. The governing coverage period is therefore ADD-IN-2.1, A1.", "ADD-IN-2.1"),
+    # misreads found in stage 2 (2026-10-13)
+    ("decision", "**Yes — serial CIE-4000-CH-01701 was still under warranty for the hydraulic-circuit repair in claim C-2026-04119 on 18 June 2026.**", "approve"),
+    ("decision", "**Serial CIE-4000-CH-01423 was not under the ordinary India whole-asset warranty on 2026-06-20, but it was still under a component-specific warranty extension for the hydraulic circuit.**", "approve"),
+    ("decision", "## Recommendation — decline as out of warranty\n**Claim C-2026-04137 should be declined for no warranty coverage.** No missing-evidence hold or goodwill escalation is needed on the present record.", "decline"),
+    ("decision", "## Decision — not yet decidable; pay nothing at this stage\nClaim **C-2026-04180 cannot presently be approved or declined**. The claimed serial is not in the asset registry.", "request_evidence"),
+    ("governing", "Approve as a covered bulletin repair. The inspection links it to the known filter-housing defect covered by TSB-C-0043, so the contamination exclusion does not apply. The repair is covered under TSB-C-0051.", "TSB-C-0051"),
     ("total", "Labour ₹7,975\nParts ₹191,200\n**Total payable: ₹199,175**", 199175.0),
     ("total", "Total payable: ₹1,99,175 (labour ₹7,975 + parts ₹1,91,200)", 199175.0),
     ("total", "Amount payable EUR 2,341.50", 2341.50),
