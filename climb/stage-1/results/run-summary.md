@@ -1,0 +1,66 @@
+# Run summary: stage 1 (GPT-5.6-Sol, 60 Training claims, `executions run`)
+
+| Claim | Slice | Status | Rubric (graded mean) | Tool calls | Claim-system calls | Minutes (incl. polling) |
+| --- | --- | --- | --- | --- | --- | --- |
+| C-2026-04104 | covered-simple | Completed | 1.0 | 13 | 2 | 3.0 |
+| C-2026-04105 | covered-simple | Completed | 1.0 | 10 | 2 | 3.0 |
+| C-2026-04106 | covered-simple | Completed | 0.9 | 16 | 3 | 4.8 |
+| C-2026-04107 | covered-simple | Completed | 0.95 | 9 | 1 | 4.8 |
+| C-2026-04108 | covered-simple | Completed | 0.6 | 8 | 1 | 4.8 |
+| C-2026-04111 | declined-simple | Completed | 1.0 | 10 | 2 | 3.2 |
+| C-2026-04112 | declined-simple | Completed | 1.0 | 9 | 2 | 3.2 |
+| C-2026-04113 | declined-simple | Completed | 1.0 | 10 | 2 | 3.2 |
+| C-2026-04119 | precedence | Completed | 0.733 | 5 | 1 | 3.2 |
+| C-2026-04120 | precedence | Completed | 1.0 | 10 | 2 | 3.2 |
+| C-2026-04121 | precedence | Completed | 1.0 | 9 | 1 | 3.1 |
+| C-2026-04122 | precedence | Completed | 1.0 | 12 | 2 | 3.1 |
+| C-2026-04123 | precedence | Completed | 0.967 | 9 | 2 | 3.1 |
+| C-2026-04124 | precedence | Completed | 1.0 | 10 | 2 | 3.3 |
+| C-2026-04125 | precedence | Completed | 0.958 | 15 | 1 | 3.9 |
+| C-2026-04126 | precedence | Completed | 1.0 | 12 | 1 | 3.3 |
+| C-2026-04127 | precedence | Completed | 0.875 | 7 | 2 | 3.3 |
+| C-2026-04128 | precedence | Completed | 1.0 | 15 | 1 | 3.3 |
+| C-2026-04133 | serial-boundary | Completed | 0.938 | 9 | 2 | 3.3 |
+| C-2026-04134 | serial-boundary | Completed | 1.0 | 9 | 2 | 3.3 |
+| C-2026-04135 | serial-boundary | Completed | 1.0 | 10 | 2 | 3.0 |
+| C-2026-04136 | serial-boundary | Completed | 0.96 | 14 | 2 | 3.3 |
+| C-2026-04137 | serial-boundary | Completed | 1.0 | 9 | 2 | 3.3 |
+| C-2026-04138 | serial-boundary | Completed | 0.95 | 11 | 2 | 3.3 |
+| C-2026-04142 | dual-limit | Completed | 0.75 | 11 | 2 | 3.3 |
+| C-2026-04143 | dual-limit | Completed | 0.875 | 13 | 1 | 3.2 |
+| C-2026-04144 | dual-limit | Completed | 0.958 | 13 | 2 | 4.3 |
+| C-2026-04145 | dual-limit | Completed | 0.933 | 8 | 2 | 4.3 |
+| C-2026-04146 | dual-limit | Completed | 0.883 | 5 | 1 | 4.3 |
+| C-2026-04147 | dual-limit | Completed | 0.911 | 13 | 2 | 4.3 |
+| C-2026-04154 | valuation | Completed | 0.96 | 10 | 2 | 3.0 |
+| C-2026-04155 | valuation | Completed | 0.944 | 11 | 2 | 3.0 |
+| C-2026-04156 | valuation | Completed | 1.0 | 13 | 1 | 3.1 |
+| C-2026-04157 | valuation | Completed | 0.843 | 9 | 2 | 3.1 |
+| C-2026-04158 | valuation | Completed | 1.0 | 9 | 2 | 3.1 |
+| C-2026-04159 | valuation | Completed | 0.917 | 13 | 1 | 3.1 |
+| C-2026-04160 | valuation | Completed | 0.958 | 13 | 2 | 3.1 |
+| C-2026-04161 | valuation | Completed | 0.9 | 13 | 1 | 3.2 |
+| C-2026-04162 | valuation | Completed | 1.0 | 11 | 2 | 3.3 |
+| C-2026-04163 | valuation | Completed | 0.911 | 11 | 2 | 3.3 |
+| C-2026-04164 | valuation | Completed | 0.86 | 7 | 2 | 2.3 |
+| C-2026-04165 | valuation | Completed | 0.925 | 15 | 2 | 2.9 |
+| C-2026-04168 | stale-deck | Completed | 0.944 | 12 | 2 | 2.9 |
+| C-2026-04169 | stale-deck | Completed | 0.944 | 10 | 2 | 3.1 |
+| C-2026-04170 | stale-deck | Completed | 1.0 | 9 | 1 | 3.1 |
+| C-2026-04173 | authority | Completed | 0.938 | 11 | 3 | 3.2 |
+| C-2026-04174 | authority | Completed | 0.85 | 10 | 1 | 3.2 |
+| C-2026-04175 | authority | Completed | 1.0 | 19 | 3 | 3.6 |
+| C-2026-04179 | abstention | Completed | 0.95 | 11 | 3 | 3.6 |
+| C-2026-04180 | abstention | Completed | 0.933 | 15 | 5 | 4.1 |
+| C-2026-04181 | abstention | Completed | 0.875 | 12 | 1 | 3.3 |
+| C-2026-04182 | abstention | Completed | 0.85 | 12 | 1 | 3.3 |
+| C-2026-04183 | abstention | Completed | 0.883 | 6 | 3 | 3.3 |
+| C-2026-04184 | abstention | Completed | 0.958 | 16 | 5 | 4.6 |
+| C-2026-04185 | exclusion | Failed | — | 7 | 1 | 5.8 |
+| C-2026-04186 | exclusion | Completed | 0.875 | 13 | 2 | 2.9 |
+| C-2026-04187 | exclusion | Completed | 0.893 | 12 | 2 | 3.3 |
+| C-2026-04188 | exclusion | Completed | 0.938 | 14 | 2 | 3.3 |
+| C-2026-04189 | repair-warranty | Completed | 1.0 | 13 | 1 | 3.3 |
+| C-2026-04190 | repair-warranty | Completed | 0.917 | 15 | 2 | 3.3 |
+
+**Per rubric** (mean over claims where graded): Coverage determination 1.00 (n=59) · Precedence discipline 0.87 (n=59) · Evidence grounding 0.91 (n=59) · Valuation accuracy 0.95 (n=34) · Authority and action 0.92 (n=59) · Gaps reported, not filled 0.98 (n=30)

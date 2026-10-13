@@ -1,0 +1,20 @@
+﻿
+kind     id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                               created_at                   
+----     --             --------     ------                                                                                                                                                                                                                                                                                                                                                               ----------                   
+evidence EVR-DA179E40B7 C-2026-04183 field=Commissioning certificate                                                                                                                                                                                                                                                                                                                                      10/13/2026 11:48:32 AM +00:00
+draft    ADJ-CF7F325260 C-2026-04184 request_evidence | payable=- INR | refs=["POL-WAR-4.2 cl. 1.4, cl. 4.1-4.3, cl. 5.1-5.3", "ADD-IN-2.1 A1", "TSB-C-0051 serial range CIE-4000-CH-01200 to CIE-4000-CH-01850 (not applicable)", "TSB-C-0043 (conditional on inspection findings)", "Warranty Labour Rate Card FY26 - HYD-PUMP-RR / India rate effective 2026-04-01", "SPA-2023-FAB-IN cl. 2, 3 and 6"] 10/13/2026 11:50:07 AM +00:00
+evidence EVR-0F71B3381C C-2026-04184 field=inspection_report                                                                                                                                                                                                                                                                                                                                              10/13/2026 11:49:49 AM +00:00
+evidence EVR-323A128C91 C-2026-04184 field=running_hours_at_repair_date                                                                                                                                                                                                                                                                                                                                   10/13/2026 11:49:07 AM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04183 Held  
+C-2026-04184 Held  
+
+
+
+OK: 1 batch(es) executed
+

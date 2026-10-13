@@ -118,3 +118,43 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\exec-batches.ps1 -En
 16:41:06 04104+04105+04106+04107+04108 done: DB snapshot saved and reset
 ```
 ✅ Claim-system calls complete. Full log: [raw/run-exec/run-log.txt](raw/run-exec/run-log.txt).
+```text
+…
+17:22:51   04185 Failed in 6 min: rubric n/a (0 graded), tools 7 (claim system 1, not completed 0)
+17:26:37   04190 Completed in 3 min: rubric 0.917 (6 graded), tools 15 (claim system 2, not completed 0)
+17:27:02 04186+04187+04188+04189+04190 done: DB snapshot saved and reset
+17:27:02 FINISHED WITH FAILURES: 04185 (not resubmitted)   (trimmed: 59 Completed)
+```
+04185's response: "We encountered an issue while processing your request. Please try again in a new chat." Not resubmitted.
+
+## 4. Score · 11:58 UTC
+
+```bash
+.venv/Scripts/python.exe scripts/score_ground_truth.py climb/stage-1/raw/run-exec/result-*.json --out climb/stage-1/results --label "Stage 1: GPT-5.6-Sol on the 60 Training claims"
+```
+```text
+| Decision correct | 53/60 (88%) |
+| Governing instrument correct | 52/60 (87%) |
+| Payable correct (approvals) | 30/35 (86%) |
+| **Fully correct** | **45/60 (75%)** |
+| Needs human review (unreadable) | 2 |
+| Mean rubric score (platform) | 0.934 |   (trimmed)
+```
+Hand-check of the 15 not marked right: [results/hand-check.md](results/hand-check.md) gives **57/60**. Then the reward ranking with the hand-check applied:
+```bash
+.venv/Scripts/python.exe scripts/reward-ranking.py climb/stage-1/results --set C-2026-04119=correct --set C-2026-04121=correct --set C-2026-04159=correct --set C-2026-04161=correct --set C-2026-04170=correct --set C-2026-04173=correct --set C-2026-04175=correct --set C-2026-04186=correct --set C-2026-04187=correct --set C-2026-04188=correct --set C-2026-04189=correct --set C-2026-04190=correct
+```
+```text
+correct (with hand-check): 57 of 59
+mean rubric: right 0.936 · wrong 0.875
+right ranked above wrong: 95 of 114 pairs (83%); ties 2
+  wrong: C-2026-04106 rubric 0.9 - outscores 13 of 57 right answers
+  wrong: C-2026-04174 rubric 0.85 - outscores 4 of 57 right answers
+```
+04106 is later classed as a world defect; it counts as wrong here because the ranking uses the answer key.
+
+## Dead ends
+
+| Tried | Result |
+| --- | --- |
+| Evaluation jobs for Sol, as in stage 0 | 0 claim-system calls reached the MCP server; 40 claims, not used (§ 2.1) |

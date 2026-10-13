@@ -11,7 +11,7 @@ Every stage reports two numbers: **right answers**, checked against the answer k
 | Stage | Model and change | Question | Right answers | Rubric | Status |
 | --- | --- | --- | --- | --- | --- |
 | [0 · Baseline](stage-0/README.md) | GPT-5.6-Sol, current skill and rubrics | How well does the strongest model do on this use case? | **29/30** | 0.956 | ✅ 2026-10-11 |
-| [1 · Broaden the evidence](stage-1/README.md) | GPT-5.6-Sol on the 60 Training claims, no change | Where do the skill and rubrics fall short? | | | 🔄 2026-10-13 |
+| [1 · Broaden the evidence](stage-1/README.md) | GPT-5.6-Sol on the 60 Training claims, no change | Where do the skill and rubrics fall short? | **57/60** (Training) | 0.934 | ✅ 2026-10-13: the Authority rubric gave the one wrong answer full marks |
 | 2 · Reward alignment | Rubrics only | Does the reward prefer the right answer? | | | ⬜ |
 | 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing behaviour be fixed by instruction? | | | ⬜ |
 | [4 · Small model](stage-4/README.md) | MAI-CODE-5b on the final configuration, with repeats | How far is the small model from Sol, and what could close it? | | | ⛔ first attempts blocked ([P11](../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)) |
