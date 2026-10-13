@@ -1,0 +1,79 @@
+{
+  "id": "4deaefbd-138d-4e26-96b1-2701082553e2",
+  "changed": true,
+  "applied": true,
+  "generatedCount": 4,
+  "generationWasEmpty": false,
+  "beforeCount": 0,
+  "afterCount": 4,
+  "added": [
+    "Requested outcome delivery",
+    "Contoso adjudication and response requirements",
+    "Use of Contoso records",
+    "Adjudicator usability and defensibility"
+  ],
+  "removed": [],
+  "rubrics": [
+    {
+      "id": "b5ee54b4-618e-4478-b1fd-4c043674e62e",
+      "rubricName": "Requested outcome delivery",
+      "checklistItems": [
+        "The response presents a definite answer to the requested claim adjudication or narrower warranty question, including a definitively established cannot-yet-decide or empty outcome where that is the genuine result; a refusal, execution error, promise to investigate, or unverified statement that nothing was found is FALSE, not N/A. This item always applies; an unmet requirement is FALSE, not N/A.",
+        "When the user requests a full claim adjudication, the response delivers the requested coverage decision, governing instrument, coverage-period assessment, payable amount, and next action as actual results or as specifically established undecidable elements. N/A only when the user does not request a full claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When the user asks a narrower question about a claim, asset warranty position, service partner, or part, the response delivers a direct answer to that question rather than substituting a generic claim template. N/A only when the user does not ask a narrower question; otherwise, an unmet requirement is FALSE.",
+        "When the outcome calls for an action in the claim system and the response has a basis to report that the draft was recorded, the response confirms the draft and states what was recorded; a statement that the action could not be performed or remains for someone else to do is FALSE. N/A only when the outcome does not call for a claim-system action or the task environment provides no mechanism for recording one; otherwise, an unmet requirement is FALSE."
+      ],
+      "importance": "critical",
+      "isEnabled": true
+    },
+    {
+      "id": "c6d9e165-a061-495b-8c0e-6c83d80566e0",
+      "rubricName": "Contoso adjudication and response requirements",
+      "checklistItems": [
+        "When the user requests a claim adjudication, the response explicitly classifies the repair as covered, declined, or not yet decidable. N/A only when the user does not request a claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When the user requests a claim adjudication, the response names the governing warranty instrument and explains why its terms apply to the asset at issue. N/A only when the user does not request a claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When the user requests a claim adjudication and the available evidence supports relevant time or usage boundaries, the response states the applicable coverage period and locates the repair date or usage position within, before, or after that period. N/A only when the user does not request a claim adjudication; if evidence needed to decide the period is missing, the response must identify that gap rather than omit the element.",
+        "When the user requests a claim adjudication, the response gives the payable amount in the applicable currency with distinct labour, parts, and partner-specific components, or expressly establishes why the payable amount is zero or cannot yet be calculated. N/A only when the user does not request a claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When the user requests a claim adjudication, the response identifies the next claim action and the person, team, or partner responsible for taking it. N/A only when the user does not request a claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When the response adjudicates a claim, its opening states the decision before the supporting analysis. N/A only when the response is not a claim adjudication; otherwise, an unmet requirement is FALSE.",
+        "When facts and dates materially support the answer, the response displays those facts and dates rather than relying on an unexplained conclusion. N/A only when the available input contains no material facts or dates; otherwise, an unmet requirement is FALSE.",
+        "When the response states a payable amount, it shows arithmetic or rate-and-quantity working sufficient to reproduce that amount. N/A only when no payable amount is stated or calculable; otherwise, an unmet requirement is FALSE.",
+        "When the response relies on a material fact, it identifies the record, document, channel discussion, or claim-system entry from which that fact came. N/A only when the response contains no material factual claim; otherwise, an unmet requirement is FALSE.",
+        "When a material fact could not be established from the available evidence, the response identifies the unresolved fact and explains its effect on the answer. N/A only when no material fact remains unresolved; otherwise, an unmet requirement is FALSE.",
+        "When available sources materially disagree, the response identifies the disagreement and does not silently select one version. N/A only when no material source disagreement is present; otherwise, an unmet requirement is FALSE.",
+        "When the outcome calls for a claim-system action and execution evidence supports that a draft was recorded, the response states what draft was recorded. N/A only when no claim-system action is called for or no recording mechanism is available; otherwise, an unmet requirement is FALSE.",
+        "When the user asks a narrower question about a claim, an asset's warranty position, a service partner, or a part, the response answers that requested subject directly using the same source-grounding standard as a full adjudication. N/A only when the user does not ask a narrower question; otherwise, an unmet requirement is FALSE.",
+        "The response does not present an unsupported inference, invented warranty term, fabricated date, fabricated rate, fabricated amount, or fabricated source as an established Contoso fact. This item always applies; an unmet requirement is FALSE, not N/A."
+      ],
+      "importance": "critical",
+      "isEnabled": true
+    },
+    {
+      "id": "48c92ab0-012b-4ea5-b5ab-beb07f25d794",
+      "rubricName": "Use of Contoso records",
+      "checklistItems": [
+        "The execution evidence shows that material warranty conclusions were derived from Contoso organisational records rather than unsupported external assumptions or general warranty knowledge. This item always applies; an unmet requirement is FALSE, not N/A.",
+        "When the requested answer materially depends on policy, regional terms, technical coverage, rates, partner terms, review findings, or inspection evidence available in the Warranty Operations library, the execution evidence shows use of the relevant library material. N/A only when none of those library materials is relevant or available to the request; otherwise, an unmet requirement is FALSE.",
+        "When relevant field escalations, partner conversations, or policy announcements are available in the team's channels, the execution evidence shows that those channel records were considered. N/A only when no relevant channel evidence is available; otherwise, an unmet requirement is FALSE.",
+        "When the requested answer materially depends on asset, running-hours, service-history, claim, partner, parts, goodwill-authority, or workflow data available in the service claim system, the execution evidence shows use of the relevant system records. N/A only when none of those system records is relevant or available to the request; otherwise, an unmet requirement is FALSE.",
+        "When a claim-system draft action is required and an execution mechanism is available, the execution evidence shows that the applicable draft adjudication, evidence request, or goodwill escalation was actually recorded without falsely representing a final approval. N/A only when no draft action is required or no execution mechanism is available; otherwise, an unmet requirement is FALSE."
+      ],
+      "importance": "critical",
+      "isEnabled": true
+    },
+    {
+      "id": "db1409ec-04b5-4296-b036-9732755a5576",
+      "rubricName": "Adjudicator usability and defensibility",
+      "checklistItems": [
+        "The opening makes the claim decision or narrower answer immediately identifiable.",
+        "The analysis visibly connects source-attributed facts to the governing warranty terms and resulting conclusion.",
+        "Dates, coverage boundaries, rates, quantities, currency, and arithmetic are arranged so the reader can audit the conclusion.",
+        "Unresolved evidence, source conflicts, assumptions, and their consequences are separated from established findings.",
+        "The next-action section identifies an owner and distinguishes a recorded draft from a recommended future action."
+      ],
+      "importance": "high",
+      "isEnabled": true
+    }
+  ]
+}
+
