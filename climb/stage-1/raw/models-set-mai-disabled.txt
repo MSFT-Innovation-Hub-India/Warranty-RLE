@@ -1,0 +1,9 @@
+{
+  "isEnabled": false,
+  "id": "00000000-0000-0000-8000-100000000004",
+  "alias": "dev-ct-mai-code-mp",
+  "displayName": "MAI-CODE-5b",
+  "name": "dev-ct-mai-code-mp",
+  "isSelected": false
+}
+

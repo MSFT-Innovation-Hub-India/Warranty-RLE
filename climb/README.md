@@ -2,7 +2,7 @@
 
 One folder per stage. Each holds a business-readable `README.md`, a `RUNBOOK.md` with every command and response, and the `config/`, `results/` and `raw/` files. New stages start from [_template/](_template/). Why the stages are in this order: [docs/04-hill-climb-method.md](../docs/04-hill-climb-method.md).
 
-**Fixed throughout:** world v3 (`wce-main`), the 30 evaluation claims, the ground-truth scorer. **Reference model:** GPT-5.6-Sol. **Climbing model:** MAI-CODE-5b (`dev-ct-mai-code-mp`), tuned as `mai-code-1-flash` in stage 4.
+**Fixed throughout:** world v3 (`wce-main`), the 30 evaluation claims, the ground-truth scorer. **Stages 0–3:** GPT-5.6-Sol, to settle the skill and rubrics. **Stages 4–5:** the small model, MAI-CODE-5b (`dev-ct-mai-code-mp`), tuned as `mai-code-1-flash` in stage 5. Training claims (60) are used for refinement; the 30 Evaluation claims stay held out.
 
 ## Scoreboard
 
@@ -11,7 +11,8 @@ Every stage reports two numbers: **right answers**, checked against the answer k
 | Stage | Model and change | Question | Right answers | Rubric | Status |
 | --- | --- | --- | --- | --- | --- |
 | [0 · Baseline](stage-0/README.md) | GPT-5.6-Sol, current skill and rubrics | How well does the strongest model do on this use case? | **29/30** | 0.956 | ✅ 2026-10-11 |
-| [1 · MAI-CODE-5b](stage-1/RUNBOOK.md) | MAI-CODE-5b, same configuration | How does the small model do on the same use case? | | | ⛔ blocked: claim-system calls fail inside the platform for MAI ([P11](../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)) |
+| [1 · Broaden the evidence](stage-1/README.md) | GPT-5.6-Sol on the 60 Training claims, no change | Where do the skill and rubrics fall short? | | | 🔄 2026-10-13 |
 | 2 · Reward alignment | Rubrics only | Does the reward prefer the right answer? | | | ⬜ |
-| 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing procedure be taught? | | | ⬜ |
-| 4 · RFT | Model weights | Does tuning turn "sometimes right" into "usually right"? | | | ⬜ blocked by [P7](../docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools) |
+| 3 · Skill, one fix at a time | Skill only (3a, 3b, …) | Can a missing behaviour be fixed by instruction? | | | ⬜ |
+| [4 · Small model](stage-4/README.md) | MAI-CODE-5b on the final configuration, with repeats | How far is the small model from Sol, and what could close it? | | | ⛔ first attempts blocked ([P11](../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)) |
+| 5 · Close the gap | Small-model skill, then RFT | Does tuning turn "sometimes right" into "usually right"? | | | ⬜ blocked by [P7](../docs/06-platform-issues.md#p7-tuning-excludes-the-claim-system-tools) |

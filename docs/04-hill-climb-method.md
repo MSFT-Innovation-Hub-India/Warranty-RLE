@@ -59,15 +59,18 @@ One change per stage. Each stage starts as a copy of the previous one's `config/
 
 | Stage | One change | Question it answers | Gate to go on |
 | --- | --- | --- | --- |
-| **0 · Frontier reference** | Model = GPT-5.6-Sol | What does the world allow with this skill and these rubrics? Which claims are unwinnable even for Sol? | Sol correct on ≥ 26/30. Claims Sol gets wrong are investigated (world, answer key, skill) before stage 1 |
-| **1 · Small-model baseline and headroom** | Model = MAI-CODE-5b, each claim run **k = 3** times | Floor (mean), reach (any of 3), variance, and whether the rubric score ranks MAI's right attempts above its wrong ones | Every claim classified (§2 table). Headroom stated as two numbers: total gap and RFT-capturable gap |
-| **2 · Reward alignment** | Rubrics only (checklist and red flags) | Does the reward prefer MAI's right attempts? | Within-claim ranking ≥ 90%; no wrong answer scores ≥ 0.6. Skip this stage if stage 1 already passes |
-| **3 · Skill, one fix at a time** | Skill only: 3a, 3b … each one targeted fix for one "never right" class | Can a procedure the model lacks be taught? | Each sub-stage kept only if correctness rises against the previous one. A regression is reverted, not stacked |
-| **4 · RFT** | Model weights (`tune start` on `mai-code-1-flash`) | Does tuning convert reach into floor? | Tuned `Simple` vs base `Simple` on the 30 evaluation claims, with GPT-5.6-Sol as reference |
+| **0 · Frontier reference** ✅ | Model = GPT-5.6-Sol | What does the world allow with this skill and these rubrics? | Sol correct on ≥ 26/30. Claims Sol gets wrong are investigated before going on. **Passed: 29/30** |
+| **1 · Broaden the evidence** | None: Sol on the **60 Training claims** (measurement only) | Where do the skill and rubrics fall short, found without touching the 30 held-out claims? | Every wrong answer explained (world, answer key, skill or reward); reward ranking computed on the 60 |
+| **2 · Reward alignment** | Rubrics only (checklist and red flags) | Does the reward prefer right answers over wrong ones, whoever wrote them? | No wrong answer outscores most right ones; correctness unchanged. New Evaluation baseline on the 30 |
+| **3 · Skill, one fix at a time** | Skill only: 3a, 3b … each a targeted fix found in stage 1 | Can a missing or inconsistent behaviour be fixed by instruction? | Each sub-stage kept only if Training correctness rises and Evaluation holds. A regression is reverted, not stacked |
+| **4 · Small-model baseline and headroom** | Model = MAI-CODE-5b (or GPT-5.4-Mini), each claim run **k = 3** times | Floor (mean), reach (any of 3), grader scores against correctness, compared with Sol on the same configuration | Every claim classified (§2 table). Headroom as two numbers: total gap and RFT-capturable gap. **First attempts blocked** ([stage-4](../climb/stage-4/README.md)) |
+| **5 · Close the gap** | Skill for the small model, then model weights (`tune start` on `mai-code-1-flash`) | Does tuning convert reach into floor? | Tuned `Simple` vs base `Simple` on the 30 Evaluation claims, with GPT-5.6-Sol as reference. Blocked by P7 |
+
+**Reordered 2026-10-13** (was: small model at stage 1). The skill and rubrics are refined with Sol first because the rubric work doesn't depend on the model, and MAI-CODE-5b couldn't complete claims on the platform. Sol is near its ceiling on the Evaluation claims, so stage 1 looks for weaknesses on the Training claims, where refinement is allowed. Weaknesses specific to the small model only show at stage 4; stage 5 addresses them.
 
 ### Why in this order
 
-- **Sol first.** Without a ceiling you can't tell a weak model from an unfair world. Attempt 1 skipped this on world v3 and spent two stages tuning against claims that may be broken.
+- **Sol first, and for the skill and rubrics.** Without a ceiling you can't tell a weak model from an unfair world; and a reward that prefers wrong answers is wrong for every model. (Was: "Sol first.") Without a ceiling you can't tell a weak model from an unfair world. Attempt 1 skipped this on world v3 and spent two stages tuning against claims that may be broken.
 - **Repeats before changes.** Attempt 1 compared single runs, so a 5-claim drop in stage 2 could not be separated from run-to-run noise. Three repeats give a variance estimate and the "right in any of k" reach, with every candidate answer visible (the platform's `BestOfN` returns only the winner).
 - **Rubrics before skills.** The reward must be right before anything is optimised against it; changing the rubrics also resets every score baseline (📄 "changed rubrics require a new baseline").
 - **One skill fix at a time.** Attempt 1's stage 2b added method, a folder map and hand-in rules together; correctness fell 22 → 17 and the cause could not be isolated.

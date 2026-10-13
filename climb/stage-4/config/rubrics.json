@@ -1,0 +1,128 @@
+[
+  {
+    "RubricName": "Coverage determination",
+    "PearlCategory": "primary",
+    "Description": "The coverage conclusion follows from the asset's own dates and limits.",
+    "ChecklistItems": [
+      "States the coverage outcome: the repair is covered, it is declined, or a decision is not yet possible; any equivalent wording counts (for example \"approve\" for covered, \"hold\" or \"request evidence\" when a decision is not yet possible)",
+      "Names the coverage limits applied, in months and in running hours, and the date the coverage period runs from; or, where one of these cannot be established, says which record is missing",
+      "Compares the repair date and the running hours at the date of repair against those limits, or says which of the two cannot be compared and why",
+      "Where one limit is exceeded and the other is not, says which limit ends the cover"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "critical",
+    "RubricType": "user_facing"
+  },
+  {
+    "RubricName": "Precedence discipline",
+    "PearlCategory": "primary",
+    "Description": "The governing instrument is identified and justified against the alternatives.",
+    "ChecklistItems": [
+      "Where coverage can be determined, names one governing instrument by reference code",
+      "States why that instrument governs over the other instruments that mention this asset, such as a regional addendum or the global policy",
+      "Treats a bulletin that is superseded, or whose serial range, component scope or region excludes this asset, as not governing, and says why where one was considered",
+      "Where the claim system's bulletin index and a bulletin document disagree on a serial range, follows the document and reports the disagreement"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "critical",
+    "RubricType": "user_facing"
+  },
+  {
+    "RubricName": "Evidence grounding",
+    "PearlCategory": "primary",
+    "Description": "Every factual claim is traceable to the source that owns it.",
+    "ChecklistItems": [
+      "Attributes each coverage term or exclusion to a policy, addendum or bulletin, by reference and clause",
+      "Attributes each date and running-hours figure to the claim-system record that holds it, naming the as-of date of any reading",
+      "Attributes each rate and price to its source (the labour rate card, the parts price list or the claim system's part record), naming the region and the effective date where they apply",
+      "Introduces no figure, date, part number or reference that is absent from the sources consulted"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "high",
+    "RubricType": "user_facing"
+  },
+  {
+    "RubricName": "Valuation accuracy",
+    "PearlCategory": "primary",
+    "Description": "Applies only when the claim is covered: the payable amount is derived, shown and internally consistent. A declined or held claim has no payable amount to value.",
+    "ChecklistItems": [
+      "When the claim is covered, states payable labour hours as the lesser of the hours claimed and the flat-rate allowance for the operation, and names both",
+      "When the claim is covered, applies the labour rate in force on the date of repair, and names that rate",
+      "When the claim is covered, prices the part actually fitted, naming the part number and any supersession",
+      "When the claim is covered, applies a partner handling uplift only where the partner's agreement grants one",
+      "When the claim is covered, states the total payable, and reports as a variance any claimed hours or amount above what is payable"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "critical",
+    "RubricType": "user_facing"
+  },
+  {
+    "RubricName": "Authority and action",
+    "PearlCategory": "primary",
+    "Description": "The disposition is one the requester is entitled to take, and it is carried out.",
+    "ChecklistItems": [
+      "Names the next action (approve, decline, request evidence or escalate) and who takes it; any equivalent wording counts",
+      "Where goodwill is requested above the requester's authority, escalates it to the approving role named in the authority matrix, rather than approving it, declining it outright or leaving the choice open",
+      "Treats an approval given in a conversation or channel message as not constituting authority, where one is present",
+      "Where the decision calls for a claim-system action, the execution shows that the matching draft, evidence request or escalation was recorded once, with content consistent with the decision"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "critical",
+    "RubricType": "user_facing"
+  },
+  {
+    "RubricName": "Gaps reported, not filled",
+    "PearlCategory": "primary",
+    "Description": "Missing records are named and never papered over.",
+    "ChecklistItems": [
+      "Names any record needed for the decision that is missing, and the field that is absent",
+      "Does not substitute a different field for a missing one, such as an installation date for a missing commissioning date",
+      "Where a record needed for the decision is missing, does not state a final outcome that depends on it"
+    ],
+    "ScoringScale": {
+      "Min": 0,
+      "Max": 1,
+      "Direction": "higher_is_better"
+    },
+    "ScoringCriteria": {},
+    "RedFlags": [],
+    "MeasurementMethod": "binary_checklist",
+    "Importance": "high",
+    "RubricType": "user_facing"
+  }
+]

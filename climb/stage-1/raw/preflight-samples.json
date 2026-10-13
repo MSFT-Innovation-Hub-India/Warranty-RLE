@@ -1,0 +1,1713 @@
+[
+  {
+    "id": "90dfe727-082c-4c06-bca9-6321b9382be4",
+    "prompt": "Adjudicate claim C-2026-04101.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:08.1969163+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:08.1969163+00:00"
+  },
+  {
+    "id": "bfec6b1b-6442-49d2-a35e-9e84ad260662",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04102. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:14.6110582+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:14.6110582+00:00"
+  },
+  {
+    "id": "4f946a00-5bdd-4aae-895d-4d7d27a59968",
+    "prompt": "Can you work up C-2026-04103 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:20.7142255+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:20.7142255+00:00"
+  },
+  {
+    "id": "87fff69f-de3e-4bc4-91c2-f2159dcd5d5f",
+    "prompt": "What's the position on C-2026-04109?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:26.4886035+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:26.4886035+00:00"
+  },
+  {
+    "id": "656ae5ac-f2f1-48f3-b88f-beaefa2368c2",
+    "prompt": "Review C-2026-04110 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:33.4998851+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:33.4998851+00:00"
+  },
+  {
+    "id": "35c2c769-94bd-403f-9742-4c900204dd1c",
+    "prompt": "C-2026-04114 came in from Fabrikam Service Partners this morning. Where do we land?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:39.7250251+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:39.7250251+00:00"
+  },
+  {
+    "id": "78ca37e0-44db-4356-9c90-5ae591589841",
+    "prompt": "I need a decision on C-2026-04115 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:45.4917704+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:45.4917704+00:00"
+  },
+  {
+    "id": "8b0265bd-439a-4062-97f1-118b0d0dcd07",
+    "prompt": "Please assess C-2026-04116 on serial CIE-4000-CH-01950 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:51.3955732+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:51.3955732+00:00"
+  },
+  {
+    "id": "e3e4f14d-6cd2-4d4e-b4d3-346471e1b132",
+    "prompt": "Is serial CIE-2200-AC-00800 still in warranty as at 2026-06-01? There's a claim, C-2026-04117.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:07:57.4200977+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:07:57.4200977+00:00"
+  },
+  {
+    "id": "e910bccb-488a-4aa3-b5b9-6aed345f3fb7",
+    "prompt": "C-2026-04118: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:03.4108992+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:03.4108992+00:00"
+  },
+  {
+    "id": "8cf2b70d-b572-4ea4-bd06-391c1016e007",
+    "prompt": "Take a look at C-2026-04129 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:09.4964392+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:09.4964392+00:00"
+  },
+  {
+    "id": "effbf3b0-023a-47e3-b45b-70a5d51bbd56",
+    "prompt": "Give me the adjudication for C-2026-04130, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:15.3287555+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:15.3287555+00:00"
+  },
+  {
+    "id": "415ed949-af95-447b-93fb-774d4ead9776",
+    "prompt": "Adjudicate claim C-2026-04131.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:21.6512457+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:21.6512457+00:00"
+  },
+  {
+    "id": "d6e4524d-b108-4986-a963-bc05ff7c56bc",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04132. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:27.7126757+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:27.7126757+00:00"
+  },
+  {
+    "id": "d35060d1-c095-4127-8da1-7533920506f4",
+    "prompt": "Can you work up C-2026-04139 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:33.6616518+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:33.6616518+00:00"
+  },
+  {
+    "id": "040a4123-5332-4403-9525-e85862702ad1",
+    "prompt": "What's the position on C-2026-04140?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:40.3633227+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:40.3633227+00:00"
+  },
+  {
+    "id": "35d0a74e-499f-45dc-9666-231278299cfb",
+    "prompt": "Review C-2026-04141 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:46.8442785+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:46.8442785+00:00"
+  },
+  {
+    "id": "59a438a9-a0e9-4ca5-bd54-9a09694930b2",
+    "prompt": "Customer is asking about CIE-4000-CH-01440. Claim C-2026-04148 is open — what's the coverage position?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:52.94339+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:52.94339+00:00"
+  },
+  {
+    "id": "a17a6927-c022-48ae-84f2-245b463d2a61",
+    "prompt": "I need a decision on C-2026-04149 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:08:58.79345+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:08:58.79345+00:00"
+  },
+  {
+    "id": "66217fde-618f-4a47-bac0-92b9eab1161e",
+    "prompt": "Please assess C-2026-04150 on serial CIE-4000-CH-01444 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:04.7252031+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:04.7252031+00:00"
+  },
+  {
+    "id": "90ec16a2-d7d8-4235-a30a-677a7ad5cf5a",
+    "prompt": "Run the numbers on C-2026-04151 — is it in warranty and how much?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:10.783352+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:10.783352+00:00"
+  },
+  {
+    "id": "dfad05c0-b9fd-413a-bce7-c278c2c13235",
+    "prompt": "C-2026-04152: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:17.3083719+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:17.3083719+00:00"
+  },
+  {
+    "id": "d893bc7d-b7be-488c-a596-3461e4e84c75",
+    "prompt": "Take a look at C-2026-04153 for the Northwind Field Services account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:23.5242706+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:23.5242706+00:00"
+  },
+  {
+    "id": "d0b418a4-2e7c-474f-9897-1d6519dbad75",
+    "prompt": "Give me the adjudication for C-2026-04166, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:31.9542768+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:31.9542768+00:00"
+  },
+  {
+    "id": "5b3c0353-d751-4257-a955-579fdca0ff79",
+    "prompt": "Adjudicate claim C-2026-04167.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:37.7101343+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:37.7101343+00:00"
+  },
+  {
+    "id": "ea05686e-752d-4884-8af0-04ff8ad66aa5",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04171. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:43.3455106+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:43.3455106+00:00"
+  },
+  {
+    "id": "9b56c2c2-c90d-4406-a827-c4f7e4c0f9a0",
+    "prompt": "Is serial CIE-4000-CH-01962 still in warranty as at 2026-05-01? There's a claim, C-2026-04172.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:49.4683808+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:49.4683808+00:00"
+  },
+  {
+    "id": "50b197a9-512f-480f-94e0-934578ad9124",
+    "prompt": "What's the position on C-2026-04176?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:09:55.4522972+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:09:55.4522972+00:00"
+  },
+  {
+    "id": "ff199284-dbd5-4fb1-b62b-7166979e3435",
+    "prompt": "Review C-2026-04177 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:10:01.4000467+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:10:01.4000467+00:00"
+  },
+  {
+    "id": "86d63152-9f56-4d38-b8a6-5ee0e35b0643",
+    "prompt": "C-2026-04178 came in from Fabrikam Service Partners this morning. Where do we land?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Evaluation",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T06:10:07.6123887+00:00",
+    "lastModifiedDateTime": "2026-10-08T06:10:07.6123887+00:00"
+  },
+  {
+    "id": "0187ef5c-8464-4f62-a24c-e6d286ee97e0",
+    "prompt": "Adjudicate claim C-2026-04104.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:22.0751764+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:22.0751764+00:00"
+  },
+  {
+    "id": "ac57dc03-81bc-42fc-9aee-dcb2bc047529",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04105. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:28.9556051+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:28.9556051+00:00"
+  },
+  {
+    "id": "6390b9a1-687a-4120-9ca8-3eb0a939ef5f",
+    "prompt": "Can you work up C-2026-04106 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:36.3690275+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:36.3690275+00:00"
+  },
+  {
+    "id": "25ebfc60-1edf-4eb7-b012-37fbc3da6679",
+    "prompt": "What's the position on C-2026-04107?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:43.1489075+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:43.1489075+00:00"
+  },
+  {
+    "id": "d9a38c30-b80f-4699-9402-12edab0ba7d4",
+    "prompt": "Review C-2026-04108 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:50.1843008+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:50.1843008+00:00"
+  },
+  {
+    "id": "91f5099f-877a-4c26-ad01-6613dfb67bd5",
+    "prompt": "C-2026-04111 came in from Fabrikam Service Partners this morning. Where do we land?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:07:54.6745954+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:07:54.6745954+00:00"
+  },
+  {
+    "id": "5f718ac7-d01f-4b8a-9090-d9746c1f6929",
+    "prompt": "I need a decision on C-2026-04112 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:02.1693814+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:02.1693814+00:00"
+  },
+  {
+    "id": "a0fb42e1-b8f8-42e5-983b-f9ac8a93e1d9",
+    "prompt": "Please assess C-2026-04113 on serial CIE-4000-CH-01904 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:09.1983793+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:09.1983793+00:00"
+  },
+  {
+    "id": "2e844786-2761-4b2a-9e64-1f5450d25bf1",
+    "prompt": "Is serial CIE-4000-CH-01701 still in warranty as at 2026-06-18? There's a claim, C-2026-04119.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:17.5231302+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:17.5231302+00:00"
+  },
+  {
+    "id": "3306cdd1-454f-412e-a3b9-57f8a8c8c6a1",
+    "prompt": "C-2026-04120: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:21.840437+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:21.840437+00:00"
+  },
+  {
+    "id": "55c3ff04-207a-4ebd-a2f5-26c6dec00944",
+    "prompt": "Take a look at C-2026-04121 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:29.6547576+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:29.6547576+00:00"
+  },
+  {
+    "id": "127ce73c-c78a-44b5-aa8c-162f348d776b",
+    "prompt": "Give me the adjudication for C-2026-04122, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:36.549461+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:36.549461+00:00"
+  },
+  {
+    "id": "e58d7666-aa65-4357-81c2-c1427e01da1d",
+    "prompt": "Adjudicate claim C-2026-04123.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:41.3678112+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:41.3678112+00:00"
+  },
+  {
+    "id": "ef657531-5257-4e57-a913-ee375245d432",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04124. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:08:45.35366+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:08:45.35366+00:00"
+  },
+  {
+    "id": "801439a4-eead-43bd-a05f-c02ee0694dd1",
+    "prompt": "Can you work up C-2026-04125 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:00.0056623+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:00.0056623+00:00"
+  },
+  {
+    "id": "3344321c-152e-459d-95e7-5a39ce7c553b",
+    "prompt": "What's the position on C-2026-04126?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:03.892032+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:03.892032+00:00"
+  },
+  {
+    "id": "3759faaa-66d2-4ef0-9743-168f003f8ac9",
+    "prompt": "Review C-2026-04127 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:08.930656+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:08.930656+00:00"
+  },
+  {
+    "id": "969962b2-dc64-4056-935f-ad3e5e1ed72d",
+    "prompt": "Customer is asking about CIE-2200-AC-00602. Claim C-2026-04128 is open — what's the coverage position?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:15.9467674+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:15.9467674+00:00"
+  },
+  {
+    "id": "60cb7745-ed59-48d8-b539-4cf1a3728c7c",
+    "prompt": "I need a decision on C-2026-04133 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:22.9536507+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:22.9536507+00:00"
+  },
+  {
+    "id": "e0104205-a7f5-4335-81f0-fbc15b079800",
+    "prompt": "Please assess C-2026-04134 on serial CIE-4000-CH-01201 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:27.4064892+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:27.4064892+00:00"
+  },
+  {
+    "id": "aa165313-d5c9-4aa3-932c-165860b1e378",
+    "prompt": "Run the numbers on C-2026-04135 — is it in warranty and how much?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:32.0310915+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:32.0310915+00:00"
+  },
+  {
+    "id": "2af3a5ab-4f8f-4a44-8352-5adaf27c6b2e",
+    "prompt": "C-2026-04136: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:38.6137574+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:38.6137574+00:00"
+  },
+  {
+    "id": "ff6519a1-b34e-4853-8afc-57c5125f63b9",
+    "prompt": "Take a look at C-2026-04137 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:42.8454718+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:42.8454718+00:00"
+  },
+  {
+    "id": "62ce77d1-2ade-4920-921f-b1e6211fe7e7",
+    "prompt": "Give me the adjudication for C-2026-04138, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:47.1019542+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:47.1019542+00:00"
+  },
+  {
+    "id": "3a0b86d8-b5f8-4b92-9c41-032058b55841",
+    "prompt": "Adjudicate claim C-2026-04142.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:51.6768854+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:51.6768854+00:00"
+  },
+  {
+    "id": "bfba8093-311c-422b-bf7e-201604e329c7",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04143. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:09:56.0439722+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:09:56.0439722+00:00"
+  },
+  {
+    "id": "623e0877-e3ea-448d-ae8e-d314c4cdf70b",
+    "prompt": "Is serial CIE-4000-CH-01423 still in warranty as at 2026-06-20? There's a claim, C-2026-04144.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:00.0587119+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:00.0587119+00:00"
+  },
+  {
+    "id": "684ca504-c7a1-49b5-a838-5eeb11e42058",
+    "prompt": "What's the position on C-2026-04145?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:04.4860635+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:04.4860635+00:00"
+  },
+  {
+    "id": "603acc90-3b55-4068-b3ee-994fc874532e",
+    "prompt": "Review C-2026-04146 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:08.3511951+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:08.3511951+00:00"
+  },
+  {
+    "id": "fa36312d-69eb-42d7-84fa-ce542df532ce",
+    "prompt": "C-2026-04147 came in from Fabrikam Service Partners this morning. Where do we land?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:28.0902799+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:28.0902799+00:00"
+  },
+  {
+    "id": "81ef5d0d-a7ce-4dbf-b205-7970c0043104",
+    "prompt": "I need a decision on C-2026-04154 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:33.8296958+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:33.8296958+00:00"
+  },
+  {
+    "id": "ea28f449-dd83-4d86-9a73-70ef23fe3a1d",
+    "prompt": "Please assess C-2026-04155 on serial CIE-4000-CH-01454 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:40.3692991+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:40.3692991+00:00"
+  },
+  {
+    "id": "eb617144-76c0-4355-9b94-8138898c01ab",
+    "prompt": "Run the numbers on C-2026-04156 — is it in warranty and how much?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:48.9138776+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:48.9138776+00:00"
+  },
+  {
+    "id": "ecd236d6-a11c-486b-94cc-205ca4abb010",
+    "prompt": "C-2026-04157: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:10:55.0985889+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:10:55.0985889+00:00"
+  },
+  {
+    "id": "690e3e6f-61d7-4be0-8e20-25ea9cdbd29b",
+    "prompt": "Take a look at C-2026-04158 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:03.4477865+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:03.4477865+00:00"
+  },
+  {
+    "id": "da8aad51-07db-48ff-a62c-fb192bb3c37e",
+    "prompt": "Customer is asking about CIE-4000-CH-01462. Claim C-2026-04159 is open — what's the coverage position?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:11.6145228+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:11.6145228+00:00"
+  },
+  {
+    "id": "1e728d7d-2a51-4424-bcd3-1bbba853eab3",
+    "prompt": "Adjudicate claim C-2026-04160.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:20.5117255+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:20.5117255+00:00"
+  },
+  {
+    "id": "a6ad662f-6c7d-45b9-87c7-736994ac0fc0",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04161. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:29.9099968+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:29.9099968+00:00"
+  },
+  {
+    "id": "e8156b9f-5538-4cbc-a08c-7c69f45a9e27",
+    "prompt": "Can you work up C-2026-04162 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:36.0110475+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:36.0110475+00:00"
+  },
+  {
+    "id": "e0b48e39-6248-4d76-a1a9-dd9841fedcfc",
+    "prompt": "What's the position on C-2026-04163?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:42.767594+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:42.767594+00:00"
+  },
+  {
+    "id": "8bbac9c6-bd23-4490-962e-00fdb56ba0d9",
+    "prompt": "Review C-2026-04164 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:49.4366909+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:49.4366909+00:00"
+  },
+  {
+    "id": "8f7fba8a-0db2-4d58-a4d9-1aa06359f91c",
+    "prompt": "C-2026-04165 came in from Northwind Field Services this morning. Where do we land?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:11:55.8864894+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:11:55.8864894+00:00"
+  },
+  {
+    "id": "109d14b8-bf77-47ab-b165-d433334b0298",
+    "prompt": "I need a decision on C-2026-04168 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:02.6022707+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:02.6022707+00:00"
+  },
+  {
+    "id": "3ab9a950-b62b-48bb-bfcf-bc7bee2aef66",
+    "prompt": "Please assess C-2026-04169 on serial CIE-4000-CH-01306 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:08.5337312+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:08.5337312+00:00"
+  },
+  {
+    "id": "6e98565e-789a-416e-ac71-3852fe9cd1b5",
+    "prompt": "Is serial CIE-4000-CH-01308 still in warranty as at 2026-09-14? There's a claim, C-2026-04170.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:14.413273+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:14.413273+00:00"
+  },
+  {
+    "id": "ea9707da-06d7-4060-927a-cc5ae4de5c05",
+    "prompt": "C-2026-04173: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:20.5701356+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:20.5701356+00:00"
+  },
+  {
+    "id": "f16b2b86-37fa-4391-87c1-eb73d5267ea7",
+    "prompt": "Take a look at C-2026-04174 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:26.3659658+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:26.3659658+00:00"
+  },
+  {
+    "id": "d5987986-7aa9-408e-b4ea-73d4176f5c42",
+    "prompt": "Give me the adjudication for C-2026-04175, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:31.0586228+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:31.0586228+00:00"
+  },
+  {
+    "id": "096e11ce-fd05-4e28-b383-6659565725d5",
+    "prompt": "Adjudicate claim C-2026-04179.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:35.2369493+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:35.2369493+00:00"
+  },
+  {
+    "id": "bcf0f254-627d-42ef-8e8a-b4183da63a8c",
+    "prompt": "Fabrikam Service Partners have submitted C-2026-04180. Is it covered, and what do we pay?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:42.5009031+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:42.5009031+00:00"
+  },
+  {
+    "id": "0f0d6b24-b9b2-4c76-9537-2c110938acac",
+    "prompt": "Can you work up C-2026-04181 for me — coverage position and payable amount?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:47.4669366+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:47.4669366+00:00"
+  },
+  {
+    "id": "620b187b-23cb-4642-9cc4-befcc02eccae",
+    "prompt": "What's the position on C-2026-04182?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:52.2980781+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:52.2980781+00:00"
+  },
+  {
+    "id": "bb50b454-4406-485f-84dd-de1da9dd73dc",
+    "prompt": "Review C-2026-04183 and tell me the decision, the instrument it turns on, and the amount.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:12:56.3196636+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:12:56.3196636+00:00"
+  },
+  {
+    "id": "396f5b24-44c0-4987-a964-072f02a80134",
+    "prompt": "Customer is asking about CIE-4000-CH-02112. Claim C-2026-04184 is open — what's the coverage position?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:00.3362483+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:00.3362483+00:00"
+  },
+  {
+    "id": "05f3083c-e249-4877-9fbb-1ae53b115af6",
+    "prompt": "I need a decision on C-2026-04185 before the partner call. What have we got?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:04.582717+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:04.582717+00:00"
+  },
+  {
+    "id": "00972b6c-ee6b-49c4-aa02-90958899b343",
+    "prompt": "Please assess C-2026-04186 on serial CIE-4000-CH-01362 and give me the payable figure.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:08.5028849+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:08.5028849+00:00"
+  },
+  {
+    "id": "82225f31-5e94-4d77-bebf-26c14fe0b30a",
+    "prompt": "Run the numbers on C-2026-04187 — is it in warranty and how much?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:12.5693141+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:12.5693141+00:00"
+  },
+  {
+    "id": "0986fb72-290c-4944-b3c6-03905960c9eb",
+    "prompt": "C-2026-04188: covered or not? If covered, what's payable and under what?",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:16.7809988+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:16.7809988+00:00"
+  },
+  {
+    "id": "2004cdd8-c843-4c5e-b555-1fad40a53ec2",
+    "prompt": "Take a look at C-2026-04189 for the Fabrikam Service Partners account and advise.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:22.0003542+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:22.0003542+00:00"
+  },
+  {
+    "id": "8b08cac0-b932-4277-a944-77bcc31d0c2d",
+    "prompt": "Give me the adjudication for C-2026-04190, with the instrument you relied on.",
+    "skillId": "cf00d339-5217-4cd1-b390-cc0d911735da",
+    "label": "Training",
+    "knowledgeReferences": [],
+    "createdBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "lastModifiedBy": {
+      "externalDirectoryObjectId": "47eb209f-b167-4c64-b0f0-6e9649a7a964",
+      "displayName": "Srikantan Sankaran",
+      "type": "Person"
+    },
+    "createdDateTime": "2026-10-08T13:13:26.5289858+00:00",
+    "lastModifiedDateTime": "2026-10-08T13:13:26.5289858+00:00"
+  }
+]
+

@@ -1,0 +1,44 @@
+
+Models for Evaluation
+ID: 00000000-0000-0000-8000-100000000005
+Name: prod-gpt-56-reasoning-sol
+Display Name: GPT-5.6-Sol
+Fine-Tuned: —
+Selected: —
+
+ID: 00000000-0000-0000-8000-100000000004
+Name: dev-ct-mai-code-mp
+Display Name: MAI-CODE-5b
+Fine-Tuned: —
+Selected: —
+
+ID: dev-ct-mai-code-mp
+Name: dev-ct-mai-code-mp
+Display Name: MAI-CODE-5b
+Fine-Tuned: —
+Selected: —
+
+ID: dev-ct-gpt-54-mini-mp
+Name: dev-ct-gpt-54-mini-mp
+Display Name: GPT-5.4-Mini
+Fine-Tuned: —
+Selected: —
+
+ID: prod-gpt-56-reasoning-sol
+Name: prod-gpt-56-reasoning-sol
+Display Name: GPT-5.6-Sol
+Fine-Tuned: —
+Selected: ✓
+
+Models for Fine-tuning
+ID: 00000000-0000-0000-8000-200000000002
+Name: gpt-54-mini
+Display Name: GPT-5.4-Mini
+Fine-Tuned: —
+Selected: —
+
+ID: 00000000-0000-0000-8000-200000000003
+Name: mai-code-1-flash
+Display Name: MAI-Code-1-Flash
+Fine-Tuned: —
+Selected: —
