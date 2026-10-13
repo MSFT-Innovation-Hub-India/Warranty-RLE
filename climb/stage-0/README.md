@@ -25,6 +25,18 @@ Establish the baseline for this use case: how well the strongest available model
 | Skill | By hand, carried over | Attempt 1's business brief, written 2026-10-03 without the trap rules. Same text, description restored |
 | Rubrics | By hand, carried over | The six designed before the skill existed (world-builder 03 § 9.2), revised against attempt 1 stage 0's answers. Identical to attempt 1 stage 1 |
 
+### How the six rubrics came to be
+
+| Step | What happened | Result |
+| --- | --- | --- |
+| 1. Generated from the skill | Attempt 1, stage 0 (2026-10-03): the skill was created with `skills create … generateRubrics: true`, so the **platform generated rubrics from the skill text** | 5 rubrics. Not repeatable: the same skill gave 5, then 1, then a different 5. They **overrated wrong answers** (0.85–1.0); the reward ranked a right answer above a wrong one only 83% of the time |
+| 2. Written by hand | The six were written instead, with the **GitHub Copilot agent in VS Code, using the Claude Opus 5.5 model**, from the world's trap list (world-builder 03 § 9.2, "written before the skill exists") and revised against step 1's answers ([changes and evidence](../../archive/attempt-1/stages/stage-1/rubrics.md)). Applied in attempt 1, stage 1 (2026-10-08) | Right ranked above wrong 93% of the time |
+| 3. Pinned | Written in the **platform's own rubric format**, the same structure the generator produces: `RubricName`, `Description`, `ChecklistItems`, `Importance` (critical, high), `RubricType` (`user_facing`), `RedFlags` (empty), `MeasurementMethod` (`binary_checklist`). Pinned in [config/rubrics.json](config/rubrics.json), with `generateRubrics: false` in the skill so the platform can't replace them | The six used from attempt 1 stage 1 onwards, and here |
+
+The platform's grader still does the judging: it scores each answer against these rubrics with no judging prompt from us. Only the criteria are ours. Who drafted them comes from the user's account; the repository's own records say only "designed by hand".
+
+For comparison, on 2026-10-13 the platform generated rubrics again from the same skill text, in `wce-dev` on a copy of the skill: 4 rubrics that check completeness and sourcing but not the traps ([stage 1, generated-rubrics](../stage-1/raw/generated-rubrics/rubrics-generated.md)).
+
 ## Two independent checks on every answer
 
 The platform's rubric score says how well an answer **reads** against the checklists. It does not know the right answer: the grader has no answer key. So every answer was also checked for whether it is **right**:
