@@ -44,7 +44,7 @@ The platform's rubric score says how well an answer **reads** against the checkl
 | Check | How | Result |
 | --- | --- | --- |
 | **Rubric score** (platform) | The platform's grader scores each answer against the six rubrics | Mean **0.956** |
-| **Ground truth, automatic** | `scripts/score_ground_truth.py` compares the **decision**, the **governing instrument** and the **payable amount** with the answer key (`world-builder/out/data/claims.json`, the source of [GROUND-TRUTH.md](../../world-builder/out/GROUND-TRUTH.md)) | 26/30 |
+| **Ground truth, automatic** | `scripts/score_ground_truth.py` compares the **decision**, the **governing instrument** and the **payable amount** with the answer key (`world-builder/out/data/claims.json`, the source of [GROUND-TRUTH.md](../../world-builder/out/GROUND-TRUTH.md)) | 26/30. **28/30** re-scored on 2026-10-13 after the scorer fix ([rescored](results/ground-truth-check-rescored.md)); 04172 still needs a person |
 | **Ground truth, by hand** | Every answer the scorer marked wrong or couldn't read was read in full against the answer key ([results/hand-check.md](results/hand-check.md)) | **29/30** |
 
 The hand-check corrected the automatic result in three places, where the scorer misread an answer that was right:

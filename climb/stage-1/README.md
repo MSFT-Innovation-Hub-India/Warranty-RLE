@@ -32,7 +32,7 @@ Everything else is unchanged: model (GPT-5.6-Sol), skill, rubrics, strategy (`Si
 | The run | `executions run` with rubric grading (`scripts/exec-batches.ps1`), 5 claims at a time: 60 claims in 51 minutes, 3–6 minutes each. 59 completed; 1 failed on the platform (04185) |
 | Before the run | MAI-CODE-5b had been selected during the stage 4 attempts; deselected so only Sol is selected, as in stage 0 |
 
-⚠️ **Route:** stage 0 used evaluation jobs; this stage used `executions run`. These Training claims weren't in stage 0, so nothing is compared across the change. The 30 Evaluation claims will be re-baselined on this route before stage 2.
+⚠️ **Route:** stage 0 used evaluation jobs; this stage used `executions run`. These Training claims weren't in stage 0, so nothing is compared across the change. **Decision (user, 2026-10-13):** stage 0 is not re-run on the new route. Stage 2 is compared against this stage's 60 Training claims, which ran on the same route; any later comparison with stage 0's Evaluation result states the route difference.
 
 Step-by-step commands and responses: [RUNBOOK.md](RUNBOOK.md).
 
@@ -44,7 +44,7 @@ Step-by-step commands and responses: [RUNBOOK.md](RUNBOOK.md).
 | Wrong | 1 (C-2026-04174, authority) |
 | World-data defect | 1 (C-2026-04106) |
 | Platform failure | 1 (C-2026-04185) |
-| Automatic scorer before the hand-check | 45/60 (12 right answers misread) |
+| Automatic scorer | 45/60 at first (12 right answers misread); **57/60 after the scorer fix**, matching the hand-check |
 | Rubric score (platform) | 0.934 |
 | Tool calls per claim | mean 11.2, range 5–19; claim-system calls 1.9 |
 | **Reward ranks right above wrong** | **83%** of pairs: the two non-right answers score 0.90 and 0.85, above 13 and 4 of the 57 right ones |
@@ -63,7 +63,7 @@ Detail: [results/hand-check.md](results/hand-check.md) · [results/ground-truth-
 | **Valuation can't see supersession pricing** (stage 0, 04151) | No valuation errors in these 12 claims; the stage 0 case stands | **Stage 2.** Valuation must require *applying* the superseding part's price |
 | **Sol often records no claim-system action** | 17 of 59 claims: on question-style prompts ("What's the position…", "…and advise") Sol answered as advice only. It cost 04174 its escalation; 04181 and 04182 concluded "request evidence" without recording one | **Stage 3** (skill: when to record), after stage 2 settles what the rubric expects |
 | **World defect: C-2026-04106** | The only pump-replacement claim fitted with a hose set; Sol held it for the mismatch | **World fix** in the generator, or drop 04106 from training. Not a model problem |
-| The scorer misreads 12 right answers | Narrow questions with no amount; negations ("no escalation is required"); an instrument named to rule it out; policy clause 6.1 as governing | **Scorer fix** before stage 2, so the automatic count can be trusted |
+| The scorer misreads 12 right answers | Narrow questions with no amount; negations ("no escalation is required"); an instrument named to rule it out; policy clause 6.1 as governing | ✅ **Fixed** (2026-10-13): 8 reading rules, 12 new tests (66/66 pass). Re-scored: stage 1 57/60 and stage 0 28/30 automatically; no verdict changed on attempt 1's results. 04172 (stage 0) stays "needs review": its wording matches a wrong answer and only the recorded tool call tells them apart |
 | Evaluation jobs no longer reach the claim system, for any model | 0 MCP calls during 4 Sol jobs; `executions run` works | Platform team ([P11](../../docs/06-platform-issues.md#p11-mai-code-5b-runs-cannot-call-the-claim-system-virtualization-error)); runner switched |
 
 ## Conclusion
@@ -72,6 +72,6 @@ On the Training claims, Sol adjudicates almost everything correctly (57/60, one 
 
 ## Next
 
-1. **Fix the scorer's misreads** (no platform cost), and decide on 04106 (fix the world or drop it from training).
-2. **Re-baseline stage 0** on the `executions run` route: the 30 Evaluation claims with Sol, current rubrics.
+1. ✅ **Fix the scorer's misreads.** Open: decide on 04106 (fix the world or drop it from training).
+2. ~~Re-baseline stage 0 on the `executions run` route~~: not needed (user, 2026-10-13).
 3. **Stage 2, reward alignment (rubrics only):** Authority and action (recorded escalation; not applicable to informational questions) and Valuation (apply the superseding price). Re-grade and re-rank on the Training claims, then a new Evaluation baseline.

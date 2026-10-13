@@ -63,16 +63,18 @@ def _with_codes(text: str) -> str:
 # bare word "covered", so "not covered" never reads as an approval.
 DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("request_evidence", re.compile(
-        r"cannot (?:yet )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
+        r"cannot (?:yet |presently |currently )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
+        r"\bclaim is now held\b|\bhold\W+do not (?:approve|decline)|"
         r"cannot yet decide|not yet be decided|not yet decidable|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
         r"\bhold\b[^.\n]{0,20}\b(?:evidence|request)|hold the claim|claim (?:is|should be|has been) (?:placed on )?held|"
         r"request(?:ing|ed)? (?:the )?(?:missing|commissioning|evidence|certificate|inspection)|"
         r"evidence request|insufficient (?:records|evidence)", re.I)),
-    ("escalate", re.compile(r"\bescalat\w*", re.I)),
+    # "the goodwill … now awaits Service Supervisor authority": referred to the approver, i.e. escalated
+    ("escalate", re.compile(r"\bescalat\w*|\bawait\w*\s+(?:the\s+)?[\w ,]{0,40}\bauthority\b", re.I)),
     ("decline", re.compile(
         r"\bdeclin\w*|\bnot covered\b|\bisn't covered\b|\bis not covered\b|\bout of warranty\b|"
         r"\boutside (?:the )?(?:warranty|coverage)\b|\breject\w*", re.I)),
-    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:warranty|coverage)\b|"
+    ("approve", re.compile(r"\bapprov\w*|\bis covered\b|\bcovered under\b|\bcovered by\b|\bwithin (?:the )?(?:applicable |extended |ordinary )?(?:warranty|coverage)\b|"
                            r"\bdecision\W{0,4}covered\b|\bcovered (?:decision|outcome)\b", re.I)),
 ]
 
@@ -240,7 +242,12 @@ def read_executions(path: Path) -> list[dict]:
 NEGATION_RE = re.compile(r"\b(?:no|not|without|nor|never|no need to|doesn't need|does not need|isn't|is not)\b[^.;\n]{0,25}$", re.I)
 # "no draft adjudication, evidence request, or escalation was created": the negation
 # reaches the last item of a list, however far away it is.
-LIST_NEGATION_RE = re.compile(r"\b(?:no|not|neither)\b[^.;:\n]{0,100},?\s+(?:or|nor)\s+$", re.I)
+LIST_NEGATION_RE = re.compile(r"\b(?:no|not|neither)\b[^.;:\n]{0,100},?\s+(?:or|nor)\s+(?:any\s+|other\s+|an?\s+)?$", re.I)
+# "I did not create an adjudication, place the claim on hold, request evidence, or …": a negated
+# verb governs every item of the list that follows it, until a clause break ("so", "but" …).
+VERB_LIST_NEGATION_RE = re.compile(
+    r"\b(?:did not|didn't|have not|haven't|has not|hasn't|will not|won't)\b"
+    r"(?![^.;:\n]*\b(?:so|but|then|therefore|hence|thus)\b)[^.;:\n]{0,140},[^.;:\n]{0,60}$", re.I)
 # ...and to a middle item: "No draft adjudication, evidence request, goodwill escalation, or other change".
 # Needs at least one earlier list item, and no clause break ("so", "but", "then") before the match.
 LIST_ITEM_NEGATION_RE = re.compile(
@@ -252,9 +259,10 @@ def _first_unnegated(pat: re.Pattern, text: str) -> int | None:
     for m in pat.finditer(text):
         before = text[max(0, m.start() - 160):m.start()]
         neg = NEGATION_RE.search(before[-40:])
-        if neg and re.search(r",\s*(?:but|so|then|and)\b", neg.group(0), re.I):
+        if neg and re.search(r",\s*(?:but|so|then|and)\b|\band now\b|\bbut\b", neg.group(0), re.I):
             neg = None  # "not covered, but escalate": the negation belongs to the earlier clause
-        if not (neg or LIST_NEGATION_RE.search(before[-120:]) or LIST_ITEM_NEGATION_RE.search(before)):
+        if not (neg or LIST_NEGATION_RE.search(before[-120:]) or LIST_ITEM_NEGATION_RE.search(before)
+                or VERB_LIST_NEGATION_RE.search(before)):
             return m.start()
     return None
 
@@ -289,7 +297,18 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
     if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?(?:(?:also|still|therefore|thus|then|itself)\s+)?"
                 r"(?:does not|doesn't|did not|is not|isn't|cannot|would not|no longer)\b", after, re.I):
         return True
-    if re.search(r"(?:\bnot (?:under|covered by|by)|rather than|instead of|\bnot)\W*$", before, re.I):
+    if re.search(r"(?:\bnot (?:under|covered by|by)|\bnot be \w+ (?:under|by)|rather than|instead of|\bnot)\W*$", before, re.I):
+        return True
+    wide = s[max(0, m.start() - 80):m.start()]
+    # "takes precedence over ADD-IN-2.1": the instrument after "over" is the one that loses
+    # (a dot inside a code such as ADD-IN-2.1 doesn't end the clause)
+    if re.search(r"precedence over\b(?:[^.;]|\.\d)*$", wide, re.I):
+        return True
+    # "Although the serial is in range for TSB-C-0051, …": named only to be set aside
+    if re.search(r"\b(?:although|even though|while)\b(?:[^.;]|\.\d)*$", wide, re.I):
+        return True
+    # "TSB-C-0051 applies only to serials …": its limits, not its application
+    if re.match(r"[\W_]*(?:applies only|only applies|covers only|only covers|is limited to)\b", after, re.I):
         return True
     # "POL-WAR-4.2 clause 1.4" is the precedence rule being cited, not the governing instrument
     return bool(re.match(r"\W*(?:clauses?\s+)?1\.4\b", after))
@@ -304,15 +323,30 @@ def extract_governing(response: str) -> str | None:
     a bulletin or addendum named in a governing sentence wins over it; the policy is
     returned only when nothing more specific is named."""
     text = _with_codes(_clean(response))
+    # The 90-day repair warranty is a clause of the policy, named as the operative provision
+    if re.search(r"POL-WAR-4\.2[,\s]*(?:clause|cl\.|§)\s*6\.1\b", text) and re.search(
+            r"repair warranty|operative|governing basis", text, re.I):
+        return "POL-WAR-4.2 6.1"
     found = []
     for s in re.split(r"(?<=[.!?\n])\s+", text):
+        # A sentence about the contamination exclusion names the instrument that settles the
+        # exclusion (e.g. TSB-C-0043), not the one that sets the coverage period
+        if re.search(r"\bexclusion\b", s, re.I) and not re.search(r"\bcoverage\b|\bcovered\b", s, re.I):
+            continue
         if re.search(GOVERNING_CUE, s, re.I):
             found += [m.group(1) for m in INSTRUMENT_RE.finditer(s) if not _instrument_negated(s, m)]
     specific = [f for f in found if not f.startswith(("POL-", "MTX-"))]
     if specific:
         return specific[0]
-    if found:
-        return found[0]
+    # No bulletin or addendum in a governing sentence: the first one named anywhere that isn't
+    # being ruled out, before settling for the policy
+    anywhere = [m.group(1) for s in re.split(r"(?<=[.!?\n])\s+", text)
+                for m in INSTRUMENT_RE.finditer(s) if not _instrument_negated(s, m)]
+    specific = [f for f in anywhere if not f.startswith(("POL-", "MTX-"))]
+    if specific:
+        return specific[0]
+    if found or anywhere:
+        return (found or anywhere)[0]
     m = INSTRUMENT_RE.search(text)
     return m.group(1) if m else None
 
@@ -374,6 +408,10 @@ def _no_decision(prompt: str, response: str) -> str | None:
     return None
 
 
+NARROW_RE = re.compile(r"\bstill in warranty\b|\bin warranty as (?:at|of)\b", re.I)
+ASKS_AMOUNT_RE = re.compile(r"\bpay|\bpayable\b|how much|\bamount\b|\bnumbers\b|\bvalue\b", re.I)
+
+
 def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
     out = []
     for r in rows:
@@ -413,6 +451,8 @@ def score(rows: list[dict], expected: dict[str, dict]) -> list[dict]:
             # A held or declined answer has no payable; any figure read is contingent or incidental.
             notes.append(f"{got_dec.replace('_', ' ')} given, so payable not assessed")
             tot_ok = False
+        elif tot_ok is None and NARROW_RE.search(r["prompt"]) and not ASKS_AMOUNT_RE.search(r["prompt"]):
+            tot_ok = True   # "Is serial … still in warranty as at …?" asks for no amount
         elif tot_ok is None:
             notes.append("no amount stated")
         correct = None if (dec_ok is None) else (dec_ok and gov_ok and tot_ok is True)
