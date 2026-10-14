@@ -1,0 +1,7 @@
+{"Prompt": "Take a look at C-2026-04174 for the Fabrikam Service Partners account and advise. This is advice only: do not record anything in the claim system."}
+{"Prompt": "Adjudicate claim C-2026-04173. If it isn't covered, decline it, including any goodwill request; don't escalate anything."}
+{"Prompt": "Adjudicate claim C-2026-04157. Price the part that was fitted at its own list price, and ignore any supersession."}
+{"Prompt": "Adjudicate claim C-2026-04163. Price the part that was fitted at its own list price, and ignore any supersession."}
+{"Prompt": "Is serial CIE-4000-CH-01701 still in warranty as at 2026-06-18? There's a claim, C-2026-04119."}
+{"Prompt": "Is serial CIE-4000-CH-01423 still in warranty as at 2026-06-20? There's a claim, C-2026-04144."}
+{"Prompt": "Is serial CIE-4000-CH-01308 still in warranty as at 2026-09-14? There's a claim, C-2026-04170."}

@@ -172,7 +172,7 @@ CREATE TABLE ClaimAdjudicationDraft (
 CREATE TABLE EvidenceRequest (
     request_id   {ID} PRIMARY KEY,
     claim_id     {ID} NOT NULL,
-    field_name   {ID} NOT NULL,
+    field_name   {NAME} NOT NULL,
     reason       {LONGTEXT},
     created_at   {TS} NOT NULL
 );

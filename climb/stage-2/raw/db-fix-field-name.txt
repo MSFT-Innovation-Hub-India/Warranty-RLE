@@ -1,0 +1,9 @@
+
+name       type     chars
+----       ----     -----
+field_name nvarchar   200
+
+
+
+OK: 1 batch(es) executed
+

@@ -116,7 +116,7 @@ CREATE TABLE ClaimAdjudicationDraft (
 CREATE TABLE EvidenceRequest (
     request_id   NVARCHAR(40) PRIMARY KEY,
     claim_id     NVARCHAR(40) NOT NULL,
-    field_name   NVARCHAR(40) NOT NULL,
+    field_name   NVARCHAR(200) NOT NULL,
     reason       NVARCHAR(MAX),
     created_at   DATETIMEOFFSET(0) NOT NULL
 );
