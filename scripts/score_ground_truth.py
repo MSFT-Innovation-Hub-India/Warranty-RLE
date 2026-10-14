@@ -65,7 +65,7 @@ DECISION_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("request_evidence", re.compile(
         r"cannot (?:yet |presently |currently )?(?:be )?(?:finally |conclusively )?(?:decided|determined)|can't (?:yet )?be (?:finally |conclusively )?(?:decided|determined)|"
         r"\bclaim is now held\b|\bhold\W+do not (?:approve|decline)|"
-        r"cannot (?:yet |presently |currently )?be approved or declined|"
+        r"cannot (?:yet |presently |currently )?be approved or declined|\bremain held\b|"
         r"cannot yet decide|not yet be decided|not yet decidable|on hold|\bhold (?:for|pending) (?:evidence|commissioning|the)|"
         r"\bhold\b[^.\n]{0,20}\b(?:evidence|request)|hold the claim|claim (?:is|should be|has been) (?:placed on )?held|"
         r"request(?:ing|ed)? (?:the )?(?:missing|commissioning|evidence|certificate|inspection)|"
@@ -302,7 +302,7 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
     if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?(?:(?:also|still|therefore|thus|then|itself)\s+)?"
                 r"(?:does not|doesn't|did not|is not|isn't|cannot|would not|no longer)\b", after, re.I):
         return True
-    if re.search(r"(?:\bnot (?:under|covered by|by)|\bnot be \w+ (?:under|by)|rather than|instead of|\bnot)\W*$", before, re.I):
+    if re.search(r"(?:\bnot (?:under|covered by|by)|\bnot be \w+ (?:under|by)|rather than|instead of|\boutside|\bnot)\W*$", before, re.I):
         return True
     wide = s[max(0, m.start() - 80):m.start()]
     # "takes precedence over ADD-IN-2.1": the instrument after "over" is the one that loses
@@ -310,11 +310,15 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
     if re.search(r"precedence over\b(?:[^.;]|\.\d)*$", wide, re.I):
         return True
     # "Although the serial is in range for TSB-C-0051, …": named only to be set aside
-    if re.search(r"\b(?:although|even though|while)\b(?:[^.;]|\.\d)*$", wide, re.I):
+    # (the concessive clause ends at its comma: "Although the baseline is 24 months, ADD-IN-2.1 …")
+    if re.search(r"\b(?:although|even though|while)\b(?:[^.;,]|\.\d)*$", wide, re.I):
         return True
     # "… the filter-housing defect covered by TSB-C-0043, so the contamination exclusion does not
     # apply": the instrument that settles the exclusion, not the one that sets the coverage period
     if re.match(r"[^.;]{0,40}\bexclusion\b", after, re.I):
+        return True
+    # "ADD-IN-2.1 would ordinarily govern …": what would apply but for something else
+    if re.match(r"[\W_]*(?:[A-Z]\d?[\w.]*\s+)?would (?:ordinarily|otherwise|normally)\b", after, re.I):
         return True
     # "TSB-C-0051 applies only to serials …": its limits, not its application
     if re.match(r"[\W_]*(?:applies only|only applies|covers only|only covers|is limited to)\b", after, re.I):
@@ -323,7 +327,7 @@ def _instrument_negated(s: str, m: re.Match) -> bool:
     return bool(re.match(r"\W*(?:clauses?\s+)?1\.4\b", after))
 
 
-GOVERNING_CUE = (r"govern|applies|applicable (?:coverage )?instrument|instruments? (?:is|are)\b|"
+GOVERNING_CUE = (r"govern|applies|applicable (?:coverage )?instrument|instruments? (?:is|are)\b|controlling\b|"
                  r"covered (?:under|by)|under\b|takes? precedence")
 
 

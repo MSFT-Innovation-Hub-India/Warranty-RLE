@@ -1,0 +1,4 @@
+correct (with hand-check): 59 of 60
+mean rubric: right 0.943 · wrong 0.892
+right ranked above wrong: 50 of 59 pairs (85%); ties 0
+  wrong: C-2026-04104 rubric 0.892 - outscores 9 of 59 right answers

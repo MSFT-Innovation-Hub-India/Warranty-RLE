@@ -46,6 +46,11 @@ CASES = [
     ("governing", "- TSB-C-0051 applies only to serials CIE-4000-CH-01200 through 01850. The governing coverage term is therefore ADD-IN-2.1 A1.", "ADD-IN-2.1"),
     ("governing", "1. POL-WAR-4.2, clause 6.1 — repair warranty: this is the operative coverage provision. 2. ADD-IN-2.1 — this governs the asset's underlying warranty.", "POL-WAR-4.2 6.1"),
     ("governing", "This is a controls repair, so it should not be funded under TSB-C-0051. The governing coverage period is therefore ADD-IN-2.1, A1.", "ADD-IN-2.1"),
+    # misreads found in stage 3 (2026-10-14)
+    ("governing", "Although the global baseline is 24 months/6,000 hours, ADD-IN-2.1 clause A1 changes India coverage to 18 months. TSB-C-0051 does not apply. The repair falls outside TSB-C-0051's eligible serial range.", "ADD-IN-2.1"),
+    ("governing", "TSB-C-0051 is the controlling coverage instrument because it is current. ADD-IN-2.1 applies because the asset is installed in Pune, India.", "TSB-C-0051"),
+    ("decision", "**The claim cannot yet be finally adjudicated. It should remain held—not approved or declined—pending running-hours evidence.**", "request_evidence"),
+    ("governing", "ADD-IN-2.1 would ordinarily govern this Pune, India installation. TSB-C-0051 extends the hydraulic circuit and governs this repair.", "TSB-C-0051"),
     # misreads found in stage 2 (2026-10-13)
     ("decision", "**Yes — serial CIE-4000-CH-01701 was still under warranty for the hydraulic-circuit repair in claim C-2026-04119 on 18 June 2026.**", "approve"),
     ("decision", "**Serial CIE-4000-CH-01423 was not under the ordinary India whole-asset warranty on 2026-06-20, but it was still under a component-specific warranty extension for the hydraulic circuit.**", "approve"),

@@ -1,0 +1,12 @@
+﻿
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                  created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                  ----------                  
+draft ADJ-BFCD502642 C-2026-04143 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clauses 1.4, 4.1-4.3", "ADD-IN-2.1 A1", "TSB-C-0051 (effective 2026-01-15; serial range CIE-4000-CH-01200 to CIE-4000-CH-01850)", "Warranty-Labour-Rate-Card-FY26", "SPA-2023-FAB-IN clauses 2, 3 and 6"]                                                                                                                                                                                               10/14/2026 6:15:48 AM +00:00
+draft ADJ-24CCA7D417 C-2026-04145 decline | payable=0.00 INR | refs=["TSB-C-0051 \u2014 Effect on warranty; 36 months from commissioning or 8,000 running hours, whichever occurs first; serial range CIE-4000-CH-01200 to CIE-4000-CH-01850", "POL-WAR-4.2 clause 1.4 \u2014 precedence of serial-specific TSB over regional addendum and global policy", "SPA-2023-FAB-IN clauses 2, 3 and 6 \u2014 claim submission, labour basis, parts at India list price with no handling uplift"] 10/14/2026 6:15:35 AM +00:00
+draft ADJ-0A059E932A C-2026-04146 decline | payable=0.00 INR | refs=["TSB-C-0051 \u2014 Effect on warranty (36 months from commissioning or 8,000 running hours, whichever occurs first)", "POL-WAR-4.2 clause 1.4 \u2014 precedence between instruments", "Warranty-Labour-Rate-Card-FY26 \u2014 HYD-PUMP-RR row and India rate effective 2026-04-01", "SPA-2023-FAB-IN clause 6 \u2014 no parts handling uplift"]                                                                       10/14/2026 6:15:34 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+

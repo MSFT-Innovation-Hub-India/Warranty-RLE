@@ -1,0 +1,23 @@
+﻿
+kind     id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           created_at                  
+----     --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ----------                  
+evidence EVR-38BB0CFC44 C-2026-04181 field=running_hours_at_repair_date                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               10/14/2026 6:34:30 AM +00:00
+evidence EVR-0308A9FA07 C-2026-04182 field=commissioning_certificate_and_running_hours_at_repair                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      10/14/2026 6:34:24 AM +00:00
+evidence EVR-4B7A9E4AB6 C-2026-04183 field=Commissioning certificate / asset-registry record for serial CIE-4000-CH-09992                                                                                                                                                                                                                                                                                                                                                                                                                                                                             10/14/2026 6:34:16 AM +00:00
+evidence EVR-10011C22DF C-2026-04184 field=running_hours_at_repair_date                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               10/14/2026 6:34:54 AM +00:00
+draft    ADJ-3D17C3B9EF C-2026-04185 approve | payable=199175.00 INR | refs=["POL-WAR-4.2 clauses 1.4 and 4.1", "ADD-IN-2.1", "TSB-C-0051 (coverage; serial CIE-4000-CH-01360; 36 months/8,000 hours; funding code TSB)", "TSB-C-0043 (clause 5.2 contamination exclusion disapplied because inspection attributes contamination to filter housing defect; funding code TSB)", "Warranty Labour Rate Card FY26 (HYD-PUMP-RR 5.5 h; India INR 1,450/h effective 2026-04-01)", "SPA-2023-FAB-IN clauses 2, 3 and 6", "Inspection Report C-2026-04185", "Service claim system dossier for C-2026-04185"] 10/14/2026 6:35:48 AM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04181 Held  
+C-2026-04182 Held  
+C-2026-04183 Held  
+C-2026-04184 Held  
+
+
+
+OK: 1 batch(es) executed
+

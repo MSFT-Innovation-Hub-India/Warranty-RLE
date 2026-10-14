@@ -1,0 +1,8 @@
+claim,slice,exp_decision,got_decision,exp_governing,got_governing,exp_total,got_total,rubric,execution,source,decision_ok,governing_ok,total_ok,correct,delivery_mismatch,note
+C-2026-04119,precedence,approve,approve,TSB-C-0051,TSB-C-0051,199175.0,,1.0,8d61e763-295d-472c-8f69-4d119eca2e10,result-04119.json,True,True,True,True,False,
+C-2026-04144,dual-limit,approve,approve,TSB-C-0051,TSB-C-0051,199175.0,199175.0,0.783,07310e43-bf4b-43b2-b682-75e0e895cd17,result-04144.json,True,True,True,True,False,
+C-2026-04157,valuation,approve,approve,TSB-C-0051,TSB-C-0051,31030.0,29455.0,0.853,574bab18-e0ae-4812-b0f6-8c7d66bb2611,result-04157.json,True,True,False,False,False,
+C-2026-04163,valuation,approve,approve,TSB-C-0051,TSB-C-0051,31030.0,29455.0,0.853,16e1687f-c60e-482d-9a74-b87d281a6efb,result-04163.json,True,True,False,False,False,
+C-2026-04170,stale-deck,approve,approve,TSB-C-0051,TSB-C-0051,29725.0,29725.0,1.0,dddb801c-1601-414d-bfe1-f6160b819f43,result-04170.json,True,True,True,True,False,
+C-2026-04173,authority,escalate,decline,ADD-IN-2.1,ADD-IN-2.1,,18400.0,1.0,0d561cfa-6826-4fc6-9d21-478d806a8774,result-04173.json,False,True,True,False,False,
+C-2026-04174,authority,escalate,decline,ADD-IN-2.1,ADD-IN-2.1,,0.0,0.867,1c0c4473-2f77-40f9-bf17-3217f272f686,result-04174.json,False,True,True,False,False,

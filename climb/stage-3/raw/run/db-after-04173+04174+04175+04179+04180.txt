@@ -1,0 +1,23 @@
+﻿
+kind       id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                                                                                            created_at                  
+----       --             --------     ------                                                                                                                                                                                                                                                                                                                                                                                                                                            ----------                  
+draft      ADJ-7004942559 C-2026-04173 decline | payable=0.00 INR | refs=["POL-WAR-4.2 clause 1.4 (instrument precedence)", "ADD-IN-2.1 clause A1 (India coverage: 18 months/5,000 hours, whichever first)", "TSB-C-0051 (not applicable: serial outside range and controls component outside bulletin scope)", "SPA-2023-FAB-IN clauses 2, 3 and 6 (submission, labour and parts terms)", "Warranty Labour Rate Card FY26 (CTRL-BD-RR: 1.5 h; India INR 1,450/h effective 2026-04-01)"] 10/14/2026 6:31:29 AM +00:00
+escalation GWE-F6966FF5AD C-2026-04173 amount=18400.00 | role=Service Supervisor                                                                                                                                                                                                                                                                                                                                                                                                         10/14/2026 6:31:29 AM +00:00
+escalation GWE-BEAB5BB035 C-2026-04174 amount=742000.00 | role=Director, Aftermarket                                                                                                                                                                                                                                                                                                                                                                                                     10/14/2026 6:31:14 AM +00:00
+escalation GWE-283C11667A C-2026-04175 amount=43800.00 | role=Regional Service Manager                                                                                                                                                                                                                                                                                                                                                                                                   10/14/2026 6:30:43 AM +00:00
+evidence   EVR-7758B5190C C-2026-04179 field=commissioning_certificate                                                                                                                                                                                                                                                                                                                                                                                                                   10/14/2026 6:30:42 AM +00:00
+evidence   EVR-B152AA962D C-2026-04179 field=running_hours_at_repair                                                                                                                                                                                                                                                                                                                                                                                                                     10/14/2026 6:30:53 AM +00:00
+evidence   EVR-CED096F2B4 C-2026-04180 field=commissioning_certificate                                                                                                                                                                                                                                                                                                                                                                                                                   10/14/2026 6:30:42 AM +00:00
+
+
+
+
+claim_id     status
+--------     ------
+C-2026-04179 Held  
+C-2026-04180 Held  
+
+
+
+OK: 1 batch(es) executed
+

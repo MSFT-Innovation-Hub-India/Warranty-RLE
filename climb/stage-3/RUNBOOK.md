@@ -47,3 +47,29 @@ ClaimAdjudicationDraft 0 | EvidenceRequest 0 | GoodwillEscalation 0   (trimmed)
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\exec-batches.ps1 -Env 598fd1b0-36f1-402f-ba36-aa00c8a67cc4 -SamplesFile climb\stage-3\config\training-samples.jsonl -OutDir climb\stage-3\raw\run -Model prod-gpt-56-reasoning-sol -Parallel 5
 ```
+```text
+11:19:10 60 claims, model prod-gpt-56-reasoning-sol, 5 at a time
+11:19:16 04104+04105+04106+04107+04108 started
+…
+12:11:15 ALL DONE   (trimmed: 60 Completed; raw/run/run-log.txt)
+```
+
+## 4. Score · 06:42 UTC
+
+```bash
+.venv/Scripts/python.exe scripts/score_ground_truth.py climb/stage-3/raw/run/result-*.json --out climb/stage-3/results --label "Stage 3: GPT-5.6-Sol, 60 Training claims, skill line on recording the draft"
+```
+First pass **56/60**. Hand-check: 04137, 04143, 04184 right (scorer misreads, then fixed: 75/75 tests); **04104 wrong** (superseded part priced at its own price). Re-scored:
+```text
+| **Fully correct** | **59/60 (98%)** |
+```
+```bash
+.venv/Scripts/python.exe scripts/reward-ranking.py climb/stage-3/results
+```
+```text
+correct (with hand-check): 59 of 60
+mean rubric: right 0.943 · wrong 0.892
+right ranked above wrong: 50 of 59 pairs (85%); ties 0
+  wrong: C-2026-04104 rubric 0.892 - outscores 9 of 59 right answers
+```
+Drafts recorded: counted from each result's completed `1c171__` write calls (`create_claim_adjudication`, `request_missing_evidence`, `escalate_goodwill`); claim questions with none: stage 1 15, stage 2 11, stage 3 6.
