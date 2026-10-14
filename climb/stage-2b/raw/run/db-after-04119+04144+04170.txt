@@ -1,0 +1,10 @@
+﻿
+kind  id             claim_id     detail                                                                                                                                                                                                                                                                                                                                                                             created_at                  
+----  --             --------     ------                                                                                                                                                                                                                                                                                                                                                                             ----------                  
+draft ADJ-E91DA633EE C-2026-04170 approve | payable=29725.00 INR | refs=["TSB-C-0051 \u2014 Effect on warranty; Claim handling", "POL-WAR-4.2 clauses 1.4, 4.1, 4.2, 4.3 and 5.4", "Warranty Labour Rate Card FY26 \u2014 FILT-HSG-RR flat-rate allowance and India rate effective 2026-04-01", "SPA-2023-FAB-IN clauses 2, 3 and 6", "ADD-IN-2.1 A1 (displaced for the covered hydraulic component by TSB-C-0051)"] 10/14/2026 5:04:12 AM +00:00
+
+
+
+(no rows)
+OK: 1 batch(es) executed
+
