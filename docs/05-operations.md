@@ -2,6 +2,11 @@
 
 How to run any stage: checks before a run, the run itself, scoring, and the database reset. The scripts are described one by one in [scripts/README.md](../scripts/README.md). Stage-specific commands go in each stage's `RUNBOOK.md`.
 
+For interactive CLI demonstrations, the [local Streamlit console](../ui/README.md)
+provides Simple, TreeSearch and BestOfN execution controls, saved results,
+formatted answers, collapsible raw JSON, and explicitly approved snapshot/reset
+controls. It does not replace stage configuration checks or stage documentation.
+
 ## Before every run
 
 | # | Check | Command | Expect |

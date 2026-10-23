@@ -10,6 +10,7 @@ Read in order the first time. After that, jump to what you need.
 | 4 | [Hill-climb method](04-hill-climb-method.md) | The stages, why in this order, and what skills, rubrics, inference strategy and RFT can and cannot fix |
 | 5 | [Operations runbook](05-operations.md) | Pre-flight checks, running an evaluation, scoring, the database reset, checking long jobs |
 | 6 | [Platform issues](06-platform-issues.md) | Every platform error, with the details the platform team needs |
+| 7 | [Journey and demo guide](07-journey-and-demo-guide.md) | Business-friendly hill-climb story, what the platform did, Streamlit demo, copy-paste CLI commands, multiple-skill routing and the enterprise learning-loop value proposition |
 
 Also: the stages are in [climb/](../climb/README.md); the scripts in [scripts/](../scripts/README.md); how the world is built in [world-builder/](../world-builder/README.md); the first attempt in [archive/attempt-1/](../archive/attempt-1/README.md).
 

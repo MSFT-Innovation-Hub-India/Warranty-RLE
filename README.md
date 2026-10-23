@@ -2,6 +2,8 @@
 
 A Microsoft 365 **Frontier Tuning** world where an agent adjudicates warranty claims for a fictional industrial manufacturer, using a SharePoint library, Teams channels and a claim system. The repository records a **hill climb**: measure a frontier model, measure a small model, and close the gap one change at a time, up to reinforcement fine-tuning. Everything is synthetic.
 
+**Presenting the project?** Start with the [journey and demo guide](docs/07-journey-and-demo-guide.md): the business story, measured progression, Streamlit launch command, CLI examples, multiple-skill routing and the platform's value proposition.
+
 ## Where we are
 
 | | |
@@ -13,6 +15,10 @@ A Microsoft 365 **Frontier Tuning** world where an agent adjudicates warranty cl
 | **CLI** | 1.0.14 (switched from 0.3.17 on 2026-10-10; scripts updated and checked, [docs/05 § CLI version](docs/05-operations.md#cli-version)). Attempt 1's tuning job `c77feaed` cancelled 2026-10-10 |
 | **IDs** | Environment `wce-main` `598fd1b0-36f1-402f-ba36-aa00c8a67cc4` · skill `cf00d339-5217-4cd1-b390-cc0d911735da` · MCP `1c171d49-7f85-4997-8126-ae20829a4dbf` |
 
+**Demo (2026-10-22), not a climb stage:** 🖥️ GPT-5.6-Sol with TreeSearch on C-2026-04101 completed in 5m49s (execution `c9fffec9-426a-4eca-93b6-2b0616acd810`). Mean scored rubric 1.000; answer-key checks passed for decision, governing instrument and payable (approve INR 69,575). Five draft writes were snapshotted, then the database was reset to `0 0 0 0`. This single-claim demo is not evidence of improvement over Simple.
+
+**Local console (2026-10-23):** [Streamlit CLI UI](ui/README.md) for inspecting live skills/rubrics, running Simple/TreeSearch/BestOfN with explicit approval, reopening saved executions, viewing formatted responses and raw JSON, and guarded database snapshot/reset. This adds tooling, not a new climb measurement.
+
 ## What's where
 
 | Folder | Open it to… |
@@ -20,6 +26,7 @@ A Microsoft 365 **Frontier Tuning** world where an agent adjudicates warranty cl
 | [docs/](docs/README.md) | Understand the scenario, the configuration, the claim flow, the method, how to run things, and platform issues |
 | [climb/](climb/README.md) | See the stages: scoreboard, and per stage the goal, results, findings (`README.md`) and every command run (`RUNBOOK.md`) |
 | [scripts/](scripts/README.md) | Run an evaluation, score it, reset the claim database |
+| [ui/](ui/README.md) | Use the local Streamlit console for CLI executions, results and database controls |
 | [world-builder/](world-builder/README.md) | Rebuild or redeploy the world: spec, ground-truth engine, generators, corpus, MCP server code |
 | [archive/attempt-1/](archive/attempt-1/README.md) | See the first climb and why it stalled |
 
